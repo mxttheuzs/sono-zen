@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { FloatingClouds } from "@/components/ui/floating-clouds";
 import { Badge } from "@/components/ui/badge";
 import { GraduationCap, Star, Users, Globe, Heart, User } from "lucide-react";
+import doctorImage from "@assets/image_1751130848304.png";
 
 export function AuthorSection() {
   const credentials = [
@@ -47,11 +48,11 @@ export function AuthorSection() {
             <div className="card-modern p-6 text-center">
               {/* Professional Photo */}
               <div className="w-48 h-48 mx-auto mb-6 rounded-full bg-gradient-to-br from-[var(--warm-accent)] to-[var(--accent-blue)] p-1">
-                <div className="w-full h-full rounded-full overflow-hidden">
+                <div className="w-full h-full rounded-full overflow-hidden bg-white">
                   <img 
-                    src="/attached_assets/image_1751130848304.png" 
+                    src={doctorImage} 
                     alt="Dra. Deborah Genaro - Especialista em Medicina do Sono"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-center"
                   />
                 </div>
               </div>
