@@ -149,8 +149,8 @@ export function PricingSection() {
               <div className="card-modern p-8 md:p-12 relative">
                 {/* Popular Badge */}
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-gradient-to-r from-[var(--warm-accent)] to-orange-500 text-white px-6 py-2 rounded-full text-sm font-bold">
-                    🔥 MAIS POPULAR
+                  <div className="bg-gradient-to-r from-red-500 to-orange-500 text-white px-6 py-2 rounded-full text-sm font-bold animate-pulse">
+                    ⏰ OFERTA LIMITADA - 48H
                   </div>
                 </div>
                 
@@ -171,6 +171,15 @@ export function PricingSection() {
                       <span className="text-[var(--text-secondary)] font-medium">{feature.text}</span>
                     </div>
                   ))}
+                </div>
+
+                {/* Social Proof */}
+                <div className="text-center mb-6">
+                  <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4 mb-4">
+                    <p className="text-green-600 font-semibold text-sm">
+                      🔥 <span className="animate-pulse">89 pessoas</span> compraram nas últimas 24h
+                    </p>
+                  </div>
                 </div>
 
                 {/* Pricing */}
@@ -194,15 +203,15 @@ export function PricingSection() {
                   className="w-full bg-gradient-to-r from-[var(--warm-accent)] to-orange-500 hover:from-[var(--warm-accent)]/90 hover:to-orange-500/90 text-white py-4 sm:py-6 px-4 sm:px-8 rounded-xl text-base sm:text-xl font-bold hover:shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 mb-6"
                 >
                   <CreditCard className="mr-2 sm:mr-3 h-5 sm:h-6 w-5 sm:w-6" />
-                  <span className="hidden sm:inline">QUERO TRANSFORMAR MEU SONO AGORA</span>
-                  <span className="sm:hidden">TRANSFORMAR SONO AGORA</span>
+                  <span className="hidden sm:inline">SIM! QUERO DORMIR COMO UM BEBÊ</span>
+                  <span className="sm:hidden">DORMIR COMO BEBÊ</span>
                 </Button>
 
                 {/* Security badges */}
                 <div className="flex flex-wrap justify-center gap-6 text-sm text-[var(--text-muted)]">
                   <div className="flex items-center gap-2">
                     <Shield className="h-4 w-4 text-[var(--success-green)]" />
-                    <span>Garantia de 7 dias</span>
+                    <span>Garantia total de 30 dias</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Lock className="h-4 w-4 text-[var(--success-green)]" />
