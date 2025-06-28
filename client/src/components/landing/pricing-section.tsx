@@ -248,7 +248,7 @@ export function PricingSection() {
                     Valor total dos bônus:
                     <span className="block text-lg text-[var(--text-muted)] line-through mb-1">R$ 49,80</span>
                     <span className="block text-2xl text-[var(--success-green)] font-bold">
-                      💎 TODOS GRÁTIS HOJE!
+                      🤍 TODOS GRÁTIS HOJE!
                     </span>
                   </p>
                 </div>
