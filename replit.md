@@ -104,6 +104,7 @@ Changelog:
 - June 28, 2025. Timeline optimization: Updated results messaging to be more persuasive and realistic - "Muitas pessoas dormem melhor já na primeira noite! Outras sentem a diferença na terceira noite. O que todos relatam: em 7 dias, você não vai reconhecer seu sono." Removed "Before vs After" comparison section for cleaner user experience.
 - June 28, 2025. Pricing section redesign: Rebuilt pricing section with elegant professional design maintaining original style but enhanced aesthetics. Used consistent CSS variables, proper gradient backgrounds, refined card layouts, and organized features grid for better visual hierarchy.
 - June 28, 2025. Interactive sleep comfort quiz implementation: Created comprehensive 5-question quiz with playful, calming UI elements including floating clouds and stars animations. Features personalized sleep profile results (Dorminhoco Zen, Aprendiz do Sono, Buscador de Tranquilidade, Guerreiro da Insônia) with tailored recommendations. Integrated smooth progress tracking, animated transitions, and direct CTA integration to pricing section.
+- June 28, 2025. Major design consistency upgrade: Applied method section's successful visual style (professional layout, conversational language, quality imagery) to problem and benefits sections. Removed "3 Pilares do Sono Zen" section and replaced with relaxing diffuser/singing bowls image. Enhanced sections now feature same 2-column layout with explanatory text left, visual element right, maintaining consistent professional quality throughout site.
 
 ## User Preferences
 

@@ -42,26 +42,59 @@ export function ProblemSection() {
     <section id="problema" className="py-20 bg-black relative overflow-hidden">
       <FloatingClouds />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="font-heading text-3xl sm:text-4xl md:text-6xl font-bold text-[var(--text-primary)] mb-8">
-            Por Que Você
-            <span className="block bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] bg-clip-text text-transparent">
-              Não Consegue Dormir?
-            </span>
-          </h2>
-          <p className="text-xl text-[var(--text-secondary)] max-w-4xl mx-auto leading-relaxed mb-4">
-            <strong className="text-[var(--text-primary)]">Entenda as principais causas</strong> que estão roubando seu sono e como resolver
-          </p>
-          <div className="flex justify-center items-center space-x-8 text-base text-[var(--text-muted)]">
-            <div className="flex items-center">
-              <TrendingDown className="h-4 w-4 text-[var(--warm-accent)] mr-2" />
-              <span className="font-medium">9 em cada 10 pessoas</span>
+        <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
+          {/* Left content */}
+          <div className="space-y-8">
+            <div className="space-y-6">
+              <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--text-primary)] leading-tight">
+                Por Que Você Não Consegue
+                <span className="block bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] bg-clip-text text-transparent">
+                  Dormir Direito?
+                </span>
+              </h2>
+              <p className="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed">
+                Não é culpa sua. Vivemos numa época que <span className="text-[var(--accent-blue)] font-semibold">sabota nosso sono</span> de várias formas.
+              </p>
+              <p className="text-base text-[var(--text-muted)]">
+                Entender as causas é o primeiro passo para resolver de vez seus problemas de sono.
+              </p>
             </div>
-            <div className="flex items-center">
-              <Activity className="h-4 w-4 text-[var(--accent-blue)] mr-2" />
-              <span className="font-medium">Soluções eficazes</span>
+            
+            <div className="space-y-4 text-[var(--text-secondary)]">
+              <p>Se você se reconhece em alguma dessas situações, você não está sozinho. Milhões de pessoas passam pelas mesmas dificuldades.</p>
+              <p className="text-[var(--accent-blue)] font-medium">
+                A boa notícia é que todos esses problemas têm solução quando você conhece as técnicas certas.
+              </p>
             </div>
           </div>
+          
+          {/* Right visual element */}
+          <div className="relative">
+            <div className="card-modern p-8 animate-slide-up">
+              <div className="text-center space-y-6">
+                <div className="w-24 h-24 mx-auto bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] rounded-full flex items-center justify-center">
+                  <Brain className="h-12 w-12 text-white" />
+                </div>
+                <div className="space-y-3">
+                  <h3 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
+                    O Ciclo do Sono Ruim
+                  </h3>
+                  <p className="text-[var(--text-secondary)] text-sm leading-relaxed">
+                    Cada noite mal dormida torna a próxima ainda mais difícil. É um ciclo que se repete até você quebrar com as técnicas certas.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="text-center mb-12">
+          <h3 className="font-heading text-2xl font-bold text-[var(--text-primary)] mb-4">
+            Veja se Você se Reconhece
+          </h3>
+          <p className="text-[var(--text-secondary)] max-w-2xl mx-auto">
+            Estes são os problemas mais comuns que impedem um sono reparador:
+          </p>
         </div>
         
         <div className="grid md:grid-cols-2 gap-8">

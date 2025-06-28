@@ -1,159 +1,118 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Smile, Lightbulb, Heart, Clock, Feather } from "lucide-react";
-import { StarryBackground } from "@/components/ui/starry-background";
 import { FloatingClouds } from "@/components/ui/floating-clouds";
+import { Clock, Heart, Smile, Sun, Battery, Shield } from "lucide-react";
 
 const benefits = [
   { 
     icon: Clock, 
-    title: "Dormir mais rápido",
-    description: "Adormeça em minutos"
+    title: "Adormecer em Minutos",
+    description: "Técnicas simples que acalmam sua mente e preparam seu corpo para o sono profundo. Nada de ficar rolando na cama por horas."
   },
   { 
     icon: Heart, 
-    title: "Menos despertares noturnos",
-    description: "Sono contínuo e profundo"
+    title: "Sono Profundo e Contínuo",
+    description: "Durma a noite toda sem interrupções. Acorde menos vezes durante a madrugada e sinta o verdadeiro descanso reparador."
   },
   { 
-    icon: Smile, 
-    title: "Acordar mais disposto",
-    description: "Energia renovada pela manhã"
+    icon: Sun, 
+    title: "Despertar com Energia",
+    description: "Acorde naturalmente revigorado, com disposição e clareza mental para enfrentar o dia com entusiasmo e produtividade."
   }
 ];
 
 export function BenefitsSection() {
   return (
     <section id="beneficios" className="py-20 bg-black relative overflow-hidden">
-      {/* Starry background for dreamy atmosphere */}
-      <StarryBackground className="opacity-40" />
-      <FloatingClouds />
+      <FloatingClouds className="opacity-30" />
       
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left - Morning Scene SVG */}
-          <div className="relative">
-            <div className="card-modern p-8 animate-slide-up">
-              <svg viewBox="0 0 600 400" className="w-full h-auto rounded-lg">
-                {/* Sky gradient */}
-                <rect width="600" height="400" fill="url(#skyGradient)" />
-                
-                {/* Sun */}
-                <circle cx="500" cy="80" r="40" fill="url(#sunGradient)">
-                  <animate attributeName="r" values="40;42;40" dur="3s" repeatCount="indefinite" />
-                </circle>
-                
-                {/* Sun rays */}
-                <g stroke="rgba(255, 215, 120, 0.6)" strokeWidth="2" strokeLinecap="round">
-                  <line x1="460" y1="40" x2="450" y2="30">
-                    <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite" />
-                  </line>
-                  <line x1="540" y1="40" x2="550" y2="30">
-                    <animate attributeName="opacity" values="1;0.6;1" dur="2s" repeatCount="indefinite" />
-                  </line>
-                  <line x1="460" y1="120" x2="450" y2="130">
-                    <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite" />
-                  </line>
-                  <line x1="540" y1="120" x2="550" y2="130">
-                    <animate attributeName="opacity" values="1;0.6;1" dur="2.5s" repeatCount="indefinite" />
-                  </line>
-                </g>
-                
-                {/* Window frame */}
-                <rect x="50" y="50" width="300" height="200" fill="none" stroke="rgba(100, 100, 120, 0.8)" strokeWidth="4" rx="8" />
-                <line x1="200" y1="50" x2="200" y2="250" stroke="rgba(100, 100, 120, 0.8)" strokeWidth="2" />
-                <line x1="50" y1="150" x2="350" y2="150" stroke="rgba(100, 100, 120, 0.8)" strokeWidth="2" />
-                
-                {/* Curtains */}
-                <path d="M50 50 Q70 70 50 90 Q70 110 50 130 Q70 150 50 170 Q70 190 50 210 Q70 230 50 250" 
-                      stroke="rgba(180, 180, 200, 0.7)" strokeWidth="3" fill="none" />
-                <path d="M350 50 Q330 70 350 90 Q330 110 350 130 Q330 150 350 170 Q330 190 350 210 Q330 230 350 250" 
-                      stroke="rgba(180, 180, 200, 0.7)" strokeWidth="3" fill="none" />
-                
-                {/* Plant on windowsill */}
-                <ellipse cx="120" cy="240" rx="25" ry="8" fill="rgba(139, 119, 101, 0.8)" />
-                <path d="M120 230 Q110 210 105 200 Q115 205 120 230 Q125 205 135 200 Q130 210 120 230" 
-                      fill="rgba(34, 139, 34, 0.8)" />
-                
-                {/* Person stretching (simplified silhouette) */}
-                <ellipse cx="450" cy="350" rx="60" ry="15" fill="rgba(0,0,0,0.1)" />
-                
-                {/* Person body */}
-                <ellipse cx="450" cy="280" rx="20" ry="40" fill="url(#personGradient)" />
-                
-                {/* Arms raised in stretch */}
-                <ellipse cx="420" cy="250" rx="8" ry="25" fill="url(#personGradient)" transform="rotate(-30 420 250)" />
-                <ellipse cx="480" cy="250" rx="8" ry="25" fill="url(#personGradient)" transform="rotate(30 480 250)" />
-                
-                {/* Head */}
-                <circle cx="450" cy="230" r="18" fill="url(#personGradient)" />
-                
-                {/* Peaceful floating elements */}
-                <circle cx="100" cy="300" r="2" fill="rgba(255, 255, 255, 0.8)">
-                  <animate attributeName="cy" values="300;290;300" dur="3s" repeatCount="indefinite" />
-                  <animate attributeName="opacity" values="0.8;0.4;0.8" dur="3s" repeatCount="indefinite" />
-                </circle>
-                <circle cx="300" cy="320" r="1.5" fill="rgba(255, 215, 120, 0.9)">
-                  <animate attributeName="cy" values="320;310;320" dur="2s" repeatCount="indefinite" />
-                </circle>
-                
-                <defs>
-                  <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stopColor="rgba(135, 206, 250, 0.3)" />
-                    <stop offset="100%" stopColor="rgba(25, 25, 35, 1)" />
-                  </linearGradient>
-                  
-                  <radialGradient id="sunGradient" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stopColor="rgba(255, 215, 120, 1)" />
-                    <stop offset="100%" stopColor="rgba(255, 140, 0, 0.8)" />
-                  </radialGradient>
-                  
-                  <linearGradient id="personGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stopColor="rgba(210, 180, 140, 0.9)" />
-                    <stop offset="100%" stopColor="rgba(160, 140, 110, 1)" />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
-          </div>
-          
-          {/* Right content */}
+          {/* Left content */}
           <div className="space-y-8">
             <div className="space-y-6">
-              <h2 className="font-heading text-4xl md:text-5xl font-bold text-[var(--text-primary)] leading-tight">
-                Resultados em
-                <span className="block bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] bg-clip-text text-transparent">
-                  7 Noites
+              <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--text-primary)] leading-tight">
+                Como Seria Sua Vida
+                <span className="block bg-gradient-to-r from-[var(--accent-blue)] to-[var(--warm-accent)] bg-clip-text text-transparent">
+                  Dormindo Bem?
                 </span>
               </h2>
               <p className="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed">
-                Após aplicar o Método Sono Zen, você vai <span className="text-[var(--accent-blue)] font-semibold">retomar o prazer de dormir bem</span> e transformar suas noites.
+                Imagine acordar <span className="text-[var(--accent-blue)] font-semibold">realmente descansado</span>, com energia e disposição para viver seus dias.
               </p>
               <p className="text-base text-[var(--text-muted)]">
-                Os resultados que você pode esperar:
+                Isso é o que acontece quando você finalmente resolve seus problemas de sono.
               </p>
             </div>
             
-            <div className="space-y-4">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-center gap-4 p-4 rounded-xl bg-[var(--card-bg)] border border-[var(--border-subtle)] hover:bg-[var(--card-hover)] transition-all animate-slide-up"
-                     style={{animationDelay: `${index * 0.1}s`}}>
-                  <div className="w-12 h-12 rounded-xl blue-gradient flex items-center justify-center flex-shrink-0">
-                    <benefit.icon className="h-6 w-6 text-white" />
+            <div className="space-y-4 text-[var(--text-secondary)]">
+              <p>Em apenas 7 noites aplicando as técnicas do Sono Zen, você vai sentir a diferença. Não é mágica - é ciência oriental aplicada ao seu dia a dia.</p>
+              <p className="text-[var(--accent-blue)] font-medium">
+                O sono reparador que você merece está ao seu alcance. É só seguir o método certo.
+              </p>
+            </div>
+          </div>
+          
+          {/* Right visual element */}
+          <div className="relative">
+            <div className="card-modern p-8 animate-slide-up">
+              <div className="text-center space-y-6">
+                <div className="w-24 h-24 mx-auto bg-gradient-to-r from-[var(--accent-blue)] to-[var(--warm-accent)] rounded-full flex items-center justify-center">
+                  <Battery className="h-12 w-12 text-white" />
+                </div>
+                <div className="space-y-3">
+                  <h3 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
+                    Energia Renovada
+                  </h3>
+                  <p className="text-[var(--text-secondary)] text-sm leading-relaxed">
+                    Quando você dorme bem, seu corpo se regenera completamente. É como carregar a bateria da sua vida todos os dias.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="text-center mb-12 mt-16">
+          <h3 className="font-heading text-2xl font-bold text-[var(--text-primary)] mb-4">
+            O Que Você Vai Conquistar
+          </h3>
+          <p className="text-[var(--text-secondary)] max-w-2xl mx-auto">
+            Estes são os resultados que as pessoas relatam após seguir o método:
+          </p>
+        </div>
+        
+        <div className="max-w-4xl mx-auto">
+          <div className="space-y-6">
+            {benefits.map((benefit, index) => (
+              <div key={index} className="card-modern p-6 group animate-slide-up hover:shadow-xl transition-all duration-300" style={{animationDelay: `${index * 0.1}s`}}>
+                <div className="flex items-start gap-6">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-[var(--accent-blue)] to-[var(--warm-accent)] flex items-center justify-center flex-shrink-0">
+                    <benefit.icon className="h-8 w-8 text-white" />
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-[var(--text-primary)] mb-1">{benefit.title}</h3>
-                    <p className="text-sm text-[var(--text-muted)]">{benefit.description}</p>
+                  <div className="flex-1">
+                    <h3 className="font-heading font-semibold text-xl text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent-blue)] transition-colors">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-[var(--text-secondary)] leading-relaxed">
+                      {benefit.description}
+                    </p>
                   </div>
                 </div>
-              ))}
-            </div>
-            
-            <div className="p-6 rounded-xl bg-gradient-to-r from-[var(--ritual-blue)]/10 to-[var(--warm-accent)]/10 border border-[var(--ritual-blue)]/20">
-              <p className="text-[var(--text-secondary)] font-medium leading-relaxed">
-                Obrigado por ter chegado até aqui. Dormir bem é mais do que descansar. É cuidar da mente, do corpo e da sua energia vital. Ao aplicar o Método - Sono Zen, você já deu um passo valente em direção a uma vida mais equilibrada, presente e leve.
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        <div className="max-w-4xl mx-auto mt-12">
+          <div className="card-modern p-8 bg-gradient-to-r from-[var(--ritual-blue)]/10 to-[var(--warm-accent)]/10 border border-[var(--ritual-blue)]/20">
+            <div className="text-center space-y-4">
+              <h4 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
+                A Transformação Começa Hoje
+              </h4>
+              <p className="text-[var(--text-secondary)] leading-relaxed">
+                Dormir bem não é luxo - é necessidade. Quando você cuida do seu sono, você cuida de toda sua vida. Sua energia, seu humor, sua saúde e seus relacionamentos melhoram naturalmente.
               </p>
-              <p className="text-[var(--text-muted)] mt-3 text-sm">
-                Desejo que suas noites sejam sempre profundas e restauradoras.
+              <p className="text-[var(--text-muted)] text-sm">
+                É hora de priorizar seu descanso e transformar suas noites.
               </p>
             </div>
           </div>
