@@ -17,7 +17,7 @@ export function ObjectionsSection() {
     {
       icon: Clock,
       question: "Quanto tempo leva para ver resultados?",
-      answer: "A maioria das pessoas sente diferença já na 1ª noite. Em 7 dias você terá uma transformação completa no seu padrão de sono.",
+      answer: "A maioria das pessoas nota diferença já na 1ª noite. Resultados reais começam na 3ª noite, e em 7 dias você terá uma transformação completa.",
       color: "from-green-500 to-emerald-500"
     },
     {
