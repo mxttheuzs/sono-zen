@@ -103,6 +103,7 @@ Changelog:
 - June 28, 2025. Pricing section optimization: Removed aggressive sales elements (guarantee seal, social proof counters) and replaced with sleep wellness-focused messaging. Changed "GARANTIA TOTAL" to "SUA TRANSFORMAÇÃO - 7 NOITES PARA UM NOVO VOCÊ" and updated social proof to emphasize personal journey. Added 6th card to objections section addressing investment value concern for balanced grid layout.
 - June 28, 2025. Timeline optimization: Updated results messaging to be more persuasive and realistic - "Muitas pessoas dormem melhor já na primeira noite! Outras sentem a diferença na terceira noite. O que todos relatam: em 7 dias, você não vai reconhecer seu sono." Removed "Before vs After" comparison section for cleaner user experience.
 - June 28, 2025. Pricing section redesign: Rebuilt pricing section with elegant professional design maintaining original style but enhanced aesthetics. Used consistent CSS variables, proper gradient backgrounds, refined card layouts, and organized features grid for better visual hierarchy.
+- June 28, 2025. Interactive sleep comfort quiz implementation: Created comprehensive 5-question quiz with playful, calming UI elements including floating clouds and stars animations. Features personalized sleep profile results (Dorminhoco Zen, Aprendiz do Sono, Buscador de Tranquilidade, Guerreiro da Insônia) with tailored recommendations. Integrated smooth progress tracking, animated transitions, and direct CTA integration to pricing section.
 
 ## User Preferences
 

@@ -3,9 +3,8 @@ import { HeroSection } from "@/components/landing/hero-section";
 import { ProblemSection } from "@/components/landing/problem-section";
 import { MethodSection } from "@/components/landing/method-section";
 import { EbookContentSection } from "@/components/landing/ebook-content-section";
-
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
-
+import { SleepComfortQuiz } from "@/components/quiz/sleep-comfort-quiz";
 import { ObjectionsSection } from "@/components/landing/objections-section";
 import { PricingSection } from "@/components/landing/pricing-section";
 import { AuthorSection } from "@/components/landing/author-section";
@@ -39,7 +38,7 @@ export default function Home() {
         <MethodSection />
         <EbookContentSection />
         <TestimonialsSection />
-
+        <SleepComfortQuiz />
         <ObjectionsSection />
         <PricingSection />
         <AuthorSection />
