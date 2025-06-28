@@ -39,8 +39,8 @@ export default function Home() {
         <FAQSection />
         <Footer />
         
-        {/* Música relaxante do YouTube */}
-        <YouTubeMusic videoId="ZlayI0WKX40" autoPlay={false} volume={0.5} />
+        {/* Música relaxante do YouTube - toca automaticamente por 30 segundos */}
+        <YouTubeMusic videoId="ZlayI0WKX40" autoPlay={true} volume={0.2} />
       </div>
     </div>
   );
