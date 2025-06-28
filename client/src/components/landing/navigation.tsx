@@ -41,55 +41,34 @@ export function Navigation() {
     }`}>
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <div className="font-heading font-bold text-2xl text-[var(--text-primary)] flex items-center group cursor-pointer">
-          <div className="relative w-14 h-14 flex items-center justify-center mr-4 transition-all duration-500">
-            {/* Sono Zen Logo SVG */}
-            <svg className="w-12 h-12 group-hover:scale-110 transition-all duration-500" viewBox="0 0 100 100" fill="none">
-              {/* Moon crescent */}
-              <path 
-                d="M30 20 Q15 30 15 50 Q15 70 30 80 Q45 85 60 75 Q50 80 40 80 Q25 80 20 65 Q15 50 20 35 Q25 20 40 20 Q50 20 60 25 Q45 15 30 20 Z" 
-                fill="url(#moonGradient)"
-                className="group-hover:fill-blue-200 transition-all duration-500"
-              />
+          <div className="relative w-12 h-12 rounded-3xl bg-gradient-to-br from-slate-800/40 to-slate-900/60 border-2 border-slate-600/40 flex items-center justify-center mr-4 backdrop-blur-md transition-all duration-500 group-hover:border-blue-400/60 group-hover:bg-gradient-to-br group-hover:from-slate-700/50 group-hover:to-slate-800/70">
+            {/* Estrelas flutuantes ao redor do logo */}
+            <Star className="absolute -top-1.5 -right-1.5 w-3 h-3 text-white/80 animate-twinkle fill-current" 
+                 style={{animationDelay: '0s'}} />
+            <Star className="absolute -bottom-1.5 -left-1.5 w-2.5 h-2.5 text-white/70 animate-twinkle fill-current" 
+                 style={{animationDelay: '1.5s'}} />
+            <Star className="absolute top-1 -left-2.5 w-2 h-2 text-white/60 animate-twinkle fill-current" 
+                 style={{animationDelay: '3s'}} />
+            
+            {/* Nuvenzinhas flutuantes */}
+            <Cloud className="absolute -top-2.5 left-1.5 w-4 h-4 text-white/50 animate-float-slow" 
+                 style={{animationDelay: '2s'}} />
+            <Cloud className="absolute -bottom-2.5 right-1.5 w-3.5 h-3.5 text-white/40 animate-float-slow" 
+                 style={{animationDelay: '4s'}} />
+            
+            {/* Container da lua com brilho focado */}
+            <div className="relative">
+              {/* Brilho suave atrás da lua */}
+              <div className="absolute inset-0 bg-blue-300/20 rounded-full blur-md animate-pulse-gentle"></div>
               
-              {/* Waves */}
-              <path 
-                d="M20 85 Q30 82 40 85 Q50 88 60 85 Q70 82 80 85" 
-                stroke="url(#waveGradient)" 
-                strokeWidth="2.5" 
-                fill="none"
-                className="group-hover:stroke-blue-300 transition-all duration-500"
-              />
-              <path 
-                d="M25 90 Q35 87 45 90 Q55 93 65 90 Q75 87 85 90" 
-                stroke="url(#waveGradient)" 
-                strokeWidth="2" 
-                fill="none" 
-                opacity="0.8"
-                className="group-hover:stroke-blue-300 transition-all duration-500"
-              />
+              {/* Brilho intenso no hover apenas na lua */}
+              <div className="absolute inset-0 bg-gradient-radial from-white/30 to-transparent rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-all duration-500 scale-150"></div>
               
-              {/* Star/Sun dot */}
-              <circle 
-                cx="65" 
-                cy="35" 
-                r="4" 
-                fill="#F4B942"
-                className="group-hover:fill-yellow-300 animate-pulse transition-all duration-500"
-              />
+              {/* Anel de luz no hover */}
+              <div className="absolute inset-0 bg-blue-200/40 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 scale-125 blur-sm"></div>
               
-              {/* Gradients */}
-              <defs>
-                <linearGradient id="moonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#3B82F6" />
-                  <stop offset="100%" stopColor="#1E40AF" />
-                </linearGradient>
-                <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#3B82F6" />
-                  <stop offset="50%" stopColor="#60A5FA" />
-                  <stop offset="100%" stopColor="#3B82F6" />
-                </linearGradient>
-              </defs>
-            </svg>
+              <Moon className="h-7 w-7 text-white relative z-10 animate-breathe group-hover:text-blue-50 group-hover:drop-shadow-lg transition-all duration-500" />
+            </div>
           </div>
           <span className="bg-gradient-to-r from-white via-blue-50 to-slate-100 bg-clip-text text-transparent group-hover:from-blue-100 group-hover:via-white group-hover:to-blue-50 transition-all duration-500 drop-shadow-sm">
             Sono Zen
