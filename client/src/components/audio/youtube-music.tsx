@@ -15,12 +15,12 @@ declare global {
   }
 }
 
-export function YouTubeMusic({ videoId, autoPlay = false, volume = 0.5 }: YouTubeMusicProps) {
-  const [isPlaying, setIsPlaying] = useState(autoPlay);
+export function YouTubeMusic({ videoId, autoPlay = false, volume = 0.2 }: YouTubeMusicProps) {
+  const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(autoPlay);
   const [currentVolume, setCurrentVolume] = useState(volume * 100);
   const [isLoading, setIsLoading] = useState(true);
-  const [apiReady, setApiReady] = useState(false);
+  const [playerReady, setPlayerReady] = useState(false);
   const playerRef = useRef<any>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -51,6 +51,7 @@ export function YouTubeMusic({ videoId, autoPlay = false, volume = 0.5 }: YouTub
         events: {
           onReady: (event: any) => {
             setIsLoading(false);
+            setPlayerReady(true);
             event.target.setVolume(currentVolume);
             if (autoPlay) {
               event.target.mute();
@@ -108,26 +109,34 @@ export function YouTubeMusic({ videoId, autoPlay = false, volume = 0.5 }: YouTub
   }, [videoId, autoPlay, currentVolume]);
 
   const togglePlay = () => {
-    if (!playerRef.current) return;
+    if (!playerRef.current || !playerReady) return;
 
-    if (isPlaying) {
-      playerRef.current.pauseVideo();
-      setIsPlaying(false);
-    } else {
-      playerRef.current.playVideo();
-      setIsPlaying(true);
+    try {
+      if (isPlaying) {
+        playerRef.current.pauseVideo();
+        setIsPlaying(false);
+      } else {
+        playerRef.current.playVideo();
+        setIsPlaying(true);
+      }
+    } catch (error) {
+      console.error('Erro ao controlar reprodução:', error);
     }
   };
 
   const toggleMute = () => {
-    if (!playerRef.current) return;
+    if (!playerRef.current || !playerReady) return;
 
-    if (isMuted) {
-      playerRef.current.unMute();
-      setIsMuted(false);
-    } else {
-      playerRef.current.mute();
-      setIsMuted(true);
+    try {
+      if (isMuted) {
+        playerRef.current.unMute();
+        setIsMuted(false);
+      } else {
+        playerRef.current.mute();
+        setIsMuted(true);
+      }
+    } catch (error) {
+      console.error('Erro ao controlar som:', error);
     }
   };
 
@@ -135,24 +144,33 @@ export function YouTubeMusic({ videoId, autoPlay = false, volume = 0.5 }: YouTub
     const newVolume = parseInt(e.target.value);
     setCurrentVolume(newVolume);
     
-    if (playerRef.current) {
-      playerRef.current.setVolume(newVolume);
-      if (newVolume === 0) {
-        setIsMuted(true);
-      } else if (isMuted) {
-        setIsMuted(false);
+    if (playerRef.current && playerReady) {
+      try {
+        playerRef.current.setVolume(newVolume);
+        if (newVolume === 0) {
+          setIsMuted(true);
+        } else if (isMuted) {
+          setIsMuted(false);
+        }
+      } catch (error) {
+        console.error('Erro ao alterar volume:', error);
       }
     }
   };
 
   const unmuteAndPlay = () => {
-    if (playerRef.current) {
+    if (!playerRef.current || !playerReady) return;
+
+    try {
       playerRef.current.unMute();
       playerRef.current.setVolume(currentVolume);
       setIsMuted(false);
       if (!isPlaying) {
-        togglePlay();
+        playerRef.current.playVideo();
+        setIsPlaying(true);
       }
+    } catch (error) {
+      console.error('Erro ao ativar som:', error);
     }
   };
 
