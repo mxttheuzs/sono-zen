@@ -11,6 +11,7 @@ import { FloatingClouds } from "@/components/ui/floating-clouds";
 import { FloatingStars } from "@/components/ui/floating-stars";
 import { Button } from "@/components/ui/button";
 import { Heart, Sparkles } from "lucide-react";
+import { AmbientMusic } from "@/components/audio/ambient-music";
 
 export default function Home() {
   const scrollToCheckout = () => {
@@ -37,6 +38,9 @@ export default function Home() {
         <AuthorSection />
         <FAQSection />
         <Footer />
+        
+        {/* Música ambiente - será ativada quando você adicionar o arquivo de áudio */}
+        {/* <AmbientMusic audioSrc="/relaxing-music.mp3" autoPlay={false} volume={0.2} /> */}
       </div>
     </div>
   );
