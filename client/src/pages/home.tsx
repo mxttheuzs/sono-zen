@@ -1,0 +1,43 @@
+import { Navigation } from "@/components/landing/navigation";
+import { HeroSection } from "@/components/landing/hero-section";
+import { ProblemSection } from "@/components/landing/problem-section";
+import { EbookContentSection } from "@/components/landing/ebook-content-section";
+import { TestimonialsSection } from "@/components/landing/testimonials-section";
+import { PricingSection } from "@/components/landing/pricing-section";
+import { AuthorSection } from "@/components/landing/author-section";
+import { FAQSection } from "@/components/landing/faq-section";
+import { Footer } from "@/components/landing/footer";
+import { FloatingClouds } from "@/components/ui/floating-clouds";
+import { FloatingStars } from "@/components/ui/floating-stars";
+import { Button } from "@/components/ui/button";
+import { Heart, Sparkles } from "lucide-react";
+
+export default function Home() {
+  const scrollToCheckout = () => {
+    const element = document.getElementById("preco");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-black relative overflow-x-hidden">
+      {/* Animated background elements */}
+      <FloatingStars className="fixed inset-0 z-0" density="medium" />
+      <FloatingClouds className="fixed inset-0 z-0" />
+      
+      {/* Content with proper z-index */}
+      <div className="relative z-10">
+        <Navigation />
+        <HeroSection />
+        <ProblemSection />
+        <EbookContentSection />
+        <TestimonialsSection />
+        <PricingSection />
+        <AuthorSection />
+        <FAQSection />
+        <Footer />
+      </div>
+    </div>
+  );
+}
