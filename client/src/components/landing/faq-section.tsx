@@ -81,7 +81,7 @@ export function FAQSection() {
         <div className="text-center mb-16">
           <h2 className="font-heading text-4xl md:text-5xl font-bold text-[var(--text-primary)] mb-6">
             Perguntas Frequentes
-            <span className="block bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] bg-clip-text text-transparent text-3xl md:text-4xl mt-2">
+            <span className="block bg-gradient-to-r from-[var(--warm-accent)] to-[var(--ritual-blue-light)] bg-clip-text text-transparent text-3xl md:text-4xl mt-2">
               Esclarecendo Suas Dúvidas
             </span>
           </h2>

@@ -83,6 +83,9 @@ html {
   --moonlight-blue: hsl(210, 40%, 30%);
   --dream-purple: hsl(280, 20%, 20%);
   --soft-gold: hsl(45, 50%, 65%);
+  --ritual-blue: hsl(214, 32%, 58%);
+  --ritual-blue-dark: hsl(214, 32%, 48%);
+  --ritual-blue-light: hsl(214, 32%, 68%);
 }
 
 .dark {

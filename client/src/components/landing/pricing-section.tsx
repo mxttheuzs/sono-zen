@@ -102,7 +102,7 @@ export function PricingSection() {
       value: "R$ 29,90"
     },
     {
-      icon: <Clock className="h-6 w-6 text-[var(--accent-blue)]" />,
+      icon: <Clock className="h-6 w-6 text-[var(--ritual-blue-light)]" />,
       title: "Bônus #2: Checklist Sono Perfeito",
       description: "Guia prático para otimizar seu ambiente",
       value: "R$ 19,90"
@@ -124,7 +124,7 @@ export function PricingSection() {
           <div className="text-center mb-16">
             <h2 className="font-heading text-3xl sm:text-4xl md:text-6xl font-bold text-[var(--text-primary)] mb-6">
               Sua Transformação Está a
-              <span className="block bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-[var(--warm-accent)] to-[var(--ritual-blue-light)] bg-clip-text text-transparent">
                 1 Clique de Distância
               </span>
             </h2>

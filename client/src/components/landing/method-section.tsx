@@ -152,7 +152,7 @@ export function MethodSection() {
                     {foundation.number}
                   </div>
                 </div>
-                <h4 className="font-heading font-semibold text-xl text-[var(--text-primary)] mb-4 group-hover:text-[var(--accent-blue)] transition-colors">
+                <h4 className="font-heading font-semibold text-xl text-[var(--text-primary)] mb-4 group-hover:text-[var(--ritual-blue-light)] transition-colors">
                   {foundation.title}
                 </h4>
                 <p className="text-[var(--text-secondary)] leading-relaxed">

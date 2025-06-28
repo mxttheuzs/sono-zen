@@ -148,7 +148,7 @@ export function BenefitsSection() {
               ))}
             </div>
             
-            <div className="p-6 rounded-xl bg-gradient-to-r from-[var(--accent-blue)]/10 to-[var(--warm-accent)]/10 border border-[var(--accent-blue)]/20">
+            <div className="p-6 rounded-xl bg-gradient-to-r from-[var(--ritual-blue)]/10 to-[var(--warm-accent)]/10 border border-[var(--ritual-blue)]/20">
               <p className="text-[var(--text-secondary)] font-medium leading-relaxed">
                 Obrigado por ter chegado até aqui. Dormir bem é mais do que descansar. É cuidar da mente, do corpo e da sua energia vital. Ao aplicar o Método - Sono Zen, você já deu um passo valente em direção a uma vida mais equilibrada, presente e leve.
               </p>
