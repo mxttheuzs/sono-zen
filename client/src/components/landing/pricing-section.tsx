@@ -12,6 +12,7 @@ import { insertPurchaseSchema } from "@shared/schema";
 import { apiRequest } from "@/lib/queryClient";
 import { Shield, Lock, Flame, Moon, CheckCircle, Star, Clock, Users, Download, CreditCard, Trophy, Gift, Cloud } from "lucide-react";
 import { FloatingClouds } from "@/components/ui/floating-clouds";
+import { FloatingStars } from "@/components/ui/floating-stars";
 import { z } from "zod";
 
 const purchaseFormSchema = insertPurchaseSchema.extend({
@@ -117,14 +118,14 @@ export function PricingSection() {
 
   return (
     <>
-      <section id="preco" className="py-20 dreamy-gradient relative overflow-hidden">
+      <section id="preco" className="py-20 bg-black relative overflow-hidden">
         <FloatingClouds className="opacity-25" />
         
         <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center mb-16">
             <h2 className="font-heading text-3xl sm:text-4xl md:text-6xl font-bold text-[var(--text-primary)] mb-6">
               Sua Transformação Está a
-              <span className="block bg-gradient-to-r from-[var(--warm-accent)] to-[var(--ritual-blue-light)] bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                 1 Clique de Distância
               </span>
             </h2>
@@ -146,7 +147,7 @@ export function PricingSection() {
           <div className="grid lg:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto">
             {/* Main Offer */}
             <div className="lg:col-span-2">
-              <div className="card-modern p-8 md:p-12 relative">
+              <div className="bg-slate-800/40 backdrop-blur-md border border-slate-700/50 rounded-3xl p-8 md:p-12 relative">
                 {/* Popular Badge */}
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                   <div className="bg-gradient-to-r from-red-500 to-orange-500 text-white px-6 py-2 rounded-full text-sm font-bold animate-pulse">
@@ -216,7 +217,7 @@ export function PricingSection() {
                   
                   <Button 
                     onClick={handlePurchaseClick}
-                    className="w-full relative bg-gradient-to-br from-slate-700 via-blue-600 to-purple-700 hover:from-slate-600 hover:via-blue-500 hover:to-purple-600 text-white py-6 sm:py-8 px-6 sm:px-10 rounded-2xl text-lg sm:text-2xl font-bold hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 transform hover:scale-[1.02] hover:-translate-y-1 overflow-hidden border border-slate-500/30"
+                    className="w-full relative bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white py-6 sm:py-8 px-6 sm:px-10 rounded-2xl text-lg sm:text-xl font-bold hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-[1.02] overflow-hidden"
                   >
                     {/* Button background clouds */}
                     <div className="absolute inset-0 opacity-20">
@@ -229,9 +230,8 @@ export function PricingSection() {
                     </div>
                     
                     <div className="relative z-10 flex items-center justify-center gap-3">
-                      <Moon className="h-6 sm:h-8 w-6 sm:w-8 animate-pulse" />
-                      <span className="hidden sm:inline">✨ QUERO TRANSFORMAR MINHAS NOITES</span>
-                      <span className="sm:hidden">✨ TRANSFORMAR NOITES</span>
+                      <Moon className="h-6 w-6" />
+                      <span className="font-bold">🌙 ✨ QUERO TRANSFORMAR MINHAS NOITES</span>
                     </div>
                   </Button>
                 </div>
@@ -256,14 +256,14 @@ export function PricingSection() {
 
             {/* Bonuses Sidebar */}
             <div className="space-y-6">
-              <div className="card-modern p-6">
+              <div className="bg-slate-800/40 backdrop-blur-md border border-slate-700/50 rounded-2xl p-6">
                 <h4 className="font-heading text-xl font-bold text-[var(--text-primary)] mb-4 text-center">
                   🎁 Bônus Exclusivos
                 </h4>
                 
                 <div className="space-y-4">
                   {bonuses.map((bonus, index) => (
-                    <div key={index} className="border border-[var(--border-subtle)] rounded-lg p-4">
+                    <div key={index} className="bg-slate-700/30 border border-slate-600/40 rounded-xl p-4">
                       <div className="flex items-start gap-3 mb-2">
                         {bonus.icon}
                         <div>
@@ -271,7 +271,7 @@ export function PricingSection() {
                           <p className="text-xs text-[var(--text-muted)] mb-2">{bonus.description}</p>
                           <div className="flex items-center gap-2">
                             <span className="text-xs text-[var(--text-muted)] line-through">{bonus.value}</span>
-                            <span className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-2 py-1 rounded-md text-xs font-bold">
+                            <span className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-3 py-1 rounded-lg text-xs font-bold">
                               GRÁTIS
                             </span>
                           </div>
