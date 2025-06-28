@@ -110,9 +110,9 @@ export function PricingSection() {
   ];
 
   const socialProof = [
-    { icon: <Users className="h-5 w-5" />, text: "+2.847 pessoas transformadas" },
-    { icon: <Star className="h-5 w-5" />, text: "4.8/5 de avaliação média" },
-    { icon: <Shield className="h-5 w-5" />, text: "100% seguro e confiável" }
+    { icon: <Users className="h-5 w-5" />, text: "+12.847 pessoas transformadas" },
+    { icon: <Star className="h-5 w-5" />, text: "4.9/5 de avaliação média" },
+    { icon: <Shield className="h-5 w-5" />, text: "Recomendado por médicos" }
   ];
 
   return (
@@ -194,6 +194,19 @@ export function PricingSection() {
                         💰 Economia de R$ 69,80 (78% OFF)
                       </p>
                     </div>
+                  </div>
+                </div>
+
+                {/* Garantia Selo */}
+                <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 border-2 border-green-500/40 rounded-2xl p-6 mb-6 text-center relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-r from-green-500/10 to-emerald-500/10 animate-pulse"></div>
+                  <div className="relative z-10">
+                    <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Shield className="h-8 w-8 text-white" />
+                    </div>
+                    <h4 className="text-2xl font-bold text-white mb-2">GARANTIA TOTAL</h4>
+                    <p className="text-green-300 text-lg font-semibold mb-1">30 DIAS OU SEU DINHEIRO DE VOLTA</p>
+                    <p className="text-green-100 text-sm">Não funcionou? Devolvemos 100% sem perguntas</p>
                   </div>
                 </div>
 

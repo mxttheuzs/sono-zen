@@ -2,7 +2,10 @@ import { Navigation } from "@/components/landing/navigation";
 import { HeroSection } from "@/components/landing/hero-section";
 import { ProblemSection } from "@/components/landing/problem-section";
 import { EbookContentSection } from "@/components/landing/ebook-content-section";
+import { BeforeAfterSection } from "@/components/landing/before-after-section";
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
+import { CredibilitySection } from "@/components/landing/credibility-section";
+import { ObjectionsSection } from "@/components/landing/objections-section";
 import { PricingSection } from "@/components/landing/pricing-section";
 import { AuthorSection } from "@/components/landing/author-section";
 import { FAQSection } from "@/components/landing/faq-section";
@@ -33,7 +36,10 @@ export default function Home() {
         <HeroSection />
         <ProblemSection />
         <EbookContentSection />
+        <BeforeAfterSection />
         <TestimonialsSection />
+        <CredibilitySection />
+        <ObjectionsSection />
         <PricingSection />
         <AuthorSection />
         <FAQSection />

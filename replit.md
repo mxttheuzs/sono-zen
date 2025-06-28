@@ -99,6 +99,7 @@ Changelog:
 - June 28, 2025. Added small play/pause button: Discrete control button in bottom-right corner for users who want to pause/resume background music.
 - June 28, 2025. Enhanced smooth scrolling: Implemented global smooth scroll behavior, custom scrollbar styling, offset compensation for fixed navigation, and improved scroll-to-section functionality across all CTA buttons and navigation links.
 - June 28, 2025. Major conversion optimization update: Added urgency badge ("OFERTA LIMITADA - 48H"), social proof ("89 pessoas compraram nas últimas 24h"), extended guarantee to 30 days, improved CTA text to "SIM! QUERO DORMIR COMO UM BEBÊ", WhatsApp support button, and exit-intent popup for users leaving the page. These improvements target higher conversion rates based on proven e-commerce psychology.
+- June 28, 2025. Comprehensive conversion enhancement: Added Before/After comparison section showing transformation, objections handling section addressing common doubts, enhanced guarantee visual with prominent green seal, credibility section with social proof metrics (12,847+ transformadas), and professional medical authority positioning. WhatsApp contact moved to footer "Contato" link for cleaner UX.
 
 ## User Preferences
 
