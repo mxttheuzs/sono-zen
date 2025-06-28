@@ -3,7 +3,7 @@ import { HeroSection } from "@/components/landing/hero-section";
 import { ProblemSection } from "@/components/landing/problem-section";
 import { MethodSection } from "@/components/landing/method-section";
 import { EbookContentSection } from "@/components/landing/ebook-content-section";
-import { BeforeAfterSection } from "@/components/landing/before-after-section";
+
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
 
 import { ObjectionsSection } from "@/components/landing/objections-section";
@@ -38,7 +38,6 @@ export default function Home() {
         <ProblemSection />
         <MethodSection />
         <EbookContentSection />
-        <BeforeAfterSection />
         <TestimonialsSection />
 
         <ObjectionsSection />
