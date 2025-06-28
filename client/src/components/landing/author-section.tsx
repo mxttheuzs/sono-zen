@@ -45,10 +45,14 @@ export function AuthorSection() {
           {/* Author Photo & Main Info */}
           <div className="lg:col-span-1">
             <div className="card-modern p-6 text-center">
-              {/* Professional Photo Placeholder */}
+              {/* Professional Photo */}
               <div className="w-48 h-48 mx-auto mb-6 rounded-full bg-gradient-to-br from-[var(--warm-accent)] to-[var(--accent-blue)] p-1">
-                <div className="w-full h-full rounded-full bg-[var(--card-bg)] flex items-center justify-center">
-                  <div className="text-6xl font-bold text-[var(--text-primary)]">DG</div>
+                <div className="w-full h-full rounded-full overflow-hidden">
+                  <img 
+                    src="/attached_assets/image_1751130848304.png" 
+                    alt="Dra. Deborah Genaro - Especialista em Medicina do Sono"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
               
