@@ -96,6 +96,8 @@ Changelog:
 - June 27, 2025. Successfully uploaded complete React application to GitHub repository (sono-zen) with proper .gitignore, README.md, and deployment configuration. Project is now ready for Netlify deployment with automated build process.
 - June 28, 2025. Implemented YouTube music integration: Added YouTube Player API component for specific relaxing music (ZlayI0WKX40), configured automatic looping, default 20% volume, and elegant floating player controls with proper error handling and ready state management.
 - June 28, 2025. Finalized background music system: Music now plays automatically and continuously at 20% volume with completely invisible player - no controls or indicators visible to users.
+- June 28, 2025. Added small play/pause button: Discrete control button in bottom-right corner for users who want to pause/resume background music.
+- June 28, 2025. Enhanced smooth scrolling: Implemented global smooth scroll behavior, custom scrollbar styling, offset compensation for fixed navigation, and improved scroll-to-section functionality across all CTA buttons and navigation links.
 
 ## User Preferences
 

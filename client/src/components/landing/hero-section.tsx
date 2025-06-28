@@ -9,7 +9,15 @@ export function HeroSection() {
   const scrollToCheckout = () => {
     const element = document.getElementById("preco");
     if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      // Calcular offset para compensar a navegação fixa
+      const navHeight = 80;
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - navHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
     }
   };
 

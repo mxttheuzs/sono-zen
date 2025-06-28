@@ -2,6 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Scrollagem suave global */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Compensar navegação fixa */
+}
+
+/* Scrollagem suave personalizada para navegadores modernos */
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    scroll-behavior: smooth;
+  }
+  
+  /* Scrolling mais suave e fluido */
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* iOS smooth scrolling */
+  }
+
+  /* Efeito de scroll suave com transição personalizada */
+  body {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}
+
+/* Melhorar a scrollbar para navegadores webkit */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-blue-muted);
+}
+
 :root {
   --background: hsl(240, 10%, 3.9%);
   --foreground: hsl(0, 0%, 98%);
