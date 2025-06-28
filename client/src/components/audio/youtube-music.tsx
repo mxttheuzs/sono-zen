@@ -15,6 +15,7 @@ declare global {
 
 export function YouTubeMusic({ videoId, autoPlay = true, volume = 0.2 }: YouTubeMusicProps) {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [playerReady, setPlayerReady] = useState(false);
   const playerRef = useRef<any>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -50,6 +51,7 @@ export function YouTubeMusic({ videoId, autoPlay = true, volume = 0.2 }: YouTube
           events: {
             onReady: (event: any) => {
               console.log('Player YouTube pronto - música contínua');
+              setPlayerReady(true);
               
               setTimeout(() => {
                 try {
@@ -120,6 +122,21 @@ export function YouTubeMusic({ videoId, autoPlay = true, volume = 0.2 }: YouTube
     };
   }, [videoId, autoPlay, volume]);
 
+  // Funções de controle
+  const togglePlayPause = () => {
+    if (!playerRef.current || !playerReady) return;
+    
+    try {
+      if (isPlaying) {
+        playerRef.current.pauseVideo();
+      } else {
+        playerRef.current.playVideo();
+      }
+    } catch (error) {
+      console.error('Erro ao alternar play/pause:', error);
+    }
+  };
+
   // Não renderizar nada se não for autoplay
   if (!autoPlay) {
     return null;
@@ -137,6 +154,28 @@ export function YouTubeMusic({ videoId, autoPlay = true, volume = 0.2 }: YouTube
           height: '1px'
         }} 
       />
+
+      {/* Botão pequeno de play/pause */}
+      {playerReady && (
+        <button
+          onClick={togglePlayPause}
+          className="bg-slate-900/80 hover:bg-slate-800/90 backdrop-blur-sm border border-slate-700/50 rounded-full p-2 shadow-lg transition-all duration-200 hover:scale-105"
+          title={isPlaying ? 'Pausar música' : 'Tocar música'}
+        >
+          {isPlaying ? (
+            // Ícone de pause
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="text-slate-300">
+              <rect x="6" y="4" width="4" height="16" fill="currentColor" />
+              <rect x="14" y="4" width="4" height="16" fill="currentColor" />
+            </svg>
+          ) : (
+            // Ícone de play
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="text-slate-300">
+              <polygon points="5,3 19,12 5,21" fill="currentColor" />
+            </svg>
+          )}
+        </button>
+      )}
     </div>
   );
 }
