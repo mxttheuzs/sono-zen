@@ -4,7 +4,6 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { CopyProtection } from "@/components/protection/copy-protection";
-import { WhatsAppButton } from "@/components/ui/whatsapp-button";
 import { ExitIntentPopup } from "@/components/ui/exit-intent-popup";
 import Home from "@/pages/home";
 import NotFound from "@/pages/not-found";
@@ -24,7 +23,6 @@ function App() {
       <TooltipProvider>
         <CopyProtection />
         <Toaster />
-        <WhatsAppButton />
         <ExitIntentPopup />
         <Router />
       </TooltipProvider>

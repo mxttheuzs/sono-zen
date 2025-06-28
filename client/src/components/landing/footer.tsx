@@ -27,6 +27,13 @@ export function Footer() {
     }
   };
 
+  const handleWhatsAppContact = () => {
+    const whatsappNumber = "5513996116102";
+    const message = "Oi! Tenho interesse no método Sono Zen e gostaria de tirar algumas dúvidas.";
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  };
+
   return (
     <footer className="bg-gradient-to-br from-slate-950/95 to-slate-900/90 border-t border-slate-700/40 py-16 relative overflow-hidden">
       {/* Background elements */}
@@ -104,9 +111,18 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.support.map((link, index) => (
                 <li key={index}>
-                  <a href={link.href} className="text-slate-300 hover:text-blue-300 transition-colors duration-300 text-sm font-medium hover:translate-x-1 transform transition-transform">
-                    {link.name}
-                  </a>
+                  {link.name === "Contato" ? (
+                    <button 
+                      onClick={handleWhatsAppContact}
+                      className="text-slate-300 hover:text-blue-300 transition-colors duration-300 text-sm font-medium hover:translate-x-1 transform transition-transform"
+                    >
+                      {link.name}
+                    </button>
+                  ) : (
+                    <a href={link.href} className="text-slate-300 hover:text-blue-300 transition-colors duration-300 text-sm font-medium hover:translate-x-1 transform transition-transform">
+                      {link.name}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
