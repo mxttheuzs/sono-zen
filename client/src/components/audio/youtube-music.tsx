@@ -137,18 +137,6 @@ export function YouTubeMusic({ videoId, autoPlay = true, volume = 0.2 }: YouTube
           height: '1px'
         }} 
       />
-
-      {/* Indicador visual pequeno e discreto */}
-      {isPlaying && (
-        <div className="bg-slate-900/80 backdrop-blur-sm border border-slate-700/50 rounded-lg p-2 shadow-lg">
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
-            <span className="text-xs text-slate-300">
-              🎵 Tocando
-            </span>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
