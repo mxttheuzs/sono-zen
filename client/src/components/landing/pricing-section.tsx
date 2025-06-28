@@ -9,7 +9,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useToast } from "@/hooks/use-toast";
 import { insertPurchaseSchema } from "@shared/schema";
 import { apiRequest } from "@/lib/queryClient";
-import { Shield, Lock, Flame, Moon, CheckCircle, Star, Clock, Users, Download, CreditCard, Trophy, Gift, Cloud } from "lucide-react";
+import { Shield, Lock, Star, Moon, CheckCircle, Download, Clock, Users, Gift } from "lucide-react";
 import { FloatingClouds } from "@/components/ui/floating-clouds";
 import { z } from "zod";
 
@@ -36,12 +36,7 @@ export function PricingSection() {
 
   const purchaseMutation = useMutation({
     mutationFn: async (data: PurchaseFormData) => {
-      const response = await apiRequest('/api/purchases', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      });
-      return response.json();
+      return apiRequest('POST', '/api/purchases', data);
     },
     onSuccess: () => {
       toast({
@@ -68,15 +63,42 @@ export function PricingSection() {
     setShowForm(true);
   };
 
+  const features = [
+    {
+      icon: <CheckCircle className="h-5 w-5 text-[var(--success-green)]" />,
+      text: "Método natural sem medicamentos"
+    },
+    {
+      icon: <CheckCircle className="h-5 w-5 text-[var(--success-green)]" />,
+      text: "Programa prático de 7 noites"
+    },
+    {
+      icon: <CheckCircle className="h-5 w-5 text-[var(--success-green)]" />,
+      text: "Técnicas orientais milenares"
+    },
+    {
+      icon: <CheckCircle className="h-5 w-5 text-[var(--success-green)]" />,
+      text: "Sons e frequências relaxantes"
+    },
+    {
+      icon: <CheckCircle className="h-5 w-5 text-[var(--success-green)]" />,
+      text: "Rituais noturnos prontos"
+    },
+    {
+      icon: <CheckCircle className="h-5 w-5 text-[var(--success-green)]" />,
+      text: "Acesso imediato após compra"
+    }
+  ];
+
   const bonuses = [
     {
-      icon: <Gift className="h-6 w-6 text-[var(--warm-accent)]" />,
+      icon: <Gift className="h-5 w-5 text-[var(--warm-accent)]" />,
       title: "Bônus #1: Meditações Guiadas",
       description: "3 áudios exclusivos para relaxamento profundo",
       value: "R$ 29,90"
     },
     {
-      icon: <Clock className="h-6 w-6 text-blue-400" />,
+      icon: <Clock className="h-5 w-5 text-[var(--accent-blue)]" />,
       title: "Bônus #2: Checklist Sono Perfeito",
       description: "Guia prático para otimizar seu ambiente",
       value: "R$ 19,90"
@@ -85,129 +107,99 @@ export function PricingSection() {
 
   return (
     <>
-      <section id="preco" className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-950/20 via-transparent to-purple-950/20"></div>
-        <FloatingClouds className="opacity-10" />
+      <section id="preco" className="py-20 bg-[var(--bg-primary)] relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent-blue)]/5 via-transparent to-[var(--warm-accent)]/5"></div>
+        <FloatingClouds className="opacity-5" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-full px-4 py-2 mb-6">
-              <Star className="h-4 w-4 text-blue-400" />
-              <span className="text-sm text-blue-300 font-medium">Método Comprovado Cientificamente</span>
+          {/* Header */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 bg-[var(--card-bg)]/80 backdrop-blur-sm border border-[var(--border-subtle)] rounded-full px-4 py-2 mb-6">
+              <Star className="h-4 w-4 text-[var(--accent-blue)]" />
+              <span className="text-sm text-[var(--text-secondary)] font-medium">SUA TRANSFORMAÇÃO - 7 NOITES PARA UM NOVO VOCÊ</span>
             </div>
             
-            <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-              Transforme Suas Noites
-              <span className="block bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500 bg-clip-text text-transparent">
-                Comece Hoje Mesmo
+            <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-[var(--text-primary)] mb-6 leading-tight">
+              Investimento em Seu
+              <span className="block bg-gradient-to-r from-[var(--accent-blue)] to-[var(--warm-accent)] bg-clip-text text-transparent">
+                Bem-Estar
               </span>
             </h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-12 leading-relaxed">
-              Junte-se a milhares de pessoas que já conquistaram o sono dos sonhos com o Método Sono Zen
+            <p className="text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
+              Muitas pessoas dormem melhor já na primeira noite! Outras sentem a diferença na terceira noite. O que todos relatam: em 7 dias, você não vai reconhecer seu sono.
             </p>
           </div>
           
           {/* Main Product Card */}
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
-              {/* Header */}
-              <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-8 text-center relative">
-                <div className="absolute top-4 right-4">
-                  <div className="bg-white/20 backdrop-blur-sm rounded-full px-3 py-1">
-                    <span className="text-xs font-semibold text-white">MAIS VENDIDO</span>
-                  </div>
-                </div>
-                
-                <h3 className="text-3xl md:text-4xl font-bold text-white mb-2">
+            <div className="bg-[var(--card-bg)]/90 backdrop-blur-xl border border-[var(--border-subtle)] rounded-2xl overflow-hidden shadow-2xl">
+              
+              {/* Product Header */}
+              <div className="bg-gradient-to-r from-[var(--accent-blue)]/10 to-[var(--warm-accent)]/10 border-b border-[var(--border-subtle)] p-8 text-center">
+                <h3 className="text-2xl md:text-3xl font-bold text-[var(--text-primary)] mb-4">
                   Sono Zen - Método Completo
                 </h3>
-                <p className="text-blue-100 text-lg mb-6">
+                <p className="text-[var(--text-secondary)] text-lg">
                   Transformação completa do seu sono em 7 noites
                 </p>
-                
-                {/* Price */}
-                <div className="flex items-center justify-center gap-4 mb-6">
-                  <span className="text-2xl text-blue-200 line-through">R$ 89,70</span>
-                  <span className="text-5xl font-bold text-white">R$ 19,90</span>
-                  <div className="bg-green-500 text-white px-3 py-1 rounded-lg text-sm font-bold">
-                    78% OFF
-                  </div>
-                </div>
               </div>
               
               {/* Content */}
-              <div className="p-8 md:p-12">
+              <div className="p-8">
                 {/* Features Grid */}
-                <div className="grid md:grid-cols-2 gap-6 mb-8">
-                  <div className="flex items-center gap-3 p-4 bg-slate-800/30 rounded-xl">
-                    <CheckCircle className="h-6 w-6 text-green-400 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-white">Método natural sem medicamentos</h4>
-                      <p className="text-sm text-slate-400">100% baseado em técnicas orientais milenares</p>
+                <div className="grid md:grid-cols-2 gap-4 mb-8">
+                  {features.map((feature, index) => (
+                    <div key={index} className="flex items-center gap-3 p-3 rounded-lg bg-[var(--card-hover)] border border-[var(--border-subtle)]">
+                      {feature.icon}
+                      <span className="text-[var(--text-secondary)] font-medium">{feature.text}</span>
                     </div>
+                  ))}
+                </div>
+
+                {/* Sleep Journey Preview */}
+                <div className="text-center mb-6">
+                  <div className="bg-gradient-to-r from-[var(--accent-blue)]/10 to-[var(--warm-accent)]/10 border border-[var(--accent-blue)]/30 rounded-lg p-4 mb-4">
+                    <p className="text-[var(--accent-blue)] font-semibold text-sm">
+                      🌙 <span className="animate-pulse">Sua jornada</span> para o sono perfeito começa hoje
+                    </p>
                   </div>
-                  
-                  <div className="flex items-center gap-3 p-4 bg-slate-800/30 rounded-xl">
-                    <CheckCircle className="h-6 w-6 text-green-400 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-white">Programa prático de 7 noites</h4>
-                      <p className="text-sm text-slate-400">Protocolo completo passo a passo</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center gap-3 p-4 bg-slate-800/30 rounded-xl">
-                    <CheckCircle className="h-6 w-6 text-green-400 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-white">Técnicas orientais milenares</h4>
-                      <p className="text-sm text-slate-400">Sabedoria ancestral validada pela ciência</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center gap-3 p-4 bg-slate-800/30 rounded-xl">
-                    <CheckCircle className="h-6 w-6 text-green-400 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-white">Sons e frequências relaxantes</h4>
-                      <p className="text-sm text-slate-400">Áudios especiais para indução do sono</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center gap-3 p-4 bg-slate-800/30 rounded-xl">
-                    <CheckCircle className="h-6 w-6 text-green-400 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-white">Rituais noturnos prontos</h4>
-                      <p className="text-sm text-slate-400">Sequências organizadas para máxima eficácia</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center gap-3 p-4 bg-slate-800/30 rounded-xl">
-                    <CheckCircle className="h-6 w-6 text-green-400 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-white">Acesso imediato após compra</h4>
-                      <p className="text-sm text-slate-400">Download instantâneo e vitalício</p>
+                </div>
+
+                {/* Pricing */}
+                <div className="bg-gradient-to-r from-[var(--warm-accent)]/10 to-[var(--accent-blue)]/10 rounded-2xl p-8 mb-8 border border-[var(--warm-accent)]/20">
+                  <div className="text-center">
+                    <p className="text-[var(--text-muted)] mb-2">Valor normal:</p>
+                    <p className="text-2xl text-[var(--text-muted)] line-through mb-4">R$ 89,70</p>
+                    <p className="text-[var(--text-muted)] mb-2">Oferta especial hoje:</p>
+                    <p className="text-4xl sm:text-5xl md:text-6xl font-bold text-[var(--text-primary)] mb-4">R$ 19,90</p>
+                    <div className="bg-gradient-to-r from-[var(--success-green)]/20 to-emerald-500/20 rounded-lg p-4 border border-[var(--success-green)]/30">
+                      <p className="text-[var(--success-green)] font-bold text-lg">
+                        💰 Economia de R$ 69,80 (78% OFF)
+                      </p>
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Bonuses */}
-                <div className="bg-slate-800/20 rounded-2xl p-6 mb-8">
-                  <h4 className="text-xl font-bold text-white mb-4 text-center">🎁 Bônus Exclusivos (R$ 49,80)</h4>
+                <div className="bg-[var(--card-hover)] rounded-2xl p-6 mb-8 border border-[var(--border-subtle)]">
+                  <h4 className="text-xl font-bold text-[var(--text-primary)] mb-4 text-center">🎁 Bônus Exclusivos (R$ 49,80)</h4>
                   <div className="space-y-3">
                     {bonuses.map((bonus, index) => (
                       <div key={index} className="flex items-center gap-3">
-                        <div className="text-green-400">{bonus.icon}</div>
+                        <div className="text-[var(--success-green)]">{bonus.icon}</div>
                         <div className="flex-1">
-                          <h5 className="font-semibold text-white text-sm">{bonus.title}</h5>
-                          <p className="text-xs text-slate-400">{bonus.description}</p>
+                          <h5 className="font-semibold text-[var(--text-primary)] text-sm">{bonus.title}</h5>
+                          <p className="text-xs text-[var(--text-muted)]">{bonus.description}</p>
                         </div>
                         <div className="text-right">
-                          <span className="text-xs text-slate-500 line-through">{bonus.value}</span>
-                          <div className="text-xs font-bold text-green-400">GRÁTIS</div>
+                          <span className="text-xs text-[var(--text-muted)] line-through">{bonus.value}</span>
+                          <div className="text-xs font-bold text-[var(--success-green)]">GRÁTIS</div>
                         </div>
                       </div>
                     ))}
                   </div>
-                  <div className="text-center mt-4 pt-4 border-t border-slate-700">
-                    <p className="text-green-400 font-bold">💚 TODOS GRÁTIS HOJE!</p>
+                  <div className="text-center mt-4 pt-4 border-t border-[var(--border-subtle)]">
+                    <p className="text-[var(--success-green)] font-bold">💚 TODOS GRÁTIS HOJE!</p>
                   </div>
                 </div>
                 
@@ -215,24 +207,24 @@ export function PricingSection() {
                 <div className="space-y-6">
                   <Button 
                     onClick={handlePurchaseClick}
-                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-6 px-8 rounded-2xl text-xl font-bold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02]"
+                    className="w-full bg-gradient-to-r from-[var(--accent-blue)] to-[var(--warm-accent)] hover:from-[var(--accent-blue)]/90 hover:to-[var(--warm-accent)]/90 text-white py-6 px-8 rounded-2xl text-xl font-bold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02]"
                   >
                     <Moon className="h-6 w-6 mr-3" />
                     ✨ QUERO TRANSFORMAR MINHAS NOITES
                   </Button>
                   
                   {/* Security badges */}
-                  <div className="flex flex-wrap justify-center gap-6 text-sm text-slate-400">
+                  <div className="flex flex-wrap justify-center gap-6 text-sm text-[var(--text-muted)]">
                     <div className="flex items-center gap-2">
-                      <Shield className="h-4 w-4 text-green-400" />
+                      <Shield className="h-4 w-4 text-[var(--success-green)]" />
                       <span>Garantia de 30 dias</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Lock className="h-4 w-4 text-green-400" />
+                      <Lock className="h-4 w-4 text-[var(--success-green)]" />
                       <span>Pagamento seguro</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Download className="h-4 w-4 text-green-400" />
+                      <Download className="h-4 w-4 text-[var(--success-green)]" />
                       <span>Acesso instantâneo</span>
                     </div>
                   </div>
