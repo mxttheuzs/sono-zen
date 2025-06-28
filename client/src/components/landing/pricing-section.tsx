@@ -10,7 +10,7 @@ import { useMutation } from "@tanstack/react-query";
 import { useToast } from "@/hooks/use-toast";
 import { insertPurchaseSchema } from "@shared/schema";
 import { apiRequest } from "@/lib/queryClient";
-import { Shield, Lock, Flame, Moon, CheckCircle, Star, Clock, Users, Download, CreditCard, Trophy, Gift } from "lucide-react";
+import { Shield, Lock, Flame, Moon, CheckCircle, Star, Clock, Users, Download, CreditCard, Trophy, Gift, Cloud } from "lucide-react";
 import { FloatingClouds } from "@/components/ui/floating-clouds";
 import { z } from "zod";
 
@@ -216,7 +216,7 @@ export function PricingSection() {
                   
                   <Button 
                     onClick={handlePurchaseClick}
-                    className="w-full relative bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 hover:from-blue-500 hover:via-purple-500 hover:to-indigo-600 text-white py-6 sm:py-8 px-6 sm:px-10 rounded-2xl text-lg sm:text-2xl font-bold hover:shadow-2xl hover:shadow-purple-500/30 transition-all duration-500 transform hover:scale-[1.02] hover:-translate-y-1 overflow-hidden"
+                    className="w-full relative bg-gradient-to-r from-blue-500 to-yellow-400 hover:from-blue-400 hover:to-yellow-300 text-white py-6 sm:py-8 px-6 sm:px-10 rounded-2xl text-lg sm:text-2xl font-bold hover:shadow-2xl hover:shadow-blue-400/30 transition-all duration-500 transform hover:scale-[1.02] hover:-translate-y-1 overflow-hidden"
                   >
                     {/* Button background clouds */}
                     <div className="absolute inset-0 opacity-20">
@@ -229,14 +229,9 @@ export function PricingSection() {
                     </div>
                     
                     <div className="relative z-10 flex items-center justify-center gap-3">
-                      <Moon className="h-6 sm:h-8 w-6 sm:w-8 animate-pulse" />
-                      <span className="hidden sm:inline">✨ COMEÇAR MINHA JORNADA DOS SONHOS</span>
-                      <span className="sm:hidden">✨ JORNADA DOS SONHOS</span>
-                      <div className="flex gap-1">
-                        <div className="w-2 h-2 bg-white/80 rounded-full animate-bounce" style={{animationDelay: '0s'}}></div>
-                        <div className="w-2 h-2 bg-white/80 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
-                        <div className="w-2 h-2 bg-white/80 rounded-full animate-bounce" style={{animationDelay: '0.4s'}}></div>
-                      </div>
+                      <Cloud className="h-6 sm:h-8 w-6 sm:w-8" />
+                      <span className="hidden sm:inline">COMEÇAR MINHA JORNADA DOS SONHOS</span>
+                      <span className="sm:hidden">JORNADA DOS SONHOS</span>
                     </div>
                   </Button>
                 </div>
