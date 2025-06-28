@@ -216,7 +216,7 @@ export function PricingSection() {
                   
                   <Button 
                     onClick={handlePurchaseClick}
-                    className="w-full relative bg-gradient-to-r from-blue-500 to-yellow-400 hover:from-blue-400 hover:to-yellow-300 text-white py-6 sm:py-8 px-6 sm:px-10 rounded-2xl text-lg sm:text-2xl font-bold hover:shadow-2xl hover:shadow-blue-400/30 transition-all duration-500 transform hover:scale-[1.02] hover:-translate-y-1 overflow-hidden"
+                    className="w-full relative bg-gradient-to-br from-slate-700 via-blue-600 to-purple-700 hover:from-slate-600 hover:via-blue-500 hover:to-purple-600 text-white py-6 sm:py-8 px-6 sm:px-10 rounded-2xl text-lg sm:text-2xl font-bold hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-500 transform hover:scale-[1.02] hover:-translate-y-1 overflow-hidden border border-slate-500/30"
                   >
                     {/* Button background clouds */}
                     <div className="absolute inset-0 opacity-20">
@@ -229,9 +229,9 @@ export function PricingSection() {
                     </div>
                     
                     <div className="relative z-10 flex items-center justify-center gap-3">
-                      <Cloud className="h-6 sm:h-8 w-6 sm:w-8" />
-                      <span className="hidden sm:inline">COMEÇAR MINHA JORNADA DOS SONHOS</span>
-                      <span className="sm:hidden">JORNADA DOS SONHOS</span>
+                      <Moon className="h-6 sm:h-8 w-6 sm:w-8 animate-pulse" />
+                      <span className="hidden sm:inline">✨ QUERO TRANSFORMAR MINHAS NOITES</span>
+                      <span className="sm:hidden">✨ TRANSFORMAR NOITES</span>
                     </div>
                   </Button>
                 </div>
