@@ -4,7 +4,7 @@ import { ProblemSection } from "@/components/landing/problem-section";
 import { EbookContentSection } from "@/components/landing/ebook-content-section";
 import { BeforeAfterSection } from "@/components/landing/before-after-section";
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
-import { CredibilitySection } from "@/components/landing/credibility-section";
+
 import { ObjectionsSection } from "@/components/landing/objections-section";
 import { PricingSection } from "@/components/landing/pricing-section";
 import { AuthorSection } from "@/components/landing/author-section";
@@ -38,7 +38,7 @@ export default function Home() {
         <EbookContentSection />
         <BeforeAfterSection />
         <TestimonialsSection />
-        <CredibilitySection />
+
         <ObjectionsSection />
         <PricingSection />
         <AuthorSection />
