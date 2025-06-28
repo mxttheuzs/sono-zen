@@ -14,37 +14,9 @@ declare global {
 }
 
 export function YouTubeMusic({ videoId, autoPlay = true, volume = 0.2 }: YouTubeMusicProps) {
-  const [timeLeft, setTimeLeft] = useState(30);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [hasFinished, setHasFinished] = useState(false);
   const playerRef = useRef<any>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
-
-  // Função para iniciar o timer
-  const startTimer = () => {
-    timerRef.current = setInterval(() => {
-      setTimeLeft((prevTime) => {
-        if (prevTime <= 1) {
-          // Parar música quando o tempo acabar
-          if (playerRef.current) {
-            try {
-              playerRef.current.pauseVideo();
-              setIsPlaying(false);
-              setHasFinished(true);
-            } catch (error) {
-              console.error('Erro ao parar música:', error);
-            }
-          }
-          if (timerRef.current) {
-            clearInterval(timerRef.current);
-          }
-          return 0;
-        }
-        return prevTime - 1;
-      });
-    }, 1000);
-  };
 
   useEffect(() => {
     if (!autoPlay) return;
@@ -64,7 +36,7 @@ export function YouTubeMusic({ videoId, autoPlay = true, volume = 0.2 }: YouTube
           playerVars: {
             autoplay: 1,
             mute: 0,
-            loop: 0, // Não loop pois vamos parar em 30s
+            loop: 1, // Loop contínuo
             controls: 0,
             showinfo: 0,
             rel: 0,
@@ -77,21 +49,18 @@ export function YouTubeMusic({ videoId, autoPlay = true, volume = 0.2 }: YouTube
           },
           events: {
             onReady: (event: any) => {
-              console.log('Player YouTube pronto');
+              console.log('Player YouTube pronto - música contínua');
               
               setTimeout(() => {
                 try {
-                  // Definir volume
+                  // Definir volume para 20%
                   event.target.setVolume(volume * 100);
                   
-                  // Tentar tocar automaticamente
+                  // Tocar automaticamente
                   event.target.playVideo();
                   setIsPlaying(true);
                   
-                  // Iniciar timer de 30 segundos
-                  startTimer();
-                  
-                  console.log('Música iniciada - tocará por 30 segundos');
+                  console.log('Música iniciada - tocará continuamente a 20% volume');
                 } catch (err) {
                   console.error('Erro ao iniciar:', err);
                 }
@@ -100,12 +69,17 @@ export function YouTubeMusic({ videoId, autoPlay = true, volume = 0.2 }: YouTube
             onStateChange: (event: any) => {
               if (event.data === window.YT.PlayerState.PLAYING) {
                 setIsPlaying(true);
-                // Se ainda não iniciou o timer, iniciar agora
-                if (timeLeft === 30 && !timerRef.current) {
-                  startTimer();
-                }
               } else if (event.data === window.YT.PlayerState.PAUSED) {
                 setIsPlaying(false);
+              } else if (event.data === window.YT.PlayerState.ENDED) {
+                // Garantir que toque novamente se acabar
+                setTimeout(() => {
+                  try {
+                    event.target.playVideo();
+                  } catch (err) {
+                    console.error('Erro ao reiniciar:', err);
+                  }
+                }, 100);
               }
             },
             onError: (event: any) => {
@@ -136,9 +110,6 @@ export function YouTubeMusic({ videoId, autoPlay = true, volume = 0.2 }: YouTube
 
     // Cleanup
     return () => {
-      if (timerRef.current) {
-        clearInterval(timerRef.current);
-      }
       if (playerRef.current && playerRef.current.destroy) {
         try {
           playerRef.current.destroy();
@@ -149,8 +120,8 @@ export function YouTubeMusic({ videoId, autoPlay = true, volume = 0.2 }: YouTube
     };
   }, [videoId, autoPlay, volume]);
 
-  // Não renderizar nada se não for autoplay ou se já terminou
-  if (!autoPlay || hasFinished) {
+  // Não renderizar nada se não for autoplay
+  if (!autoPlay) {
     return null;
   }
 
@@ -168,12 +139,12 @@ export function YouTubeMusic({ videoId, autoPlay = true, volume = 0.2 }: YouTube
       />
 
       {/* Indicador visual pequeno e discreto */}
-      {isPlaying && timeLeft > 0 && (
+      {isPlaying && (
         <div className="bg-slate-900/80 backdrop-blur-sm border border-slate-700/50 rounded-lg p-2 shadow-lg">
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
             <span className="text-xs text-slate-300">
-              🎵 {timeLeft}s
+              🎵 Tocando
             </span>
           </div>
         </div>
