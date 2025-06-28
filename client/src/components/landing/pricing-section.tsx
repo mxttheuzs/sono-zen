@@ -173,11 +173,11 @@ export function PricingSection() {
                   ))}
                 </div>
 
-                {/* Social Proof */}
+                {/* Sleep Journey Preview */}
                 <div className="text-center mb-6">
-                  <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4 mb-4">
-                    <p className="text-green-600 font-semibold text-sm">
-                      🔥 <span className="animate-pulse">89 pessoas</span> compraram nas últimas 24h
+                  <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/30 rounded-lg p-4 mb-4">
+                    <p className="text-blue-300 font-semibold text-sm">
+                      🌙 <span className="animate-pulse">Sua jornada</span> para o sono perfeito começa hoje
                     </p>
                   </div>
                 </div>
@@ -197,16 +197,16 @@ export function PricingSection() {
                   </div>
                 </div>
 
-                {/* Garantia Selo */}
-                <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 border-2 border-green-500/40 rounded-2xl p-6 mb-6 text-center relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-r from-green-500/10 to-emerald-500/10 animate-pulse"></div>
+                {/* Sleep Transformation Preview */}
+                <div className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 border-2 border-blue-500/40 rounded-2xl p-6 mb-6 text-center relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 animate-pulse"></div>
                   <div className="relative z-10">
-                    <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Shield className="h-8 w-8 text-white" />
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Moon className="h-8 w-8 text-white" />
                     </div>
-                    <h4 className="text-2xl font-bold text-white mb-2">GARANTIA TOTAL</h4>
-                    <p className="text-green-300 text-lg font-semibold mb-1">30 DIAS OU SEU DINHEIRO DE VOLTA</p>
-                    <p className="text-green-100 text-sm">Não funcionou? Devolvemos 100% sem perguntas</p>
+                    <h4 className="text-2xl font-bold text-white mb-2">SUA TRANSFORMAÇÃO</h4>
+                    <p className="text-blue-300 text-lg font-semibold mb-1">7 NOITES PARA UM NOVO VOCÊ</p>
+                    <p className="text-blue-100 text-sm">Durma como um bebê e acorde renovado</p>
                   </div>
                 </div>
 

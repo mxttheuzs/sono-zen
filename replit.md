@@ -100,6 +100,7 @@ Changelog:
 - June 28, 2025. Enhanced smooth scrolling: Implemented global smooth scroll behavior, custom scrollbar styling, offset compensation for fixed navigation, and improved scroll-to-section functionality across all CTA buttons and navigation links.
 - June 28, 2025. Major conversion optimization update: Added urgency badge ("OFERTA LIMITADA - 48H"), social proof ("89 pessoas compraram nas últimas 24h"), extended guarantee to 30 days, improved CTA text to "SIM! QUERO DORMIR COMO UM BEBÊ", WhatsApp support button, and exit-intent popup for users leaving the page. These improvements target higher conversion rates based on proven e-commerce psychology.
 - June 28, 2025. Comprehensive conversion enhancement: Added Before/After comparison section showing transformation, objections handling section addressing common doubts, enhanced guarantee visual with prominent green seal, credibility section with social proof metrics (12,847+ transformadas), and professional medical authority positioning. WhatsApp contact moved to footer "Contato" link for cleaner UX.
+- June 28, 2025. Pricing section optimization: Removed aggressive sales elements (guarantee seal, social proof counters) and replaced with sleep wellness-focused messaging. Changed "GARANTIA TOTAL" to "SUA TRANSFORMAÇÃO - 7 NOITES PARA UM NOVO VOCÊ" and updated social proof to emphasize personal journey. Added 6th card to objections section addressing investment value concern for balanced grid layout.
 
 ## User Preferences
 
