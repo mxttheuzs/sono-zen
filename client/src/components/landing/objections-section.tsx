@@ -1,4 +1,4 @@
-import { AlertCircle, Check, Heart, Clock, Brain, Shield } from "lucide-react";
+import { AlertCircle, Check, Heart, Clock, Brain, Shield, DollarSign } from "lucide-react";
 
 export function ObjectionsSection() {
   const objections = [
@@ -31,6 +31,12 @@ export function ObjectionsSection() {
       question: "E se não funcionar para mim?",
       answer: "Garantia TOTAL de 30 dias. Se por qualquer motivo não funcionar, devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia.",
       color: "from-teal-500 to-blue-500"
+    },
+    {
+      icon: DollarSign,
+      question: "Vale a pena o investimento?",
+      answer: "Compare: uma consulta com especialista custa R$ 300+. Remédios para dormir custam R$ 150/mês. O Sono Zen custa menos que 2 noites mal dormidas e resolve PARA SEMPRE.",
+      color: "from-yellow-500 to-amber-500"
     }
   ];
 
