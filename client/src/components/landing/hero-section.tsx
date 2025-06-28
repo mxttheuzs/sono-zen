@@ -43,7 +43,60 @@ export function HeroSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
         {/* Left content */}
         <div className="text-left space-y-8">
-
+          {/* Logo centrado no hero */}
+          <div className="flex justify-center lg:justify-start mb-8">
+            <div className="relative group">
+              <svg className="w-24 h-24 sm:w-32 sm:h-32 group-hover:scale-105 transition-all duration-500" viewBox="0 0 100 100" fill="none">
+                {/* Moon crescent */}
+                <path 
+                  d="M30 20 Q15 30 15 50 Q15 70 30 80 Q45 85 60 75 Q50 80 40 80 Q25 80 20 65 Q15 50 20 35 Q25 20 40 20 Q50 20 60 25 Q45 15 30 20 Z" 
+                  fill="url(#heroMoonGradient)"
+                  className="drop-shadow-lg"
+                />
+                
+                {/* Waves */}
+                <path 
+                  d="M20 85 Q30 82 40 85 Q50 88 60 85 Q70 82 80 85" 
+                  stroke="url(#heroWaveGradient)" 
+                  strokeWidth="3" 
+                  fill="none"
+                  className="drop-shadow-sm"
+                />
+                <path 
+                  d="M25 90 Q35 87 45 90 Q55 93 65 90 Q75 87 85 90" 
+                  stroke="url(#heroWaveGradient)" 
+                  strokeWidth="2.5" 
+                  fill="none" 
+                  opacity="0.8"
+                />
+                
+                {/* Star/Sun dot */}
+                <circle 
+                  cx="65" 
+                  cy="35" 
+                  r="5" 
+                  fill="#F4B942"
+                  className="animate-pulse drop-shadow-lg"
+                />
+                
+                {/* Gradients */}
+                <defs>
+                  <linearGradient id="heroMoonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#60A5FA" />
+                    <stop offset="100%" stopColor="#1E40AF" />
+                  </linearGradient>
+                  <linearGradient id="heroWaveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#60A5FA" />
+                    <stop offset="50%" stopColor="#93C5FD" />
+                    <stop offset="100%" stopColor="#60A5FA" />
+                  </linearGradient>
+                </defs>
+              </svg>
+              
+              {/* Subtle glow effect */}
+              <div className="absolute inset-0 bg-blue-400/20 rounded-full blur-xl scale-150 animate-pulse opacity-50"></div>
+            </div>
+          </div>
 
           <div className="space-y-6">
             <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl font-bold text-[var(--text-primary)] leading-tight">
