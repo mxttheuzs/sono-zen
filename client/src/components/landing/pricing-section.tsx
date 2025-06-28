@@ -197,28 +197,49 @@ export function PricingSection() {
                   </div>
                 </div>
 
-                {/* Sleep Transformation Preview */}
-                <div className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 border-2 border-blue-500/40 rounded-2xl p-6 mb-6 text-center relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 animate-pulse"></div>
-                  <div className="relative z-10">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Moon className="h-8 w-8 text-white" />
-                    </div>
-                    <h4 className="text-2xl font-bold text-white mb-2">SUA TRANSFORMAÇÃO</h4>
-                    <p className="text-blue-300 text-lg font-semibold mb-1">7 NOITES PARA UM NOVO VOCÊ</p>
-                    <p className="text-blue-100 text-sm">Durma como um bebê e acorde renovado</p>
-                  </div>
-                </div>
 
-                {/* CTA Button */}
-                <Button 
-                  onClick={handlePurchaseClick}
-                  className="w-full bg-gradient-to-r from-[var(--warm-accent)] to-orange-500 hover:from-[var(--warm-accent)]/90 hover:to-orange-500/90 text-white py-4 sm:py-6 px-4 sm:px-8 rounded-xl text-base sm:text-xl font-bold hover:shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 mb-6"
-                >
-                  <CreditCard className="mr-2 sm:mr-3 h-5 sm:h-6 w-5 sm:w-6" />
-                  <span className="hidden sm:inline">SIM! QUERO DORMIR COMO UM BEBÊ</span>
-                  <span className="sm:hidden">DORMIR COMO BEBÊ</span>
-                </Button>
+
+                {/* Cloud-themed CTA Button */}
+                <div className="relative mb-6">
+                  {/* Floating clouds background */}
+                  <div className="absolute inset-0 overflow-hidden rounded-2xl">
+                    <svg className="absolute -top-2 -left-4 w-24 h-16 opacity-20 text-blue-200 animate-float-cloud" viewBox="0 0 100 40">
+                      <path d="M20 25 Q8 15 25 15 Q35 8 50 15 Q65 8 80 15 Q92 15 80 25 Q85 32 75 32 L25 32 Q12 32 20 25" fill="currentColor" />
+                    </svg>
+                    <svg className="absolute -top-1 -right-6 w-20 h-12 opacity-15 text-purple-200 animate-float-cloud" style={{animationDelay: '2s'}} viewBox="0 0 80 30">
+                      <path d="M15 20 Q6 12 20 12 Q28 6 40 12 Q52 6 65 12 Q74 12 65 20 Q68 25 60 25 L20 25 Q9 25 15 20" fill="currentColor" />
+                    </svg>
+                    <svg className="absolute bottom-0 left-1/3 w-16 h-10 opacity-25 text-indigo-200 animate-float-cloud" style={{animationDelay: '4s'}} viewBox="0 0 64 24">
+                      <path d="M12 18 Q5 10 16 10 Q22 5 32 10 Q42 5 52 10 Q59 10 52 18 Q55 22 48 22 L16 22 Q7 22 12 18" fill="currentColor" />
+                    </svg>
+                  </div>
+                  
+                  <Button 
+                    onClick={handlePurchaseClick}
+                    className="w-full relative bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 hover:from-blue-500 hover:via-purple-500 hover:to-indigo-600 text-white py-6 sm:py-8 px-6 sm:px-10 rounded-2xl text-lg sm:text-2xl font-bold hover:shadow-2xl hover:shadow-purple-500/30 transition-all duration-500 transform hover:scale-[1.02] hover:-translate-y-1 overflow-hidden"
+                  >
+                    {/* Button background clouds */}
+                    <div className="absolute inset-0 opacity-20">
+                      <svg className="absolute top-2 left-1/4 w-12 h-8 text-white/40 animate-float-cloud" viewBox="0 0 48 20">
+                        <path d="M8 15 Q3 8 12 8 Q16 4 24 8 Q32 4 36 8 Q44 8 36 15 Q38 18 32 18 L12 18 Q5 18 8 15" fill="currentColor" />
+                      </svg>
+                      <svg className="absolute bottom-2 right-1/4 w-10 h-6 text-white/30 animate-float-cloud" style={{animationDelay: '3s'}} viewBox="0 0 40 16">
+                        <path d="M6 12 Q2 6 10 6 Q14 2 20 6 Q26 2 34 6 Q38 6 34 12 Q36 14 30 14 L10 14 Q4 14 6 12" fill="currentColor" />
+                      </svg>
+                    </div>
+                    
+                    <div className="relative z-10 flex items-center justify-center gap-3">
+                      <Moon className="h-6 sm:h-8 w-6 sm:w-8 animate-pulse" />
+                      <span className="hidden sm:inline">✨ COMEÇAR MINHA JORNADA DOS SONHOS</span>
+                      <span className="sm:hidden">✨ JORNADA DOS SONHOS</span>
+                      <div className="flex gap-1">
+                        <div className="w-2 h-2 bg-white/80 rounded-full animate-bounce" style={{animationDelay: '0s'}}></div>
+                        <div className="w-2 h-2 bg-white/80 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
+                        <div className="w-2 h-2 bg-white/80 rounded-full animate-bounce" style={{animationDelay: '0.4s'}}></div>
+                      </div>
+                    </div>
+                  </Button>
+                </div>
 
                 {/* Security badges */}
                 <div className="flex flex-wrap justify-center gap-6 text-sm text-[var(--text-muted)]">
