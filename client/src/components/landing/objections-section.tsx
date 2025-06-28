@@ -17,7 +17,7 @@ export function ObjectionsSection() {
     {
       icon: Clock,
       question: "Quanto tempo leva para ver resultados?",
-      answer: "A maioria das pessoas nota diferença já na 1ª noite. Resultados reais começam na 3ª noite, e em 7 dias você terá uma transformação completa.",
+      answer: "Muitas pessoas dormem melhor já na primeira noite! Outras sentem a diferença na terceira noite. O que todos relatam: em 7 dias, você não vai reconhecer seu sono.",
       color: "from-green-500 to-emerald-500"
     },
     {
