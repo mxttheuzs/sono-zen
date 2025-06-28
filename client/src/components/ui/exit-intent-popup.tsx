@@ -71,10 +71,13 @@ export function ExitIntentPopup() {
 
             <Button
               onClick={scrollToCheckout}
-              className="w-full bg-gradient-to-r from-[var(--warm-accent)] to-orange-500 hover:from-[var(--warm-accent)]/90 hover:to-orange-500/90 text-white py-4 rounded-xl font-bold mb-4 transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/25"
+              className="w-full group relative overflow-hidden bg-[var(--accent-blue)]/20 backdrop-blur-sm border-2 border-[var(--accent-blue)]/30 hover:border-[var(--accent-blue)]/50 text-[var(--accent-blue)] hover:text-white py-4 rounded-xl font-semibold mb-4 transition-all duration-300 hover:shadow-2xl hover:shadow-[var(--accent-blue)]/25"
             >
-              <Heart className="mr-2 h-5 w-5" />
-              SIM! QUERO GARANTIR MINHA CÓPIA
+              <div className="absolute inset-0 bg-[var(--accent-blue)] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <span className="relative flex items-center justify-center gap-2">
+                <Heart className="h-5 w-5" />
+                SIM! QUERO GARANTIR MINHA CÓPIA
+              </span>
             </Button>
 
             <p className="text-xs text-slate-400">

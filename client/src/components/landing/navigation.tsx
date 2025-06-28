@@ -97,9 +97,10 @@ export function Navigation() {
         {/* Desktop CTA */}
         <Button 
           onClick={handlePurchaseClick}
-          className="hidden md:flex bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] text-white px-6 py-3 rounded-xl font-bold hover:shadow-lg hover:shadow-[var(--warm-accent)]/25 transition-all duration-300 transform hover:scale-105"
+          className="hidden md:flex group relative overflow-hidden bg-[var(--accent-blue)]/20 backdrop-blur-sm border border-[var(--accent-blue)]/30 hover:border-[var(--accent-blue)]/50 text-[var(--accent-blue)] hover:text-white px-6 py-3 rounded-xl font-semibold shadow-md hover:shadow-[var(--accent-blue)]/25 transition-all duration-300 transform hover:scale-105"
         >
-          Transformar Sono
+          <div className="absolute inset-0 bg-[var(--accent-blue)] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <span className="relative">Transformar Sono</span>
         </Button>
 
         {/* Mobile Menu Button */}
@@ -147,9 +148,12 @@ export function Navigation() {
             </button>
             <Button 
               onClick={handlePurchaseClick}
-              className="w-full bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] text-white rounded-xl mt-4 py-4 text-lg font-bold hover:shadow-lg transition-all duration-300"
+              className="w-full group relative overflow-hidden bg-[var(--accent-blue)]/20 backdrop-blur-sm border-2 border-[var(--accent-blue)]/30 hover:border-[var(--accent-blue)]/50 text-[var(--accent-blue)] hover:text-white rounded-xl mt-4 py-4 text-lg font-semibold hover:shadow-lg hover:shadow-[var(--accent-blue)]/25 transition-all duration-300"
             >
-              🌙 Transformar Sono Hoje
+              <div className="absolute inset-0 bg-[var(--accent-blue)] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <span className="relative flex items-center justify-center gap-2">
+                🌙 Transformar Sono Hoje
+              </span>
             </Button>
           </div>
         </div>

@@ -207,10 +207,13 @@ export function PricingSection() {
                 <div className="space-y-6">
                   <Button 
                     onClick={handlePurchaseClick}
-                    className="w-full bg-gradient-to-r from-[var(--accent-blue)] to-[var(--warm-accent)] hover:from-[var(--accent-blue)]/90 hover:to-[var(--warm-accent)]/90 text-white py-6 px-8 rounded-2xl text-xl font-bold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02]"
+                    className="w-full group relative overflow-hidden bg-gradient-to-r from-[var(--accent-blue)]/20 to-[var(--accent-blue)]/10 backdrop-blur-sm border-2 border-[var(--accent-blue)]/30 hover:border-[var(--accent-blue)]/50 text-[var(--accent-blue)] hover:text-white py-6 px-8 rounded-2xl text-xl font-semibold shadow-lg hover:shadow-[var(--accent-blue)]/25 transition-all duration-300 transform hover:scale-[1.02]"
                   >
-                    <Moon className="h-6 w-6 mr-3" />
-                    ✨ QUERO TRANSFORMAR MINHAS NOITES
+                    <div className="absolute inset-0 bg-gradient-to-r from-[var(--accent-blue)] to-[var(--accent-blue)]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="relative flex items-center justify-center gap-3">
+                      <Moon className="h-6 w-6" />
+                      QUERO TRANSFORMAR MINHAS NOITES
+                    </div>
                   </Button>
                   
                   {/* Security badges */}
