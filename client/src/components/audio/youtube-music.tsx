@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { Volume2, VolumeX, Play, Pause } from 'lucide-react';
+import { Volume2, VolumeX, Play, Pause, RotateCcw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface YouTubeMusicProps {
@@ -25,62 +25,86 @@ export function YouTubeMusic({ videoId, autoPlay = false, volume = 0.2 }: YouTub
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    let retryCount = 0;
+    const maxRetries = 3;
+
     // Função para inicializar o player
     const initializePlayer = () => {
-      if (!containerRef.current || !window.YT || !window.YT.Player) return;
-
-      playerRef.current = new window.YT.Player(containerRef.current, {
-        height: '1',
-        width: '1',
-        videoId: videoId,
-        playerVars: {
-          autoplay: autoPlay ? 1 : 0,
-          mute: autoPlay ? 1 : 0,
-          loop: 1,
-          playlist: videoId,
-          controls: 0,
-          showinfo: 0,
-          rel: 0,
-          modestbranding: 1,
-          playsinline: 1,
-          iv_load_policy: 3,
-          cc_load_policy: 0,
-          disablekb: 1,
-          fs: 0
-        },
-        events: {
-          onReady: (event: any) => {
-            setIsLoading(false);
-            setPlayerReady(true);
-            event.target.setVolume(currentVolume);
-            if (autoPlay) {
-              event.target.mute();
-              setTimeout(() => {
-                event.target.playVideo();
-                setIsPlaying(true);
-              }, 100);
-            }
-          },
-          onStateChange: (event: any) => {
-            if (event.data === window.YT.PlayerState.PLAYING) {
-              setIsPlaying(true);
-            } else if (event.data === window.YT.PlayerState.PAUSED) {
-              setIsPlaying(false);
-            } else if (event.data === window.YT.PlayerState.ENDED) {
-              setTimeout(() => {
-                if (playerRef.current) {
-                  playerRef.current.seekTo(0);
-                  playerRef.current.playVideo();
-                }
-              }, 100);
-            }
-          },
-          onError: (event: any) => {
-            console.error('Erro no YouTube Player:', event.data);
-            setIsLoading(false);
-          }
+      if (!containerRef.current || !window.YT || !window.YT.Player) {
+        if (retryCount < maxRetries) {
+          retryCount++;
+          setTimeout(initializePlayer, 1000);
         }
-      });
+        return;
+      }
+
+      try {
+        playerRef.current = new window.YT.Player(containerRef.current, {
+          height: '1',
+          width: '1',
+          videoId: videoId,
+          playerVars: {
+            autoplay: 0, // Não autoplay para evitar problemas
+            mute: 0,
+            loop: 1,
+            playlist: videoId,
+            controls: 0,
+            showinfo: 0,
+            rel: 0,
+            modestbranding: 1,
+            playsinline: 1,
+            iv_load_policy: 3,
+            cc_load_policy: 0,
+            disablekb: 1,
+            fs: 0
+          },
+          events: {
+            onReady: (event: any) => {
+              console.log('Player pronto');
+              setIsLoading(false);
+              setPlayerReady(true);
+              
+              // Aguardar um pouco antes de configurar o volume
+              setTimeout(() => {
+                try {
+                  event.target.setVolume(currentVolume);
+                  console.log('Volume definido para:', currentVolume);
+                } catch (err) {
+                  console.error('Erro ao definir volume inicial:', err);
+                }
+              }, 500);
+            },
+            onStateChange: (event: any) => {
+              console.log('Estado mudou:', event.data);
+              if (event.data === window.YT.PlayerState.PLAYING) {
+                setIsPlaying(true);
+              } else if (event.data === window.YT.PlayerState.PAUSED) {
+                setIsPlaying(false);
+              } else if (event.data === window.YT.PlayerState.ENDED) {
+                // Loop manual
+                setTimeout(() => {
+                  if (playerRef.current && playerReady) {
+                    try {
+                      playerRef.current.seekTo(0);
+                      playerRef.current.playVideo();
+                    } catch (err) {
+                      console.error('Erro ao fazer loop:', err);
+                    }
+                  }
+                }, 100);
+              }
+            },
+            onError: (event: any) => {
+              console.error('Erro no YouTube Player:', event.data);
+              setIsLoading(false);
+              setPlayerReady(false);
+            }
+          }
+        });
+      } catch (error) {
+        console.error('Erro ao criar player:', error);
+        setIsLoading(false);
+      }
     };
 
     // Verificar se a API já está carregada
@@ -108,43 +132,57 @@ export function YouTubeMusic({ videoId, autoPlay = false, volume = 0.2 }: YouTub
     };
   }, [videoId, autoPlay, currentVolume]);
 
-  const togglePlay = () => {
-    if (!playerRef.current || !playerReady) return;
-
-    try {
-      if (isPlaying) {
-        playerRef.current.pauseVideo();
-        setIsPlaying(false);
+  // Função auxiliar para aguardar que o player esteja pronto
+  const waitForPlayer = (callback: () => void, maxWait = 3000) => {
+    const startTime = Date.now();
+    const checkPlayer = () => {
+      if (playerRef.current && playerReady && 
+          typeof playerRef.current.getPlayerState === 'function') {
+        callback();
+      } else if (Date.now() - startTime < maxWait) {
+        setTimeout(checkPlayer, 100);
       } else {
-        playerRef.current.playVideo();
-        setIsPlaying(true);
+        console.error('Player não está pronto após tempo limite');
       }
-    } catch (error) {
-      console.error('Erro ao controlar reprodução:', error);
-    }
+    };
+    checkPlayer();
+  };
+
+  const togglePlay = () => {
+    waitForPlayer(() => {
+      try {
+        if (isPlaying) {
+          playerRef.current.pauseVideo();
+        } else {
+          playerRef.current.playVideo();
+        }
+      } catch (error) {
+        console.error('Erro ao controlar reprodução:', error);
+      }
+    });
   };
 
   const toggleMute = () => {
-    if (!playerRef.current || !playerReady) return;
-
-    try {
-      if (isMuted) {
-        playerRef.current.unMute();
-        setIsMuted(false);
-      } else {
-        playerRef.current.mute();
-        setIsMuted(true);
+    waitForPlayer(() => {
+      try {
+        if (isMuted) {
+          playerRef.current.unMute();
+          setIsMuted(false);
+        } else {
+          playerRef.current.mute();
+          setIsMuted(true);
+        }
+      } catch (error) {
+        console.error('Erro ao controlar som:', error);
       }
-    } catch (error) {
-      console.error('Erro ao controlar som:', error);
-    }
+    });
   };
 
   const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newVolume = parseInt(e.target.value);
     setCurrentVolume(newVolume);
     
-    if (playerRef.current && playerReady) {
+    waitForPlayer(() => {
       try {
         playerRef.current.setVolume(newVolume);
         if (newVolume === 0) {
@@ -152,26 +190,109 @@ export function YouTubeMusic({ videoId, autoPlay = false, volume = 0.2 }: YouTub
         } else if (isMuted) {
           setIsMuted(false);
         }
+        console.log('Volume alterado para:', newVolume);
       } catch (error) {
         console.error('Erro ao alterar volume:', error);
       }
-    }
+    });
   };
 
   const unmuteAndPlay = () => {
-    if (!playerRef.current || !playerReady) return;
-
-    try {
-      playerRef.current.unMute();
-      playerRef.current.setVolume(currentVolume);
-      setIsMuted(false);
-      if (!isPlaying) {
-        playerRef.current.playVideo();
-        setIsPlaying(true);
+    waitForPlayer(() => {
+      try {
+        playerRef.current.unMute();
+        playerRef.current.setVolume(currentVolume);
+        setIsMuted(false);
+        if (!isPlaying) {
+          playerRef.current.playVideo();
+        }
+      } catch (error) {
+        console.error('Erro ao ativar som:', error);
       }
-    } catch (error) {
-      console.error('Erro ao ativar som:', error);
+    });
+  };
+
+  const resetPlayer = () => {
+    if (playerRef.current) {
+      try {
+        playerRef.current.destroy();
+      } catch (error) {
+        console.error('Erro ao destruir player:', error);
+      }
     }
+    
+    setIsLoading(true);
+    setPlayerReady(false);
+    setIsPlaying(false);
+    setIsMuted(false);
+    
+    // Recriar player após pequeno delay
+    setTimeout(() => {
+      if (containerRef.current && window.YT && window.YT.Player) {
+        try {
+          playerRef.current = new window.YT.Player(containerRef.current, {
+            height: '1',
+            width: '1',
+            videoId: videoId,
+            playerVars: {
+              autoplay: 0,
+              mute: 0,
+              loop: 1,
+              playlist: videoId,
+              controls: 0,
+              showinfo: 0,
+              rel: 0,
+              modestbranding: 1,
+              playsinline: 1,
+              iv_load_policy: 3,
+              cc_load_policy: 0,
+              disablekb: 1,
+              fs: 0
+            },
+            events: {
+              onReady: (event: any) => {
+                console.log('Player reiniciado e pronto');
+                setIsLoading(false);
+                setPlayerReady(true);
+                setTimeout(() => {
+                  try {
+                    event.target.setVolume(currentVolume);
+                  } catch (err) {
+                    console.error('Erro ao definir volume após reset:', err);
+                  }
+                }, 500);
+              },
+              onStateChange: (event: any) => {
+                if (event.data === window.YT.PlayerState.PLAYING) {
+                  setIsPlaying(true);
+                } else if (event.data === window.YT.PlayerState.PAUSED) {
+                  setIsPlaying(false);
+                } else if (event.data === window.YT.PlayerState.ENDED) {
+                  setTimeout(() => {
+                    if (playerRef.current && playerReady) {
+                      try {
+                        playerRef.current.seekTo(0);
+                        playerRef.current.playVideo();
+                      } catch (err) {
+                        console.error('Erro ao fazer loop após reset:', err);
+                      }
+                    }
+                  }, 100);
+                }
+              },
+              onError: (event: any) => {
+                console.error('Erro no player reiniciado:', event.data);
+                setIsLoading(false);
+                setPlayerReady(false);
+              }
+            }
+          });
+        } catch (error) {
+          console.error('Erro ao recriar player:', error);
+          setIsLoading(false);
+        }
+      }
+    }, 1000);
   };
 
   return (
@@ -192,10 +313,13 @@ export function YouTubeMusic({ videoId, autoPlay = false, volume = 0.2 }: YouTub
         <div className="flex items-center justify-center gap-1 mb-3">
           <div className={`w-2 h-2 rounded-full ${
             isLoading ? 'bg-yellow-400 animate-pulse' : 
+            !playerReady ? 'bg-red-400 animate-pulse' :
             isPlaying ? 'bg-green-400 animate-pulse' : 'bg-slate-600'
           }`}></div>
           <span className="text-xs text-slate-300 font-medium">
-            {isLoading ? 'Carregando...' : isPlaying ? 'Tocando' : 'Pausado'}
+            {isLoading ? 'Carregando...' : 
+             !playerReady ? 'Conectando...' :
+             isPlaying ? 'Tocando' : 'Pausado'}
           </span>
         </div>
 
@@ -215,12 +339,12 @@ export function YouTubeMusic({ videoId, autoPlay = false, volume = 0.2 }: YouTub
         )}
 
         {/* Controles principais */}
-        <div className="flex items-center gap-3 mb-3">
+        <div className="flex items-center gap-2 mb-3">
           <Button
             variant="ghost"
             size="sm"
             onClick={togglePlay}
-            disabled={isLoading}
+            disabled={isLoading || !playerReady}
             className="h-10 w-10 p-0 hover:bg-slate-700/50 rounded-xl border border-slate-600/30 disabled:opacity-50"
           >
             {isPlaying ? (
@@ -234,7 +358,7 @@ export function YouTubeMusic({ videoId, autoPlay = false, volume = 0.2 }: YouTub
             variant="ghost"
             size="sm"
             onClick={toggleMute}
-            disabled={isLoading}
+            disabled={isLoading || !playerReady}
             className="h-10 w-10 p-0 hover:bg-slate-700/50 rounded-xl border border-slate-600/30 disabled:opacity-50"
           >
             {isMuted ? (
@@ -242,6 +366,17 @@ export function YouTubeMusic({ videoId, autoPlay = false, volume = 0.2 }: YouTub
             ) : (
               <Volume2 className="h-5 w-5 text-blue-400" />
             )}
+          </Button>
+
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={resetPlayer}
+            disabled={isLoading}
+            title="Reiniciar player"
+            className="h-10 w-10 p-0 hover:bg-slate-700/50 rounded-xl border border-slate-600/30 disabled:opacity-50"
+          >
+            <RotateCcw className="h-4 w-4 text-orange-400" />
           </Button>
         </div>
         
