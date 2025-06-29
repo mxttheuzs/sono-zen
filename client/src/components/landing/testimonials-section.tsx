@@ -121,11 +121,11 @@ export function TestimonialsSection() {
                 <div className="card-modern p-4 md:p-8 relative group animate-slide-up h-full animate-magnetic-hover" 
                      style={{animationDelay: `${index * 0.1}s`}}>
                   <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-40 transition-opacity">
-                    <Quote className="h-6 w-6 md:h-8 md:w-8 text-[var(--accent-blue)] animate-twinkle" />
+                    <Quote className="h-6 w-6 md:h-8 md:w-8 text-[var(--accent-blue)] animate-breathe-slow" />
                   </div>
                   
                   <div className="flex items-center mb-4 md:mb-6">
-                    <div className={`w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br ${testimonial.gradient} rounded-full flex items-center justify-center mr-3 md:mr-4 shadow-lg animate-bounce-gentle`} style={{animationDelay: `${index * 0.2 + 0.3}s`}}>
+                    <div className={`w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br ${testimonial.gradient} rounded-full flex items-center justify-center mr-3 md:mr-4 shadow-lg animate-gentle-float`} style={{animationDelay: `${index * 0.3 + 0.5}s`}}>
                       <span className="text-white font-bold text-sm md:text-lg">{testimonial.initial}</span>
                     </div>
                     <div>

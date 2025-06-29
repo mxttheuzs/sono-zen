@@ -257,13 +257,24 @@ html {
   
   .animate-shimmer {
     background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.2),
-      transparent
+      135deg,
+      rgba(135, 206, 250, 0.1),
+      rgba(135, 206, 250, 0.2),
+      rgba(135, 206, 250, 0.1)
     );
-    background-size: 200% 100%;
-    animation: shimmer 2.5s ease-in-out infinite;
+    box-shadow: 0 0 8px rgba(135, 206, 250, 0.2);
+  }
+  
+  .static-glow {
+    background: linear-gradient(
+      135deg,
+      rgba(135, 206, 250, 0.08),
+      rgba(135, 206, 250, 0.15),
+      rgba(135, 206, 250, 0.08)
+    );
+    box-shadow: 
+      0 0 6px rgba(135, 206, 250, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
   
   .animate-text-focus {
@@ -291,6 +302,14 @@ html {
   
   .animate-rotate-slow {
     animation: rotate-slow 20s linear infinite;
+  }
+  
+  .animate-breathe-slow {
+    animation: breathe-slow 6s ease-in-out infinite;
+  }
+  
+  .animate-gentle-float {
+    animation: gentle-float 8s ease-in-out infinite;
   }
   
   /* Improved spacing and typography */
@@ -458,14 +477,7 @@ button {
   70% { transform: scale(1); }
 }
 
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
+
 
 @keyframes glow-pulse {
   0%, 100% {
@@ -482,5 +494,25 @@ button {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes breathe-slow {
+  0%, 100% { 
+    transform: scale(1); 
+    opacity: 0.8; 
+  }
+  50% { 
+    transform: scale(1.02); 
+    opacity: 1; 
+  }
+}
+
+@keyframes gentle-float {
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-4px); 
   }
 }

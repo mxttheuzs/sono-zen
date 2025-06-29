@@ -99,25 +99,25 @@ export function ProblemSection() {
         
         <div className="grid md:grid-cols-2 gap-8">
           {problems.map((problem, index) => (
-            <div key={index} className="group relative backdrop-blur-sm bg-transparent border-2 border-[var(--accent-blue)]/20 hover:border-[var(--accent-blue)]/40 rounded-3xl p-6 sm:p-8 animate-slide-up hover:shadow-xl hover:shadow-[var(--accent-blue)]/10 transition-all duration-300" style={{animationDelay: `${index * 0.1}s`}}>
+            <div key={index} className="group relative backdrop-blur-sm bg-transparent border-2 border-[var(--accent-blue)]/20 hover:border-[var(--accent-blue)]/40 rounded-3xl p-6 sm:p-8 animate-scale-in hover:shadow-xl hover:shadow-[var(--accent-blue)]/10 transition-all duration-300 animate-magnetic-hover" style={{animationDelay: `${index * 0.15}s`}}>
               <div className="flex items-start gap-6">
-                <div className="p-4 rounded-2xl bg-[var(--accent-blue)]/10 border border-[var(--accent-blue)]/20 flex-shrink-0 backdrop-blur-sm">
+                <div className="p-4 rounded-2xl bg-[var(--accent-blue)]/10 border border-[var(--accent-blue)]/20 flex-shrink-0 backdrop-blur-sm animate-bounce-gentle animate-glow-pulse" style={{animationDelay: `${index * 0.2 + 0.3}s`}}>
                   <problem.icon className="h-8 w-8 text-[var(--accent-blue)]" />
                 </div>
                 <div className="space-y-4 flex-1">
                   <div>
-                    <h3 className="font-heading font-semibold text-lg sm:text-xl text-[var(--text-primary)] group-hover:text-[var(--accent-blue)] transition-colors mb-3 leading-tight">
+                    <h3 className="font-heading font-semibold text-lg sm:text-xl text-[var(--text-primary)] group-hover:text-[var(--accent-blue)] transition-colors mb-3 leading-tight animate-text-focus">
                       {problem.title}
                     </h3>
-                    <p className="text-[var(--text-secondary)] leading-relaxed text-sm">
+                    <p className="text-[var(--text-secondary)] leading-relaxed text-sm animate-fade-in-up" style={{animationDelay: `${index * 0.1 + 0.4}s`}}>
                       {problem.description}
                     </p>
                   </div>
-                  <div className="flex items-center justify-between pt-4 border-t border-[var(--accent-blue)]/20 mt-4">
-                    <span className="text-sm font-semibold text-[var(--accent-blue)] bg-[var(--accent-blue)]/10 px-4 py-2 rounded-xl border border-[var(--accent-blue)]/20 backdrop-blur-sm">
+                  <div className="flex items-center justify-between pt-4 border-t border-[var(--accent-blue)]/20 mt-4 animate-scale-in" style={{animationDelay: `${index * 0.1 + 0.6}s`}}>
+                    <span className="text-sm font-semibold text-[var(--accent-blue)] bg-[var(--accent-blue)]/10 px-4 py-2 rounded-xl border border-[var(--accent-blue)]/20 backdrop-blur-sm animate-shimmer">
                       {problem.stat}
                     </span>
-                    <span className="text-xs text-[var(--text-muted)] font-medium bg-[var(--text-muted)]/10 px-3 py-1 rounded-lg backdrop-blur-sm">
+                    <span className="text-xs text-[var(--text-muted)] font-medium bg-[var(--text-muted)]/10 px-3 py-1 rounded-lg backdrop-blur-sm animate-float-on-hover">
                       {problem.impact}
                     </span>
                   </div>
