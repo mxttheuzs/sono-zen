@@ -136,10 +136,10 @@ export function PricingSection() {
               
               {/* Product Header */}
               <div className="bg-gradient-to-r from-[var(--accent-blue)]/10 to-[var(--warm-accent)]/10 border-b border-[var(--accent-blue)]/20 p-8 text-center">
-                <h3 className="text-2xl md:text-3xl font-bold text-[var(--text-primary)] mb-4">
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 drop-shadow-lg">
                   Sono Zen - Método Completo
                 </h3>
-                <p className="text-[var(--text-secondary)] text-lg">
+                <p className="text-blue-200 text-lg font-medium drop-shadow-md">
                   Transformação completa do seu sono em 7 noites
                 </p>
               </div>
@@ -151,7 +151,7 @@ export function PricingSection() {
                   {features.map((feature, index) => (
                     <div key={index} className="flex items-center gap-3 p-4 rounded-xl bg-[var(--accent-blue)]/5 border border-[var(--accent-blue)]/15 backdrop-blur-sm hover:bg-[var(--accent-blue)]/10 transition-all duration-300">
                       <div className="text-[var(--accent-blue)]">{feature.icon}</div>
-                      <span className="text-[var(--text-secondary)] font-medium">{feature.text}</span>
+                      <span className="text-blue-100 font-semibold drop-shadow-sm">{feature.text}</span>
                     </div>
                   ))}
                 </div>
@@ -159,8 +159,8 @@ export function PricingSection() {
                 {/* Sleep Journey Preview */}
                 <div className="text-center mb-6">
                   <div className="bg-gradient-to-r from-[var(--accent-blue)]/10 to-[var(--warm-accent)]/10 border border-[var(--accent-blue)]/30 rounded-lg p-4 mb-4">
-                    <p className="text-[var(--accent-blue)] font-semibold text-sm">
-                      🌙 <span className="animate-pulse">Sua jornada</span> para o sono perfeito começa hoje
+                    <p className="text-cyan-200 font-bold text-sm drop-shadow-md">
+                      🌙 <span className="animate-pulse text-blue-200">Sua jornada</span> para o sono perfeito começa hoje
                     </p>
                   </div>
                 </div>
@@ -168,14 +168,14 @@ export function PricingSection() {
                 {/* Pricing */}
                 <div className="bg-gradient-to-r from-[var(--accent-blue)]/8 to-[var(--warm-accent)]/8 rounded-2xl p-8 mb-8 border border-[var(--accent-blue)]/25 backdrop-blur-sm">
                   <div className="text-center">
-                    <p className="text-[var(--text-muted)] mb-2">Valor normal:</p>
-                    <p className="text-2xl text-[var(--text-muted)] line-through mb-4">R$ 89,70</p>
-                    <p className="text-[var(--accent-blue)] font-semibold mb-3">Oferta especial hoje:</p>
-                    <p className="text-5xl sm:text-6xl md:text-7xl font-black text-white tracking-tight mb-4">
+                    <p className="text-blue-300 mb-2 font-medium drop-shadow-sm">Valor normal:</p>
+                    <p className="text-2xl text-blue-300 line-through mb-4 drop-shadow-sm">R$ 89,70</p>
+                    <p className="text-cyan-300 font-bold mb-3 drop-shadow-md text-lg">Oferta especial hoje:</p>
+                    <p className="text-5xl sm:text-6xl md:text-7xl font-black text-white tracking-tight mb-4 drop-shadow-2xl" style={{ textShadow: '0 0 20px rgba(255,255,255,0.5)' }}>
                       R$ 19,90
                     </p>
                     <div className="bg-gradient-to-r from-[var(--warm-accent)]/20 to-[var(--accent-blue)]/20 rounded-xl p-4 border border-[var(--warm-accent)]/30 backdrop-blur-sm">
-                      <p className="text-[var(--warm-accent)] font-bold text-lg">
+                      <p className="text-yellow-300 font-bold text-lg drop-shadow-lg" style={{ textShadow: '0 0 10px rgba(253, 224, 71, 0.6)' }}>
                         Economia de R$ 69,80 (78% OFF)
                       </p>
                     </div>
