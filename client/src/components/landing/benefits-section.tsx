@@ -83,13 +83,13 @@ export function BenefitsSection() {
         <div className="max-w-4xl mx-auto">
           <div className="space-y-6">
             {benefits.map((benefit, index) => (
-              <div key={index} className="card-modern p-6 group animate-slide-up hover:shadow-xl transition-all duration-300" style={{animationDelay: `${index * 0.1}s`}}>
+              <div key={index} className="card-modern p-6 group animate-slide-up hover:shadow-xl transition-all duration-300 animate-magnetic-hover" style={{animationDelay: `${index * 0.1}s`}}>
                 <div className="flex items-start gap-6">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-[var(--accent-blue)] to-[var(--warm-accent)] flex items-center justify-center flex-shrink-0">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-[var(--accent-blue)] to-[var(--warm-accent)] flex items-center justify-center flex-shrink-0 animate-bounce-gentle" style={{animationDelay: `${index * 0.2 + 0.5}s`}}>
                     <benefit.icon className="h-8 w-8 text-white" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-heading font-semibold text-xl text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent-blue)] transition-colors">
+                    <h3 className="font-heading font-semibold text-xl text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent-blue)] transition-colors animate-text-focus">
                       {benefit.title}
                     </h3>
                     <p className="text-[var(--text-secondary)] leading-relaxed">

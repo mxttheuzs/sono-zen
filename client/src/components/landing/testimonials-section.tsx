@@ -118,14 +118,14 @@ export function TestimonialsSection() {
           <CarouselContent className="-ml-1 md:-ml-4">
             {testimonials.map((testimonial, index) => (
               <CarouselItem key={index} className="pl-1 md:pl-4 basis-[85%] sm:basis-1/2 lg:basis-1/3">
-                <div className="card-modern p-4 md:p-8 relative group animate-slide-up h-full" 
+                <div className="card-modern p-4 md:p-8 relative group animate-slide-up h-full animate-magnetic-hover" 
                      style={{animationDelay: `${index * 0.1}s`}}>
                   <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-40 transition-opacity">
-                    <Quote className="h-6 w-6 md:h-8 md:w-8 text-[var(--accent-blue)]" />
+                    <Quote className="h-6 w-6 md:h-8 md:w-8 text-[var(--accent-blue)] animate-twinkle" />
                   </div>
                   
                   <div className="flex items-center mb-4 md:mb-6">
-                    <div className={`w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br ${testimonial.gradient} rounded-full flex items-center justify-center mr-3 md:mr-4 shadow-lg`}>
+                    <div className={`w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br ${testimonial.gradient} rounded-full flex items-center justify-center mr-3 md:mr-4 shadow-lg animate-bounce-gentle`} style={{animationDelay: `${index * 0.2 + 0.3}s`}}>
                       <span className="text-white font-bold text-sm md:text-lg">{testimonial.initial}</span>
                     </div>
                     <div>

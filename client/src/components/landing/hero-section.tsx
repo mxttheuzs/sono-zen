@@ -46,7 +46,7 @@ export function HeroSection() {
 
 
           <div className="space-y-6">
-            <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl font-bold text-[var(--text-primary)] leading-tight">
+            <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl font-bold text-[var(--text-primary)] leading-tight animate-fade-in-up">
               Durma Como um Bebê
               <span className="block bg-gradient-to-r from-[var(--warm-accent)] via-[var(--accent-blue)] to-[var(--warm-accent)] bg-clip-text text-transparent animate-gradient">
                 em Apenas 7 Noites
@@ -64,37 +64,37 @@ export function HeroSection() {
 
             {/* Benefícios rápidos */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl">
-              <div className="flex items-center gap-2 text-[var(--text-secondary)]">
-                <CheckCircle className="h-5 w-5 text-[var(--success-green)]" />
-                <span className="text-sm font-medium">Sem remédios ou dependência</span>
+              <div className="flex items-center gap-2 text-[var(--text-secondary)] animate-scale-in hover:transform hover:translate-x-1 transition-all duration-200" style={{animationDelay: '0.3s'}}>
+                <CheckCircle className="h-5 w-5 text-[var(--success-green)] animate-bounce-gentle" style={{animationDelay: '0.5s'}} />
+                <span className="text-sm font-medium animate-text-focus">Sem remédios ou dependência</span>
               </div>
-              <div className="flex items-center gap-2 text-[var(--text-secondary)]">
-                <CheckCircle className="h-5 w-5 text-[var(--success-green)]" />
-                <span className="text-sm font-medium">Resultados em 1 semana</span>
+              <div className="flex items-center gap-2 text-[var(--text-secondary)] animate-scale-in hover:transform hover:translate-x-1 transition-all duration-200" style={{animationDelay: '0.4s'}}>
+                <CheckCircle className="h-5 w-5 text-[var(--success-green)] animate-bounce-gentle" style={{animationDelay: '0.7s'}} />
+                <span className="text-sm font-medium animate-text-focus">Resultados em 1 semana</span>
               </div>
-              <div className="flex items-center gap-2 text-[var(--text-secondary)]">
-                <CheckCircle className="h-5 w-5 text-[var(--success-green)]" />
-                <span className="text-sm font-medium">Técnicas orientais milenares</span>
+              <div className="flex items-center gap-2 text-[var(--text-secondary)] animate-scale-in hover:transform hover:translate-x-1 transition-all duration-200" style={{animationDelay: '0.5s'}}>
+                <CheckCircle className="h-5 w-5 text-[var(--success-green)] animate-bounce-gentle" style={{animationDelay: '0.9s'}} />
+                <span className="text-sm font-medium animate-text-focus">Técnicas orientais milenares</span>
               </div>
-              <div className="flex items-center gap-2 text-[var(--text-secondary)]">
-                <CheckCircle className="h-5 w-5 text-[var(--success-green)]" />
-                <span className="text-sm font-medium">Aprovado por 2.800+ pessoas</span>
+              <div className="flex items-center gap-2 text-[var(--text-secondary)] animate-scale-in hover:transform hover:translate-x-1 transition-all duration-200" style={{animationDelay: '0.6s'}}>
+                <CheckCircle className="h-5 w-5 text-[var(--success-green)] animate-bounce-gentle" style={{animationDelay: '1.1s'}} />
+                <span className="text-sm font-medium animate-text-focus">Aprovado por 2.800+ pessoas</span>
               </div>
             </div>
           </div>
           
           <div className="flex flex-col gap-6 items-start">
             {/* CTA Principal */}
-            <div className="relative group">
+            <div className="relative group animate-scale-in" style={{animationDelay: '0.8s'}}>
               <div className="absolute -inset-1 bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
               <Button 
                 onClick={scrollToCheckout}
-                className="relative bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] text-white px-6 sm:px-10 py-4 sm:py-6 rounded-2xl text-base sm:text-xl font-bold hover:shadow-2xl hover:shadow-[var(--warm-accent)]/25 transition-all duration-300 transform hover:scale-105 animate-pulse-gentle w-full sm:w-auto"
+                className="relative bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] text-white px-6 sm:px-10 py-4 sm:py-6 rounded-2xl text-base sm:text-xl font-bold hover:shadow-2xl hover:shadow-[var(--warm-accent)]/25 transition-all duration-300 transform hover:scale-105 animate-magnetic-hover w-full sm:w-auto"
               >
-                <Heart className="mr-2 sm:mr-3 h-5 sm:h-6 w-5 sm:w-6 animate-pulse" />
+                <Heart className="mr-2 sm:mr-3 h-5 sm:h-6 w-5 sm:w-6 animate-heartbeat" />
                 <span className="hidden sm:inline">QUERO DORMIR MELHOR HOJE!</span>
                 <span className="sm:hidden">DORMIR MELHOR!</span>
-                <Sparkles className="ml-2 sm:ml-3 h-5 sm:h-6 w-5 sm:w-6" />
+                <Sparkles className="ml-2 sm:ml-3 h-5 sm:h-6 w-5 sm:w-6 animate-twinkle" />
               </Button>
             </div>
 

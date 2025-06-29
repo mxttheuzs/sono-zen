@@ -99,10 +99,10 @@ export function ProblemSection() {
         
         <div className="grid md:grid-cols-2 gap-8">
           {problems.map((problem, index) => (
-            <div key={index} className="card-modern p-4 sm:p-8 group animate-slide-up hover:shadow-xl hover:shadow-red-500/10 transition-all duration-300" style={{animationDelay: `${index * 0.1}s`}}>
+            <div key={index} className="group relative backdrop-blur-sm bg-transparent border-2 border-[var(--accent-blue)]/20 hover:border-[var(--accent-blue)]/40 rounded-3xl p-6 sm:p-8 animate-slide-up hover:shadow-xl hover:shadow-[var(--accent-blue)]/10 transition-all duration-300" style={{animationDelay: `${index * 0.1}s`}}>
               <div className="flex items-start gap-6">
-                <div className="p-4 rounded-2xl bg-gradient-to-br from-red-500/20 to-orange-600/10 flex-shrink-0">
-                  <problem.icon className={`h-8 w-8 ${problem.color}`} />
+                <div className="p-4 rounded-2xl bg-[var(--accent-blue)]/10 border border-[var(--accent-blue)]/20 flex-shrink-0 backdrop-blur-sm">
+                  <problem.icon className="h-8 w-8 text-[var(--accent-blue)]" />
                 </div>
                 <div className="space-y-4 flex-1">
                   <div>
@@ -113,11 +113,11 @@ export function ProblemSection() {
                       {problem.description}
                     </p>
                   </div>
-                  <div className="flex items-center justify-between pt-4 border-t border-[var(--border-subtle)] mt-4">
-                    <span className="text-base font-semibold text-[var(--warm-accent)] bg-[var(--warm-accent)]/10 px-4 py-2 rounded-lg border border-[var(--warm-accent)]/20">
+                  <div className="flex items-center justify-between pt-4 border-t border-[var(--accent-blue)]/20 mt-4">
+                    <span className="text-sm font-semibold text-[var(--accent-blue)] bg-[var(--accent-blue)]/10 px-4 py-2 rounded-xl border border-[var(--accent-blue)]/20 backdrop-blur-sm">
                       {problem.stat}
                     </span>
-                    <span className="text-sm text-[var(--text-muted)] font-medium bg-[var(--card-hover)] px-3 py-1 rounded-md">
+                    <span className="text-xs text-[var(--text-muted)] font-medium bg-[var(--text-muted)]/10 px-3 py-1 rounded-lg backdrop-blur-sm">
                       {problem.impact}
                     </span>
                   </div>

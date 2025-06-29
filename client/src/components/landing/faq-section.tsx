@@ -108,12 +108,12 @@ export function FAQSection() {
         
         <div className="space-y-8">
           {faqCategories.map((category, categoryIndex) => (
-            <div key={categoryIndex} className="card-modern p-6 md:p-8">
+            <div key={categoryIndex} className="card-modern p-6 md:p-8 animate-fade-in-up animate-magnetic-hover" style={{animationDelay: `${categoryIndex * 0.2}s`}}>
               <div className="flex items-center gap-3 mb-6">
-                <div className={`${category.color}`}>
+                <div className={`${category.color} animate-bounce-gentle`} style={{animationDelay: `${categoryIndex * 0.1 + 0.5}s`}}>
                   {category.icon}
                 </div>
-                <h3 className="font-heading text-xl md:text-2xl font-bold text-[var(--text-primary)]">
+                <h3 className="font-heading text-xl md:text-2xl font-bold text-[var(--text-primary)] animate-text-focus">
                   {category.title}
                 </h3>
               </div>

@@ -77,19 +77,19 @@ export function Navigation() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8">
-          <button onClick={() => scrollToSection("metodo")} className="text-white/90 hover:text-[var(--warm-accent)] transition-colors font-semibold text-base">
+          <button onClick={() => scrollToSection("metodo")} className="text-white/90 hover:text-[var(--warm-accent)] transition-colors font-semibold text-base animate-text-focus">
             O Método
           </button>
-          <button onClick={() => scrollToSection("problema")} className="text-white/90 hover:text-[var(--warm-accent)] transition-colors font-semibold text-base">
+          <button onClick={() => scrollToSection("problema")} className="text-white/90 hover:text-[var(--warm-accent)] transition-colors font-semibold text-base animate-text-focus">
             Benefícios
           </button>
-          <button onClick={() => scrollToSection("deborah-genaro")} className="text-white/90 hover:text-[var(--warm-accent)] transition-colors font-semibold text-base">
+          <button onClick={() => scrollToSection("deborah-genaro")} className="text-white/90 hover:text-[var(--warm-accent)] transition-colors font-semibold text-base animate-text-focus">
             Sobre Mim
           </button>
-          <button onClick={() => scrollToSection("depoimentos")} className="text-white/90 hover:text-[var(--warm-accent)] transition-colors font-semibold text-base">
+          <button onClick={() => scrollToSection("depoimentos")} className="text-white/90 hover:text-[var(--warm-accent)] transition-colors font-semibold text-base animate-text-focus">
             Depoimentos
           </button>
-          <button onClick={() => scrollToSection("preco")} className="text-white/90 hover:text-[var(--warm-accent)] transition-colors font-semibold text-base">
+          <button onClick={() => scrollToSection("preco")} className="text-white/90 hover:text-[var(--warm-accent)] transition-colors font-semibold text-base animate-text-focus">
             Oferta
           </button>
         </div>
@@ -97,10 +97,10 @@ export function Navigation() {
         {/* Desktop CTA */}
         <Button 
           onClick={handlePurchaseClick}
-          className="hidden md:flex group relative overflow-hidden bg-[var(--accent-blue)]/20 backdrop-blur-sm border border-[var(--accent-blue)]/30 hover:border-[var(--accent-blue)]/50 text-[var(--accent-blue)] hover:text-white px-6 py-3 rounded-xl font-semibold shadow-md hover:shadow-[var(--accent-blue)]/25 transition-all duration-300 transform hover:scale-105"
+          className="hidden md:flex group relative overflow-hidden bg-[var(--accent-blue)]/20 backdrop-blur-sm border border-[var(--accent-blue)]/30 hover:border-[var(--accent-blue)]/50 text-[var(--accent-blue)] hover:text-white px-6 py-3 rounded-xl font-semibold shadow-md hover:shadow-[var(--accent-blue)]/25 transition-all duration-300 transform hover:scale-105 animate-magnetic-hover"
         >
           <div className="absolute inset-0 bg-[var(--accent-blue)] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <span className="relative">Transformar Sono</span>
+          <span className="relative animate-shimmer">Transformar Sono</span>
         </Button>
 
         {/* Mobile Menu Button */}

@@ -229,6 +229,70 @@ html {
     animation: gentle-glow 5s ease-in-out infinite;
   }
   
+  /* New micro-animations for enhanced engagement */
+  .animate-bounce-gentle {
+    animation: bounce-gentle 2s ease-in-out infinite;
+  }
+  
+  .animate-scale-in {
+    animation: scale-in 0.6s ease-out forwards;
+  }
+  
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+  
+  .animate-heartbeat {
+    animation: heartbeat 2s ease-in-out infinite;
+  }
+  
+  .animate-magnetic-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .animate-magnetic-hover:hover {
+    transform: translateY(-4px) scale(1.02);
+    filter: brightness(1.1);
+  }
+  
+  .animate-shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2.5s ease-in-out infinite;
+  }
+  
+  .animate-text-focus {
+    transition: all 0.2s ease-out;
+  }
+  
+  .animate-text-focus:hover {
+    transform: translateX(4px);
+    color: var(--accent-blue);
+  }
+  
+  /* Advanced interaction animations */
+  .animate-float-on-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .animate-float-on-hover:hover {
+    transform: translateY(-8px);
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
+  }
+  
+  .animate-glow-pulse {
+    animation: glow-pulse 3s ease-in-out infinite;
+  }
+  
+  .animate-rotate-slow {
+    animation: rotate-slow 20s linear infinite;
+  }
+  
   /* Improved spacing and typography */
   section {
     scroll-margin-top: 80px;
@@ -354,4 +418,69 @@ html {
 
 button {
   transition: all 0.3s ease-in-out;
+}
+
+/* New micro-animation keyframes */
+@keyframes bounce-gentle {
+  0%, 100% { transform: translateY(0px); }
+  25% { transform: translateY(-8px); }
+  50% { transform: translateY(-4px); }
+  75% { transform: translateY(-6px); }
+}
+
+@keyframes scale-in {
+  0% { 
+    opacity: 0; 
+    transform: scale(0.8) translateY(20px); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: scale(1) translateY(0px); 
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  14% { transform: scale(1.1); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.1); }
+  70% { transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(135, 206, 250, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(135, 206, 250, 0.6);
+  }
+}
+
+@keyframes rotate-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
