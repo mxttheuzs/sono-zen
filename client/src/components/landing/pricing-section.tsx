@@ -207,18 +207,23 @@ export function PricingSection() {
                 
                 {/* Purchase Button */}
                 <div className="space-y-6">
-                  <Button 
-                    onClick={handlePurchaseClick}
-                    className="w-full bg-transparent backdrop-blur-sm border-2 border-[var(--accent-blue)]/50 hover:border-[var(--warm-accent)]/70 text-white py-8 px-8 rounded-2xl text-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group"
-                  >
-                    {/* Button content */}
-                    <div className="flex items-center justify-center gap-3">
-                      <Moon className="h-6 w-6 text-[var(--accent-blue)] group-hover:text-[var(--warm-accent)] transition-colors duration-300" />
-                      <span className="text-white font-semibold tracking-wide group-hover:text-[var(--warm-accent)] transition-colors duration-300">
-                        QUERO TRANSFORMAR MINHAS NOITES
-                      </span>
-                    </div>
-                  </Button>
+                  <div className="relative">
+                    {/* Golden glow effect */}
+                    <div className="absolute -inset-1 bg-[var(--warm-accent)] rounded-2xl blur-md opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
+                    
+                    <Button 
+                      onClick={handlePurchaseClick}
+                      className="w-full relative bg-transparent backdrop-blur-sm border-4 border-[var(--warm-accent)] hover:border-[var(--warm-accent)] text-white py-8 px-8 rounded-2xl text-xl font-semibold shadow-lg hover:shadow-2xl hover:shadow-[var(--warm-accent)]/30 transition-all duration-300 group"
+                    >
+                      {/* Button content */}
+                      <div className="flex items-center justify-center gap-3">
+                        <Moon className="h-6 w-6 text-[var(--warm-accent)] transition-colors duration-300" />
+                        <span className="text-white font-semibold tracking-wide">
+                          QUERO TRANSFORMAR MINHAS NOITES
+                        </span>
+                      </div>
+                    </Button>
+                  </div>
                   
                   {/* Security badges */}
                   <div className="flex flex-wrap justify-center gap-4 text-sm">
