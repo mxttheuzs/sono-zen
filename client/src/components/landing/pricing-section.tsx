@@ -209,7 +209,8 @@ export function PricingSection() {
                 <div className="space-y-6">
                   <Button 
                     onClick={handlePurchaseClick}
-                    className="w-full relative bg-transparent border-2 border-[var(--warm-accent)] text-white py-8 px-8 rounded-2xl text-xl font-semibold transition-all duration-500 group animate-enhanced-float animate-golden-glow-pulse"
+                    className="w-full relative bg-gradient-to-r from-[var(--warm-accent)] to-[hsl(35,70%,50%)] border-2 border-[var(--warm-accent)] text-white py-8 px-8 rounded-2xl text-xl font-semibold transition-all duration-500 group animate-enhanced-float shadow-lg shadow-[var(--warm-accent)]/30"
+                    style={{ filter: 'drop-shadow(0 0 15px rgba(218, 165, 32, 0.6))' }}
                   >
                     {/* Button content */}
                     <div className="flex items-center justify-center gap-3">
@@ -223,15 +224,15 @@ export function PricingSection() {
                   {/* Security badges */}
                   <div className="flex flex-wrap justify-center gap-4 text-sm">
                     <div className="flex items-center gap-2 bg-[var(--accent-blue)]/10 border border-[var(--accent-blue)]/20 px-4 py-2 rounded-full backdrop-blur-sm">
-                      <Shield className="h-4 w-4 text-[var(--accent-blue)]" />
+                      <Shield className="h-4 w-4 text-[var(--accent-blue)]" style={{ filter: 'drop-shadow(0 0 3px rgba(135, 206, 250, 0.4))' }} />
                       <span className="text-[var(--text-secondary)]" style={{ textShadow: '0 0 5px rgba(255,255,255,0.15)' }}>Garantia de 30 dias</span>
                     </div>
                     <div className="flex items-center gap-2 bg-[var(--accent-blue)]/10 border border-[var(--accent-blue)]/20 px-4 py-2 rounded-full backdrop-blur-sm">
-                      <Lock className="h-4 w-4 text-[var(--accent-blue)]" />
+                      <Lock className="h-4 w-4 text-[var(--accent-blue)]" style={{ filter: 'drop-shadow(0 0 3px rgba(135, 206, 250, 0.4))' }} />
                       <span className="text-[var(--text-secondary)]" style={{ textShadow: '0 0 5px rgba(255,255,255,0.15)' }}>Pagamento seguro</span>
                     </div>
                     <div className="flex items-center gap-2 bg-[var(--warm-accent)]/10 border border-[var(--warm-accent)]/20 px-4 py-2 rounded-full backdrop-blur-sm">
-                      <Download className="h-4 w-4 text-[var(--warm-accent)]" />
+                      <Download className="h-4 w-4 text-[var(--warm-accent)]" style={{ filter: 'drop-shadow(0 0 3px rgba(135, 206, 250, 0.4))' }} />
                       <span className="text-[var(--text-secondary)]" style={{ textShadow: '0 0 5px rgba(255,255,255,0.15)' }}>Acesso instantâneo</span>
                     </div>
                   </div>
