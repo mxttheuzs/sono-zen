@@ -118,6 +118,7 @@ Changelog:
 - June 29, 2025. Pricing section cleanup: Removed disruptive "Sua jornada para o sono perfeito começa hoje" banner and features grid with checkmarks from pricing section to create cleaner, more direct flow from product title to pricing display, improving user experience and conversion focus with streamlined layout.
 - June 29, 2025. Security badges enhancement: Redesigned guarantee, security, and instant access section with larger prominent cards featuring bigger icons (8x8 to 10x10), individual backgrounds, enhanced titles, and expanded descriptions to fill space from removed features and improve trust indicators visibility.
 - June 29, 2025. Bonus section cleanup: Removed "💚 TODOS GRÁTIS HOJE!" promotional message from bonus section for cleaner, more professional presentation focused on product value rather than excessive promotional language.
+- June 29, 2025. Premium border enhancement: Implemented sophisticated border styling throughout pricing section with thicker borders (2px), multiple box-shadow layers, blue glow effects, and enhanced visual depth. Added animated gradients and premium visual treatment to main card, pricing section, bonuses, and security badges for luxury appearance.
 
 ## User Preferences
 
