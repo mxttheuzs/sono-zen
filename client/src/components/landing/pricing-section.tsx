@@ -209,7 +209,7 @@ export function PricingSection() {
                 <div className="space-y-6">
                   <Button 
                     onClick={handlePurchaseClick}
-                    className="w-full relative bg-transparent backdrop-blur-sm border-4 border-[var(--warm-accent)] text-white py-8 px-8 rounded-2xl text-xl font-semibold transition-all duration-300 group shadow-[0_0_20px_rgba(255,193,7,0.6),0_0_40px_rgba(255,193,7,0.3)] hover:shadow-[0_0_30px_rgba(255,193,7,0.8),0_0_60px_rgba(255,193,7,0.4)]"
+                    className="w-full relative bg-transparent border-2 border-[var(--warm-accent)] text-white py-8 px-8 rounded-2xl text-xl font-semibold transition-all duration-500 group animate-gentle-float animate-golden-glow-pulse"
                   >
                     {/* Button content */}
                     <div className="flex items-center justify-center gap-3">
