@@ -209,11 +209,11 @@ export function PricingSection() {
                 <div className="space-y-6">
                   <Button 
                     onClick={handlePurchaseClick}
-                    className="w-full relative bg-transparent border-2 border-[var(--warm-accent)] text-white py-8 px-8 rounded-2xl text-xl font-semibold transition-all duration-500 group animate-gentle-float animate-golden-glow-pulse"
+                    className="w-full relative bg-transparent border-2 border-blue-500 text-white py-8 px-8 rounded-2xl text-xl font-semibold transition-all duration-500 group animate-enhanced-float animate-blue-glow-pulse"
                   >
                     {/* Button content */}
                     <div className="flex items-center justify-center gap-3">
-                      <Moon className="h-6 w-6 text-[var(--warm-accent)] transition-colors duration-300" />
+                      <Moon className="h-6 w-6 text-blue-400 transition-colors duration-300" />
                       <span className="text-white font-semibold tracking-wide">
                         QUERO TRANSFORMAR MINHAS NOITES
                       </span>

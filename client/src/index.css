@@ -233,6 +233,14 @@ html {
     animation: golden-glow-pulse 3s ease-in-out infinite;
   }
   
+  .animate-blue-glow-pulse {
+    animation: blue-glow-pulse 3s ease-in-out infinite;
+  }
+  
+  .animate-enhanced-float {
+    animation: enhanced-float 6s ease-in-out infinite;
+  }
+  
   /* New micro-animations for enhanced engagement */
   .animate-bounce-gentle {
     animation: bounce-gentle 4s ease-in-out infinite;
@@ -492,12 +500,27 @@ button {
   }
 }
 
-@keyframes golden-glow-pulse {
+@keyframes blue-glow-pulse {
   0%, 100% {
-    box-shadow: 0 0 15px rgba(255, 193, 7, 0.4), 0 0 30px rgba(255, 193, 7, 0.2);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.4), 0 0 30px rgba(59, 130, 246, 0.2);
   }
   50% {
-    box-shadow: 0 0 25px rgba(255, 193, 7, 0.7), 0 0 50px rgba(255, 193, 7, 0.4);
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.7), 0 0 50px rgba(59, 130, 246, 0.4);
+  }
+}
+
+@keyframes enhanced-float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+  }
+  25% {
+    transform: translateY(-8px) translateX(3px) scale(1.02);
+  }
+  50% {
+    transform: translateY(0px) translateX(6px) scale(1);
+  }
+  75% {
+    transform: translateY(-5px) translateX(3px) scale(1.01);
   }
 }
 
