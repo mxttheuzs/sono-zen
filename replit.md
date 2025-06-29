@@ -113,6 +113,7 @@ Changelog:
 - June 29, 2025. Text enhancement optimization: Added subtle white textShadow glow to all payment section text while preserving original color variables, creating discrete but impactful background lighting effect that improves readability and visual appeal without changing the established color scheme.
 - June 29, 2025. Payment section styling updates: Changed icon glow effects from yellow to smaller blue glow using drop-shadow filters, transformed payment button from transparent to golden gradient background with enhanced golden glow effect, and replaced cloud icon with moon icon in payment button for better sleep theme consistency. Maintained 30-day guarantee as correct period.
 - June 29, 2025. Golden glow cleanup: Removed golden glow pulse animations from ebook content section icons for cleaner visual appearance while maintaining 30-day guarantee in pricing section as the correct guarantee period.
+- June 29, 2025. Premium visual enhancements: Strengthened "Bem-Estar" text with vibrant multi-color gradient and golden glow effect. Redesigned "Sono Zen - Método Completo" section with sophisticated layout including decorative elements, prominent moon icon, enhanced typography hierarchy, and premium visual depth for more engaging user experience.
 
 ## User Preferences
 

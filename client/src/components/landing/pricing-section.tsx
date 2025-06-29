@@ -121,7 +121,7 @@ export function PricingSection() {
             
             <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-[var(--text-primary)] mb-6 leading-tight">
               Investimento em Seu
-              <span className="block bg-gradient-to-r from-[var(--accent-blue)] to-[var(--warm-accent)] bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-[hsl(200,100%,60%)] via-[var(--warm-accent)] to-[hsl(45,100%,65%)] bg-clip-text text-transparent font-black tracking-tight" style={{ textShadow: '0 0 20px rgba(218, 165, 32, 0.4)' }}>
                 Bem-Estar
               </span>
             </h2>
@@ -135,13 +135,34 @@ export function PricingSection() {
             <div className="bg-[var(--accent-blue)]/5 backdrop-blur-xl border border-[var(--accent-blue)]/20 rounded-3xl overflow-hidden shadow-2xl">
               
               {/* Product Header */}
-              <div className="bg-gradient-to-r from-[var(--accent-blue)]/10 to-[var(--warm-accent)]/10 border-b border-[var(--accent-blue)]/20 p-8 text-center">
-                <h3 className="text-2xl md:text-3xl font-bold text-[var(--text-primary)] mb-4" style={{ textShadow: '0 0 10px rgba(255,255,255,0.3)' }}>
-                  Sono Zen - Método Completo
+              <div className="relative bg-gradient-to-br from-[var(--accent-blue)]/15 via-[var(--warm-accent)]/10 to-[var(--accent-blue)]/5 border-b border-[var(--accent-blue)]/30 p-8 sm:p-12 text-center overflow-hidden">
+                {/* Decorative elements */}
+                <div className="absolute top-4 left-8 w-16 h-16 bg-gradient-to-br from-[var(--warm-accent)]/20 to-transparent rounded-full blur-xl"></div>
+                <div className="absolute bottom-4 right-8 w-20 h-20 bg-gradient-to-br from-[var(--accent-blue)]/20 to-transparent rounded-full blur-xl"></div>
+                
+                {/* Icon */}
+                <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-[var(--warm-accent)]/20 to-[var(--accent-blue)]/20 border border-[var(--warm-accent)]/30 rounded-2xl flex items-center justify-center backdrop-blur-sm">
+                  <Moon className="h-8 w-8 text-[var(--warm-accent)]" style={{ filter: 'drop-shadow(0 0 8px rgba(218, 165, 32, 0.5))' }} />
+                </div>
+                
+                <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-[var(--text-primary)] mb-4 tracking-tight leading-tight">
+                  <span className="bg-gradient-to-r from-[var(--warm-accent)] via-[hsl(45,100%,70%)] to-[var(--accent-blue)] bg-clip-text text-transparent" style={{ textShadow: '0 0 15px rgba(218, 165, 32, 0.3)' }}>
+                    Sono Zen
+                  </span>
+                  <span className="block text-2xl md:text-3xl lg:text-4xl font-semibold text-[var(--text-primary)] mt-2" style={{ textShadow: '0 0 10px rgba(255,255,255,0.2)' }}>
+                    Método Completo
+                  </span>
                 </h3>
-                <p className="text-[var(--text-secondary)] text-lg" style={{ textShadow: '0 0 8px rgba(255,255,255,0.2)' }}>
-                  Transformação completa do seu sono em 7 noites
-                </p>
+                
+                <div className="max-w-md mx-auto">
+                  <p className="text-[var(--text-secondary)] text-lg font-medium mb-4" style={{ textShadow: '0 0 8px rgba(255,255,255,0.15)' }}>
+                    Transformação completa do seu sono
+                  </p>
+                  <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[var(--warm-accent)]/20 to-[var(--accent-blue)]/20 border border-[var(--warm-accent)]/30 rounded-full px-4 py-2 backdrop-blur-sm">
+                    <Star className="h-4 w-4 text-[var(--warm-accent)] fill-current" />
+                    <span className="text-sm font-semibold text-[var(--warm-accent)]">em apenas 7 noites</span>
+                  </div>
+                </div>
               </div>
               
               {/* Content */}
