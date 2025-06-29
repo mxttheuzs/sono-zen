@@ -135,44 +135,44 @@ export function PricingSection() {
             <div className="bg-[var(--accent-blue)]/5 backdrop-blur-xl border border-[var(--accent-blue)]/20 rounded-3xl overflow-hidden shadow-2xl">
               
               {/* Product Header */}
-              <div className="relative bg-gradient-to-br from-[var(--accent-blue)]/15 via-[var(--warm-accent)]/10 to-[var(--accent-blue)]/5 border-b border-[var(--accent-blue)]/30 p-8 sm:p-12 text-center overflow-hidden">
-                {/* Decorative elements */}
-                <div className="absolute top-4 left-8 w-16 h-16 bg-gradient-to-br from-[var(--warm-accent)]/20 to-transparent rounded-full blur-xl"></div>
-                <div className="absolute bottom-4 right-8 w-20 h-20 bg-gradient-to-br from-[var(--accent-blue)]/20 to-transparent rounded-full blur-xl"></div>
+              <div className="relative bg-gradient-to-br from-[var(--accent-blue)]/15 via-[var(--warm-accent)]/10 to-[var(--accent-blue)]/5 border-b border-[var(--accent-blue)]/30 p-6 sm:p-8 md:p-12 text-center overflow-hidden">
+                {/* Decorative elements - adjusted for mobile */}
+                <div className="absolute top-2 left-4 sm:top-4 sm:left-8 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[var(--warm-accent)]/20 to-transparent rounded-full blur-xl"></div>
+                <div className="absolute bottom-2 right-4 sm:bottom-4 sm:right-8 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-[var(--accent-blue)]/20 to-transparent rounded-full blur-xl"></div>
                 
-                {/* Icon */}
-                <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-[var(--warm-accent)]/20 to-[var(--accent-blue)]/20 border border-[var(--warm-accent)]/30 rounded-2xl flex items-center justify-center backdrop-blur-sm">
-                  <Moon className="h-8 w-8 text-[var(--warm-accent)]" style={{ filter: 'drop-shadow(0 0 8px rgba(218, 165, 32, 0.5))' }} />
+                {/* Icon - responsive sizing */}
+                <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 sm:mb-6 bg-gradient-to-br from-[var(--warm-accent)]/20 to-[var(--accent-blue)]/20 border border-[var(--warm-accent)]/30 rounded-2xl flex items-center justify-center backdrop-blur-sm">
+                  <Moon className="h-6 w-6 sm:h-8 sm:w-8 text-[var(--warm-accent)]" style={{ filter: 'drop-shadow(0 0 8px rgba(218, 165, 32, 0.5))' }} />
                 </div>
                 
-                <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-[var(--text-primary)] mb-4 tracking-tight leading-tight">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-[var(--text-primary)] mb-3 sm:mb-4 tracking-tight leading-tight px-2">
                   <span className="bg-gradient-to-r from-[var(--warm-accent)] via-[hsl(45,100%,70%)] to-[var(--accent-blue)] bg-clip-text text-transparent" style={{ textShadow: '0 0 15px rgba(218, 165, 32, 0.3)' }}>
                     Sono Zen
                   </span>
-                  <span className="block text-2xl md:text-3xl lg:text-4xl font-semibold text-[var(--text-primary)] mt-2" style={{ textShadow: '0 0 10px rgba(255,255,255,0.2)' }}>
+                  <span className="block text-lg sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-[var(--text-primary)] mt-1 sm:mt-2" style={{ textShadow: '0 0 10px rgba(255,255,255,0.2)' }}>
                     Método Completo
                   </span>
                 </h3>
                 
-                <div className="max-w-md mx-auto">
-                  <p className="text-[var(--text-secondary)] text-lg font-medium mb-4" style={{ textShadow: '0 0 8px rgba(255,255,255,0.15)' }}>
+                <div className="max-w-sm sm:max-w-md mx-auto px-4">
+                  <p className="text-[var(--text-secondary)] text-base sm:text-lg font-medium mb-3 sm:mb-4" style={{ textShadow: '0 0 8px rgba(255,255,255,0.15)' }}>
                     Transformação completa do seu sono
                   </p>
-                  <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[var(--warm-accent)]/20 to-[var(--accent-blue)]/20 border border-[var(--warm-accent)]/30 rounded-full px-4 py-2 backdrop-blur-sm">
-                    <Star className="h-4 w-4 text-[var(--warm-accent)] fill-current" />
-                    <span className="text-sm font-semibold text-[var(--warm-accent)]">em apenas 7 noites</span>
+                  <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[var(--warm-accent)]/20 to-[var(--accent-blue)]/20 border border-[var(--warm-accent)]/30 rounded-full px-3 sm:px-4 py-2 backdrop-blur-sm">
+                    <Star className="h-3 w-3 sm:h-4 sm:w-4 text-[var(--warm-accent)] fill-current" />
+                    <span className="text-xs sm:text-sm font-semibold text-[var(--warm-accent)]">em apenas 7 noites</span>
                   </div>
                 </div>
               </div>
               
               {/* Content */}
-              <div className="p-8">
+              <div className="p-4 sm:p-6 md:p-8">
                 {/* Features Grid */}
-                <div className="grid md:grid-cols-2 gap-4 mb-8">
+                <div className="grid sm:grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8">
                   {features.map((feature, index) => (
-                    <div key={index} className="flex items-center gap-3 p-4 rounded-xl bg-[var(--accent-blue)]/5 border border-[var(--accent-blue)]/15 backdrop-blur-sm hover:bg-[var(--accent-blue)]/10 transition-all duration-300">
-                      <div className="text-[var(--accent-blue)]">{feature.icon}</div>
-                      <span className="text-[var(--text-secondary)] font-medium" style={{ textShadow: '0 0 6px rgba(255,255,255,0.15)' }}>{feature.text}</span>
+                    <div key={index} className="flex items-center gap-3 p-3 sm:p-4 rounded-xl bg-[var(--accent-blue)]/5 border border-[var(--accent-blue)]/15 backdrop-blur-sm hover:bg-[var(--accent-blue)]/10 transition-all duration-300">
+                      <div className="text-[var(--accent-blue)] flex-shrink-0">{feature.icon}</div>
+                      <span className="text-[var(--text-secondary)] font-medium text-sm sm:text-base" style={{ textShadow: '0 0 6px rgba(255,255,255,0.15)' }}>{feature.text}</span>
                     </div>
                   ))}
                 </div>
@@ -187,16 +187,16 @@ export function PricingSection() {
                 </div>
 
                 {/* Pricing */}
-                <div className="bg-gradient-to-r from-[var(--accent-blue)]/8 to-[var(--warm-accent)]/8 rounded-2xl p-8 mb-8 border border-[var(--accent-blue)]/25 backdrop-blur-sm">
+                <div className="bg-gradient-to-r from-[var(--accent-blue)]/8 to-[var(--warm-accent)]/8 rounded-2xl p-4 sm:p-6 md:p-8 mb-6 sm:mb-8 border border-[var(--accent-blue)]/25 backdrop-blur-sm">
                   <div className="text-center">
-                    <p className="text-[var(--text-muted)] mb-2" style={{ textShadow: '0 0 6px rgba(255,255,255,0.15)' }}>Valor normal:</p>
-                    <p className="text-2xl text-[var(--text-muted)] line-through mb-4" style={{ textShadow: '0 0 6px rgba(255,255,255,0.15)' }}>R$ 89,70</p>
-                    <p className="text-[var(--accent-blue)] font-semibold mb-3" style={{ textShadow: '0 0 8px rgba(255,255,255,0.2)' }}>Oferta especial hoje:</p>
-                    <p className="text-5xl sm:text-6xl md:text-7xl font-black text-white tracking-tight mb-4" style={{ textShadow: '0 0 15px rgba(255,255,255,0.4)' }}>
+                    <p className="text-[var(--text-muted)] mb-2 text-sm sm:text-base" style={{ textShadow: '0 0 6px rgba(255,255,255,0.15)' }}>Valor normal:</p>
+                    <p className="text-xl sm:text-2xl text-[var(--text-muted)] line-through mb-3 sm:mb-4" style={{ textShadow: '0 0 6px rgba(255,255,255,0.15)' }}>R$ 89,70</p>
+                    <p className="text-[var(--accent-blue)] font-semibold mb-2 sm:mb-3 text-sm sm:text-base" style={{ textShadow: '0 0 8px rgba(255,255,255,0.2)' }}>Oferta especial hoje:</p>
+                    <p className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight mb-3 sm:mb-4" style={{ textShadow: '0 0 15px rgba(255,255,255,0.4)' }}>
                       R$ 19,90
                     </p>
-                    <div className="bg-gradient-to-r from-[var(--warm-accent)]/20 to-[var(--accent-blue)]/20 rounded-xl p-4 border border-[var(--warm-accent)]/30 backdrop-blur-sm">
-                      <p className="text-[var(--warm-accent)] font-bold text-lg" style={{ textShadow: '0 0 8px rgba(255,255,255,0.2)' }}>
+                    <div className="bg-gradient-to-r from-[var(--warm-accent)]/20 to-[var(--accent-blue)]/20 rounded-xl p-3 sm:p-4 border border-[var(--warm-accent)]/30 backdrop-blur-sm">
+                      <p className="text-[var(--warm-accent)] font-bold text-base sm:text-lg" style={{ textShadow: '0 0 8px rgba(255,255,255,0.2)' }}>
                         Economia de R$ 69,80 (78% OFF)
                       </p>
                     </div>
@@ -204,25 +204,25 @@ export function PricingSection() {
                 </div>
 
                 {/* Bonuses */}
-                <div className="bg-[var(--accent-blue)]/5 rounded-2xl p-6 mb-8 border border-[var(--accent-blue)]/20 backdrop-blur-sm">
-                  <h4 className="text-xl font-bold text-[var(--text-primary)] mb-4 text-center" style={{ textShadow: '0 0 10px rgba(255,255,255,0.25)' }}>🎁 Bônus Exclusivos (R$ 49,80)</h4>
-                  <div className="space-y-3">
+                <div className="bg-[var(--accent-blue)]/5 rounded-2xl p-4 sm:p-6 mb-6 sm:mb-8 border border-[var(--accent-blue)]/20 backdrop-blur-sm">
+                  <h4 className="text-lg sm:text-xl font-bold text-[var(--text-primary)] mb-3 sm:mb-4 text-center" style={{ textShadow: '0 0 10px rgba(255,255,255,0.25)' }}>🎁 Bônus Exclusivos (R$ 49,80)</h4>
+                  <div className="space-y-3 sm:space-y-4">
                     {bonuses.map((bonus, index) => (
-                      <div key={index} className="flex items-center gap-3">
-                        <div className="text-[var(--success-green)]">{bonus.icon}</div>
-                        <div className="flex-1">
-                          <h5 className="font-semibold text-[var(--text-primary)] text-sm" style={{ textShadow: '0 0 6px rgba(255,255,255,0.2)' }}>{bonus.title}</h5>
-                          <p className="text-xs text-[var(--text-muted)]" style={{ textShadow: '0 0 5px rgba(255,255,255,0.15)' }}>{bonus.description}</p>
+                      <div key={index} className="flex items-start gap-3">
+                        <div className="text-[var(--success-green)] flex-shrink-0 mt-1">{bonus.icon}</div>
+                        <div className="flex-1 min-w-0">
+                          <h5 className="font-semibold text-[var(--text-primary)] text-sm sm:text-base" style={{ textShadow: '0 0 6px rgba(255,255,255,0.2)' }}>{bonus.title}</h5>
+                          <p className="text-xs sm:text-sm text-[var(--text-muted)] mt-1" style={{ textShadow: '0 0 5px rgba(255,255,255,0.15)' }}>{bonus.description}</p>
                         </div>
-                        <div className="text-right">
-                          <span className="text-xs text-[var(--text-muted)] line-through" style={{ textShadow: '0 0 5px rgba(255,255,255,0.15)' }}>{bonus.value}</span>
-                          <div className="text-xs font-bold text-[var(--success-green)]" style={{ textShadow: '0 0 6px rgba(255,255,255,0.2)' }}>GRÁTIS</div>
+                        <div className="text-right flex-shrink-0">
+                          <span className="text-xs text-[var(--text-muted)] line-through block" style={{ textShadow: '0 0 5px rgba(255,255,255,0.15)' }}>{bonus.value}</span>
+                          <div className="text-xs sm:text-sm font-bold text-[var(--success-green)]" style={{ textShadow: '0 0 6px rgba(255,255,255,0.2)' }}>GRÁTIS</div>
                         </div>
                       </div>
                     ))}
                   </div>
-                  <div className="text-center mt-4 pt-4 border-t border-[var(--border-subtle)]">
-                    <p className="text-[var(--success-green)] font-bold" style={{ textShadow: '0 0 8px rgba(255,255,255,0.25)' }}>💚 TODOS GRÁTIS HOJE!</p>
+                  <div className="text-center mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-[var(--border-subtle)]">
+                    <p className="text-[var(--success-green)] font-bold text-sm sm:text-base" style={{ textShadow: '0 0 8px rgba(255,255,255,0.25)' }}>💚 TODOS GRÁTIS HOJE!</p>
                   </div>
                 </div>
                 
@@ -230,31 +230,31 @@ export function PricingSection() {
                 <div className="space-y-6">
                   <Button 
                     onClick={handlePurchaseClick}
-                    className="w-full relative bg-gradient-to-r from-[var(--warm-accent)] to-[hsl(35,70%,50%)] border-2 border-[var(--warm-accent)] text-white py-8 px-8 rounded-2xl text-xl font-semibold transition-all duration-500 group animate-enhanced-float shadow-lg shadow-[var(--warm-accent)]/30"
+                    className="w-full relative bg-gradient-to-r from-[var(--warm-accent)] to-[hsl(35,70%,50%)] border-2 border-[var(--warm-accent)] text-white py-6 sm:py-8 px-4 sm:px-8 rounded-2xl text-base sm:text-xl font-semibold transition-all duration-500 group animate-enhanced-float shadow-lg shadow-[var(--warm-accent)]/30"
                     style={{ filter: 'drop-shadow(0 0 15px rgba(218, 165, 32, 0.6))' }}
                   >
                     {/* Button content */}
-                    <div className="flex items-center justify-center gap-3">
-                      <Moon className="h-6 w-6 text-white transition-colors duration-300" />
-                      <span className="text-white font-semibold tracking-wide" style={{ textShadow: '0 0 10px rgba(255,255,255,0.4)' }}>
+                    <div className="flex items-center justify-center gap-2 sm:gap-3">
+                      <Moon className="h-5 w-5 sm:h-6 sm:w-6 text-white transition-colors duration-300" />
+                      <span className="text-white font-semibold tracking-wide text-center leading-tight" style={{ textShadow: '0 0 10px rgba(255,255,255,0.4)' }}>
                         QUERO TRANSFORMAR MINHAS NOITES
                       </span>
                     </div>
                   </Button>
                   
-                  {/* Security badges */}
-                  <div className="flex flex-wrap justify-center gap-4 text-sm">
-                    <div className="flex items-center gap-2 bg-[var(--accent-blue)]/10 border border-[var(--accent-blue)]/20 px-4 py-2 rounded-full backdrop-blur-sm">
-                      <Shield className="h-4 w-4 text-[var(--accent-blue)]" style={{ filter: 'drop-shadow(0 0 3px rgba(135, 206, 250, 0.4))' }} />
-                      <span className="text-[var(--text-secondary)]" style={{ textShadow: '0 0 5px rgba(255,255,255,0.15)' }}>Garantia de 30 dias</span>
+                  {/* Security badges - mobile optimized */}
+                  <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 text-sm">
+                    <div className="flex items-center gap-2 bg-[var(--accent-blue)]/10 border border-[var(--accent-blue)]/20 px-3 sm:px-4 py-2 rounded-full backdrop-blur-sm">
+                      <Shield className="h-3 w-3 sm:h-4 sm:w-4 text-[var(--accent-blue)]" style={{ filter: 'drop-shadow(0 0 3px rgba(135, 206, 250, 0.4))' }} />
+                      <span className="text-[var(--text-secondary)] text-xs sm:text-sm" style={{ textShadow: '0 0 5px rgba(255,255,255,0.15)' }}>Garantia de 30 dias</span>
                     </div>
-                    <div className="flex items-center gap-2 bg-[var(--accent-blue)]/10 border border-[var(--accent-blue)]/20 px-4 py-2 rounded-full backdrop-blur-sm">
-                      <Lock className="h-4 w-4 text-[var(--accent-blue)]" style={{ filter: 'drop-shadow(0 0 3px rgba(135, 206, 250, 0.4))' }} />
-                      <span className="text-[var(--text-secondary)]" style={{ textShadow: '0 0 5px rgba(255,255,255,0.15)' }}>Pagamento seguro</span>
+                    <div className="flex items-center gap-2 bg-[var(--accent-blue)]/10 border border-[var(--accent-blue)]/20 px-3 sm:px-4 py-2 rounded-full backdrop-blur-sm">
+                      <Lock className="h-3 w-3 sm:h-4 sm:w-4 text-[var(--accent-blue)]" style={{ filter: 'drop-shadow(0 0 3px rgba(135, 206, 250, 0.4))' }} />
+                      <span className="text-[var(--text-secondary)] text-xs sm:text-sm" style={{ textShadow: '0 0 5px rgba(255,255,255,0.15)' }}>Pagamento seguro</span>
                     </div>
-                    <div className="flex items-center gap-2 bg-[var(--warm-accent)]/10 border border-[var(--warm-accent)]/20 px-4 py-2 rounded-full backdrop-blur-sm">
-                      <Download className="h-4 w-4 text-[var(--warm-accent)]" style={{ filter: 'drop-shadow(0 0 3px rgba(135, 206, 250, 0.4))' }} />
-                      <span className="text-[var(--text-secondary)]" style={{ textShadow: '0 0 5px rgba(255,255,255,0.15)' }}>Acesso instantâneo</span>
+                    <div className="flex items-center gap-2 bg-[var(--warm-accent)]/10 border border-[var(--warm-accent)]/20 px-3 sm:px-4 py-2 rounded-full backdrop-blur-sm">
+                      <Download className="h-3 w-3 sm:h-4 sm:w-4 text-[var(--warm-accent)]" style={{ filter: 'drop-shadow(0 0 3px rgba(135, 206, 250, 0.4))' }} />
+                      <span className="text-[var(--text-secondary)] text-xs sm:text-sm" style={{ textShadow: '0 0 5px rgba(255,255,255,0.15)' }}>Acesso instantâneo</span>
                     </div>
                   </div>
                 </div>
@@ -266,12 +266,12 @@ export function PricingSection() {
 
       {/* Purchase Form Modal */}
       {showForm && (
-        <div className="fixed inset-0 bg-black/90 backdrop-blur-lg z-50 flex items-center justify-center p-4">
-          <div className="bg-gradient-to-br from-[var(--accent-blue)]/10 to-[var(--warm-accent)]/5 backdrop-blur-xl border border-[var(--accent-blue)]/30 rounded-3xl p-8 max-w-md w-full max-h-[90vh] overflow-y-auto shadow-2xl">
-            <div className="text-center mb-6">
-              <h3 className="text-2xl font-bold text-white mb-2" style={{ textShadow: '0 0 10px rgba(255,255,255,0.3)' }}>Finalizar Compra</h3>
-              <p className="text-[var(--text-secondary)]" style={{ textShadow: '0 0 6px rgba(255,255,255,0.15)' }}>Sono Zen - Método Completo</p>
-              <p className="text-3xl font-bold bg-gradient-to-r from-[var(--accent-blue)] to-[var(--warm-accent)] bg-clip-text text-transparent mt-2" style={{ textShadow: '0 0 12px rgba(255,255,255,0.25)' }}>R$ 19,90</p>
+        <div className="fixed inset-0 bg-black/90 backdrop-blur-lg z-50 flex items-center justify-center p-3 sm:p-4">
+          <div className="bg-gradient-to-br from-[var(--accent-blue)]/10 to-[var(--warm-accent)]/5 backdrop-blur-xl border border-[var(--accent-blue)]/30 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 max-w-sm sm:max-w-md w-full max-h-[95vh] sm:max-h-[90vh] overflow-y-auto shadow-2xl">
+            <div className="text-center mb-4 sm:mb-6">
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-2" style={{ textShadow: '0 0 10px rgba(255,255,255,0.3)' }}>Finalizar Compra</h3>
+              <p className="text-sm sm:text-base text-[var(--text-secondary)]" style={{ textShadow: '0 0 6px rgba(255,255,255,0.15)' }}>Sono Zen - Método Completo</p>
+              <p className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-[var(--accent-blue)] to-[var(--warm-accent)] bg-clip-text text-transparent mt-2" style={{ textShadow: '0 0 12px rgba(255,255,255,0.25)' }}>R$ 19,90</p>
             </div>
 
             <Form {...form}>
