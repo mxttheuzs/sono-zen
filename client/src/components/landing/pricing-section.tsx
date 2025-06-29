@@ -184,24 +184,24 @@ export function PricingSection() {
 
                 {/* Bonuses */}
                 <div className="bg-[var(--accent-blue)]/5 rounded-2xl p-6 mb-8 border border-[var(--accent-blue)]/20 backdrop-blur-sm">
-                  <h4 className="text-xl font-bold text-[var(--text-primary)] mb-4 text-center">🎁 Bônus Exclusivos (R$ 49,80)</h4>
+                  <h4 className="text-xl font-bold text-[var(--text-primary)] mb-4 text-center" style={{ textShadow: '0 0 10px rgba(255,255,255,0.25)' }}>🎁 Bônus Exclusivos (R$ 49,80)</h4>
                   <div className="space-y-3">
                     {bonuses.map((bonus, index) => (
                       <div key={index} className="flex items-center gap-3">
                         <div className="text-[var(--success-green)]">{bonus.icon}</div>
                         <div className="flex-1">
-                          <h5 className="font-semibold text-[var(--text-primary)] text-sm">{bonus.title}</h5>
-                          <p className="text-xs text-[var(--text-muted)]">{bonus.description}</p>
+                          <h5 className="font-semibold text-[var(--text-primary)] text-sm" style={{ textShadow: '0 0 6px rgba(255,255,255,0.2)' }}>{bonus.title}</h5>
+                          <p className="text-xs text-[var(--text-muted)]" style={{ textShadow: '0 0 5px rgba(255,255,255,0.15)' }}>{bonus.description}</p>
                         </div>
                         <div className="text-right">
-                          <span className="text-xs text-[var(--text-muted)] line-through">{bonus.value}</span>
-                          <div className="text-xs font-bold text-[var(--success-green)]">GRÁTIS</div>
+                          <span className="text-xs text-[var(--text-muted)] line-through" style={{ textShadow: '0 0 5px rgba(255,255,255,0.15)' }}>{bonus.value}</span>
+                          <div className="text-xs font-bold text-[var(--success-green)]" style={{ textShadow: '0 0 6px rgba(255,255,255,0.2)' }}>GRÁTIS</div>
                         </div>
                       </div>
                     ))}
                   </div>
                   <div className="text-center mt-4 pt-4 border-t border-[var(--border-subtle)]">
-                    <p className="text-[var(--success-green)] font-bold">💚 TODOS GRÁTIS HOJE!</p>
+                    <p className="text-[var(--success-green)] font-bold" style={{ textShadow: '0 0 8px rgba(255,255,255,0.25)' }}>💚 TODOS GRÁTIS HOJE!</p>
                   </div>
                 </div>
                 
@@ -214,7 +214,7 @@ export function PricingSection() {
                     {/* Button content */}
                     <div className="flex items-center justify-center gap-3">
                       <Moon className="h-6 w-6 text-blue-400 transition-colors duration-300" />
-                      <span className="text-white font-semibold tracking-wide">
+                      <span className="text-white font-semibold tracking-wide" style={{ textShadow: '0 0 10px rgba(255,255,255,0.4)' }}>
                         QUERO TRANSFORMAR MINHAS NOITES
                       </span>
                     </div>
@@ -224,15 +224,15 @@ export function PricingSection() {
                   <div className="flex flex-wrap justify-center gap-4 text-sm">
                     <div className="flex items-center gap-2 bg-[var(--accent-blue)]/10 border border-[var(--accent-blue)]/20 px-4 py-2 rounded-full backdrop-blur-sm">
                       <Shield className="h-4 w-4 text-[var(--accent-blue)]" />
-                      <span className="text-[var(--text-secondary)]">Garantia de 30 dias</span>
+                      <span className="text-[var(--text-secondary)]" style={{ textShadow: '0 0 5px rgba(255,255,255,0.15)' }}>Garantia de 30 dias</span>
                     </div>
                     <div className="flex items-center gap-2 bg-[var(--accent-blue)]/10 border border-[var(--accent-blue)]/20 px-4 py-2 rounded-full backdrop-blur-sm">
                       <Lock className="h-4 w-4 text-[var(--accent-blue)]" />
-                      <span className="text-[var(--text-secondary)]">Pagamento seguro</span>
+                      <span className="text-[var(--text-secondary)]" style={{ textShadow: '0 0 5px rgba(255,255,255,0.15)' }}>Pagamento seguro</span>
                     </div>
                     <div className="flex items-center gap-2 bg-[var(--warm-accent)]/10 border border-[var(--warm-accent)]/20 px-4 py-2 rounded-full backdrop-blur-sm">
                       <Download className="h-4 w-4 text-[var(--warm-accent)]" />
-                      <span className="text-[var(--text-secondary)]">Acesso instantâneo</span>
+                      <span className="text-[var(--text-secondary)]" style={{ textShadow: '0 0 5px rgba(255,255,255,0.15)' }}>Acesso instantâneo</span>
                     </div>
                   </div>
                 </div>
@@ -247,9 +247,9 @@ export function PricingSection() {
         <div className="fixed inset-0 bg-black/90 backdrop-blur-lg z-50 flex items-center justify-center p-4">
           <div className="bg-gradient-to-br from-[var(--accent-blue)]/10 to-[var(--warm-accent)]/5 backdrop-blur-xl border border-[var(--accent-blue)]/30 rounded-3xl p-8 max-w-md w-full max-h-[90vh] overflow-y-auto shadow-2xl">
             <div className="text-center mb-6">
-              <h3 className="text-2xl font-bold text-white mb-2">Finalizar Compra</h3>
-              <p className="text-[var(--text-secondary)]">Sono Zen - Método Completo</p>
-              <p className="text-3xl font-bold bg-gradient-to-r from-[var(--accent-blue)] to-[var(--warm-accent)] bg-clip-text text-transparent mt-2">R$ 19,90</p>
+              <h3 className="text-2xl font-bold text-white mb-2" style={{ textShadow: '0 0 10px rgba(255,255,255,0.3)' }}>Finalizar Compra</h3>
+              <p className="text-[var(--text-secondary)]" style={{ textShadow: '0 0 6px rgba(255,255,255,0.15)' }}>Sono Zen - Método Completo</p>
+              <p className="text-3xl font-bold bg-gradient-to-r from-[var(--accent-blue)] to-[var(--warm-accent)] bg-clip-text text-transparent mt-2" style={{ textShadow: '0 0 12px rgba(255,255,255,0.25)' }}>R$ 19,90</p>
             </div>
 
             <Form {...form}>
