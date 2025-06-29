@@ -206,9 +206,7 @@ export function PricingSection() {
                       </div>
                     ))}
                   </div>
-                  <div className="text-center mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-[var(--border-subtle)]">
-                    <p className="text-[var(--success-green)] font-bold text-sm sm:text-base" style={{ textShadow: '0 0 8px rgba(255,255,255,0.25)' }}>💚 TODOS GRÁTIS HOJE!</p>
-                  </div>
+
                 </div>
                 
                 {/* Purchase Button */}
