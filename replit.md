@@ -120,6 +120,7 @@ Changelog:
 - June 29, 2025. Bonus section cleanup: Removed "💚 TODOS GRÁTIS HOJE!" promotional message from bonus section for cleaner, more professional presentation focused on product value rather than excessive promotional language.
 - June 29, 2025. Premium border enhancement: Implemented sophisticated border styling throughout pricing section with thicker borders (2px), multiple box-shadow layers, blue glow effects, and enhanced visual depth. Added animated gradients and premium visual treatment to main card, pricing section, bonuses, and security badges for luxury appearance.
 - June 29, 2025. White glow refinement: Updated all border glow effects from blue/colored to subtle white glow for elegant appearance. Removed inner shadows and excessive effects, keeping only outer border glow in white (8px-20px range) for sophisticated, premium look without visual overload.
+- June 29, 2025. Golden-white gradient borders: Enhanced border glow effects with golden-to-white gradient using dual box-shadow layers (golden inner glow + white outer glow) for sophisticated luxury appearance. Maintained thin, elegant borders while creating premium visual depth with subtle color transition from gold to white.
 
 ## User Preferences
 
