@@ -101,7 +101,7 @@ export function ProblemSection() {
           {problems.map((problem, index) => (
             <div key={index} className="group relative backdrop-blur-sm bg-transparent border-2 border-[var(--accent-blue)]/20 hover:border-[var(--accent-blue)]/40 rounded-3xl p-6 sm:p-8 animate-scale-in hover:shadow-xl hover:shadow-[var(--accent-blue)]/10 transition-all duration-300 animate-magnetic-hover" style={{animationDelay: `${index * 0.15}s`}}>
               <div className="flex items-start gap-6">
-                <div className="p-4 rounded-2xl bg-[var(--accent-blue)]/10 border border-[var(--accent-blue)]/20 flex-shrink-0 backdrop-blur-sm animate-bounce-gentle animate-glow-pulse" style={{animationDelay: `${index * 0.2 + 0.3}s`}}>
+                <div className="p-4 rounded-2xl bg-[var(--accent-blue)]/10 border border-[var(--accent-blue)]/20 flex-shrink-0 backdrop-blur-sm animate-glow-pulse" style={{animationDelay: `${index * 0.2 + 0.3}s`}}>
                   <problem.icon className="h-8 w-8 text-[var(--accent-blue)]" />
                 </div>
                 <div className="space-y-4 flex-1">

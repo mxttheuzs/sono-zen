@@ -132,7 +132,7 @@ export function EbookContentSection() {
               {extras.map((extra, index) => (
                 <div key={index} className="group relative backdrop-blur-sm bg-transparent border-2 border-[var(--accent-blue)]/15 hover:border-[var(--accent-blue)]/30 rounded-2xl p-6 transition-all duration-300 animate-fade-in-up" style={{animationDelay: `${index * 0.1}s`}}>
                   <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-xl bg-[var(--success-green)]/10 border border-[var(--success-green)]/20 backdrop-blur-sm animate-bounce-gentle" style={{animationDelay: `${index * 0.1 + 0.2}s`}}>
+                    <div className="p-3 rounded-xl bg-[var(--success-green)]/10 border border-[var(--success-green)]/20 backdrop-blur-sm">
                       <CheckCircle className="h-6 w-6 text-[var(--success-green)]" />
                     </div>
                     <div>

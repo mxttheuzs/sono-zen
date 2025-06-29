@@ -178,7 +178,7 @@ html {
   }
   
   .animate-pulse-soft {
-    animation: pulse-soft 2s ease-in-out infinite;
+    animation: pulse-soft 6s ease-in-out infinite;
   }
   
   .animate-fade-in {
@@ -190,7 +190,7 @@ html {
   }
   
   .animate-breathe {
-    animation: breathe 4s ease-in-out infinite;
+    animation: breathe 8s ease-in-out infinite;
   }
   
   .animate-gentle-float {
@@ -198,11 +198,11 @@ html {
   }
   
   .animate-slow-glow {
-    animation: slowGlow 6s ease-in-out infinite;
+    animation: slowGlow 10s ease-in-out infinite;
   }
   
   .animate-drift {
-    animation: drift 12s linear infinite;
+    animation: drift 20s linear infinite;
   }
   
   .animate-float-slow {
@@ -210,15 +210,15 @@ html {
   }
   
   .animate-twinkle {
-    animation: twinkle 3s ease-in-out infinite;
+    animation: twinkle 6s ease-in-out infinite;
   }
   
   .animate-float-cloud {
-    animation: float-cloud 20s linear infinite;
+    animation: float-cloud 35s linear infinite;
   }
   
   .animate-sparkle {
-    animation: sparkle 4s ease-in-out infinite;
+    animation: sparkle 8s ease-in-out infinite;
   }
   
   .animate-slow-drift {
@@ -226,12 +226,12 @@ html {
   }
   
   .animate-gentle-glow {
-    animation: gentle-glow 5s ease-in-out infinite;
+    animation: gentle-glow 8s ease-in-out infinite;
   }
   
   /* New micro-animations for enhanced engagement */
   .animate-bounce-gentle {
-    animation: bounce-gentle 2s ease-in-out infinite;
+    animation: bounce-gentle 4s ease-in-out infinite;
   }
   
   .animate-scale-in {
@@ -243,7 +243,7 @@ html {
   }
   
   .animate-heartbeat {
-    animation: heartbeat 2s ease-in-out infinite;
+    animation: heartbeat 5s ease-in-out infinite;
   }
   
   .animate-magnetic-hover {

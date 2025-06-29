@@ -132,10 +132,10 @@ export function PricingSection() {
           
           {/* Main Product Card */}
           <div className="max-w-4xl mx-auto">
-            <div className="bg-[var(--card-bg)]/90 backdrop-blur-xl border border-[var(--border-subtle)] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="bg-[var(--accent-blue)]/5 backdrop-blur-xl border border-[var(--accent-blue)]/20 rounded-3xl overflow-hidden shadow-2xl">
               
               {/* Product Header */}
-              <div className="bg-gradient-to-r from-[var(--accent-blue)]/10 to-[var(--warm-accent)]/10 border-b border-[var(--border-subtle)] p-8 text-center">
+              <div className="bg-gradient-to-r from-[var(--accent-blue)]/10 to-[var(--warm-accent)]/10 border-b border-[var(--accent-blue)]/20 p-8 text-center">
                 <h3 className="text-2xl md:text-3xl font-bold text-[var(--text-primary)] mb-4">
                   Sono Zen - Método Completo
                 </h3>
@@ -149,8 +149,8 @@ export function PricingSection() {
                 {/* Features Grid */}
                 <div className="grid md:grid-cols-2 gap-4 mb-8">
                   {features.map((feature, index) => (
-                    <div key={index} className="flex items-center gap-3 p-3 rounded-lg bg-[var(--card-hover)] border border-[var(--border-subtle)]">
-                      {feature.icon}
+                    <div key={index} className="flex items-center gap-3 p-4 rounded-xl bg-[var(--accent-blue)]/5 border border-[var(--accent-blue)]/15 backdrop-blur-sm hover:bg-[var(--accent-blue)]/10 transition-all duration-300">
+                      <div className="text-[var(--accent-blue)]">{feature.icon}</div>
                       <span className="text-[var(--text-secondary)] font-medium">{feature.text}</span>
                     </div>
                   ))}
@@ -166,22 +166,22 @@ export function PricingSection() {
                 </div>
 
                 {/* Pricing */}
-                <div className="bg-gradient-to-r from-[var(--warm-accent)]/10 to-[var(--accent-blue)]/10 rounded-2xl p-8 mb-8 border border-[var(--warm-accent)]/20">
+                <div className="bg-gradient-to-r from-[var(--accent-blue)]/8 to-[var(--warm-accent)]/8 rounded-2xl p-8 mb-8 border border-[var(--accent-blue)]/25 backdrop-blur-sm">
                   <div className="text-center">
                     <p className="text-[var(--text-muted)] mb-2">Valor normal:</p>
                     <p className="text-2xl text-[var(--text-muted)] line-through mb-4">R$ 89,70</p>
-                    <p className="text-[var(--text-muted)] mb-2">Oferta especial hoje:</p>
-                    <p className="text-4xl sm:text-5xl md:text-6xl font-bold text-[var(--text-primary)] mb-4">R$ 19,90</p>
-                    <div className="bg-gradient-to-r from-[var(--success-green)]/20 to-emerald-500/20 rounded-lg p-4 border border-[var(--success-green)]/30">
-                      <p className="text-[var(--success-green)] font-bold text-lg">
-                        💰 Economia de R$ 69,80 (78% OFF)
+                    <p className="text-[var(--accent-blue)] font-semibold mb-2">Oferta especial hoje:</p>
+                    <p className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-[var(--accent-blue)] to-[var(--warm-accent)] bg-clip-text text-transparent mb-4">R$ 19,90</p>
+                    <div className="bg-gradient-to-r from-[var(--warm-accent)]/20 to-[var(--accent-blue)]/20 rounded-xl p-4 border border-[var(--warm-accent)]/30 backdrop-blur-sm">
+                      <p className="text-[var(--warm-accent)] font-bold text-lg">
+                        Economia de R$ 69,80 (78% OFF)
                       </p>
                     </div>
                   </div>
                 </div>
 
                 {/* Bonuses */}
-                <div className="bg-[var(--card-hover)] rounded-2xl p-6 mb-8 border border-[var(--border-subtle)]">
+                <div className="bg-[var(--accent-blue)]/5 rounded-2xl p-6 mb-8 border border-[var(--accent-blue)]/20 backdrop-blur-sm">
                   <h4 className="text-xl font-bold text-[var(--text-primary)] mb-4 text-center">🎁 Bônus Exclusivos (R$ 49,80)</h4>
                   <div className="space-y-3">
                     {bonuses.map((bonus, index) => (
@@ -205,30 +205,51 @@ export function PricingSection() {
                 
                 {/* Purchase Button */}
                 <div className="space-y-6">
-                  <Button 
-                    onClick={handlePurchaseClick}
-                    className="w-full group relative overflow-hidden bg-gradient-to-r from-[var(--accent-blue)]/20 to-[var(--accent-blue)]/10 backdrop-blur-sm border-2 border-[var(--accent-blue)]/30 hover:border-[var(--accent-blue)]/50 text-[var(--accent-blue)] hover:text-white py-6 px-8 rounded-2xl text-xl font-semibold shadow-lg hover:shadow-[var(--accent-blue)]/25 transition-all duration-300 transform hover:scale-[1.02] animate-magnetic-hover"
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-r from-[var(--accent-blue)] to-[var(--accent-blue)]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div className="relative flex items-center justify-center gap-3">
-                      <Moon className="h-6 w-6 animate-bounce-gentle" />
-                      QUERO TRANSFORMAR MINHAS NOITES
-                    </div>
-                  </Button>
+                  <div className="relative group">
+                    {/* Glow effect background */}
+                    <div className="absolute -inset-1 bg-gradient-to-r from-[var(--accent-blue)] via-[var(--warm-accent)] to-[var(--accent-blue)] rounded-3xl blur-lg opacity-20 group-hover:opacity-40 transition-all duration-500 animate-pulse"></div>
+                    
+                    {/* Main button */}
+                    <Button 
+                      onClick={handlePurchaseClick}
+                      className="w-full relative overflow-hidden bg-gradient-to-r from-[var(--accent-blue)]/10 via-[var(--warm-accent)]/15 to-[var(--accent-blue)]/10 backdrop-blur-xl border-2 border-[var(--accent-blue)]/30 hover:border-[var(--warm-accent)]/50 text-white py-8 px-8 rounded-2xl text-xl font-bold shadow-2xl hover:shadow-[var(--warm-accent)]/30 transition-all duration-500 transform hover:scale-[1.02] group"
+                    >
+                      {/* Animated background gradient */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-[var(--accent-blue)]/80 via-[var(--warm-accent)]/90 to-[var(--accent-blue)]/80 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                      
+                      {/* Shimmer effect */}
+                      <div className="absolute inset-0 -skew-x-12 translate-x-[-100%] bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:translate-x-[100%] transition-transform duration-1000 ease-out"></div>
+                      
+                      {/* Button content */}
+                      <div className="relative flex items-center justify-center gap-4">
+                        <div className="flex items-center gap-2">
+                          <div className="w-3 h-3 bg-[var(--warm-accent)] rounded-full animate-pulse"></div>
+                          <Moon className="h-7 w-7 text-[var(--warm-accent)] group-hover:text-white transition-colors duration-300" />
+                          <div className="w-3 h-3 bg-[var(--warm-accent)] rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                        </div>
+                        <span className="bg-gradient-to-r from-[var(--accent-blue)] to-[var(--warm-accent)] bg-clip-text text-transparent group-hover:text-white transition-all duration-300 font-extrabold tracking-wide">
+                          QUERO TRANSFORMAR MINHAS NOITES
+                        </span>
+                      </div>
+                      
+                      {/* Bottom accent line */}
+                      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-[var(--accent-blue)] to-[var(--warm-accent)] group-hover:w-full transition-all duration-500 rounded-full"></div>
+                    </Button>
+                  </div>
                   
                   {/* Security badges */}
-                  <div className="flex flex-wrap justify-center gap-6 text-sm text-[var(--text-muted)]">
-                    <div className="flex items-center gap-2">
-                      <Shield className="h-4 w-4 text-[var(--success-green)]" />
-                      <span>Garantia de 30 dias</span>
+                  <div className="flex flex-wrap justify-center gap-4 text-sm">
+                    <div className="flex items-center gap-2 bg-[var(--accent-blue)]/10 border border-[var(--accent-blue)]/20 px-4 py-2 rounded-full backdrop-blur-sm">
+                      <Shield className="h-4 w-4 text-[var(--accent-blue)]" />
+                      <span className="text-[var(--text-secondary)]">Garantia de 30 dias</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <Lock className="h-4 w-4 text-[var(--success-green)]" />
-                      <span>Pagamento seguro</span>
+                    <div className="flex items-center gap-2 bg-[var(--accent-blue)]/10 border border-[var(--accent-blue)]/20 px-4 py-2 rounded-full backdrop-blur-sm">
+                      <Lock className="h-4 w-4 text-[var(--accent-blue)]" />
+                      <span className="text-[var(--text-secondary)]">Pagamento seguro</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <Download className="h-4 w-4 text-[var(--success-green)]" />
-                      <span>Acesso instantâneo</span>
+                    <div className="flex items-center gap-2 bg-[var(--warm-accent)]/10 border border-[var(--warm-accent)]/20 px-4 py-2 rounded-full backdrop-blur-sm">
+                      <Download className="h-4 w-4 text-[var(--warm-accent)]" />
+                      <span className="text-[var(--text-secondary)]">Acesso instantâneo</span>
                     </div>
                   </div>
                 </div>
@@ -240,12 +261,12 @@ export function PricingSection() {
 
       {/* Purchase Form Modal */}
       {showForm && (
-        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-3xl p-8 max-w-md w-full max-h-[90vh] overflow-y-auto">
+        <div className="fixed inset-0 bg-black/90 backdrop-blur-lg z-50 flex items-center justify-center p-4">
+          <div className="bg-gradient-to-br from-[var(--accent-blue)]/10 to-[var(--warm-accent)]/5 backdrop-blur-xl border border-[var(--accent-blue)]/30 rounded-3xl p-8 max-w-md w-full max-h-[90vh] overflow-y-auto shadow-2xl">
             <div className="text-center mb-6">
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Finalizar Compra</h3>
-              <p className="text-gray-600">Sono Zen - Método Completo</p>
-              <p className="text-3xl font-bold text-blue-600 mt-2">R$ 19,90</p>
+              <h3 className="text-2xl font-bold text-white mb-2">Finalizar Compra</h3>
+              <p className="text-[var(--text-secondary)]">Sono Zen - Método Completo</p>
+              <p className="text-3xl font-bold bg-gradient-to-r from-[var(--accent-blue)] to-[var(--warm-accent)] bg-clip-text text-transparent mt-2">R$ 19,90</p>
             </div>
 
             <Form {...form}>

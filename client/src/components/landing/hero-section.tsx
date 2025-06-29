@@ -65,19 +65,19 @@ export function HeroSection() {
             {/* Benefícios rápidos */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl">
               <div className="flex items-center gap-2 text-[var(--text-secondary)] animate-scale-in hover:transform hover:translate-x-1 transition-all duration-200" style={{animationDelay: '0.3s'}}>
-                <CheckCircle className="h-5 w-5 text-[var(--success-green)] animate-bounce-gentle" style={{animationDelay: '0.5s'}} />
+                <CheckCircle className="h-5 w-5 text-[var(--success-green)]" />
                 <span className="text-sm font-medium animate-text-focus">Sem remédios ou dependência</span>
               </div>
               <div className="flex items-center gap-2 text-[var(--text-secondary)] animate-scale-in hover:transform hover:translate-x-1 transition-all duration-200" style={{animationDelay: '0.4s'}}>
-                <CheckCircle className="h-5 w-5 text-[var(--success-green)] animate-bounce-gentle" style={{animationDelay: '0.7s'}} />
+                <CheckCircle className="h-5 w-5 text-[var(--success-green)]" />
                 <span className="text-sm font-medium animate-text-focus">Resultados em 1 semana</span>
               </div>
               <div className="flex items-center gap-2 text-[var(--text-secondary)] animate-scale-in hover:transform hover:translate-x-1 transition-all duration-200" style={{animationDelay: '0.5s'}}>
-                <CheckCircle className="h-5 w-5 text-[var(--success-green)] animate-bounce-gentle" style={{animationDelay: '0.9s'}} />
+                <CheckCircle className="h-5 w-5 text-[var(--success-green)]" />
                 <span className="text-sm font-medium animate-text-focus">Técnicas orientais milenares</span>
               </div>
               <div className="flex items-center gap-2 text-[var(--text-secondary)] animate-scale-in hover:transform hover:translate-x-1 transition-all duration-200" style={{animationDelay: '0.6s'}}>
-                <CheckCircle className="h-5 w-5 text-[var(--success-green)] animate-bounce-gentle" style={{animationDelay: '1.1s'}} />
+                <CheckCircle className="h-5 w-5 text-[var(--success-green)]" />
                 <span className="text-sm font-medium animate-text-focus">Aprovado por 2.800+ pessoas</span>
               </div>
             </div>

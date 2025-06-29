@@ -85,7 +85,7 @@ export function BenefitsSection() {
             {benefits.map((benefit, index) => (
               <div key={index} className="card-modern p-6 group animate-slide-up hover:shadow-xl transition-all duration-300 animate-magnetic-hover" style={{animationDelay: `${index * 0.1}s`}}>
                 <div className="flex items-start gap-6">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-[var(--accent-blue)] to-[var(--warm-accent)] flex items-center justify-center flex-shrink-0 animate-bounce-gentle" style={{animationDelay: `${index * 0.2 + 0.5}s`}}>
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-[var(--accent-blue)] to-[var(--warm-accent)] flex items-center justify-center flex-shrink-0">
                     <benefit.icon className="h-8 w-8 text-white" />
                   </div>
                   <div className="flex-1">
