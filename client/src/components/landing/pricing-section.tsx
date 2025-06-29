@@ -177,14 +177,7 @@ export function PricingSection() {
                   ))}
                 </div>
 
-                {/* Sleep Journey Preview */}
-                <div className="text-center mb-6">
-                  <div className="bg-gradient-to-r from-[var(--accent-blue)]/10 to-[var(--warm-accent)]/10 border border-[var(--accent-blue)]/30 rounded-lg p-4 mb-4">
-                    <p className="text-[var(--accent-blue)] font-semibold text-sm" style={{ textShadow: '0 0 8px rgba(255,255,255,0.2)' }}>
-                      🌙 <span className="animate-pulse">Sua jornada</span> para o sono perfeito começa hoje
-                    </p>
-                  </div>
-                </div>
+
 
                 {/* Pricing */}
                 <div className="bg-gradient-to-r from-[var(--accent-blue)]/8 to-[var(--warm-accent)]/8 rounded-2xl p-4 sm:p-6 md:p-8 mb-6 sm:mb-8 border border-[var(--accent-blue)]/25 backdrop-blur-sm">
