@@ -115,7 +115,7 @@ Changelog:
 - June 29, 2025. Golden glow cleanup: Removed golden glow pulse animations from ebook content section icons for cleaner visual appearance while maintaining 30-day guarantee in pricing section as the correct guarantee period.
 - June 29, 2025. Premium visual enhancements: Strengthened "Bem-Estar" text with vibrant multi-color gradient and golden glow effect. Redesigned "Sono Zen - Método Completo" section with sophisticated layout including decorative elements, prominent moon icon, enhanced typography hierarchy, and premium visual depth for more engaging user experience.
 - June 29, 2025. Complete mobile optimization: Implemented comprehensive responsive design with mobile-first approach including responsive typography scaling, optimized touch targets, mobile-specific layouts for pricing section, payment button optimization, security badges vertical stacking, and enhanced modal experience. All elements now perfectly scaled for 99% mobile usage with maintained premium visual identity.
-- June 29, 2025. Pricing section cleanup: Removed disruptive "Sua jornada para o sono perfeito começa hoje" banner from pricing section to create cleaner, more direct flow from product features to pricing display, improving user experience and conversion focus.
+- June 29, 2025. Pricing section cleanup: Removed disruptive "Sua jornada para o sono perfeito começa hoje" banner and features grid with checkmarks from pricing section to create cleaner, more direct flow from product title to pricing display, improving user experience and conversion focus with streamlined layout.
 
 ## User Preferences
 

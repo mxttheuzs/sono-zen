@@ -167,15 +167,7 @@ export function PricingSection() {
               
               {/* Content */}
               <div className="p-4 sm:p-6 md:p-8">
-                {/* Features Grid */}
-                <div className="grid sm:grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8">
-                  {features.map((feature, index) => (
-                    <div key={index} className="flex items-center gap-3 p-3 sm:p-4 rounded-xl bg-[var(--accent-blue)]/5 border border-[var(--accent-blue)]/15 backdrop-blur-sm hover:bg-[var(--accent-blue)]/10 transition-all duration-300">
-                      <div className="text-[var(--accent-blue)] flex-shrink-0">{feature.icon}</div>
-                      <span className="text-[var(--text-secondary)] font-medium text-sm sm:text-base" style={{ textShadow: '0 0 6px rgba(255,255,255,0.15)' }}>{feature.text}</span>
-                    </div>
-                  ))}
-                </div>
+
 
 
 
