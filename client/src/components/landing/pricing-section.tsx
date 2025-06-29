@@ -9,7 +9,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useToast } from "@/hooks/use-toast";
 import { insertPurchaseSchema } from "@shared/schema";
 import { apiRequest } from "@/lib/queryClient";
-import { Shield, Lock, Star, Cloud, CheckCircle, Download, Clock, Users, Gift } from "lucide-react";
+import { Shield, Lock, Star, Cloud, CheckCircle, Download, Clock, Users, Gift, Moon } from "lucide-react";
 import { FloatingClouds } from "@/components/ui/floating-clouds";
 import { z } from "zod";
 
@@ -214,7 +214,7 @@ export function PricingSection() {
                   >
                     {/* Button content */}
                     <div className="flex items-center justify-center gap-3">
-                      <Cloud className="h-6 w-6 text-white transition-colors duration-300" />
+                      <Moon className="h-6 w-6 text-white transition-colors duration-300" />
                       <span className="text-white font-semibold tracking-wide" style={{ textShadow: '0 0 10px rgba(255,255,255,0.4)' }}>
                         QUERO TRANSFORMAR MINHAS NOITES
                       </span>

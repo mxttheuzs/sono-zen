@@ -111,6 +111,7 @@ Changelog:
 - June 29, 2025. Premium price display: Enhanced R$ 19,90 with elegant white typography, shadow effects, gradient glow background, and larger font sizing (5xl-7xl) for premium presentation while maintaining clean transparency throughout payment section.
 - June 29, 2025. Payment button enhancement: Replaced golden colors with blue theme, added enhanced floating animation with multi-directional movement (X, Y, scale), created blue glow pulse animation for better conversion attention, and applied thin blue border with transparent background for professional look.
 - June 29, 2025. Text enhancement optimization: Added subtle white textShadow glow to all payment section text while preserving original color variables, creating discrete but impactful background lighting effect that improves readability and visual appeal without changing the established color scheme.
+- June 29, 2025. Payment section styling updates: Changed icon glow effects from yellow to smaller blue glow using drop-shadow filters, transformed payment button from transparent to golden gradient background with enhanced golden glow effect, and replaced cloud icon with moon icon in payment button for better sleep theme consistency. Maintained 30-day guarantee as correct period.
 
 ## User Preferences
 
