@@ -170,8 +170,13 @@ export function PricingSection() {
                   <div className="text-center">
                     <p className="text-[var(--text-muted)] mb-2">Valor normal:</p>
                     <p className="text-2xl text-[var(--text-muted)] line-through mb-4">R$ 89,70</p>
-                    <p className="text-[var(--accent-blue)] font-semibold mb-2">Oferta especial hoje:</p>
-                    <p className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-[var(--accent-blue)] to-[var(--warm-accent)] bg-clip-text text-transparent mb-4">R$ 19,90</p>
+                    <p className="text-[var(--accent-blue)] font-semibold mb-3">Oferta especial hoje:</p>
+                    <div className="relative inline-block mb-4">
+                      <div className="absolute -inset-2 bg-gradient-to-r from-[var(--accent-blue)]/20 to-[var(--warm-accent)]/20 rounded-2xl blur-lg"></div>
+                      <p className="relative text-5xl sm:text-6xl md:text-7xl font-black text-white tracking-tight bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent shadow-2xl">
+                        R$ 19,90
+                      </p>
+                    </div>
                     <div className="bg-gradient-to-r from-[var(--warm-accent)]/20 to-[var(--accent-blue)]/20 rounded-xl p-4 border border-[var(--warm-accent)]/30 backdrop-blur-sm">
                       <p className="text-[var(--warm-accent)] font-bold text-lg">
                         Economia de R$ 69,80 (78% OFF)
@@ -212,28 +217,31 @@ export function PricingSection() {
                     {/* Main button */}
                     <Button 
                       onClick={handlePurchaseClick}
-                      className="w-full relative overflow-hidden bg-gradient-to-r from-[var(--accent-blue)]/10 via-[var(--warm-accent)]/15 to-[var(--accent-blue)]/10 backdrop-blur-xl border-2 border-[var(--accent-blue)]/30 hover:border-[var(--warm-accent)]/50 text-white py-8 px-8 rounded-2xl text-xl font-bold shadow-2xl hover:shadow-[var(--warm-accent)]/30 transition-all duration-500 transform hover:scale-[1.02] group"
+                      className="w-full relative overflow-hidden bg-transparent backdrop-blur-md border-2 border-[var(--accent-blue)]/40 hover:border-[var(--warm-accent)]/60 text-white py-8 px-8 rounded-2xl text-xl font-bold shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-[1.02] group"
                     >
-                      {/* Animated background gradient */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-[var(--accent-blue)]/80 via-[var(--warm-accent)]/90 to-[var(--accent-blue)]/80 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                      {/* Subtle gradient background on hover */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-[var(--accent-blue)]/5 via-transparent to-[var(--warm-accent)]/5 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                      
+                      {/* Border gradient animation */}
+                      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[var(--accent-blue)] via-[var(--warm-accent)] to-[var(--accent-blue)] opacity-0 group-hover:opacity-20 transition-all duration-500 -z-10"></div>
                       
                       {/* Shimmer effect */}
-                      <div className="absolute inset-0 -skew-x-12 translate-x-[-100%] bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:translate-x-[100%] transition-transform duration-1000 ease-out"></div>
+                      <div className="absolute inset-0 -skew-x-12 translate-x-[-100%] bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:translate-x-[100%] transition-transform duration-1000 ease-out"></div>
                       
                       {/* Button content */}
                       <div className="relative flex items-center justify-center gap-4">
                         <div className="flex items-center gap-2">
-                          <div className="w-3 h-3 bg-[var(--warm-accent)] rounded-full animate-pulse"></div>
-                          <Moon className="h-7 w-7 text-[var(--warm-accent)] group-hover:text-white transition-colors duration-300" />
-                          <div className="w-3 h-3 bg-[var(--warm-accent)] rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                          <div className="w-2 h-2 bg-[var(--warm-accent)]/70 rounded-full animate-pulse"></div>
+                          <Moon className="h-6 w-6 text-[var(--accent-blue)] group-hover:text-[var(--warm-accent)] transition-colors duration-300" />
+                          <div className="w-2 h-2 bg-[var(--warm-accent)]/70 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
                         </div>
-                        <span className="bg-gradient-to-r from-[var(--accent-blue)] to-[var(--warm-accent)] bg-clip-text text-transparent group-hover:text-white transition-all duration-300 font-extrabold tracking-wide">
+                        <span className="text-white font-extrabold tracking-wide group-hover:text-[var(--warm-accent)] transition-all duration-300">
                           QUERO TRANSFORMAR MINHAS NOITES
                         </span>
                       </div>
                       
                       {/* Bottom accent line */}
-                      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-[var(--accent-blue)] to-[var(--warm-accent)] group-hover:w-full transition-all duration-500 rounded-full"></div>
+                      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[var(--accent-blue)] to-[var(--warm-accent)] group-hover:w-3/4 transition-all duration-500 rounded-full"></div>
                     </Button>
                   </div>
                   
