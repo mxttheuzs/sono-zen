@@ -122,6 +122,7 @@ Changelog:
 - June 29, 2025. White glow refinement: Updated all border glow effects from blue/colored to subtle white glow for elegant appearance. Removed inner shadows and excessive effects, keeping only outer border glow in white (8px-20px range) for sophisticated, premium look without visual overload.
 - June 29, 2025. Golden-white gradient borders: Enhanced border glow effects with golden-to-white gradient using dual box-shadow layers (golden inner glow + white outer glow) for sophisticated luxury appearance. Maintained thin, elegant borders while creating premium visual depth with subtle color transition from gold to white.
 - June 29, 2025. Logical gradient progression: Refined golden-white gradient to create visual hierarchy from top to bottom - stronger golden glow at product header (15px) gradually transitioning to predominantly white glow at guarantee section (4px golden + 22px white), creating natural visual flow that guides user attention downward through the pricing funnel.
+- June 29, 2025. Border color update: Changed all golden border glow effects to white throughout pricing section for cleaner, more elegant appearance. All box-shadow effects now use white/rgba(255,255,255) instead of golden colors for sophisticated premium look.
 
 ## User Preferences
 
