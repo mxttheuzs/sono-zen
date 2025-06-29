@@ -227,19 +227,24 @@ export function PricingSection() {
                     </div>
                   </Button>
                   
-                  {/* Security badges - mobile optimized */}
-                  <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 text-sm">
-                    <div className="flex items-center gap-2 bg-[var(--accent-blue)]/10 border border-[var(--accent-blue)]/20 px-3 sm:px-4 py-2 rounded-full backdrop-blur-sm">
-                      <Shield className="h-3 w-3 sm:h-4 sm:w-4 text-[var(--accent-blue)]" style={{ filter: 'drop-shadow(0 0 3px rgba(135, 206, 250, 0.4))' }} />
-                      <span className="text-[var(--text-secondary)] text-xs sm:text-sm" style={{ textShadow: '0 0 5px rgba(255,255,255,0.15)' }}>Garantia de 30 dias</span>
-                    </div>
-                    <div className="flex items-center gap-2 bg-[var(--accent-blue)]/10 border border-[var(--accent-blue)]/20 px-3 sm:px-4 py-2 rounded-full backdrop-blur-sm">
-                      <Lock className="h-3 w-3 sm:h-4 sm:w-4 text-[var(--accent-blue)]" style={{ filter: 'drop-shadow(0 0 3px rgba(135, 206, 250, 0.4))' }} />
-                      <span className="text-[var(--text-secondary)] text-xs sm:text-sm" style={{ textShadow: '0 0 5px rgba(255,255,255,0.15)' }}>Pagamento seguro</span>
-                    </div>
-                    <div className="flex items-center gap-2 bg-[var(--warm-accent)]/10 border border-[var(--warm-accent)]/20 px-3 sm:px-4 py-2 rounded-full backdrop-blur-sm">
-                      <Download className="h-3 w-3 sm:h-4 sm:w-4 text-[var(--warm-accent)]" style={{ filter: 'drop-shadow(0 0 3px rgba(135, 206, 250, 0.4))' }} />
-                      <span className="text-[var(--text-secondary)] text-xs sm:text-sm" style={{ textShadow: '0 0 5px rgba(255,255,255,0.15)' }}>Acesso instantâneo</span>
+                  {/* Security badges - enhanced and more prominent */}
+                  <div className="bg-gradient-to-r from-[var(--accent-blue)]/8 to-[var(--warm-accent)]/8 rounded-2xl p-6 sm:p-8 border border-[var(--accent-blue)]/20 backdrop-blur-sm">
+                    <div className="grid sm:grid-cols-3 gap-4 sm:gap-6">
+                      <div className="flex flex-col items-center text-center p-4 bg-[var(--accent-blue)]/10 border border-[var(--accent-blue)]/25 rounded-xl backdrop-blur-sm hover:bg-[var(--accent-blue)]/15 transition-all duration-300">
+                        <Shield className="h-8 w-8 sm:h-10 sm:w-10 text-[var(--accent-blue)] mb-3" style={{ filter: 'drop-shadow(0 0 6px rgba(135, 206, 250, 0.6))' }} />
+                        <h4 className="font-bold text-[var(--text-primary)] text-sm sm:text-base mb-1" style={{ textShadow: '0 0 8px rgba(255,255,255,0.2)' }}>Garantia Total</h4>
+                        <p className="text-[var(--text-secondary)] text-xs sm:text-sm" style={{ textShadow: '0 0 5px rgba(255,255,255,0.15)' }}>30 dias para testar</p>
+                      </div>
+                      <div className="flex flex-col items-center text-center p-4 bg-[var(--accent-blue)]/10 border border-[var(--accent-blue)]/25 rounded-xl backdrop-blur-sm hover:bg-[var(--accent-blue)]/15 transition-all duration-300">
+                        <Lock className="h-8 w-8 sm:h-10 sm:w-10 text-[var(--accent-blue)] mb-3" style={{ filter: 'drop-shadow(0 0 6px rgba(135, 206, 250, 0.6))' }} />
+                        <h4 className="font-bold text-[var(--text-primary)] text-sm sm:text-base mb-1" style={{ textShadow: '0 0 8px rgba(255,255,255,0.2)' }}>100% Seguro</h4>
+                        <p className="text-[var(--text-secondary)] text-xs sm:text-sm" style={{ textShadow: '0 0 5px rgba(255,255,255,0.15)' }}>Pagamento protegido</p>
+                      </div>
+                      <div className="flex flex-col items-center text-center p-4 bg-[var(--warm-accent)]/10 border border-[var(--warm-accent)]/25 rounded-xl backdrop-blur-sm hover:bg-[var(--warm-accent)]/15 transition-all duration-300">
+                        <Download className="h-8 w-8 sm:h-10 sm:w-10 text-[var(--warm-accent)] mb-3" style={{ filter: 'drop-shadow(0 0 6px rgba(255, 215, 0, 0.6))' }} />
+                        <h4 className="font-bold text-[var(--text-primary)] text-sm sm:text-base mb-1" style={{ textShadow: '0 0 8px rgba(255,255,255,0.2)' }}>Acesso Imediato</h4>
+                        <p className="text-[var(--text-secondary)] text-xs sm:text-sm" style={{ textShadow: '0 0 5px rgba(255,255,255,0.15)' }}>Receba na hora</p>
+                      </div>
                     </div>
                   </div>
                 </div>
