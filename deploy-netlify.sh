@@ -6,7 +6,7 @@ echo "🚀 Atualizando o site no Netlify..."
 git add .
 
 # Fazer commit das mudanças
-git commit -m "Atualização: bordas alteradas para branco na seção de preços"
+git commit -m "Atualização: garantia 7 dias, música mobile otimizada, navegação testemunhos melhorada"
 
 # Enviar para o GitHub
 git push origin main
