@@ -123,6 +123,7 @@ Changelog:
 - June 29, 2025. Golden-white gradient borders: Enhanced border glow effects with golden-to-white gradient using dual box-shadow layers (golden inner glow + white outer glow) for sophisticated luxury appearance. Maintained thin, elegant borders while creating premium visual depth with subtle color transition from gold to white.
 - June 29, 2025. Logical gradient progression: Refined golden-white gradient to create visual hierarchy from top to bottom - stronger golden glow at product header (15px) gradually transitioning to predominantly white glow at guarantee section (4px golden + 22px white), creating natural visual flow that guides user attention downward through the pricing funnel.
 - June 29, 2025. Border color update: Changed all golden border glow effects to white throughout pricing section for cleaner, more elegant appearance. All box-shadow effects now use white/rgba(255,255,255) instead of golden colors for sophisticated premium look.
+- June 29, 2025. Payment redirect implementation: Added elegant confirmation modal before redirecting to Cakto payment platform (https://pay.cakto.com.br/j6iqgss_456470). Modal features zen-themed design with product benefits reminder, security assurance, and smooth transition experience. Opens payment in new tab for better user experience.
 
 ## User Preferences
 

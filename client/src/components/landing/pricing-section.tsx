@@ -22,6 +22,7 @@ type PurchaseFormData = z.infer<typeof purchaseFormSchema>;
 
 export function PricingSection() {
   const [showForm, setShowForm] = useState(false);
+  const [showRedirectModal, setShowRedirectModal] = useState(false);
   const { toast } = useToast();
   
   const form = useForm<PurchaseFormData>({
@@ -60,7 +61,12 @@ export function PricingSection() {
   };
 
   const handlePurchaseClick = () => {
-    setShowForm(true);
+    setShowRedirectModal(true);
+  };
+
+  const handleConfirmRedirect = () => {
+    window.open('https://pay.cakto.com.br/j6iqgss_456470', '_blank');
+    setShowRedirectModal(false);
   };
 
   const features = [
@@ -348,6 +354,71 @@ export function PricingSection() {
                 </div>
               </form>
             </Form>
+          </div>
+        </div>
+      )}
+
+      {/* Redirect Confirmation Modal */}
+      {showRedirectModal && (
+        <div className="fixed inset-0 bg-black/90 backdrop-blur-lg z-50 flex items-center justify-center p-3 sm:p-4">
+          <div className="bg-gradient-to-br from-[var(--accent-blue)]/10 to-[var(--warm-accent)]/5 backdrop-blur-xl border border-[var(--accent-blue)]/30 rounded-2xl sm:rounded-3xl p-6 sm:p-8 max-w-sm sm:max-w-md w-full shadow-2xl relative overflow-hidden">
+            
+            {/* Decorative elements */}
+            <div className="absolute top-4 right-4 w-16 h-16 bg-gradient-to-br from-[var(--warm-accent)]/20 to-transparent rounded-full blur-xl"></div>
+            <div className="absolute bottom-4 left-4 w-12 h-12 bg-gradient-to-br from-[var(--accent-blue)]/20 to-transparent rounded-full blur-xl"></div>
+            
+            <div className="text-center relative z-10">
+              {/* Icon */}
+              <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-[var(--warm-accent)]/20 to-[var(--accent-blue)]/20 border border-[var(--warm-accent)]/30 rounded-2xl flex items-center justify-center backdrop-blur-sm">
+                <Moon className="h-8 w-8 text-[var(--warm-accent)]" style={{ filter: 'drop-shadow(0 0 8px rgba(218, 165, 32, 0.5))' }} />
+              </div>
+              
+              {/* Title */}
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-4" style={{ textShadow: '0 0 10px rgba(255,255,255,0.3)' }}>
+                🌙 Quase lá!
+              </h3>
+              
+              {/* Message */}
+              <p className="text-sm sm:text-base text-[var(--text-secondary)] mb-6 leading-relaxed" style={{ textShadow: '0 0 6px rgba(255,255,255,0.15)' }}>
+                Você será redirecionado para nossa <span className="text-[var(--accent-blue)] font-semibold">área de pagamento segura</span> para finalizar sua transformação do sono.
+              </p>
+              
+              {/* Features reminder */}
+              <div className="bg-[var(--accent-blue)]/5 rounded-xl p-4 mb-6 border border-[var(--accent-blue)]/20">
+                <p className="text-xs sm:text-sm text-[var(--text-secondary)] mb-2" style={{ textShadow: '0 0 5px rgba(255,255,255,0.15)' }}>
+                  O que você vai receber:
+                </p>
+                <div className="space-y-1">
+                  <p className="text-xs text-[var(--warm-accent)] font-medium">✨ Método completo em 7 noites</p>
+                  <p className="text-xs text-[var(--warm-accent)] font-medium">🎁 Bônus exclusivos (R$ 49,80)</p>
+                  <p className="text-xs text-[var(--warm-accent)] font-medium">🛡️ Garantia de 30 dias</p>
+                </div>
+              </div>
+              
+              {/* Buttons */}
+              <div className="flex gap-3">
+                <Button
+                  type="button"
+                  variant="outline"
+                  className="flex-1 border-[var(--accent-blue)]/30 text-[var(--text-secondary)] hover:bg-[var(--accent-blue)]/10"
+                  onClick={() => setShowRedirectModal(false)}
+                >
+                  Cancelar
+                </Button>
+                <Button
+                  type="button"
+                  className="flex-1 bg-gradient-to-r from-[var(--warm-accent)] to-[hsl(35,70%,50%)] hover:from-[var(--warm-accent)]/90 hover:to-[hsl(35,70%,45%)] text-white font-semibold"
+                  onClick={handleConfirmRedirect}
+                >
+                  Continuar
+                </Button>
+              </div>
+              
+              {/* Security note */}
+              <p className="text-xs text-[var(--text-muted)] mt-4" style={{ textShadow: '0 0 4px rgba(255,255,255,0.1)' }}>
+                🔒 Pagamento 100% seguro e protegido
+              </p>
+            </div>
           </div>
         </div>
       )}
