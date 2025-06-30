@@ -133,6 +133,7 @@ Changelog:
 - June 30, 2025. Bonus section removal: Completely removed "Bônus Exclusivos" section from ebook content area for cleaner, more focused presentation.
 - June 30, 2025. Payment confirmation modal redesign: Replaced explanatory modal with automatic progress bar that empties over 5 seconds and redirects to payment automatically without user interaction buttons.
 - June 30, 2025. Redirection reliability fix: Implemented robust fallback system for payment redirection to prevent inconsistent behavior caused by popup blockers.
+- June 30, 2025. Hero section animation removal: Removed all loading animations from hero section (title, benefits, CTA button, image) for immediate static display without motion effects.
 
 ## User Preferences
 
