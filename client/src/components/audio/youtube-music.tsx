@@ -180,7 +180,7 @@ export function YouTubeMusic({ videoId, autoPlay = true, volume = 0.1 }: YouTube
           onClick={togglePlayPause}
           className={`backdrop-blur-sm border rounded-full p-2 shadow-lg transition-all duration-200 hover:scale-105 ${
             !isPlaying && isMobile 
-              ? 'bg-[var(--accent-blue)]/90 border-[var(--accent-blue)] animate-pulse' 
+              ? 'bg-[var(--accent-blue)]/90 border-[var(--accent-blue)]' 
               : 'bg-slate-900/80 hover:bg-slate-800/90 border-slate-700/50'
           }`}
           title={isPlaying ? 'Pausar música' : 'Tocar música'}
