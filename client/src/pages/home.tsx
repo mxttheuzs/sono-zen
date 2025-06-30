@@ -14,7 +14,7 @@ import { FloatingClouds } from "@/components/ui/floating-clouds";
 import { FloatingStars } from "@/components/ui/floating-stars";
 import { Button } from "@/components/ui/button";
 import { Heart, Sparkles } from "lucide-react";
-import { YouTubeMusic } from "@/components/audio/youtube-music";
+
 
 export default function Home() {
   const scrollToCheckout = () => {
@@ -45,8 +45,7 @@ export default function Home() {
         <FAQSection />
         <Footer />
         
-        {/* Música relaxante do YouTube - toca automaticamente por 30 segundos */}
-        <YouTubeMusic videoId="ZlayI0WKX40" autoPlay={true} volume={0.2} />
+
       </div>
     </div>
   );

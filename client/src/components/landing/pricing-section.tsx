@@ -39,7 +39,7 @@ function RedirectModal({ onRedirect }: RedirectModalProps) {
           onRedirect();
           return 0;
         }
-        return prev - 2; // Diminui 2% a cada 100ms (5 segundos total)
+        return prev - 4; // Diminui 4% a cada 100ms (2.5 segundos total)
       });
     }, 100);
 
