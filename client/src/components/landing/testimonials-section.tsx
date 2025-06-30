@@ -161,8 +161,8 @@ export function TestimonialsSection() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="left-1 w-8 h-8 md:w-10 md:h-10 md:-left-12 bg-[var(--accent-blue)] border-[var(--accent-blue)] hover:bg-[var(--accent-blue)]/80 text-white" />
-          <CarouselNext className="right-1 w-8 h-8 md:w-10 md:h-10 md:-right-12 bg-[var(--accent-blue)] border-[var(--accent-blue)] hover:bg-[var(--accent-blue)]/80 text-white" />
+          <CarouselPrevious className="-left-4 w-10 h-10 md:-left-16 bg-[var(--accent-blue)] border-[var(--accent-blue)] hover:bg-[var(--accent-blue)]/80 text-white shadow-lg" />
+          <CarouselNext className="-right-4 w-10 h-10 md:-right-16 bg-[var(--accent-blue)] border-[var(--accent-blue)] hover:bg-[var(--accent-blue)]/80 text-white shadow-lg" />
         </Carousel>
       </div>
     </section>
