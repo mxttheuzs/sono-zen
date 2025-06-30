@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
+import { Play, Pause } from 'lucide-react';
 
 interface YouTubeMusicProps {
   videoId: string;
@@ -16,8 +17,19 @@ declare global {
 export function YouTubeMusic({ videoId, autoPlay = true, volume = 0.1 }: YouTubeMusicProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [playerReady, setPlayerReady] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [userInteracted, setUserInteracted] = useState(false);
   const playerRef = useRef<any>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  // Detectar mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+             (window.innerWidth <= 768);
+    };
+    setIsMobile(checkMobile());
+  }, []);
 
   useEffect(() => {
     if (!autoPlay) return;
@@ -55,14 +67,17 @@ export function YouTubeMusic({ videoId, autoPlay = true, volume = 0.1 }: YouTube
               
               setTimeout(() => {
                 try {
-                  // Definir volume para 20%
+                  // Definir volume
                   event.target.setVolume(volume * 100);
                   
-                  // Tocar automaticamente
-                  event.target.playVideo();
-                  setIsPlaying(true);
-                  
-                  console.log('Música iniciada - tocará continuamente a 20% volume');
+                  // Tentar tocar automaticamente apenas se não for mobile ou se o usuário já interagiu
+                  if (!isMobile || userInteracted) {
+                    event.target.playVideo();
+                    setIsPlaying(true);
+                    console.log(`Música iniciada - tocará continuamente a ${volume * 100}% volume`);
+                  } else {
+                    console.log('Mobile detectado - aguardando interação do usuário');
+                  }
                 } catch (err) {
                   console.error('Erro ao iniciar:', err);
                 }
@@ -127,6 +142,10 @@ export function YouTubeMusic({ videoId, autoPlay = true, volume = 0.1 }: YouTube
     if (!playerRef.current || !playerReady) return;
     
     try {
+      if (!userInteracted) {
+        setUserInteracted(true);
+      }
+      
       if (isPlaying) {
         playerRef.current.pauseVideo();
       } else {
@@ -155,11 +174,15 @@ export function YouTubeMusic({ videoId, autoPlay = true, volume = 0.1 }: YouTube
         }} 
       />
 
-      {/* Botão pequeno de play/pause */}
+      {/* Botão pequeno de play/pause - mais visível no mobile se música não estiver tocando */}
       {playerReady && (
         <button
           onClick={togglePlayPause}
-          className="bg-slate-900/80 hover:bg-slate-800/90 backdrop-blur-sm border border-slate-700/50 rounded-full p-2 shadow-lg transition-all duration-200 hover:scale-105"
+          className={`backdrop-blur-sm border rounded-full p-2 shadow-lg transition-all duration-200 hover:scale-105 ${
+            !isPlaying && isMobile 
+              ? 'bg-[var(--accent-blue)]/90 border-[var(--accent-blue)] animate-pulse' 
+              : 'bg-slate-900/80 hover:bg-slate-800/90 border-slate-700/50'
+          }`}
           title={isPlaying ? 'Pausar música' : 'Tocar música'}
         >
           {isPlaying ? (

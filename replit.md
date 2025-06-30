@@ -128,6 +128,7 @@ Changelog:
 - June 29, 2025. Testimonials navigation optimization: Removed navigation buttons entirely for cleaner mobile-first experience targeting Facebook/Instagram ads. Enabled drag-free navigation allowing natural touch gestures on mobile and mouse drag on desktop. Added loop functionality for continuous browsing experience.
 - June 30, 2025. Guarantee period adjustment: Changed all guarantee references from 30 days to 7 days throughout the site (hero section, pricing section, exit-intent popup, and HTML meta descriptions) to align with the 7-night sleep transformation method.
 - June 30, 2025. Background music volume reduction: Lowered YouTube background music volume from 20% to 10% for more subtle ambient experience that doesn't interfere with content reading.
+- June 30, 2025. Mobile music autoplay fix: Implemented mobile detection and user interaction system to solve autoplay restrictions. Added intelligent play button that appears as blue pulsating button on mobile when music isn't playing, and remains discrete gray on desktop. Music now works properly on both mobile and desktop devices.
 
 ## User Preferences
 
