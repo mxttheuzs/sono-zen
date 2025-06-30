@@ -29,10 +29,13 @@ function RedirectModal({ onRedirect }: RedirectModalProps) {
   const [progress, setProgress] = useState(100);
 
   useEffect(() => {
+    let isRedirected = false;
+    
     const timer = setInterval(() => {
       setProgress((prev) => {
-        if (prev <= 0) {
+        if (prev <= 0 && !isRedirected) {
           clearInterval(timer);
+          isRedirected = true;
           onRedirect();
           return 0;
         }
@@ -40,7 +43,9 @@ function RedirectModal({ onRedirect }: RedirectModalProps) {
       });
     }, 100);
 
-    return () => clearInterval(timer);
+    return () => {
+      clearInterval(timer);
+    };
   }, [onRedirect]);
 
   return (
@@ -125,7 +130,22 @@ export function PricingSection() {
   };
 
   const handleConfirmRedirect = () => {
-    window.open('https://pay.cakto.com.br/j6iqgss_456470', '_blank');
+    const paymentUrl = 'https://pay.cakto.com.br/j6iqgss_456470';
+    
+    try {
+      // Primeira tentativa: window.open
+      const newWindow = window.open(paymentUrl, '_blank', 'noopener,noreferrer');
+      
+      // Se foi bloqueado, tenta window.location
+      if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+        // Fallback: redirecionar na mesma aba
+        window.location.href = paymentUrl;
+      }
+    } catch (error) {
+      // Último fallback: redirecionar na mesma aba
+      window.location.href = paymentUrl;
+    }
+    
     setShowRedirectModal(false);
   };
 

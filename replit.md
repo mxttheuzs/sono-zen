@@ -132,6 +132,7 @@ Changelog:
 - June 30, 2025. Music button animation fix: Removed pulsing animation from play/pause button when music is paused for calmer user experience.
 - June 30, 2025. Bonus section removal: Completely removed "Bônus Exclusivos" section from ebook content area for cleaner, more focused presentation.
 - June 30, 2025. Payment confirmation modal redesign: Replaced explanatory modal with automatic progress bar that empties over 5 seconds and redirects to payment automatically without user interaction buttons.
+- June 30, 2025. Redirection reliability fix: Implemented robust fallback system for payment redirection to prevent inconsistent behavior caused by popup blockers.
 
 ## User Preferences
 
