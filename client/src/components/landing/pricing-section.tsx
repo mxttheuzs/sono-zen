@@ -219,13 +219,13 @@ export function PricingSection() {
                 <div className="space-y-6">
                   <Button 
                     onClick={handlePurchaseClick}
-                    className="w-full relative bg-gradient-to-r from-[var(--warm-accent)] to-[hsl(35,70%,50%)] border-2 border-[var(--warm-accent)] text-white py-6 sm:py-8 px-4 sm:px-8 rounded-2xl text-base sm:text-xl font-semibold transition-all duration-500 group animate-enhanced-float shadow-lg shadow-[var(--warm-accent)]/30"
+                    className="w-full relative bg-gradient-to-r from-[var(--warm-accent)] to-[hsl(35,70%,50%)] border-2 border-[var(--warm-accent)] text-white py-4 sm:py-6 px-3 sm:px-6 rounded-2xl text-sm sm:text-lg font-semibold transition-all duration-500 group animate-enhanced-float shadow-lg shadow-[var(--warm-accent)]/30"
                     style={{ filter: 'drop-shadow(0 0 15px rgba(218, 165, 32, 0.6))' }}
                   >
                     {/* Button content */}
                     <div className="flex items-center justify-center gap-2 sm:gap-3">
-                      <Moon className="h-5 w-5 sm:h-6 sm:w-6 text-white transition-colors duration-300" />
-                      <span className="text-white font-semibold tracking-wide text-center leading-tight" style={{ textShadow: '0 0 10px rgba(255,255,255,0.4)' }}>
+                      <Moon className="h-4 w-4 sm:h-5 sm:w-5 text-white transition-colors duration-300" />
+                      <span className="text-white font-semibold tracking-wide text-center leading-tight text-xs sm:text-base" style={{ textShadow: '0 0 10px rgba(255,255,255,0.4)' }}>
                         QUERO TRANSFORMAR MINHAS NOITES
                       </span>
                     </div>
