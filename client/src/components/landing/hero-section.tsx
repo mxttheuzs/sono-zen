@@ -102,7 +102,7 @@ export function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-4 items-start">
               <div className="flex items-center gap-2 bg-[var(--success-green)]/10 border border-[var(--success-green)]/30 px-4 py-2 rounded-full">
                 <Shield className="h-5 w-5 text-[var(--success-green)]" />
-                <span className="text-sm font-semibold text-[var(--success-green)]">Garantia Total 30 Dias</span>
+                <span className="text-sm font-semibold text-[var(--success-green)]">Garantia Total 7 Dias</span>
               </div>
               <div className="flex items-center gap-2 bg-[var(--warm-accent)]/10 border border-[var(--warm-accent)]/30 px-4 py-2 rounded-full">
                 <Star className="h-5 w-5 text-[var(--warm-accent)] fill-current" />

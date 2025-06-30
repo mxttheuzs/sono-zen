@@ -81,7 +81,7 @@ export function ExitIntentPopup() {
             </Button>
 
             <p className="text-xs text-slate-400">
-              Garantia de 30 dias • Acesso instantâneo
+              Garantia de 7 dias • Acesso instantâneo
             </p>
           </div>
         </div>

@@ -126,6 +126,7 @@ Changelog:
 - June 29, 2025. Payment redirect implementation: Added elegant confirmation modal before redirecting to Cakto payment platform (https://pay.cakto.com.br/j6iqgss_456470). Modal features zen-themed design with product benefits reminder, security assurance, and smooth transition experience. Opens payment in new tab for better user experience.
 - June 29, 2025. Border glow removal: Removed all white border glow effects (box-shadow) from pricing section elements for cleaner appearance. Cards now display with clean borders only, without additional glow effects, maintaining elegant styling while reducing visual complexity.
 - June 29, 2025. Testimonials navigation optimization: Removed navigation buttons entirely for cleaner mobile-first experience targeting Facebook/Instagram ads. Enabled drag-free navigation allowing natural touch gestures on mobile and mouse drag on desktop. Added loop functionality for continuous browsing experience.
+- June 30, 2025. Guarantee period adjustment: Changed all guarantee references from 30 days to 7 days throughout the site (hero section, pricing section, exit-intent popup, and HTML meta descriptions) to align with the 7-night sleep transformation method.
 
 ## User Preferences
 

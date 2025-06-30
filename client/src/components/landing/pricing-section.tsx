@@ -237,7 +237,7 @@ export function PricingSection() {
                       <div className="flex flex-col items-center text-center p-4 bg-[var(--accent-blue)]/10 border-2 border-[var(--accent-blue)]/35 rounded-xl backdrop-blur-sm hover:bg-[var(--accent-blue)]/15 transition-all duration-300">
                         <Shield className="h-8 w-8 sm:h-10 sm:w-10 text-[var(--accent-blue)] mb-3" />
                         <h4 className="font-bold text-[var(--text-primary)] text-sm sm:text-base mb-1" style={{ textShadow: '0 0 8px rgba(255,255,255,0.2)' }}>Garantia Total</h4>
-                        <p className="text-[var(--text-secondary)] text-xs sm:text-sm" style={{ textShadow: '0 0 5px rgba(255,255,255,0.15)' }}>30 dias para testar</p>
+                        <p className="text-[var(--text-secondary)] text-xs sm:text-sm" style={{ textShadow: '0 0 5px rgba(255,255,255,0.15)' }}>7 dias para testar</p>
                       </div>
                       <div className="flex flex-col items-center text-center p-4 bg-[var(--accent-blue)]/10 border-2 border-[var(--accent-blue)]/35 rounded-xl backdrop-blur-sm hover:bg-[var(--accent-blue)]/15 transition-all duration-300">
                         <Lock className="h-8 w-8 sm:h-10 sm:w-10 text-[var(--accent-blue)] mb-3" />
