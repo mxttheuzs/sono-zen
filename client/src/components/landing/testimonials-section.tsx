@@ -112,7 +112,9 @@ export function TestimonialsSection() {
           className="w-full max-w-5xl mx-auto"
           opts={{
             align: "start",
-            loop: false
+            loop: true,
+            dragFree: true,
+            containScroll: "trimSnaps"
           }}
         >
           <CarouselContent className="-ml-1 md:-ml-4">
@@ -161,8 +163,7 @@ export function TestimonialsSection() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="left-1 w-8 h-8 md:w-10 md:h-10 md:-left-12 bg-[var(--accent-blue)]/40 border-[var(--accent-blue)]/40 hover:bg-[var(--accent-blue)]/80 text-white backdrop-blur-sm" />
-          <CarouselNext className="right-1 w-8 h-8 md:w-10 md:h-10 md:-right-12 bg-[var(--accent-blue)]/40 border-[var(--accent-blue)]/40 hover:bg-[var(--accent-blue)]/80 text-white backdrop-blur-sm" />
+
         </Carousel>
       </div>
     </section>

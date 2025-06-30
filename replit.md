@@ -125,7 +125,7 @@ Changelog:
 - June 29, 2025. Border color update: Changed all golden border glow effects to white throughout pricing section for cleaner, more elegant appearance. All box-shadow effects now use white/rgba(255,255,255) instead of golden colors for sophisticated premium look.
 - June 29, 2025. Payment redirect implementation: Added elegant confirmation modal before redirecting to Cakto payment platform (https://pay.cakto.com.br/j6iqgss_456470). Modal features zen-themed design with product benefits reminder, security assurance, and smooth transition experience. Opens payment in new tab for better user experience.
 - June 29, 2025. Border glow removal: Removed all white border glow effects (box-shadow) from pricing section elements for cleaner appearance. Cards now display with clean borders only, without additional glow effects, maintaining elegant styling while reducing visual complexity.
-- June 29, 2025. Testimonials navigation fix: Repositioned carousel navigation buttons to prevent text overlap. Moved buttons outside content area (-left-4/-right-4 mobile, -left-16/-right-16 desktop) ensuring testimonial text remains fully readable while maintaining navigation functionality.
+- June 29, 2025. Testimonials navigation optimization: Removed navigation buttons entirely for cleaner mobile-first experience targeting Facebook/Instagram ads. Enabled drag-free navigation allowing natural touch gestures on mobile and mouse drag on desktop. Added loop functionality for continuous browsing experience.
 
 ## User Preferences
 
