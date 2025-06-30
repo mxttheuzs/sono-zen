@@ -1,16 +1,22 @@
 #!/bin/bash
 
-echo "🚀 Atualizando o site no Netlify..."
+echo "🚀 Forçando novo deploy no Netlify..."
 
-# Adicionar todas as mudanças
-git add .
+# Criar um commit dummy para forçar redeploy
+echo "# Deploy $(date)" >> README.md
+git add README.md
 
-# Fazer commit das mudanças
-git commit -m "Atualização: garantia 7 dias, música mobile otimizada, navegação testemunhos melhorada"
+# Commit das mudanças principais
+git add -A
+git commit -m "Fix: Resolve Netlify build timeout
 
-# Enviar para o GitHub
+- Timer reduzido para 2.5 segundos
+- Sistema de música removido para compatibilidade mobile
+- Otimizações de build para evitar travamento
+- Deploy: $(date)"
+
+# Push para triggerar novo build
 git push origin main
 
-echo "✅ Atualização enviada para o GitHub!"
-echo "🌐 O Netlify irá fazer deploy automaticamente em alguns minutos."
-echo "📱 Você pode acompanhar o progresso no painel do Netlify."
+echo "✅ Push enviado! Netlify deve iniciar novo build em alguns minutos."
+echo "🔗 Verifique o status em: https://app.netlify.com"
