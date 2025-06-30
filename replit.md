@@ -131,6 +131,7 @@ Changelog:
 - June 30, 2025. Mobile music autoplay fix: Implemented mobile detection and user interaction system to solve autoplay restrictions. Added intelligent play button that appears as blue pulsating button on mobile when music isn't playing, and remains discrete gray on desktop. Music now works properly on both mobile and desktop devices.
 - June 30, 2025. Music button animation fix: Removed pulsing animation from play/pause button when music is paused for calmer user experience.
 - June 30, 2025. Bonus section removal: Completely removed "Bônus Exclusivos" section from ebook content area for cleaner, more focused presentation.
+- June 30, 2025. Payment confirmation modal redesign: Replaced explanatory modal with automatic progress bar that empties over 5 seconds and redirects to payment automatically without user interaction buttons.
 
 ## User Preferences
 
