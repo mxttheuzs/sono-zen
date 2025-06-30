@@ -138,7 +138,7 @@ export function PricingSection() {
           
           {/* Main Product Card */}
           <div className="max-w-4xl mx-auto">
-            <div className="bg-[var(--accent-blue)]/5 backdrop-blur-xl border-2 border-[var(--accent-blue)]/40 rounded-3xl overflow-hidden shadow-2xl relative" style={{ boxShadow: '0 0 15px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.15)' }}>
+            <div className="bg-[var(--accent-blue)]/5 backdrop-blur-xl border-2 border-[var(--accent-blue)]/40 rounded-3xl overflow-hidden shadow-2xl relative">
               
               {/* Product Header */}
               <div className="relative bg-gradient-to-br from-[var(--accent-blue)]/15 via-[var(--warm-accent)]/10 to-[var(--accent-blue)]/5 border-b-2 border-[var(--accent-blue)]/50 p-6 sm:p-8 md:p-12 text-center overflow-hidden">
@@ -178,7 +178,7 @@ export function PricingSection() {
 
 
                 {/* Pricing */}
-                <div className="bg-gradient-to-r from-[var(--accent-blue)]/8 to-[var(--warm-accent)]/8 rounded-2xl p-4 sm:p-6 md:p-8 mb-6 sm:mb-8 border-2 border-[var(--accent-blue)]/40 backdrop-blur-sm relative" style={{ boxShadow: '0 0 8px rgba(255, 255, 255, 0.18), 0 0 20px rgba(255, 255, 255, 0.16)' }}>
+                <div className="bg-gradient-to-r from-[var(--accent-blue)]/8 to-[var(--warm-accent)]/8 rounded-2xl p-4 sm:p-6 md:p-8 mb-6 sm:mb-8 border-2 border-[var(--accent-blue)]/40 backdrop-blur-sm relative">
                   <div className="text-center">
                     <p className="text-[var(--text-muted)] mb-2 text-sm sm:text-base" style={{ textShadow: '0 0 6px rgba(255,255,255,0.15)' }}>Valor normal:</p>
                     <p className="text-xl sm:text-2xl text-[var(--text-muted)] line-through mb-3 sm:mb-4" style={{ textShadow: '0 0 6px rgba(255,255,255,0.15)' }}>R$ 89,70</p>
@@ -195,7 +195,7 @@ export function PricingSection() {
                 </div>
 
                 {/* Bonuses */}
-                <div className="bg-[var(--accent-blue)]/5 rounded-2xl p-4 sm:p-6 mb-6 sm:mb-8 border-2 border-[var(--accent-blue)]/35 backdrop-blur-sm relative" style={{ boxShadow: '0 0 6px rgba(255, 255, 255, 0.12), 0 0 18px rgba(255, 255, 255, 0.14)' }}>
+                <div className="bg-[var(--accent-blue)]/5 rounded-2xl p-4 sm:p-6 mb-6 sm:mb-8 border-2 border-[var(--accent-blue)]/35 backdrop-blur-sm relative">
                   <h4 className="text-lg sm:text-xl font-bold text-[var(--text-primary)] mb-3 sm:mb-4 text-center" style={{ textShadow: '0 0 10px rgba(255,255,255,0.25)' }}>🎁 Bônus Exclusivos (R$ 49,80)</h4>
                   <div className="space-y-3 sm:space-y-4">
                     {bonuses.map((bonus, index) => (
@@ -232,19 +232,19 @@ export function PricingSection() {
                   </Button>
                   
                   {/* Security badges - enhanced and more prominent */}
-                  <div className="bg-gradient-to-r from-[var(--accent-blue)]/8 to-[var(--warm-accent)]/8 rounded-2xl p-6 sm:p-8 border-2 border-[var(--accent-blue)]/45 backdrop-blur-sm relative" style={{ boxShadow: '0 0 4px rgba(255, 255, 255, 0.08), 0 0 22px rgba(255, 255, 255, 0.18)' }}>
+                  <div className="bg-gradient-to-r from-[var(--accent-blue)]/8 to-[var(--warm-accent)]/8 rounded-2xl p-6 sm:p-8 border-2 border-[var(--accent-blue)]/45 backdrop-blur-sm relative">
                     <div className="grid sm:grid-cols-3 gap-4 sm:gap-6">
-                      <div className="flex flex-col items-center text-center p-4 bg-[var(--accent-blue)]/10 border-2 border-[var(--accent-blue)]/35 rounded-xl backdrop-blur-sm hover:bg-[var(--accent-blue)]/15 transition-all duration-300" style={{ boxShadow: '0 0 3px rgba(255, 255, 255, 0.08), 0 0 10px rgba(255, 255, 255, 0.12)' }}>
+                      <div className="flex flex-col items-center text-center p-4 bg-[var(--accent-blue)]/10 border-2 border-[var(--accent-blue)]/35 rounded-xl backdrop-blur-sm hover:bg-[var(--accent-blue)]/15 transition-all duration-300">
                         <Shield className="h-8 w-8 sm:h-10 sm:w-10 text-[var(--accent-blue)] mb-3" />
                         <h4 className="font-bold text-[var(--text-primary)] text-sm sm:text-base mb-1" style={{ textShadow: '0 0 8px rgba(255,255,255,0.2)' }}>Garantia Total</h4>
                         <p className="text-[var(--text-secondary)] text-xs sm:text-sm" style={{ textShadow: '0 0 5px rgba(255,255,255,0.15)' }}>30 dias para testar</p>
                       </div>
-                      <div className="flex flex-col items-center text-center p-4 bg-[var(--accent-blue)]/10 border-2 border-[var(--accent-blue)]/35 rounded-xl backdrop-blur-sm hover:bg-[var(--accent-blue)]/15 transition-all duration-300" style={{ boxShadow: '0 0 3px rgba(255, 255, 255, 0.08), 0 0 10px rgba(255, 255, 255, 0.12)' }}>
+                      <div className="flex flex-col items-center text-center p-4 bg-[var(--accent-blue)]/10 border-2 border-[var(--accent-blue)]/35 rounded-xl backdrop-blur-sm hover:bg-[var(--accent-blue)]/15 transition-all duration-300">
                         <Lock className="h-8 w-8 sm:h-10 sm:w-10 text-[var(--accent-blue)] mb-3" />
                         <h4 className="font-bold text-[var(--text-primary)] text-sm sm:text-base mb-1" style={{ textShadow: '0 0 8px rgba(255,255,255,0.2)' }}>100% Seguro</h4>
                         <p className="text-[var(--text-secondary)] text-xs sm:text-sm" style={{ textShadow: '0 0 5px rgba(255,255,255,0.15)' }}>Pagamento protegido</p>
                       </div>
-                      <div className="flex flex-col items-center text-center p-4 bg-[var(--warm-accent)]/10 border-2 border-[var(--warm-accent)]/35 rounded-xl backdrop-blur-sm hover:bg-[var(--warm-accent)]/15 transition-all duration-300" style={{ boxShadow: '0 0 3px rgba(255, 255, 255, 0.08), 0 0 10px rgba(255, 255, 255, 0.12)' }}>
+                      <div className="flex flex-col items-center text-center p-4 bg-[var(--warm-accent)]/10 border-2 border-[var(--warm-accent)]/35 rounded-xl backdrop-blur-sm hover:bg-[var(--warm-accent)]/15 transition-all duration-300">
                         <Download className="h-8 w-8 sm:h-10 sm:w-10 text-[var(--warm-accent)] mb-3" />
                         <h4 className="font-bold text-[var(--text-primary)] text-sm sm:text-base mb-1" style={{ textShadow: '0 0 8px rgba(255,255,255,0.2)' }}>Acesso Imediato</h4>
                         <p className="text-[var(--text-secondary)] text-xs sm:text-sm" style={{ textShadow: '0 0 5px rgba(255,255,255,0.15)' }}>Receba na hora</p>
