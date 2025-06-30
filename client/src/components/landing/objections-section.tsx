@@ -53,7 +53,7 @@ export function ObjectionsSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
-            Mas Dr. Deborah...
+            Mas Dra. Deborah...
             <span className="bg-gradient-to-r from-[var(--ritual-blue-light)] to-[var(--ritual-blue)] bg-clip-text text-transparent"> E Se...</span>
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
