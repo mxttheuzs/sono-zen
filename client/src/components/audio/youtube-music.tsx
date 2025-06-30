@@ -13,7 +13,7 @@ declare global {
   }
 }
 
-export function YouTubeMusic({ videoId, autoPlay = true, volume = 0.2 }: YouTubeMusicProps) {
+export function YouTubeMusic({ videoId, autoPlay = true, volume = 0.1 }: YouTubeMusicProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [playerReady, setPlayerReady] = useState(false);
   const playerRef = useRef<any>(null);
