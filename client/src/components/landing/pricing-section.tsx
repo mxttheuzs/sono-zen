@@ -126,10 +126,30 @@ export function PricingSection() {
   };
 
   const handlePurchaseClick = () => {
+    // Facebook Pixel - Event tracking para botão de compra
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'InitiateCheckout', {
+        content_name: 'Sono Zen - Método Completo',
+        content_category: 'E-book',
+        value: 19.90,
+        currency: 'BRL'
+      }, {test_event_code: 'TEST74923'});
+    }
+    
     setShowRedirectModal(true);
   };
 
   const handleConfirmRedirect = () => {
+    // Facebook Pixel - Event tracking para redirecionamento ao pagamento
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'AddPaymentInfo', {
+        content_name: 'Sono Zen - Método Completo',
+        content_category: 'E-book',
+        value: 19.90,
+        currency: 'BRL'
+      }, {test_event_code: 'TEST74923'});
+    }
+    
     const paymentUrl = 'https://pay.cakto.com.br/j6iqgss_456470';
     
     try {
