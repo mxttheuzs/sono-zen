@@ -137,6 +137,7 @@ Changelog:
 - June 30, 2025. Payment timer optimization: Reduced redirect timer from 5 seconds to 2.5 seconds for faster checkout flow.
 - June 30, 2025. Music system removal: Completely removed YouTube music component due to mobile compatibility issues on iPhone.
 - June 30, 2025. Netlify build optimization: Implemented comprehensive build fixes to resolve deployment timeout issues - increased memory allocation, optimized node version, added build caching, and created deployment scripts to handle Lucide React icon processing bottleneck.
+- July 2, 2025. UTMify tracking integration: Added UTMify script for UTM parameter capture and tracking on all pages. Script loads asynchronously with data-utmify-prevent-xcod-sck and data-utmify-prevent-subids attributes for optimal performance and privacy compliance.
 
 ## User Preferences
 
