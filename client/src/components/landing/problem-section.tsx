@@ -5,35 +5,35 @@ import { FloatingClouds } from "@/components/ui/floating-clouds";
 const problems = [
   {
     icon: Brain,
-    title: "Sua Mente Não Para de Pensar",
-    description: "Você deita na cama e sua cabeça não para. Fica pensando no trabalho, nas contas, nos problemas... Parece que tem um filme passando na sua mente e não consegue desligar.",
+    title: "Você deita e sua mente dispara",
+    description: "Sabe aquele momento? Você fecha os olhos e começa: 'Será que esqueci de trancar a porta? E aquela reunião amanhã? Preciso pagar a conta...' É como se a mente esperasse você deitar para despertar completamente.",
     color: "text-red-400",
-    stat: "87% das pessoas",
-    impact: "Muito comum"
+    stat: "Maioria das pessoas",
+    impact: "Super comum"
   },
   {
     icon: Smartphone,
-    title: "Celular na Cama Atrapalha Tudo",
-    description: "Você fica no celular até tarde e depois não consegue dormir. A luz da tela confunde seu cérebro, que acha que ainda é dia. Aí você fica rolando na cama até 2, 3 da manhã.",
+    title: "O celular virou seu pior inimigo",
+    description: "Você sabe que não deveria, mas ali está você: 'Só mais 5 minutinhos no Instagram'. Quando vê, já são 2h da manhã e você ainda está scrollando. Depois fica se revirando na cama...",
     color: "text-blue-400",
-    stat: "Atraso de 3h",
-    impact: "Efeito comprovado"
+    stat: "Atrasa o sono em horas",
+    impact: "Muito real"
   },
   {
     icon: AlertTriangle,
-    title: "Estresse do Dia Todo que Não Sai",
-    description: "Você passou o dia correndo, estressado, e quando chega a noite ainda está com aquela sensação de ansiedade. O corpo está cansado mas a mente ainda está agitada.",
+    title: "O estresse do dia grudou em você",
+    description: "Mesmo depois de chegar em casa, relaxar no sofá, tomar banho... essa sensação de tensão não sai das suas costas. É como se você carregasse o peso do dia todo até na cama.",
     color: "text-orange-400",
-    stat: "3x mais cortisol",
-    impact: "Bloqueia o sono"
+    stat: "Corpo em alerta",
+    impact: "Impede relaxamento"
   },
   {
     icon: Clock,
-    title: "Horários Completamente Desregulados",
-    description: "Hoje dorme às 2h, amanhã às 11h, depois cochila de tarde... Seu corpo não sabe mais que horas deve dormir. Vira uma bagunça total e o sono fica cada vez pior.",
+    title: "Seus horários viraram uma bagunça",
+    description: "Cada dia você dorme num horário. Hoje 1h, amanhã 3h, fim de semana meio-dia... Seu corpo não entende mais quando é hora de dormir. Virou uma loteria.",
     color: "text-purple-400",
-    stat: "Ciclo desregulado",
-    impact: "Efeito duradouro"
+    stat: "Ritmo perdido",
+    impact: "Confunde o corpo"
   }
 ];
 
@@ -42,58 +42,39 @@ export function ProblemSection() {
     <section id="problema" className="py-20 bg-black relative overflow-hidden">
       <FloatingClouds />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
-          {/* Left content */}
-          <div className="space-y-8">
+        <div className="text-center mb-16">
+          <div className="max-w-4xl mx-auto space-y-8">
             <div className="space-y-6">
               <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--text-primary)] leading-tight">
-                Por Que Você Não Consegue
-                <span className="block bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] bg-clip-text text-transparent">
-                  Dormir Direito?
-                </span>
+                Eu Sei Como Você Se Sente...
               </h2>
-              <p className="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed">
-                Não é culpa sua. Vivemos numa época que <span className="text-[var(--accent-blue)] font-semibold">sabota nosso sono</span> de várias formas.
-              </p>
-              <p className="text-base text-[var(--text-muted)]">
-                Entender as causas é o primeiro passo para resolver de vez seus problemas de sono.
-              </p>
+              <div className="bg-gradient-to-br from-[var(--warm-accent)]/10 to-[var(--accent-blue)]/10 border border-[var(--warm-accent)]/30 rounded-2xl p-6 sm:p-8">
+                <p className="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed mb-4">
+                  É 2 da manhã e você está ali, deitado na cama, olhando para o teto... 
+                </p>
+                <p className="text-lg text-[var(--text-secondary)] leading-relaxed mb-4">
+                  Seu corpo está cansado, mas sua mente não para. Você fica pensando: <em className="text-[var(--warm-accent)]">"Por que eu não consigo simplesmente... dormir?"</em>
+                </p>
+                <p className="text-base text-[var(--text-muted)] leading-relaxed">
+                  Não é culpa sua. Você não "esqueceu" como dormir. O mundo moderno meio que roubou isso de nós.
+                </p>
+              </div>
             </div>
             
-            <div className="space-y-4 text-[var(--text-secondary)]">
-              <p>Se você se reconhece em alguma dessas situações, você não está sozinho. Milhões de pessoas passam pelas mesmas dificuldades.</p>
-              <p className="text-[var(--accent-blue)] font-medium">
-                A boa notícia é que todos esses problemas têm solução quando você conhece as técnicas certas.
+            <div className="bg-gradient-to-r from-[var(--success-green)]/10 to-[var(--accent-blue)]/10 border border-[var(--success-green)]/30 rounded-xl p-6">
+              <p className="text-[var(--text-secondary)] leading-relaxed">
+                💙 Se você chegou até aqui, é porque está cansado de passar as noites em claro. E eu quero te ajudar a resolver isso de uma vez por todas.
               </p>
-            </div>
-          </div>
-          
-          {/* Right visual element */}
-          <div className="relative">
-            <div className="card-modern p-8 animate-slide-up">
-              <div className="text-center space-y-6">
-                <div className="w-24 h-24 mx-auto bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] rounded-full flex items-center justify-center">
-                  <Brain className="h-12 w-12 text-white" />
-                </div>
-                <div className="space-y-3">
-                  <h3 className="font-heading text-xl font-semibold text-[var(--text-primary)]">
-                    O Ciclo do Sono Ruim
-                  </h3>
-                  <p className="text-[var(--text-secondary)] text-sm leading-relaxed">
-                    Cada noite mal dormida torna a próxima ainda mais difícil. É um ciclo que se repete até você quebrar com as técnicas certas.
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
         
         <div className="text-center mb-12">
           <h3 className="font-heading text-2xl font-bold text-[var(--text-primary)] mb-4">
-            Você Também Passa Por Isso?
+            Talvez Você Também Passe Por Essas Situações...
           </h3>
           <p className="text-[var(--text-secondary)] max-w-2xl mx-auto">
-            Essas são as situações que mais atrapalham o sono das pessoas hoje em dia:
+            São coisas do dia a dia que, sem perceber, sabotam completamente nossa noite de sono:
           </p>
         </div>
         
@@ -125,6 +106,21 @@ export function ProblemSection() {
               </div>
             </div>
           ))}
+        </div>
+        
+        {/* Mensagem de esperança */}
+        <div className="text-center mt-16">
+          <div className="max-w-3xl mx-auto bg-gradient-to-r from-[var(--success-green)]/10 to-[var(--accent-blue)]/10 border border-[var(--success-green)]/30 rounded-2xl p-6 sm:p-8">
+            <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-4">
+              🤗 Se você se reconheceu em alguma dessas situações...
+            </h3>
+            <p className="text-[var(--text-secondary)] leading-relaxed mb-4">
+              Saiba que não há nada de errado com você. Esses são problemas do mundo moderno, não defeitos seus.
+            </p>
+            <p className="text-[var(--accent-blue)] font-medium">
+              E o mais importante: tudo isso tem solução. É só você aprender a "reprogramar" seu sono com as técnicas certas.
+            </p>
+          </div>
         </div>
       </div>
     </section>
