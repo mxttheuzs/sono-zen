@@ -362,7 +362,7 @@ export function PricingSection() {
                   <div className="relative">
                     <Button 
                       onClick={handlePurchaseClick}
-                      className="w-full bg-gradient-to-r from-[var(--accent-blue)] to-[var(--warm-accent)] hover:from-[var(--accent-blue)]/90 hover:to-[var(--warm-accent)]/90 text-white py-7 sm:py-8 px-10 sm:px-12 rounded-2xl text-xl sm:text-2xl font-semibold transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl border-0"
+                      className="w-full bg-gradient-to-r from-[var(--accent-blue)] to-[var(--warm-accent)] hover:from-[var(--accent-blue)]/90 hover:to-[var(--warm-accent)]/90 text-white py-5 sm:py-6 px-8 rounded-2xl text-lg sm:text-xl font-semibold transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl border-0"
                     >
                       <div className="flex items-center justify-center gap-3">
                         <Moon className="h-5 w-5 sm:h-6 sm:w-6 text-white/90" />
