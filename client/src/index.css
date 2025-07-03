@@ -67,25 +67,38 @@ html {
   --ring: hsl(212.7, 26.8%, 83.9%);
   --radius: 0.75rem;
   
-  /* Sleep-Inducing Color Palette */
-  --dark-bg: hsl(235, 15%, 8%);
-  --card-bg: hsl(235, 12%, 12%);
-  --card-hover: hsl(235, 12%, 16%);
-  --text-primary: hsl(220, 18%, 92%);
-  --text-secondary: hsl(220, 12%, 72%);
-  --text-muted: hsl(220, 8%, 58%);
-  --accent-blue: hsl(220, 65%, 72%);
-  --accent-blue-muted: hsl(220, 50%, 55%);
-  --warm-accent: hsl(40, 50%, 68%);
-  --success-green: hsl(150, 45%, 65%);
-  --border-subtle: hsl(235, 8%, 20%);
-  --lavender-mist: hsl(260, 30%, 25%);
-  --moonlight-blue: hsl(210, 40%, 30%);
-  --dream-purple: hsl(280, 20%, 20%);
-  --soft-gold: hsl(45, 50%, 65%);
-  --ritual-blue: hsl(214, 32%, 58%);
-  --ritual-blue-dark: hsl(214, 32%, 48%);
-  --ritual-blue-light: hsl(214, 32%, 68%);
+  /* Celestial Sleep Color Palette - Cores conectadas e harmoniosas */
+  --dark-bg: hsl(220, 20%, 8%);
+  --card-bg: hsl(220, 18%, 12%);
+  --card-hover: hsl(220, 18%, 16%);
+  --text-primary: hsl(220, 25%, 95%);
+  --text-secondary: hsl(220, 20%, 80%);
+  --text-muted: hsl(220, 15%, 65%);
+  
+  /* Paleta Azul Celestial Principal */
+  --accent-blue: hsl(210, 75%, 75%);
+  --accent-blue-muted: hsl(210, 60%, 65%);
+  --accent-blue-soft: hsl(210, 40%, 55%);
+  --celestial-blue: hsl(200, 80%, 70%);
+  --sky-blue: hsl(195, 70%, 75%);
+  
+  /* Cores Complementares Harmoniosas */
+  --warm-accent: hsl(45, 65%, 75%);
+  --soft-gold: hsl(50, 70%, 80%);
+  --moonlight-silver: hsl(220, 20%, 85%);
+  
+  /* Verde Suave Conectado */
+  --success-green: hsl(180, 50%, 70%);
+  --mint-green: hsl(160, 45%, 75%);
+  
+  /* Bordas e Estrutura */
+  --border-subtle: hsl(220, 15%, 20%);
+  --border-soft: hsl(220, 25%, 25%);
+  
+  /* Tons Especiais */
+  --lavender-mist: hsl(240, 35%, 80%);
+  --dream-purple: hsl(260, 40%, 75%);
+  --cloud-white: hsl(220, 30%, 95%);
 }
 
 .dark {

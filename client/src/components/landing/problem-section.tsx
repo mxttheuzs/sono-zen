@@ -42,11 +42,11 @@ export function ProblemSection() {
         </div>
         
         <div className="max-w-4xl mx-auto space-y-6">
-          <div className="bg-gradient-to-r from-[var(--accent-blue)]/5 to-[var(--warm-accent)]/5 border border-[var(--accent-blue)]/20 rounded-2xl p-6 sm:p-8">
+          <div className="bg-gradient-to-r from-[var(--celestial-blue)]/10 to-[var(--sky-blue)]/5 border border-[var(--celestial-blue)]/30 rounded-2xl p-6 sm:p-8">
             <div className="flex items-start gap-4 mb-4">
               <div className="text-2xl">🧠</div>
               <div>
-                <h4 className="text-lg font-semibold text-[var(--text-primary)] mb-2">
+                <h4 className="text-lg font-semibold text-[var(--cloud-white)] mb-2">
                   Você deita e sua mente não para
                 </h4>
                 <p className="text-[var(--text-secondary)] leading-relaxed">
@@ -56,11 +56,11 @@ export function ProblemSection() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-[var(--warm-accent)]/5 to-[var(--success-green)]/5 border border-[var(--warm-accent)]/20 rounded-2xl p-6 sm:p-8">
+          <div className="bg-gradient-to-r from-[var(--sky-blue)]/10 to-[var(--accent-blue)]/5 border border-[var(--sky-blue)]/30 rounded-2xl p-6 sm:p-8">
             <div className="flex items-start gap-4 mb-4">
               <div className="text-2xl">📱</div>
               <div>
-                <h4 className="text-lg font-semibold text-[var(--text-primary)] mb-2">
+                <h4 className="text-lg font-semibold text-[var(--cloud-white)] mb-2">
                   O celular rouba suas horas de sono
                 </h4>
                 <p className="text-[var(--text-secondary)] leading-relaxed">
@@ -70,11 +70,11 @@ export function ProblemSection() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-[var(--success-green)]/5 to-[var(--accent-blue)]/5 border border-[var(--success-green)]/20 rounded-2xl p-6 sm:p-8">
+          <div className="bg-gradient-to-r from-[var(--accent-blue)]/10 to-[var(--mint-green)]/5 border border-[var(--accent-blue)]/30 rounded-2xl p-6 sm:p-8">
             <div className="flex items-start gap-4 mb-4">
               <div className="text-2xl">😰</div>
               <div>
-                <h4 className="text-lg font-semibold text-[var(--text-primary)] mb-2">
+                <h4 className="text-lg font-semibold text-[var(--cloud-white)] mb-2">
                   O estresse do dia grudou em você
                 </h4>
                 <p className="text-[var(--text-secondary)] leading-relaxed">
@@ -84,11 +84,11 @@ export function ProblemSection() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-[var(--accent-blue)]/5 to-[var(--warm-accent)]/5 border border-[var(--accent-blue)]/20 rounded-2xl p-6 sm:p-8">
+          <div className="bg-gradient-to-r from-[var(--mint-green)]/10 to-[var(--celestial-blue)]/5 border border-[var(--mint-green)]/30 rounded-2xl p-6 sm:p-8">
             <div className="flex items-start gap-4 mb-4">
               <div className="text-2xl">🕰️</div>
               <div>
-                <h4 className="text-lg font-semibold text-[var(--text-primary)] mb-2">
+                <h4 className="text-lg font-semibold text-[var(--cloud-white)] mb-2">
                   Seus horários viraram uma bagunça
                 </h4>
                 <p className="text-[var(--text-secondary)] leading-relaxed">

@@ -32,21 +32,21 @@ export function MethodSection() {
             </div>
             
             <div className="space-y-6">
-              <div className="bg-[var(--accent-blue)]/10 border-l-4 border-[var(--accent-blue)] rounded-r-xl p-4">
+              <div className="bg-[var(--celestial-blue)]/10 border-l-4 border-[var(--celestial-blue)] rounded-r-xl p-4">
                 <p className="text-[var(--text-secondary)] text-base leading-relaxed">
-                  <strong className="text-[var(--accent-blue)]">Imagine:</strong> Em vez de rolar na cama por horas, você faz uma sequência simples de 15 minutos que prepara seu corpo e mente. Quando você deita, seu cérebro já sabe: "agora é hora de descansar".
+                  <strong className="text-[var(--celestial-blue)]">Imagine:</strong> Em vez de rolar na cama por horas, você faz uma sequência simples de 15 minutos que prepara seu corpo e mente. Quando você deita, seu cérebro já sabe: "agora é hora de descansar".
                 </p>
               </div>
               
               <div className="grid sm:grid-cols-2 gap-4">
-                <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-4">
-                  <p className="text-red-300 font-semibold text-sm mb-2">❌ Como a maioria faz:</p>
+                <div className="bg-[var(--sky-blue)]/10 border border-[var(--sky-blue)]/30 rounded-xl p-4">
+                  <p className="text-[var(--sky-blue)] font-semibold text-sm mb-2">❌ Como a maioria faz:</p>
                   <p className="text-[var(--text-muted)] text-xs">
                     Deita na cama, fica no celular, pensa nos problemas, espera o sono "aparecer"
                   </p>
                 </div>
-                <div className="bg-green-500/10 border border-green-500/30 rounded-xl p-4">
-                  <p className="text-green-300 font-semibold text-sm mb-2">✅ Como você vai fazer:</p>
+                <div className="bg-[var(--mint-green)]/10 border border-[var(--mint-green)]/30 rounded-xl p-4">
+                  <p className="text-[var(--mint-green)] font-semibold text-sm mb-2">✅ Como você vai fazer:</p>
                   <p className="text-[var(--text-muted)] text-xs">
                     Ritual de 15 min → corpo relaxa → mente acalma → sono natural em minutos
                   </p>
