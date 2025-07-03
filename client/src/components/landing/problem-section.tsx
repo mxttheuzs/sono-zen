@@ -103,7 +103,7 @@ export function ProblemSection() {
         <div className="text-center mt-16">
           <div className="max-w-3xl mx-auto bg-gradient-to-r from-[var(--success-green)]/10 to-[var(--accent-blue)]/10 border border-[var(--success-green)]/30 rounded-2xl p-6 sm:p-8">
             <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-4">
-              🤗 Se você se reconheceu em alguma dessas situações...
+              Se você se reconheceu em alguma dessas situações...
             </h3>
             <p className="text-[var(--text-secondary)] leading-relaxed mb-4">
               Saiba que não há nada de errado com você. Esses são problemas do mundo moderno, não defeitos seus.
