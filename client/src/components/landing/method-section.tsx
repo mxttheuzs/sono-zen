@@ -3,7 +3,7 @@ import relaxationImage from "@assets/image_1751507711872.png";
 
 export function MethodSection() {
   return (
-    <section id="metodo" className="py-5 bg-black relative overflow-hidden">
+    <section id="metodo" className="py-1 bg-black relative overflow-hidden">
       {/* Floating clouds for peaceful atmosphere */}
       <FloatingClouds className="opacity-30" />
       
