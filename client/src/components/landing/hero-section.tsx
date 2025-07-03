@@ -78,7 +78,7 @@ export function HeroSection() {
               </div>
               <div className="flex items-center gap-2 text-[var(--text-secondary)] hover:transform hover:translate-x-1 transition-all duration-200">
                 <CheckCircle className="h-5 w-5 text-[var(--success-green)]" />
-                <span className="text-sm font-medium">Aprovado por 2.800+ pessoas</span>
+                <span className="text-sm font-medium">Aprovado por 2.347 pessoas</span>
               </div>
             </div>
           </div>
@@ -106,7 +106,7 @@ export function HeroSection() {
               </div>
               <div className="flex items-center gap-2 bg-[var(--warm-accent)]/10 border border-[var(--warm-accent)]/30 px-4 py-2 rounded-full">
                 <Star className="h-5 w-5 text-[var(--warm-accent)] fill-current" />
-                <span className="text-sm font-semibold text-[var(--warm-accent)]">2.800+ Vidas Transformadas</span>
+                <span className="text-sm font-semibold text-[var(--warm-accent)]">2.347 Vidas Transformadas</span>
               </div>
             </div>
 
@@ -127,7 +127,7 @@ export function HeroSection() {
                     ✨ <span className="text-[var(--warm-accent)]">Preço de lançamento:</span> Apenas hoje
                   </p>
                   <p className="text-[var(--text-secondary)] text-base mb-3 font-medium">
-                    Mais de 15.000 pessoas já transformaram suas noites
+                    14.847 pessoas já transformaram suas noites
                   </p>
                   <div className="flex flex-wrap items-center gap-4">
                     <div className="flex items-center gap-2">
@@ -143,7 +143,7 @@ export function HeroSection() {
                   {/* Indicador de interesse */}
                   <div className="mt-4 bg-[var(--warm-accent)]/10 border border-[var(--warm-accent)]/30 rounded-xl p-3">
                     <p className="text-[var(--warm-accent)] text-sm font-medium text-center">
-                      🌙 Centenas de pessoas adquiriram nas últimas 24h
+                      🌙 273 pessoas adquiriram nas últimas 24h
                     </p>
                   </div>
                 </div>

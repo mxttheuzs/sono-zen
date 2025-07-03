@@ -34,8 +34,8 @@ const faqCategories = [
     faqs: [
       {
         question: "Funciona para insônia crônica e casos graves?",
-        answer: "Sim, especialmente para casos crônicos. O método foi desenvolvido para pessoas que sofrem há anos com problemas de sono. Nossa taxa de sucesso de 94% inclui pacientes com insônia severa, ansiedade noturna e distúrbios do sono. É 100% natural e complementa tratamentos médicos existentes.",
-        highlight: "94% de sucesso"
+        answer: "Sim, especialmente para casos crônicos. O método foi desenvolvido para pessoas que sofrem há anos com problemas de sono. Nossa taxa de sucesso de 87% inclui pacientes com insônia severa, ansiedade noturna e distúrbios do sono. É 100% natural e complementa tratamentos médicos existentes.",
+        highlight: "87% de sucesso"
       },
       {
         question: "E se eu já tentei tudo e nada funcionou?",
