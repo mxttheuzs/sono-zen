@@ -39,17 +39,45 @@ export function MethodSection() {
               </div>
               
               <div className="grid sm:grid-cols-2 gap-4">
-                <div className="bg-[var(--sky-blue)]/10 border border-[var(--sky-blue)]/30 rounded-xl p-4">
-                  <p className="text-[var(--sky-blue)] font-semibold text-sm mb-2">❌ Como a maioria faz:</p>
-                  <p className="text-[var(--text-muted)] text-xs">
-                    Deita na cama, fica no celular, pensa nos problemas, espera o sono "aparecer"
-                  </p>
+                <div className="bg-[var(--sky-blue)]/10 border border-[var(--sky-blue)]/30 rounded-xl p-5">
+                  <p className="text-[var(--sky-blue)] font-semibold text-sm mb-3">❌ Como a maioria faz:</p>
+                  <div className="space-y-2">
+                    <p className="text-[var(--text-muted)] text-sm">
+                      • Deita na cama ainda com a mente agitada
+                    </p>
+                    <p className="text-[var(--text-muted)] text-sm">
+                      • Fica no celular até tarde "relaxando"
+                    </p>
+                    <p className="text-[var(--text-muted)] text-sm">
+                      • Pensa nos problemas do dia e do amanhã
+                    </p>
+                    <p className="text-[var(--text-muted)] text-sm">
+                      • Espera o sono "aparecer" magicamente
+                    </p>
+                    <p className="text-[var(--text-muted)] text-sm">
+                      • Vira de um lado pro outro por horas
+                    </p>
+                  </div>
                 </div>
-                <div className="bg-[var(--mint-green)]/10 border border-[var(--mint-green)]/30 rounded-xl p-4">
-                  <p className="text-[var(--mint-green)] font-semibold text-sm mb-2">✅ Como você vai fazer:</p>
-                  <p className="text-[var(--text-muted)] text-xs">
-                    Ritual de 15 min → corpo relaxa → mente acalma → sono natural em minutos
-                  </p>
+                <div className="bg-[var(--mint-green)]/10 border border-[var(--mint-green)]/30 rounded-xl p-5">
+                  <p className="text-[var(--mint-green)] font-semibold text-sm mb-3">✅ Como você vai fazer:</p>
+                  <div className="space-y-2">
+                    <p className="text-[var(--text-muted)] text-sm">
+                      • Ritual de 15 minutos antes de deitar
+                    </p>
+                    <p className="text-[var(--text-muted)] text-sm">
+                      • Técnicas de respiração que acalmam na hora
+                    </p>
+                    <p className="text-[var(--text-muted)] text-sm">
+                      • Pontos de pressão que liberam o estresse
+                    </p>
+                    <p className="text-[var(--text-muted)] text-sm">
+                      • Mente preparada e corpo completamente relaxado
+                    </p>
+                    <p className="text-[var(--text-muted)] text-sm">
+                      • Sono natural em poucos minutos na cama
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
