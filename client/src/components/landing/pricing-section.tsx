@@ -377,11 +377,8 @@ export function PricingSection() {
                           <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 text-white/50 ml-1 animate-twinkle" />
                         </div>
                         <div className="text-center flex-1">
-                          <div className="text-white/95 font-bold leading-tight text-xl sm:text-2xl">
+                          <div className="text-white/95 font-bold leading-tight text-xl sm:text-2xl lg:text-3xl">
                             Transformar Meu Sono Agora
-                          </div>
-                          <div className="text-sm sm:text-base text-white/60 font-medium mt-2 tracking-wide">
-                            Sua jornada para noites tranquilas começa aqui
                           </div>
                         </div>
                         <div className="flex items-center">
