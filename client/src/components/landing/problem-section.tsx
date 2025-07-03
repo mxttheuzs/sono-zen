@@ -2,7 +2,7 @@ import { FloatingClouds } from "@/components/ui/floating-clouds";
 
 export function ProblemSection() {
   return (
-    <section id="problema" className="py-20 bg-black relative overflow-hidden">
+    <section id="problema" className="py-1 bg-black relative overflow-hidden">
       <FloatingClouds />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="text-center mb-16">
