@@ -78,14 +78,9 @@ export function ObjectionsSection() {
                     {objection.question}
                   </h3>
 
-                  <p className="text-slate-300 leading-relaxed mb-6">
+                  <p className="text-slate-300 leading-relaxed">
                     {objection.answer}
                   </p>
-
-                  <div className="flex items-center gap-2 text-green-400">
-                    <Check className="h-5 w-5" />
-                    <span className="font-semibold">Garantido</span>
-                  </div>
                 </div>
               </div>
             );
