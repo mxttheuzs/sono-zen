@@ -30,47 +30,47 @@ interface QuizResult {
 const quizQuestions: QuizQuestion[] = [
   {
     id: "sleep_time",
-    question: "Que horas você costuma ir dormir?",
+    question: "Me conta, que horas você costuma ir pra cama?",
     options: [
-      { id: "early", text: "Antes das 22h", icon: <Sun className="h-5 w-5" />, value: "early_bird" },
-      { id: "normal", text: "Entre 22h e 24h", icon: <Moon className="h-5 w-5" />, value: "normal" },
-      { id: "late", text: "Depois da meia-noite", icon: <Star className="h-5 w-5" />, value: "night_owl" }
+      { id: "early", text: "💤 Sou das antigas... antes das 22h", icon: <Sun className="h-5 w-5" />, value: "early_bird" },
+      { id: "normal", text: "🌙 Normal, entre 22h e meia-noite", icon: <Moon className="h-5 w-5" />, value: "normal" },
+      { id: "late", text: "🦉 Coruja da madrugada (depois da meia-noite)", icon: <Star className="h-5 w-5" />, value: "night_owl" }
     ]
   },
   {
     id: "fall_asleep",
-    question: "Quanto tempo você leva para adormecer?",
+    question: "Quando você deita na cama, quanto tempo demora pra pegar no sono?",
     options: [
-      { id: "fast", text: "Menos de 15 minutos", icon: <Zap className="h-5 w-5" />, value: "fast_sleeper" },
-      { id: "medium", text: "15 a 30 minutos", icon: <Cloud className="h-5 w-5" />, value: "medium_sleeper" },
-      { id: "slow", text: "Mais de 30 minutos", icon: <Moon className="h-5 w-5" />, value: "slow_sleeper" }
+      { id: "fast", text: "⚡ Rapidinho! Caio no sono fácil", icon: <Zap className="h-5 w-5" />, value: "fast_sleeper" },
+      { id: "medium", text: "🤔 Uns 15-30 minutinhos pensando na vida", icon: <Cloud className="h-5 w-5" />, value: "medium_sleeper" },
+      { id: "slow", text: "😴 Ai, demoro mais de meia hora contando carneirinhos", icon: <Moon className="h-5 w-5" />, value: "slow_sleeper" }
     ]
   },
   {
     id: "wake_frequency",
-    question: "Quantas vezes você acorda durante a noite?",
+    question: "Durante a noite, você costuma acordar?",
     options: [
-      { id: "never", text: "Raramente acordo", icon: <Heart className="h-5 w-5" />, value: "deep_sleeper" },
-      { id: "sometimes", text: "1-2 vezes", icon: <Cloud className="h-5 w-5" />, value: "light_sleeper" },
-      { id: "often", text: "3+ vezes", icon: <Star className="h-5 w-5" />, value: "restless_sleeper" }
+      { id: "never", text: "💙 Raramente! Durmo que nem um bebê", icon: <Heart className="h-5 w-5" />, value: "deep_sleeper" },
+      { id: "sometimes", text: "😊 Às vezes acordo 1 ou 2 vezes", icon: <Cloud className="h-5 w-5" />, value: "light_sleeper" },
+      { id: "often", text: "😵 Fico acordando várias vezes... é tenso", icon: <Star className="h-5 w-5" />, value: "restless_sleeper" }
     ]
   },
   {
     id: "morning_feeling",
-    question: "Como você se sente ao acordar?",
+    question: "E de manhã? Como você se sente quando acorda?",
     options: [
-      { id: "refreshed", text: "Descansado e energizado", icon: <Sun className="h-5 w-5" />, value: "good_sleeper" },
-      { id: "tired", text: "Ainda cansado", icon: <Cloud className="h-5 w-5" />, value: "poor_sleeper" },
-      { id: "groggy", text: "Sonolento e confuso", icon: <Moon className="h-5 w-5" />, value: "very_poor_sleeper" }
+      { id: "refreshed", text: "☀️ Top! Acordo bem disposto e animado", icon: <Sun className="h-5 w-5" />, value: "good_sleeper" },
+      { id: "tired", text: "😪 Acordo meio cansado ainda, sabe?", icon: <Cloud className="h-5 w-5" />, value: "poor_sleeper" },
+      { id: "groggy", text: "🥱 Destruído... parece que não dormi nada", icon: <Moon className="h-5 w-5" />, value: "very_poor_sleeper" }
     ]
   },
   {
     id: "stress_level",
-    question: "Como está seu nível de estresse antes de dormir?",
+    question: "Na hora de dormir, como anda sua cabeça?",
     options: [
-      { id: "low", text: "Calmo e relaxado", icon: <Heart className="h-5 w-5" />, value: "relaxed" },
-      { id: "medium", text: "Um pouco ansioso", icon: <Cloud className="h-5 w-5" />, value: "moderate_stress" },
-      { id: "high", text: "Muito estressado", icon: <Zap className="h-5 w-5" />, value: "high_stress" }
+      { id: "low", text: "😌 Tranquilo, consigo relaxar bem", icon: <Heart className="h-5 w-5" />, value: "relaxed" },
+      { id: "medium", text: "😅 Meio ansioso, mas nada demais", icon: <Cloud className="h-5 w-5" />, value: "moderate_stress" },
+      { id: "high", text: "😰 Muito estressado, a mente não para!", icon: <Zap className="h-5 w-5" />, value: "high_stress" }
     ]
   }
 ];
@@ -78,51 +78,51 @@ const quizQuestions: QuizQuestion[] = [
 const quizResults: Record<string, QuizResult> = {
   excellent: {
     type: "excellent",
-    title: "Dorminhoco Zen 🌙",
-    description: "Você já tem ótimos hábitos de sono! O Método Sono Zen pode ajudar você a otimizar ainda mais sua qualidade de descanso.",
+    title: "Você é um Dorminhoco dos Sonhos! 🌟",
+    description: "Que inveja boa! Você já tem hábitos lindos de sono. O Método Sono Zen vai ser aquele 'plus' pra você dormir ainda melhor e acordar se sentindo uma nova pessoa.",
     recommendations: [
-      "Continue mantendo horários regulares",
-      "Aprimore suas técnicas de relaxamento",
-      "Explore meditações guiadas para sono profundo"
+      "💫 Continue com seus horários certinhos",
+      "🧘‍♀️ Vamos aprimorar suas técnicas de relaxamento",
+      "🌙 Que tal explorar meditações mais profundas?"
     ],
-    color: "from-emerald-500 to-teal-500",
+    color: "from-[var(--mint-green)] to-[var(--celestial-blue)]",
     icon: <Heart className="h-8 w-8" />
   },
   good: {
     type: "good",
-    title: "Aprendiz do Sono 🌟",
-    description: "Você tem uma base boa, mas há espaço para melhorias significativas em sua qualidade de sono.",
+    title: "Você tá no Caminho Certo! 😊",
+    description: "Olha, você tem uma base boa! Só precisa de alguns ajustes pra transformar suas noites. Muita gente com seu perfil teve resultados incríveis em poucos dias.",
     recommendations: [
-      "Estabeleça uma rotina noturna consistente",
-      "Pratique técnicas de respiração antes de dormir",
-      "Reduza estímulos eletrônicos 1h antes de deitar"
+      "🌙 Vamos criar uma rotina noturna gostosa",
+      "🫁 Respirações especiais antes de dormir vão te ajudar muito",
+      "📱 Que tal dar um tempo no celular 1h antes de deitar?"
     ],
-    color: "from-blue-500 to-cyan-500",
+    color: "from-[var(--sky-blue)] to-[var(--celestial-blue)]",
     icon: <Star className="h-8 w-8" />
   },
   moderate: {
     type: "moderate",
-    title: "Buscador de Tranquilidade 🌙",
-    description: "Seu sono precisa de atenção especial. O Método Sono Zen foi criado exatamente para pessoas como você!",
+    title: "Você Veio ao Lugar Certo! 🤗",
+    description: "Seu sono precisa de um carinho especial, né? Relaxa, o Método Sono Zen foi criado pensando exatamente em pessoas como você. Você não está sozinho nisso!",
     recommendations: [
-      "Implemente rituais relaxantes antes de dormir",
-      "Aprenda técnicas orientais de acalmamento mental",
-      "Crie um ambiente mais propício ao sono profundo"
+      "🛁 Rituais relaxantes vão virar seu momento sagrado",
+      "🧘‍♂️ Técnicas orientais pra acalmar essa mente agitada",
+      "🏠 Vamos transformar seu quarto no cantinho perfeito"
     ],
-    color: "from-purple-500 to-indigo-500",
+    color: "from-[var(--celestial-blue)] to-[var(--sky-blue)]",
     icon: <Cloud className="h-8 w-8" />
   },
   poor: {
     type: "poor",
-    title: "Guerreiro da Insônia 💪",
-    description: "Você enfrenta desafios significativos com o sono, mas há esperança! Muitas pessoas com seu perfil transformaram suas noites com o Método Sono Zen.",
+    title: "Guerreiro, Você Merece Descansar! 💙",
+    description: "Eu sei como é difícil... Passar noites em claro é muito pesado. Mas olha, MUITAS pessoas que estavam exatamente como você transformaram suas noites com o método. Sua vez chegou!",
     recommendations: [
-      "Priorize técnicas de redução de ansiedade",
-      "Estabeleça um ritual noturno de 30 minutos",
-      "Use sons relaxantes e frequências específicas",
-      "Pratique exercícios de mindfulness antes de dormir"
+      "😌 Primeiro, vamos trabalhar essa ansiedade na hora de dormir",
+      "🕯️ Um ritual noturno de 30 minutinhos vai virar seu momento sagrado",
+      "🎵 Sons relaxantes e frequências especiais vão acalmar sua mente",
+      "🧘‍♀️ Mindfulness antes de dormir vai ser seu novo melhor amigo"
     ],
-    color: "from-orange-500 to-red-500",
+    color: "from-[var(--celestial-blue)] to-[var(--mint-green)]",
     icon: <Zap className="h-8 w-8" />
   }
 };
@@ -246,25 +246,25 @@ export function SleepComfortQuiz() {
           </Card>
 
           <div className="text-center space-y-4">
-            <div className="bg-gradient-to-r from-[var(--accent-blue)]/10 to-[var(--warm-accent)]/10 border border-[var(--accent-blue)]/30 rounded-lg p-6">
-              <p className="text-[var(--accent-blue)] font-semibold mb-4">
-                ✨ O Método Sono Zen foi desenvolvido especificamente para pessoas com seu perfil de sono!
+            <div className="bg-gradient-to-r from-[var(--celestial-blue)]/15 to-[var(--mint-green)]/10 border border-[var(--celestial-blue)]/40 rounded-lg p-6">
+              <p className="text-[var(--celestial-blue)] font-semibold mb-4">
+                🌟 Perfeito! O Método Sono Zen foi criado pensando exatamente em pessoas como você. Sua jornada para noites tranquilas começa agora!
               </p>
               <Button 
                 onClick={() => document.getElementById('preco')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-gradient-to-r from-[var(--accent-blue)] to-[var(--warm-accent)] hover:from-[var(--accent-blue)]/90 hover:to-[var(--warm-accent)]/90 text-white px-8 py-3 rounded-xl text-lg font-semibold mr-4 mb-2"
+                className="bg-gradient-to-r from-[var(--celestial-blue)] to-[var(--sky-blue)] hover:from-[var(--celestial-blue)]/90 hover:to-[var(--sky-blue)]/90 text-white px-8 py-3 rounded-xl text-lg font-semibold mr-4 mb-2"
               >
                 <Moon className="h-5 w-5 mr-2" />
-                Transformar Meu Sono Agora
+                Quero Transformar Meu Sono! 
               </Button>
               
               <Button 
                 onClick={resetQuiz}
                 variant="outline"
-                className="border-[var(--border-subtle)] text-[var(--text-secondary)] hover:bg-[var(--card-hover)] px-6 py-3 rounded-xl"
+                className="border-[var(--celestial-blue)]/30 text-[var(--celestial-blue)] hover:bg-[var(--celestial-blue)]/10 px-6 py-3 rounded-xl"
               >
                 <RefreshCw className="h-4 w-4 mr-2" />
-                Refazer Quiz
+                Fazer Novamente
               </Button>
             </div>
           </div>
@@ -282,16 +282,16 @@ export function SleepComfortQuiz() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 bg-[var(--card-bg)]/80 backdrop-blur-sm border border-[var(--border-subtle)] rounded-full px-4 py-2 mb-6">
-            <Star className="h-4 w-4 text-[var(--accent-blue)]" />
-            <span className="text-sm text-[var(--text-secondary)] font-medium">Quiz Personalizado</span>
+          <div className="inline-flex items-center gap-2 bg-[var(--celestial-blue)]/20 backdrop-blur-sm border border-[var(--celestial-blue)]/40 rounded-full px-4 py-2 mb-6">
+            <Star className="h-4 w-4 text-[var(--celestial-blue)]" />
+            <span className="text-sm text-[var(--celestial-blue)] font-medium">💤 Descubra Seu Tipo de Sono</span>
           </div>
           
-          <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-4">
-            Descubra Seu Perfil de Sono
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--cloud-white)] mb-4">
+            Como Anda Seu Sono? 🤗
           </h2>
           <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
-            Responda algumas perguntas e receba recomendações personalizadas para melhorar sua qualidade de sono
+            Vamos conversar um pouquinho sobre seu sono? São só 5 perguntinhas rápidas pra eu te conhecer melhor e dar dicas personalizadas! 😊
           </p>
         </div>
 
