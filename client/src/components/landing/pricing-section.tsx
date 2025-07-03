@@ -243,33 +243,39 @@ export function PricingSection() {
           <div className="max-w-4xl mx-auto">
             <div className="bg-[var(--accent-blue)]/5 backdrop-blur-xl border-2 border-[var(--accent-blue)]/40 rounded-3xl overflow-hidden shadow-2xl relative">
               
-              {/* Product Header */}
-              <div className="relative bg-gradient-to-br from-[var(--accent-blue)]/15 via-[var(--warm-accent)]/10 to-[var(--accent-blue)]/5 border-b-2 border-[var(--accent-blue)]/50 p-6 sm:p-8 md:p-12 text-center overflow-hidden">
-                {/* Decorative elements - adjusted for mobile */}
-                <div className="absolute top-2 left-4 sm:top-4 sm:left-8 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[var(--warm-accent)]/20 to-transparent rounded-full blur-xl"></div>
-                <div className="absolute bottom-2 right-4 sm:bottom-4 sm:right-8 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-[var(--accent-blue)]/20 to-transparent rounded-full blur-xl"></div>
+              {/* Product Header - Enhanced harmony */}
+              <div className="relative bg-gradient-to-br from-[var(--accent-blue)]/12 via-[var(--warm-accent)]/8 to-[var(--celestial-blue)]/10 border-b-2 border-[var(--warm-accent)]/40 p-6 sm:p-8 md:p-12 text-center overflow-hidden">
+                {/* Enhanced decorative elements */}
+                <div className="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-[var(--warm-accent)]/15 to-transparent rounded-full blur-2xl"></div>
+                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-[var(--accent-blue)]/15 to-transparent rounded-full blur-xl"></div>
+                <div className="absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-br from-[var(--celestial-blue)]/12 to-transparent rounded-full blur-2xl"></div>
                 
-                {/* Icon - responsive sizing */}
-                <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 sm:mb-6 bg-gradient-to-br from-[var(--warm-accent)]/20 to-[var(--accent-blue)]/20 border border-[var(--warm-accent)]/30 rounded-2xl flex items-center justify-center backdrop-blur-sm">
-                  <Moon className="h-6 w-6 sm:h-8 sm:w-8 text-[var(--warm-accent)]" style={{ filter: 'drop-shadow(0 0 8px rgba(218, 165, 32, 0.5))' }} />
+                {/* Enhanced icon with better harmony */}
+                <div className="w-14 h-14 sm:w-18 sm:h-18 mx-auto mb-6 bg-gradient-to-br from-[var(--warm-accent)]/25 via-[var(--accent-blue)]/15 to-[var(--celestial-blue)]/20 border-2 border-[var(--warm-accent)]/40 rounded-3xl flex items-center justify-center backdrop-blur-lg shadow-xl relative group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[var(--warm-accent)]/10 to-[var(--accent-blue)]/10 rounded-3xl blur opacity-50 group-hover:opacity-70 transition-opacity duration-300"></div>
+                  <Moon className="h-7 w-7 sm:h-9 sm:w-9 text-[var(--warm-accent)] relative z-10" style={{ filter: 'drop-shadow(0 0 10px rgba(218, 165, 32, 0.6))' }} />
                 </div>
                 
-                <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-[var(--text-primary)] mb-3 sm:mb-4 tracking-tight leading-tight px-2">
-                  <span className="bg-gradient-to-r from-[var(--warm-accent)] via-[hsl(45,100%,70%)] to-[var(--accent-blue)] bg-clip-text text-transparent" style={{ textShadow: '0 0 15px rgba(218, 165, 32, 0.3)' }}>
+                {/* Enhanced title with better gradient consistency */}
+                <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 sm:mb-6 tracking-tight leading-tight px-2 relative z-10">
+                  <span className="bg-gradient-to-r from-[var(--warm-accent)] via-[var(--accent-blue)] to-[var(--celestial-blue)] bg-clip-text text-transparent">
                     Sono Zen
                   </span>
-                  <span className="block text-lg sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-[var(--text-primary)] mt-1 sm:mt-2" style={{ textShadow: '0 0 10px rgba(255,255,255,0.2)' }}>
+                  <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-[var(--text-primary)] mt-2" style={{ textShadow: '0 0 12px rgba(255,255,255,0.25)' }}>
                     Método Completo
                   </span>
                 </h3>
                 
-                <div className="max-w-sm sm:max-w-md mx-auto px-4">
-                  <p className="text-[var(--text-secondary)] text-base sm:text-lg font-medium mb-3 sm:mb-4" style={{ textShadow: '0 0 8px rgba(255,255,255,0.15)' }}>
+                <div className="max-w-md mx-auto px-4 relative z-10">
+                  <p className="text-[var(--text-secondary)] text-lg sm:text-xl font-medium mb-4" style={{ textShadow: '0 0 8px rgba(255,255,255,0.15)' }}>
                     Transformação completa do seu sono
                   </p>
-                  <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[var(--warm-accent)]/20 to-[var(--accent-blue)]/20 border border-[var(--warm-accent)]/30 rounded-full px-3 sm:px-4 py-2 backdrop-blur-sm">
-                    <Star className="h-3 w-3 sm:h-4 sm:w-4 text-[var(--warm-accent)] fill-current" />
-                    <span className="text-xs sm:text-sm font-semibold text-[var(--warm-accent)]">em apenas 7 noites</span>
+                  <div className="inline-flex items-center gap-3 bg-gradient-to-r from-[var(--warm-accent)]/25 via-[var(--accent-blue)]/15 to-[var(--celestial-blue)]/20 border-2 border-[var(--warm-accent)]/40 rounded-full px-5 py-3 backdrop-blur-lg shadow-lg">
+                    <Star className="h-4 w-4 sm:h-5 sm:w-5 text-[var(--warm-accent)] fill-current" />
+                    <span className="text-sm sm:text-base font-bold bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] bg-clip-text text-transparent">
+                      em apenas 7 noites
+                    </span>
+                    <Star className="h-4 w-4 sm:h-5 sm:w-5 text-[var(--warm-accent)] fill-current" />
                   </div>
                 </div>
               </div>
