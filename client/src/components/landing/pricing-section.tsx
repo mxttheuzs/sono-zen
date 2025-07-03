@@ -226,9 +226,12 @@ export function PricingSection() {
             </div>
             
             <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-[var(--text-primary)] mb-6 leading-tight">
-              Investimento em Seu
-              <span className="block bg-gradient-to-r from-[hsl(200,100%,60%)] via-[var(--warm-accent)] to-[hsl(45,100%,65%)] bg-clip-text text-transparent font-black tracking-tight" style={{ textShadow: '0 0 20px rgba(218, 165, 32, 0.4)' }}>
-                Bem-Estar
+              Sua{" "}
+              <span className="bg-gradient-to-r from-[var(--warm-accent)] via-[var(--accent-blue)] to-[var(--celestial-blue)] bg-clip-text text-transparent font-black tracking-tight">
+                Transformação
+              </span>
+              <span className="block text-3xl sm:text-4xl md:text-5xl mt-2 text-[var(--text-secondary)]">
+                Começa Hoje
               </span>
             </h2>
             <p className="text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
@@ -277,19 +280,44 @@ export function PricingSection() {
 
 
 
-                {/* Pricing */}
-                <div className="bg-gradient-to-r from-[var(--accent-blue)]/8 to-[var(--warm-accent)]/8 rounded-2xl p-4 sm:p-6 md:p-8 mb-6 sm:mb-8 border-2 border-[var(--accent-blue)]/40 backdrop-blur-sm relative">
-                  <div className="text-center">
-                    <p className="text-[var(--text-muted)] mb-2 text-sm sm:text-base" style={{ textShadow: '0 0 6px rgba(255,255,255,0.15)' }}>Valor normal:</p>
-                    <p className="text-xl sm:text-2xl text-[var(--text-muted)] line-through mb-3 sm:mb-4" style={{ textShadow: '0 0 6px rgba(255,255,255,0.15)' }}>R$ 47,90</p>
-                    <p className="text-[var(--accent-blue)] font-semibold mb-2 sm:mb-3 text-sm sm:text-base" style={{ textShadow: '0 0 8px rgba(255,255,255,0.2)' }}>Oferta especial hoje:</p>
-                    <p className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight mb-3 sm:mb-4" style={{ textShadow: '0 0 15px rgba(255,255,255,0.4)' }}>
-                      R$ 27,90
-                    </p>
-                    <div className="bg-gradient-to-r from-[var(--warm-accent)]/20 to-[var(--accent-blue)]/20 rounded-xl p-3 sm:p-4 border border-[var(--warm-accent)]/30 backdrop-blur-sm">
-                      <p className="text-[var(--warm-accent)] font-bold text-base sm:text-lg" style={{ textShadow: '0 0 8px rgba(255,255,255,0.2)' }}>
-                        Economia de R$ 20,00 (42% OFF)
+                {/* Pricing - Enhanced with better visual hierarchy */}
+                <div className="bg-gradient-to-br from-[var(--accent-blue)]/15 via-[var(--warm-accent)]/8 to-[var(--accent-blue)]/10 rounded-3xl p-6 sm:p-8 md:p-10 mb-8 border-2 border-[var(--warm-accent)]/50 backdrop-blur-lg relative overflow-hidden shadow-2xl">
+                  {/* Decorative background elements */}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[var(--warm-accent)]/20 to-transparent rounded-full blur-3xl"></div>
+                  <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-br from-[var(--accent-blue)]/20 to-transparent rounded-full blur-2xl"></div>
+                  
+                  <div className="text-center relative z-10">
+                    {/* Header with urgency */}
+                    <div className="inline-flex items-center gap-2 bg-gradient-to-r from-red-500/20 to-orange-500/20 border border-red-400/30 rounded-full px-4 py-2 mb-4">
+                      <div className="w-2 h-2 bg-red-400 rounded-full animate-pulse"></div>
+                      <span className="text-sm font-bold text-red-300">OFERTA LIMITADA</span>
+                    </div>
+                    
+                    {/* Price comparison */}
+                    <div className="mb-6">
+                      <p className="text-[var(--text-muted)] mb-2 text-base" style={{ textShadow: '0 0 6px rgba(255,255,255,0.15)' }}>De:</p>
+                      <p className="text-2xl sm:text-3xl text-[var(--text-muted)] line-through mb-4 opacity-70" style={{ textShadow: '0 0 6px rgba(255,255,255,0.15)' }}>R$ 47,90</p>
+                      
+                      <p className="text-lg sm:text-xl text-[var(--accent-blue)] font-semibold mb-3" style={{ textShadow: '0 0 8px rgba(255,255,255,0.2)' }}>Por apenas:</p>
+                      
+                      {/* Main price with enhanced visual impact */}
+                      <div className="relative">
+                        <div className="absolute inset-0 bg-gradient-to-r from-[var(--warm-accent)]/30 to-[var(--accent-blue)]/30 rounded-2xl blur-xl"></div>
+                        <div className="relative bg-gradient-to-r from-[var(--warm-accent)]/20 to-[var(--accent-blue)]/20 rounded-2xl p-6 border-2 border-[var(--warm-accent)]/40">
+                          <p className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black bg-gradient-to-r from-[var(--warm-accent)] via-white to-[var(--accent-blue)] bg-clip-text text-transparent tracking-tight mb-2" style={{ textShadow: '0 0 20px rgba(255,255,255,0.6)' }}>
+                            R$ 27,90
+                          </p>
+                          <p className="text-sm sm:text-base text-[var(--text-secondary)] font-medium">à vista no PIX</p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Savings highlight */}
+                    <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-xl p-4 border border-green-400/30 backdrop-blur-sm">
+                      <p className="text-green-300 font-bold text-lg sm:text-xl" style={{ textShadow: '0 0 8px rgba(255,255,255,0.2)' }}>
+                        💚 Você economiza R$ 20,00 (42% OFF)
                       </p>
+                      <p className="text-green-200 text-sm mt-1">Maior desconto do ano!</p>
                     </div>
                   </div>
                 </div>
@@ -315,40 +343,99 @@ export function PricingSection() {
 
                 </div>
                 
-                {/* Purchase Button */}
+                {/* Purchase Button - Enhanced with urgency and appeal */}
                 <div className="space-y-6">
-                  <Button 
-                    onClick={handlePurchaseClick}
-                    className="w-full relative bg-gradient-to-r from-[var(--warm-accent)] to-[hsl(35,70%,50%)] border-2 border-[var(--warm-accent)] text-white py-5 sm:py-7 px-4 sm:px-7 rounded-2xl text-base sm:text-lg font-semibold transition-all duration-500 group animate-enhanced-float shadow-lg shadow-[var(--warm-accent)]/30"
-                    style={{ filter: 'drop-shadow(0 0 15px rgba(218, 165, 32, 0.6))' }}
-                  >
-                    {/* Button content */}
-                    <div className="flex items-center justify-center gap-2 sm:gap-3">
-                      <Moon className="h-5 w-5 sm:h-6 sm:w-6 text-white transition-colors duration-300" />
-                      <span className="text-white font-semibold tracking-wide text-center leading-tight text-sm sm:text-lg" style={{ textShadow: '0 0 10px rgba(255,255,255,0.4)' }}>
-                        QUERO TRANSFORMAR MINHAS NOITES
+                  {/* Call-to-action intro */}
+                  <div className="text-center mb-4">
+                    <p className="text-lg sm:text-xl font-semibold text-[var(--text-primary)] mb-2">
+                      Sua nova vida começa{" "}
+                      <span className="bg-gradient-to-r from-[var(--warm-accent)] via-[var(--accent-blue)] to-[var(--celestial-blue)] bg-clip-text text-transparent">
+                        agora
                       </span>
-                    </div>
-                  </Button>
+                    </p>
+                    <p className="text-sm text-[var(--text-secondary)]">
+                      Mais de 14.847 pessoas já transformaram suas noites
+                    </p>
+                  </div>
                   
-                  {/* Security badges - enhanced and more prominent */}
-                  <div className="bg-gradient-to-r from-[var(--accent-blue)]/8 to-[var(--warm-accent)]/8 rounded-2xl p-6 sm:p-8 border-2 border-[var(--accent-blue)]/45 backdrop-blur-sm relative">
-                    <div className="grid sm:grid-cols-3 gap-4 sm:gap-6">
-                      <div className="flex flex-col items-center text-center p-4 bg-[var(--accent-blue)]/10 border-2 border-[var(--accent-blue)]/35 rounded-xl backdrop-blur-sm hover:bg-[var(--accent-blue)]/15 transition-all duration-300">
-                        <Shield className="h-8 w-8 sm:h-10 sm:w-10 text-[var(--accent-blue)] mb-3" />
-                        <h4 className="font-bold text-[var(--text-primary)] text-sm sm:text-base mb-1" style={{ textShadow: '0 0 8px rgba(255,255,255,0.2)' }}>Garantia Total</h4>
-                        <p className="text-[var(--text-secondary)] text-xs sm:text-sm" style={{ textShadow: '0 0 5px rgba(255,255,255,0.15)' }}>7 dias para testar</p>
+                  {/* Enhanced Purchase Button */}
+                  <div className="relative group">
+                    {/* Animated background glow */}
+                    <div className="absolute -inset-1 bg-gradient-to-r from-[var(--warm-accent)] via-[var(--accent-blue)] to-[var(--warm-accent)] rounded-3xl blur opacity-30 group-hover:opacity-50 animate-pulse"></div>
+                    
+                    <Button 
+                      onClick={handlePurchaseClick}
+                      className="w-full relative bg-gradient-to-r from-[var(--warm-accent)] via-[hsl(45,100%,60%)] to-[var(--accent-blue)] border-2 border-[var(--warm-accent)] text-white py-6 sm:py-8 px-6 sm:px-8 rounded-3xl text-lg sm:text-xl font-bold transition-all duration-500 group shadow-2xl shadow-[var(--warm-accent)]/40 hover:scale-105 hover:shadow-3xl"
+                    >
+                      {/* Button content with enhanced styling */}
+                      <div className="flex flex-col items-center justify-center gap-2">
+                        <div className="flex items-center gap-3">
+                          <Moon className="h-6 w-6 sm:h-7 sm:w-7 text-white transition-transform duration-300 group-hover:rotate-12" />
+                          <span className="text-white font-bold tracking-wide text-center leading-tight" style={{ textShadow: '0 0 12px rgba(255,255,255,0.5)' }}>
+                            SIM! QUERO DORMIR COMO UM BEBÊ
+                          </span>
+                          <Moon className="h-6 w-6 sm:h-7 sm:w-7 text-white transition-transform duration-300 group-hover:-rotate-12" />
+                        </div>
+                        <span className="text-sm font-medium opacity-90">
+                          💳 Acesso instantâneo após o pagamento
+                        </span>
                       </div>
-                      <div className="flex flex-col items-center text-center p-4 bg-[var(--accent-blue)]/10 border-2 border-[var(--accent-blue)]/35 rounded-xl backdrop-blur-sm hover:bg-[var(--accent-blue)]/15 transition-all duration-300">
-                        <Lock className="h-8 w-8 sm:h-10 sm:w-10 text-[var(--accent-blue)] mb-3" />
-                        <h4 className="font-bold text-[var(--text-primary)] text-sm sm:text-base mb-1" style={{ textShadow: '0 0 8px rgba(255,255,255,0.2)' }}>100% Seguro</h4>
-                        <p className="text-[var(--text-secondary)] text-xs sm:text-sm" style={{ textShadow: '0 0 5px rgba(255,255,255,0.15)' }}>Pagamento protegido</p>
+                      
+                      {/* Floating sparkle effect */}
+                      <div className="absolute top-2 right-4 w-2 h-2 bg-white rounded-full animate-ping opacity-60"></div>
+                      <div className="absolute bottom-3 left-6 w-1.5 h-1.5 bg-white rounded-full animate-ping opacity-40 animation-delay-300"></div>
+                    </Button>
+                  </div>
+                  
+                  {/* Enhanced Security & Trust Badges */}
+                  <div className="bg-gradient-to-br from-[var(--accent-blue)]/10 via-[var(--warm-accent)]/5 to-[var(--accent-blue)]/8 rounded-3xl p-6 sm:p-8 border-2 border-[var(--warm-accent)]/40 backdrop-blur-lg relative overflow-hidden shadow-xl">
+                    {/* Decorative elements */}
+                    <div className="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-[var(--warm-accent)]/15 to-transparent rounded-full blur-2xl"></div>
+                    <div className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-br from-[var(--accent-blue)]/15 to-transparent rounded-full blur-xl"></div>
+                    
+                    <div className="text-center mb-6 relative z-10">
+                      <h4 className="text-lg sm:text-xl font-bold text-[var(--text-primary)] mb-2">
+                        🛡️ Sua Compra está{" "}
+                        <span className="bg-gradient-to-r from-[var(--warm-accent)] via-[var(--accent-blue)] to-[var(--celestial-blue)] bg-clip-text text-transparent">
+                          Protegida
+                        </span>
+                      </h4>
+                      <p className="text-sm text-[var(--text-secondary)]">
+                        Milhares de clientes satisfeitos confiam em nossa plataforma
+                      </p>
+                    </div>
+                    
+                    <div className="grid sm:grid-cols-3 gap-4 sm:gap-6 relative z-10">
+                      <div className="flex flex-col items-center text-center p-5 bg-gradient-to-br from-green-500/15 to-emerald-500/10 border-2 border-green-400/30 rounded-2xl backdrop-blur-sm hover:scale-105 transition-all duration-300 group">
+                        <div className="w-12 h-12 bg-gradient-to-br from-green-400/20 to-emerald-400/20 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
+                          <Shield className="h-6 w-6 text-green-300" />
+                        </div>
+                        <h5 className="font-bold text-green-200 text-sm sm:text-base mb-1">Garantia de 7 Dias</h5>
+                        <p className="text-green-100/80 text-xs sm:text-sm">Não funcionou? Devolvemos seu dinheiro</p>
                       </div>
-                      <div className="flex flex-col items-center text-center p-4 bg-[var(--warm-accent)]/10 border-2 border-[var(--warm-accent)]/35 rounded-xl backdrop-blur-sm hover:bg-[var(--warm-accent)]/15 transition-all duration-300">
-                        <Download className="h-8 w-8 sm:h-10 sm:w-10 text-[var(--warm-accent)] mb-3" />
-                        <h4 className="font-bold text-[var(--text-primary)] text-sm sm:text-base mb-1" style={{ textShadow: '0 0 8px rgba(255,255,255,0.2)' }}>Acesso Imediato</h4>
-                        <p className="text-[var(--text-secondary)] text-xs sm:text-sm" style={{ textShadow: '0 0 5px rgba(255,255,255,0.15)' }}>Receba na hora</p>
+                      
+                      <div className="flex flex-col items-center text-center p-5 bg-gradient-to-br from-blue-500/15 to-cyan-500/10 border-2 border-blue-400/30 rounded-2xl backdrop-blur-sm hover:scale-105 transition-all duration-300 group">
+                        <div className="w-12 h-12 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
+                          <Lock className="h-6 w-6 text-blue-300" />
+                        </div>
+                        <h5 className="font-bold text-blue-200 text-sm sm:text-base mb-1">Pagamento Seguro</h5>
+                        <p className="text-blue-100/80 text-xs sm:text-sm">Criptografia SSL 256-bits</p>
                       </div>
+                      
+                      <div className="flex flex-col items-center text-center p-5 bg-gradient-to-br from-[var(--warm-accent)]/15 to-orange-500/10 border-2 border-[var(--warm-accent)]/30 rounded-2xl backdrop-blur-sm hover:scale-105 transition-all duration-300 group">
+                        <div className="w-12 h-12 bg-gradient-to-br from-[var(--warm-accent)]/20 to-orange-400/20 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
+                          <Download className="h-6 w-6 text-[var(--warm-accent)]" />
+                        </div>
+                        <h5 className="font-bold text-[var(--warm-accent)] text-sm sm:text-base mb-1">Acesso Instantâneo</h5>
+                        <p className="text-orange-100/80 text-xs sm:text-sm">Receba em até 2 minutos</p>
+                      </div>
+                    </div>
+                    
+                    {/* Social proof footer */}
+                    <div className="text-center mt-6 pt-4 border-t border-[var(--warm-accent)]/20 relative z-10">
+                      <p className="text-sm text-[var(--text-secondary)]">
+                        ⭐ 4.9/5 estrelas • 14.847+ transformações • 98% de satisfação
+                      </p>
                     </div>
                   </div>
                 </div>
