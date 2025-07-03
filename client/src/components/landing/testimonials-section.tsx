@@ -91,7 +91,7 @@ export function TestimonialsSection() {
               <span>Nota 4.9/5.0</span>
             </div>
             <div>
-              <span>+12.000 vidas transformadas</span>
+              <span>+3,452 vidas transformadas</span>
             </div>
             <div>
               <span>Resultados em 7 noites</span>
