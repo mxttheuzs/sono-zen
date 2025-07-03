@@ -162,6 +162,7 @@ Changelog:
 - July 3, 2025. Compact launch banner redesign: Replaced ultra-large promotional banner with harmonious compact design featuring launch stripe at top, reduced size (max-w-xl), integrated site colors using CSS variables, and subtle promotional effects while maintaining conversion elements.
 - July 3, 2025. Quiz mobile responsiveness fix: Fixed mobile layout issues in sleep comfort quiz including responsive button sizing (min-h-[60px] on mobile, min-h-[70px] on desktop), improved text wrapping with break-words, reduced padding (px-3 on mobile), responsive typography (text-lg/text-xl), and proper gap spacing for better mobile user experience.
 - July 3, 2025. Quiz text optimization for mobile: Shortened overly long option texts that were causing overflow issues on mobile devices. Reduced text like "Ai, demoro mais de meia hora contando carneirinhos" to "Ai, demoro mais de meia hora" and similar adjustments. Added enhanced CSS with !important rules for mobile text wrapping, overflow handling, and container padding to ensure all quiz options display properly within screen boundaries.
+- July 3, 2025. Quiz font size enhancement: Increased font sizes across quiz options for better readability - mobile text from text-xs to text-sm (0.875rem), desktop from text-base to text-lg. Adjusted button minimum height to 60px on mobile with improved line-height (1.3) and padding adjustments for better touch targets and visual hierarchy.
 
 ## User Preferences
 

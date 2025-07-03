@@ -323,7 +323,7 @@ export function SleepComfortQuiz() {
                   <div className="text-[var(--accent-blue)] group-hover:scale-110 transition-transform duration-300 flex-shrink-0 mt-0.5">
                     {option.icon}
                   </div>
-                  <span className="quiz-option-text font-medium text-xs sm:text-base leading-tight flex-1 text-left break-words word-wrap overflow-wrap-anywhere pr-1">{option.text}</span>
+                  <span className="quiz-option-text font-medium text-sm sm:text-lg leading-tight flex-1 text-left break-words word-wrap overflow-wrap-anywhere pr-1">{option.text}</span>
                   <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex-shrink-0 mt-1 sm:mt-0" />
                 </Button>
               ))}
