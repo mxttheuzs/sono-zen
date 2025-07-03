@@ -72,7 +72,7 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section id="depoimentos" className="py-1 bg-black relative overflow-hidden">
+    <section id="depoimentos" className="py-20 bg-black relative overflow-hidden mt-[0px] mb-[0px] pt-[27px] pb-[27px]">
       <FloatingClouds />
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
