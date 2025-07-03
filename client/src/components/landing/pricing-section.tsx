@@ -9,6 +9,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useToast } from "@/hooks/use-toast";
 import { insertPurchaseSchema } from "@shared/schema";
 import { apiRequest } from "@/lib/queryClient";
+import { trackInitiateCheckout, trackAddPaymentInfo, trackPurchase } from "@/lib/conversion-tracking";
 import { Shield, Lock, Star, Cloud, CheckCircle, Download, Clock, Users, Gift, Moon, Sparkles, Heart } from "lucide-react";
 import { FloatingClouds } from "@/components/ui/floating-clouds";
 import { z } from "zod";
@@ -104,7 +105,15 @@ export function PricingSection() {
     mutationFn: async (data: PurchaseFormData) => {
       return apiRequest('POST', '/api/purchases', data);
     },
-    onSuccess: () => {
+    onSuccess: (data) => {
+      // Tracking de compra realizada com todos os parâmetros UTM
+      trackPurchase({
+        conversion_value: 27.90,
+        currency: 'BRL',
+        content_name: 'Sono Zen - Método Completo',
+        content_category: 'E-book'
+      });
+      
       toast({
         title: "Compra realizada!",
         description: "Em breve você receberá as instruções por email.",
@@ -132,29 +141,15 @@ export function PricingSection() {
   };
 
   const handlePurchaseClick = () => {
-    // Facebook Pixel - Event tracking para botão de compra
-    if (typeof window !== 'undefined' && (window as any).fbq) {
-      (window as any).fbq('track', 'InitiateCheckout', {
-        content_name: 'Sono Zen - Método Completo',
-        content_category: 'E-book',
-        value: 27.90,
-        currency: 'BRL'
-      }, {test_event_code: 'TEST74923'});
-    }
+    // Tracking avançado com parâmetros UTM e conversão
+    trackInitiateCheckout();
     
     setShowRedirectModal(true);
   };
 
   const handleConfirmRedirect = () => {
-    // Facebook Pixel - Event tracking para redirecionamento ao pagamento
-    if (typeof window !== 'undefined' && (window as any).fbq) {
-      (window as any).fbq('track', 'AddPaymentInfo', {
-        content_name: 'Sono Zen - Método Completo',
-        content_category: 'E-book',
-        value: 27.90,
-        currency: 'BRL'
-      }, {test_event_code: 'TEST74923'});
-    }
+    // Tracking avançado com parâmetros UTM antes do redirecionamento
+    trackAddPaymentInfo();
     
     const paymentUrl = 'https://pay.cakto.com.br/j6iqgss_456470';
     
