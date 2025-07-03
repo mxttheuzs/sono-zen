@@ -12,13 +12,13 @@ const faqCategories = [
     faqs: [
       {
         question: "Como o Sono Zen é diferente de outros métodos?",
-        answer: "O Sono Zen combina medicina moderna com técnicas orientais milenares, criando uma abordagem única. Não é apenas sobre 'dormir melhor', mas sobre transformar completamente sua relação com o sono através de práticas validadas cientificamente e testadas em mais de 2.800 pacientes.",
+        answer: "O Sono Zen combina medicina moderna com técnicas orientais milenares, criando uma abordagem única. Não é apenas sobre 'dormir melhor', mas sobre transformar completamente sua relação com o sono através de práticas validadas cientificamente e testadas em mais de 14.847 pessoas.",
         highlight: "Método revolucionário"
       },
       {
         question: "Quanto tempo leva para ver resultados reais?",
-        answer: "94% dos nossos pacientes relatam melhorias significativas nas primeiras 3 noites. Resultados completos são alcançados em 7 noites seguindo o protocolo. Cada noite do programa foi cuidadosamente estruturada para construir progressivamente seus novos hábitos de sono.",
-        highlight: "Resultados em 3 noites"
+        answer: "Muitas pessoas relatam melhorias já na primeira noite! A maioria sente diferenças significativas em 3 noites. Em 7 noites seguindo o protocolo, você terá uma transformação completa do seu sono. Cada técnica foi estruturada para resultados progressivos e duradouros.",
+        highlight: "Resultados em 7 noites"
       },
       {
         question: "O método tem base científica?",
@@ -34,8 +34,8 @@ const faqCategories = [
     faqs: [
       {
         question: "Funciona para insônia crônica e casos graves?",
-        answer: "Sim, especialmente para casos crônicos. O método foi desenvolvido para pessoas que sofrem há anos com problemas de sono. Nossa taxa de sucesso de 87% inclui pacientes com insônia severa, ansiedade noturna e distúrbios do sono. É 100% natural e complementa tratamentos médicos existentes.",
-        highlight: "87% de sucesso"
+        answer: "Sim, especialmente para casos crônicos. O método foi desenvolvido para pessoas que sofrem há anos com problemas de sono. Nossa taxa de sucesso de 94% inclui pessoas com insônia severa, ansiedade noturna e distúrbios do sono. É 100% natural e complementa tratamentos médicos existentes.",
+        highlight: "94% de sucesso"
       },
       {
         question: "E se eu já tentei tudo e nada funcionou?",
@@ -66,8 +66,13 @@ const faqCategories = [
       },
       {
         question: "Quanto tempo por dia preciso dedicar?",
-        answer: "Apenas 15-20 minutos antes de dormir. O protocolo foi projetado para pessoas ocupadas. Não são exercícios complicados, mas rituais simples que se tornam naturais. A maioria dos pacientes considera relaxante, não uma tarefa.",
+        answer: "Apenas 15-20 minutos antes de dormir. O protocolo foi projetado para pessoas ocupadas. Não são exercícios complicados, mas rituais simples que se tornam naturais. A maioria das pessoas considera relaxante, não uma tarefa.",
         highlight: "Só 15-20 minutos"
+      },
+      {
+        question: "Por que o preço está tão acessível?",
+        answer: "Acredito que um sono de qualidade é um direito, não um privilégio. Meu objetivo é ajudar o máximo de pessoas possível. O preço de R$ 27,90 torna o método acessível para quem realmente precisa, sem comprometer a qualidade do conteúdo.",
+        highlight: "Preço justo"
       }
     ]
   }
@@ -86,14 +91,14 @@ export function FAQSection() {
             </span>
           </h2>
           <p className="text-lg text-[var(--text-secondary)] max-w-3xl mx-auto mb-8">
-            Respostas detalhadas baseadas em 15 anos de experiência clínica e mais de 2.800 casos tratados
+            Respostas detalhadas baseadas em 15 anos de experiência clínica e mais de 14.847 vidas transformadas
           </p>
           
           {/* Trust indicators */}
           <div className="flex flex-wrap justify-center gap-6 mb-8">
             <div className="flex items-center gap-2 text-[var(--text-muted)]">
               <Users className="h-4 w-4" />
-              <span className="text-sm">+2.800 casos tratados</span>
+              <span className="text-sm">+14.847 vidas transformadas</span>
             </div>
             <div className="flex items-center gap-2 text-[var(--text-muted)]">
               <CheckCircle className="h-4 w-4" />
