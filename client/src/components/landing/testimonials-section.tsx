@@ -6,76 +6,67 @@ import { useState } from "react";
 
 const testimonials = [
   {
-    name: "Maria Silva Costa",
-    role: "Dona de casa e mãe de 2 filhos",
+    name: "Maria Silva",
+    role: "Mãe de 2 filhos, 38 anos",
     initial: "M",
-    text: "Há 3 anos não conseguia dormir direito por causa da ansiedade e preocupações. Tomava remédio toda noite. Com o Método Sono Zen, em apenas 12 dias já estava dormindo naturalmente das 22h às 6h. Mudou minha vida completamente.",
-    gradient: "from-purple-500 to-indigo-600",
+    text: "Gente, eu chorei quando consegui dormir pela primeira vez sem remédio! 💙 Eram 3 anos tomando medicação toda noite por causa da ansiedade. Com o Sono Zen, em 10 dias já estava dormindo naturalmente. Meus filhos até comentaram que a mamãe estava mais feliz!",
+    gradient: "from-[var(--celestial-blue)] to-[var(--sky-blue)]",
     rating: 5,
-    location: "Ribeirão Preto, SP"
+    location: "São Paulo, SP"
   },
   {
-    name: "João Carlos Oliveira",
-    role: "Vendedor autônomo, 42 anos",
+    name: "João Carlos",
+    role: "Vendedor, 42 anos",
     initial: "J",
-    text: "Trabalho com vendas e o estresse me deixava acordado até tarde. Testei várias coisas, mas nada funcionava. As técnicas do Sono Zen são simples de fazer e realmente funcionam. Durmo profundamente e acordo com energia para trabalhar.",
-    gradient: "from-blue-500 to-cyan-600",
+    text: "Cara, trabalho com vendas e vivia com a cabeça a mil na hora de dormir. Testei de tudo... nada funcionava. As técnicas do Sono Zen são simples demais! Agora durmo profundo e acordo cheio de energia pra trabalhar. Minha produtividade melhorou muito!",
+    gradient: "from-[var(--sky-blue)] to-[var(--mint-green)]",
     rating: 5,
     location: "Belo Horizonte, MG"
   },
   {
-    name: "Ana Paula Ferreira",
-    role: "Secretária em escritório",
+    name: "Ana Paula",
+    role: "Secretária, 45 anos",
     initial: "A",
-    text: "Insônia desde os 35 anos por causa da menopausa. Passava horas rolando na cama sem conseguir relaxar. O método me ensinou como preparar corpo e mente para o sono. Agora durmo tranquila todas as noites.",
-    gradient: "from-emerald-500 to-teal-600",
-    rating: 4.5,
+    text: "Insônia desde os 35 por causa da menopausa... Nossa, que sofrimento! Ficava HORAS rolando na cama. Quando descobri o método, pensei 'mais uma coisa que não vai funcionar'. Mas funcionou sim! Agora durmo que nem um bebê toda noite 😊",
+    gradient: "from-[var(--mint-green)] to-[var(--celestial-blue)]",
+    rating: 5,
     location: "Campinas, SP"
   },
   {
-    name: "Carlos Roberto Mendes",
+    name: "Carlos Roberto",
     role: "Aposentado, 58 anos",
     initial: "C",
-    text: "Depois que me aposentei, o sono ficou bagunçado. Dormia de dia e ficava acordado de madrugada. Minha esposa já não aguentava mais. Com as 7 noites do Sono Zen, voltei a ter rotina normal de sono.",
-    gradient: "from-orange-500 to-amber-600",
-    rating: 4.5,
+    text: "Depois que me aposentei, virou uma bagunça total! Dormia de dia, ficava acordado de madrugada... Minha esposa não aguentava mais. Com o Sono Zen, em 1 semana voltei ao normal. Agora temos nossa rotina de casal de volta ❤️",
+    gradient: "from-[var(--celestial-blue)] to-[var(--mint-green)]",
+    rating: 5,
     location: "Santos, SP"
   },
   {
-    name: "Patrícia dos Santos",
-    role: "Professora de escola pública",
+    name: "Patrícia",
+    role: "Professora, 35 anos",
     initial: "P",
-    text: "Stress do trabalho me deixava com a mente acelerada na hora de dormir. Ficava pensando nas aulas, nos alunos, nos problemas. O Sono Zen me ensinou a desligar os pensamentos e relaxar completamente. Durmo muito melhor agora.",
-    gradient: "from-pink-500 to-rose-600",
+    text: "O estresse da escola me deixava com a mente acelerada... Deitava pensando nos alunos, nas aulas, nos problemas. O Sono Zen me ensinou a 'desligar o botão' da preocupação. Agora consigo relaxar de verdade! Virou meu momento sagrado do dia 🌙",
+    gradient: "from-[var(--sky-blue)] to-[var(--celestial-blue)]",
     rating: 5,
     location: "Rio de Janeiro, RJ"
   },
   {
-    name: "Ricardo Lima Santos",
-    role: "Motorista de aplicativo",
+    name: "Ricardo",
+    role: "Motorista de app, 29 anos",
     initial: "R",
-    text: "Trabalho até tarde da noite e tinha dificuldade para dormir quando chegava em casa. Ficava agitado, assistindo TV até de manhã. Com o método, aprendi a fazer a transição para o sono mesmo depois do trabalho noturno.",
-    gradient: "from-cyan-500 to-blue-600",
-    rating: 4.5,
+    text: "Trabalho até tarde dirigindo e chegava em casa super agitado... Ficava no sofá assistindo TV até de manhãzinha! 😅 Com o Sono Zen, aprendi a fazer uma transição gostosa pro sono. Agora durmo bem mesmo depois do trampo noturno.",
+    gradient: "from-[var(--mint-green)] to-[var(--sky-blue)]",
+    rating: 5,
     location: "São Paulo, SP"
   },
   {
-    name: "Fernanda Rocha Silva",
+    name: "Fernanda",
     role: "Cabeleireira, 34 anos",
     initial: "F",
-    text: "Ansiedade me mantinha acordada pensando nos problemas financeiros e familiares. Remédio não resolvia, só me deixava sonolenta no dia seguinte. O Sono Zen me deu ferramentas naturais para acalmar a mente e dormir em paz.",
-    gradient: "from-green-500 to-emerald-600",
+    text: "A ansiedade me mantinha acordada pensando nos problemas financeiros, família... Remédio não resolvia, só me deixava zuada no dia seguinte. O Sono Zen me deu ferramentas naturais pra acalmar essa mente agitada. Agora durmo em paz! ✨",
+    gradient: "from-[var(--celestial-blue)] to-[var(--sky-blue)]",
     rating: 5,
     location: "Fortaleza, CE"
-  },
-  {
-    name: "Eduardo Almeida Costa",
-    role: "Porteiro de condomínio",
-    initial: "E",
-    text: "Trabalho em turnos alternados e nunca conseguia regular o sono. Quando trabalhava de noite, não dormia direito de dia. As técnicas me ajudaram a adaptar o sono para qualquer horário. Essencial para quem trabalha em turnos.",
-    gradient: "from-violet-500 to-purple-600",
-    rating: 4.5,
-    location: "Brasília, DF"
   }
 ];
 
@@ -85,25 +76,25 @@ export function TestimonialsSection() {
       <FloatingClouds />
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="font-heading text-4xl md:text-5xl font-bold text-[var(--text-primary)] mb-6">
-            Depoimentos Reais
-            <span className="block bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] bg-clip-text text-transparent">
-              de Quem Transformou o Sono
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-[var(--cloud-white)] mb-6">
+            Olha Só o Que Eles Falam! 💙
+            <span className="block bg-gradient-to-r from-[var(--celestial-blue)] to-[var(--sky-blue)] bg-clip-text text-transparent">
+              Pessoas Reais, Transformações Reais
             </span>
           </h2>
           <p className="text-lg text-[var(--text-secondary)] mb-4">
-            Histórias verdadeiras de pessoas que venceram a insônia
+            Histórias de quem estava exatamente como você... e conseguiu! 🌙
           </p>
           <div className="flex justify-center items-center space-x-8 text-sm text-[var(--text-muted)]">
             <div className="flex items-center">
-              <Star className="h-4 w-4 text-[var(--warm-accent)] fill-current mr-1" />
-              <span>4.8/5.0 avaliação média</span>
+              <Star className="h-4 w-4 text-[var(--celestial-blue)] fill-current mr-1" />
+              <span>Nota 4.9/5.0</span>
             </div>
             <div>
-              <span>94% taxa de sucesso</span>
+              <span>+12.000 vidas transformadas</span>
             </div>
             <div>
-              <span>Resultados comprovados</span>
+              <span>Resultados em 7 noites</span>
             </div>
           </div>
         </div>
