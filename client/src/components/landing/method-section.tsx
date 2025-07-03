@@ -11,26 +11,61 @@ export function MethodSection() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left content */}
           <div className="space-y-8">
-            <div className="space-y-6">
-              <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--text-primary)] leading-tight">
-                O Método Sono Zen: Dormir É
-                <span className="block bg-gradient-to-r from-[var(--accent-blue)] to-[var(--warm-accent)] bg-clip-text text-transparent">
-                  Um Ritual
-                </span>
-              </h2>
-              <p className="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed">
-                Você não precisa dormir melhor por sorte. Você pode dormir melhor <span className="text-[var(--accent-blue)] font-semibold">por escolha</span>.
+            {/* Banner chamativo */}
+            <div className="bg-gradient-to-r from-[var(--warm-accent)]/15 to-[var(--accent-blue)]/15 border-2 border-[var(--warm-accent)]/40 rounded-2xl p-6 backdrop-blur-sm">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-6 h-6 bg-[var(--warm-accent)] rounded-full animate-pulse flex items-center justify-center">
+                  <div className="w-3 h-3 bg-white rounded-full"></div>
+                </div>
+                <h3 className="text-[var(--warm-accent)] font-bold text-lg">✨ Método Zen Oriental</h3>
+              </div>
+              <p className="text-[var(--text-primary)] font-semibold text-xl mb-2">
+                🌙 E se dormir pudesse ser o momento mais relaxante do seu dia?
               </p>
-              <p className="text-base text-[var(--text-muted)]">
-                Isso começa com uma mudança simples: Encarar o sono como um ritual, e não como uma obrigação.
+              <p className="text-[var(--text-muted)] text-sm">
+                Técnicas milenares que transformam a hora de dormir em um ritual de paz
               </p>
             </div>
+
+            <div className="space-y-6">
+              <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--text-primary)] leading-tight">
+                Transforme Sua Noite em um
+                <span className="block bg-gradient-to-r from-[var(--accent-blue)] to-[var(--warm-accent)] bg-clip-text text-transparent">
+                  Momento Sagrado
+                </span>
+              </h2>
+              
+              <div className="space-y-4">
+                <p className="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed">
+                  🤔 <strong>Sabe por que você não consegue dormir?</strong> Porque você trata o sono como algo que "tem que acontecer", em vez de criar as condições certas para ele acontecer naturalmente.
+                </p>
+                <p className="text-base text-[var(--text-muted)]">
+                  💡 Os mestres orientais descobriram isso há milênios: dormir bem não é sorte, é preparação.
+                </p>
+              </div>
+            </div>
             
-            <div className="space-y-4 text-[var(--text-secondary)]">
-              <p>Enquanto muita gente apenas "deita na cama e espera o sono vir", os orientais tratam o sono como algo sagrado — um momento de reconexão, equilíbrio e cura.</p>
-              <p className="text-[var(--accent-blue)] font-medium">
-                O Sono Zen é um método leve, natural e inspirado em práticas orientais milenares, baseado em rotinas simples que ajudam seu corpo a entender que chegou a hora de descansar de verdade.
-              </p>
+            <div className="space-y-6">
+              <div className="bg-[var(--accent-blue)]/10 border-l-4 border-[var(--accent-blue)] rounded-r-xl p-4">
+                <p className="text-[var(--text-secondary)] text-base leading-relaxed">
+                  <strong className="text-[var(--accent-blue)]">Imagine:</strong> Em vez de rolar na cama por horas, você faz uma sequência simples de 15 minutos que prepara seu corpo e mente. Quando você deita, seu cérebro já sabe: "agora é hora de descansar".
+                </p>
+              </div>
+              
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-4">
+                  <p className="text-red-300 font-semibold text-sm mb-2">❌ Como a maioria faz:</p>
+                  <p className="text-[var(--text-muted)] text-xs">
+                    Deita na cama, fica no celular, pensa nos problemas, espera o sono "aparecer"
+                  </p>
+                </div>
+                <div className="bg-green-500/10 border border-green-500/30 rounded-xl p-4">
+                  <p className="text-green-300 font-semibold text-sm mb-2">✅ Como você vai fazer:</p>
+                  <p className="text-[var(--text-muted)] text-xs">
+                    Ritual de 15 min → corpo relaxa → mente acalma → sono natural em minutos
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
           
