@@ -210,7 +210,7 @@ export function SleepComfortQuiz() {
         <FloatingClouds className="opacity-5" />
         <FloatingStars className="opacity-10" density="light" />
         
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+        <div className="max-w-4xl mx-auto px-3 sm:px-6 relative z-10">
           <div className="text-center mb-8">
             <div className={`inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-r ${result.color} mb-6`}>
               <div className="text-white">
@@ -279,7 +279,7 @@ export function SleepComfortQuiz() {
       <FloatingClouds className="opacity-5" />
       <FloatingStars className="opacity-10" density="light" />
       
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+      <div className="max-w-4xl mx-auto px-3 sm:px-6 relative z-10">
         {/* Header */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-[var(--celestial-blue)]/20 backdrop-blur-sm border border-[var(--celestial-blue)]/40 rounded-full px-4 py-2 mb-6">
@@ -306,25 +306,25 @@ export function SleepComfortQuiz() {
 
         {/* Question Card */}
         <Card className="bg-[var(--card-bg)]/90 backdrop-blur-xl border border-[var(--border-subtle)] mb-8">
-          <CardHeader>
-            <CardTitle className="text-xl text-[var(--text-primary)] text-center">
+          <CardHeader className="pb-4 sm:pb-6">
+            <CardTitle className="text-lg sm:text-xl text-[var(--text-primary)] text-center leading-tight">
               {quizQuestions[currentQuestion].question}
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid gap-4">
+            <div className="grid gap-3 sm:gap-4">
               {quizQuestions[currentQuestion].options.map((option) => (
                 <Button
                   key={option.id}
                   onClick={() => handleAnswer(quizQuestions[currentQuestion].id, option.value)}
                   variant="outline"
-                  className="flex items-center gap-3 p-6 h-auto text-left justify-start border-[var(--border-subtle)] hover:border-[var(--accent-blue)] hover:bg-[var(--accent-blue)]/5 text-[var(--text-secondary)] hover:text-[var(--accent-blue)] transition-all duration-300 group"
+                  className="flex items-center gap-3 p-4 sm:p-6 h-auto text-left justify-start border-[var(--border-subtle)] hover:border-[var(--accent-blue)] hover:bg-[var(--accent-blue)]/5 text-[var(--text-secondary)] hover:text-[var(--accent-blue)] transition-all duration-300 group w-full min-h-[60px] sm:min-h-[70px]"
                 >
-                  <div className="text-[var(--accent-blue)] group-hover:scale-110 transition-transform duration-300">
+                  <div className="text-[var(--accent-blue)] group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                     {option.icon}
                   </div>
-                  <span className="font-medium">{option.text}</span>
-                  <ArrowRight className="h-4 w-4 ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <span className="font-medium text-sm sm:text-base leading-tight flex-1 text-left break-words">{option.text}</span>
+                  <ArrowRight className="h-4 w-4 ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex-shrink-0" />
                 </Button>
               ))}
             </div>
