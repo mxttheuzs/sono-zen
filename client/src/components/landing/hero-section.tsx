@@ -78,7 +78,7 @@ export function HeroSection() {
               </div>
               <div className="flex items-center gap-2 text-[var(--text-secondary)] hover:transform hover:translate-x-1 transition-all duration-200">
                 <CheckCircle className="h-5 w-5 text-[var(--success-green)]" />
-                <span className="text-sm font-medium">Aprovado por 2.347 pessoas</span>
+                <span className="text-sm font-medium">3.452 depoimentos reais</span>
               </div>
             </div>
           </div>
@@ -106,7 +106,7 @@ export function HeroSection() {
               </div>
               <div className="flex items-center gap-2 bg-[var(--warm-accent)]/10 border border-[var(--warm-accent)]/30 px-4 py-2 rounded-full">
                 <Star className="h-5 w-5 text-[var(--warm-accent)] fill-current" />
-                <span className="text-sm font-semibold text-[var(--warm-accent)]">2.347 Vidas Transformadas</span>
+                <span className="text-sm font-semibold text-[var(--warm-accent)]">12.083 Vidas Transformadas</span>
               </div>
             </div>
 

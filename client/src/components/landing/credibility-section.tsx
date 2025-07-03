@@ -99,7 +99,7 @@ export function CredibilitySection() {
           <div className="inline-flex items-center gap-3 bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30 rounded-full px-6 py-3">
             <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
             <span className="text-green-300 font-semibold">
-              <span className="animate-pulse font-bold">127 pessoas</span> estão lendo o método agora mesmo
+              <span className="animate-pulse font-bold">84 pessoas</span> estão lendo o método agora mesmo
             </span>
           </div>
         </div>
