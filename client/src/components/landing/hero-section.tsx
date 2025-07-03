@@ -110,53 +110,31 @@ export function HeroSection() {
               </div>
             </div>
 
-            {/* Oferta Especial Ultra Chamativa */}
-            <div className="relative group">
-              {/* Glow effect externo */}
-              <div className="absolute -inset-3 bg-gradient-to-r from-yellow-400/30 via-orange-400/30 to-red-400/30 rounded-3xl blur-xl opacity-60 animate-pulse"></div>
-              
-              {/* Banner principal */}
-              <div className="relative bg-gradient-to-r from-orange-600/90 via-red-500/90 to-yellow-500/90 border-3 border-yellow-400/70 rounded-2xl p-6 max-w-lg backdrop-blur-sm transform hover:scale-105 transition-all duration-300 shadow-2xl shadow-orange-500/20">
-                
-                {/* Badge de urgência no canto */}
-                <div className="absolute -top-3 -right-3 bg-red-600 text-white text-xs font-black px-3 py-1 rounded-full animate-bounce shadow-lg">
-                  🔥 HOJE!
+            {/* Oferta Especial do Ebook */}
+            <div className="bg-gradient-to-r from-[var(--warm-accent)]/20 to-[var(--accent-blue)]/20 border-2 border-[var(--warm-accent)]/50 rounded-2xl p-5 max-w-lg backdrop-blur-sm">
+              <div className="flex items-center gap-4">
+                <div className="relative">
+                  <div className="w-4 h-4 bg-[var(--warm-accent)] rounded-full animate-pulse"></div>
+                  <div className="absolute inset-0 w-4 h-4 bg-[var(--warm-accent)]/40 rounded-full animate-ping"></div>
                 </div>
-                
-                <div className="flex items-center gap-4">
-                  {/* Indicador animado mais chamativo */}
-                  <div className="relative">
-                    <div className="w-6 h-6 bg-yellow-300 rounded-full animate-ping absolute"></div>
-                    <div className="w-6 h-6 bg-yellow-400 rounded-full animate-pulse flex items-center justify-center">
-                      <div className="w-3 h-3 bg-white rounded-full"></div>
+                <div className="flex-1">
+                  <p className="text-[var(--text-primary)] font-bold text-lg mb-1">
+                    📚 <span className="text-[var(--warm-accent)]">Oferta especial hoje:</span> Preço de lançamento
+                  </p>
+                  <p className="text-[var(--text-muted)] text-sm mb-2">
+                    Milhares já transformaram suas noites com este método
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-1">
+                      <div className="w-2 h-2 bg-[var(--success-green)] rounded-full"></div>
+                      <span className="text-[var(--success-green)] text-xs font-medium">Método aprovado</span>
                     </div>
-                  </div>
-                  
-                  <div className="flex-1">
-                    <p className="text-white font-black text-lg mb-1 tracking-wide">
-                      ⚡ <span className="text-yellow-200">OFERTA ESPECIAL:</span> PREÇO DE LANÇAMENTO
-                    </p>
-                    <p className="text-yellow-100 font-bold text-base mb-2">
-                      🚀 Milhares já transformaram suas noites!
-                    </p>
-                    <div className="flex items-center gap-3">
-                      <div className="flex items-center gap-1">
-                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                        <span className="text-green-300 text-sm font-bold">✅ APROVADO</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-                        <span className="text-blue-200 text-sm font-bold">⏰ LIMITADO</span>
-                      </div>
+                    <div className="flex items-center gap-1">
+                      <div className="w-2 h-2 bg-[var(--accent-blue)] rounded-full"></div>
+                      <span className="text-[var(--accent-blue)] text-xs font-medium">Acesso imediato</span>
                     </div>
                   </div>
                 </div>
-                
-                {/* Barra de progresso fake para urgência */}
-                <div className="mt-3 bg-black/20 rounded-full h-2 overflow-hidden">
-                  <div className="bg-gradient-to-r from-green-400 to-yellow-400 h-full w-3/4 rounded-full animate-pulse"></div>
-                </div>
-                <p className="text-yellow-100 text-xs mt-1 font-semibold">⚡ 76% das vagas já foram preenchidas</p>
               </div>
             </div>
           </div>
