@@ -200,14 +200,14 @@ export function PricingSection() {
     {
       icon: <Gift className="h-5 w-5 text-[var(--warm-accent)]" />,
       title: "Bônus #1: Meditações Guiadas",
-      description: "3 áudios exclusivos para relaxamento profundo",
-      value: "R$ 29,90"
+      description: "3 áudios para relaxamento profundo",
+      value: "R$ 9,90"
     },
     {
       icon: <Clock className="h-5 w-5 text-[var(--accent-blue)]" />,
       title: "Bônus #2: Checklist Sono Perfeito",
       description: "Guia prático para otimizar seu ambiente",
-      value: "R$ 19,90"
+      value: "R$ 9,90"
     }
   ];
 
@@ -314,53 +314,7 @@ export function PricingSection() {
                             R$ 27,90
                           </p>
                           
-                          {/* Payment methods icons */}
-                          <div className="flex items-center justify-center gap-3 opacity-80">
-                            <div className="text-white text-xs font-medium">Aceita:</div>
-                            <div className="flex items-center gap-2">
-                              {/* PIX */}
-                              <div className="w-7 h-7 bg-white rounded-md flex items-center justify-center">
-                                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
-                                  <path d="M12 2L2 12L12 22L22 12L12 2Z" fill="#32BCAD"/>
-                                  <path d="M8 8L16 16M16 8L8 16" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-                                </svg>
-                              </div>
-                              {/* Credit Card */}
-                              <div className="w-7 h-7 bg-white rounded-md flex items-center justify-center">
-                                <svg className="w-5 h-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H5a3 3 0 00-3 3v8a3 3 0 003 3z" />
-                                </svg>
-                              </div>
-                              {/* Boleto */}
-                              <div className="w-7 h-7 bg-white rounded-md flex items-center justify-center">
-                                <svg className="w-5 h-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                  <rect x="3" y="4" width="18" height="16" rx="2" strokeWidth="2"/>
-                                  <path d="M7 8h10M7 12h7M7 16h10" strokeWidth="2"/>
-                                </svg>
-                              </div>
-                              {/* PicPay */}
-                              <div className="w-7 h-7 bg-green-500 rounded-md flex items-center justify-center">
-                                <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
-                                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-                                </svg>
-                              </div>
-                              {/* Apple Pay */}
-                              <div className="w-7 h-7 bg-black rounded-md flex items-center justify-center">
-                                <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                  <path d="M7.078 23.55c-.473-.316-.893-.703-1.244-1.15-.383-.463-.738-.95-1.064-1.454-.766-1.12-1.365-2.345-1.78-3.636-.5-1.502-.743-2.94-.743-4.347 0-1.57.34-2.94 1.002-4.09.49-.9 1.22-1.653 2.1-2.182.85-.5 1.73-.743 2.667-.743.56 0 1.112.122 1.633.33.52.207 1.075.523 1.542.623.345.067.696.1 1.05.09.68-.034 1.357-.202 2.003-.523.85-.42 1.773-.63 2.723-.63 1.243 0 2.317.3 3.22.9.78.52 1.397 1.24 1.81 2.13-.88.568-1.54 1.33-1.97 2.28-.43.95-.64 2.02-.64 3.21 0 1.29.23 2.44.69 3.44.46 1 1.17 1.85 2.12 2.55-.58 1.37-1.54 2.56-2.88 3.57-1.34 1.01-2.88 1.51-4.62 1.51-.853 0-1.673-.203-2.46-.61-.786-.406-1.593-.61-2.42-.61-.827 0-1.634.204-2.42.61-.787.407-1.607.61-2.46.61-1.74 0-3.28-.5-4.62-1.51zM15.312 0c.41 3.24-1.14 6.24-4.31 7.68-.42-3.04 1.23-6.24 4.31-7.68z"/>
-                                </svg>
-                              </div>
-                              {/* Google Pay */}
-                              <div className="w-7 h-7 bg-white rounded-md flex items-center justify-center">
-                                <svg className="w-5 h-5" viewBox="0 0 24 24">
-                                  <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                                  <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                                  <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                                  <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
+
                         </div>
                       </div>
                     </div>
@@ -377,7 +331,7 @@ export function PricingSection() {
 
                 {/* Bonuses */}
                 <div className="bg-[var(--accent-blue)]/5 rounded-2xl p-4 sm:p-6 mb-6 sm:mb-8 border-2 border-[var(--accent-blue)]/35 backdrop-blur-sm relative">
-                  <h4 className="text-lg sm:text-xl font-bold text-[var(--text-primary)] mb-3 sm:mb-4 text-center" style={{ textShadow: '0 0 10px rgba(255,255,255,0.25)' }}>🎁 Bônus Exclusivos (R$ 49,80)</h4>
+                  <h4 className="text-lg sm:text-xl font-bold text-[var(--text-primary)] mb-3 sm:mb-4 text-center" style={{ textShadow: '0 0 10px rgba(255,255,255,0.25)' }}>🎁 Bônus Exclusivos (R$ 19,80)</h4>
                   <div className="space-y-3 sm:space-y-4">
                     {bonuses.map((bonus, index) => (
                       <div key={index} className="flex items-start gap-3">
@@ -451,7 +405,7 @@ export function PricingSection() {
                         🛡️ Sua Compra está{" "}
                         <span className="bg-gradient-to-r from-[var(--warm-accent)] via-[var(--accent-blue)] to-[var(--celestial-blue)] bg-clip-text text-transparent">
                           Protegida
-                        </span>
+                        </span>.
                       </h4>
                       <p className="text-sm text-[var(--text-secondary)]">
                         Milhares de clientes satisfeitos confiam em nossa plataforma
