@@ -310,10 +310,49 @@ export function PricingSection() {
                       <div className="relative">
                         <div className="absolute inset-0 bg-gradient-to-r from-[var(--warm-accent)]/30 to-[var(--accent-blue)]/30 rounded-2xl blur-xl"></div>
                         <div className="relative bg-gradient-to-r from-[var(--warm-accent)]/20 to-[var(--accent-blue)]/20 rounded-2xl p-6 border-2 border-[var(--warm-accent)]/40">
-                          <p className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black bg-gradient-to-r from-[var(--warm-accent)] via-white to-[var(--accent-blue)] bg-clip-text text-transparent tracking-tight mb-2" style={{ textShadow: '0 0 20px rgba(255,255,255,0.6)' }}>
+                          <p className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black bg-gradient-to-r from-[var(--warm-accent)] via-white to-[var(--accent-blue)] bg-clip-text text-transparent tracking-tight mb-4" style={{ textShadow: '0 0 20px rgba(255,255,255,0.6)' }}>
                             R$ 27,90
                           </p>
-                          <p className="text-sm sm:text-base text-[var(--text-secondary)] font-medium">à vista no PIX</p>
+                          
+                          {/* Payment methods icons */}
+                          <div className="flex items-center justify-center gap-3 opacity-80">
+                            <div className="text-white text-xs font-medium">Aceita:</div>
+                            <div className="flex items-center gap-2">
+                              {/* PIX */}
+                              <div className="w-6 h-6 bg-white rounded-md flex items-center justify-center">
+                                <span className="text-xs font-bold text-gray-800">PIX</span>
+                              </div>
+                              {/* Credit Card */}
+                              <div className="w-6 h-6 bg-white rounded-md flex items-center justify-center">
+                                <svg className="w-4 h-4 text-gray-800" fill="currentColor" viewBox="0 0 24 24">
+                                  <path d="M20 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zM4 18V8h16v10H4z"/>
+                                  <path d="M6 10h2v2H6zm3 0h5v2H9z"/>
+                                </svg>
+                              </div>
+                              {/* Boleto */}
+                              <div className="w-6 h-6 bg-white rounded-md flex items-center justify-center">
+                                <svg className="w-4 h-4 text-gray-800" fill="currentColor" viewBox="0 0 24 24">
+                                  <path d="M3 3h18v18H3V3zm2 16h14V5H5v14zm2-12h10v2H7V7zm0 4h7v2H7v-2zm0 4h10v2H7v-2z"/>
+                                </svg>
+                              </div>
+                              {/* PicPay */}
+                              <div className="w-6 h-6 bg-green-500 rounded-md flex items-center justify-center">
+                                <span className="text-xs font-bold text-white">P</span>
+                              </div>
+                              {/* Apple Pay */}
+                              <div className="w-6 h-6 bg-black rounded-md flex items-center justify-center">
+                                <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                                </svg>
+                              </div>
+                              {/* Google Pay */}
+                              <div className="w-6 h-6 bg-white rounded-md flex items-center justify-center">
+                                <svg className="w-4 h-4" viewBox="0 0 24 24">
+                                  <path fill="#4285F4" d="M12.24 10.285V14.4h6.806c-.275 1.765-2.056 5.174-6.806 5.174-4.095 0-7.439-3.389-7.439-7.574s3.345-7.574 7.439-7.574c2.33 0 3.891.989 4.785 1.849l3.254-3.138C18.189 1.186 15.479 0 12.24 0c-6.635 0-12 5.365-12 12s5.365 12 12 12c6.926 0 11.52-4.869 11.52-11.726 0-.788-.085-1.39-.189-1.989H12.24z"/>
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -355,7 +394,7 @@ export function PricingSection() {
                   <div className="text-center mb-4">
                     <p className="text-lg sm:text-xl font-semibold text-[var(--text-primary)] mb-2">
                       Sua nova vida começa{" "}
-                      <span className="bg-gradient-to-r from-[var(--warm-accent)] via-[var(--accent-blue)] to-[var(--celestial-blue)] bg-clip-text text-transparent">
+                      <span className="text-white">
                         agora
                       </span>
                     </p>
