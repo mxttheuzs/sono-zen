@@ -18,7 +18,7 @@ export function AuthorSection() {
     },
     {
       icon: <Users className="h-5 w-5" />,
-      title: "+2.800 Pacientes Atendidos",
+      title: "+14.847 Vidas Transformadas",
       description: "Taxa de sucesso de 94%"
     },
 
@@ -75,7 +75,7 @@ export function AuthorSection() {
                   <div className="text-xs text-[var(--text-muted)]">Anos de experiência</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-[var(--warm-accent)]">2.800+</div>
+                  <div className="text-2xl font-bold text-[var(--warm-accent)]">14.847</div>
                   <div className="text-xs text-[var(--text-muted)]">Vidas transformadas</div>
                 </div>
                 <div className="text-center">
@@ -137,15 +137,15 @@ export function AuthorSection() {
               
               <div className="space-y-4 text-[var(--text-secondary)]">
                 <p className="leading-relaxed">
-                  <strong className="text-[var(--text-primary)]">Obrigada por ter chegado até aqui.</strong> Meu nome é Deborah Genaro, e dediquei os últimos 15 anos da minha vida estudando os mistérios do sono e como ele transforma nossa existência.
+                  <strong className="text-[var(--text-primary)]">Obrigada por ter chegado até aqui.</strong> Meu nome é Deborah Genaro, e nos últimos 15 anos me dediquei completamente a transformar a vida de pessoas que sofrem com insônia e noites mal dormidas.
                 </p>
                 
                 <p className="leading-relaxed">
-                  Depois de testemunhar milhares de pacientes sofrendo com noites mal dormidas em minha clínica, decidi ir além da medicina tradicional. Viajei para China, Japão e Índia, onde aprendi técnicas orientais milenares que complementam perfeitamente os tratamentos modernos.
+                  Durante anos atendendo em minha clínica, percebi que a medicina tradicional sozinha não era suficiente. Foi então que embarquei em uma jornada pelos países orientais - China, Japão e Índia - onde descobri técnicas milenares que mudaram tudo.
                 </p>
                 
                 <p className="leading-relaxed">
-                  O <strong className="text-[var(--warm-accent)]">Método Sono Zen</strong> nasceu dessa união única entre ciência ocidental e sabedoria oriental. Cada técnica foi testada e refinada com centenas de pacientes, alcançando uma taxa de sucesso de 94% - algo inédito na medicina do sono.
+                  O <strong className="text-[var(--warm-accent)]">Método Sono Zen</strong> é o resultado dessa fusão entre conhecimento científico e sabedoria ancestral. Mais de 14.847 pessoas já transformaram suas noites com essas técnicas, e agora chegou a sua vez de ter o sono que sempre sonhou.
                 </p>
               </div>
             </div>
@@ -156,7 +156,7 @@ export function AuthorSection() {
             <div className="card-dreamy p-6 border border-[var(--warm-accent)]/30">
               <div className="text-center">
                 <p className="text-[var(--text-secondary)] leading-relaxed mb-4 italic">
-                  "Este eBook nasceu do meu coração. Cada página foi escrita com amor e cuidado, baseada em anos de estudos e na vontade genuína de ajudar pessoas como você a encontrarem a paz que merecem."
+                  "Criei este método pensando em cada pessoa que já passou noites em claro, olhando para o teto. Se você chegou até aqui, é porque merece dormir como nunca dormiu antes. Este é meu presente para você."
                 </p>
                 <div className="text-[var(--warm-accent)] font-semibold">
                   - Dra. Deborah Genaro
