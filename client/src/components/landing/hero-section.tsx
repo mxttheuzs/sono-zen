@@ -110,17 +110,24 @@ export function HeroSection() {
               </div>
             </div>
 
-            {/* Oferta Especial Sutil */}
-            <div className="bg-gradient-to-r from-[var(--warm-accent)]/10 to-[var(--accent-blue)]/10 border border-[var(--warm-accent)]/30 rounded-xl p-4 max-w-md">
-              <div className="flex items-center gap-3">
-                <div className="w-3 h-3 bg-[var(--warm-accent)] rounded-full animate-pulse"></div>
-                <div>
-                  <p className="text-[var(--text-primary)] font-semibold text-sm">
+            {/* Oferta Especial Melhorada */}
+            <div className="bg-gradient-to-r from-[var(--warm-accent)]/15 to-[var(--accent-blue)]/15 border-2 border-[var(--warm-accent)]/40 rounded-2xl p-6 max-w-lg backdrop-blur-sm">
+              <div className="flex items-center gap-4">
+                <div className="relative">
+                  <div className="w-4 h-4 bg-[var(--warm-accent)] rounded-full animate-pulse"></div>
+                  <div className="absolute inset-0 w-4 h-4 bg-[var(--warm-accent)]/40 rounded-full animate-ping"></div>
+                </div>
+                <div className="flex-1">
+                  <p className="text-[var(--text-primary)] font-bold text-base mb-1">
                     💤 <span className="text-[var(--warm-accent)]">Oferta especial hoje:</span> Preço de lançamento
                   </p>
-                  <p className="text-[var(--text-muted)] text-xs mt-1">
-                    Milhares já transformaram suas noites
+                  <p className="text-[var(--text-muted)] text-sm">
+                    Milhares já transformaram suas noites com este método
                   </p>
+                  <div className="mt-2 flex items-center gap-2">
+                    <div className="w-2 h-2 bg-[var(--success-green)] rounded-full"></div>
+                    <span className="text-[var(--success-green)] text-xs font-medium">Aprovado por especialistas</span>
+                  </div>
                 </div>
               </div>
             </div>
