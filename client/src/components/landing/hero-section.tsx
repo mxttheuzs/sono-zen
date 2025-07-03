@@ -3,7 +3,7 @@ import { Moon, Shield, Sparkles, Heart, Star, CheckCircle } from "lucide-react";
 import { FloatingClouds } from "@/components/ui/floating-clouds";
 import { StarryBackground } from "@/components/ui/starry-background";
 import { FloatingParticles } from "@/components/ui/floating-particles";
-import sleepingWomanImage from "@assets/image_1750998629749.png";
+import sleepingWomanImage from "@assets/image_1751506836548.png";
 
 export function HeroSection() {
   const scrollToCheckout = () => {
@@ -145,7 +145,7 @@ export function HeroSection() {
           <div className="card-modern p-0 overflow-hidden">
             <img 
               src={sleepingWomanImage} 
-              alt="Mulher dormindo tranquilamente com luzes suaves"
+              alt="Mulher segurando lua luminosa em ambiente celestial com nuvens azuis"
               className="w-full h-full aspect-square rounded-lg object-cover"
             />
           </div>
