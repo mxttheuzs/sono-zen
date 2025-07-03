@@ -122,7 +122,13 @@ export function PricingSection() {
   });
 
   const onSubmit = (data: PurchaseFormData) => {
-    purchaseMutation.mutate(data);
+    // Add the amount in cents (R$ 27,90 = 2790 cents)
+    const purchaseData = {
+      ...data,
+      amount: 2790,
+      status: "pending"
+    };
+    purchaseMutation.mutate(purchaseData);
   };
 
   const handlePurchaseClick = () => {
@@ -459,7 +465,7 @@ export function PricingSection() {
             <div className="text-center mb-4 sm:mb-6">
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-2" style={{ textShadow: '0 0 10px rgba(255,255,255,0.3)' }}>Finalizar Compra</h3>
               <p className="text-sm sm:text-base text-[var(--text-secondary)]" style={{ textShadow: '0 0 6px rgba(255,255,255,0.15)' }}>Sono Zen - Método Completo</p>
-              <p className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-[var(--accent-blue)] to-[var(--warm-accent)] bg-clip-text text-transparent mt-2" style={{ textShadow: '0 0 12px rgba(255,255,255,0.25)' }}>R$ 19,90</p>
+              <p className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-[var(--accent-blue)] to-[var(--warm-accent)] bg-clip-text text-transparent mt-2" style={{ textShadow: '0 0 12px rgba(255,255,255,0.25)' }}>R$ 27,90</p>
             </div>
 
             <Form {...form}>
