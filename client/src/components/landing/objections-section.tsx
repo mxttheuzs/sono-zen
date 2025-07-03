@@ -11,7 +11,7 @@ export function ObjectionsSection() {
     {
       icon: Brain,
       question: "Dra, faz anos que não durmo... funciona mesmo pra casos graves?",
-      answer: "Amor, eu entendo essa angústia. 💙 Já atendi pessoas que não dormiam há 10, 15 anos! O método trabalha exatamente com essa mente agitada. É como se acalmasse seus pensamentos de dentro pra fora. Você merece essa paz.",
+      answer: "Querida, eu entendo essa angústia. 💙 Já atendi pessoas que não dormiam há 10, 15 anos! O método trabalha exatamente com essa mente agitada. É como se acalmasse seus pensamentos de dentro pra fora. Você merece essa paz.",
       color: "from-purple-500 to-pink-500"
     },
     {
@@ -35,7 +35,7 @@ export function ObjectionsSection() {
     {
       icon: DollarSign,
       question: "Tô meio apertada... vale mesmo a pena?",
-      answer: "Te entendo perfeitamente, amor. 💝 Pensa assim: uma consulta comigo custa R$ 450. Remédio pra dormir sai R$ 180 por mês. O Sono Zen custa menos que duas noites de delivery que você pede quando tá cansada demais pra cozinhar.",
+      answer: "Te entendo perfeitamente, querida. 💝 Pensa assim: uma consulta comigo custa R$ 450. Remédio pra dormir sai R$ 180 por mês. O Sono Zen custa menos que duas noites de delivery que você pede quando tá cansada demais pra cozinhar.",
       color: "from-yellow-500 to-amber-500"
     }
   ];
