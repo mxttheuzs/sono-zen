@@ -5,32 +5,32 @@ import { FloatingClouds } from "@/components/ui/floating-clouds";
 const problems = [
   {
     icon: Brain,
-    title: "Mente Acelerada que Não Desliga",
-    description: "Trabalho, redes sociais, preocupações... Sua mente fica em ritmo acelerado o dia todo. Quando você deita, o corpo para mas a cabeça continua funcionando a mil por hora, impedindo o relaxamento.",
+    title: "Sua Mente Não Para de Pensar",
+    description: "Você deita na cama e sua cabeça não para. Fica pensando no trabalho, nas contas, nos problemas... Parece que tem um filme passando na sua mente e não consegue desligar.",
     color: "text-red-400",
     stat: "87% das pessoas",
     impact: "Muito comum"
   },
   {
     icon: Smartphone,
-    title: "Celular Atrapalha a Produção do Sono",
-    description: "A luz azul da tela do celular confunde seu cérebro, fazendo ele pensar que ainda é dia. Isso reduz muito a melatonina (hormônio do sono) e atrasa o sono em 2-3 horas.",
+    title: "Celular na Cama Atrapalha Tudo",
+    description: "Você fica no celular até tarde e depois não consegue dormir. A luz da tela confunde seu cérebro, que acha que ainda é dia. Aí você fica rolando na cama até 2, 3 da manhã.",
     color: "text-blue-400",
     stat: "Atraso de 3h",
     impact: "Efeito comprovado"
   },
   {
     icon: AlertTriangle,
-    title: "Estresse Elevado Durante a Noite",
-    description: "Quando você está estressado, seu corpo produz cortisol (hormônio do estresse) até de noite. Isso mantém você alerta quando deveria estar relaxando para dormir.",
+    title: "Estresse do Dia Todo que Não Sai",
+    description: "Você passou o dia correndo, estressado, e quando chega a noite ainda está com aquela sensação de ansiedade. O corpo está cansado mas a mente ainda está agitada.",
     color: "text-orange-400",
     stat: "3x mais cortisol",
     impact: "Bloqueia o sono"
   },
   {
     icon: Clock,
-    title: "Horários Bagunçados Confundem o Corpo",
-    description: "Dormir e acordar em horários diferentes, comer tarde da noite e pouca luz natural durante o dia desregulam seu relógio interno, tornando o sono irregular.",
+    title: "Horários Completamente Desregulados",
+    description: "Hoje dorme às 2h, amanhã às 11h, depois cochila de tarde... Seu corpo não sabe mais que horas deve dormir. Vira uma bagunça total e o sono fica cada vez pior.",
     color: "text-purple-400",
     stat: "Ciclo desregulado",
     impact: "Efeito duradouro"
@@ -90,10 +90,10 @@ export function ProblemSection() {
         
         <div className="text-center mb-12">
           <h3 className="font-heading text-2xl font-bold text-[var(--text-primary)] mb-4">
-            Veja se Você se Reconhece
+            Você Também Passa Por Isso?
           </h3>
           <p className="text-[var(--text-secondary)] max-w-2xl mx-auto">
-            Estes são os problemas mais comuns que impedem um sono reparador:
+            Essas são as situações que mais atrapalham o sono das pessoas hoje em dia:
           </p>
         </div>
         
