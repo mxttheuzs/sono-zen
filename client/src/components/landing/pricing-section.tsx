@@ -360,15 +360,15 @@ export function PricingSection() {
                 <div className="space-y-6">
                   {/* Enhanced Premium Purchase Button */}
                   <div className="relative group">
-                    {/* Subtle border glow effect */}
-                    <div className="absolute -inset-1 bg-gradient-to-r from-[var(--accent-blue)]/30 via-slate-400/20 to-[var(--accent-blue)]/30 rounded-3xl blur opacity-30 group-hover:opacity-50 transition duration-700"></div>
+                    {/* Harmonious border glow effect */}
+                    <div className="absolute -inset-1 bg-gradient-to-r from-[var(--accent-blue)]/20 via-[var(--warm-accent)]/15 to-[var(--celestial-blue)]/20 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-700"></div>
                     
                     <Button 
                       onClick={handlePurchaseClick}
-                      className="relative w-full bg-gradient-to-br from-slate-600/80 via-slate-500/70 to-slate-600/80 hover:from-slate-500/85 hover:via-slate-400/75 hover:to-slate-500/85 text-white py-7 sm:py-9 px-6 sm:px-10 rounded-3xl text-lg sm:text-2xl font-bold transition-all duration-500 transform hover:scale-[1.02] shadow-xl hover:shadow-2xl border-2 border-white/15 backdrop-blur-sm"
+                      className="relative w-full bg-gradient-to-br from-[var(--accent-blue)]/70 via-[var(--warm-accent)]/60 to-[var(--celestial-blue)]/70 hover:from-[var(--accent-blue)]/80 hover:via-[var(--warm-accent)]/70 hover:to-[var(--celestial-blue)]/80 text-white py-7 sm:py-9 px-6 sm:px-10 rounded-3xl text-lg sm:text-2xl font-bold transition-all duration-500 transform hover:scale-[1.02] shadow-xl hover:shadow-2xl border-2 border-[var(--warm-accent)]/20 backdrop-blur-sm"
                       style={{ 
-                        boxShadow: '0 0 20px rgba(255,255,255,0.05), inset 0 1px 0 rgba(255,255,255,0.1)',
-                        textShadow: '0 1px 3px rgba(0,0,0,0.4)'
+                        boxShadow: '0 0 30px rgba(139, 202, 255, 0.1), inset 0 1px 0 rgba(255,255,255,0.15)',
+                        textShadow: '0 2px 4px rgba(0,0,0,0.3)'
                       }}
                     >
                       <div className="flex items-center justify-center gap-4">
