@@ -103,7 +103,7 @@ export function ProblemSection() {
         </div>
         
         {/* Mensagem de esperança */}
-        <div className="text-center mt-16">
+        <div className="text-center mt-16 mb-20">
           <div className="max-w-3xl mx-auto bg-gradient-to-r from-[var(--success-green)]/10 to-[var(--accent-blue)]/10 border border-[var(--success-green)]/30 rounded-2xl p-6 sm:p-8">
             <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-[var(--text-primary)]">
               Se você se reconheceu em alguma dessas{" "}
