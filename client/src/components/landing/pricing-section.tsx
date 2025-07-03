@@ -360,15 +360,26 @@ export function PricingSection() {
                 <div className="space-y-6">
                   {/* Enhanced Premium Purchase Button */}
                   <div className="relative group">
-                    {/* Harmonious border glow effect */}
-                    <div className="absolute -inset-1 bg-gradient-to-r from-[var(--accent-blue)]/20 via-[var(--warm-accent)]/15 to-[var(--celestial-blue)]/20 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-700"></div>
+                    {/* Harmonious border glow using site colors */}
+                    <div className="absolute -inset-1 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-700" 
+                         style={{ background: 'linear-gradient(90deg, hsl(210, 75%, 75%) 0%, hsl(45, 65%, 75%) 50%, hsl(200, 80%, 70%) 100%)' }}></div>
                     
                     <Button 
                       onClick={handlePurchaseClick}
-                      className="relative w-full bg-gradient-to-br from-[var(--accent-blue)]/70 via-[var(--warm-accent)]/60 to-[var(--celestial-blue)]/70 hover:from-[var(--accent-blue)]/80 hover:via-[var(--warm-accent)]/70 hover:to-[var(--celestial-blue)]/80 text-white py-7 sm:py-9 px-6 sm:px-10 rounded-3xl text-lg sm:text-2xl font-bold transition-all duration-500 transform hover:scale-[1.02] shadow-xl hover:shadow-2xl border-2 border-[var(--warm-accent)]/20 backdrop-blur-sm"
+                      className="relative w-full py-7 sm:py-9 px-6 sm:px-10 rounded-3xl text-lg sm:text-2xl font-bold transition-all duration-500 transform hover:scale-[1.02] shadow-xl hover:shadow-2xl border-2 backdrop-blur-sm text-white group/btn"
                       style={{ 
-                        boxShadow: '0 0 30px rgba(139, 202, 255, 0.1), inset 0 1px 0 rgba(255,255,255,0.15)',
+                        background: 'linear-gradient(135deg, hsl(210, 75%, 75%) 0%, hsl(45, 65%, 75%) 50%, hsl(200, 80%, 70%) 100%)',
+                        borderColor: 'hsla(45, 65%, 75%, 0.3)',
+                        boxShadow: '0 0 30px hsla(210, 75%, 75%, 0.15), inset 0 1px 0 rgba(255,255,255,0.15)',
                         textShadow: '0 2px 4px rgba(0,0,0,0.3)'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.background = 'linear-gradient(135deg, hsl(210, 75%, 80%) 0%, hsl(45, 65%, 80%) 50%, hsl(200, 80%, 75%) 100%)';
+                        e.currentTarget.style.boxShadow = '0 0 40px hsla(210, 75%, 75%, 0.25), inset 0 1px 0 rgba(255,255,255,0.2)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.background = 'linear-gradient(135deg, hsl(210, 75%, 75%) 0%, hsl(45, 65%, 75%) 50%, hsl(200, 80%, 70%) 100%)';
+                        e.currentTarget.style.boxShadow = '0 0 30px hsla(210, 75%, 75%, 0.15), inset 0 1px 0 rgba(255,255,255,0.15)';
                       }}
                     >
                       <div className="flex items-center justify-center gap-4">
