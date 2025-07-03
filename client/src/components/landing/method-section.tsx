@@ -13,7 +13,7 @@ export function MethodSection() {
 
 
             <div className="space-y-6">
-              <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-[var(--text-primary)] leading-tight mt-[20px] mb-[20px]">
+              <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-[var(--text-primary)] leading-tight mt-[28px] mb-[28px]">
                 Transforme Sua Noite em um
                 <span className="block bg-gradient-to-r from-[var(--warm-accent)] via-[var(--accent-blue)] to-[var(--celestial-blue)] bg-clip-text text-transparent">
                   Momento Sagrado
