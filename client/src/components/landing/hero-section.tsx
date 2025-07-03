@@ -111,29 +111,42 @@ export function HeroSection() {
             </div>
 
             {/* Oferta Especial do Ebook */}
-            <div className="bg-gradient-to-r from-[var(--warm-accent)]/20 to-[var(--accent-blue)]/20 border-2 border-[var(--warm-accent)]/50 rounded-2xl p-5 max-w-lg backdrop-blur-sm">
+            <div className="bg-gradient-to-r from-orange-500/20 via-red-500/15 to-yellow-500/20 border-2 border-orange-400/60 rounded-2xl p-6 max-w-xl backdrop-blur-sm shadow-lg relative overflow-hidden">
+              {/* Badge flutuante */}
+              <div className="absolute -top-2 -right-2 bg-gradient-to-r from-red-500 to-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg animate-bounce">
+                LIMITADO!
+              </div>
+              
               <div className="flex items-center gap-4">
                 <div className="relative">
-                  <div className="w-4 h-4 bg-[var(--warm-accent)] rounded-full animate-pulse"></div>
-                  <div className="absolute inset-0 w-4 h-4 bg-[var(--warm-accent)]/40 rounded-full animate-ping"></div>
+                  <div className="w-5 h-5 bg-orange-500 rounded-full animate-pulse"></div>
+                  <div className="absolute inset-0 w-5 h-5 bg-orange-500/50 rounded-full animate-ping"></div>
                 </div>
                 <div className="flex-1">
-                  <p className="text-[var(--text-primary)] font-bold text-lg mb-1">
-                    📚 <span className="text-[var(--warm-accent)]">Oferta especial hoje:</span> Preço de lançamento
+                  <p className="text-white font-bold text-xl mb-2 leading-tight">
+                    🔥 <span className="text-orange-400">ÚLTIMA CHANCE:</span> Preço especial por 24h
                   </p>
-                  <p className="text-[var(--text-muted)] text-sm mb-2">
-                    Milhares já transformaram suas noites com este método
+                  <p className="text-orange-100 text-base mb-3 font-medium">
+                    + de 15.000 pessoas já transformaram suas noites
                   </p>
-                  <div className="flex items-center gap-3">
-                    <div className="flex items-center gap-1">
-                      <div className="w-2 h-2 bg-[var(--success-green)] rounded-full"></div>
-                      <span className="text-[var(--success-green)] text-xs font-medium">Método aprovado</span>
+                  <div className="flex flex-wrap items-center gap-4">
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                      <span className="text-green-400 text-sm font-bold">APROVADO POR ESPECIALISTAS</span>
                     </div>
-                    <div className="flex items-center gap-1">
-                      <div className="w-2 h-2 bg-[var(--accent-blue)] rounded-full"></div>
-                      <span className="text-[var(--accent-blue)] text-xs font-medium">Acesso imediato</span>
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 bg-blue-400 rounded-full"></div>
+                      <span className="text-blue-400 text-sm font-bold">DOWNLOAD INSTANTÂNEO</span>
                     </div>
                   </div>
+                  
+                  {/* Barra de urgência */}
+                  <div className="mt-4 bg-black/30 rounded-full p-1">
+                    <div className="bg-gradient-to-r from-orange-500 to-red-500 h-2 rounded-full" style={{width: '73%'}}></div>
+                  </div>
+                  <p className="text-orange-200 text-xs mt-1 font-medium">
+                    ⚡ 73% das vagas especiais já foram preenchidas
+                  </p>
                 </div>
               </div>
             </div>
