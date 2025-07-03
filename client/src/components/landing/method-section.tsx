@@ -1,5 +1,5 @@
 import { FloatingClouds } from "@/components/ui/floating-clouds";
-import relaxationImage from "@assets/image_1751154419735.png";
+import relaxationImage from "@assets/image_1751507711872.png";
 
 export function MethodSection() {
   return (
@@ -60,7 +60,7 @@ export function MethodSection() {
             <div className="card-modern p-0 animate-slide-up overflow-hidden">
               <img 
                 src={relaxationImage} 
-                alt="Difusor de aromas e tigelas tibetanas em ambiente relaxante" 
+                alt="Mulher meditando em posição zen com roupas brancas em céu azul com nuvens" 
                 className="w-full h-auto rounded-2xl object-cover"
               />
             </div>
