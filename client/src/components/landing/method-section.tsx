@@ -40,14 +40,14 @@ export function MethodSection() {
               
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="bg-[var(--sky-blue)]/10 border border-[var(--sky-blue)]/30 rounded-xl p-4">
-                  <p className="text-[var(--sky-blue)] font-semibold text-sm mb-2">❌ Como a maioria faz:</p>
-                  <p className="text-[var(--text-muted)] text-xs">
+                  <p className="text-[var(--sky-blue)] font-semibold text-base mb-2">❌ Como a maioria faz:</p>
+                  <p className="text-[var(--text-muted)] text-sm">
                     Deita na cama, fica no celular, pensa nos problemas, espera o sono "aparecer"
                   </p>
                 </div>
                 <div className="bg-[var(--mint-green)]/10 border border-[var(--mint-green)]/30 rounded-xl p-4">
-                  <p className="text-[var(--mint-green)] font-semibold text-sm mb-2">✅ Como você vai fazer:</p>
-                  <p className="text-[var(--text-muted)] text-xs">
+                  <p className="text-[var(--mint-green)] font-semibold text-base mb-2">✅ Como você vai fazer:</p>
+                  <p className="text-[var(--text-muted)] text-sm">
                     Ritual de 15 min → corpo relaxa → mente acalma → sono natural em minutos
                   </p>
                 </div>
