@@ -92,7 +92,7 @@ class ConversionTracker {
   
   // Enviar dados para Facebook Conversions API
   sendFacebookConversion(eventType: string, conversionData: Partial<ConversionParameters> = {}) {
-    if (typeof window === 'undefined' || !(window as any).fbq) return;
+    if (typeof window === 'undefined') return;
     
     const parameters = this.getParameters();
     const eventData = {
@@ -106,12 +106,84 @@ class ConversionTracker {
       ...parameters
     };
     
-    // Enviar evento para Facebook Pixel
-    (window as any).fbq('track', eventType, eventData, {
-      test_event_code: 'TEST74923'
-    });
+    // Enviar evento para Facebook Pixel (se disponível)
+    if ((window as any).fbq) {
+      (window as any).fbq('track', eventType, eventData, {
+        test_event_code: 'TEST74923'
+      });
+    }
+    
+    // Enviar também para Facebook Conversions API via backend
+    this.sendToConversionsAPI(eventType, eventData);
     
     console.log('Facebook Conversion sent:', { eventType, eventData });
+  }
+
+  // Enviar para Facebook Conversions API via backend
+  private async sendToConversionsAPI(eventType: string, eventData: any) {
+    try {
+      const parameters = this.getParameters();
+      
+      // Preparar dados do usuário para a API de Conversões
+      const userData: any = {
+        client_ip_address: this.getClientIP(),
+        client_user_agent: parameters.user_agent
+      };
+      
+      // Adicionar external_id se disponível
+      if (eventData.external_id) {
+        userData.external_id = eventData.external_id;
+      }
+      
+      // Adicionar FBCLID se disponível
+      if (parameters.fbclid) {
+        userData.fbp = `fb.1.${Date.now()}.${parameters.fbclid}`;
+      }
+      
+      const payload = {
+        eventName: eventType,
+        eventTime: Date.now(),
+        eventSourceUrl: parameters.page_url,
+        userData,
+        customData: {
+          content_name: eventData.content_name,
+          content_category: eventData.content_category,
+          value: eventData.value,
+          currency: eventData.currency,
+          // Adicionar parâmetros UTM como dados customizados
+          utm_source: parameters.utm_source,
+          utm_medium: parameters.utm_medium,
+          utm_campaign: parameters.utm_campaign,
+          utm_term: parameters.utm_term,
+          utm_content: parameters.utm_content
+        }
+      };
+      
+      const response = await fetch('/api/facebook-conversion', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload)
+      });
+      
+      if (response.ok) {
+        const result = await response.json();
+        console.log('✅ Facebook Conversions API success:', result);
+      } else {
+        const error = await response.json();
+        console.warn('❌ Facebook Conversions API error:', error);
+      }
+    } catch (error) {
+      console.warn('🚨 Error sending to Facebook Conversions API:', error);
+    }
+  }
+  
+  // Método auxiliar para obter IP do cliente (aproximado)
+  private getClientIP(): string {
+    // Em produção, isso seria obtido do cabeçalho da requisição no backend
+    // Para desenvolvimento, retornamos um IP fictício
+    return '127.0.0.1';
   }
   
   // Gerar ID externo único para o usuário
