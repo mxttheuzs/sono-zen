@@ -356,47 +356,20 @@ export function PricingSection() {
 
                 </div>
                 
-                {/* Purchase Button - Enhanced with urgency and appeal */}
+                {/* Simple, Natural Purchase Button */}
                 <div className="space-y-6">
-                  {/* Call-to-action intro */}
-                  <div className="text-center mb-4">
-                    <p className="text-lg sm:text-xl font-semibold text-[var(--text-primary)] mb-2">
-                      Sua nova vida começa{" "}
-                      <span className="text-white">
-                        agora
-                      </span>
-                    </p>
-                    <p className="text-sm text-[var(--text-secondary)]">
-                      Mais de 14.847 vidas transformadas
-                    </p>
-                  </div>
-                  
-                  {/* Enhanced Purchase Button */}
-                  <div className="relative group">
-                    {/* Animated background glow */}
-                    <div className="absolute -inset-1 bg-gradient-to-r from-[var(--warm-accent)] via-[var(--accent-blue)] to-[var(--warm-accent)] rounded-3xl blur opacity-30 group-hover:opacity-50 animate-pulse"></div>
-                    
+                  {/* Natural Purchase Button */}
+                  <div className="relative">
                     <Button 
                       onClick={handlePurchaseClick}
-                      className="w-full relative bg-gradient-to-r from-[var(--warm-accent)] via-[hsl(45,100%,60%)] to-[var(--accent-blue)] border-2 border-[var(--warm-accent)] text-white py-6 sm:py-8 px-6 sm:px-8 rounded-3xl text-lg sm:text-xl font-bold transition-all duration-500 group shadow-2xl shadow-[var(--warm-accent)]/40 hover:scale-105 hover:shadow-3xl"
+                      className="w-full bg-gradient-to-r from-[var(--accent-blue)] to-[var(--warm-accent)] hover:from-[var(--accent-blue)]/90 hover:to-[var(--warm-accent)]/90 text-white py-5 sm:py-6 px-8 rounded-2xl text-lg sm:text-xl font-semibold transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl border-0"
                     >
-                      {/* Button content with enhanced styling */}
-                      <div className="flex flex-col items-center justify-center gap-2">
-                        <div className="flex items-center gap-3">
-                          <Moon className="h-6 w-6 sm:h-7 sm:w-7 text-white transition-transform duration-300 group-hover:rotate-12" />
-                          <span className="text-white font-bold tracking-wide text-center leading-tight" style={{ textShadow: '0 0 12px rgba(255,255,255,0.5)' }}>
-                            SIM! QUERO DORMIR COMO UM BEBÊ
-                          </span>
-                          <Moon className="h-6 w-6 sm:h-7 sm:w-7 text-white transition-transform duration-300 group-hover:-rotate-12" />
-                        </div>
-                        <span className="text-sm font-medium opacity-90">
-                          💳 Acesso instantâneo após o pagamento
+                      <div className="flex items-center justify-center gap-3">
+                        <Moon className="h-5 w-5 sm:h-6 sm:w-6 text-white/90" />
+                        <span className="text-white font-semibold">
+                          Quero Dormir Melhor
                         </span>
                       </div>
-                      
-                      {/* Floating sparkle effect */}
-                      <div className="absolute top-2 right-4 w-2 h-2 bg-white rounded-full animate-ping opacity-60"></div>
-                      <div className="absolute bottom-3 left-6 w-1.5 h-1.5 bg-white rounded-full animate-ping opacity-40 animation-delay-300"></div>
                     </Button>
                   </div>
                   
