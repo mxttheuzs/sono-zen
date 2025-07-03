@@ -143,6 +143,7 @@ Changelog:
 - July 3, 2025. Content section cleanup: Removed "Perfeito Para Você" target audience section to focus entirely on the 6 specialized modules content. This creates a cleaner, more focused presentation of the learning materials without repetitive audience targeting.
 - July 3, 2025. Header removal: Removed entire header section including title "Transformação Completa do Seu Sono em 6 Módulos Especializados", descriptions, and validation badges. Section now displays only the 6 module cards for a cleaner, more direct presentation of the content.
 - July 3, 2025. Special offer banner enhancement: Completely redesigned the subtle offer banner into a prominent, eye-catching promotional element with gradient backgrounds (red-orange-yellow), animated pulse effects, larger text, urgency indicators ("48H APENAS"), fire emojis, and hover animations. Increased size significantly with enhanced visual impact including glowing borders and scale effects.
+- July 3, 2025. Special offer banner humanization: Redesigned the promotional banner to be smaller, more subtle and human-relatable. Changed from aggressive promotional style to gentle, trustworthy messaging using sleep emoji (💤), softer language ("Oferta especial hoje: Preço de lançamento"), and social proof ("Milhares já transformaram suas noites"). Maintained brand colors but with calmer, more approachable design.
 
 ## User Preferences
 

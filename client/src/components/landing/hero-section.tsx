@@ -110,28 +110,16 @@ export function HeroSection() {
               </div>
             </div>
 
-            {/* Oferta Especial Destacada */}
-            <div className="relative group">
-              <div className="absolute -inset-2 bg-gradient-to-r from-red-500/30 via-orange-400/30 to-yellow-400/30 rounded-2xl blur-lg opacity-60 group-hover:opacity-80 transition-all duration-500 animate-pulse"></div>
-              <div className="relative bg-gradient-to-r from-red-600/90 via-orange-500/90 to-yellow-500/90 border-2 border-yellow-400/50 rounded-2xl p-6 max-w-lg backdrop-blur-sm transform hover:scale-105 transition-all duration-300">
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-center gap-3">
-                    <div className="relative">
-                      <div className="w-4 h-4 bg-yellow-300 rounded-full animate-ping absolute"></div>
-                      <div className="w-4 h-4 bg-yellow-400 rounded-full"></div>
-                    </div>
-                    <span className="text-white font-black text-lg tracking-wide">🔥 OFERTA LIMITADA</span>
-                  </div>
-                  <div className="bg-white/20 px-3 py-1 rounded-full">
-                    <span className="text-white font-bold text-sm">48H APENAS</span>
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <p className="text-white font-bold text-xl">
-                    💥 DESCONTO DE LANÇAMENTO
+            {/* Oferta Especial Sutil */}
+            <div className="bg-gradient-to-r from-[var(--warm-accent)]/10 to-[var(--accent-blue)]/10 border border-[var(--warm-accent)]/30 rounded-xl p-4 max-w-md">
+              <div className="flex items-center gap-3">
+                <div className="w-3 h-3 bg-[var(--warm-accent)] rounded-full animate-pulse"></div>
+                <div>
+                  <p className="text-[var(--text-primary)] font-semibold text-sm">
+                    💤 <span className="text-[var(--warm-accent)]">Oferta especial hoje:</span> Preço de lançamento
                   </p>
-                  <p className="text-yellow-100 font-semibold text-base">
-                    🚀 Últimas horas para transformar seu sono!
+                  <p className="text-[var(--text-muted)] text-xs mt-1">
+                    Milhares já transformaram suas noites
                   </p>
                 </div>
               </div>
