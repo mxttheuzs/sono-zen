@@ -42,8 +42,8 @@ const quizQuestions: QuizQuestion[] = [
     question: "Quando você deita na cama, quanto tempo demora pra pegar no sono?",
     options: [
       { id: "fast", text: "⚡ Rapidinho! Caio no sono fácil", icon: <Zap className="h-5 w-5" />, value: "fast_sleeper" },
-      { id: "medium", text: "🤔 Uns 15-30 minutinhos pensando na vida", icon: <Cloud className="h-5 w-5" />, value: "medium_sleeper" },
-      { id: "slow", text: "😴 Ai, demoro mais de meia hora contando carneirinhos", icon: <Moon className="h-5 w-5" />, value: "slow_sleeper" }
+      { id: "medium", text: "🤔 Uns 15-30 minutinhos", icon: <Cloud className="h-5 w-5" />, value: "medium_sleeper" },
+      { id: "slow", text: "😴 Ai, demoro mais de meia hora", icon: <Moon className="h-5 w-5" />, value: "slow_sleeper" }
     ]
   },
   {
@@ -52,7 +52,7 @@ const quizQuestions: QuizQuestion[] = [
     options: [
       { id: "never", text: "💙 Raramente! Durmo que nem um bebê", icon: <Heart className="h-5 w-5" />, value: "deep_sleeper" },
       { id: "sometimes", text: "😊 Às vezes acordo 1 ou 2 vezes", icon: <Cloud className="h-5 w-5" />, value: "light_sleeper" },
-      { id: "often", text: "😵 Fico acordando várias vezes... é tenso", icon: <Star className="h-5 w-5" />, value: "restless_sleeper" }
+      { id: "often", text: "😵 Fico acordando várias vezes", icon: <Star className="h-5 w-5" />, value: "restless_sleeper" }
     ]
   },
   {
@@ -61,7 +61,7 @@ const quizQuestions: QuizQuestion[] = [
     options: [
       { id: "refreshed", text: "☀️ Top! Acordo bem disposto e animado", icon: <Sun className="h-5 w-5" />, value: "good_sleeper" },
       { id: "tired", text: "😪 Acordo meio cansado ainda, sabe?", icon: <Cloud className="h-5 w-5" />, value: "poor_sleeper" },
-      { id: "groggy", text: "🥱 Destruído... parece que não dormi nada", icon: <Moon className="h-5 w-5" />, value: "very_poor_sleeper" }
+      { id: "groggy", text: "🥱 Destruído... não dormi nada", icon: <Moon className="h-5 w-5" />, value: "very_poor_sleeper" }
     ]
   },
   {
