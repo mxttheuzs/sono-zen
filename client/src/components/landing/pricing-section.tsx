@@ -299,26 +299,6 @@ export function PricingSection() {
                   <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-br from-[var(--accent-blue)]/20 to-transparent rounded-full blur-2xl"></div>
                   
                   <div className="text-center relative z-10">
-                    {/* Subtle special offer banner */}
-                    <div className="max-w-lg mx-auto mb-6 relative">
-                      <div className="bg-gradient-to-r from-[var(--accent-blue)]/20 via-[var(--warm-accent)]/15 to-[var(--accent-blue)]/20 rounded-2xl p-4 border border-[var(--warm-accent)]/30 backdrop-blur-sm">
-                        <div className="flex items-center justify-center gap-3">
-                          <span className="text-lg">📚</span>
-                          <div className="text-center">
-                            <p className="text-[var(--text-primary)] font-semibold text-sm sm:text-base" style={{ textShadow: '0 0 8px rgba(255,255,255,0.2)' }}>
-                              Oferta especial hoje: Preço de lançamento
-                            </p>
-                            <p className="text-[var(--text-muted)] text-xs sm:text-sm mt-1" style={{ textShadow: '0 0 6px rgba(255,255,255,0.15)' }}>
-                              Milhares já transformaram suas noites 💤
-                            </p>
-                          </div>
-                          <div className="flex items-center gap-1">
-                            <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                            <span className="text-xs text-green-300 font-medium">Aprovado por especialistas</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
                     
                     {/* Price comparison */}
                     <div className="mb-6">
