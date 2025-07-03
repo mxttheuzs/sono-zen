@@ -110,41 +110,66 @@ export function HeroSection() {
               </div>
             </div>
 
-            {/* Oferta Especial do Ebook */}
-            <div className="bg-gradient-to-r from-[var(--warm-accent)]/15 to-[var(--accent-blue)]/10 border-2 border-[var(--warm-accent)]/40 rounded-2xl p-6 max-w-xl backdrop-blur-sm shadow-lg relative">
-              {/* Badge flutuante zen */}
-              <div className="absolute top-2 right-2 bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] text-white text-xs font-semibold px-3 py-1.5 rounded-full shadow-lg animate-pulse z-10">
-                OFERTA ESPECIAL
-              </div>
+            {/* Enhanced Premium Promotional Banner */}
+            <div className="relative max-w-2xl">
+              {/* Outer glow effect */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-orange-400/30 via-red-400/20 to-yellow-400/30 rounded-3xl blur-lg"></div>
               
-              <div className="flex items-center gap-4">
-                <div className="relative">
-                  <div className="w-5 h-5 bg-[var(--warm-accent)] rounded-full animate-pulse"></div>
-                  <div className="absolute inset-0 w-5 h-5 bg-[var(--warm-accent)]/40 rounded-full animate-ping"></div>
+              {/* Main banner container */}
+              <div className="relative bg-gradient-to-br from-orange-500/85 via-red-500/90 to-yellow-500/85 border-2 border-orange-400/60 rounded-3xl p-6 sm:p-8 backdrop-blur-sm shadow-2xl overflow-hidden">
+                {/* Animated background elements */}
+                <div className="absolute inset-0 bg-gradient-to-r from-orange-400/20 via-red-400/15 to-yellow-400/20 animate-pulse"></div>
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-3xl animate-bounce" style={{ animationDuration: '4s' }}></div>
+                <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+                
+                {/* Badge flutuante premium */}
+                <div className="absolute top-3 right-3 bg-white/90 text-orange-600 text-xs font-black px-4 py-2 rounded-full shadow-xl animate-pulse z-10 border border-orange-300">
+                  OFERTA ESPECIAL
                 </div>
-                <div className="flex-1">
-                  <p className="text-[var(--text-primary)] font-bold text-xl mb-2 leading-tight">
-                    ✨ <span className="text-[var(--warm-accent)]">Preço de lançamento:</span> Apenas hoje
-                  </p>
-                  <p className="text-[var(--text-secondary)] text-base mb-3 font-medium">
-                    14.847 vidas transformadas
-                  </p>
-                  <div className="flex flex-wrap items-center gap-4">
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 bg-[var(--success-green)] rounded-full animate-pulse"></div>
-                      <span className="text-[var(--success-green)] text-sm font-semibold">Método Comprovado</span>
+                
+                <div className="relative z-10">
+                  {/* Main headline */}
+                  <div className="text-center mb-6">
+                    <div className="flex items-center justify-center gap-3 mb-4">
+                      <div className="bg-white/20 rounded-full p-3 animate-pulse">
+                        <span className="text-3xl">⭐</span>
+                      </div>
+                      <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-wide leading-tight"
+                          style={{ textShadow: '0 3px 12px rgba(0,0,0,0.6)' }}>
+                        Preço de lançamento: Apenas hoje
+                      </h3>
+                      <div className="bg-white/20 rounded-full p-3 animate-pulse" style={{ animationDelay: '0.7s' }}>
+                        <span className="text-3xl">⭐</span>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 bg-[var(--accent-blue)] rounded-full"></div>
-                      <span className="text-[var(--accent-blue)] text-sm font-semibold">Acesso Imediato</span>
+                    
+                    {/* Social proof */}
+                    <p className="text-white/95 text-xl font-bold mb-6" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
+                      14.847 vidas transformadas
+                    </p>
+                  </div>
+                  
+                  {/* Status indicators */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                    <div className="flex items-center gap-3 bg-white/15 rounded-2xl px-4 py-3 backdrop-blur-sm border border-white/20">
+                      <div className="w-4 h-4 bg-green-400 rounded-full animate-pulse shadow-lg"></div>
+                      <span className="text-white font-bold text-sm sm:text-base">Método Comprovado</span>
+                    </div>
+                    <div className="flex items-center gap-3 bg-white/15 rounded-2xl px-4 py-3 backdrop-blur-sm border border-white/20">
+                      <div className="w-4 h-4 bg-blue-400 rounded-full animate-pulse shadow-lg" style={{ animationDelay: '0.5s' }}></div>
+                      <span className="text-white font-bold text-sm sm:text-base">Acesso Imediato</span>
                     </div>
                   </div>
                   
-                  {/* Indicador de interesse */}
-                  <div className="mt-4 bg-[var(--warm-accent)]/10 border border-[var(--warm-accent)]/30 rounded-xl p-3">
-                    <p className="text-[var(--warm-accent)] text-sm font-medium text-center">
-                      🌙 273 pessoas adquiriram nas últimas 24h
-                    </p>
+                  {/* Urgency indicator */}
+                  <div className="bg-black/40 border border-yellow-400/40 rounded-2xl p-4 text-center backdrop-blur-sm">
+                    <div className="flex items-center justify-center gap-3">
+                      <span className="text-yellow-300 text-2xl animate-pulse">⚡</span>
+                      <p className="text-white font-bold text-base sm:text-lg" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.5)' }}>
+                        273 pessoas adquiriram nas últimas 24h
+                      </p>
+                      <span className="text-yellow-300 text-2xl animate-pulse" style={{ animationDelay: '0.3s' }}>⚡</span>
+                    </div>
                   </div>
                 </div>
               </div>
