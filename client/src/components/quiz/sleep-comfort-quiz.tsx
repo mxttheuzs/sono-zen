@@ -274,7 +274,7 @@ export function SleepComfortQuiz() {
   }
 
   return (
-    <section className="py-20 bg-[var(--bg-primary)] relative overflow-hidden">
+    <section className="py-1 bg-[var(--bg-primary)] relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent-blue)]/5 via-transparent to-[var(--warm-accent)]/5"></div>
       <FloatingClouds className="opacity-5" />
       <FloatingStars className="opacity-10" density="light" />
