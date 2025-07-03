@@ -16,7 +16,7 @@ import { FloatingStars } from "@/components/ui/floating-stars";
 import { Button } from "@/components/ui/button";
 import { Heart, Sparkles } from "lucide-react";
 import { trackPageView, trackViewContent } from "@/lib/conversion-tracking";
-import { ConversionDebug } from "@/components/conversion-debug";
+
 
 
 export default function Home() {
@@ -58,8 +58,7 @@ export default function Home() {
         <Footer />
       </div>
       
-      {/* Debug component (apenas em desenvolvimento) */}
-      <ConversionDebug />
+
     </div>
   );
 }
