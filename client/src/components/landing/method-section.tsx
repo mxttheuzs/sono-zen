@@ -11,21 +11,7 @@ export function MethodSection() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left content */}
           <div className="space-y-8">
-            {/* Banner chamativo */}
-            <div className="bg-gradient-to-r from-[var(--warm-accent)]/15 to-[var(--accent-blue)]/15 border-2 border-[var(--warm-accent)]/40 rounded-2xl p-6 backdrop-blur-sm">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-6 h-6 bg-[var(--warm-accent)] rounded-full animate-pulse flex items-center justify-center">
-                  <div className="w-3 h-3 bg-white rounded-full"></div>
-                </div>
-                <h3 className="text-[var(--warm-accent)] font-bold text-lg">✨ Método Zen Oriental</h3>
-              </div>
-              <p className="text-[var(--text-primary)] font-semibold text-xl mb-2">
-                🌙 E se dormir pudesse ser o momento mais relaxante do seu dia?
-              </p>
-              <p className="text-[var(--text-muted)] text-sm">
-                Técnicas milenares que transformam a hora de dormir em um ritual de paz
-              </p>
-            </div>
+
 
             <div className="space-y-6">
               <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--text-primary)] leading-tight">
