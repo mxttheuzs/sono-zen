@@ -22,6 +22,18 @@ export interface ConversionParameters {
   first_name?: string;
   last_name?: string;
   
+  // Geolocation data
+  country?: string;
+  state?: string;
+  city?: string;
+  zip_code?: string;
+  
+  // Additional tracking parameters
+  order_id?: string;
+  event_id?: string;
+  subscription_id?: string;
+  lead_id?: string;
+  
   // Conversion Data
   conversion_value?: number;
   currency?: string;
@@ -159,9 +171,41 @@ class ConversionTracker {
         userData.ln = [await this.hashData(parameters.last_name.toLowerCase().trim())];
       }
       
+      // Adicionar dados de geolocalização hash se disponíveis
+      if (parameters.country) {
+        userData.country = [await this.hashData(parameters.country.toLowerCase().trim())];
+      }
+      if (parameters.state) {
+        userData.st = [await this.hashData(parameters.state.toLowerCase().trim())];
+      }
+      if (parameters.city) {
+        userData.ct = [await this.hashData(parameters.city.toLowerCase().trim())];
+      }
+      if (parameters.zip_code) {
+        userData.zp = [await this.hashData(parameters.zip_code.replace(/\D/g, ''))];
+      }
+      
       // Adicionar FBCLID se disponível
       if (parameters.fbclid) {
         userData.fbp = `fb.1.${Date.now()}.${parameters.fbclid}`;
+      }
+      
+      // Adicionar parâmetros adicionais recomendados pelo Facebook
+      // client_user_agent já está incluído acima
+      
+      // Adicionar fbc (Facebook click ID) se disponível
+      if (parameters.fbclid) {
+        userData.fbc = `fb.1.${Date.now()}.${parameters.fbclid}`;
+      }
+      
+      // Adicionar subscription_id se disponível (para identificar assinaturas)
+      if (eventData.subscription_id) {
+        userData.subscription_id = eventData.subscription_id;
+      }
+      
+      // Adicionar lead_id se disponível (para identificar leads)
+      if (eventData.lead_id) {
+        userData.lead_id = eventData.lead_id;
       }
       
       const payload = {
@@ -174,12 +218,32 @@ class ConversionTracker {
           content_category: eventData.content_category,
           value: eventData.value,
           currency: eventData.currency,
-          // Adicionar parâmetros UTM como dados customizados
+          
+          // Parâmetros UTM
           utm_source: parameters.utm_source,
           utm_medium: parameters.utm_medium,
           utm_campaign: parameters.utm_campaign,
           utm_term: parameters.utm_term,
-          utm_content: parameters.utm_content
+          utm_content: parameters.utm_content,
+          
+          // Parâmetros adicionais recomendados
+          order_id: eventData.order_id || this.generateExternalId(),
+          event_id: eventData.event_id || `${eventType}_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+          
+          // Parâmetros de dados do app
+          advertiser_tracking_enabled: true,
+          application_tracking_enabled: true,
+          
+          // Parâmetros de origem do evento
+          action_source: 'website',
+          event_source_url: parameters.page_url,
+          
+          // Parâmetros adicionais de dados do cliente
+          client_ip_address: this.getClientIP(),
+          client_user_agent: parameters.user_agent,
+          
+          // Referrer
+          referrer_url: parameters.referrer
         }
       };
       
