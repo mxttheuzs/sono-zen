@@ -16,6 +16,12 @@ export interface ConversionParameters {
   page_url?: string;
   timestamp?: string;
   
+  // Enhanced User Data for better tracking
+  email?: string;
+  phone?: string;
+  first_name?: string;
+  last_name?: string;
+  
   // Conversion Data
   conversion_value?: number;
   currency?: string;
@@ -135,6 +141,24 @@ class ConversionTracker {
         userData.external_id = eventData.external_id;
       }
       
+      // Adicionar email hash se disponível
+      if (parameters.email) {
+        userData.em = [await this.hashData(parameters.email.toLowerCase().trim())];
+      }
+      
+      // Adicionar telefone hash se disponível  
+      if (parameters.phone) {
+        userData.ph = [await this.hashData(parameters.phone.replace(/\D/g, ''))];
+      }
+      
+      // Adicionar nomes hash se disponíveis
+      if (parameters.first_name) {
+        userData.fn = [await this.hashData(parameters.first_name.toLowerCase().trim())];
+      }
+      if (parameters.last_name) {
+        userData.ln = [await this.hashData(parameters.last_name.toLowerCase().trim())];
+      }
+      
       // Adicionar FBCLID se disponível
       if (parameters.fbclid) {
         userData.fbp = `fb.1.${Date.now()}.${parameters.fbclid}`;
@@ -179,6 +203,25 @@ class ConversionTracker {
     }
   }
   
+  // Função para fazer hash dos dados do usuário (SHA-256)
+  private async hashData(data: string): Promise<string> {
+    if (typeof window === 'undefined' || !window.crypto || !window.crypto.subtle) {
+      // Fallback para ambientes sem crypto API
+      return data;
+    }
+    
+    try {
+      const encoder = new TextEncoder();
+      const dataBuffer = encoder.encode(data);
+      const hashBuffer = await window.crypto.subtle.digest('SHA-256', dataBuffer);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    } catch (error) {
+      console.warn('Erro ao fazer hash dos dados:', error);
+      return data; // Fallback
+    }
+  }
+
   // Método auxiliar para obter IP do cliente (aproximado)
   private getClientIP(): string {
     // Em produção, isso seria obtido do cabeçalho da requisição no backend
@@ -211,6 +254,16 @@ class ConversionTracker {
     }
   }
   
+  // Capturar dados de usuário para melhor tracking
+  captureUserData(userData: {
+    email?: string;
+    phone?: string;
+    first_name?: string;
+    last_name?: string;
+  }) {
+    this.updateConversionData(userData);
+  }
+
   // Método principal para tracking de conversão
   trackConversion(eventType: string, conversionData: Partial<ConversionParameters> = {}) {
     // Atualizar dados de conversão
@@ -271,6 +324,16 @@ export const trackPurchase = (purchaseData?: any) => {
     currency: 'BRL',
     ...purchaseData
   });
+};
+
+// Capturar dados de usuário para melhor tracking
+export const captureUserData = (userData: {
+  email?: string;
+  phone?: string;
+  first_name?: string;
+  last_name?: string;
+}) => {
+  conversionTracker.captureUserData(userData);
 };
 
 // Debug: mostrar parâmetros capturados
