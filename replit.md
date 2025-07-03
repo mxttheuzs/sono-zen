@@ -141,6 +141,7 @@ Changelog:
 - July 3, 2025. Pricing update: Changed main price from R$ 19,90 to R$ 27,90 with new reference price of R$ 47,90 (previously R$ 89,70). Updated discount calculation to show 42% OFF savings of R$ 20,00. Also updated Facebook Pixel event tracking values to reflect new pricing.
 - July 3, 2025. Major content enhancement: Completely redesigned "O que você vai aprender" section with 6 specialized modules instead of 4 basic ones. Added detailed breakdowns for each module including specific techniques (4-7-8 breathing, acupressure points, 5-4-3-2-1 anxiety method), scientific elements (432Hz frequencies, binaural beats), and practical implementation details. Enhanced titles to be more specific and compelling. Added comprehensive content lists showing exactly what users will learn in each module. Updated header to emphasize "180+ pages of transformative content" and "12,000+ transformations" for stronger social proof.
 - July 3, 2025. Content section cleanup: Removed "Perfeito Para Você" target audience section to focus entirely on the 6 specialized modules content. This creates a cleaner, more focused presentation of the learning materials without repetitive audience targeting.
+- July 3, 2025. Header removal: Removed entire header section including title "Transformação Completa do Seu Sono em 6 Módulos Especializados", descriptions, and validation badges. Section now displays only the 6 module cards for a cleaner, more direct presentation of the content.
 
 ## User Preferences
 

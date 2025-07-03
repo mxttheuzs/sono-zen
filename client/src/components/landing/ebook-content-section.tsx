@@ -60,38 +60,6 @@ export function EbookContentSection() {
     <section id="conteudo-ebook" className="py-20 bg-black relative overflow-hidden">
       <FloatingClouds />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-        <div className="text-center mb-16">
-          <div className="w-20 h-20 rounded-3xl bg-gradient-to-br from-[var(--accent-blue)]/20 to-[var(--warm-accent)]/20 border border-[var(--accent-blue)]/30 flex items-center justify-center mx-auto mb-8 backdrop-blur-sm">
-            <BookOpen className="h-10 w-10 text-[var(--accent-blue)]" />
-          </div>
-          <h2 className="font-heading text-3xl sm:text-4xl md:text-6xl font-bold text-[var(--text-primary)] mb-8">
-            Transformação Completa do Seu Sono
-            <span className="block bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] bg-clip-text text-transparent">
-              em 6 Módulos Especializados
-            </span>
-          </h2>
-          <p className="text-xl text-[var(--text-secondary)] max-w-4xl mx-auto leading-relaxed mb-4">
-            Cada módulo do <strong className="text-[var(--text-primary)]">Sono Zen</strong> foi criado por especialistas em medicina do sono e mestres orientais. 
-            <span className="block mt-2 text-[var(--warm-accent)] font-semibold">
-              Mais de 180 páginas de conteúdo prático e transformador
-            </span>
-          </p>
-          <div className="flex justify-center items-center flex-wrap gap-4 sm:gap-8 text-base text-[var(--text-secondary)]">
-            <div className="flex items-center">
-              <div className="w-3 h-3 bg-[var(--accent-blue)] rounded-full mr-3"></div>
-              <span className="font-medium">Metodologia validada por especialistas</span>
-            </div>
-            <div className="flex items-center">
-              <div className="w-3 h-3 bg-[var(--success-green)] rounded-full mr-3"></div>
-              <span className="font-medium">Mais de 12.000 transformações</span>
-            </div>
-            <div className="flex items-center">
-              <div className="w-3 h-3 bg-[var(--warm-accent)] rounded-full mr-3"></div>
-              <span className="font-medium">Resultados desde a 1ª noite</span>
-            </div>
-          </div>
-        </div>
-
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {ebookContents.map((content, index) => (
             <div key={index} className="group relative backdrop-blur-sm bg-transparent border-2 border-[var(--accent-blue)]/20 hover:border-[var(--accent-blue)]/40 rounded-3xl p-6 sm:p-8 animate-scale-in hover:shadow-xl hover:shadow-[var(--accent-blue)]/10 transition-all duration-300 animate-magnetic-hover" style={{animationDelay: `${index * 0.15}s`}}>
