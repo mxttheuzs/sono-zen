@@ -131,7 +131,7 @@ export function PricingSection() {
       (window as any).fbq('track', 'InitiateCheckout', {
         content_name: 'Sono Zen - Método Completo',
         content_category: 'E-book',
-        value: 19.90,
+        value: 27.90,
         currency: 'BRL'
       }, {test_event_code: 'TEST74923'});
     }
@@ -145,7 +145,7 @@ export function PricingSection() {
       (window as any).fbq('track', 'AddPaymentInfo', {
         content_name: 'Sono Zen - Método Completo',
         content_category: 'E-book',
-        value: 19.90,
+        value: 27.90,
         currency: 'BRL'
       }, {test_event_code: 'TEST74923'});
     }
@@ -281,14 +281,14 @@ export function PricingSection() {
                 <div className="bg-gradient-to-r from-[var(--accent-blue)]/8 to-[var(--warm-accent)]/8 rounded-2xl p-4 sm:p-6 md:p-8 mb-6 sm:mb-8 border-2 border-[var(--accent-blue)]/40 backdrop-blur-sm relative">
                   <div className="text-center">
                     <p className="text-[var(--text-muted)] mb-2 text-sm sm:text-base" style={{ textShadow: '0 0 6px rgba(255,255,255,0.15)' }}>Valor normal:</p>
-                    <p className="text-xl sm:text-2xl text-[var(--text-muted)] line-through mb-3 sm:mb-4" style={{ textShadow: '0 0 6px rgba(255,255,255,0.15)' }}>R$ 89,70</p>
+                    <p className="text-xl sm:text-2xl text-[var(--text-muted)] line-through mb-3 sm:mb-4" style={{ textShadow: '0 0 6px rgba(255,255,255,0.15)' }}>R$ 47,90</p>
                     <p className="text-[var(--accent-blue)] font-semibold mb-2 sm:mb-3 text-sm sm:text-base" style={{ textShadow: '0 0 8px rgba(255,255,255,0.2)' }}>Oferta especial hoje:</p>
                     <p className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight mb-3 sm:mb-4" style={{ textShadow: '0 0 15px rgba(255,255,255,0.4)' }}>
-                      R$ 19,90
+                      R$ 27,90
                     </p>
                     <div className="bg-gradient-to-r from-[var(--warm-accent)]/20 to-[var(--accent-blue)]/20 rounded-xl p-3 sm:p-4 border border-[var(--warm-accent)]/30 backdrop-blur-sm">
                       <p className="text-[var(--warm-accent)] font-bold text-base sm:text-lg" style={{ textShadow: '0 0 8px rgba(255,255,255,0.2)' }}>
-                        Economia de R$ 69,80 (78% OFF)
+                        Economia de R$ 20,00 (42% OFF)
                       </p>
                     </div>
                   </div>
