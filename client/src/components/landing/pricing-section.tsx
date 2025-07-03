@@ -292,54 +292,6 @@ export function PricingSection() {
 
 
 
-                {/* Attractive Special Offer Banner */}
-                <div className="mb-8 relative">
-                  <div className="bg-gradient-to-r from-orange-500/90 via-red-500/90 to-yellow-500/90 rounded-3xl p-6 border-2 border-orange-400/60 shadow-2xl relative overflow-hidden">
-                    {/* Animated background effects */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-orange-400/30 via-red-400/20 to-yellow-400/30 animate-pulse"></div>
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-3xl animate-bounce" style={{ animationDuration: '3s' }}></div>
-                    
-                    <div className="relative z-10 text-center">
-                      {/* Main message */}
-                      <div className="flex items-center justify-center gap-3 mb-4">
-                        <div className="bg-white/20 rounded-full p-2 animate-pulse">
-                          <span className="text-2xl">⭐</span>
-                        </div>
-                        <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-white tracking-wide"
-                            style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
-                          Preço de lançamento: Apenas hoje
-                        </h3>
-                        <div className="bg-white/20 rounded-full p-2 animate-pulse" style={{ animationDelay: '0.5s' }}>
-                          <span className="text-2xl">⭐</span>
-                        </div>
-                      </div>
-                      
-                      {/* Social proof */}
-                      <p className="text-white/95 text-lg font-semibold mb-4" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.4)' }}>
-                        14.847 vidas transformadas
-                      </p>
-                      
-                      {/* Status indicators */}
-                      <div className="flex flex-wrap justify-center gap-4 text-sm">
-                        <div className="flex items-center gap-2 bg-white/15 rounded-full px-4 py-2 backdrop-blur-sm">
-                          <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                          <span className="text-white font-semibold">Método Comprovado</span>
-                        </div>
-                        <div className="flex items-center gap-2 bg-white/15 rounded-full px-4 py-2 backdrop-blur-sm">
-                          <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse" style={{ animationDelay: '0.3s' }}></div>
-                          <span className="text-white font-semibold">Acesso Imediato</span>
-                        </div>
-                      </div>
-                      
-                      {/* Urgency indicator */}
-                      <div className="mt-4 inline-flex items-center gap-2 bg-black/30 rounded-full px-4 py-2 backdrop-blur-sm">
-                        <span className="text-yellow-300 text-lg animate-pulse">⚡</span>
-                        <span className="text-white font-bold text-sm">273 pessoas adquiriram nas últimas 24h</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
                 {/* Pricing - Enhanced with better visual hierarchy */}
                 <div className="bg-gradient-to-br from-[var(--accent-blue)]/15 via-[var(--warm-accent)]/8 to-[var(--accent-blue)]/10 rounded-3xl p-6 sm:p-8 md:p-10 mb-8 border-2 border-[var(--warm-accent)]/50 backdrop-blur-lg relative overflow-hidden shadow-2xl">
                   {/* Decorative background elements */}
@@ -347,6 +299,26 @@ export function PricingSection() {
                   <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-br from-[var(--accent-blue)]/20 to-transparent rounded-full blur-2xl"></div>
                   
                   <div className="text-center relative z-10">
+                    {/* Subtle special offer banner */}
+                    <div className="max-w-lg mx-auto mb-6 relative">
+                      <div className="bg-gradient-to-r from-[var(--accent-blue)]/20 via-[var(--warm-accent)]/15 to-[var(--accent-blue)]/20 rounded-2xl p-4 border border-[var(--warm-accent)]/30 backdrop-blur-sm">
+                        <div className="flex items-center justify-center gap-3">
+                          <span className="text-lg">📚</span>
+                          <div className="text-center">
+                            <p className="text-[var(--text-primary)] font-semibold text-sm sm:text-base" style={{ textShadow: '0 0 8px rgba(255,255,255,0.2)' }}>
+                              Oferta especial hoje: Preço de lançamento
+                            </p>
+                            <p className="text-[var(--text-muted)] text-xs sm:text-sm mt-1" style={{ textShadow: '0 0 6px rgba(255,255,255,0.15)' }}>
+                              Milhares já transformaram suas noites 💤
+                            </p>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                            <span className="text-xs text-green-300 font-medium">Aprovado por especialistas</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                     
                     {/* Price comparison */}
                     <div className="mb-6">
