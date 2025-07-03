@@ -34,7 +34,7 @@ export function ProblemSection() {
         
         <div className="text-center mb-12">
           <h3 className="font-heading text-3xl md:text-4xl font-bold mb-4">
-            Talvez Você Também Passe Por 
+            Talvez Você Também Passe Por{" "}
             <span className="bg-gradient-to-r from-[var(--warm-accent)] via-[var(--accent-blue)] to-[var(--celestial-blue)] bg-clip-text text-transparent">
               Essas Situações
             </span>...
@@ -106,7 +106,7 @@ export function ProblemSection() {
         <div className="text-center mt-16">
           <div className="max-w-3xl mx-auto bg-gradient-to-r from-[var(--success-green)]/10 to-[var(--accent-blue)]/10 border border-[var(--success-green)]/30 rounded-2xl p-6 sm:p-8">
             <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-[var(--text-primary)]">
-              Se você se reconheceu em alguma dessas 
+              Se você se reconheceu em alguma dessas{" "}
               <span className="bg-gradient-to-r from-[var(--warm-accent)] via-[var(--accent-blue)] to-[var(--celestial-blue)] bg-clip-text text-transparent">
                 situações
               </span>...

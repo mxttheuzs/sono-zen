@@ -73,7 +73,7 @@ export function BenefitsSection() {
         
         <div className="text-center mb-12 mt-16">
           <h3 className="font-heading text-3xl md:text-4xl font-bold mb-4 text-[var(--text-primary)]">
-            O Que Você Vai 
+            O Que Você Vai{" "}
             <span className="bg-gradient-to-r from-[var(--warm-accent)] via-[var(--accent-blue)] to-[var(--celestial-blue)] bg-clip-text text-transparent">
               Conquistar
             </span>
