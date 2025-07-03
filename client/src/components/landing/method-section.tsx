@@ -10,7 +10,7 @@ export function MethodSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left content */}
-          <div className="space-y-8">
+          <div className="space-y-16">
 
 
             <div className="space-y-6">
