@@ -113,7 +113,7 @@ export function HeroSection() {
             {/* Oferta Especial do Ebook */}
             <div className="bg-gradient-to-r from-[var(--warm-accent)]/15 to-[var(--accent-blue)]/10 border-2 border-[var(--warm-accent)]/40 rounded-2xl p-6 max-w-xl backdrop-blur-sm shadow-lg relative overflow-hidden">
               {/* Badge flutuante zen */}
-              <div className="absolute -top-2 -right-2 bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] text-white text-xs font-semibold px-4 py-1 rounded-full shadow-lg animate-pulse">
+              <div className="absolute -top-3 -right-3 bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] text-white text-xs font-semibold px-3 py-1.5 rounded-full shadow-lg animate-pulse z-10">
                 OFERTA ESPECIAL
               </div>
               
