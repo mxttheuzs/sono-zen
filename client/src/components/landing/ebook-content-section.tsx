@@ -2,7 +2,7 @@ import { FloatingClouds } from "@/components/ui/floating-clouds";
 
 export function EbookContentSection() {
   return (
-    <section id="conteudo-ebook" className="py-20 bg-black relative overflow-hidden">
+    <section id="conteudo-ebook" className="py-8 bg-black relative overflow-hidden">
       <FloatingClouds />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
         
