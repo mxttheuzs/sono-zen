@@ -141,15 +141,13 @@ export function PricingSection() {
   };
 
   const handlePurchaseClick = () => {
-    // Tracking avançado com parâmetros UTM e conversão
-    trackInitiateCheckout();
-    
+    // Apenas abrir o modal - não enviar eventos ainda
     setShowRedirectModal(true);
   };
 
   const handleConfirmRedirect = () => {
-    // Tracking avançado com parâmetros UTM antes do redirecionamento
-    trackAddPaymentInfo();
+    // Enviar evento de InitiateCheckout apenas quando usuário confirma ir para pagamento
+    trackInitiateCheckout();
     
     const paymentUrl = 'https://pay.cakto.com.br/j6iqgss_456470';
     
@@ -157,14 +155,27 @@ export function PricingSection() {
       // Primeira tentativa: window.open
       const newWindow = window.open(paymentUrl, '_blank', 'noopener,noreferrer');
       
+      // Aguardar um pouco e depois enviar AddPaymentInfo (quando realmente está na página de pagamento)
+      setTimeout(() => {
+        trackAddPaymentInfo();
+      }, 2000);
+      
       // Se foi bloqueado, tenta window.location
       if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
         // Fallback: redirecionar na mesma aba
         window.location.href = paymentUrl;
+        // Enviar AddPaymentInfo imediatamente neste caso
+        setTimeout(() => {
+          trackAddPaymentInfo();
+        }, 1000);
       }
     } catch (error) {
       // Último fallback: redirecionar na mesma aba
       window.location.href = paymentUrl;
+      // Enviar AddPaymentInfo imediatamente neste caso
+      setTimeout(() => {
+        trackAddPaymentInfo();
+      }, 1000);
     }
     
     setShowRedirectModal(false);
