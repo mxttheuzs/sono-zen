@@ -356,88 +356,37 @@ export function PricingSection() {
 
                 </div>
                 
-                {/* Ultra-Sophisticated Premium Purchase Button */}
+                {/* Elegant Premium Purchase Button */}
                 <div className="space-y-6">
-                  {/* Luxury Premium Purchase Button with Enhanced Visual Effects */}
+                  {/* Clean Premium Purchase Button */}
                   <div className="relative group">
-                    {/* Multi-layered sophisticated glow effects */}
-                    <div className="absolute -inset-2 rounded-3xl blur-lg opacity-20 group-hover:opacity-35 transition-all duration-1000" 
-                         style={{ background: 'linear-gradient(45deg, hsl(210, 75%, 75%) 0%, hsl(45, 65%, 75%) 25%, hsl(200, 80%, 70%) 50%, hsl(45, 65%, 75%) 75%, hsl(210, 75%, 75%) 100%)' }}></div>
-                    <div className="absolute -inset-1 rounded-3xl blur opacity-30 group-hover:opacity-50 transition-all duration-700" 
-                         style={{ background: 'linear-gradient(90deg, hsl(210, 75%, 75%) 0%, hsl(45, 65%, 75%) 50%, hsl(200, 80%, 70%) 100%)' }}></div>
-                    
-                    {/* Premium glass morphism overlay */}
-                    <div className="absolute inset-0 rounded-3xl opacity-10 group-hover:opacity-20 transition-all duration-500"
-                         style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0.1) 100%)' }}></div>
+                    {/* Subtle glow effect */}
+                    <div className="absolute -inset-0.5 rounded-2xl blur opacity-20 group-hover:opacity-30 transition-all duration-500" 
+                         style={{ background: 'linear-gradient(135deg, hsl(220, 25%, 65%) 0%, hsl(220, 30%, 70%) 100%)' }}></div>
                     
                     <Button 
                       onClick={handlePurchaseClick}
-                      className="relative w-full py-8 sm:py-10 px-8 sm:px-12 rounded-3xl text-xl sm:text-3xl font-bold transition-all duration-700 transform hover:scale-[1.03] shadow-2xl hover:shadow-3xl border-2 backdrop-blur-md text-white group/btn overflow-hidden"
+                      className="relative w-full py-6 sm:py-7 px-8 sm:px-10 rounded-2xl text-lg sm:text-xl font-semibold transition-all duration-300 transform hover:scale-[1.01] shadow-lg hover:shadow-xl border border-white/10 backdrop-blur-sm text-white"
                       style={{ 
-                        background: 'linear-gradient(135deg, hsl(210, 75%, 75%) 0%, hsl(45, 65%, 75%) 30%, hsl(200, 80%, 70%) 70%, hsl(210, 75%, 75%) 100%)',
-                        borderImage: 'linear-gradient(45deg, hsl(45, 65%, 75%), hsl(210, 75%, 75%), hsl(200, 80%, 70%)) 1',
-                        borderColor: 'hsla(45, 65%, 75%, 0.4)',
-                        boxShadow: '0 0 40px hsla(210, 75%, 75%, 0.2), 0 0 80px hsla(45, 65%, 75%, 0.1), inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -1px 0 rgba(0,0,0,0.1)',
-                        textShadow: '0 2px 8px rgba(0,0,0,0.4), 0 0 20px rgba(255,255,255,0.1)'
+                        background: 'linear-gradient(135deg, hsl(220, 25%, 55%) 0%, hsl(220, 30%, 60%) 50%, hsl(220, 25%, 55%) 100%)',
+                        boxShadow: '0 4px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.1)',
+                        textShadow: '0 1px 2px rgba(0,0,0,0.3)'
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.background = 'linear-gradient(135deg, hsl(210, 75%, 82%) 0%, hsl(45, 65%, 82%) 30%, hsl(200, 80%, 77%) 70%, hsl(210, 75%, 82%) 100%)';
-                        e.currentTarget.style.boxShadow = '0 0 60px hsla(210, 75%, 75%, 0.3), 0 0 120px hsla(45, 65%, 75%, 0.15), inset 0 2px 0 rgba(255,255,255,0.25), inset 0 -1px 0 rgba(0,0,0,0.1)';
-                        e.currentTarget.style.textShadow = '0 2px 12px rgba(0,0,0,0.5), 0 0 30px rgba(255,255,255,0.15)';
+                        e.currentTarget.style.background = 'linear-gradient(135deg, hsl(220, 25%, 60%) 0%, hsl(220, 30%, 65%) 50%, hsl(220, 25%, 60%) 100%)';
+                        e.currentTarget.style.boxShadow = '0 6px 25px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.15)';
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.background = 'linear-gradient(135deg, hsl(210, 75%, 75%) 0%, hsl(45, 65%, 75%) 30%, hsl(200, 80%, 70%) 70%, hsl(210, 75%, 75%) 100%)';
-                        e.currentTarget.style.boxShadow = '0 0 40px hsla(210, 75%, 75%, 0.2), 0 0 80px hsla(45, 65%, 75%, 0.1), inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -1px 0 rgba(0,0,0,0.1)';
-                        e.currentTarget.style.textShadow = '0 2px 8px rgba(0,0,0,0.4), 0 0 20px rgba(255,255,255,0.1)';
+                        e.currentTarget.style.background = 'linear-gradient(135deg, hsl(220, 25%, 55%) 0%, hsl(220, 30%, 60%) 50%, hsl(220, 25%, 55%) 100%)';
+                        e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.1)';
                       }}
                     >
-                      <div className="relative flex items-center justify-center gap-6 py-2">
-                        {/* Decorative left elements */}
-                        <div className="flex items-center gap-2">
-                          <div className="relative">
-                            <Moon className="h-7 w-7 sm:h-8 sm:w-8 text-white/85 animate-pulse drop-shadow-lg" />
-                            <div className="absolute -top-1 -right-1">
-                              <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 text-white/70 animate-twinkle drop-shadow-md" />
-                            </div>
-                          </div>
-                          <div className="w-px h-8 bg-gradient-to-b from-transparent via-white/30 to-transparent"></div>
-                        </div>
-                        
-                        {/* Central content */}
-                        <div className="text-center flex-1 relative">
-                          {/* Subtle background glow for text */}
-                          <div className="absolute inset-0 rounded-2xl opacity-20"
-                               style={{ background: 'radial-gradient(ellipse at center, rgba(255,255,255,0.1) 0%, transparent 70%)' }}></div>
-                          
-                          <div className="relative text-white font-bold leading-tight text-xl sm:text-2xl lg:text-3xl tracking-wide"
-                               style={{ 
-                                 textShadow: '0 3px 12px rgba(0,0,0,0.5), 0 0 30px rgba(255,255,255,0.15), 0 1px 0 rgba(255,255,255,0.2)',
-                                 letterSpacing: '0.02em'
-                               }}>
-                            Transformar Meu Sono Agora
-                          </div>
-                          
-                          {/* Elegant underline */}
-                          <div className="mt-2 mx-auto w-20 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
-                        </div>
-                        
-                        {/* Decorative right elements */}
-                        <div className="flex items-center gap-2">
-                          <div className="w-px h-8 bg-gradient-to-b from-transparent via-white/30 to-transparent"></div>
-                          <div className="relative">
-                            <Heart className="h-7 w-7 sm:h-8 sm:w-8 text-white/85 animate-pulse drop-shadow-lg" style={{ animationDelay: '0.3s' }} />
-                            <div className="absolute -top-1 -left-1">
-                              <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 text-white/70 animate-twinkle drop-shadow-md" style={{ animationDelay: '0.7s' }} />
-                            </div>
-                          </div>
-                        </div>
-                        
-                        {/* Floating particles effect */}
-                        <div className="absolute inset-0 pointer-events-none">
-                          <div className="absolute top-2 left-1/4 w-1 h-1 bg-white/30 rounded-full animate-float" style={{ animationDelay: '0s' }}></div>
-                          <div className="absolute top-4 right-1/3 w-1 h-1 bg-white/25 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
-                          <div className="absolute bottom-3 left-1/3 w-0.5 h-0.5 bg-white/35 rounded-full animate-float" style={{ animationDelay: '4s' }}></div>
-                        </div>
+                      <div className="flex items-center justify-center gap-3">
+                        <Moon className="h-5 w-5 sm:h-6 sm:w-6 text-white/80" />
+                        <span className="text-white font-semibold">
+                          Transformar Meu Sono Agora
+                        </span>
+                        <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 text-white/70" />
                       </div>
                     </Button>
                   </div>
