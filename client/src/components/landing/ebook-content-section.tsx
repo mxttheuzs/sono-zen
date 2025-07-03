@@ -54,47 +54,7 @@ export function EbookContentSection() {
               </p>
             </div>
 
-            {/* Transformação - Versão Ultra Humanizada */}
-            <div className="text-center bg-gradient-to-br from-[var(--success-green)]/10 to-[var(--accent-blue)]/10 border border-[var(--success-green)]/30 rounded-2xl p-6 sm:p-8">
-              <h3 className="text-2xl sm:text-3xl font-bold text-[var(--text-primary)] mb-4">
-                💤 O Que Vai Acontecer Com Você
-              </h3>
-              <p className="text-[var(--text-muted)] mb-8 text-sm">
-                (Baseado no que nossos clientes mais relatam)
-              </p>
-              
-              <div className="max-w-3xl mx-auto space-y-6 text-[var(--text-secondary)]">
-                <div className="bg-[var(--celestial-blue)]/10 border border-[var(--celestial-blue)]/30 rounded-xl p-4 text-left">
-                  <p className="text-lg leading-relaxed">
-                    <strong className="text-[var(--celestial-blue)]">Primeira noite:</strong> "Nossa, consegui relaxar mesmo! Minha mente parou de acelerar na hora de dormir. Foi como se alguém tivesse baixado o volume dos meus pensamentos."
-                  </p>
-                </div>
-                
-                <div className="bg-[var(--sky-blue)]/10 border border-[var(--sky-blue)]/30 rounded-xl p-4 text-left">
-                  <p className="text-lg leading-relaxed">
-                    <strong className="text-[var(--sky-blue)]">Terceira noite:</strong> "Gente, eu dormi! Pela primeira vez em MESES eu não fiquei rolando na cama. Foi tão gostoso sentir meu corpo 'derretendo' no colchão."
-                  </p>
-                </div>
-                
-                <div className="bg-[var(--mint-green)]/10 border border-[var(--mint-green)]/30 rounded-xl p-4 text-left">
-                  <p className="text-lg leading-relaxed">
-                    <strong className="text-[var(--mint-green)]">Sétima noite:</strong> "Isso virou automático! Meu corpo já 'sabe' quando é hora de dormir. É como se eu tivesse encontrado meu ritual sagrado. Durmo como criança agora."
-                  </p>
-                </div>
-              </div>
 
-              <div className="mt-8 p-6 bg-gradient-to-r from-[var(--mint-green)]/15 to-[var(--celestial-blue)]/15 rounded-xl border border-[var(--celestial-blue)]/40">
-                <p className="text-xl font-semibold text-[var(--cloud-white)] mb-3">
-                  🤗 E sabe o melhor de tudo?
-                </p>
-                <p className="text-[var(--text-secondary)] text-lg leading-relaxed">
-                  Você vai acordar descansado de verdade. Aquela sensação gostosa de "dormi que nem um bebê". Seus dias vão ficar mais leves, sua paciência vai voltar, e as pessoas vão até comentar que você está com uma cara melhor.
-                </p>
-                <p className="text-[var(--celestial-blue)] font-medium mt-4 text-sm">
-                  Mais de 12.000 pessoas já viveram essa transformação. Sua vez chegou! 💙
-                </p>
-              </div>
-            </div>
 
           </div>
         </div>
