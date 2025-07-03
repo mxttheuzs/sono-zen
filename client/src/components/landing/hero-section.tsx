@@ -106,7 +106,7 @@ export function HeroSection() {
               </div>
               <div className="flex items-center gap-2 bg-[var(--warm-accent)]/10 border border-[var(--warm-accent)]/30 px-4 py-2 rounded-full">
                 <Star className="h-5 w-5 text-[var(--warm-accent)] fill-current" />
-                <span className="text-sm font-semibold text-[var(--warm-accent)]">12.083 Vidas Transformadas</span>
+                <span className="text-sm font-semibold text-[var(--warm-accent)]">14.847 Vidas Transformadas</span>
               </div>
             </div>
 
@@ -127,7 +127,7 @@ export function HeroSection() {
                     ✨ <span className="text-[var(--warm-accent)]">Preço de lançamento:</span> Apenas hoje
                   </p>
                   <p className="text-[var(--text-secondary)] text-base mb-3 font-medium">
-                    14.847 pessoas já transformaram suas noites
+                    14.847 vidas transformadas
                   </p>
                   <div className="flex flex-wrap items-center gap-4">
                     <div className="flex items-center gap-2">

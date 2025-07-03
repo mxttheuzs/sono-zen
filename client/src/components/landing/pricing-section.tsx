@@ -367,7 +367,7 @@ export function PricingSection() {
                       </span>
                     </p>
                     <p className="text-sm text-[var(--text-secondary)]">
-                      Mais de 14.847 pessoas já transformaram suas noites
+                      Mais de 14.847 vidas transformadas
                     </p>
                   </div>
                   

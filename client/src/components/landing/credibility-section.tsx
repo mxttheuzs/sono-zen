@@ -4,7 +4,7 @@ export function CredibilitySection() {
   const credibilityItems = [
     {
       icon: Users,
-      number: "12.847+",
+      number: "14.847+",
       label: "Vidas Transformadas",
       description: "Pessoas que já conquistaram o sono perfeito"
     },
