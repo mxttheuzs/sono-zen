@@ -33,8 +33,10 @@ export function ProblemSection() {
         </div>
         
         <div className="text-center mb-12">
-          <h3 className="font-heading text-2xl font-bold text-[var(--text-primary)] mb-4">
-            Talvez Você Também Passe Por Essas Situações...
+          <h3 className="font-heading text-2xl font-bold mb-4">
+            <span className="bg-gradient-to-r from-[var(--warm-accent)] via-[var(--accent-blue)] to-[var(--celestial-blue)] bg-clip-text text-transparent">
+              Talvez Você Também Passe Por Essas Situações...
+            </span>
           </h3>
           <p className="text-[var(--text-secondary)] max-w-2xl mx-auto">
             São coisas do dia a dia que, sem perceber, sabotam completamente nossa noite de sono:
@@ -102,8 +104,10 @@ export function ProblemSection() {
         {/* Mensagem de esperança */}
         <div className="text-center mt-16">
           <div className="max-w-3xl mx-auto bg-gradient-to-r from-[var(--success-green)]/10 to-[var(--accent-blue)]/10 border border-[var(--success-green)]/30 rounded-2xl p-6 sm:p-8">
-            <h3 className="text-xl font-semibold text-[var(--text-primary)] mb-4">
-              Se você se reconheceu em alguma dessas situações...
+            <h3 className="text-xl font-semibold mb-4">
+              <span className="bg-gradient-to-r from-[var(--warm-accent)] via-[var(--accent-blue)] to-[var(--celestial-blue)] bg-clip-text text-transparent">
+                Se você se reconheceu em alguma dessas situações...
+              </span>
             </h3>
             <p className="text-[var(--text-secondary)] leading-relaxed mb-4">
               Saiba que não há nada de errado com você. Esses são problemas do mundo moderno, não defeitos seus.

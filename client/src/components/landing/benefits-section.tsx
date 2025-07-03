@@ -72,8 +72,10 @@ export function BenefitsSection() {
         </div>
         
         <div className="text-center mb-12 mt-16">
-          <h3 className="font-heading text-2xl font-bold text-[var(--text-primary)] mb-4">
-            O Que Você Vai Conquistar
+          <h3 className="font-heading text-2xl font-bold mb-4">
+            <span className="bg-gradient-to-r from-[var(--warm-accent)] via-[var(--accent-blue)] to-[var(--celestial-blue)] bg-clip-text text-transparent">
+              O Que Você Vai Conquistar
+            </span>
           </h3>
           <p className="text-[var(--text-secondary)] max-w-2xl mx-auto">
             Estes são os resultados que as pessoas relatam após seguir o método:
