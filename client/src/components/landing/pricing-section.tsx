@@ -365,7 +365,7 @@ export function PricingSection() {
                     
                     <Button 
                       onClick={handlePurchaseClick}
-                      className="relative w-full bg-gradient-to-br from-slate-600/80 via-slate-500/70 to-slate-600/80 hover:from-slate-500/85 hover:via-slate-400/75 hover:to-slate-500/85 text-white py-6 sm:py-8 px-8 sm:px-12 rounded-3xl text-lg sm:text-2xl font-bold transition-all duration-500 transform hover:scale-[1.02] shadow-xl hover:shadow-2xl border-2 border-white/10 backdrop-blur-sm"
+                      className="relative w-full bg-gradient-to-br from-slate-600/80 via-slate-500/70 to-slate-600/80 hover:from-slate-500/85 hover:via-slate-400/75 hover:to-slate-500/85 text-white py-7 sm:py-9 px-6 sm:px-10 rounded-3xl text-lg sm:text-2xl font-bold transition-all duration-500 transform hover:scale-[1.02] shadow-xl hover:shadow-2xl border-2 border-white/15 backdrop-blur-sm"
                       style={{ 
                         boxShadow: '0 0 20px rgba(255,255,255,0.05), inset 0 1px 0 rgba(255,255,255,0.1)',
                         textShadow: '0 1px 3px rgba(0,0,0,0.4)'
@@ -376,12 +376,12 @@ export function PricingSection() {
                           <Moon className="h-6 w-6 sm:h-7 sm:w-7 text-white/70 animate-pulse" />
                           <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 text-white/50 ml-1 animate-twinkle" />
                         </div>
-                        <div className="text-center">
-                          <div className="text-white/95 font-bold leading-tight">
+                        <div className="text-center flex-1">
+                          <div className="text-white/95 font-bold leading-tight text-xl sm:text-2xl">
                             Transformar Meu Sono Agora
                           </div>
-                          <div className="text-xs sm:text-sm text-white/70 font-medium mt-1">
-                            💫 Acesso instantâneo • Método completo
+                          <div className="text-sm sm:text-base text-white/60 font-medium mt-2 tracking-wide">
+                            Sua jornada para noites tranquilas começa aqui
                           </div>
                         </div>
                         <div className="flex items-center">
