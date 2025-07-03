@@ -6,7 +6,6 @@ export function MethodSection() {
     <section id="metodo" className="py-1 bg-black relative overflow-hidden">
       {/* Floating clouds for peaceful atmosphere */}
       <FloatingClouds className="opacity-30" />
-      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left content */}
@@ -14,7 +13,7 @@ export function MethodSection() {
 
 
             <div className="space-y-6">
-              <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-[var(--text-primary)] leading-tight">
+              <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-[var(--text-primary)] leading-tight mt-[20px] mb-[20px]">
                 Transforme Sua Noite em um
                 <span className="block bg-gradient-to-r from-[var(--warm-accent)] via-[var(--accent-blue)] to-[var(--celestial-blue)] bg-clip-text text-transparent">
                   Momento Sagrado
