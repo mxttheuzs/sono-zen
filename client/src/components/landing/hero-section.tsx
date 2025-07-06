@@ -30,23 +30,19 @@ export function HeroSection() {
           backgroundSize: '50px 50px'
         }}></div>
       </div>
-      
       {/* Starry night background */}
       <StarryBackground />
-      
       {/* Floating clouds for peaceful atmosphere */}
       <FloatingClouds />
-      
       {/* Subtle floating particles */}
       <FloatingParticles className="opacity-60" />
-      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
         {/* Left content */}
         <div className="text-left space-y-8">
 
 
           <div className="space-y-6">
-            <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl font-bold text-[var(--text-primary)] leading-tight">
+            <h1 className="font-heading sm:text-5xl md:text-7xl font-bold text-[var(--text-primary)] text-[40px]">
               Durma Como um Bebê
               <span className="block bg-gradient-to-r from-[var(--warm-accent)] via-[var(--accent-blue)] to-[var(--warm-accent)] bg-clip-text text-transparent">
                 em Apenas 7 Noites
