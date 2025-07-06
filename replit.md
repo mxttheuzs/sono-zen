@@ -169,6 +169,7 @@ Changelog:
 - July 6, 2025. UTMify pixel integration and Facebook token configuration: Updated UTMify tracking script to use new pixel ID (6869f1ff4dc8df3814d7e2fa), then reverted to original UTMify script per user request. Configured Facebook Access Token for Conversions API functionality. Updated Facebook Pixel ID to 4659614774264856 across all tracking implementations (frontend, backend, noscript). Removed DevTools protection system to eliminate console warnings and allow development access.
 - July 6, 2025. Hero section CTA update: Changed main call-to-action button from "DORMIR MELHOR!" to "SAIBA MAIS" and updated scroll target from pricing section to problem section ("Eu Sei Como Você Se Sente..."). This creates a more informational, educational flow instead of direct conversion pressure.
 - July 6, 2025. Facebook Pixel ID final update: Changed Facebook Pixel ID from 4659614774264856 to 1115446710644058 across all tracking implementations (frontend pixel, backend Conversions API, and noscript fallback).
+- July 6, 2025. Urgency counter removal: Removed "273 pessoas adquiriram nas últimas 24h" counter from hero section for cleaner presentation without aggressive urgency tactics.
 
 ## User Preferences
 

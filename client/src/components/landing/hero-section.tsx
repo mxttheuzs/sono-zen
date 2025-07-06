@@ -141,12 +141,7 @@ export function HeroSection() {
                     </div>
                   </div>
                   
-                  {/* Compact urgency */}
-                  <div className="bg-[var(--warm-accent)]/10 border border-[var(--warm-accent)]/30 rounded-xl p-2">
-                    <p className="text-[var(--warm-accent)] text-sm font-medium" style={{ textShadow: '0 0 6px rgba(255,255,255,0.15)' }}>
-                      🌙 273 pessoas adquiriram nas últimas 24h
-                    </p>
-                  </div>
+
                 </div>
               </div>
             </div>
