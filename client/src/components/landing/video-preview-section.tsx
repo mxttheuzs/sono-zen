@@ -48,7 +48,7 @@ export function VideoPreviewSection() {
           {/* Video wrapper with blur overlay */}
           <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-[var(--card-bg)] to-[var(--card-bg)]/80 border border-[var(--border-subtle)]">
             
-            {/* Real video with blur effect */}
+            {/* Video with blur effect already applied in the source */}
             <div className="relative aspect-video bg-black rounded-xl overflow-hidden">
               {/* Video element */}
               <video 
@@ -58,36 +58,17 @@ export function VideoPreviewSection() {
                 muted
                 playsInline
                 preload="auto"
-                style={{ filter: 'blur(4px)' }}
+                controls
               >
                 <source src={previewVideo} type="video/mp4" />
                 Seu navegador não suporta vídeo HTML5.
               </video>
               
-              {/* Blur overlay with content */}
-              <div className="absolute inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center">
-                <div className="text-center space-y-4">
-                  {/* Play overlay */}
-                  <div className="relative group cursor-pointer" onClick={scrollToCheckout}>
-                    <div className="absolute -inset-4 bg-white/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-300"></div>
-                    <div className="relative w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30 group-hover:scale-110 transition-all duration-300">
-                      <Play className="h-8 w-8 text-white ml-1" fill="currentColor" />
-                    </div>
-                  </div>
-                  
-                  {/* Preview text */}
-                  <div className="bg-black/70 backdrop-blur-sm rounded-xl p-4 max-w-md">
-                    <p className="text-white font-semibold text-lg mb-1">Preview do Conteúdo</p>
-                    <p className="text-white/90 text-sm">Ebook interativo em execução - Acesso completo após compra</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Lock overlay */}
-              <div className="absolute top-4 right-4">
-                <div className="bg-black/70 backdrop-blur-sm rounded-lg p-3 flex items-center gap-2">
-                  <Lock className="h-4 w-4 text-white" />
-                  <span className="text-white text-sm font-medium">Conteúdo Protegido</span>
+              {/* Small preview indicator */}
+              <div className="absolute top-4 left-4">
+                <div className="bg-black/70 backdrop-blur-sm rounded-lg p-2 flex items-center gap-2">
+                  <Eye className="h-4 w-4 text-[var(--accent-blue)]" />
+                  <span className="text-white text-sm font-medium">Preview do Ebook</span>
                 </div>
               </div>
             </div>
@@ -124,10 +105,10 @@ export function VideoPreviewSection() {
           <div className="text-center mt-12">
             <div className="bg-gradient-to-r from-[var(--warm-accent)]/10 to-[var(--accent-blue)]/10 border border-[var(--warm-accent)]/30 rounded-2xl p-6 sm:p-8 max-w-2xl mx-auto">
               <p className="text-[var(--text-secondary)] mb-4">
-                O vídeo acima mostra em <strong>tempo real como funciona o ebook interativo</strong>, mas com efeito blur por proteção. Você pode ver a navegação, os recursos e a experiência completa.
+                Este vídeo mostra <strong>exatamente como funciona o ebook interativo</strong> que você vai receber. Pode assistir quantas vezes quiser para conhecer o conteúdo e a experiência.
               </p>
               <p className="text-[var(--text-primary)] font-semibold mb-6">
-                Após a compra, você terá acesso a essa mesma experiência sem blur e com todos os recursos desbloqueados!
+                Após a compra, você terá acesso à versão completa sem blur com todos os recursos desbloqueados!
               </p>
               
               <Button 
