@@ -113,10 +113,12 @@ export function VideoPreviewSection() {
               
               <Button 
                 onClick={scrollToCheckout}
-                className="bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] text-white px-8 py-4 rounded-xl text-lg font-semibold hover:shadow-2xl hover:shadow-[var(--warm-accent)]/25 transition-all duration-300 transform hover:scale-105"
+                className="w-full sm:w-auto bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] text-white px-4 sm:px-8 py-3 sm:py-4 rounded-xl text-base sm:text-lg font-semibold hover:shadow-2xl hover:shadow-[var(--warm-accent)]/25 transition-all duration-300 transform hover:scale-105"
               >
-                <Lock className="mr-2 h-5 w-5" />
-                Desbloquear Acesso Completo
+                <Lock className="mr-2 h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
+                <span className="text-sm sm:text-base leading-tight">
+                  Desbloquear Acesso Completo
+                </span>
               </Button>
             </div>
           </div>
