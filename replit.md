@@ -171,6 +171,7 @@ Changelog:
 - July 6, 2025. Facebook Pixel ID final update: Changed Facebook Pixel ID from 4659614774264856 to 1115446710644058 across all tracking implementations (frontend pixel, backend Conversions API, and noscript fallback).
 - July 6, 2025. Urgency counter removal: Removed "273 pessoas adquiriram nas últimas 24h" counter from hero section for cleaner presentation without aggressive urgency tactics.
 - July 6, 2025. Custom favicon implementation: Added custom moon-themed favicon to replace default browser icon. Created SVG favicon with dark background and moon phases design that aligns with sleep wellness theme.
+- July 7, 2025. Video preview section implementation: Created new VideoPreviewSection component showcasing the interactive web app with blur effect overlay. Features preview badge, video container with play button, protective blur overlay, feature cards highlighting web app benefits (mobile compatibility, integrated audio, intuitive interface), and CTA button directing to pricing. Added navigation links for both desktop and mobile menus. Positioned strategically between method and ebook content sections.
 
 ## User Preferences
 

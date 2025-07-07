@@ -3,6 +3,7 @@ import { Navigation } from "@/components/landing/navigation";
 import { HeroSection } from "@/components/landing/hero-section";
 import { ProblemSection } from "@/components/landing/problem-section";
 import { MethodSection } from "@/components/landing/method-section";
+import { VideoPreviewSection } from "@/components/landing/video-preview-section";
 import { EbookContentSection } from "@/components/landing/ebook-content-section";
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
 import { SleepComfortQuiz } from "@/components/quiz/sleep-comfort-quiz";
@@ -48,6 +49,7 @@ export default function Home() {
         <HeroSection />
         <ProblemSection />
         <MethodSection />
+        <VideoPreviewSection />
         <EbookContentSection />
         <TestimonialsSection />
         <SleepComfortQuiz />
