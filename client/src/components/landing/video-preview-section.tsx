@@ -105,7 +105,7 @@ export function VideoPreviewSection() {
           <div className="text-center mt-12">
             <div className="bg-gradient-to-r from-[var(--warm-accent)]/10 to-[var(--accent-blue)]/10 border border-[var(--warm-accent)]/30 rounded-2xl p-6 sm:p-8 max-w-2xl mx-auto">
               <p className="text-[var(--text-secondary)] mb-4">
-                Este vídeo mostra <strong>exatamente como funciona o webapp interativo</strong> que você vai receber. Pode assistir quantas vezes quiser para conhecer o conteúdo e a experiência.
+                Este vídeo mostra <strong>exatamente como funciona o Web App interativo</strong> que você vai receber. Pode assistir quantas vezes quiser para conhecer o conteúdo e a experiência.
               </p>
               <p className="text-[var(--text-primary)] font-semibold mb-6">
                 Após a compra, você terá acesso à versão completa sem blur com todos os recursos desbloqueados!
