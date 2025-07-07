@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Play, Lock, Eye, Smartphone } from "lucide-react";
 import { FloatingClouds } from "@/components/ui/floating-clouds";
+import previewVideo from "@assets/0706(1)_1751855906942.mp4";
 
 export function VideoPreviewSection() {
   const scrollToCheckout = () => {
@@ -47,17 +48,24 @@ export function VideoPreviewSection() {
           {/* Video wrapper with blur overlay */}
           <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-[var(--card-bg)] to-[var(--card-bg)]/80 border border-[var(--border-subtle)]">
             
-            {/* Video placeholder with blur effect */}
-            <div className="relative aspect-video bg-gradient-to-br from-slate-800 to-slate-900">
-              {/* Blurred content simulation */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-purple-900/20 blur-sm">
-                <div className="w-full h-full bg-gradient-to-r from-[var(--accent-blue)]/10 to-[var(--warm-accent)]/10"></div>
-              </div>
+            {/* Real video with blur effect */}
+            <div className="relative aspect-video bg-black rounded-xl overflow-hidden">
+              {/* Video element */}
+              <video 
+                className="w-full h-full object-cover"
+                poster="" 
+                controls
+                preload="metadata"
+                style={{ filter: 'blur(4px)' }}
+              >
+                <source src={previewVideo} type="video/mp4" />
+                Seu navegador não suporta vídeo HTML5.
+              </video>
               
-              {/* Content overlay showing it's interactive */}
-              <div className="absolute inset-0 flex items-center justify-center">
+              {/* Blur overlay with content */}
+              <div className="absolute inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center">
                 <div className="text-center space-y-4">
-                  {/* Play button */}
+                  {/* Play overlay */}
                   <div className="relative group cursor-pointer" onClick={scrollToCheckout}>
                     <div className="absolute -inset-4 bg-white/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-300"></div>
                     <div className="relative w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30 group-hover:scale-110 transition-all duration-300">
@@ -66,16 +74,16 @@ export function VideoPreviewSection() {
                   </div>
                   
                   {/* Preview text */}
-                  <div className="bg-black/50 backdrop-blur-sm rounded-xl p-4 max-w-md">
+                  <div className="bg-black/70 backdrop-blur-sm rounded-xl p-4 max-w-md">
                     <p className="text-white font-semibold text-lg mb-1">Preview do Web App</p>
-                    <p className="text-white/80 text-sm">Conteúdo protegido - Acesso completo após compra</p>
+                    <p className="text-white/90 text-sm">Vídeo com blur - Acesso completo após compra</p>
                   </div>
                 </div>
               </div>
 
               {/* Lock overlay */}
               <div className="absolute top-4 right-4">
-                <div className="bg-black/60 backdrop-blur-sm rounded-lg p-3 flex items-center gap-2">
+                <div className="bg-black/70 backdrop-blur-sm rounded-lg p-3 flex items-center gap-2">
                   <Lock className="h-4 w-4 text-white" />
                   <span className="text-white text-sm font-medium">Conteúdo Protegido</span>
                 </div>
@@ -114,10 +122,10 @@ export function VideoPreviewSection() {
           <div className="text-center mt-12">
             <div className="bg-gradient-to-r from-[var(--warm-accent)]/10 to-[var(--accent-blue)]/10 border border-[var(--warm-accent)]/30 rounded-2xl p-6 sm:p-8 max-w-2xl mx-auto">
               <p className="text-[var(--text-secondary)] mb-4">
-                Este é apenas um <strong>preview com blur</strong> para você ter uma ideia do que encontrará dentro da plataforma.
+                Este vídeo mostra um <strong>preview com efeito blur</strong> do web app interativo do Sono Zen para você ter uma ideia de como funciona a plataforma.
               </p>
               <p className="text-[var(--text-primary)] font-semibold mb-6">
-                O acesso completo e sem restrições estará disponível imediatamente após sua compra!
+                Após a compra, você terá acesso completo e sem restrições a todos os recursos!
               </p>
               
               <Button 
