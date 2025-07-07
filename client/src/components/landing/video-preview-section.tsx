@@ -39,7 +39,7 @@ export function VideoPreviewSection() {
           </h2>
           
           <p className="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed max-w-3xl mx-auto">
-            Veja o <strong>ebook interativo em ação</strong> - este vídeo mostra como funciona a plataforma que vai guiar você em cada passo da sua transformação do sono
+            Veja o <strong>Web App interativo em ação</strong> - este vídeo mostra como funciona a plataforma que vai guiar você em cada passo da sua transformação do sono
           </p>
         </div>
 
