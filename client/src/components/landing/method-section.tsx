@@ -30,7 +30,7 @@ export function MethodSection() {
               </div>
             </div>
             
-            <div className="space-y-10 mt-[34px] mb-[34px]">
+            <div className="space-y-10 mt-[33px] mb-[33px]">
               <div className="bg-[var(--celestial-blue)]/10 border-l-4 border-[var(--celestial-blue)] rounded-r-xl p-4">
                 <p className="text-[var(--text-secondary)] text-base leading-relaxed">
                   <strong className="text-[var(--celestial-blue)]">Imagine:</strong> Em vez de rolar na cama por horas, você faz uma sequência simples de 15 minutos que prepara seu corpo e mente. Quando você deita, seu cérebro já sabe: "agora é hora de descansar".
