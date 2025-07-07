@@ -39,7 +39,7 @@ export function VideoPreviewSection() {
           </h2>
           
           <p className="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed max-w-3xl mx-auto">
-            Descubra como funciona nossa <strong>plataforma web interativa</strong> que vai guiar você em cada passo da sua transformação do sono
+            Veja o <strong>ebook interativo em ação</strong> - este vídeo mostra como funciona a plataforma que vai guiar você em cada passo da sua transformação do sono
           </p>
         </div>
 
@@ -53,9 +53,11 @@ export function VideoPreviewSection() {
               {/* Video element */}
               <video 
                 className="w-full h-full object-cover"
-                poster="" 
-                controls
-                preload="metadata"
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
                 style={{ filter: 'blur(4px)' }}
               >
                 <source src={previewVideo} type="video/mp4" />
@@ -75,8 +77,8 @@ export function VideoPreviewSection() {
                   
                   {/* Preview text */}
                   <div className="bg-black/70 backdrop-blur-sm rounded-xl p-4 max-w-md">
-                    <p className="text-white font-semibold text-lg mb-1">Preview do Web App</p>
-                    <p className="text-white/90 text-sm">Vídeo com blur - Acesso completo após compra</p>
+                    <p className="text-white font-semibold text-lg mb-1">Preview do Conteúdo</p>
+                    <p className="text-white/90 text-sm">Ebook interativo em execução - Acesso completo após compra</p>
                   </div>
                 </div>
               </div>
@@ -122,10 +124,10 @@ export function VideoPreviewSection() {
           <div className="text-center mt-12">
             <div className="bg-gradient-to-r from-[var(--warm-accent)]/10 to-[var(--accent-blue)]/10 border border-[var(--warm-accent)]/30 rounded-2xl p-6 sm:p-8 max-w-2xl mx-auto">
               <p className="text-[var(--text-secondary)] mb-4">
-                Este vídeo mostra um <strong>preview com efeito blur</strong> do web app interativo do Sono Zen para você ter uma ideia de como funciona a plataforma.
+                O vídeo acima mostra em <strong>tempo real como funciona o ebook interativo</strong>, mas com efeito blur por proteção. Você pode ver a navegação, os recursos e a experiência completa.
               </p>
               <p className="text-[var(--text-primary)] font-semibold mb-6">
-                Após a compra, você terá acesso completo e sem restrições a todos os recursos!
+                Após a compra, você terá acesso a essa mesma experiência sem blur e com todos os recursos desbloqueados!
               </p>
               
               <Button 
