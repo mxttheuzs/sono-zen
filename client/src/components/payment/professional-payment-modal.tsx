@@ -6,7 +6,7 @@ import { Label } from '@/components/ui/label';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Moon, Copy, CheckCircle, Clock, CreditCard, Shield, Zap, QrCode, FileText, Star, Lock, Sparkles, Users, Phone, Mail, User } from 'lucide-react';
+import { Moon, Copy, CheckCircle, Clock, CreditCard, Shield, Zap, QrCode, FileText, Star, Lock, Sparkles, Users, Phone, Mail, User, X, RefreshCw } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import QRCode from 'qrcode';
 
@@ -66,6 +66,7 @@ export default function ProfessionalPaymentModal({ isOpen, onClose }: Profession
   const [error, setError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
   const [qrCodeImage, setQrCodeImage] = useState<string | null>(null);
+  const [checkingPayment, setCheckingPayment] = useState(false);
   const { toast } = useToast();
 
   // Generate QR Code when PIX payload is available
@@ -74,6 +75,30 @@ export default function ProfessionalPaymentModal({ isOpen, onClose }: Profession
       generateQRCode(transaction.pix.payload);
     }
   }, [transaction]);
+
+  // Auto-check payment status every 10 seconds when transaction is active
+  useEffect(() => {
+    if (!transaction?.id || step !== 'payment') return;
+
+    const interval = setInterval(async () => {
+      try {
+        const response = await fetch(`/api/lira-payment/transaction/${transaction.id}`);
+        const result = await response.json();
+        
+        if (result.success && result.transaction?.status === 'PAID') {
+          toast({
+            title: "Pagamento confirmado automaticamente!",
+            description: "Produto 717c2192-d50e-4f36-9fc3-d7eb9a1d22d7 sendo entregue no seu email.",
+          });
+          onClose();
+        }
+      } catch (error) {
+        console.log('Auto-check failed:', error);
+      }
+    }, 10000); // Check every 10 seconds
+
+    return () => clearInterval(interval);
+  }, [transaction?.id, step, onClose, toast]);
 
   const generateQRCode = async (payload: string) => {
     try {
@@ -202,6 +227,37 @@ export default function ProfessionalPaymentModal({ isOpen, onClose }: Profession
     setTimeout(() => setCopied(false), 3000);
   };
 
+  const checkPaymentStatus = async () => {
+    if (!transaction?.id) return;
+    
+    setCheckingPayment(true);
+    try {
+      const response = await fetch(`/api/lira-payment/transaction/${transaction.id}`);
+      const result = await response.json();
+      
+      if (result.success && result.transaction?.status === 'PAID') {
+        toast({
+          title: "Pagamento confirmado!",
+          description: "Produto 717c2192-d50e-4f36-9fc3-d7eb9a1d22d7 será entregue automaticamente no seu email.",
+        });
+        onClose();
+      } else {
+        toast({
+          title: "Pagamento pendente",
+          description: "O pagamento ainda não foi processado. Aguarde alguns instantes.",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Erro ao verificar pagamento",
+        description: "Tente novamente em alguns instantes.",
+        variant: "destructive"
+      });
+    } finally {
+      setCheckingPayment(false);
+    }
+  };
+
   if (step === 'processing') {
     return (
       <Dialog open={isOpen} onOpenChange={onClose}>
@@ -301,6 +357,35 @@ export default function ProfessionalPaymentModal({ isOpen, onClose }: Profession
               <p className="text-sm text-yellow-300">
                 Após o pagamento, você receberá o acesso por email em até 5 minutos.
               </p>
+            </div>
+
+            {/* Payment Actions */}
+            <div className="flex gap-2 pt-4">
+              <Button
+                variant="outline"
+                onClick={onClose}
+                className="flex-1 border-red-500/50 text-red-400 hover:bg-red-500/10"
+              >
+                <X className="w-4 h-4 mr-2" />
+                Fechar
+              </Button>
+              <Button
+                onClick={checkPaymentStatus}
+                disabled={checkingPayment}
+                className="flex-1 bg-accent-blue hover:bg-accent-blue/90"
+              >
+                {checkingPayment ? (
+                  <>
+                    <RefreshCw className="w-4 h-4 mr-2 animate-spin" />
+                    Verificando...
+                  </>
+                ) : (
+                  <>
+                    <RefreshCw className="w-4 h-4 mr-2" />
+                    Verificar Pagamento
+                  </>
+                )}
+              </Button>
             </div>
           </div>
         </DialogContent>

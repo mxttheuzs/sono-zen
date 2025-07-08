@@ -99,6 +99,7 @@ const createDeliveryEmailHTML = (data: EmailData) => `
 
 // Product delivery service
 export class ProductDeliveryService {
+  private static productId = "717c2192-d50e-4f36-9fc3-d7eb9a1d22d7"; // Sono Zen - Método Oriental
   private static productDownloadLink = "https://drive.google.com/file/d/1751948184816-beb814d4/view"; // Sono Zen - Método Oriental
   
   static async sendProductDelivery(transaction: Transaction, customerName: string, customerEmail: string) {
@@ -118,6 +119,7 @@ export class ProductDeliveryService {
       console.log('📧 Para:', emailData.to);
       console.log('👤 Cliente:', emailData.customerName);
       console.log('🆔 Transação:', emailData.transactionId);
+      console.log('🆔 Produto ID:', this.productId);
       console.log('📦 Produto:', emailData.productName);
       console.log('🔗 Link de Download:', emailData.downloadLink);
       
@@ -138,6 +140,7 @@ export class ProductDeliveryService {
         success: true,
         message: 'Produto entregue com sucesso',
         emailSent: true,
+        productId: this.productId,
         downloadLink: emailData.downloadLink
       };
       
