@@ -13,6 +13,7 @@ import { trackInitiateCheckout, trackAddPaymentInfo, trackPurchase } from "@/lib
 import { Shield, Lock, Star, Cloud, CheckCircle, Download, Clock, Users, Gift, Moon, Sparkles, Heart } from "lucide-react";
 import { FloatingClouds } from "@/components/ui/floating-clouds";
 import { PixPaymentModal } from "@/components/payment/pix-payment-modal";
+import LirapayCheckout from "@/components/payment/lirapay-checkout";
 import { z } from "zod";
 
 const purchaseFormSchema = insertPurchaseSchema.extend({
@@ -88,6 +89,7 @@ function RedirectModal({ onRedirect }: RedirectModalProps) {
 }
 
 export function PricingSection() {
+  const [showLirapayCheckout, setShowLirapayCheckout] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const [showRedirectModal, setShowRedirectModal] = useState(false);
   const [showPixModal, setShowPixModal] = useState(false);
@@ -169,8 +171,15 @@ export function PricingSection() {
   };
 
   const handlePurchaseClick = () => {
-    // Apenas abrir o modal - não enviar eventos ainda
-    setShowRedirectModal(true);
+    // Tracking de iniciação de checkout
+    trackInitiateCheckout({
+      content_name: 'Sono Zen - Método Completo',
+      content_category: 'E-book',
+      value: 27.90,
+      currency: 'BRL'
+    });
+    
+    setShowLirapayCheckout(true);
   };
 
   const handleConfirmRedirect = () => {
@@ -588,6 +597,12 @@ export function PricingSection() {
         isOpen={showPixModal}
         onClose={() => setShowPixModal(false)}
         transaction={currentTransaction}
+      />
+
+      {/* Lirapay Checkout Modal */}
+      <LirapayCheckout
+        isOpen={showLirapayCheckout}
+        onClose={() => setShowLirapayCheckout(false)}
       />
     </>
   );
