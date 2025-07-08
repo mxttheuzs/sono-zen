@@ -14,6 +14,8 @@ export interface IStorage {
   createPurchase(purchase: InsertPurchase): Promise<Purchase>;
   getPurchases(): Promise<Purchase[]>;
   updatePurchaseStatus(id: number, status: string): Promise<Purchase | undefined>;
+  getPurchaseByExternalId(externalId: string): Promise<Purchase | undefined>;
+  updatePurchaseByExternalId(externalId: string, updates: Partial<Purchase>): Promise<Purchase | undefined>;
 }
 
 export class MemStorage implements IStorage {
@@ -87,6 +89,25 @@ export class MemStorage implements IStorage {
     const purchase = this.purchases.get(id);
     if (purchase) {
       const updatedPurchase = { ...purchase, status };
+      this.purchases.set(id, updatedPurchase);
+      return updatedPurchase;
+    }
+    return undefined;
+  }
+
+  async getPurchaseByExternalId(externalId: string): Promise<Purchase | undefined> {
+    return Array.from(this.purchases.values()).find(
+      (purchase) => purchase.externalId === externalId,
+    );
+  }
+
+  async updatePurchaseByExternalId(externalId: string, updates: Partial<Purchase>): Promise<Purchase | undefined> {
+    const purchases = Array.from(this.purchases.entries());
+    const purchaseEntry = purchases.find(([_, purchase]) => purchase.externalId === externalId);
+    
+    if (purchaseEntry) {
+      const [id, purchase] = purchaseEntry;
+      const updatedPurchase = { ...purchase, ...updates };
       this.purchases.set(id, updatedPurchase);
       return updatedPurchase;
     }

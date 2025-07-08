@@ -12,6 +12,7 @@ import { apiRequest } from "@/lib/queryClient";
 import { trackInitiateCheckout, trackAddPaymentInfo, trackPurchase } from "@/lib/conversion-tracking";
 import { Shield, Lock, Star, Cloud, CheckCircle, Download, Clock, Users, Gift, Moon, Sparkles, Heart } from "lucide-react";
 import { FloatingClouds } from "@/components/ui/floating-clouds";
+import { PixPaymentModal } from "@/components/payment/pix-payment-modal";
 import { z } from "zod";
 
 const purchaseFormSchema = insertPurchaseSchema.extend({
@@ -89,6 +90,8 @@ function RedirectModal({ onRedirect }: RedirectModalProps) {
 export function PricingSection() {
   const [showForm, setShowForm] = useState(false);
   const [showRedirectModal, setShowRedirectModal] = useState(false);
+  const [showPixModal, setShowPixModal] = useState(false);
+  const [currentTransaction, setCurrentTransaction] = useState<any>(null);
   const { toast } = useToast();
   
   const form = useForm<PurchaseFormData>({
@@ -103,9 +106,22 @@ export function PricingSection() {
 
   const purchaseMutation = useMutation({
     mutationFn: async (data: PurchaseFormData) => {
-      return apiRequest('POST', '/api/purchases', data);
+      const transactionData = {
+        external_id: `sono-zen-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+        total_amount: 27.90,
+        payment_method: "PIX",
+        customer: {
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          document: "", // Optional
+          document_type: "CPF" // Optional
+        }
+      };
+      
+      return apiRequest('POST', '/api/lira-payment/create-transaction', transactionData);
     },
-    onSuccess: (data) => {
+    onSuccess: (response) => {
       // Tracking de compra realizada com todos os parâmetros UTM
       trackPurchase({
         conversion_value: 27.90,
@@ -114,17 +130,29 @@ export function PricingSection() {
         content_category: 'E-book'
       });
       
-      toast({
-        title: "Compra realizada!",
-        description: "Em breve você receberá as instruções por email.",
-      });
+      if (response.transaction) {
+        // Set transaction data and show PIX modal
+        setCurrentTransaction(response.transaction);
+        setShowPixModal(true);
+        
+        toast({
+          title: "Transação criada!",
+          description: "Use as informações de PIX para completar o pagamento.",
+        });
+      } else {
+        toast({
+          title: "Transação criada!",
+          description: "Você receberá as instruções de pagamento por email.",
+        });
+      }
+      
       form.reset();
       setShowForm(false);
     },
-    onError: () => {
+    onError: (error: any) => {
       toast({
         title: "Erro",
-        description: "Tente novamente em alguns instantes.",
+        description: error?.message || "Tente novamente em alguns instantes.",
         variant: "destructive"
       });
     }
@@ -554,6 +582,13 @@ export function PricingSection() {
       {showRedirectModal && (
         <RedirectModal onRedirect={handleConfirmRedirect} />
       )}
+
+      {/* PIX Payment Modal */}
+      <PixPaymentModal
+        isOpen={showPixModal}
+        onClose={() => setShowPixModal(false)}
+        transaction={currentTransaction}
+      />
     </>
   );
 }

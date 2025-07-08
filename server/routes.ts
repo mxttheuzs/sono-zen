@@ -64,6 +64,209 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Lira PayBr - Test API Connection
+  app.get("/api/lira-payment/test", async (req, res) => {
+    try {
+      const apiSecret = "sk_41cc88f998400db7171239e839e48661370ce6e6cbc22e2c9008e18127cd345bb1154a3049387cfd65d24b25baf51e4bb0a2b0f26c8691e3fc219e2b272a3430";
+      
+      // Test with a simple account info request
+      const response = await fetch('https://api.lirapaybr.com/v1/account-info', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'api-secret': apiSecret
+        }
+      });
+
+      const result = await response.json();
+      
+      if (response.ok) {
+        res.json({ success: true, data: result });
+      } else {
+        console.error('Lira PayBr API test error:', result);
+        res.status(response.status).json({ success: false, error: result });
+      }
+    } catch (error) {
+      console.error('Lira PayBr test error:', error);
+      res.status(500).json({ message: "Erro ao testar API" });
+    }
+  });
+
+  // Lira PayBr - Create Transaction
+  app.post("/api/lira-payment/create-transaction", async (req, res) => {
+    try {
+      const apiSecret = "sk_41cc88f998400db7171239e839e48661370ce6e6cbc22e2c9008e18127cd345bb1154a3049387cfd65d24b25baf51e4bb0a2b0f26c8691e3fc219e2b272a3430";
+      
+      const {
+        external_id,
+        total_amount,
+        payment_method = "PIX",
+        webhook_url,
+        items,
+        customer
+      } = req.body;
+
+      // Create transaction with Lira PayBr API
+      const transactionData = {
+        external_id,
+        total_amount,
+        payment_method,
+        webhook_url: webhook_url || `${req.protocol}://${req.get('host')}/api/lira-payment/webhook`,
+        items: items || [{
+          id: "sono-zen-method",
+          title: "Método Sono Zen - Transformação em 7 Noites",
+          description: "Método completo para transformar seu sono em apenas 7 noites",
+          price: total_amount,
+          quantity: 1,
+          is_physical: false
+        }],
+        customer
+      };
+
+      const response = await fetch('https://api.lirapaybr.com/v1/transactions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'api-secret': apiSecret
+        },
+        body: JSON.stringify(transactionData)
+      });
+
+      const result = await response.json();
+      
+      if (response.ok) {
+        // Save to database
+        const purchaseData = {
+          name: customer.name,
+          email: customer.email,
+          phone: customer.phone || "",
+          amount: total_amount,
+          paymentMethod: payment_method,
+          status: "pending",
+          externalId: result.id,
+          pixKey: result.pix_key || ""
+        };
+        
+        const purchase = await storage.createPurchase(purchaseData);
+        
+        console.log(`Lira PayBr transaction created: ${result.id}`);
+        res.json({ 
+          success: true, 
+          transaction: result,
+          purchase: purchase
+        });
+      } else {
+        console.error('Lira PayBr API error:', result);
+        res.status(400).json({ success: false, error: result });
+      }
+    } catch (error) {
+      console.error('Lira PayBr transaction error:', error);
+      res.status(500).json({ message: "Erro ao criar transação" });
+    }
+  });
+
+  // Lira PayBr - Check Transaction Status
+  app.get("/api/lira-payment/transaction/:transactionId", async (req, res) => {
+    try {
+      const apiSecret = "sk_41cc88f998400db7171239e839e48661370ce6e6cbc22e2c9008e18127cd345bb1154a3049387cfd65d24b25baf51e4bb0a2b0f26c8691e3fc219e2b272a3430";
+      const { transactionId } = req.params;
+
+      const response = await fetch(`https://api.lirapaybr.com/v1/transactions/${transactionId}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'api-secret': apiSecret
+        }
+      });
+
+      const result = await response.json();
+      
+      if (response.ok) {
+        res.json({ success: true, transaction: result });
+      } else {
+        console.error('Lira PayBr API error:', result);
+        res.status(400).json({ success: false, error: result });
+      }
+    } catch (error) {
+      console.error('Lira PayBr check transaction error:', error);
+      res.status(500).json({ message: "Erro ao consultar transação" });
+    }
+  });
+
+  // Lira PayBr - Create Cashout (PIX)
+  app.post("/api/lira-payment/cashout", async (req, res) => {
+    try {
+      const apiSecret = "sk_41cc88f998400db7171239e839e839e48661370ce6e6cbc22e2c9008e18127cd345bb1154a3049387cfd65d24b25baf51e4bb0a2b0f26c8691e3fc219e2b272a3430";
+      
+      const {
+        external_id,
+        pix_key,
+        pix_type = "CPF",
+        amount,
+        webhook_url
+      } = req.body;
+
+      const cashoutData = {
+        external_id,
+        pix_key,
+        pix_type,
+        amount,
+        webhook_url: webhook_url || `${req.protocol}://${req.get('host')}/api/lira-payment/cashout-webhook`
+      };
+
+      const response = await fetch('https://api.lirapaybr.com/v1/cashout', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'api-secret': apiSecret
+        },
+        body: JSON.stringify(cashoutData)
+      });
+
+      const result = await response.json();
+      
+      if (response.ok) {
+        console.log(`Lira PayBr cashout created: ${result.id}`);
+        res.json({ success: true, cashout: result });
+      } else {
+        console.error('Lira PayBr cashout error:', result);
+        res.status(400).json({ success: false, error: result });
+      }
+    } catch (error) {
+      console.error('Lira PayBr cashout error:', error);
+      res.status(500).json({ message: "Erro ao criar cashout" });
+    }
+  });
+
+  // Lira PayBr - Webhook for transaction updates
+  app.post("/api/lira-payment/webhook", async (req, res) => {
+    try {
+      const { id, external_id, status, total_amount, payment_method } = req.body;
+      
+      console.log('Lira PayBr webhook received:', req.body);
+      
+      // Update purchase status in database based on external_id
+      if (id) {
+        const updatedPurchase = await storage.updatePurchaseByExternalId(id, {
+          status: status.toLowerCase(),
+          amount: total_amount || undefined,
+          paymentMethod: payment_method || undefined
+        });
+        
+        if (updatedPurchase) {
+          console.log(`Purchase updated: ${updatedPurchase.id} - Status: ${updatedPurchase.status}`);
+        } else {
+          console.log(`Purchase not found for external_id: ${id}`);
+        }
+      }
+      
+      res.status(200).json({ received: true });
+    } catch (error) {
+      console.error('Lira PayBr webhook error:', error);
+      res.status(500).json({ message: "Erro no webhook" });
+    }
+  });
+
   // Facebook Conversions API endpoint
   app.post("/api/facebook-conversion", async (req, res) => {
     try {

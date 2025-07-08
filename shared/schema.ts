@@ -24,6 +24,8 @@ export const purchases = pgTable("purchases", {
   amount: integer("amount").notNull(), // in cents
   paymentMethod: text("payment_method").notNull(),
   status: text("status").notNull().default("pending"),
+  externalId: text("external_id"), // Transaction ID from Lira PayBr
+  pixKey: text("pix_key"), // PIX key for payment
   createdAt: timestamp("created_at").defaultNow(),
 });
 
