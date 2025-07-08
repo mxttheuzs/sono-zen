@@ -110,12 +110,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const clientIp = req.headers['x-forwarded-for'] || req.socket.remoteAddress || '127.0.0.1';
       const validIp = clientIp.toString().includes('::') ? '127.0.0.1' : clientIp;
       
-      // Create transaction with Lira PayBr API
-      const transactionData = {
+      // Create transaction with Lira PayBr API - using temporary webhook for testing
+      const transactionData: any = {
         external_id,
         total_amount,
         payment_method,
         ip: Array.isArray(validIp) ? validIp[0] : validIp.toString().split(',')[0],
+        webhook_url: webhook_url || "https://webhook.site/test",
         items: items || [{
           id: "sono-zen-method",
           title: "Método Sono Zen - Transformação em 7 Noites",
@@ -132,11 +133,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
           document: customer.document || "11144477735"
         }
       };
-
-      // Add webhook_url only if provided
-      if (webhook_url) {
-        transactionData.webhook_url = webhook_url;
-      }
 
       const response = await fetch('https://api.lirapaybr.com/v1/transactions', {
         method: 'POST',
