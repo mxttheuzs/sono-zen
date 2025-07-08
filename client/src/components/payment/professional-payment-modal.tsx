@@ -200,13 +200,13 @@ export default function ProfessionalPaymentModal({ isOpen, onClose }: Profession
   if (step === 'processing') {
     return (
       <Dialog open={isOpen} onOpenChange={onClose}>
-        <DialogContent className="sm:max-w-md bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 border border-blue-500/20 text-white backdrop-blur-sm">
+        <DialogContent className="sm:max-w-md bg-black/95 border border-blue-500/30 text-white backdrop-blur-md">
           <div className="flex flex-col items-center justify-center py-8 space-y-4">
-            <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-yellow-500 rounded-full flex items-center justify-center animate-pulse">
-              <Sparkles className="w-8 h-8 text-slate-900" />
+            <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center animate-pulse">
+              <Sparkles className="w-8 h-8 text-black" />
             </div>
-            <h3 className="text-xl font-semibold bg-gradient-to-r from-amber-300 to-blue-300 bg-clip-text text-transparent">Processando Pagamento</h3>
-            <p className="text-slate-300 text-center">
+            <h3 className="text-xl font-semibold text-orange-500">Processando Pagamento</h3>
+            <p className="text-gray-300 text-center">
               Aguarde enquanto preparamos sua compra...
             </p>
           </div>
@@ -218,19 +218,19 @@ export default function ProfessionalPaymentModal({ isOpen, onClose }: Profession
   if (step === 'payment' && transaction) {
     return (
       <Dialog open={isOpen} onOpenChange={onClose}>
-        <DialogContent className="sm:max-w-md bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 border border-blue-500/20 text-white backdrop-blur-sm">
+        <DialogContent className="sm:max-w-md bg-black/95 border border-blue-500/30 text-white backdrop-blur-md">
           <DialogHeader>
             <DialogTitle className="flex items-center gap-2 text-xl font-bold text-center">
-              <CheckCircle className="w-6 h-6 text-emerald-400" />
-              <span className="bg-gradient-to-r from-amber-300 to-blue-300 bg-clip-text text-transparent">Pagamento Criado</span>
+              <CheckCircle className="w-6 h-6 text-blue-400" />
+              <span className="text-orange-500">Pagamento Criado</span>
             </DialogTitle>
           </DialogHeader>
           
           <div className="space-y-6 py-4">
-            <div className="bg-gradient-to-r from-slate-800/60 to-slate-800/80 rounded-xl p-4 border border-blue-500/20">
+            <div className="bg-black/60 rounded-lg p-4 border border-blue-500/20">
               <div className="text-center">
                 <div className="text-2xl font-bold text-white mb-2">R$ 27,90</div>
-                <div className="text-sm text-emerald-400">Sono <span className="text-blue-400">Zen</span> - Método Completo</div>
+                <div className="text-sm text-blue-400">Sono <span className="text-blue-400">Zen</span> - Método Completo</div>
               </div>
             </div>
 
@@ -238,21 +238,21 @@ export default function ProfessionalPaymentModal({ isOpen, onClose }: Profession
               <div className="space-y-4">
                 <div className="text-center">
                   <QrCode className="w-16 h-16 mx-auto text-blue-400 mb-2" />
-                  <p className="text-lg font-medium bg-gradient-to-r from-amber-300 to-blue-300 bg-clip-text text-transparent">PIX Copia e Cola</p>
-                  <p className="text-sm text-slate-400">
+                  <p className="text-lg font-medium text-orange-500">PIX Copia e Cola</p>
+                  <p className="text-sm text-gray-400">
                     Copie o código abaixo e cole em seu app bancário
                   </p>
                 </div>
                 
-                <div className="bg-slate-800/60 p-4 rounded-lg border border-blue-500/30 backdrop-blur-sm">
-                  <p className="text-xs text-slate-300 break-all font-mono">
+                <div className="bg-black/60 p-4 rounded-lg border border-blue-500/30">
+                  <p className="text-xs text-gray-300 break-all font-mono">
                     {transaction.pix.payload}
                   </p>
                 </div>
                 
                 <Button
                   onClick={() => copyToClipboard(transaction.pix!.payload)}
-                  className="w-full bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-slate-900 font-bold"
+                  className="w-full bg-orange-500 hover:bg-orange-600 text-black font-bold"
                 >
                   <Copy className="w-4 h-4 mr-2" />
                   {copied ? 'Copiado!' : 'Copiar Código PIX'}
@@ -260,12 +260,12 @@ export default function ProfessionalPaymentModal({ isOpen, onClose }: Profession
               </div>
             )}
 
-            <div className="bg-amber-500/10 border border-amber-500/30 rounded-lg p-4">
-              <div className="flex items-center gap-2 text-amber-400 mb-2">
+            <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
+              <div className="flex items-center gap-2 text-blue-400 mb-2">
                 <Clock className="w-4 h-4" />
                 <span className="font-medium">Aguardando Pagamento</span>
               </div>
-              <p className="text-sm text-amber-300">
+              <p className="text-sm text-gray-300">
                 Após o pagamento, você receberá o acesso por email em até 5 minutos.
               </p>
             </div>
@@ -277,40 +277,40 @@ export default function ProfessionalPaymentModal({ isOpen, onClose }: Profession
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-2xl max-h-[90vh] overflow-y-auto bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 border border-blue-500/20 text-white shadow-2xl backdrop-blur-sm">
+      <DialogContent className="sm:max-w-2xl max-h-[90vh] overflow-y-auto bg-black/95 border border-blue-500/30 text-white shadow-2xl backdrop-blur-md">
         <DialogHeader className="space-y-6 pb-8 border-b border-blue-500/20">
           <div className="flex items-center gap-4">
-            <div className="w-16 h-16 bg-gradient-to-br from-amber-500 via-amber-600 to-yellow-500 rounded-2xl flex items-center justify-center shadow-xl ring-1 ring-amber-400/30">
-              <Moon className="w-8 h-8 text-slate-900 drop-shadow-lg" />
+            <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center">
+              <Moon className="w-8 h-8 text-black" />
             </div>
             <div className="flex-1">
-              <DialogTitle className="text-3xl font-bold bg-gradient-to-r from-amber-300 via-blue-300 to-blue-400 bg-clip-text text-transparent mb-2">
+              <DialogTitle className="text-3xl font-bold text-white mb-2">
                 Finalizar Compra
               </DialogTitle>
-              <p className="text-slate-300 text-lg font-medium">
-                Sono <span className="bg-gradient-to-r from-blue-400 to-blue-300 bg-clip-text text-transparent font-bold">Zen</span> - Método Completo
+              <p className="text-gray-300 text-lg">
+                Sono <span className="text-blue-400 font-bold">Zen</span> - Método Completo
               </p>
             </div>
-            <div className="flex items-center gap-2 bg-emerald-900/20 px-4 py-2 rounded-xl border border-emerald-500/30">
-              <Shield className="w-5 h-5 text-emerald-400" />
-              <span className="text-sm text-emerald-400 font-semibold">Transação Segura</span>
+            <div className="flex items-center gap-2 bg-blue-500/10 px-4 py-2 rounded-lg border border-blue-500/30">
+              <Shield className="w-5 h-5 text-blue-400" />
+              <span className="text-sm text-blue-400 font-medium">Transação Segura</span>
             </div>
           </div>
           
-          <div className="bg-gradient-to-r from-slate-800/60 via-slate-800/80 to-slate-800/60 rounded-2xl p-6 border border-blue-500/20 backdrop-blur-sm">
+          <div className="bg-black/60 rounded-2xl p-6 border border-blue-500/20">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-amber-500 to-yellow-500 rounded-xl flex items-center justify-center">
-                  <Star className="w-5 h-5 text-slate-900 fill-slate-900" />
+                <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center">
+                  <Star className="w-5 h-5 text-black fill-black" />
                 </div>
                 <div>
-                  <p className="text-slate-300 text-sm font-medium">Investimento Premium</p>
-                  <p className="text-slate-400 text-xs">Transformação Garantida</p>
+                  <p className="text-gray-300 text-sm font-medium">Investimento Premium</p>
+                  <p className="text-gray-400 text-xs">Transformação Garantida</p>
                 </div>
               </div>
               <div className="text-right">
                 <div className="text-3xl font-bold text-white mb-1">R$ 27,90</div>
-                <div className="text-sm text-emerald-400 flex items-center gap-1 justify-end">
+                <div className="text-sm text-blue-400 flex items-center gap-1 justify-end">
                   <Lock className="w-3 h-3" />
                   <span className="font-medium">7 dias de garantia</span>
                 </div>
@@ -328,14 +328,14 @@ export default function ProfessionalPaymentModal({ isOpen, onClose }: Profession
 
           <div className="space-y-6">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-gradient-to-br from-amber-500 to-yellow-500 rounded-lg flex items-center justify-center">
-                <User className="w-4 h-4 text-slate-900" />
+              <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center">
+                <User className="w-4 h-4 text-black" />
               </div>
-              <h3 className="text-xl font-bold bg-gradient-to-r from-amber-300 to-blue-300 bg-clip-text text-transparent">Informações Pessoais</h3>
+              <h3 className="text-xl font-bold text-orange-500">Informações Pessoais</h3>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-3">
-                <Label htmlFor="name" className="text-slate-300 flex items-center gap-2 font-medium">
+                <Label htmlFor="name" className="text-gray-300 flex items-center gap-2 font-medium">
                   <User className="w-4 h-4 text-blue-400" />
                   Nome Completo
                 </Label>
@@ -343,12 +343,12 @@ export default function ProfessionalPaymentModal({ isOpen, onClose }: Profession
                   id="name"
                   value={customerData.name}
                   onChange={(e) => handleInputChange('name', e.target.value)}
-                  className="bg-slate-800/60 border-blue-500/30 text-white focus:border-blue-400 focus:ring-blue-400/20 h-12 backdrop-blur-sm"
+                  className="bg-black/40 border-blue-500/30 text-white focus:border-blue-400 focus:ring-blue-400/20 h-12"
                   placeholder="Seu nome completo"
                 />
               </div>
               <div className="space-y-3">
-                <Label htmlFor="email" className="text-slate-300 flex items-center gap-2 font-medium">
+                <Label htmlFor="email" className="text-gray-300 flex items-center gap-2 font-medium">
                   <Mail className="w-4 h-4 text-blue-400" />
                   Email
                 </Label>
@@ -357,12 +357,12 @@ export default function ProfessionalPaymentModal({ isOpen, onClose }: Profession
                   type="email"
                   value={customerData.email}
                   onChange={(e) => handleInputChange('email', e.target.value)}
-                  className="bg-slate-800/60 border-blue-500/30 text-white focus:border-blue-400 focus:ring-blue-400/20 h-12 backdrop-blur-sm"
+                  className="bg-black/40 border-blue-500/30 text-white focus:border-blue-400 focus:ring-blue-400/20 h-12"
                   placeholder="seu@email.com"
                 />
               </div>
               <div className="space-y-3 md:col-span-2">
-                <Label htmlFor="phone" className="text-slate-300 flex items-center gap-2 font-medium">
+                <Label htmlFor="phone" className="text-gray-300 flex items-center gap-2 font-medium">
                   <Phone className="w-4 h-4 text-blue-400" />
                   Telefone
                 </Label>
@@ -370,7 +370,7 @@ export default function ProfessionalPaymentModal({ isOpen, onClose }: Profession
                   id="phone"
                   value={customerData.phone}
                   onChange={(e) => handleInputChange('phone', formatPhone(e.target.value))}
-                  className="bg-slate-800/60 border-blue-500/30 text-white focus:border-blue-400 focus:ring-blue-400/20 h-12 backdrop-blur-sm"
+                  className="bg-black/40 border-blue-500/30 text-white focus:border-blue-400 focus:ring-blue-400/20 h-12"
                   placeholder="(11) 99999-9999"
                   maxLength={15}
                 />
@@ -380,36 +380,36 @@ export default function ProfessionalPaymentModal({ isOpen, onClose }: Profession
 
           <div className="space-y-6">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-gradient-to-br from-amber-500 to-yellow-500 rounded-lg flex items-center justify-center">
-                <CreditCard className="w-4 h-4 text-slate-900" />
+              <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center">
+                <CreditCard className="w-4 h-4 text-black" />
               </div>
-              <h3 className="text-xl font-bold bg-gradient-to-r from-amber-300 to-blue-300 bg-clip-text text-transparent">Método de Pagamento</h3>
+              <h3 className="text-xl font-bold text-orange-500">Método de Pagamento</h3>
             </div>
             <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as 'pix' | 'credit' | 'boleto')}>
-              <TabsList className="grid w-full grid-cols-3 bg-slate-800/60 border border-blue-500/30 backdrop-blur-sm p-1 rounded-xl">
-                <TabsTrigger value="pix" className="flex items-center gap-2 data-[state=active]:bg-gradient-to-r data-[state=active]:from-amber-500 data-[state=active]:to-yellow-500 data-[state=active]:text-slate-900 rounded-lg h-12 font-medium transition-all duration-300">
+              <TabsList className="grid w-full grid-cols-3 bg-black/40 border border-blue-500/30 p-1 rounded-lg">
+                <TabsTrigger value="pix" className="flex items-center gap-2 data-[state=active]:bg-orange-500 data-[state=active]:text-black rounded-lg h-12 font-medium transition-all duration-300 text-gray-300">
                   <QrCode className="w-4 h-4" />
                   PIX
                 </TabsTrigger>
-                <TabsTrigger value="credit" className="flex items-center gap-2 data-[state=active]:bg-gradient-to-r data-[state=active]:from-amber-500 data-[state=active]:to-yellow-500 data-[state=active]:text-slate-900 rounded-lg h-12 font-medium transition-all duration-300">
+                <TabsTrigger value="credit" className="flex items-center gap-2 data-[state=active]:bg-orange-500 data-[state=active]:text-black rounded-lg h-12 font-medium transition-all duration-300 text-gray-300">
                   <CreditCard className="w-4 h-4" />
                   Cartão
                 </TabsTrigger>
-                <TabsTrigger value="boleto" className="flex items-center gap-2 data-[state=active]:bg-gradient-to-r data-[state=active]:from-amber-500 data-[state=active]:to-yellow-500 data-[state=active]:text-slate-900 rounded-lg h-12 font-medium transition-all duration-300">
+                <TabsTrigger value="boleto" className="flex items-center gap-2 data-[state=active]:bg-orange-500 data-[state=active]:text-black rounded-lg h-12 font-medium transition-all duration-300 text-gray-300">
                   <FileText className="w-4 h-4" />
                   Boleto
                 </TabsTrigger>
               </TabsList>
 
               <TabsContent value="pix" className="space-y-6 mt-6">
-                <div className="bg-gradient-to-r from-emerald-900/30 via-emerald-800/20 to-emerald-900/30 border border-emerald-700/40 rounded-xl p-6 backdrop-blur-sm">
-                  <div className="flex items-center gap-3 text-emerald-300 mb-3">
-                    <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg flex items-center justify-center">
-                      <Zap className="w-4 h-4 text-white" />
+                <div className="bg-black/40 border border-blue-500/30 rounded-lg p-6">
+                  <div className="flex items-center gap-3 text-blue-400 mb-3">
+                    <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+                      <Zap className="w-4 h-4 text-black" />
                     </div>
                     <span className="font-bold text-lg">Aprovação Instantânea</span>
                   </div>
-                  <p className="text-emerald-200 leading-relaxed">
+                  <p className="text-gray-300 leading-relaxed">
                     Pagamento aprovado imediatamente via PIX. Você receberá o acesso completo ao método em sua caixa de entrada dentro de 2 minutos.
                   </p>
                 </div>
@@ -418,45 +418,45 @@ export default function ProfessionalPaymentModal({ isOpen, onClose }: Profession
               <TabsContent value="credit" className="space-y-6 mt-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-3 md:col-span-2">
-                    <Label htmlFor="card-number" className="text-slate-300 font-medium">Número do Cartão</Label>
+                    <Label htmlFor="card-number" className="text-gray-300 font-medium">Número do Cartão</Label>
                     <Input
                       id="card-number"
                       value={cardData.number}
                       onChange={(e) => handleCardChange('number', formatCardNumber(e.target.value))}
-                      className="bg-slate-800/60 border-blue-500/30 text-white focus:border-blue-400 focus:ring-blue-400/20 h-12 backdrop-blur-sm"
+                      className="bg-black/40 border-blue-500/30 text-white focus:border-blue-400 focus:ring-blue-400/20 h-12"
                       placeholder="1234 5678 9012 3456"
                       maxLength={19}
                     />
                   </div>
                   <div className="space-y-3">
-                    <Label htmlFor="expiry" className="text-slate-300 font-medium">Validade</Label>
+                    <Label htmlFor="expiry" className="text-gray-300 font-medium">Validade</Label>
                     <Input
                       id="expiry"
                       value={cardData.expiry}
                       onChange={(e) => handleCardChange('expiry', formatExpiry(e.target.value))}
-                      className="bg-slate-800/60 border-blue-500/30 text-white focus:border-blue-400 focus:ring-blue-400/20 h-12 backdrop-blur-sm"
+                      className="bg-black/40 border-blue-500/30 text-white focus:border-blue-400 focus:ring-blue-400/20 h-12"
                       placeholder="MM/AA"
                       maxLength={5}
                     />
                   </div>
                   <div className="space-y-3">
-                    <Label htmlFor="cvv" className="text-slate-300 font-medium">CVV</Label>
+                    <Label htmlFor="cvv" className="text-gray-300 font-medium">CVV</Label>
                     <Input
                       id="cvv"
                       value={cardData.cvv}
                       onChange={(e) => handleCardChange('cvv', e.target.value.replace(/\D/g, ''))}
-                      className="bg-slate-800/60 border-blue-500/30 text-white focus:border-blue-400 focus:ring-blue-400/20 h-12 backdrop-blur-sm"
+                      className="bg-black/40 border-blue-500/30 text-white focus:border-blue-400 focus:ring-blue-400/20 h-12"
                       placeholder="123"
                       maxLength={4}
                     />
                   </div>
                   <div className="space-y-3 md:col-span-2">
-                    <Label htmlFor="holder-name" className="text-slate-300 font-medium">Nome no Cartão</Label>
+                    <Label htmlFor="holder-name" className="text-gray-300 font-medium">Nome no Cartão</Label>
                     <Input
                       id="holder-name"
                       value={cardData.holder_name}
                       onChange={(e) => handleCardChange('holder_name', e.target.value)}
-                      className="bg-slate-800/60 border-blue-500/30 text-white focus:border-blue-400 focus:ring-blue-400/20 h-12 backdrop-blur-sm"
+                      className="bg-black/40 border-blue-500/30 text-white focus:border-blue-400 focus:ring-blue-400/20 h-12"
                       placeholder="Nome como está no cartão"
                     />
                   </div>
@@ -464,14 +464,14 @@ export default function ProfessionalPaymentModal({ isOpen, onClose }: Profession
               </TabsContent>
 
               <TabsContent value="boleto" className="space-y-6 mt-6">
-                <div className="bg-gradient-to-r from-orange-900/30 via-orange-800/20 to-orange-900/30 border border-orange-700/40 rounded-xl p-6 backdrop-blur-sm">
-                  <div className="flex items-center gap-3 text-orange-300 mb-3">
-                    <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center">
-                      <Clock className="w-4 h-4 text-white" />
+                <div className="bg-black/40 border border-blue-500/30 rounded-lg p-6">
+                  <div className="flex items-center gap-3 text-orange-500 mb-3">
+                    <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center">
+                      <Clock className="w-4 h-4 text-black" />
                     </div>
                     <span className="font-bold text-lg">Processamento Bancário</span>
                   </div>
-                  <p className="text-orange-200 leading-relaxed">
+                  <p className="text-gray-300 leading-relaxed">
                     Após o pagamento do boleto, o acesso será liberado em até 2 dias úteis. Você receberá uma confirmação por email assim que o pagamento for processado.
                   </p>
                 </div>
@@ -479,16 +479,16 @@ export default function ProfessionalPaymentModal({ isOpen, onClose }: Profession
             </Tabs>
           </div>
 
-          <div className="bg-gradient-to-r from-slate-800/40 via-slate-800/60 to-slate-800/40 rounded-xl p-6 border border-blue-500/20 backdrop-blur-sm">
-            <div className="flex items-center gap-3 text-slate-300 mb-3">
-              <div className="w-6 h-6 bg-gradient-to-br from-amber-500 to-yellow-500 rounded-lg flex items-center justify-center">
-                <Users className="w-3 h-3 text-slate-900" />
+          <div className="bg-black/40 rounded-lg p-6 border border-blue-500/30">
+            <div className="flex items-center gap-3 text-gray-300 mb-3">
+              <div className="w-6 h-6 bg-orange-500 rounded-lg flex items-center justify-center">
+                <Users className="w-3 h-3 text-black" />
               </div>
-              <span className="font-medium bg-gradient-to-r from-amber-300 to-blue-300 bg-clip-text text-transparent">14.847 pessoas já transformaram suas noites</span>
+              <span className="font-medium text-orange-500">14.847 pessoas já transformaram suas noites</span>
             </div>
-            <div className="grid grid-cols-3 gap-4 text-sm text-slate-400">
+            <div className="grid grid-cols-3 gap-4 text-sm text-gray-400">
               <div className="flex items-center gap-2">
-                <Shield className="w-4 h-4 text-emerald-400" />
+                <Shield className="w-4 h-4 text-blue-400" />
                 <span>Compra Segura</span>
               </div>
               <div className="flex items-center gap-2">
@@ -496,7 +496,7 @@ export default function ProfessionalPaymentModal({ isOpen, onClose }: Profession
                 <span>Dados Protegidos</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-amber-400" />
+                <CheckCircle className="w-4 h-4 text-blue-400" />
                 <span>7 Dias Garantia</span>
               </div>
             </div>
@@ -505,18 +505,17 @@ export default function ProfessionalPaymentModal({ isOpen, onClose }: Profession
           <Button
             onClick={createTransaction}
             disabled={loading}
-            className="w-full bg-gradient-to-r from-amber-500 via-amber-600 to-yellow-500 hover:from-amber-600 hover:via-amber-700 hover:to-yellow-600 text-slate-900 font-bold py-4 text-lg shadow-xl hover:shadow-2xl transition-all duration-300 border border-amber-400/30"
+            className="w-full bg-orange-500 hover:bg-orange-600 text-black font-bold py-4 text-lg transition-all duration-300"
           >
             {loading ? (
               <div className="flex items-center gap-2">
-                <div className="w-5 h-5 border-2 border-slate-900 border-t-transparent rounded-full animate-spin"></div>
+                <div className="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin"></div>
                 Processando...
               </div>
             ) : (
               <div className="flex items-center gap-3">
                 <Moon className="w-5 h-5" />
                 <span>Finalizar Compra - R$ 27,90</span>
-                <Sparkles className="w-5 h-5" />
               </div>
             )}
           </Button>
