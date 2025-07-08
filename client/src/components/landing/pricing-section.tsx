@@ -13,7 +13,7 @@ import { trackInitiateCheckout, trackAddPaymentInfo, trackPurchase } from "@/lib
 import { Shield, Lock, Star, Cloud, CheckCircle, Download, Clock, Users, Gift, Moon, Sparkles, Heart } from "lucide-react";
 import { FloatingClouds } from "@/components/ui/floating-clouds";
 import { PixPaymentModal } from "@/components/payment/pix-payment-modal";
-import MultiPaymentCheckout from "@/components/payment/multi-payment-checkout";
+import ProfessionalPaymentModal from "@/components/payment/professional-payment-modal";
 import { z } from "zod";
 
 const purchaseFormSchema = insertPurchaseSchema.extend({
@@ -600,7 +600,7 @@ export function PricingSection() {
       />
 
       {/* Lirapay Checkout Modal */}
-      <MultiPaymentCheckout
+      <ProfessionalPaymentModal
         isOpen={showMultiPaymentCheckout}
         onClose={() => setShowMultiPaymentCheckout(false)}
       />

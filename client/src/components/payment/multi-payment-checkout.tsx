@@ -6,7 +6,7 @@ import { Label } from '@/components/ui/label';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Moon, Copy, CheckCircle, Clock, CreditCard, Shield, Zap, QrCode, FileText, X } from 'lucide-react';
+import { Moon, Copy, CheckCircle, Clock, CreditCard, Shield, Zap, QrCode, FileText, X, Lock, Star, Sparkles } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 interface MultiPaymentCheckoutProps {
@@ -18,8 +18,6 @@ interface CustomerData {
   name: string;
   email: string;
   phone: string;
-  document: string;
-  document_type: 'CPF' | 'CNPJ';
 }
 
 interface CardData {
@@ -54,9 +52,7 @@ export default function MultiPaymentCheckout({ isOpen, onClose }: MultiPaymentCh
   const [customerData, setCustomerData] = useState<CustomerData>({
     name: '',
     email: '',
-    phone: '',
-    document: '',
-    document_type: 'CPF'
+    phone: ''
   });
   const [cardData, setCardData] = useState<CardData>({
     number: '',
@@ -108,7 +104,6 @@ export default function MultiPaymentCheckout({ isOpen, onClose }: MultiPaymentCh
     if (!customerData.name.trim()) return 'Nome é obrigatório';
     if (!customerData.email.trim()) return 'Email é obrigatório';
     if (!customerData.phone.trim()) return 'Telefone é obrigatório';
-    if (!customerData.document.trim()) return 'CPF é obrigatório';
     if (!/\S+@\S+\.\S+/.test(customerData.email)) return 'Email inválido';
     
     // Validate card data for credit card payments
@@ -148,8 +143,8 @@ export default function MultiPaymentCheckout({ isOpen, onClose }: MultiPaymentCh
           name: customerData.name,
           email: customerData.email,
           phone: customerData.phone.replace(/\D/g, ''),
-          document_type: customerData.document_type,
-          document: customerData.document.replace(/\D/g, '')
+          document_type: 'CPF',
+          document: '00000000000' // Generic CPF for API requirement
         }
       };
 
@@ -242,9 +237,7 @@ export default function MultiPaymentCheckout({ isOpen, onClose }: MultiPaymentCh
     setCustomerData({
       name: '',
       email: '',
-      phone: '',
-      document: '',
-      document_type: 'CPF'
+      phone: ''
     });
     setCardData({
       number: '',
