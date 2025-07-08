@@ -45,6 +45,16 @@ html {
   background: var(--accent-blue-muted);
 }
 
+/* Animação floating para o botão de pagamento */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.02);
+  }
+}
+
 /* Fix para texto longo em dispositivos móveis */
 .quiz-button-text {
   word-break: break-word;
