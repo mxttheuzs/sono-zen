@@ -106,12 +106,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
         customer
       } = req.body;
 
+      // Get client IP address - usar IP válido para teste
+      const clientIp = req.headers['x-forwarded-for'] || req.socket.remoteAddress || '127.0.0.1';
+      const validIp = clientIp.toString().includes('::') ? '127.0.0.1' : clientIp;
+      
       // Create transaction with Lira PayBr API
       const transactionData = {
         external_id,
         total_amount,
         payment_method,
-        webhook_url: webhook_url || `${req.protocol}://${req.get('host')}/api/lira-payment/webhook`,
+        ip: Array.isArray(validIp) ? validIp[0] : validIp.toString().split(',')[0],
         items: items || [{
           id: "sono-zen-method",
           title: "Método Sono Zen - Transformação em 7 Noites",
@@ -120,8 +124,19 @@ export async function registerRoutes(app: Express): Promise<Server> {
           quantity: 1,
           is_physical: false
         }],
-        customer
+        customer: {
+          name: customer.name,
+          email: customer.email,
+          phone: customer.phone,
+          document_type: customer.document_type || "CPF",
+          document: customer.document || "11144477735"
+        }
       };
+
+      // Add webhook_url only if provided
+      if (webhook_url) {
+        transactionData.webhook_url = webhook_url;
+      }
 
       const response = await fetch('https://api.lirapaybr.com/v1/transactions', {
         method: 'POST',
@@ -196,7 +211,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Lira PayBr - Create Cashout (PIX)
   app.post("/api/lira-payment/cashout", async (req, res) => {
     try {
-      const apiSecret = "sk_41cc88f998400db7171239e839e839e48661370ce6e6cbc22e2c9008e18127cd345bb1154a3049387cfd65d24b25baf51e4bb0a2b0f26c8691e3fc219e2b272a3430";
+      const apiSecret = "sk_41cc88f998400db7171239e839e48661370ce6e6cbc22e2c9008e18127cd345bb1154a3049387cfd65d24b25baf51e4bb0a2b0f26c8691e3fc219e2b272a3430";
       
       const {
         external_id,
