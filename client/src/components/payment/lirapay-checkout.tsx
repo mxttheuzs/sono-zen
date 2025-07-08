@@ -90,7 +90,7 @@ export default function LirapayCheckout({ isOpen, onClose }: LirapayCheckoutProp
         },
         body: JSON.stringify({
           external_id: `sono_zen_${Date.now()}`,
-          total_amount: 2790, // R$ 27,90
+          total_amount: 27.90, // R$ 27,90
           payment_method: 'PIX',
           customer: {
             name: customerData.name,
