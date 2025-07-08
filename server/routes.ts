@@ -103,12 +103,23 @@ export async function registerRoutes(app: Express): Promise<Server> {
         payment_method = "PIX",
         webhook_url,
         items,
-        customer
+        customer,
+        card // New field for credit card data
       } = req.body;
 
       // Get client IP address - usar IP válido para teste
       const clientIp = req.headers['x-forwarded-for'] || req.socket.remoteAddress || '127.0.0.1';
       const validIp = clientIp.toString().includes('::') ? '127.0.0.1' : clientIp;
+      
+      // Validate credit card fields if payment method is CREDIT_CARD
+      if (payment_method === 'CREDIT_CARD') {
+        if (!card || !card.number || !card.expiry_month || !card.expiry_year || !card.cvv || !card.holder_name) {
+          return res.status(400).json({
+            success: false,
+            error: 'Missing required credit card fields: number, expiry_month, expiry_year, cvv, holder_name'
+          });
+        }
+      }
       
       // Create transaction with Lira PayBr API - using temporary webhook for testing
       const transactionData: any = {
@@ -133,6 +144,27 @@ export async function registerRoutes(app: Express): Promise<Server> {
           document: customer.document || "11144477735"
         }
       };
+
+      // Add credit card data if payment method is CREDIT_CARD
+      if (payment_method === 'CREDIT_CARD' && card) {
+        transactionData.card = {
+          number: card.number,
+          expiry_month: card.expiry_month,
+          expiry_year: card.expiry_year,
+          cvv: card.cvv,
+          holder_name: card.holder_name
+        };
+      }
+
+      // Add boleto specific data if needed
+      if (payment_method === 'BOLETO') {
+        // Boleto usually has a due date (vencimento)
+        const dueDate = new Date();
+        dueDate.setDate(dueDate.getDate() + 3); // 3 days from now
+        transactionData.boleto = {
+          due_date: dueDate.toISOString().split('T')[0] // YYYY-MM-DD format
+        };
+      }
 
       const response = await fetch('https://api.lirapaybr.com/v1/transactions', {
         method: 'POST',

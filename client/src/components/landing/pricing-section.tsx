@@ -13,7 +13,7 @@ import { trackInitiateCheckout, trackAddPaymentInfo, trackPurchase } from "@/lib
 import { Shield, Lock, Star, Cloud, CheckCircle, Download, Clock, Users, Gift, Moon, Sparkles, Heart } from "lucide-react";
 import { FloatingClouds } from "@/components/ui/floating-clouds";
 import { PixPaymentModal } from "@/components/payment/pix-payment-modal";
-import LirapayCheckout from "@/components/payment/lirapay-checkout";
+import MultiPaymentCheckout from "@/components/payment/multi-payment-checkout";
 import { z } from "zod";
 
 const purchaseFormSchema = insertPurchaseSchema.extend({
@@ -89,7 +89,7 @@ function RedirectModal({ onRedirect }: RedirectModalProps) {
 }
 
 export function PricingSection() {
-  const [showLirapayCheckout, setShowLirapayCheckout] = useState(false);
+  const [showMultiPaymentCheckout, setShowMultiPaymentCheckout] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const [showRedirectModal, setShowRedirectModal] = useState(false);
   const [showPixModal, setShowPixModal] = useState(false);
@@ -179,7 +179,7 @@ export function PricingSection() {
       currency: 'BRL'
     });
     
-    setShowLirapayCheckout(true);
+    setShowMultiPaymentCheckout(true);
   };
 
   const handleConfirmRedirect = () => {
@@ -600,9 +600,9 @@ export function PricingSection() {
       />
 
       {/* Lirapay Checkout Modal */}
-      <LirapayCheckout
-        isOpen={showLirapayCheckout}
-        onClose={() => setShowLirapayCheckout(false)}
+      <MultiPaymentCheckout
+        isOpen={showMultiPaymentCheckout}
+        onClose={() => setShowMultiPaymentCheckout(false)}
       />
     </>
   );
