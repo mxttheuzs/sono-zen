@@ -39,7 +39,7 @@ export function VideoPreviewSection() {
           </h2>
           
           <p className="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed max-w-3xl mx-auto">
-            Veja o <strong>Web App interativo em ação</strong> - este vídeo mostra como funciona a plataforma que vai guiar você em cada passo da sua transformação do sono
+            Veja o <strong>ebook interativo em ação</strong> - este vídeo mostra como funciona a plataforma que vai guiar você em cada passo da sua transformação do sono
           </p>
         </div>
 
@@ -105,7 +105,7 @@ export function VideoPreviewSection() {
           <div className="text-center mt-12">
             <div className="bg-gradient-to-r from-[var(--warm-accent)]/10 to-[var(--accent-blue)]/10 border border-[var(--warm-accent)]/30 rounded-2xl p-6 sm:p-8 max-w-2xl mx-auto">
               <p className="text-[var(--text-secondary)] mb-4">
-                Este vídeo mostra <strong>exatamente como funciona o Web App interativo</strong> que você vai receber. Pode assistir quantas vezes quiser para conhecer o conteúdo e a experiência.
+                Este vídeo mostra <strong>exatamente como funciona o webapp interativo</strong> que você vai receber. Pode assistir quantas vezes quiser para conhecer o conteúdo e a experiência.
               </p>
               <p className="text-[var(--text-primary)] font-semibold mb-6">
                 Após a compra, você terá acesso à versão completa sem blur com todos os recursos desbloqueados!
@@ -113,12 +113,10 @@ export function VideoPreviewSection() {
               
               <Button 
                 onClick={scrollToCheckout}
-                className="w-full sm:w-auto bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] text-white px-4 sm:px-8 py-3 sm:py-4 rounded-xl text-base sm:text-lg font-semibold hover:shadow-2xl hover:shadow-[var(--warm-accent)]/25 transition-all duration-300 transform hover:scale-105"
+                className="bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] text-white px-8 py-4 rounded-xl text-lg font-semibold hover:shadow-2xl hover:shadow-[var(--warm-accent)]/25 transition-all duration-300 transform hover:scale-105"
               >
-                <Lock className="mr-2 h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
-                <span className="text-sm sm:text-base leading-tight">
-                  Desbloquear Acesso Completo
-                </span>
+                <Lock className="mr-2 h-5 w-5" />
+                Desbloquear Acesso Completo
               </Button>
             </div>
           </div>

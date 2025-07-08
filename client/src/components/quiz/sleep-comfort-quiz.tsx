@@ -250,28 +250,22 @@ export function SleepComfortQuiz() {
               <p className="text-[var(--celestial-blue)] font-semibold mb-4">
                 🌟 Perfeito! O Método Sono Zen foi criado pensando exatamente em pessoas como você. Sua jornada para noites tranquilas começa agora!
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                <Button 
-                  onClick={() => document.getElementById('preco')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="w-full sm:w-auto bg-gradient-to-r from-[var(--celestial-blue)] to-[var(--sky-blue)] hover:from-[var(--celestial-blue)]/90 hover:to-[var(--sky-blue)]/90 text-white px-4 sm:px-8 py-3 rounded-xl text-base sm:text-lg font-semibold"
-                >
-                  <Moon className="h-4 w-4 sm:h-5 sm:w-5 mr-2 flex-shrink-0" />
-                  <span className="text-sm sm:text-base leading-tight">
-                    Quero Transformar Meu Sono!
-                  </span>
-                </Button>
-                
-                <Button 
-                  onClick={resetQuiz}
-                  variant="outline"
-                  className="w-full sm:w-auto border-[var(--celestial-blue)]/30 text-[var(--celestial-blue)] hover:bg-[var(--celestial-blue)]/10 px-4 sm:px-6 py-3 rounded-xl"
-                >
-                  <RefreshCw className="h-4 w-4 mr-2 flex-shrink-0" />
-                  <span className="text-sm sm:text-base">
-                    Fazer Novamente
-                  </span>
-                </Button>
-              </div>
+              <Button 
+                onClick={() => document.getElementById('preco')?.scrollIntoView({ behavior: 'smooth' })}
+                className="bg-gradient-to-r from-[var(--celestial-blue)] to-[var(--sky-blue)] hover:from-[var(--celestial-blue)]/90 hover:to-[var(--sky-blue)]/90 text-white px-8 py-3 rounded-xl text-lg font-semibold mr-4 mb-2"
+              >
+                <Moon className="h-5 w-5 mr-2" />
+                Quero Transformar Meu Sono! 
+              </Button>
+              
+              <Button 
+                onClick={resetQuiz}
+                variant="outline"
+                className="border-[var(--celestial-blue)]/30 text-[var(--celestial-blue)] hover:bg-[var(--celestial-blue)]/10 px-6 py-3 rounded-xl"
+              >
+                <RefreshCw className="h-4 w-4 mr-2" />
+                Fazer Novamente
+              </Button>
             </div>
           </div>
         </div>

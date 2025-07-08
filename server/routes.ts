@@ -3,7 +3,6 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertLeadSchema, insertPurchaseSchema } from "@shared/schema";
 import { z } from "zod";
-import { ProductDeliveryService } from "./email-service";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   
@@ -48,98 +47,20 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Get leads (admin only - in real app would need authentication)
   app.get("/api/leads", async (req, res) => {
     try {
-      const leads = await storage.getAllLeads();
-      res.json({ success: true, leads });
+      const leads = await storage.getLeads();
+      res.json(leads);
     } catch (error) {
       res.status(500).json({ message: "Erro interno do servidor" });
     }
   });
 
-  // Get purchases (admin only - in real app would need authentication)
+  // Get purchases (admin only)
   app.get("/api/purchases", async (req, res) => {
     try {
-      const purchases = await storage.getAllPurchases();
-      res.json({ success: true, purchases });
+      const purchases = await storage.getPurchases();
+      res.json(purchases);
     } catch (error) {
       res.status(500).json({ message: "Erro interno do servidor" });
-    }
-  });
-
-  // Product Delivery Test Endpoint (for admin)
-  app.post("/api/test-delivery", async (req, res) => {
-    try {
-      const { customerName, customerEmail, productId } = req.body;
-      
-      if (!customerName || !customerEmail) {
-        return res.status(400).json({ 
-          success: false, 
-          message: "Nome e email do cliente são obrigatórios" 
-        });
-      }
-
-      // Mock transaction data for testing
-      const mockTransaction = {
-        id: `test_${Date.now()}`,
-        external_id: `test_delivery_${Date.now()}`,
-        status: 'paid',
-        total_value: 2790, // R$ 27,90 in cents
-        pix: undefined
-      };
-
-      const result = await ProductDeliveryService.sendProductDelivery(
-        mockTransaction,
-        customerName,
-        customerEmail,
-        productId
-      );
-
-      res.json({
-        success: true,
-        message: "Email de teste enviado com sucesso!",
-        result
-      });
-    } catch (error) {
-      console.error('Erro no teste de entrega:', error);
-      res.status(500).json({ 
-        success: false, 
-        message: "Erro ao enviar email de teste" 
-      });
-    }
-  });
-
-  // Update Product Download Link (for admin)
-  app.post("/api/update-download-link", async (req, res) => {
-    try {
-      const { newLink, adminKey } = req.body;
-      
-      if (adminKey !== 'sono_zen_admin_2025') {
-        return res.status(401).json({ 
-          success: false, 
-          message: "Chave de admin inválida" 
-        });
-      }
-
-      if (!newLink) {
-        return res.status(400).json({ 
-          success: false, 
-          message: "Link de download é obrigatório" 
-        });
-      }
-
-      // Update the download link in the product delivery service
-      ProductDeliveryService.updateDownloadLink(newLink);
-
-      res.json({
-        success: true,
-        message: "Link de download atualizado com sucesso!",
-        newLink
-      });
-    } catch (error) {
-      console.error('Erro ao atualizar link:', error);
-      res.status(500).json({ 
-        success: false, 
-        message: "Erro ao atualizar link de download" 
-      });
     }
   });
 
