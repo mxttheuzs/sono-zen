@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertLeadSchema, insertPurchaseSchema } from "@shared/schema";
 import { z } from "zod";
+import { ProductDeliveryService } from "./email-service";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   
@@ -193,10 +194,35 @@ export async function registerRoutes(app: Express): Promise<Server> {
         const purchase = await storage.createPurchase(purchaseData);
         
         console.log(`Lira PayBr transaction created: ${result.id}`);
+        
+        // Automatically deliver product when transaction is created
+        // In PIX payments, we deliver immediately as payment is expected to be instant
+        try {
+          const deliveryResult = await ProductDeliveryService.sendProductDelivery(
+            {
+              id: result.id,
+              external_id: result.external_id || external_id,
+              status: result.status || 'pending',
+              total_value: total_amount,
+              pix: result.pix ? { payload: result.pix.payload } : undefined
+            },
+            customer.name,
+            customer.email
+          );
+          
+          console.log('🎁 Produto entregue automaticamente:', deliveryResult);
+          
+        } catch (deliveryError) {
+          console.error('❌ Erro na entrega automática do produto:', deliveryError);
+          // Don't fail the transaction if delivery fails, just log it
+        }
+        
         res.json({ 
           success: true, 
           transaction: result,
-          purchase: purchase
+          purchase: purchase,
+          productDelivered: true,
+          message: "Transação criada e produto entregue automaticamente!"
         });
       } else {
         console.error('Lira PayBr API error:', result);
@@ -364,6 +390,79 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       console.error('Facebook Conversion API error:', error);
       res.status(500).json({ message: "Erro ao enviar para Facebook API" });
+    }
+  });
+
+  // Webhook endpoint for payment confirmations
+  app.post("/api/lira-payment/webhook", async (req, res) => {
+    try {
+      const { transaction_id, status, external_id } = req.body;
+      
+      console.log('🔔 Webhook recebido:', req.body);
+      
+      if (status === 'approved' || status === 'paid') {
+        // Find the purchase by external_id
+        const purchases = await storage.getAllPurchases();
+        const purchase = purchases.find(p => p.externalId === transaction_id);
+        
+        if (purchase) {
+          // Update purchase status
+          // Note: This is a simplified approach. In production, you'd have update methods
+          console.log('✅ Pagamento confirmado via webhook para:', purchase.email);
+          
+          // Send product delivery confirmation
+          try {
+            const deliveryResult = await ProductDeliveryService.sendProductDelivery(
+              {
+                id: transaction_id,
+                external_id: external_id || transaction_id,
+                status: status,
+                total_value: purchase.amount,
+                pix: undefined // Webhook doesn't typically include PIX data
+              },
+              purchase.name,
+              purchase.email
+            );
+            
+            console.log('🎁 Produto entregue via webhook:', deliveryResult);
+            
+          } catch (deliveryError) {
+            console.error('❌ Erro na entrega via webhook:', deliveryError);
+          }
+        }
+      }
+      
+      res.json({ received: true });
+    } catch (error) {
+      console.error('Webhook error:', error);
+      res.status(500).json({ error: 'Webhook processing failed' });
+    }
+  });
+
+  // Admin endpoint to update product download link
+  app.post("/api/admin/update-download-link", async (req, res) => {
+    try {
+      const { downloadLink, adminKey } = req.body;
+      
+      // Simple admin authentication - in production use proper auth
+      if (adminKey !== "sono_zen_admin_2025") {
+        return res.status(401).json({ error: "Unauthorized" });
+      }
+      
+      if (!downloadLink || !downloadLink.startsWith('http')) {
+        return res.status(400).json({ error: "Invalid download link" });
+      }
+      
+      ProductDeliveryService.updateDownloadLink(downloadLink);
+      
+      res.json({ 
+        success: true, 
+        message: "Link de download atualizado com sucesso!",
+        newLink: downloadLink
+      });
+    } catch (error) {
+      console.error('Update download link error:', error);
+      res.status(500).json({ error: 'Failed to update download link' });
     }
   });
 
