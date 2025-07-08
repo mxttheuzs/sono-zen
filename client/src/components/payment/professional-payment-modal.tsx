@@ -200,12 +200,12 @@ export default function ProfessionalPaymentModal({ isOpen, onClose }: Profession
   if (step === 'processing') {
     return (
       <Dialog open={isOpen} onOpenChange={onClose}>
-        <DialogContent className="sm:max-w-md bg-black/95 border border-blue-500/30 text-white backdrop-blur-md">
+        <DialogContent className="sm:max-w-md bg-gradient-to-br from-slate-950 via-slate-900 to-black border border-amber-500/30 text-white backdrop-blur-md">
           <div className="flex flex-col items-center justify-center py-8 space-y-4">
-            <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center animate-pulse">
+            <div className="w-16 h-16 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center animate-pulse shadow-lg">
               <Sparkles className="w-8 h-8 text-black" />
             </div>
-            <h3 className="text-xl font-semibold text-blue-400">Processando Pagamento</h3>
+            <h3 className="text-xl font-semibold text-amber-200">Processando Pagamento</h3>
             <p className="text-gray-300 text-center">
               Aguarde enquanto preparamos sua compra...
             </p>
@@ -218,11 +218,11 @@ export default function ProfessionalPaymentModal({ isOpen, onClose }: Profession
   if (step === 'payment' && transaction) {
     return (
       <Dialog open={isOpen} onOpenChange={onClose}>
-        <DialogContent className="sm:max-w-md bg-black/95 border border-blue-500/30 text-white backdrop-blur-md">
+        <DialogContent className="sm:max-w-md bg-gradient-to-br from-slate-950 via-slate-900 to-black border border-amber-500/30 text-white backdrop-blur-md">
           <DialogHeader>
             <DialogTitle className="flex items-center gap-2 text-xl font-bold text-center">
               <CheckCircle className="w-6 h-6 text-blue-400" />
-              <span className="text-blue-400">Pagamento Criado</span>
+              <span className="text-amber-200">Pagamento Criado</span>
             </DialogTitle>
           </DialogHeader>
           
@@ -238,7 +238,7 @@ export default function ProfessionalPaymentModal({ isOpen, onClose }: Profession
               <div className="space-y-4">
                 <div className="text-center">
                   <QrCode className="w-16 h-16 mx-auto text-blue-400 mb-2" />
-                  <p className="text-lg font-medium text-blue-400">PIX Copia e Cola</p>
+                  <p className="text-lg font-medium text-amber-200">PIX Copia e Cola</p>
                   <p className="text-sm text-gray-400">
                     Copie o código abaixo e cole em seu app bancário
                   </p>
@@ -252,7 +252,7 @@ export default function ProfessionalPaymentModal({ isOpen, onClose }: Profession
                 
                 <Button
                   onClick={() => copyToClipboard(transaction.pix!.payload)}
-                  className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold"
+                  className="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black font-bold"
                 >
                   <Copy className="w-4 h-4 mr-2" />
                   {copied ? 'Copiado!' : 'Copiar Código PIX'}
@@ -277,39 +277,39 @@ export default function ProfessionalPaymentModal({ isOpen, onClose }: Profession
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="w-[95vw] sm:max-w-2xl max-h-[90vh] overflow-y-auto bg-black/95 border border-blue-500/30 text-white shadow-2xl backdrop-blur-md mx-2">
-        <DialogHeader className="space-y-6 pb-8 border-b border-blue-500/20">
+      <DialogContent className="w-[95vw] sm:max-w-2xl max-h-[90vh] overflow-y-auto bg-gradient-to-br from-slate-950 via-slate-900 to-black border border-amber-500/30 text-white shadow-2xl backdrop-blur-md mx-2">
+        <DialogHeader className="space-y-6 pb-8 border-b border-amber-500/20">
           <div className="flex items-center gap-4">
-            <div className="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center">
+            <div className="w-16 h-16 bg-gradient-to-br from-amber-400 to-amber-600 rounded-2xl flex items-center justify-center shadow-lg">
               <Moon className="w-8 h-8 text-black" />
             </div>
             <div className="flex-1">
-              <DialogTitle className="text-3xl font-bold text-white mb-2">
-                Finalizar Compra
+              <DialogTitle className="text-3xl font-bold bg-gradient-to-r from-white via-amber-200 to-blue-300 bg-clip-text text-transparent mb-2">
+                Sua Transformação
               </DialogTitle>
-              <p className="text-gray-300 text-lg">
+              <p className="text-gray-300 text-lg font-light">
                 Sono <span className="text-blue-400 font-bold">Zen</span> - Método Completo
               </p>
             </div>
-            <div className="flex items-center gap-2 bg-blue-500/10 px-4 py-2 rounded-lg border border-blue-500/30">
-              <Shield className="w-5 h-5 text-blue-400" />
-              <span className="text-sm text-blue-400 font-medium">Transação Segura</span>
+            <div className="flex items-center gap-2 bg-amber-500/10 px-4 py-2 rounded-lg border border-amber-500/30">
+              <Shield className="w-5 h-5 text-amber-400" />
+              <span className="text-sm text-amber-400 font-medium">Transação Segura</span>
             </div>
           </div>
           
-          <div className="bg-black/60 rounded-2xl p-6 border border-blue-500/20">
+          <div className="bg-gradient-to-r from-black/40 to-slate-800/60 rounded-2xl p-6 border border-amber-500/20 shadow-inner">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
+                <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-amber-600 rounded-lg flex items-center justify-center shadow-md">
                   <Star className="w-5 h-5 text-black fill-black" />
                 </div>
                 <div>
-                  <p className="text-gray-300 text-sm font-medium">Investimento Premium</p>
+                  <p className="text-amber-200 text-sm font-medium">Investimento Premium</p>
                   <p className="text-gray-400 text-xs">Transformação Garantida</p>
                 </div>
               </div>
               <div className="text-right">
-                <div className="text-3xl font-bold text-white mb-1">R$ 27,90</div>
+                <div className="text-3xl font-bold bg-gradient-to-r from-amber-200 to-white bg-clip-text text-transparent mb-1">R$ 27,90</div>
                 <div className="text-sm text-blue-400 flex items-center gap-1 justify-end">
                   <Lock className="w-3 h-3" />
                   <span className="font-medium">7 dias de garantia</span>
@@ -328,10 +328,10 @@ export default function ProfessionalPaymentModal({ isOpen, onClose }: Profession
 
           <div className="space-y-6">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-br from-amber-400 to-amber-600 rounded-lg flex items-center justify-center shadow-md">
                 <User className="w-4 h-4 text-black" />
               </div>
-              <h3 className="text-xl font-bold text-blue-400">Informações Pessoais</h3>
+              <h3 className="text-xl font-bold text-amber-200">Informações Pessoais</h3>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-3">
@@ -380,22 +380,22 @@ export default function ProfessionalPaymentModal({ isOpen, onClose }: Profession
 
           <div className="space-y-6">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-br from-amber-400 to-amber-600 rounded-lg flex items-center justify-center shadow-md">
                 <CreditCard className="w-4 h-4 text-black" />
               </div>
-              <h3 className="text-xl font-bold text-blue-400">Método de Pagamento</h3>
+              <h3 className="text-xl font-bold text-amber-200">Método de Pagamento</h3>
             </div>
             <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as 'pix' | 'credit' | 'boleto')}>
-              <TabsList className="grid w-full grid-cols-3 bg-black/40 border border-blue-500/30 p-1 rounded-lg">
-                <TabsTrigger value="pix" className="flex items-center justify-center gap-1 data-[state=active]:bg-blue-500 data-[state=active]:text-black rounded-lg h-12 font-medium transition-all duration-300 text-gray-300 text-sm px-2">
+              <TabsList className="grid w-full grid-cols-3 bg-black/40 border border-amber-500/30 p-1 rounded-lg">
+                <TabsTrigger value="pix" className="flex items-center justify-center gap-1 data-[state=active]:bg-gradient-to-r data-[state=active]:from-amber-400 data-[state=active]:to-amber-600 data-[state=active]:text-black rounded-lg h-12 font-medium transition-all duration-300 text-gray-300 text-sm px-2">
                   <QrCode className="w-4 h-4" />
                   <span className="hidden sm:inline">PIX</span>
                 </TabsTrigger>
-                <TabsTrigger value="credit" className="flex items-center justify-center gap-1 data-[state=active]:bg-blue-500 data-[state=active]:text-black rounded-lg h-12 font-medium transition-all duration-300 text-gray-300 text-sm px-2">
+                <TabsTrigger value="credit" className="flex items-center justify-center gap-1 data-[state=active]:bg-gradient-to-r data-[state=active]:from-amber-400 data-[state=active]:to-amber-600 data-[state=active]:text-black rounded-lg h-12 font-medium transition-all duration-300 text-gray-300 text-sm px-2">
                   <CreditCard className="w-4 h-4" />
                   <span className="hidden sm:inline">Cartão</span>
                 </TabsTrigger>
-                <TabsTrigger value="boleto" className="flex items-center justify-center gap-1 data-[state=active]:bg-blue-500 data-[state=active]:text-black rounded-lg h-12 font-medium transition-all duration-300 text-gray-300 text-sm px-2">
+                <TabsTrigger value="boleto" className="flex items-center justify-center gap-1 data-[state=active]:bg-gradient-to-r data-[state=active]:from-amber-400 data-[state=active]:to-amber-600 data-[state=active]:text-black rounded-lg h-12 font-medium transition-all duration-300 text-gray-300 text-sm px-2">
                   <FileText className="w-4 h-4" />
                   <span className="hidden sm:inline">Boleto</span>
                 </TabsTrigger>
@@ -464,9 +464,9 @@ export default function ProfessionalPaymentModal({ isOpen, onClose }: Profession
               </TabsContent>
 
               <TabsContent value="boleto" className="space-y-6 mt-6">
-                <div className="bg-black/40 border border-blue-500/30 rounded-lg p-6">
-                  <div className="flex items-center gap-3 text-blue-400 mb-3">
-                    <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+                <div className="bg-black/40 border border-amber-500/30 rounded-lg p-6">
+                  <div className="flex items-center gap-3 text-amber-200 mb-3">
+                    <div className="w-8 h-8 bg-gradient-to-br from-amber-400 to-amber-600 rounded-lg flex items-center justify-center">
                       <Clock className="w-4 h-4 text-black" />
                     </div>
                     <span className="font-bold text-lg">Processamento Bancário</span>
@@ -481,10 +481,10 @@ export default function ProfessionalPaymentModal({ isOpen, onClose }: Profession
 
           <div className="bg-black/40 rounded-lg p-6 border border-blue-500/30">
             <div className="flex items-center gap-3 text-gray-300 mb-3">
-              <div className="w-6 h-6 bg-blue-500 rounded-lg flex items-center justify-center">
+              <div className="w-6 h-6 bg-gradient-to-br from-amber-400 to-amber-600 rounded-lg flex items-center justify-center">
                 <Users className="w-3 h-3 text-black" />
               </div>
-              <span className="font-medium text-blue-400">14.847 pessoas já transformaram suas noites</span>
+              <span className="font-medium text-amber-200">14.847 pessoas já transformaram suas noites</span>
             </div>
             <div className="grid grid-cols-3 gap-4 text-sm text-gray-400">
               <div className="flex items-center gap-2">
@@ -505,11 +505,11 @@ export default function ProfessionalPaymentModal({ isOpen, onClose }: Profession
           <Button
             onClick={createTransaction}
             disabled={loading}
-            className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 text-lg transition-all duration-300"
+            className="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black font-bold py-4 text-lg transition-all duration-300 shadow-lg"
           >
             {loading ? (
               <div className="flex items-center gap-2">
-                <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                <div className="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin"></div>
                 Processando...
               </div>
             ) : (
