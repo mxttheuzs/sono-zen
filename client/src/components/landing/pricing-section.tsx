@@ -1,27 +1,8 @@
 import { useState, useEffect } from "react";
-import { useMutation } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useToast } from "@/hooks/use-toast";
-import { insertPurchaseSchema } from "@shared/schema";
-import { apiRequest } from "@/lib/queryClient";
-import { trackInitiateCheckout, trackAddPaymentInfo, trackPurchase } from "@/lib/conversion-tracking";
+import { trackInitiateCheckout, trackAddPaymentInfo } from "@/lib/conversion-tracking";
 import { Shield, Lock, Star, Cloud, CheckCircle, Download, Clock, Users, Gift, Moon, Sparkles, Heart } from "lucide-react";
 import { FloatingClouds } from "@/components/ui/floating-clouds";
-import { PixPaymentModal } from "@/components/payment/pix-payment-modal";
-import ProfessionalPaymentModal from "@/components/payment/professional-payment-modal";
-import { z } from "zod";
-
-const purchaseFormSchema = insertPurchaseSchema.extend({
-  email: z.string().email("Email inválido"),
-  phone: z.string().min(10, "Telefone deve ter pelo menos 10 dígitos")
-});
-
-type PurchaseFormData = z.infer<typeof purchaseFormSchema>;
 
 // Componente RedirectModal com barra de progresso automática
 interface RedirectModalProps {
@@ -89,113 +70,28 @@ function RedirectModal({ onRedirect }: RedirectModalProps) {
 }
 
 export function PricingSection() {
-  const [showMultiPaymentCheckout, setShowMultiPaymentCheckout] = useState(false);
-  const [showForm, setShowForm] = useState(false);
   const [showRedirectModal, setShowRedirectModal] = useState(false);
-  const [showPixModal, setShowPixModal] = useState(false);
-  const [currentTransaction, setCurrentTransaction] = useState<any>(null);
-  const { toast } = useToast();
-  
-  const form = useForm<PurchaseFormData>({
-    resolver: zodResolver(purchaseFormSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      phone: "",
-      paymentMethod: "pix"
-    }
-  });
 
-  const purchaseMutation = useMutation({
-    mutationFn: async (data: PurchaseFormData) => {
-      const transactionData = {
-        external_id: `sono-zen-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
-        total_amount: 27.90,
-        payment_method: "PIX",
-        customer: {
-          name: data.name,
-          email: data.email,
-          phone: data.phone,
-          document: "", // Optional
-          document_type: "CPF" // Optional
-        }
-      };
-      
-      return apiRequest('POST', '/api/lira-payment/create-transaction', transactionData);
-    },
-    onSuccess: (response) => {
-      // Tracking de compra realizada com todos os parâmetros UTM
-      trackPurchase({
-        conversion_value: 27.90,
-        currency: 'BRL',
-        content_name: 'Sono Zen - Método Completo',
-        content_category: 'E-book'
-      });
-      
-      if (response.transaction) {
-        // Set transaction data and show PIX modal
-        setCurrentTransaction(response.transaction);
-        setShowPixModal(true);
-        
-        toast({
-          title: "Transação criada!",
-          description: "Use as informações de PIX para completar o pagamento.",
-        });
-      } else {
-        toast({
-          title: "Transação criada!",
-          description: "Você receberá as instruções de pagamento por email.",
-        });
-      }
-      
-      form.reset();
-      setShowForm(false);
-    },
-    onError: (error: any) => {
-      toast({
-        title: "Erro",
-        description: error?.message || "Tente novamente em alguns instantes.",
-        variant: "destructive"
-      });
-    }
-  });
-
-  const onSubmit = (data: PurchaseFormData) => {
-    // Add the amount in cents (R$ 27,90 = 2790 cents)
-    const purchaseData = {
-      ...data,
-      amount: 2790,
-      status: "pending"
-    };
-    purchaseMutation.mutate(purchaseData);
-  };
-
-  const handlePurchaseClick = () => {
-    // Tracking de iniciação de checkout
-    trackInitiateCheckout({
-      content_name: 'Sono Zen - Método Completo',
-      content_category: 'E-book',
-      value: 27.90,
-      currency: 'BRL'
-    });
+  const handleCTAClick = () => {
+    // Trigger InitiateCheckout tracking
+    trackInitiateCheckout();
     
-    setShowMultiPaymentCheckout(true);
+    // Show redirect modal
+    setShowRedirectModal(true);
   };
 
   const handleConfirmRedirect = () => {
-    // Enviar evento de InitiateCheckout apenas quando usuário confirma ir para pagamento
-    trackInitiateCheckout();
+    const paymentUrl = "https://pay.cakto.com.br/j6iqgss_456470";
     
-    const paymentUrl = 'https://pay.cakto.com.br/j6iqgss_456470';
+    // Trigger AddPaymentInfo tracking with delay
+    setTimeout(() => {
+      trackAddPaymentInfo();
+    }, 1500);
     
+    // Robust redirection with fallback
     try {
-      // Primeira tentativa: window.open
+      // Tenta abrir em nova aba
       const newWindow = window.open(paymentUrl, '_blank', 'noopener,noreferrer');
-      
-      // Aguardar um pouco e depois enviar AddPaymentInfo (quando realmente está na página de pagamento)
-      setTimeout(() => {
-        trackAddPaymentInfo();
-      }, 2000);
       
       // Se foi bloqueado, tenta window.location
       if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
@@ -331,10 +227,6 @@ export function PricingSection() {
               
               {/* Content */}
               <div className="p-4 sm:p-6 md:p-8">
-
-
-
-
                 {/* Pricing - Enhanced with better visual hierarchy */}
                 <div className="bg-gradient-to-br from-[var(--accent-blue)]/15 via-[var(--warm-accent)]/8 to-[var(--accent-blue)]/10 rounded-3xl p-6 sm:p-8 md:p-10 mb-8 border-2 border-[var(--warm-accent)]/50 backdrop-blur-lg relative overflow-hidden shadow-2xl">
                   {/* Decorative background elements */}
@@ -342,7 +234,6 @@ export function PricingSection() {
                   <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-br from-[var(--accent-blue)]/20 to-transparent rounded-full blur-2xl"></div>
                   
                   <div className="text-center relative z-10">
-                    
                     {/* Price comparison */}
                     <div className="mb-6">
                       <p className="text-[var(--text-muted)] mb-2 text-base" style={{ textShadow: '0 0 6px rgba(255,255,255,0.15)' }}>De:</p>
@@ -357,8 +248,6 @@ export function PricingSection() {
                           <p className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black bg-gradient-to-r from-[var(--warm-accent)] via-white to-[var(--accent-blue)] bg-clip-text text-transparent tracking-tight mb-4" style={{ textShadow: '0 0 20px rgba(255,255,255,0.6)' }}>
                             R$ 27,90
                           </p>
-                          
-
                         </div>
                       </div>
                     </div>
@@ -391,94 +280,62 @@ export function PricingSection() {
                       </div>
                     ))}
                   </div>
-
                 </div>
                 
-                {/* Elegant Premium Purchase Button */}
+                {/* Purchase Button */}
                 <div className="space-y-6">
-                  {/* Clean Premium Purchase Button */}
                   <div className="relative group">
-                    {/* Subtle glow effect */}
-                    <div className="absolute -inset-0.5 rounded-2xl blur opacity-20 group-hover:opacity-30 transition-all duration-500" 
-                         style={{ background: 'linear-gradient(135deg, hsl(220, 25%, 65%) 0%, hsl(220, 30%, 70%) 100%)' }}></div>
-                    
-                    <Button 
-                      onClick={handlePurchaseClick}
-                      className="relative w-full py-6 sm:py-7 px-8 sm:px-10 rounded-2xl text-lg sm:text-xl font-semibold transition-all duration-300 transform hover:scale-[1.01] shadow-lg hover:shadow-xl border border-white/10 backdrop-blur-sm text-white"
-                      style={{ 
-                        background: 'linear-gradient(135deg, hsl(220, 25%, 55%) 0%, hsl(220, 30%, 60%) 50%, hsl(220, 25%, 55%) 100%)',
-                        boxShadow: '0 4px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.1)',
-                        textShadow: '0 1px 2px rgba(0,0,0,0.3)'
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.background = 'linear-gradient(135deg, hsl(220, 25%, 60%) 0%, hsl(220, 30%, 65%) 50%, hsl(220, 25%, 60%) 100%)';
-                        e.currentTarget.style.boxShadow = '0 6px 25px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.15)';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.background = 'linear-gradient(135deg, hsl(220, 25%, 55%) 0%, hsl(220, 30%, 60%) 50%, hsl(220, 25%, 55%) 100%)';
-                        e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.1)';
-                      }}
+                    <Button
+                      onClick={handleCTAClick}
+                      className="w-full group bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 hover:from-slate-600 hover:via-slate-500 hover:to-slate-600 text-white font-bold py-4 px-8 rounded-2xl text-lg relative overflow-hidden shadow-lg transform hover:scale-105 transition-all duration-300 border border-slate-500/50"
+                      style={{ textShadow: '0 0 8px rgba(255,255,255,0.3)' }}
                     >
-                      <div className="flex items-center justify-center gap-3">
-                        <Moon className="h-5 w-5 sm:h-6 sm:w-6 text-white/80" />
-                        <span className="text-white font-semibold">
-                          Transformar Meu Sono Agora
-                        </span>
-                        <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 text-white/70" />
-                      </div>
+                      <span className="relative z-10 flex items-center justify-center gap-3">
+                        <Moon className="h-5 w-5" />
+                        Transformar Meu Sono Agora
+                      </span>
                     </Button>
                   </div>
                   
-                  {/* Enhanced Security & Trust Badges */}
-                  <div className="bg-gradient-to-br from-[var(--accent-blue)]/10 via-[var(--warm-accent)]/5 to-[var(--accent-blue)]/8 rounded-3xl p-6 sm:p-8 border-2 border-[var(--warm-accent)]/40 backdrop-blur-lg relative overflow-hidden shadow-xl">
-                    {/* Decorative elements */}
-                    <div className="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-[var(--warm-accent)]/15 to-transparent rounded-full blur-2xl"></div>
-                    <div className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-br from-[var(--accent-blue)]/15 to-transparent rounded-full blur-xl"></div>
-                    
-                    <div className="text-center mb-6 relative z-10">
-                      <h4 className="text-lg sm:text-xl font-bold text-[var(--text-primary)] mb-2">
-                        🛡️ Sua Compra está{" "}
-                        <span className="bg-gradient-to-r from-[var(--warm-accent)] via-[var(--accent-blue)] to-[var(--celestial-blue)] bg-clip-text text-transparent">
-                          Protegida
-                        </span>.
-                      </h4>
-                      <p className="text-sm text-[var(--text-secondary)]">
-                        Milhares de clientes satisfeitos confiam em nossa plataforma
+                  {/* Trust indicators */}
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                    <div className="bg-[var(--accent-blue)]/10 rounded-2xl p-4 sm:p-6 border-2 border-[var(--accent-blue)]/40 backdrop-blur-lg">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 mx-auto mb-3 bg-gradient-to-br from-[var(--warm-accent)]/30 to-[var(--accent-blue)]/30 rounded-xl flex items-center justify-center">
+                        <Shield className="h-4 w-4 sm:h-5 sm:w-5 text-[var(--accent-blue)]" />
+                      </div>
+                      <h4 className="font-bold text-sm sm:text-base text-[var(--text-primary)] mb-2" style={{ textShadow: '0 0 6px rgba(255,255,255,0.2)' }}>Garantia Total</h4>
+                      <p className="text-xs sm:text-sm text-[var(--text-muted)]" style={{ textShadow: '0 0 5px rgba(255,255,255,0.15)' }}>
+                        7 dias para testar. Não funcionou? Devolvemos 100% do seu dinheiro.
                       </p>
                     </div>
                     
-                    <div className="grid sm:grid-cols-3 gap-4 sm:gap-6 relative z-10">
-                      <div className="flex flex-col items-center text-center p-5 bg-gradient-to-br from-green-500/15 to-emerald-500/10 border-2 border-green-400/30 rounded-2xl backdrop-blur-sm hover:scale-105 transition-all duration-300 group">
-                        <div className="w-12 h-12 bg-gradient-to-br from-green-400/20 to-emerald-400/20 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                          <Shield className="h-6 w-6 text-green-300" />
-                        </div>
-                        <h5 className="font-bold text-green-200 text-sm sm:text-base mb-1">Garantia de 7 Dias</h5>
-                        <p className="text-green-100/80 text-xs sm:text-sm">Não funcionou? Devolvemos seu dinheiro</p>
+                    <div className="bg-[var(--accent-blue)]/10 rounded-2xl p-4 sm:p-6 border-2 border-[var(--accent-blue)]/40 backdrop-blur-lg">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 mx-auto mb-3 bg-gradient-to-br from-[var(--warm-accent)]/30 to-[var(--accent-blue)]/30 rounded-xl flex items-center justify-center">
+                        <Lock className="h-4 w-4 sm:h-5 sm:w-5 text-[var(--accent-blue)]" />
                       </div>
-                      
-                      <div className="flex flex-col items-center text-center p-5 bg-gradient-to-br from-blue-500/15 to-cyan-500/10 border-2 border-blue-400/30 rounded-2xl backdrop-blur-sm hover:scale-105 transition-all duration-300 group">
-                        <div className="w-12 h-12 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                          <Lock className="h-6 w-6 text-blue-300" />
-                        </div>
-                        <h5 className="font-bold text-blue-200 text-sm sm:text-base mb-1">Pagamento Seguro</h5>
-                        <p className="text-blue-100/80 text-xs sm:text-sm">Criptografia SSL 256-bits</p>
-                      </div>
-                      
-                      <div className="flex flex-col items-center text-center p-5 bg-gradient-to-br from-[var(--warm-accent)]/15 to-orange-500/10 border-2 border-[var(--warm-accent)]/30 rounded-2xl backdrop-blur-sm hover:scale-105 transition-all duration-300 group">
-                        <div className="w-12 h-12 bg-gradient-to-br from-[var(--warm-accent)]/20 to-orange-400/20 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                          <Download className="h-6 w-6 text-[var(--warm-accent)]" />
-                        </div>
-                        <h5 className="font-bold text-[var(--warm-accent)] text-sm sm:text-base mb-1">Acesso Instantâneo</h5>
-                        <p className="text-orange-100/80 text-xs sm:text-sm">Receba em até 2 minutos</p>
-                      </div>
-                    </div>
-                    
-                    {/* Social proof footer */}
-                    <div className="text-center mt-6 pt-4 border-t border-[var(--warm-accent)]/20 relative z-10">
-                      <p className="text-sm text-[var(--text-secondary)]">
-                        ⭐ 4.9/5 estrelas • 14.847+ transformações • 98% de satisfação
+                      <h4 className="font-bold text-sm sm:text-base text-[var(--text-primary)] mb-2" style={{ textShadow: '0 0 6px rgba(255,255,255,0.2)' }}>Pagamento Seguro</h4>
+                      <p className="text-xs sm:text-sm text-[var(--text-muted)]" style={{ textShadow: '0 0 5px rgba(255,255,255,0.15)' }}>
+                        Seus dados protegidos com certificado SSL. Transação 100% segura.
                       </p>
                     </div>
+                    
+                    <div className="bg-[var(--accent-blue)]/10 rounded-2xl p-4 sm:p-6 border-2 border-[var(--accent-blue)]/40 backdrop-blur-lg">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 mx-auto mb-3 bg-gradient-to-br from-[var(--warm-accent)]/30 to-[var(--accent-blue)]/30 rounded-xl flex items-center justify-center">
+                        <Download className="h-4 w-4 sm:h-5 sm:w-5 text-[var(--accent-blue)]" />
+                      </div>
+                      <h4 className="font-bold text-sm sm:text-base text-[var(--text-primary)] mb-2" style={{ textShadow: '0 0 6px rgba(255,255,255,0.2)' }}>Acesso Imediato</h4>
+                      <p className="text-xs sm:text-sm text-[var(--text-muted)]" style={{ textShadow: '0 0 5px rgba(255,255,255,0.15)' }}>
+                        Receba o método completo no seu email em até 5 minutos.
+                      </p>
+                    </div>
+                  </div>
+                  
+                  {/* Social proof */}
+                  <div className="text-center">
+                    <p className="text-[var(--text-muted)] text-sm flex items-center justify-center gap-2" style={{ textShadow: '0 0 5px rgba(255,255,255,0.15)' }}>
+                      <Users className="h-4 w-4 text-[var(--accent-blue)]" />
+                      <span className="font-bold text-[var(--accent-blue)]">14.847 vidas transformadas</span>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -487,123 +344,10 @@ export function PricingSection() {
         </div>
       </section>
 
-      {/* Purchase Form Modal */}
-      {showForm && (
-        <div className="fixed inset-0 bg-black/90 backdrop-blur-lg z-50 flex items-center justify-center p-3 sm:p-4">
-          <div className="bg-gradient-to-br from-[var(--accent-blue)]/10 to-[var(--warm-accent)]/5 backdrop-blur-xl border border-[var(--accent-blue)]/30 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 max-w-sm sm:max-w-md w-full max-h-[95vh] sm:max-h-[90vh] overflow-y-auto shadow-2xl">
-            <div className="text-center mb-4 sm:mb-6">
-              <h3 className="text-xl sm:text-2xl font-bold text-white mb-2" style={{ textShadow: '0 0 10px rgba(255,255,255,0.3)' }}>Finalizar Compra</h3>
-              <p className="text-sm sm:text-base text-[var(--text-secondary)]" style={{ textShadow: '0 0 6px rgba(255,255,255,0.15)' }}>Sono Zen - Método Completo</p>
-              <p className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-[var(--accent-blue)] to-[var(--warm-accent)] bg-clip-text text-transparent mt-2" style={{ textShadow: '0 0 12px rgba(255,255,255,0.25)' }}>R$ 27,90</p>
-            </div>
-
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-                <FormField
-                  control={form.control}
-                  name="name"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Nome completo</FormLabel>
-                      <FormControl>
-                        <Input placeholder="Seu nome completo" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Email</FormLabel>
-                      <FormControl>
-                        <Input type="email" placeholder="seu@email.com" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="phone"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Telefone</FormLabel>
-                      <FormControl>
-                        <Input placeholder="(11) 99999-9999" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="paymentMethod"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Forma de pagamento</FormLabel>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
-                        <FormControl>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Selecione" />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent>
-                          <SelectItem value="pix">PIX</SelectItem>
-                          <SelectItem value="credit_card">Cartão de Crédito</SelectItem>
-                          <SelectItem value="debit_card">Cartão de Débito</SelectItem>
-                        </SelectContent>
-                      </Select>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <div className="flex gap-3 pt-4">
-                  <Button
-                    type="button"
-                    variant="outline"
-                    className="flex-1"
-                    onClick={() => setShowForm(false)}
-                  >
-                    Cancelar
-                  </Button>
-                  <Button
-                    type="submit"
-                    className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
-                    disabled={purchaseMutation.isPending}
-                  >
-                    {purchaseMutation.isPending ? "Processando..." : "Finalizar Compra"}
-                  </Button>
-                </div>
-              </form>
-            </Form>
-          </div>
-        </div>
-      )}
-
       {/* Redirect Modal with Progress Bar */}
       {showRedirectModal && (
         <RedirectModal onRedirect={handleConfirmRedirect} />
       )}
-
-      {/* PIX Payment Modal */}
-      <PixPaymentModal
-        isOpen={showPixModal}
-        onClose={() => setShowPixModal(false)}
-        transaction={currentTransaction}
-      />
-
-      {/* Lirapay Checkout Modal */}
-      <ProfessionalPaymentModal
-        isOpen={showMultiPaymentCheckout}
-        onClose={() => setShowMultiPaymentCheckout(false)}
-      />
     </>
   );
 }
