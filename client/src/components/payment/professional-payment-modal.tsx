@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -8,6 +8,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/u
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Moon, Copy, CheckCircle, Clock, CreditCard, Shield, Zap, QrCode, FileText, Star, Lock, Sparkles, Users, Phone, Mail, User } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import QRCode from 'qrcode';
 
 interface ProfessionalPaymentModalProps {
   isOpen: boolean;
@@ -64,7 +65,31 @@ export default function ProfessionalPaymentModal({ isOpen, onClose }: Profession
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
+  const [qrCodeImage, setQrCodeImage] = useState<string | null>(null);
   const { toast } = useToast();
+
+  // Generate QR Code when PIX payload is available
+  useEffect(() => {
+    if (transaction?.pix?.payload) {
+      generateQRCode(transaction.pix.payload);
+    }
+  }, [transaction]);
+
+  const generateQRCode = async (payload: string) => {
+    try {
+      const qrCodeDataUrl = await QRCode.toDataURL(payload, {
+        width: 256,
+        margin: 2,
+        color: {
+          dark: '#000000',
+          light: '#FFFFFF'
+        }
+      });
+      setQrCodeImage(qrCodeDataUrl);
+    } catch (error) {
+      console.error('Error generating QR code:', error);
+    }
+  };
 
   const handleInputChange = (field: keyof CustomerData, value: string) => {
     setCustomerData(prev => ({ ...prev, [field]: value }));
@@ -215,28 +240,56 @@ export default function ProfessionalPaymentModal({ isOpen, onClose }: Profession
             </div>
 
             {transaction.pix && (
-              <div className="space-y-4">
-                <div className="text-center">
-                  <QrCode className="w-16 h-16 mx-auto text-white/70 mb-2" />
-                  <p className="text-lg font-medium text-white">PIX Copia e Cola</p>
-                  <p className="text-sm text-white/60">
-                    Copie o código abaixo e cole em seu app bancário
-                  </p>
+              <div className="space-y-6">
+                <div className="flex items-center gap-2 text-blue-400 mb-4">
+                  <QrCode className="w-5 h-5" />
+                  <span className="font-medium">PIX - Escolha sua forma preferida</span>
                 </div>
                 
-                <div className="bg-black/50 border border-white/10 p-4 rounded-lg">
-                  <p className="text-xs text-white/80 break-all font-mono">
-                    {transaction.pix.payload}
+                {/* QR Code Section */}
+                <div className="space-y-4">
+                  <h4 className="text-white font-medium">1. Escaneie o QR Code</h4>
+                  <div className="bg-white rounded-lg p-4 flex justify-center">
+                    {qrCodeImage ? (
+                      <img 
+                        src={qrCodeImage} 
+                        alt="QR Code PIX" 
+                        className="w-48 h-48"
+                      />
+                    ) : (
+                      <div className="w-48 h-48 bg-gray-200 flex items-center justify-center">
+                        <span className="text-gray-500">Gerando QR Code...</span>
+                      </div>
+                    )}
+                  </div>
+                  <p className="text-sm text-white/60 text-center">
+                    Abra o app do seu banco e escaneie o código
                   </p>
                 </div>
-                
-                <Button
-                  onClick={() => copyToClipboard(transaction.pix!.payload)}
-                  className="w-full bg-white/10 hover:bg-white/20 border border-white/20 text-white"
-                >
-                  <Copy className="w-4 h-4 mr-2" />
-                  {copied ? 'Copiado!' : 'Copiar Código PIX'}
-                </Button>
+
+                <div className="flex items-center gap-4">
+                  <div className="flex-1 h-px bg-white/20"></div>
+                  <span className="text-white/60 text-sm">OU</span>
+                  <div className="flex-1 h-px bg-white/20"></div>
+                </div>
+
+                {/* Copy & Paste Section */}
+                <div className="space-y-4">
+                  <h4 className="text-white font-medium">2. Copie e Cole o Código</h4>
+                  <div className="bg-black/50 border border-white/10 p-4 rounded-lg">
+                    <p className="text-xs text-white/80 break-all font-mono max-h-20 overflow-y-auto">
+                      {transaction.pix.payload}
+                    </p>
+                  </div>
+                  
+                  <Button
+                    onClick={() => copyToClipboard(transaction.pix!.payload)}
+                    className="w-full bg-white/10 hover:bg-white/20 border border-white/20 text-white"
+                  >
+                    <Copy className="w-4 h-4 mr-2" />
+                    {copied ? 'Copiado!' : 'Copiar Código PIX'}
+                  </Button>
+                </div>
               </div>
             )}
 
