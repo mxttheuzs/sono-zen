@@ -282,25 +282,18 @@ export function PricingSection() {
                   </div>
                 </div>
                 
-                {/* Purchase Button - Premium Design */}
+                {/* Elegant Premium Purchase Button */}
                 <div className="space-y-6">
+                  {/* Clean Premium Purchase Button */}
                   <div className="relative group">
-                    {/* Floating glow animation */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-[var(--warm-accent)] via-[var(--accent-blue)] to-[var(--warm-accent)] rounded-3xl opacity-60 group-hover:opacity-80 transition-opacity duration-300 animate-pulse blur-lg"></div>
-                    
                     <Button
                       onClick={handleCTAClick}
-                      className="w-full relative z-10 bg-gradient-to-r from-[var(--warm-accent)] via-yellow-500 to-[var(--warm-accent)] hover:from-yellow-500 hover:via-[var(--warm-accent)] hover:to-yellow-500 text-black font-black py-6 px-8 rounded-3xl text-xl shadow-2xl transform hover:scale-105 transition-all duration-300 border-2 border-[var(--warm-accent)]/50"
-                      style={{ 
-                        textShadow: '0 2px 4px rgba(0,0,0,0.3)',
-                        boxShadow: '0 0 30px rgba(218, 165, 32, 0.6), 0 0 60px rgba(218, 165, 32, 0.3)',
-                        animation: 'float 3s ease-in-out infinite'
-                      }}
+                      className="w-full bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 hover:from-slate-600 hover:via-slate-500 hover:to-slate-600 text-white font-bold py-6 px-8 rounded-2xl text-xl shadow-xl transform hover:scale-105 transition-all duration-300 border border-slate-500/30"
+                      style={{ textShadow: '0 0 8px rgba(255,255,255,0.2)' }}
                     >
                       <span className="relative z-10 flex items-center justify-center gap-3">
                         <Moon className="h-6 w-6" />
-                        <span className="text-xl font-black">SIM! QUERO DORMIR COMO UM BEBÊ</span>
-                        <Sparkles className="h-6 w-6 animate-pulse" />
+                        Transformar Meu Sono Agora
                       </span>
                     </Button>
                   </div>
