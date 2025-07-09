@@ -107,7 +107,7 @@ export function VideoPreviewSection() {
                 Este vídeo mostra <strong>apenas uma pequena amostra</strong> do webapp interativo que você vai receber. O conteúdo completo possui muito mais módulos, técnicas e recursos do que você vê aqui.
               </p>
               <p className="text-[var(--text-primary)] font-semibold mb-6">
-                Após a compra, você terá acesso ao <strong>método completo</strong> sem blur e com todos os 6 módulos especializados desbloqueados!
+                Após a compra, você terá acesso ao <strong>método completo</strong> sem blur e com todos os módulos especializados desbloqueados!
               </p>
               
               <Button 
