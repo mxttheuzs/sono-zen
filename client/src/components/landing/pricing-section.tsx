@@ -21,66 +21,61 @@ const purchaseFormSchema = insertPurchaseSchema.extend({
 
 type PurchaseFormData = z.infer<typeof purchaseFormSchema>;
 
-// Componente RedirectModal com barra de progresso automática
-interface RedirectModalProps {
-  onRedirect: () => void;
+// Componente PaymentModal com iframe da Cakto
+interface PaymentModalProps {
+  onClose: () => void;
 }
 
-function RedirectModal({ onRedirect }: RedirectModalProps) {
-  const [progress, setProgress] = useState(100);
+function PaymentModal({ onClose }: PaymentModalProps) {
+  const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    let isRedirected = false;
-    
-    const timer = setInterval(() => {
-      setProgress((prev) => {
-        if (prev <= 0 && !isRedirected) {
-          clearInterval(timer);
-          isRedirected = true;
-          onRedirect();
-          return 0;
-        }
-        return prev - 4; // Diminui 4% a cada 100ms (2.5 segundos total)
-      });
-    }, 100);
-
-    return () => {
-      clearInterval(timer);
-    };
-  }, [onRedirect]);
+  const handleIframeLoad = () => {
+    setIsLoading(false);
+  };
 
   return (
     <div className="fixed inset-0 bg-black/90 backdrop-blur-lg z-50 flex items-center justify-center p-4">
-      <div className="bg-gradient-to-br from-[var(--accent-blue)]/10 to-[var(--warm-accent)]/5 backdrop-blur-xl border border-[var(--accent-blue)]/30 rounded-3xl p-8 max-w-sm w-full shadow-2xl relative overflow-hidden">
+      <div className="bg-white rounded-2xl w-full max-w-4xl h-[90vh] shadow-2xl relative overflow-hidden">
         
-        {/* Decorative elements */}
-        <div className="absolute top-4 right-4 w-16 h-16 bg-gradient-to-br from-[var(--warm-accent)]/20 to-transparent rounded-full blur-xl"></div>
-        <div className="absolute bottom-4 left-4 w-12 h-12 bg-gradient-to-br from-[var(--accent-blue)]/20 to-transparent rounded-full blur-xl"></div>
-        
-        <div className="text-center relative z-10">
-          {/* Icon */}
-          <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-[var(--warm-accent)]/20 to-[var(--accent-blue)]/20 border border-[var(--warm-accent)]/30 rounded-2xl flex items-center justify-center backdrop-blur-sm">
-            <Moon className="h-8 w-8 text-[var(--warm-accent)]" style={{ filter: 'drop-shadow(0 0 8px rgba(218, 165, 32, 0.5))' }} />
+        {/* Header */}
+        <div className="bg-gradient-to-r from-[var(--accent-blue)] to-[var(--warm-accent)] p-4 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+              <Shield className="h-5 w-5 text-white" />
+            </div>
+            <div>
+              <h3 className="text-white font-semibold">Pagamento Seguro</h3>
+              <p className="text-white/80 text-sm">Sono Zen - Método Completo</p>
+            </div>
           </div>
           
-          {/* Title */}
-          <h3 className="text-2xl font-bold text-white mb-8" style={{ textShadow: '0 0 10px rgba(255,255,255,0.3)' }}>
-            🌙 Quase lá!
-          </h3>
-          
-          {/* Progress Bar */}
-          <div className="w-full bg-white/20 rounded-full h-2 mb-4 overflow-hidden">
-            <div 
-              className="bg-white h-full rounded-full transition-all duration-100 ease-linear"
-              style={{ width: `${progress}%` }}
-            ></div>
-          </div>
-          
-          {/* Redirecting text */}
-          <p className="text-sm text-[var(--text-secondary)]" style={{ textShadow: '0 0 6px rgba(255,255,255,0.15)' }}>
-            Redirecionando para pagamento seguro...
-          </p>
+          <button
+            onClick={onClose}
+            className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center hover:bg-white/30 transition-colors"
+          >
+            <span className="text-white text-xl">×</span>
+          </button>
         </div>
+
+        {/* Loading */}
+        {isLoading && (
+          <div className="absolute inset-0 bg-white flex items-center justify-center">
+            <div className="text-center">
+              <div className="w-12 h-12 border-4 border-[var(--accent-blue)]/30 border-t-[var(--accent-blue)] rounded-full animate-spin mb-4"></div>
+              <p className="text-gray-600">Carregando pagamento seguro...</p>
+            </div>
+          </div>
+        )}
+
+        {/* Iframe */}
+        <iframe
+          src="https://pay.cakto.com.br/j6iqgss_456470"
+          className="w-full h-full border-0"
+          onLoad={handleIframeLoad}
+          title="Pagamento Seguro - Cakto"
+          allow="payment"
+          sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-top-navigation"
+        />
       </div>
     </div>
   );
@@ -88,7 +83,7 @@ function RedirectModal({ onRedirect }: RedirectModalProps) {
 
 export function PricingSection() {
   const [showForm, setShowForm] = useState(false);
-  const [showRedirectModal, setShowRedirectModal] = useState(false);
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
   const { toast } = useToast();
   
   const form = useForm<PurchaseFormData>({
@@ -141,44 +136,18 @@ export function PricingSection() {
   };
 
   const handlePurchaseClick = () => {
-    // Apenas abrir o modal - não enviar eventos ainda
-    setShowRedirectModal(true);
+    // Enviar evento de InitiateCheckout quando abre o modal de pagamento
+    trackInitiateCheckout();
+    setShowPaymentModal(true);
+    
+    // Aguardar um pouco e depois enviar AddPaymentInfo (quando iframe carrega)
+    setTimeout(() => {
+      trackAddPaymentInfo();
+    }, 2000);
   };
 
-  const handleConfirmRedirect = () => {
-    // Enviar evento de InitiateCheckout apenas quando usuário confirma ir para pagamento
-    trackInitiateCheckout();
-    
-    const paymentUrl = 'https://pay.cakto.com.br/j6iqgss_456470';
-    
-    try {
-      // Primeira tentativa: window.open
-      const newWindow = window.open(paymentUrl, '_blank', 'noopener,noreferrer');
-      
-      // Aguardar um pouco e depois enviar AddPaymentInfo (quando realmente está na página de pagamento)
-      setTimeout(() => {
-        trackAddPaymentInfo();
-      }, 2000);
-      
-      // Se foi bloqueado, tenta window.location
-      if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
-        // Fallback: redirecionar na mesma aba
-        window.location.href = paymentUrl;
-        // Enviar AddPaymentInfo imediatamente neste caso
-        setTimeout(() => {
-          trackAddPaymentInfo();
-        }, 1000);
-      }
-    } catch (error) {
-      // Último fallback: redirecionar na mesma aba
-      window.location.href = paymentUrl;
-      // Enviar AddPaymentInfo imediatamente neste caso
-      setTimeout(() => {
-        trackAddPaymentInfo();
-      }, 1000);
-    }
-    
-    setShowRedirectModal(false);
+  const handleClosePayment = () => {
+    setShowPaymentModal(false);
   };
 
   const features = [
@@ -550,9 +519,9 @@ export function PricingSection() {
         </div>
       )}
 
-      {/* Redirect Modal with Progress Bar */}
-      {showRedirectModal && (
-        <RedirectModal onRedirect={handleConfirmRedirect} />
+      {/* Payment Modal with Cakto iframe */}
+      {showPaymentModal && (
+        <PaymentModal onClose={handleClosePayment} />
       )}
     </>
   );

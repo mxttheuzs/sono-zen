@@ -176,6 +176,7 @@ Changelog:
 - July 9, 2025. Exit-intent popup removal: Removed the exit-intent popup component that displayed "Espere! Não vá embora..." when users attempted to leave the page. Component completely removed from App.tsx for cleaner user experience without interruptions.
 - July 9, 2025. Video preview update: Updated video preview section with new preview video (0709(3)_1752038974566.mp4) replacing the previous version for improved showcase of the webapp functionality.
 - July 9, 2025. Video controls removal: Removed video controls from preview section to create clean, continuous playback experience without user interface elements or pause functionality.
+- July 9, 2025. Integrated payment system: Implemented Cakto payment directly in the website using iframe modal. Users can now complete purchases without leaving the site, providing seamless checkout experience with secure payment processing through embedded Cakto interface.
 
 ## User Preferences
 
