@@ -70,8 +70,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const accessToken = process.env.FACEBOOK_ACCESS_TOKEN;
       const pixelId = '4659614774264856'; // Your Facebook Pixel ID
       
-      if (!accessToken) {
-        return res.status(500).json({ message: "Facebook access token not configured" });
+      if (!accessToken || accessToken.trim() === '') {
+        console.log('Facebook access token not found or empty - API disabled');
+        return res.status(200).json({ success: false, message: "Facebook Conversions API disabled - pixel only" });
       }
 
       const {
