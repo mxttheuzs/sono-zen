@@ -38,22 +38,22 @@ function PaymentModal({ onClose }: PaymentModalProps) {
       <div className="bg-white rounded-2xl w-full max-w-4xl h-[90vh] shadow-2xl relative overflow-hidden">
         
         {/* Header */}
-        <div className="bg-gradient-to-r from-[var(--accent-blue)] to-[var(--warm-accent)] p-4 flex items-center justify-between">
+        <div className="bg-slate-800 border-b border-slate-700 p-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
-              <Shield className="h-5 w-5 text-white" />
+            <div className="w-8 h-8 bg-slate-700 rounded-lg flex items-center justify-center">
+              <Shield className="h-5 w-5 text-slate-300" />
             </div>
             <div>
               <h3 className="text-white font-semibold">Pagamento Seguro</h3>
-              <p className="text-white/80 text-sm">Sono Zen - Método Completo</p>
+              <p className="text-slate-300 text-sm">Sono Zen - Método Completo</p>
             </div>
           </div>
           
           <button
             onClick={onClose}
-            className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center hover:bg-white/30 transition-colors"
+            className="w-8 h-8 bg-slate-700 rounded-lg flex items-center justify-center hover:bg-slate-600 transition-colors"
           >
-            <span className="text-white text-xl">×</span>
+            <span className="text-slate-300 text-xl">×</span>
           </button>
         </div>
 
