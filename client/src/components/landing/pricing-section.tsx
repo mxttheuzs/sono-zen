@@ -9,7 +9,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useToast } from "@/hooks/use-toast";
 import { insertPurchaseSchema } from "@shared/schema";
 import { apiRequest } from "@/lib/queryClient";
-import { trackInitiateCheckout, trackAddPaymentInfo, trackPurchase } from "@/lib/conversion-tracking";
+import { trackInitiateCheckout, trackPurchase } from "@/lib/conversion-tracking";
 import { Shield, Lock, Star, Cloud, CheckCircle, Download, Clock, Users, Gift, Moon, Sparkles, Heart } from "lucide-react";
 import { FloatingClouds } from "@/components/ui/floating-clouds";
 import { z } from "zod";
@@ -205,11 +205,6 @@ export function PricingSection() {
   const handleLoadingComplete = () => {
     setShowLoadingModal(false);
     setShowPaymentModal(true);
-    
-    // Aguardar um pouco e depois enviar AddPaymentInfo (quando iframe carrega)
-    setTimeout(() => {
-      trackAddPaymentInfo();
-    }, 1000);
   };
 
   const handleClosePayment = () => {

@@ -181,6 +181,7 @@ Changelog:
 - July 9, 2025. Payment loading experience: Added professional loading modal with progress bar that shows "Iniciando Pagamento Seguro" when user clicks to purchase, creating trustworthy transition before opening payment iframe. Features security icon, percentage progress, and professional styling.
 - July 9, 2025. Video preview content clarification: Updated video preview section text to clearly indicate that the video shows "apenas uma pequena parte" (only a small part) of the complete content, emphasizing that the full method contains much more modules, techniques and resources than shown in the preview.
 - July 9, 2025. Mobile text overflow fixes: Fixed mobile display issues where button text was overflowing screen boundaries in video preview section and quiz results. Applied responsive font sizes (text-sm on mobile), adjusted padding, implemented proper text wrapping with break-words, and reorganized button layout to stack vertically on mobile devices for better usability.
+- July 9, 2025. Tracking system simplification: Streamlined Facebook conversion tracking to focus only on essential events for the sales funnel. Removed unnecessary logs and debugging information, keeping only ViewContent, InitiateCheckout, and Purchase events. Eliminated PageView and AddPaymentInfo tracking to reduce console noise and focus on conversion-critical events that provide actual business value.
 
 ## User Preferences
 

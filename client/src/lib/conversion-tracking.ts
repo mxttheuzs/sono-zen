@@ -79,7 +79,7 @@ class ConversionTracker {
     try {
       localStorage.setItem('conversion_parameters', JSON.stringify(this.parameters));
     } catch (error) {
-      console.warn('Erro ao salvar parâmetros de conversão:', error);
+      // Erro silencioso
     }
   }
   
@@ -92,7 +92,7 @@ class ConversionTracker {
         this.parameters = { ...this.parameters, ...JSON.parse(saved) };
       }
     } catch (error) {
-      console.warn('Erro ao carregar parâmetros de conversão:', error);
+      // Erro silencioso
     }
   }
   
@@ -126,15 +126,11 @@ class ConversionTracker {
     
     // Enviar evento para Facebook Pixel (se disponível)
     if ((window as any).fbq) {
-      (window as any).fbq('track', eventType, eventData, {
-        test_event_code: 'TEST74923'
-      });
+      (window as any).fbq('track', eventType, eventData);
     }
     
     // Enviar também para Facebook Conversions API via backend
     this.sendToConversionsAPI(eventType, eventData);
-    
-    console.log('Facebook Conversion sent:', { eventType, eventData });
   }
 
   // Enviar para Facebook Conversions API via backend
@@ -257,13 +253,13 @@ class ConversionTracker {
       
       if (response.ok) {
         const result = await response.json();
-        console.log('✅ Facebook Conversions API success:', result);
+        // Conversão enviada com sucesso
       } else {
         const error = await response.json();
-        console.warn('❌ Facebook Conversions API error:', error);
+        // Erro ao enviar conversão
       }
     } catch (error) {
-      console.warn('🚨 Error sending to Facebook Conversions API:', error);
+      // Erro silencioso - não interrompe a experiência do usuário
     }
   }
   
@@ -281,7 +277,6 @@ class ConversionTracker {
       const hashArray = Array.from(new Uint8Array(hashBuffer));
       return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
     } catch (error) {
-      console.warn('Erro ao fazer hash dos dados:', error);
       return data; // Fallback
     }
   }
@@ -312,9 +307,8 @@ class ConversionTracker {
         ...this.getParameters(),
         ...data
       });
-      console.log('UTMify conversion sent:', { eventType, data });
     } catch (error) {
-      console.warn('Erro ao enviar para UTMify:', error);
+      // Erro silencioso
     }
   }
   
@@ -338,24 +332,13 @@ class ConversionTracker {
     
     // Enviar para UTMify
     this.sendUTMifyConversion(eventType, conversionData);
-    
-    // Log para debug
-    console.log('Conversion tracked:', {
-      eventType,
-      parameters: this.getParameters(),
-      conversionData
-    });
   }
 }
 
 // Instância global do tracker
 export const conversionTracker = new ConversionTracker();
 
-// Funções de conveniência
-export const trackPageView = () => {
-  conversionTracker.trackConversion('PageView');
-};
-
+// Funções de tracking essenciais para o funil de conversão
 export const trackViewContent = (contentName?: string) => {
   conversionTracker.trackConversion('ViewContent', {
     content_name: contentName || 'Sono Zen - Landing Page'
@@ -364,15 +347,6 @@ export const trackViewContent = (contentName?: string) => {
 
 export const trackInitiateCheckout = () => {
   conversionTracker.trackConversion('InitiateCheckout', {
-    content_name: 'Sono Zen - Método Completo',
-    content_category: 'E-book',
-    conversion_value: 27.90,
-    currency: 'BRL'
-  });
-};
-
-export const trackAddPaymentInfo = () => {
-  conversionTracker.trackConversion('AddPaymentInfo', {
     content_name: 'Sono Zen - Método Completo',
     content_category: 'E-book',
     conversion_value: 27.90,

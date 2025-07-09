@@ -16,16 +16,13 @@ import { FloatingClouds } from "@/components/ui/floating-clouds";
 import { FloatingStars } from "@/components/ui/floating-stars";
 import { Button } from "@/components/ui/button";
 import { Heart, Sparkles } from "lucide-react";
-import { trackPageView, trackViewContent } from "@/lib/conversion-tracking";
+import { trackViewContent } from "@/lib/conversion-tracking";
 
 
 
 export default function Home() {
   // Inicializar tracking ao carregar a página
   useEffect(() => {
-    // Tracking de page view com parâmetros UTM capturados
-    trackPageView();
-    
     // Tracking de view content da landing page
     trackViewContent('Sono Zen - Landing Page');
   }, []);
