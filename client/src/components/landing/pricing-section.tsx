@@ -21,6 +21,66 @@ const purchaseFormSchema = insertPurchaseSchema.extend({
 
 type PurchaseFormData = z.infer<typeof purchaseFormSchema>;
 
+// Componente LoadingModal para inicialização do pagamento
+interface LoadingModalProps {
+  onComplete: () => void;
+}
+
+function LoadingModal({ onComplete }: LoadingModalProps) {
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) {
+          clearInterval(timer);
+          setTimeout(onComplete, 300);
+          return 100;
+        }
+        return prev + 2; // Incrementa 2% a cada 50ms (2.5 segundos total)
+      });
+    }, 50);
+
+    return () => clearInterval(timer);
+  }, [onComplete]);
+
+  return (
+    <div className="fixed inset-0 bg-black/90 backdrop-blur-lg z-50 flex items-center justify-center p-4">
+      <div className="bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl">
+        <div className="text-center">
+          {/* Security Icon */}
+          <div className="w-16 h-16 mx-auto mb-6 bg-slate-100 rounded-full flex items-center justify-center">
+            <Shield className="h-8 w-8 text-slate-600" />
+          </div>
+          
+          {/* Title */}
+          <h3 className="text-xl font-semibold text-slate-800 mb-2">
+            Iniciando Pagamento Seguro
+          </h3>
+          
+          {/* Subtitle */}
+          <p className="text-slate-600 mb-6">
+            Conectando com sistema de pagamento...
+          </p>
+          
+          {/* Progress Bar */}
+          <div className="w-full bg-slate-200 rounded-full h-2 mb-4">
+            <div 
+              className="bg-slate-600 h-2 rounded-full transition-all duration-100 ease-out"
+              style={{ width: `${progress}%` }}
+            />
+          </div>
+          
+          {/* Progress Text */}
+          <p className="text-sm text-slate-500">
+            {progress}% concluído
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // Componente PaymentModal com iframe da Cakto
 interface PaymentModalProps {
   onClose: () => void;
@@ -61,8 +121,8 @@ function PaymentModal({ onClose }: PaymentModalProps) {
         {isLoading && (
           <div className="absolute inset-0 bg-white flex items-center justify-center">
             <div className="text-center">
-              <div className="w-12 h-12 border-4 border-[var(--accent-blue)]/30 border-t-[var(--accent-blue)] rounded-full animate-spin mb-4"></div>
-              <p className="text-gray-600">Carregando pagamento seguro...</p>
+              <div className="w-12 h-12 border-4 border-slate-300 border-t-slate-600 rounded-full animate-spin mb-4"></div>
+              <p className="text-slate-600">Carregando pagamento seguro...</p>
             </div>
           </div>
         )}
@@ -83,6 +143,7 @@ function PaymentModal({ onClose }: PaymentModalProps) {
 
 export function PricingSection() {
   const [showForm, setShowForm] = useState(false);
+  const [showLoadingModal, setShowLoadingModal] = useState(false);
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const { toast } = useToast();
   
@@ -136,14 +197,19 @@ export function PricingSection() {
   };
 
   const handlePurchaseClick = () => {
-    // Enviar evento de InitiateCheckout quando abre o modal de pagamento
+    // Enviar evento de InitiateCheckout quando inicia o processo
     trackInitiateCheckout();
+    setShowLoadingModal(true);
+  };
+
+  const handleLoadingComplete = () => {
+    setShowLoadingModal(false);
     setShowPaymentModal(true);
     
     // Aguardar um pouco e depois enviar AddPaymentInfo (quando iframe carrega)
     setTimeout(() => {
       trackAddPaymentInfo();
-    }, 2000);
+    }, 1000);
   };
 
   const handleClosePayment = () => {
@@ -517,6 +583,11 @@ export function PricingSection() {
             </Form>
           </div>
         </div>
+      )}
+
+      {/* Loading Modal */}
+      {showLoadingModal && (
+        <LoadingModal onComplete={handleLoadingComplete} />
       )}
 
       {/* Payment Modal with Cakto iframe */}
