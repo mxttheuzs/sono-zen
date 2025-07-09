@@ -31,26 +31,11 @@ export function CopyProtection() {
       return false;
     };
 
-    // Detectar DevTools
-    const detectDevTools = () => {
-      const intervalId = setInterval(() => {
-        if (window.outerHeight - window.innerHeight > 200 || 
-            window.outerWidth - window.innerWidth > 200) {
-          console.clear();
-          console.log('⚠️ DevTools detectado - Conteúdo protegido');
-        }
-      }, 500);
-      
-      // Return cleanup function
-      return () => clearInterval(intervalId);
-    };
-
     // Aplicar proteções
     document.addEventListener('contextmenu', handleContextMenu);
     document.addEventListener('selectstart', handleSelectStart);
     document.addEventListener('keydown', handleKeyDown);
     document.addEventListener('dragstart', handleDragStart);
-    const cleanupDevTools = detectDevTools();
 
     // CSS de proteção
     const style = document.createElement('style');
@@ -88,7 +73,6 @@ export function CopyProtection() {
       document.removeEventListener('selectstart', handleSelectStart);
       document.removeEventListener('keydown', handleKeyDown);
       document.removeEventListener('dragstart', handleDragStart);
-      cleanupDevTools();
       document.head.removeChild(style);
     };
   }, []);
