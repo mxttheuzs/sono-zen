@@ -102,20 +102,20 @@ export function VideoPreviewSection() {
 
           {/* CTA */}
           <div className="text-center mt-12">
-            <div className="bg-gradient-to-r from-[var(--warm-accent)]/10 to-[var(--accent-blue)]/10 border border-[var(--warm-accent)]/30 rounded-2xl p-6 sm:p-8 max-w-2xl mx-auto">
-              <p className="text-[var(--text-secondary)] mb-4">
+            <div className="bg-gradient-to-r from-[var(--warm-accent)]/10 to-[var(--accent-blue)]/10 border border-[var(--warm-accent)]/30 rounded-2xl p-4 sm:p-6 md:p-8 max-w-2xl mx-auto">
+              <p className="text-[var(--text-secondary)] mb-4 text-sm sm:text-base">
                 Este vídeo mostra <strong>apenas uma pequena amostra</strong> do webapp interativo que você vai receber. O conteúdo completo possui muito mais módulos, técnicas e recursos do que você vê aqui.
               </p>
-              <p className="text-[var(--text-primary)] font-semibold mb-6">
+              <p className="text-[var(--text-primary)] font-semibold mb-6 break-words text-sm sm:text-base leading-relaxed">
                 Após a compra, você terá acesso ao <strong>método completo</strong> sem blur e com todos os módulos especializados desbloqueados!
               </p>
               
               <Button 
                 onClick={scrollToCheckout}
-                className="bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] text-white px-8 py-4 rounded-xl text-lg font-semibold hover:shadow-2xl hover:shadow-[var(--warm-accent)]/25 transition-all duration-300 transform hover:scale-105"
+                className="bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] text-white px-4 sm:px-6 md:px-8 py-3 sm:py-4 rounded-xl text-sm sm:text-base md:text-lg font-semibold hover:shadow-2xl hover:shadow-[var(--warm-accent)]/25 transition-all duration-300 transform hover:scale-105 w-full sm:w-auto"
               >
-                <Lock className="mr-2 h-5 w-5" />
-                Desbloquear Acesso Completo
+                <Lock className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                <span className="text-center">Desbloquear Acesso Completo</span>
               </Button>
             </div>
           </div>
