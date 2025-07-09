@@ -179,6 +179,7 @@ Changelog:
 - July 9, 2025. Integrated payment system: Implemented Cakto payment directly in the website using iframe modal. Users can now complete purchases without leaving the site, providing seamless checkout experience with secure payment processing through embedded Cakto interface.
 - July 9, 2025. Payment modal styling: Updated payment modal header to professional appearance with neutral slate colors, removing colorful gradients for more serious, trustworthy payment interface.
 - July 9, 2025. Payment loading experience: Added professional loading modal with progress bar that shows "Iniciando Pagamento Seguro" when user clicks to purchase, creating trustworthy transition before opening payment iframe. Features security icon, percentage progress, and professional styling.
+- July 9, 2025. Video preview content clarification: Updated video preview section text to clearly indicate that the video shows "apenas uma pequena parte" (only a small part) of the complete content, emphasizing that the full method contains much more modules, techniques and resources than shown in the preview.
 
 ## User Preferences
 

@@ -39,7 +39,7 @@ export function VideoPreviewSection() {
           </h2>
           
           <p className="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed max-w-3xl mx-auto">
-            Veja o <strong>ebook interativo em ação</strong> - este vídeo mostra como funciona a plataforma que vai guiar você em cada passo da sua transformação do sono
+            Veja o <strong>ebook interativo em ação</strong> - este vídeo mostra <strong>apenas uma pequena parte</strong> de todo o conteúdo da plataforma que vai guiar você em cada passo da sua transformação do sono
           </p>
         </div>
 
@@ -104,10 +104,10 @@ export function VideoPreviewSection() {
           <div className="text-center mt-12">
             <div className="bg-gradient-to-r from-[var(--warm-accent)]/10 to-[var(--accent-blue)]/10 border border-[var(--warm-accent)]/30 rounded-2xl p-6 sm:p-8 max-w-2xl mx-auto">
               <p className="text-[var(--text-secondary)] mb-4">
-                Este vídeo mostra <strong>exatamente como funciona o webapp interativo</strong> que você vai receber. Pode assistir quantas vezes quiser para conhecer o conteúdo e a experiência.
+                Este vídeo mostra <strong>apenas uma pequena amostra</strong> do webapp interativo que você vai receber. O conteúdo completo possui muito mais módulos, técnicas e recursos do que você vê aqui.
               </p>
               <p className="text-[var(--text-primary)] font-semibold mb-6">
-                Após a compra, você terá acesso à versão completa sem blur com todos os recursos desbloqueados!
+                Após a compra, você terá acesso ao <strong>método completo</strong> sem blur e com todos os 6 módulos especializados desbloqueados!
               </p>
               
               <Button 
