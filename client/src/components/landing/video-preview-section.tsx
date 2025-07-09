@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Play, Lock, Eye, Smartphone } from "lucide-react";
 import { FloatingClouds } from "@/components/ui/floating-clouds";
-import previewVideo from "@assets/0706(1)_1751855906942.mp4";
+import previewVideo from "@assets/0709(3)_1752038974566.mp4";
 
 export function VideoPreviewSection() {
   const scrollToCheckout = () => {
