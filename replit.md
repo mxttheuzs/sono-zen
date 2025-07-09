@@ -175,6 +175,7 @@ Changelog:
 - July 9, 2025. Facebook Pixel implementation update: Updated Facebook Pixel ID to 4659614774264856 across all implementations (frontend HTML, backend API, noscript fallback). Removed DevTools protection system to eliminate console warnings. Fixed pixel integration to ensure proper tracking of PageView, ViewContent, InitiateCheckout, AddPaymentInfo, and Purchase events. Implemented comprehensive tracking system with UTM parameter capture, user data hashing, and Conversions API integration ready for when access token is configured.
 - July 9, 2025. Exit-intent popup removal: Removed the exit-intent popup component that displayed "Espere! Não vá embora..." when users attempted to leave the page. Component completely removed from App.tsx for cleaner user experience without interruptions.
 - July 9, 2025. Video preview update: Updated video preview section with new preview video (0709(3)_1752038974566.mp4) replacing the previous version for improved showcase of the webapp functionality.
+- July 9, 2025. Video controls removal: Removed video controls from preview section to create clean, continuous playback experience without user interface elements or pause functionality.
 
 ## User Preferences
 

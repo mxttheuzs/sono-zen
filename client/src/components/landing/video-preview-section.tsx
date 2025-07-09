@@ -58,7 +58,6 @@ export function VideoPreviewSection() {
                 muted
                 playsInline
                 preload="auto"
-                controls
               >
                 <source src={previewVideo} type="video/mp4" />
                 Seu navegador não suporta vídeo HTML5.
