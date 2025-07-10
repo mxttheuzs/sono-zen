@@ -147,7 +147,7 @@ export function VideoPreviewSection() {
               
               <Button 
                 onClick={scrollToCheckout}
-                className="bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] text-white px-4 sm:px-6 md:px-8 py-3 sm:py-4 rounded-xl text-sm sm:text-base md:text-lg font-semibold hover:shadow-2xl hover:shadow-[var(--warm-accent)]/25 transition-all duration-300 transform hover:scale-105 w-full sm:w-auto min-h-[50px] flex items-center justify-center"
+                className="bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] text-white px-4 sm:px-6 md:px-8 py-3 sm:py-4 rounded-xl text-sm sm:text-base md:text-lg font-semibold hover:shadow-2xl hover:shadow-[var(--warm-accent)]/25 transition-all duration-300 transform hover:scale-105 w-full sm:w-auto min-h-[50px] flex items-center justify-center pl-[168px] pr-[168px]"
               >
                 <Lock className="mr-2 h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
                 <span className="text-center break-words">Desbloquear Acesso Completo</span>
