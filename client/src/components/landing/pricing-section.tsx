@@ -93,19 +93,47 @@ function PaymentModal({ onClose }: PaymentModalProps) {
     setIsLoading(false);
   };
 
+  // Garante que o modal ocupe toda a viewport
+  useEffect(() => {
+    // Disable scroll on body
+    document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.width = '100%';
+    document.body.style.height = '100%';
+    
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.height = '';
+    };
+  }, []);
+
   return (
-    <div className="fixed inset-0 bg-black z-50 flex items-center justify-center" style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}>
-      <div className="bg-black w-full h-full max-w-full max-h-full shadow-2xl relative overflow-hidden">
+    <div 
+      className="fixed bg-black z-[9999]"
+      style={{ 
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        width: '100vw',
+        height: '100vh',
+        overflow: 'hidden'
+      }}
+    >
+      <div className="bg-black w-full h-full relative">
         
         {/* Header */}
-        <div className="bg-black border-b border-gray-800 p-4 flex items-center justify-between">
+        <div className="bg-black border-b border-gray-800 p-3 flex items-center justify-between" style={{ height: '60px' }}>
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center">
               <Shield className="h-5 w-5 text-white" />
             </div>
             <div>
-              <h3 className="text-white font-semibold">Pagamento Seguro</h3>
-              <p className="text-gray-300 text-sm">Sono Zen - Método Completo</p>
+              <h3 className="text-white font-semibold text-sm">Pagamento Seguro</h3>
+              <p className="text-gray-300 text-xs">Sono Zen - Método Completo</p>
             </div>
           </div>
           
@@ -119,10 +147,25 @@ function PaymentModal({ onClose }: PaymentModalProps) {
 
         {/* Loading */}
         {isLoading && (
-          <div className="absolute inset-0 bg-black flex items-center justify-center">
+          <div 
+            className="absolute bg-black flex flex-col items-center justify-center"
+            style={{
+              top: '60px',
+              left: 0,
+              right: 0,
+              bottom: 0
+            }}
+          >
             <div className="text-center">
-              <div className="w-12 h-12 border-4 border-gray-600 border-t-white rounded-full animate-spin mb-4"></div>
-              <p className="text-white">Carregando pagamento seguro...</p>
+              <div className="w-16 h-16 border-4 border-gray-600 border-t-white rounded-full animate-spin mb-6"></div>
+              <h3 className="text-white text-lg font-semibold mb-2">Carregando Pagamento Seguro</h3>
+              <p className="text-gray-300 text-sm">Conectando com sistema de pagamento...</p>
+              <div className="mt-4">
+                <div className="flex items-center gap-2 text-gray-400 text-xs">
+                  <Shield className="h-4 w-4" />
+                  <span>Pagamento 100% seguro</span>
+                </div>
+              </div>
             </div>
           </div>
         )}
@@ -130,8 +173,11 @@ function PaymentModal({ onClose }: PaymentModalProps) {
         {/* Iframe */}
         <iframe
           src="https://pay.cakto.com.br/j6iqgss_456470"
-          className="w-full h-full border-0"
-          style={{ height: 'calc(100vh - 80px)' }}
+          className="w-full border-0"
+          style={{ 
+            height: 'calc(100vh - 60px)',
+            width: '100vw'
+          }}
           onLoad={handleIframeLoad}
           title="Pagamento Seguro - Cakto"
           allow="payment"
