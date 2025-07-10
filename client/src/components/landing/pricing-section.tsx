@@ -45,7 +45,7 @@ function LoadingModal({ onComplete }: LoadingModalProps) {
           setTimeout(onComplete, 200);
           return 100;
         }
-        return prev + 5; // 100ms * 20 = 2 segundos total
+        return prev + 2.5; // 100ms * 40 = 4 segundos total
       });
     }, 100);
 
