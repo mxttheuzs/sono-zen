@@ -267,16 +267,20 @@ export function SleepPlanningSection() {
           [questionId]: answer
         }
       }));
+
+      // Auto-advance to next question after a short delay
+      setTimeout(() => {
+        if (currentStep < quizQuestions.length - 1) {
+          setCurrentStep(prev => prev + 1);
+        } else {
+          // Last question, analyze profile
+          analyzeProfile();
+        }
+      }, 800);
     }
   };
 
-  const handleNextStep = () => {
-    if (currentStep < quizQuestions.length - 1) {
-      setCurrentStep(prev => prev + 1);
-    } else if (currentStep === quizQuestions.length - 1) {
-      analyzeProfile();
-    }
-  };
+
 
   const handlePrevStep = () => {
     if (currentStep > 0) {
@@ -352,15 +356,20 @@ export function SleepPlanningSection() {
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 bg-green-500/10 border border-green-500/30 px-4 py-2 rounded-full mb-6 animate-pulse">
               <CheckCircle className="h-5 w-5 text-green-400" />
-              <span className="text-green-400 font-semibold">Análise Completa</span>
+              <span className="text-green-400 font-semibold">Sono Zen AI - Análise Completa</span>
             </div>
             
-            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--text-primary)] leading-tight mb-6">
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--text-primary)] leading-tight mb-4">
               Seu Perfil: {" "}
               <span className={`bg-gradient-to-r ${profile.color} bg-clip-text text-transparent`}>
                 {profile.title}
               </span>
             </h2>
+
+            <div className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)]/70 bg-[var(--card-bg)]/30 px-4 py-2 rounded-full border border-[var(--border-subtle)]">
+              <Brain className="h-4 w-4 text-[var(--accent-blue)]" />
+              <span>Baseado em análise científica da Sono Zen AI</span>
+            </div>
           </div>
 
           <Card className="bg-gradient-to-br from-[var(--card-bg)]/90 to-[var(--card-bg)]/70 backdrop-blur-sm border border-[var(--border-subtle)] mb-8 transform transition-all duration-700 hover:scale-[1.02]">
@@ -426,26 +435,37 @@ export function SleepPlanningSection() {
                 </div>
               </div>
               
-              <h3 className="text-3xl font-bold text-[var(--text-primary)] mb-6">
-                Analisando Seu Perfil de Sono...
+              <h3 className="text-3xl font-bold text-[var(--text-primary)] mb-4">
+                Sono Zen AI Analisando...
               </h3>
+              
+              <p className="text-lg text-[var(--text-secondary)] mb-8">
+                Nossa inteligência artificial está processando suas respostas e criando seu perfil personalizado
+              </p>
               
               <div className="space-y-4 text-[var(--text-secondary)] max-w-2xl mx-auto">
                 <div className="flex items-center justify-center gap-3 transform transition-all duration-500 hover:scale-105">
                   <div className="w-3 h-3 bg-[var(--accent-blue)] rounded-full animate-bounce"></div>
-                  <p className="text-lg">🧠 Processando suas respostas com IA especializada...</p>
+                  <p className="text-lg">🧠 Analisando padrões neurológicos de sono...</p>
                 </div>
                 <div className="flex items-center justify-center gap-3 transform transition-all duration-500 hover:scale-105" style={{animationDelay: '0.2s'}}>
                   <div className="w-3 h-3 bg-[var(--warm-accent)] rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
-                  <p className="text-lg">🔍 Identificando padrões únicos do seu sono...</p>
+                  <p className="text-lg">🔍 Identificando seu perfil único de descanso...</p>
                 </div>
                 <div className="flex items-center justify-center gap-3 transform transition-all duration-500 hover:scale-105" style={{animationDelay: '0.4s'}}>
                   <div className="w-3 h-3 bg-[var(--celestial-blue)] rounded-full animate-bounce" style={{animationDelay: '0.4s'}}></div>
-                  <p className="text-lg">📋 Criando protocolo personalizado oriental...</p>
+                  <p className="text-lg">📋 Calibrando técnicas orientais personalizadas...</p>
                 </div>
                 <div className="flex items-center justify-center gap-3 transform transition-all duration-500 hover:scale-105" style={{animationDelay: '0.6s'}}>
                   <div className="w-3 h-3 bg-[var(--mint-green)] rounded-full animate-bounce" style={{animationDelay: '0.6s'}}></div>
-                  <p className="text-lg">✨ Finalizando sua jornada de transformação...</p>
+                  <p className="text-lg">✨ Finalizando protocolo de transformação...</p>
+                </div>
+              </div>
+
+              <div className="mt-8 pt-6 border-t border-[var(--border-subtle)]">
+                <div className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)]/60">
+                  <Sparkles className="h-4 w-4 text-[var(--warm-accent)] animate-pulse" />
+                  <span>Powered by Sono Zen AI</span>
                 </div>
               </div>
             </CardContent>
@@ -464,19 +484,24 @@ export function SleepPlanningSection() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-[var(--accent-blue)]/10 border border-[var(--accent-blue)]/30 px-4 py-2 rounded-full mb-6 animate-pulse">
             <Brain className="h-5 w-5 text-[var(--accent-blue)]" />
-            <span className="text-[var(--accent-blue)] font-semibold">Avaliação Profissional</span>
+            <span className="text-[var(--accent-blue)] font-semibold">Sono Zen AI</span>
           </div>
           
           <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--text-primary)] leading-tight mb-6">
-            Análise Completa do{" "}
+            Avaliação Inteligente do{" "}
             <span className="bg-gradient-to-r from-[var(--warm-accent)] via-[var(--accent-blue)] to-[var(--celestial-blue)] bg-clip-text text-transparent">
-              Seu Sono
+              Seu Perfil de Sono
             </span>
           </h2>
           
-          <p className="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed max-w-3xl mx-auto">
-            Sistema profissional de <strong>10 perguntas científicas</strong> para identificar seu perfil único e criar o protocolo personalizado ideal para sua transformação
+          <p className="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed max-w-3xl mx-auto mb-6">
+            Nossa <strong>Inteligência Artificial especializada</strong> irá analisar 10 aspectos científicos do seu sono para criar um protocolo personalizado exclusivo para sua transformação
           </p>
+
+          <div className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)]/80 bg-[var(--card-bg)]/30 px-4 py-2 rounded-full border border-[var(--border-subtle)]">
+            <Sparkles className="h-4 w-4 text-[var(--warm-accent)]" />
+            <span>Powered by Sono Zen AI</span>
+          </div>
         </div>
 
         {/* Progress Bar */}
@@ -566,54 +591,28 @@ export function SleepPlanningSection() {
               )}
             </div>
 
-            {/* Navigation */}
-            <div className="flex justify-between items-center mt-8">
-              <Button
-                onClick={handlePrevStep}
-                disabled={currentStep === 0}
-                variant="outline"
-                className="border-[var(--border-subtle)] text-[var(--text-primary)] hover:bg-[var(--card-bg)] disabled:opacity-50"
-              >
-                <ChevronLeft className="mr-2 h-4 w-4" />
-                Anterior
-              </Button>
-
+            {/* Progress Indicators */}
+            <div className="flex justify-center items-center mt-8">
               <div className="flex space-x-2">
                 {quizQuestions.map((_, index) => (
                   <div
                     key={index}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    className={`w-3 h-3 rounded-full transition-all duration-500 ${
                       index <= currentStep 
-                        ? 'bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)]' 
+                        ? 'bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] scale-110' 
                         : 'bg-[var(--card-hover)]'
                     }`}
                   />
                 ))}
               </div>
+            </div>
 
-              <Button
-                onClick={handleNextStep}
-                disabled={!isCurrentAnswered}
-                className={`
-                  px-6 py-3 transition-all duration-300 transform hover:scale-105
-                  ${isCurrentAnswered
-                    ? 'bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] text-white hover:shadow-2xl hover:shadow-[var(--warm-accent)]/25'
-                    : 'bg-gray-600 text-gray-400 cursor-not-allowed'
-                  }
-                `}
-              >
-                {currentStep === quizQuestions.length - 1 ? (
-                  <>
-                    <Brain className="mr-2 h-4 w-4" />
-                    Analisar Perfil
-                  </>
-                ) : (
-                  <>
-                    Próxima
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </>
-                )}
-              </Button>
+            {/* AI Instruction */}
+            <div className="text-center mt-6">
+              <p className="text-sm text-[var(--text-secondary)]/80 flex items-center justify-center gap-2">
+                <Brain className="h-4 w-4 text-[var(--accent-blue)] animate-pulse" />
+                Selecione uma resposta - a Sono Zen AI avançará automaticamente
+              </p>
             </div>
           </CardContent>
         </Card>
