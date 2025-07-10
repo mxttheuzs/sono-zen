@@ -354,7 +354,7 @@ export function SleepPlanningSection() {
         <FloatingClouds />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 bg-green-500/10 border border-green-500/30 px-4 py-2 rounded-full mb-6 animate-pulse">
+            <div className="inline-flex items-center gap-2 bg-green-500/10 border border-green-500/30 px-4 py-2 rounded-full mb-6">
               <CheckCircle className="h-5 w-5 text-green-400" />
               <span className="text-green-400 font-semibold">Sono Zen AI - Análise Completa</span>
             </div>
