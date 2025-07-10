@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 
 export function VideoPreviewSection() {
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const [showPlayButton, setShowPlayButton] = useState(true);
 
   useEffect(() => {
     // Hide loading after 2 seconds
@@ -71,7 +72,7 @@ export function VideoPreviewSection() {
                 </div>
               )}
               
-              {/* Google Drive iframe - Maximum quality, continuous playback */}
+              {/* Google Drive iframe - Maximum quality, clickable to start */}
               <iframe
                 src="https://drive.google.com/file/d/1Jda20tDrjynVaUvW-zFM93wu_9HZaWXt/preview"
                 className="w-full h-full"
@@ -79,14 +80,23 @@ export function VideoPreviewSection() {
                 allowFullScreen
                 onLoad={() => setVideoLoaded(true)}
                 style={{ 
-                  pointerEvents: 'none',
                   border: 'none',
                   outline: 'none'
                 }}
               ></iframe>
               
-              {/* Invisible overlay to prevent clicking */}
-              <div className="absolute inset-0 z-20" style={{ pointerEvents: 'none' }}></div>
+              {/* Custom play button overlay */}
+              {showPlayButton && videoLoaded && (
+                <div 
+                  className="absolute inset-0 flex flex-col items-center justify-center bg-black/30 backdrop-blur-sm z-20 cursor-pointer"
+                  onClick={() => setShowPlayButton(false)}
+                >
+                  <div className="bg-[var(--accent-blue)] hover:bg-[var(--accent-blue)]/80 rounded-full p-6 transition-all duration-300 hover:scale-110 mb-4">
+                    <Play className="h-12 w-12 text-white fill-white" />
+                  </div>
+                  <p className="text-white text-sm font-medium">Clique para assistir o preview</p>
+                </div>
+              )}
               
               {/* Small preview indicator */}
               <div className="absolute top-2 left-2 sm:top-4 sm:left-4 z-30">
