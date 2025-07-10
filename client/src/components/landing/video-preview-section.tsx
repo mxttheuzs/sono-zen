@@ -71,17 +71,25 @@ export function VideoPreviewSection() {
                 </div>
               )}
               
-              {/* Google Drive iframe */}
+              {/* Google Drive iframe - Maximum quality, continuous playback */}
               <iframe
                 src="https://drive.google.com/file/d/1Jda20tDrjynVaUvW-zFM93wu_9HZaWXt/preview"
                 className="w-full h-full"
-                allow="autoplay"
+                allow="autoplay; fullscreen"
                 allowFullScreen
                 onLoad={() => setVideoLoaded(true)}
+                style={{ 
+                  pointerEvents: 'none',
+                  border: 'none',
+                  outline: 'none'
+                }}
               ></iframe>
               
+              {/* Invisible overlay to prevent clicking */}
+              <div className="absolute inset-0 z-20" style={{ pointerEvents: 'none' }}></div>
+              
               {/* Small preview indicator */}
-              <div className="absolute top-2 left-2 sm:top-4 sm:left-4">
+              <div className="absolute top-2 left-2 sm:top-4 sm:left-4 z-30">
                 <div className="bg-black/70 backdrop-blur-sm rounded-lg p-1.5 sm:p-2 flex items-center gap-1 sm:gap-2">
                   <Eye className="h-3 w-3 sm:h-4 sm:w-4 text-[var(--accent-blue)]" />
                   <span className="text-white text-xs sm:text-sm font-medium">Preview do Web App</span>
