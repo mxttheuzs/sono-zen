@@ -204,7 +204,8 @@ export function PricingSection() {
 
   const handleLoadingComplete = () => {
     setShowLoadingModal(false);
-    setShowPaymentModal(true);
+    // Redirect directly to Cakto's member area instead of showing modal
+    window.open('https://pay.cakto.com.br/j6iqgss_456470', '_blank');
   };
 
   const handleClosePayment = () => {
