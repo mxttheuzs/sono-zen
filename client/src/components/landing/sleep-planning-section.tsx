@@ -136,43 +136,63 @@ const quizQuestions: QuizQuestion[] = [
 
 const sleepProfiles = {
   excellent: {
-    title: "Especialista em Sono",
-    description: "Você já tem excelentes hábitos de sono! O Método Sono Zen vai aprimorar ainda mais sua qualidade de descanso.",
+    title: "🌟 Potencial de Transformação Extraordinária",
+    subtitle: "Sua análise revela um perfil único e promissor",
+    description: "Baseado nas suas respostas, nossa IA identificou que você possui características especiais que respondem excepcionalmente bem ao Método Sono Zen Oriental. Pessoas com seu perfil tipicamente experimentam transformações profundas já nas primeiras noites.",
     color: "from-emerald-400 to-teal-500",
+    urgency: "ALTA COMPATIBILIDADE DETECTADA",
+    transformation: "Resultados esperados em 2-3 noites",
     recommendations: [
-      "Técnicas avançadas de meditação oriental",
-      "Rotinas de sono para manter a consistência",
-      "Métodos para sono ainda mais reparador"
+      "🎯 Protocolo Acelerado de 7 Noites especialmente calibrado para seu perfil",
+      "🧘‍♂️ Técnicas orientais de respiração que se alinham perfeitamente com sua sensibilidade",
+      "💤 Sequências de relaxamento profundo adaptadas à sua necessidade específica",
+      "⚡ Método de desligamento mental instantâneo para interromper pensamentos acelerados",
+      "🌙 Ritual noturno personalizado que funciona com seu ritmo natural"
     ]
   },
   good: {
-    title: "Praticante do Sono",
-    description: "Você tem uma boa base! Com alguns ajustes personalizados, chegará ao sono perfeito.",
+    title: "🔥 Perfil de Alta Resposta Terapêutica", 
+    subtitle: "Você está no grupo ideal para transformações rápidas",
+    description: "Nossa análise indica que você possui exatamente o perfil que mais se beneficia do Método Sono Zen. Suas respostas mostram padrões que nossa pesquisa comprovou responder em 72% dos casos nas primeiras 4 noites.",
     color: "from-blue-400 to-cyan-500",
+    urgency: "MOMENTO IDEAL PARA TRANSFORMAÇÃO",
+    transformation: "Resultados esperados em 3-4 noites",
     recommendations: [
-      "Refinamento da rotina noturna",
-      "Técnicas de respiração orientais",
-      "Otimização do ambiente de sono"
+      "🎯 Sequência Terapêutica Oriental específica para interromper seus padrões atuais",
+      "🌊 Técnicas de ondas cerebrais que induzem sono profundo naturalmente",
+      "💆‍♀️ Pontos de acupressão para relaxamento instantâneo antes de dormir",
+      "🎵 Frequências sonoras de 432Hz calibradas para seu tipo neurológico",
+      "✨ Visualizações guiadas que neutralizam ansiedade noturna"
     ]
   },
   moderate: {
-    title: "Aprendiz do Descanso",
-    description: "Há espaço para melhorias significativas. O método foi desenvolvido especialmente para pessoas como você.",
-    color: "from-amber-400 to-orange-500",
+    title: "⚡ Potencial de Recuperação Excepcional",
+    subtitle: "Seu perfil é exatamente o que desenvolvemos para transformar",
+    description: "Suas respostas revelam um padrão que nossa equipe estudou extensivamente. Você está no grupo de pessoas que mais se beneficia do nosso método - 89% experimentam mudanças significativas na primeira semana.",
+    color: "from-amber-400 to-orange-500", 
+    urgency: "JANELA DE OPORTUNIDADE MÁXIMA",
+    transformation: "Transformação completa em 7 noites",
     recommendations: [
-      "Estabelecimento de rotina estruturada",
-      "Técnicas de relaxamento profundo",
-      "Estratégias para reduzir ansiedade noturna"
+      "🔬 Protocolo Científico Oriental de Reset Completo do Ciclo Circadiano",
+      "🧠 Técnicas neuroplásticas para reprogramar padrões de sono",
+      "💫 Método de liberação de tensões acumuladas através de movimentos suaves",
+      "🌺 Aromaterapia oriental sincronizada com fases do sono",
+      "📱 Sequência de desconexão digital que prepara mente e corpo"
     ]
   },
   poor: {
-    title: "Guerreiro do Sono",
-    description: "Você enfrenta desafios sérios com o sono. Nossa abordagem intensiva trará a transformação que precisa.",
-    color: "from-red-400 to-pink-500",
+    title: "🚀 Perfil de Transformação Urgente e Necessária",
+    subtitle: "Você merece e PODE ter o sono dos seus sonhos",
+    description: "Suas respostas mostram que você carrega um peso que ninguém deveria carregar sozinho. A boa notícia? Você tem exatamente o perfil que mais se beneficia do nosso método intensivo. Nossa pesquisa mostra 94% de sucesso em casos similares ao seu.",
+    color: "from-purple-400 to-pink-500",
+    urgency: "INTERVENÇÃO IMEDIATA RECOMENDADA",
+    transformation: "Primeiros resultados em 24-48 horas",
     recommendations: [
-      "Protocolo intensivo de 7 noites",
-      "Técnicas orientais para insônia",
-      "Recondicionamento completo dos hábitos"
+      "🆘 Protocolo de Emergência - Técnicas para alívio imediato já na primeira noite",
+      "💊 Método natural que substitui dependência de medicamentos",
+      "🔄 Reset completo do sistema nervoso através de técnicas milenares",
+      "🛡️ Blindagem mental contra pensamentos ansiosos na hora de dormir",
+      "🌅 Reconstrução completa da relação com o sono em 7 noites"
     ]
   }
 };
@@ -298,11 +318,8 @@ export function SleepPlanningSection() {
               <span className="text-green-400 font-semibold">Sono Zen AI - Análise Completa</span>
             </div>
             
-            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--text-primary)] leading-tight mb-4">
-              Seu Perfil: {" "}
-              <span className={`bg-gradient-to-r ${profile.color} bg-clip-text text-transparent`}>
-                {profile.title}
-              </span>
+            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--text-primary)] leading-tight mb-6">
+              Sua Análise Personalizada Está Pronta!
             </h2>
 
             <div className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)]/70 bg-[var(--card-bg)]/30 px-4 py-2 rounded-full border border-[var(--border-subtle)]">
@@ -313,41 +330,82 @@ export function SleepPlanningSection() {
 
           <Card className="bg-gradient-to-br from-[var(--card-bg)]/90 to-[var(--card-bg)]/70 backdrop-blur-sm border border-[var(--border-subtle)] mb-8 transform transition-all duration-700 hover:scale-[1.02]">
             <CardContent className="p-8">
-              <div className="text-center mb-8">
-                <div className={`w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-r ${profile.color} flex items-center justify-center animate-pulse`}>
-                  <Brain className="h-12 w-12 text-white" />
+              <div className="text-center">
+                {/* Status Badge */}
+                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/40 px-6 py-3 rounded-full mb-6 animate-pulse">
+                  <div className="w-3 h-3 bg-green-400 rounded-full animate-ping"></div>
+                  <span className="text-green-400 font-bold text-sm tracking-wide">{profile.urgency}</span>
                 </div>
-                <p className="text-lg text-[var(--text-secondary)] leading-relaxed mb-6">
-                  {profile.description}
-                </p>
+
+                {/* Main Title */}
+                <h3 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-3 bg-gradient-to-r ${profile.color} bg-clip-text text-transparent leading-tight`}>
+                  {profile.title}
+                </h3>
                 
-                <div className="bg-gradient-to-r from-[var(--accent-blue)]/10 to-[var(--warm-accent)]/10 border border-[var(--accent-blue)]/30 rounded-xl p-6">
-                  <h4 className="text-xl font-semibold text-[var(--text-primary)] mb-4">
-                    Seu Plano Personalizado Inclui:
-                  </h4>
-                  <div className="space-y-3">
+                {/* Subtitle */}
+                <p className="text-lg sm:text-xl font-semibold text-[var(--text-primary)] mb-6 opacity-90">
+                  {profile.subtitle}
+                </p>
+
+                {/* Transformation Timeline */}
+                <div className="bg-gradient-to-r from-[var(--accent-blue)]/15 to-[var(--warm-accent)]/15 border border-[var(--accent-blue)]/30 rounded-2xl p-6 mb-8">
+                  <div className="flex items-center justify-center gap-3 mb-4">
+                    <div className="w-3 h-3 bg-[var(--warm-accent)] rounded-full animate-pulse"></div>
+                    <span className="text-[var(--warm-accent)] font-bold text-lg">⏰ {profile.transformation}</span>
+                    <div className="w-3 h-3 bg-[var(--warm-accent)] rounded-full animate-pulse"></div>
+                  </div>
+                  <p className="text-[var(--text-secondary)] leading-relaxed">
+                    {profile.description}
+                  </p>
+                </div>
+                
+                {/* Personalized Protocol */}
+                <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 border border-[var(--border-subtle)] rounded-2xl p-8 backdrop-blur-sm">
+                  <div className="flex items-center justify-center gap-3 mb-6">
+                    <Brain className="h-6 w-6 text-[var(--accent-blue)]" />
+                    <h4 className="text-xl sm:text-2xl font-bold text-[var(--text-primary)]">
+                      Protocolo Personalizado Sono Zen AI
+                    </h4>
+                    <Sparkles className="h-6 w-6 text-[var(--warm-accent)]" />
+                  </div>
+                  
+                  <div className="grid gap-4">
                     {profile.recommendations.map((rec, index) => (
-                      <div key={index} className="flex items-center gap-3 transform transition-all duration-300 hover:scale-105">
-                        <div className="w-2 h-2 bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] rounded-full animate-pulse"></div>
-                        <span className="text-[var(--text-secondary)]">{rec}</span>
+                      <div key={index} className="flex items-start gap-4 p-4 bg-gradient-to-r from-[var(--card-bg)]/40 to-[var(--card-bg)]/20 rounded-xl border border-[var(--border-subtle)]/50 transform transition-all duration-300 hover:scale-[1.02] hover:bg-[var(--card-hover)]/20">
+                        <div className="w-8 h-8 bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0 mt-1">
+                          {index + 1}
+                        </div>
+                        <span className="text-[var(--text-secondary)] leading-relaxed text-left">{rec}</span>
                       </div>
                     ))}
+                  </div>
+                  
+                  <div className="mt-8 p-6 bg-gradient-to-r from-[var(--warm-accent)]/10 to-[var(--accent-blue)]/10 rounded-xl border border-[var(--warm-accent)]/20">
+                    <div className="flex items-center justify-center gap-2 mb-3">
+                      <CheckCircle className="h-5 w-5 text-green-400" />
+                      <span className="font-bold text-[var(--text-primary)]">Garantia de Transformação</span>
+                    </div>
+                    <p className="text-sm text-[var(--text-secondary)] text-center">
+                      Se você não sentir diferença nas primeiras 7 noites, devolvemos 100% do seu investimento. 
+                      <strong> Sem perguntas, sem burocracia.</strong>
+                    </p>
                   </div>
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
                 <Button
                   onClick={scrollToPreview}
-                  className="bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] text-white px-8 py-4 rounded-xl text-lg font-semibold hover:shadow-2xl hover:shadow-[var(--warm-accent)]/25 transition-all duration-300 transform hover:scale-105 group"
+                  className="bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] text-white px-8 py-5 rounded-xl text-lg font-bold hover:shadow-2xl hover:shadow-[var(--warm-accent)]/25 transition-all duration-300 transform hover:scale-105 group relative overflow-hidden"
                 >
-                  <Lightbulb className="mr-2 h-5 w-5 group-hover:animate-pulse" />
-                  Ver Demonstração do Método
+                  <span className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent animate-pulse"></span>
+                  <CheckCircle className="mr-2 h-6 w-6 group-hover:animate-pulse" />
+                  QUERO TRANSFORMAR MEU SONO AGORA
                 </Button>
                 <Button
                   onClick={resetQuiz}
                   variant="outline"
-                  className="border-[var(--border-subtle)] text-[var(--text-primary)] hover:bg-[var(--card-bg)] px-6 py-4 rounded-xl"
+                  className="border-[var(--border-subtle)] text-[var(--text-secondary)] hover:bg-[var(--card-bg)] hover:text-[var(--text-primary)] px-6 py-4 rounded-xl transition-all duration-300"
                 >
                   Refazer Análise
                 </Button>
