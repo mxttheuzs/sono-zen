@@ -71,23 +71,14 @@ export function VideoPreviewSection() {
                 </div>
               )}
               
-              {/* HTML5 Video optimized for all platforms */}
-              <video
-                className="w-full h-full object-cover"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                onLoadedData={() => setVideoLoaded(true)}
-                style={{ 
-                  border: 'none',
-                  outline: 'none'
-                }}
-              >
-                <source src="/preview-video.mp4" type="video/mp4" />
-                <p className="text-white text-center">Seu navegador não suporta vídeos HTML5.</p>
-              </video>
+              {/* Google Drive Video */}
+              <iframe
+                src="https://drive.google.com/file/d/1LG8N8qGkJj0QDhFP1DLbNb2tnLLdkK9y/preview"
+                className="w-full h-full border-0 rounded-xl"
+                allow="autoplay"
+                onLoad={() => setVideoLoaded(true)}
+                title="Sono Zen - Preview do Método"
+              />
               
               {/* Custom play button overlay */}
               {showPlayButton && videoLoaded && (

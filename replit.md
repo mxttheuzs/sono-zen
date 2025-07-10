@@ -192,6 +192,7 @@ Changelog:
 - July 10, 2025. Custom favicon implementation: Added custom Sono Zen favicon with moon and stars design matching the sleep wellness theme. Created both ICO and SVG versions for browser compatibility and added to HTML head section.
 - July 10, 2025. Payment modal mobile optimization: Fixed Cakto payment integration for mobile devices by redesigning modal to use full screen with black background, proper mobile positioning (fixed inset-0), and improved iframe height calculation. Updated favicon to use user-provided .ico file for consistent branding.
 - July 10, 2025. Professional loading modal enhancement: Redesigned payment loading experience with premium visual effects including gradient backgrounds, animated security icons, dynamic stage messages, modern progress bar with gradients, and security indicators. Extended loading time to 4 seconds for more professional feel. Removed redundant CTA button from video preview section.
+- July 10, 2025. Video preview fix: Reverted video preview from HTML5 video back to Google Drive iframe due to video display issues. Updated iframe source to display preview correctly across all devices.
 
 ## User Preferences
 
