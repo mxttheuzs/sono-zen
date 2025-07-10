@@ -303,8 +303,8 @@ export function SleepPlanningSection() {
     else if (averageScore >= 2.5) profile = "moderate";
     else profile = "poor";
     
-    // Simular análise da IA
-    await new Promise(resolve => setTimeout(resolve, 3000));
+    // Simular análise da IA - tempo mais realista
+    await new Promise(resolve => setTimeout(resolve, 6000));
     
     setProfileData(prev => ({
       ...prev,
