@@ -60,7 +60,7 @@ export function VideoPreviewSection() {
           {/* Video wrapper with blur overlay */}
           <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-[var(--card-bg)] to-[var(--card-bg)]/80 border border-[var(--border-subtle)]">
             
-            {/* Video with Google Drive iframe */}
+            {/* Video with optimized HTML5 video */}
             <div className="relative aspect-video bg-black rounded-xl overflow-hidden">
               {/* Loading state */}
               {!videoLoaded && (
@@ -72,18 +72,23 @@ export function VideoPreviewSection() {
                 </div>
               )}
               
-              {/* Google Drive iframe - Maximum quality, clickable to start */}
-              <iframe
-                src="https://drive.google.com/file/d/1Jda20tDrjynVaUvW-zFM93wu_9HZaWXt/preview"
-                className="w-full h-full"
-                allow="autoplay; fullscreen"
-                allowFullScreen
-                onLoad={() => setVideoLoaded(true)}
+              {/* HTML5 Video optimized for all platforms */}
+              <video
+                className="w-full h-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                onLoadedData={() => setVideoLoaded(true)}
                 style={{ 
                   border: 'none',
                   outline: 'none'
                 }}
-              ></iframe>
+              >
+                <source src="/preview-video.mp4" type="video/mp4" />
+                <p className="text-white text-center">Seu navegador não suporta vídeos HTML5.</p>
+              </video>
               
               {/* Custom play button overlay */}
               {showPlayButton && videoLoaded && (
