@@ -1,41 +1,22 @@
 import { Button } from "@/components/ui/button";
 import { Play, Lock, Eye, Smartphone } from "lucide-react";
 import { FloatingClouds } from "@/components/ui/floating-clouds";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 export function VideoPreviewSection() {
-  const [videoError, setVideoError] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
-  const [showVideo, setShowVideo] = useState(true);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    // Force video to load and play when component mounts
-    const timer = setTimeout(() => {
-      if (videoRef.current && !videoLoaded && !videoError) {
-        videoRef.current.load();
-        videoRef.current.play().catch(e => {
-          // Auto-play failed, but this is expected on some browsers
-        });
-      }
-    }, 500);
-
-    // Hide loading after 3 seconds regardless
+    // Hide loading after 2 seconds
     const loadingTimer = setTimeout(() => {
-      if (!videoLoaded) {
-        setVideoLoaded(true);
-      }
-    }, 3000);
+      setVideoLoaded(true);
+    }, 2000);
 
-    return () => {
-      clearTimeout(timer);
-      clearTimeout(loadingTimer);
-    };
-  }, [videoLoaded, videoError]);
+    return () => clearTimeout(loadingTimer);
+  }, []);
 
   const scrollToCheckout = () => {
-    const element = document.getElementById("preco");
+    const element = document.getElementById('checkout');
     if (element) {
       // Calcular offset para compensar a navegação fixa
       const navHeight = 80;
@@ -78,10 +59,10 @@ export function VideoPreviewSection() {
           {/* Video wrapper with blur overlay */}
           <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-[var(--card-bg)] to-[var(--card-bg)]/80 border border-[var(--border-subtle)]">
             
-            {/* Video with blur effect already applied in the source */}
+            {/* Video with Google Drive iframe */}
             <div className="relative aspect-video bg-black rounded-xl overflow-hidden">
-              {/* Loading state - only show for first 2 seconds */}
-              {!videoLoaded && !videoError && showVideo && (
+              {/* Loading state */}
+              {!videoLoaded && (
                 <div className="absolute inset-0 flex items-center justify-center bg-black/90 z-10">
                   <div className="text-center">
                     <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[var(--accent-blue)] mx-auto mb-4"></div>
@@ -90,46 +71,14 @@ export function VideoPreviewSection() {
                 </div>
               )}
               
-              {/* Error state or fallback */}
-              {(videoError || !showVideo) && (
-                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-slate-900 to-black">
-                  <div className="text-center p-8">
-                    <div className="w-24 h-24 bg-[var(--accent-blue)]/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                      <Play className="h-12 w-12 text-[var(--accent-blue)]" />
-                    </div>
-                    <h3 className="text-white text-lg font-semibold mb-2">Preview do Web App</h3>
-                    <p className="text-white/70 text-sm mb-4">Demonstração do ebook interativo</p>
-                    <div className="bg-[var(--accent-blue)]/10 border border-[var(--accent-blue)]/30 rounded-lg p-4">
-                      <p className="text-[var(--accent-blue)] text-sm">
-                        📱 Interface responsiva<br/>
-                        🎵 Áudios integrados<br/>
-                        📖 Conteúdo interativo
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              )}
-              
-              {/* Video element */}
-              {showVideo && (
-                <video 
-                  ref={videoRef}
-                  className="w-full h-full object-cover"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="auto"
-                  onLoadedData={() => setVideoLoaded(true)}
-                  onError={(e) => setVideoError(true)}
-                  onCanPlay={() => setVideoLoaded(true)}
-                  onPlay={() => setIsPlaying(true)}
-                  onPause={() => setIsPlaying(false)}
-                >
-                  <source src="/assets/preview-video.mp4?v=4" type="video/mp4" />
-                  Seu navegador não suporta vídeo HTML5.
-                </video>
-              )}
+              {/* Google Drive iframe */}
+              <iframe
+                src="https://drive.google.com/file/d/1Jda20tDrjynVaUvW-zFM93wu_9HZaWXt/preview"
+                className="w-full h-full"
+                allow="autoplay"
+                allowFullScreen
+                onLoad={() => setVideoLoaded(true)}
+              ></iframe>
               
               {/* Small preview indicator */}
               <div className="absolute top-2 left-2 sm:top-4 sm:left-4">
