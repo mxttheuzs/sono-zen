@@ -6,8 +6,8 @@ import { FloatingParticles } from "@/components/ui/floating-particles";
 import sleepingWomanImage from "@assets/image_1751506836548.png";
 
 export function HeroSection() {
-  const scrollToPlanejamento = () => {
-    const element = document.getElementById("planejamento-sono");
+  const scrollToProblema = () => {
+    const element = document.getElementById("problema");
     if (element) {
       // Calcular offset para compensar a navegação fixa
       const navHeight = 80;
@@ -84,7 +84,7 @@ export function HeroSection() {
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
               <Button 
-                onClick={scrollToPlanejamento}
+                onClick={scrollToProblema}
                 className="relative bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] text-white px-6 sm:px-10 py-4 sm:py-6 rounded-2xl text-base sm:text-xl font-bold hover:shadow-2xl hover:shadow-[var(--warm-accent)]/25 transition-all duration-300 transform hover:scale-105 w-full sm:w-auto"
               >
                 <Heart className="mr-2 sm:mr-3 h-5 sm:h-6 w-5 sm:w-6" />
