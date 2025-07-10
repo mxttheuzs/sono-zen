@@ -268,16 +268,16 @@ export function SleepPlanningSection() {
     // Determine profile based on specific answer combinations
     let profile = "";
     
-    // High urgency + long duration + many failed attempts = critical
+    // High urgency + long duration + many failed attempts = critical (lowest scores = most severe)
     if (urgencyLevel <= 2 && durationLevel <= 2 && attemptsLevel <= 2) {
       profile = "critical";
     }
-    // Moderate urgency + some duration + few attempts = moderate
+    // Moderate urgency + some duration + some attempts = moderate
     else if (urgencyLevel <= 3 && durationLevel <= 3 && attemptsLevel <= 3) {
       profile = "moderate";
     }
-    // Low urgency + short duration + few attempts = mild
-    else if (urgencyLevel >= 4 && durationLevel >= 3 && attemptsLevel >= 3) {
+    // Low urgency + short duration + few attempts = mild (highest scores = least severe)
+    else if (urgencyLevel >= 4 && durationLevel >= 4 && attemptsLevel >= 4) {
       profile = "mild";
     }
     // Mixed responses = balanced

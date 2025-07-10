@@ -37,25 +37,11 @@ export function CopyProtection() {
     document.addEventListener('keydown', handleKeyDown);
     document.addEventListener('dragstart', handleDragStart);
 
-    // CSS de proteção
+    // CSS de proteção mais suave
     const style = document.createElement('style');
+    style.id = 'copy-protection-styles';
     style.textContent = `
-      * {
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        -webkit-touch-callout: none;
-        -webkit-tap-highlight-color: transparent;
-      }
-      
-      body {
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-      
+      /* Protect images only - allow text selection for UX */
       img {
         -webkit-user-drag: none;
         -khtml-user-drag: none;
@@ -63,6 +49,16 @@ export function CopyProtection() {
         -o-user-drag: none;
         user-drag: none;
         pointer-events: none;
+      }
+      
+      /* Prevent text selection on sensitive content only */
+      .no-select {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-touch-callout: none;
+        -webkit-tap-highlight-color: transparent;
       }
     `;
     document.head.appendChild(style);
@@ -73,7 +69,12 @@ export function CopyProtection() {
       document.removeEventListener('selectstart', handleSelectStart);
       document.removeEventListener('keydown', handleKeyDown);
       document.removeEventListener('dragstart', handleDragStart);
-      document.head.removeChild(style);
+      
+      // Safe removal of style element
+      const existingStyle = document.getElementById('copy-protection-styles');
+      if (existingStyle) {
+        document.head.removeChild(existingStyle);
+      }
     };
   }, []);
 

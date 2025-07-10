@@ -37,19 +37,32 @@ export function GeneratedMusic({ autoPlay = false, volume = 0.3 }: GeneratedMusi
   };
 
   useEffect(() => {
-    // Criar contexto de áudio
-    const AudioContext = window.AudioContext || (window as any).webkitAudioContext;
-    audioContextRef.current = new AudioContext();
-    
-    // Criar nó de ganho master
-    masterGainRef.current = audioContextRef.current.createGain();
-    masterGainRef.current.connect(audioContextRef.current.destination);
-    masterGainRef.current.gain.value = currentVolume;
+    try {
+      // Criar contexto de áudio
+      const AudioContext = window.AudioContext || (window as any).webkitAudioContext;
+      if (!AudioContext) {
+        console.warn('Web Audio API not supported');
+        return;
+      }
+      
+      audioContextRef.current = new AudioContext();
+      
+      // Criar nó de ganho master
+      masterGainRef.current = audioContextRef.current.createGain();
+      masterGainRef.current.connect(audioContextRef.current.destination);
+      masterGainRef.current.gain.value = currentVolume;
+    } catch (error) {
+      console.warn('Failed to initialize audio context:', error);
+    }
 
     return () => {
-      stopMusic();
-      if (audioContextRef.current) {
-        audioContextRef.current.close();
+      try {
+        stopMusic();
+        if (audioContextRef.current && audioContextRef.current.state !== 'closed') {
+          audioContextRef.current.close();
+        }
+      } catch (error) {
+        console.warn('Failed to cleanup audio context:', error);
       }
     };
   }, []);

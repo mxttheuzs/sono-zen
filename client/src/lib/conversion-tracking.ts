@@ -79,7 +79,8 @@ class ConversionTracker {
     try {
       localStorage.setItem('conversion_parameters', JSON.stringify(this.parameters));
     } catch (error) {
-      // Erro silencioso
+      // Silent error - localStorage may not be available
+      console.warn('Failed to save conversion parameters to localStorage:', error);
     }
   }
   
@@ -92,7 +93,8 @@ class ConversionTracker {
         this.parameters = { ...this.parameters, ...JSON.parse(saved) };
       }
     } catch (error) {
-      // Erro silencioso
+      // Silent error - localStorage may not be available or data corrupted
+      console.warn('Failed to load conversion parameters from localStorage:', error);
     }
   }
   

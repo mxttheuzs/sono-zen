@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Scrollagem suave global */
+/* Scrollagem suave global otimizada */
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px; /* Compensar navegação fixa */
@@ -25,6 +25,45 @@ html {
     overflow-x: hidden;
     overflow-y: auto;
   }
+}
+
+/* Otimizações para performance de scroll */
+body {
+  scroll-behavior: smooth;
+  -webkit-scroll-behavior: smooth;
+  -moz-scroll-behavior: smooth;
+  -ms-scroll-behavior: smooth;
+  -o-scroll-behavior: smooth;
+  
+  /* Habilitar aceleração de hardware */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  
+  /* Otimizações adicionais */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+}
+
+/* Otimizações globais para elementos animados */
+* {
+  box-sizing: border-box;
+}
+
+/* Melhorar transições para elementos interativos */
+button, .button, [role="button"] {
+  transition: all 0.2s ease;
+  will-change: transform, opacity;
+}
+
+/* Otimizar formulários */
+input, textarea, select {
+  transition: all 0.2s ease;
+  will-change: border-color, box-shadow;
 }
 
 /* Melhorar a scrollbar para navegadores webkit */
@@ -215,6 +254,7 @@ html {
     background: var(--card-hover);
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(135, 206, 250, 0.12), 0 4px 15px rgba(0, 0, 0, 0.2);
+    will-change: transform, box-shadow;
   }
   
   .card-dreamy {
@@ -223,6 +263,7 @@ html {
     border-radius: var(--radius);
     transition: all 0.3s ease;
     box-shadow: 0 3px 15px rgba(135, 206, 250, 0.08);
+    will-change: transform, box-shadow;
   }
   
   .card-dreamy:hover {
@@ -232,10 +273,12 @@ html {
   
   .animate-float {
     animation: float 6s ease-in-out infinite;
+    will-change: transform;
   }
   
   .animate-pulse-soft {
     animation: pulse-soft 6s ease-in-out infinite;
+    will-change: opacity, transform;
   }
   
   .animate-fade-in {
@@ -248,14 +291,17 @@ html {
   
   .animate-breathe {
     animation: breathe 8s ease-in-out infinite;
+    will-change: opacity;
   }
   
   .animate-gentle-float {
     animation: gentleFloat 8s ease-in-out infinite;
+    will-change: transform;
   }
   
   .animate-slow-glow {
     animation: slowGlow 10s ease-in-out infinite;
+    will-change: opacity;
   }
   
   .animate-drift {
@@ -264,51 +310,63 @@ html {
   
   .animate-float-slow {
     animation: float-slow 10s ease-in-out infinite;
+    will-change: transform;
   }
   
   .animate-twinkle {
     animation: twinkle 6s ease-in-out infinite;
+    will-change: opacity;
   }
   
   .animate-float-cloud {
     animation: float-cloud 60s linear infinite;
+    will-change: transform;
   }
   
   .animate-sparkle {
     animation: sparkle 12s ease-in-out infinite;
+    will-change: opacity;
   }
   
   .animate-slow-drift {
     animation: slow-drift 20s ease-in-out infinite;
+    will-change: transform;
   }
   
   .animate-gentle-glow {
     animation: gentle-glow 15s ease-in-out infinite;
+    will-change: opacity;
   }
   
   .animate-enhanced-float {
     animation: enhanced-float 10s ease-in-out infinite;
+    will-change: transform;
   }
   
   /* New micro-animations for enhanced engagement */
   .animate-bounce-gentle {
     animation: bounce-gentle 4s ease-in-out infinite;
+    will-change: transform;
   }
   
   .animate-scale-in {
     animation: scale-in 0.6s ease-out forwards;
+    will-change: transform;
   }
   
   .animate-fade-in-up {
     animation: fade-in-up 0.8s ease-out forwards;
+    will-change: transform, opacity;
   }
   
   .animate-heartbeat {
     animation: heartbeat 5s ease-in-out infinite;
+    will-change: transform;
   }
   
   .animate-magnetic-hover {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, filter;
   }
   
   .animate-magnetic-hover:hover {

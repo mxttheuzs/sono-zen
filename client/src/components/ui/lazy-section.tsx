@@ -12,6 +12,11 @@ export function LazySection({ children, className = "", threshold = 0.1 }: LazyS
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (hasLoaded) return;
+    
+    const currentRef = ref.current;
+    if (!currentRef) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !hasLoaded) {
@@ -26,11 +31,11 @@ export function LazySection({ children, className = "", threshold = 0.1 }: LazyS
       }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+    observer.observe(currentRef);
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+    };
   }, [threshold, hasLoaded]);
 
   return (
