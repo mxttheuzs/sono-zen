@@ -1,5 +1,4 @@
-import { Button } from "@/components/ui/button";
-import { Play, Lock, Eye, Smartphone } from "lucide-react";
+import { Play, Eye, Smartphone } from "lucide-react";
 import { FloatingClouds } from "@/components/ui/floating-clouds";
 import { useState, useEffect } from "react";
 
@@ -150,13 +149,7 @@ export function VideoPreviewSection() {
                 Após a compra, você terá acesso ao <strong>método completo</strong> sem blur e com todos os módulos especializados desbloqueados!
               </p>
               
-              <Button 
-                onClick={scrollToCheckout}
-                className="bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-sm sm:text-base font-semibold hover:shadow-2xl hover:shadow-[var(--warm-accent)]/25 transition-all duration-300 transform hover:scale-105 w-full sm:w-auto min-h-[50px] flex items-center justify-center gap-2"
-              >
-                <Lock className="h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
-                <span className="whitespace-nowrap">Desbloquear Acesso Completo</span>
-              </Button>
+              
             </div>
           </div>
         </div>

@@ -28,53 +28,86 @@ interface LoadingModalProps {
 
 function LoadingModal({ onComplete }: LoadingModalProps) {
   const [progress, setProgress] = useState(0);
+  const [stage, setStage] = useState(0);
+
+  const stages = [
+    "Verificando segurança...",
+    "Integrando pagamento seguro...",
+    "Conectando com Cakto...",
+    "Finalizando conexão..."
+  ];
 
   useEffect(() => {
     const timer = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(timer);
-          setTimeout(onComplete, 300);
+          setTimeout(onComplete, 200);
           return 100;
         }
-        return prev + 4; // Incrementa 4% a cada 100ms (2.5 segundos total)
+        return prev + 5; // 100ms * 20 = 2 segundos total
       });
     }, 100);
 
-    return () => clearInterval(timer);
+    // Change stage text during progress
+    const stageTimer = setInterval(() => {
+      setStage((prev) => (prev + 1) % stages.length);
+    }, 500);
+
+    return () => {
+      clearInterval(timer);
+      clearInterval(stageTimer);
+    };
   }, [onComplete]);
 
   return (
-    <div className="fixed inset-0 bg-black/90 backdrop-blur-lg z-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl">
-        <div className="text-center">
-          {/* Security Icon */}
-          <div className="w-16 h-16 mx-auto mb-6 bg-slate-100 rounded-full flex items-center justify-center">
-            <Shield className="h-8 w-8 text-slate-600" />
+    <div className="fixed inset-0 bg-gradient-to-br from-black via-slate-900 to-black z-[9999] flex items-center justify-center p-4">
+      <div className="bg-gradient-to-br from-white to-slate-50 rounded-3xl p-10 max-w-md w-full shadow-2xl border border-slate-200 relative overflow-hidden">
+        
+        {/* Animated background */}
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-400/10 via-purple-400/10 to-blue-400/10 animate-pulse"></div>
+        
+        <div className="text-center relative z-10">
+          {/* Security Icon with animation */}
+          <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center shadow-lg relative">
+            <Shield className="h-10 w-10 text-white animate-pulse" />
+            <div className="absolute inset-0 rounded-full bg-blue-400/30 animate-ping"></div>
           </div>
           
           {/* Title */}
-          <h3 className="text-xl font-semibold text-slate-800 mb-2">
-            Iniciando Pagamento Seguro
+          <h3 className="text-2xl font-bold bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent mb-3">
+            Integrando Pagamento Seguro
           </h3>
           
-          {/* Subtitle */}
-          <p className="text-slate-600 mb-6">
-            Conectando com sistema de pagamento...
+          {/* Dynamic subtitle */}
+          <p className="text-slate-600 mb-8 font-medium">
+            {stages[stage]}
           </p>
           
-          {/* Progress Bar */}
-          <div className="w-full bg-slate-200 rounded-full h-2 mb-4">
+          {/* Modern Progress Bar */}
+          <div className="w-full bg-slate-200 rounded-full h-3 mb-6 relative overflow-hidden">
             <div 
-              className="bg-slate-600 h-2 rounded-full transition-all duration-100 ease-out"
+              className="bg-gradient-to-r from-blue-500 to-blue-600 h-3 rounded-full transition-all duration-100 ease-out relative"
               style={{ width: `${progress}%` }}
-            />
+            >
+              <div className="absolute inset-0 bg-white/30 rounded-full animate-pulse"></div>
+            </div>
           </div>
           
-          {/* Progress Text */}
-          <p className="text-sm text-slate-500">
-            {progress}% concluído
-          </p>
+          {/* Percentage with security indicators */}
+          <div className="flex items-center justify-between text-sm">
+            <div className="flex items-center gap-2 text-slate-500">
+              <Lock className="h-4 w-4" />
+              <span>SSL Seguro</span>
+            </div>
+            <span className="text-slate-700 font-semibold">
+              {progress}%
+            </span>
+            <div className="flex items-center gap-2 text-slate-500">
+              <CheckCircle className="h-4 w-4" />
+              <span>Criptografado</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
