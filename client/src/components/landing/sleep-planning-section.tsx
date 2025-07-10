@@ -565,15 +565,15 @@ export function SleepPlanningSection() {
                     onClick={() => handleAnswerSelect(currentQuestion.id, answer.id)}
                     variant="outline"
                     className={`
-                      w-full p-4 h-auto text-left justify-start transition-all duration-300 transform hover:scale-[1.02]
+                      w-full p-3 sm:p-4 h-auto text-left justify-start transition-all duration-300 transform hover:scale-[1.02] min-h-[60px] sm:min-h-[70px] quiz-button-mobile
                       ${profileData.answers[currentQuestion.id]?.id === answer.id 
                         ? 'bg-gradient-to-r from-[var(--warm-accent)]/10 to-[var(--accent-blue)]/10 border-[var(--accent-blue)] shadow-lg scale-[1.02]' 
                         : 'border-[var(--border-subtle)] text-[var(--text-primary)] hover:bg-[var(--card-bg)] hover:border-[var(--accent-blue)]/50'
                       }
                     `}
                   >
-                    <div className="flex items-center w-full">
-                      <span className="text-sm sm:text-base leading-relaxed">{answer.text}</span>
+                    <div className="flex items-center w-full quiz-button-mobile">
+                      <span className="text-sm sm:text-base leading-relaxed break-words text-wrap w-full overflow-hidden quiz-button-mobile">{answer.text}</span>
                     </div>
                   </Button>
                 ))

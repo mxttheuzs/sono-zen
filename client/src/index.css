@@ -601,3 +601,25 @@ button {
     transform: translateY(-4px); 
   }
 }
+
+/* Mobile optimizations for quiz buttons */
+@media (max-width: 768px) {
+  .quiz-button-mobile {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+    text-overflow: clip !important;
+    hyphens: auto !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  .quiz-button-mobile span {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
