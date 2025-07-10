@@ -2,8 +2,12 @@ import { Button } from "@/components/ui/button";
 import { Play, Lock, Eye, Smartphone } from "lucide-react";
 import { FloatingClouds } from "@/components/ui/floating-clouds";
 import previewVideo from "@assets/0709(3)_1752038974566.mp4";
+import { useState } from "react";
 
 export function VideoPreviewSection() {
+  const [videoError, setVideoError] = useState(false);
+  const [videoLoaded, setVideoLoaded] = useState(false);
+
   const scrollToCheckout = () => {
     const element = document.getElementById("preco");
     if (element) {
@@ -31,14 +35,14 @@ export function VideoPreviewSection() {
             <span className="text-[var(--accent-blue)] font-semibold">Preview Exclusivo</span>
           </div>
           
-          <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--text-primary)] leading-tight mb-6">
+          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight mb-6 px-2">
             Veja Por Dentro do{" "}
             <span className="bg-gradient-to-r from-[var(--warm-accent)] via-[var(--accent-blue)] to-[var(--celestial-blue)] bg-clip-text text-transparent">
               Sono Zen
             </span>
           </h2>
           
-          <p className="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed max-w-3xl mx-auto px-4">
             Veja o <strong>ebook interativo em ação</strong> - este vídeo mostra <strong>apenas uma pequena parte</strong> de todo o conteúdo da plataforma que vai guiar você em cada passo da sua transformação do sono
           </p>
         </div>
@@ -50,6 +54,27 @@ export function VideoPreviewSection() {
             
             {/* Video with blur effect already applied in the source */}
             <div className="relative aspect-video bg-black rounded-xl overflow-hidden">
+              {/* Loading state */}
+              {!videoLoaded && !videoError && (
+                <div className="absolute inset-0 flex items-center justify-center bg-black/90">
+                  <div className="text-center">
+                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[var(--accent-blue)] mx-auto mb-4"></div>
+                    <p className="text-white text-sm">Carregando preview...</p>
+                  </div>
+                </div>
+              )}
+              
+              {/* Error state */}
+              {videoError && (
+                <div className="absolute inset-0 flex items-center justify-center bg-black/90">
+                  <div className="text-center">
+                    <Play className="h-12 w-12 text-[var(--accent-blue)] mx-auto mb-4" />
+                    <p className="text-white text-sm">Vídeo indisponível</p>
+                    <p className="text-white/70 text-xs mt-2">Tente recarregar a página</p>
+                  </div>
+                </div>
+              )}
+              
               {/* Video element */}
               <video 
                 className="w-full h-full object-cover"
@@ -57,17 +82,20 @@ export function VideoPreviewSection() {
                 loop
                 muted
                 playsInline
-                preload="auto"
+                preload="metadata"
+                onLoadedData={() => setVideoLoaded(true)}
+                onError={() => setVideoError(true)}
+                onCanPlay={() => setVideoLoaded(true)}
               >
                 <source src={previewVideo} type="video/mp4" />
                 Seu navegador não suporta vídeo HTML5.
               </video>
               
               {/* Small preview indicator */}
-              <div className="absolute top-4 left-4">
-                <div className="bg-black/70 backdrop-blur-sm rounded-lg p-2 flex items-center gap-2">
-                  <Eye className="h-4 w-4 text-[var(--accent-blue)]" />
-                  <span className="text-white text-sm font-medium">Preview do Web App</span>
+              <div className="absolute top-2 left-2 sm:top-4 sm:left-4">
+                <div className="bg-black/70 backdrop-blur-sm rounded-lg p-1.5 sm:p-2 flex items-center gap-1 sm:gap-2">
+                  <Eye className="h-3 w-3 sm:h-4 sm:w-4 text-[var(--accent-blue)]" />
+                  <span className="text-white text-xs sm:text-sm font-medium">Preview do Web App</span>
                 </div>
               </div>
             </div>
@@ -101,21 +129,21 @@ export function VideoPreviewSection() {
           </div>
 
           {/* CTA */}
-          <div className="text-center mt-12">
+          <div className="text-center mt-12 px-4">
             <div className="bg-gradient-to-r from-[var(--warm-accent)]/10 to-[var(--accent-blue)]/10 border border-[var(--warm-accent)]/30 rounded-2xl p-4 sm:p-6 md:p-8 max-w-2xl mx-auto">
-              <p className="text-[var(--text-secondary)] mb-4 text-sm sm:text-base">
+              <p className="text-[var(--text-secondary)] mb-4 text-sm sm:text-base leading-relaxed">
                 Este vídeo mostra <strong>apenas uma pequena amostra</strong> do webapp interativo que você vai receber. O conteúdo completo possui muito mais módulos, técnicas e recursos do que você vê aqui.
               </p>
-              <p className="text-[var(--text-primary)] font-semibold mb-6 break-words text-sm sm:text-base leading-relaxed">
+              <p className="text-[var(--text-primary)] font-semibold mb-6 text-sm sm:text-base leading-relaxed">
                 Após a compra, você terá acesso ao <strong>método completo</strong> sem blur e com todos os módulos especializados desbloqueados!
               </p>
               
               <Button 
                 onClick={scrollToCheckout}
-                className="bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] text-white px-4 sm:px-6 md:px-8 py-3 sm:py-4 rounded-xl text-sm sm:text-base md:text-lg font-semibold hover:shadow-2xl hover:shadow-[var(--warm-accent)]/25 transition-all duration-300 transform hover:scale-105 w-full sm:w-auto"
+                className="bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] text-white px-4 sm:px-6 md:px-8 py-3 sm:py-4 rounded-xl text-sm sm:text-base md:text-lg font-semibold hover:shadow-2xl hover:shadow-[var(--warm-accent)]/25 transition-all duration-300 transform hover:scale-105 w-full sm:w-auto min-h-[50px] flex items-center justify-center"
               >
-                <Lock className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-                <span className="text-center">Desbloquear Acesso Completo</span>
+                <Lock className="mr-2 h-4 w-4 sm:h-5 sm:w-5 flex-shrink-0" />
+                <span className="text-center break-words">Desbloquear Acesso Completo</span>
               </Button>
             </div>
           </div>
