@@ -17,7 +17,7 @@ export function VideoPreviewSection() {
   }, []);
 
   const scrollToCheckout = () => {
-    const element = document.getElementById('preco');
+    const element = document.getElementById('checkout');
     if (element) {
       // Calcular offset para compensar a navegação fixa
       const navHeight = 80;
