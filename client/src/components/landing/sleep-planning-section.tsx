@@ -573,17 +573,6 @@ export function SleepPlanningSection() {
                     `}
                   >
                     <div className="flex items-center w-full">
-                      <div className={`
-                        w-4 h-4 rounded-full border-2 mr-3 flex-shrink-0 transition-all duration-300
-                        ${profileData.answers[currentQuestion.id]?.id === answer.id 
-                          ? 'bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] border-transparent' 
-                          : 'border-[var(--border-subtle)]'
-                        }
-                      `}>
-                        {profileData.answers[currentQuestion.id]?.id === answer.id && (
-                          <CheckCircle className="w-4 h-4 text-white" />
-                        )}
-                      </div>
                       <span className="text-sm sm:text-base leading-relaxed">{answer.text}</span>
                     </div>
                   </Button>
