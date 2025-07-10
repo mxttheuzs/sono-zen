@@ -190,6 +190,7 @@ Changelog:
 - July 10, 2025. Hero section CTA redirect: Changed "SAIBA MAIS" button to scroll to "Eu Sei Como Você Se Sente" (problem section) instead of sleep planning section for better user flow and educational journey.
 - July 10, 2025. Video preview optimization: Updated video preview section with new video file (0709(3)_1752131085192.mp4) and replaced Google Drive iframe with HTML5 video element for better cross-platform compatibility (iOS/Android/Desktop). Added autoplay, muted, loop, and playsInline attributes for optimal mobile performance. Fixed video button styling issues and improved responsiveness.
 - July 10, 2025. Custom favicon implementation: Added custom Sono Zen favicon with moon and stars design matching the sleep wellness theme. Created both ICO and SVG versions for browser compatibility and added to HTML head section.
+- July 10, 2025. Payment modal mobile optimization: Fixed Cakto payment integration for mobile devices by redesigning modal to use full screen with black background, proper mobile positioning (fixed inset-0), and improved iframe height calculation. Updated favicon to use user-provided .ico file for consistent branding.
 
 ## User Preferences
 
