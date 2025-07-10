@@ -1,12 +1,38 @@
 import { Button } from "@/components/ui/button";
 import { Play, Lock, Eye, Smartphone } from "lucide-react";
 import { FloatingClouds } from "@/components/ui/floating-clouds";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export function VideoPreviewSection() {
   const [videoError, setVideoError] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [showVideo, setShowVideo] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    // Force video to load and play when component mounts
+    const timer = setTimeout(() => {
+      if (videoRef.current && !videoLoaded && !videoError) {
+        videoRef.current.load();
+        videoRef.current.play().catch(e => {
+          // Auto-play failed, but this is expected on some browsers
+        });
+      }
+    }, 500);
+
+    // Hide loading after 3 seconds regardless
+    const loadingTimer = setTimeout(() => {
+      if (!videoLoaded) {
+        setVideoLoaded(true);
+      }
+    }, 3000);
+
+    return () => {
+      clearTimeout(timer);
+      clearTimeout(loadingTimer);
+    };
+  }, [videoLoaded, videoError]);
 
   const scrollToCheckout = () => {
     const element = document.getElementById("preco");
@@ -54,7 +80,7 @@ export function VideoPreviewSection() {
             
             {/* Video with blur effect already applied in the source */}
             <div className="relative aspect-video bg-black rounded-xl overflow-hidden">
-              {/* Loading state */}
+              {/* Loading state - only show for first 2 seconds */}
               {!videoLoaded && !videoError && showVideo && (
                 <div className="absolute inset-0 flex items-center justify-center bg-black/90 z-10">
                   <div className="text-center">
@@ -87,6 +113,7 @@ export function VideoPreviewSection() {
               {/* Video element */}
               {showVideo && (
                 <video 
+                  ref={videoRef}
                   className="w-full h-full object-cover"
                   autoPlay
                   loop
@@ -94,15 +121,12 @@ export function VideoPreviewSection() {
                   playsInline
                   preload="auto"
                   onLoadedData={() => setVideoLoaded(true)}
-                  onError={(e) => {
-                    console.error('Video error:', e);
-                    setVideoError(true);
-                  }}
+                  onError={(e) => setVideoError(true)}
                   onCanPlay={() => setVideoLoaded(true)}
-                  onLoadStart={() => console.log('Video loading started')}
-                  onLoadedMetadata={() => console.log('Video metadata loaded')}
+                  onPlay={() => setIsPlaying(true)}
+                  onPause={() => setIsPlaying(false)}
                 >
-                  <source src="/assets/preview-video.mp4?v=2" type="video/mp4" />
+                  <source src="/assets/preview-video.mp4?v=4" type="video/mp4" />
                   Seu navegador não suporta vídeo HTML5.
                 </video>
               )}
