@@ -102,7 +102,7 @@ export function VideoPreviewSection() {
                   onLoadStart={() => console.log('Video loading started')}
                   onLoadedMetadata={() => console.log('Video metadata loaded')}
                 >
-                  <source src="/assets/preview-video.mp4" type="video/mp4" />
+                  <source src="/assets/preview-video.mp4?v=2" type="video/mp4" />
                   Seu navegador não suporta vídeo HTML5.
                 </video>
               )}
