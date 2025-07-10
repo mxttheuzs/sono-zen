@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Play, Lock, Eye, Smartphone } from "lucide-react";
 import { FloatingClouds } from "@/components/ui/floating-clouds";
-import previewVideo from "@assets/0709(3)_1752038974566.mp4";
 import { useState } from "react";
 
 export function VideoPreviewSection() {
   const [videoError, setVideoError] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const [showVideo, setShowVideo] = useState(true);
 
   const scrollToCheckout = () => {
     const element = document.getElementById("preco");
@@ -55,8 +55,8 @@ export function VideoPreviewSection() {
             {/* Video with blur effect already applied in the source */}
             <div className="relative aspect-video bg-black rounded-xl overflow-hidden">
               {/* Loading state */}
-              {!videoLoaded && !videoError && (
-                <div className="absolute inset-0 flex items-center justify-center bg-black/90">
+              {!videoLoaded && !videoError && showVideo && (
+                <div className="absolute inset-0 flex items-center justify-center bg-black/90 z-10">
                   <div className="text-center">
                     <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[var(--accent-blue)] mx-auto mb-4"></div>
                     <p className="text-white text-sm">Carregando preview...</p>
@@ -64,32 +64,48 @@ export function VideoPreviewSection() {
                 </div>
               )}
               
-              {/* Error state */}
-              {videoError && (
-                <div className="absolute inset-0 flex items-center justify-center bg-black/90">
-                  <div className="text-center">
-                    <Play className="h-12 w-12 text-[var(--accent-blue)] mx-auto mb-4" />
-                    <p className="text-white text-sm">Vídeo indisponível</p>
-                    <p className="text-white/70 text-xs mt-2">Tente recarregar a página</p>
+              {/* Error state or fallback */}
+              {(videoError || !showVideo) && (
+                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-slate-900 to-black">
+                  <div className="text-center p-8">
+                    <div className="w-24 h-24 bg-[var(--accent-blue)]/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <Play className="h-12 w-12 text-[var(--accent-blue)]" />
+                    </div>
+                    <h3 className="text-white text-lg font-semibold mb-2">Preview do Web App</h3>
+                    <p className="text-white/70 text-sm mb-4">Demonstração do ebook interativo</p>
+                    <div className="bg-[var(--accent-blue)]/10 border border-[var(--accent-blue)]/30 rounded-lg p-4">
+                      <p className="text-[var(--accent-blue)] text-sm">
+                        📱 Interface responsiva<br/>
+                        🎵 Áudios integrados<br/>
+                        📖 Conteúdo interativo
+                      </p>
+                    </div>
                   </div>
                 </div>
               )}
               
               {/* Video element */}
-              <video 
-                className="w-full h-full object-cover"
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="metadata"
-                onLoadedData={() => setVideoLoaded(true)}
-                onError={() => setVideoError(true)}
-                onCanPlay={() => setVideoLoaded(true)}
-              >
-                <source src={previewVideo} type="video/mp4" />
-                Seu navegador não suporta vídeo HTML5.
-              </video>
+              {showVideo && (
+                <video 
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                  onLoadedData={() => setVideoLoaded(true)}
+                  onError={(e) => {
+                    console.error('Video error:', e);
+                    setVideoError(true);
+                  }}
+                  onCanPlay={() => setVideoLoaded(true)}
+                  onLoadStart={() => console.log('Video loading started')}
+                  onLoadedMetadata={() => console.log('Video metadata loaded')}
+                >
+                  <source src="/assets/preview-video.mp4" type="video/mp4" />
+                  Seu navegador não suporta vídeo HTML5.
+                </video>
+              )}
               
               {/* Small preview indicator */}
               <div className="absolute top-2 left-2 sm:top-4 sm:left-4">
