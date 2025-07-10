@@ -194,6 +194,7 @@ Changelog:
 - July 10, 2025. Professional loading modal enhancement: Redesigned payment loading experience with premium visual effects including gradient backgrounds, animated security icons, dynamic stage messages, modern progress bar with gradients, and security indicators. Extended loading time to 4 seconds for more professional feel. Removed redundant CTA button from video preview section.
 - July 10, 2025. Video preview fix: Reverted video preview from HTML5 video back to Google Drive iframe due to video display issues. Updated iframe source to display preview correctly across all devices.
 - July 10, 2025. Video format optimization: Fixed HTML5 video implementation with proper H.264 codec (.mp4 format), added correct video attributes (autoplay, muted, loop, playsInline), and uploaded new optimized video file (0710(1)_1752133461122.mp4) to client/public directory for better browser compatibility.
+- July 10, 2025. YouTube 4K integration: Replaced local video with YouTube embed (https://youtu.be/UOoYxO1CyTU) configured for maximum 4K quality playback. Added autoplay, mute, loop, and quality parameters (vq=hd2160) for optimal viewing experience with professional video hosting.
 
 ## User Preferences
 

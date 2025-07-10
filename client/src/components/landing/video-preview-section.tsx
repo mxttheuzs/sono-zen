@@ -71,23 +71,15 @@ export function VideoPreviewSection() {
                 </div>
               )}
               
-              {/* HTML5 Video with proper codec */}
-              <video
-                className="w-full h-full object-cover"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                onLoadedData={() => setVideoLoaded(true)}
-                style={{ 
-                  border: 'none',
-                  outline: 'none'
-                }}
-              >
-                <source src="/preview-video.mp4" type="video/mp4" />
-                <p className="text-white text-center">Seu navegador não suporta vídeos HTML5.</p>
-              </video>
+              {/* YouTube Video Embed with 4K quality */}
+              <iframe
+                className="w-full h-full border-0 rounded-xl"
+                src="https://www.youtube.com/embed/UOoYxO1CyTU?autoplay=1&mute=1&loop=1&playlist=UOoYxO1CyTU&controls=1&modestbranding=1&rel=0&showinfo=0&vq=hd2160"
+                title="Sono Zen - Preview do Método"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                onLoad={() => setVideoLoaded(true)}
+              />
               
               {/* Custom play button overlay */}
               {showPlayButton && videoLoaded && (
