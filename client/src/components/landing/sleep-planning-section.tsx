@@ -426,7 +426,7 @@ export function SleepPlanningSection() {
                   className="bg-gradient-to-r from-slate-700 to-slate-600 text-white px-8 py-5 rounded-xl text-lg font-bold hover:shadow-lg transition-all duration-300 transform hover:scale-105 group"
                 >
                   <ArrowRight className="mr-2 h-6 w-6" />
-                  Ver Conteúdo Completo
+                  Ver Preview Completo
                 </Button>
                 <Button
                   onClick={resetQuiz}
