@@ -135,64 +135,64 @@ const quizQuestions: QuizQuestion[] = [
 ];
 
 const sleepProfiles = {
-  excellent: {
-    title: "🌟 Potencial de Transformação Extraordinária",
-    subtitle: "Sua análise revela um perfil único e promissor",
-    description: "Baseado nas suas respostas, nossa IA identificou que você possui características especiais que respondem excepcionalmente bem ao Método Sono Zen Oriental. Pessoas com seu perfil tipicamente experimentam transformações profundas já nas primeiras noites.",
-    color: "from-emerald-400 to-teal-500",
-    urgency: "ALTA COMPATIBILIDADE DETECTADA",
-    transformation: "Resultados esperados em 2-3 noites",
+  critical: {
+    title: "🔴 Perfil de Sono Crítico",
+    subtitle: "Situação que requer atenção imediata",
+    description: "Sua análise indica um padrão de sono severamente comprometido com impactos significativos na qualidade de vida. Há indicadores de que você tem enfrentado dificuldades prolongadas com tentativas anteriores de melhoria.",
+    color: "from-red-400 to-rose-500",
+    urgency: "SITUAÇÃO CRÍTICA IDENTIFICADA",
+    transformation: "Requer abordagem intensiva e suporte profissional",
     recommendations: [
-      "🎯 Protocolo Acelerado de 7 Noites especialmente calibrado para seu perfil",
-      "🧘‍♂️ Técnicas orientais de respiração que se alinham perfeitamente com sua sensibilidade",
-      "💤 Sequências de relaxamento profundo adaptadas à sua necessidade específica",
-      "⚡ Método de desligamento mental instantâneo para interromper pensamentos acelerados",
-      "🌙 Ritual noturno personalizado que funciona com seu ritmo natural"
-    ]
-  },
-  good: {
-    title: "🔥 Perfil de Alta Resposta Terapêutica", 
-    subtitle: "Você está no grupo ideal para transformações rápidas",
-    description: "Nossa análise indica que você possui exatamente o perfil que mais se beneficia do Método Sono Zen. Suas respostas mostram padrões que nossa pesquisa comprovou responder em 72% dos casos nas primeiras 4 noites.",
-    color: "from-blue-400 to-cyan-500",
-    urgency: "MOMENTO IDEAL PARA TRANSFORMAÇÃO",
-    transformation: "Resultados esperados em 3-4 noites",
-    recommendations: [
-      "🎯 Sequência Terapêutica Oriental específica para interromper seus padrões atuais",
-      "🌊 Técnicas de ondas cerebrais que induzem sono profundo naturalmente",
-      "💆‍♀️ Pontos de acupressão para relaxamento instantâneo antes de dormir",
-      "🎵 Frequências sonoras de 432Hz calibradas para seu tipo neurológico",
-      "✨ Visualizações guiadas que neutralizam ansiedade noturna"
+      "🏥 Considere consultar um especialista em medicina do sono",
+      "📋 Avalie a possibilidade de um estudo do sono (polissonografia)",
+      "💊 Discuta com médico sobre medicações temporárias se necessário",
+      "🧘‍♂️ Técnicas de relaxamento profundo para reduzir ansiedade noturna",
+      "📱 Higiene do sono rigorosa com eliminação de estimulantes"
     ]
   },
   moderate: {
-    title: "⚡ Potencial de Recuperação Excepcional",
-    subtitle: "Seu perfil é exatamente o que desenvolvemos para transformar",
-    description: "Suas respostas revelam um padrão que nossa equipe estudou extensivamente. Você está no grupo de pessoas que mais se beneficia do nosso método - 89% experimentam mudanças significativas na primeira semana.",
-    color: "from-amber-400 to-orange-500", 
-    urgency: "JANELA DE OPORTUNIDADE MÁXIMA",
-    transformation: "Transformação completa em 7 noites",
+    title: "🟡 Perfil de Sono Moderado", 
+    subtitle: "Dificuldades significativas que podem ser melhoradas",
+    description: "Você apresenta desafios moderados com o sono que têm impactado sua rotina. Suas respostas indicam que você já tentou algumas soluções e está buscando métodos mais eficazes.",
+    color: "from-yellow-400 to-orange-500",
+    urgency: "OPORTUNIDADE DE MELHORIA",
+    transformation: "Resultados graduais com técnicas consistentes",
     recommendations: [
-      "🔬 Protocolo Científico Oriental de Reset Completo do Ciclo Circadiano",
-      "🧠 Técnicas neuroplásticas para reprogramar padrões de sono",
-      "💫 Método de liberação de tensões acumuladas através de movimentos suaves",
-      "🌺 Aromaterapia oriental sincronizada com fases do sono",
-      "📱 Sequência de desconexão digital que prepara mente e corpo"
+      "🌙 Estabeleça uma rotina de sono consistente e relaxante",
+      "🧘‍♀️ Pratique técnicas de meditação e respiração antes de dormir",
+      "📚 Estude e implemente princípios de higiene do sono",
+      "⏰ Regule seu ciclo circadiano com exposição à luz natural",
+      "🛌 Otimize seu ambiente de sono (temperatura, ruído, luz)"
     ]
   },
-  poor: {
-    title: "🚀 Perfil de Transformação Urgente e Necessária",
-    subtitle: "Você merece e PODE ter o sono dos seus sonhos",
-    description: "Suas respostas mostram que você carrega um peso que ninguém deveria carregar sozinho. A boa notícia? Você tem exatamente o perfil que mais se beneficia do nosso método intensivo. Nossa pesquisa mostra 94% de sucesso em casos similares ao seu.",
-    color: "from-purple-400 to-pink-500",
-    urgency: "INTERVENÇÃO IMEDIATA RECOMENDADA",
-    transformation: "Primeiros resultados em 24-48 horas",
+  mild: {
+    title: "🟢 Perfil de Sono Leve",
+    subtitle: "Questões menores que podem ser facilmente ajustadas",
+    description: "Você tem um padrão de sono relativamente bom com algumas áreas que podem ser otimizadas. Suas dificuldades são administráveis e respondem bem a ajustes simples na rotina.",
+    color: "from-green-400 to-emerald-500", 
+    urgency: "AJUSTES SIMPLES NECESSÁRIOS",
+    transformation: "Melhorias rápidas com pequenas mudanças",
     recommendations: [
-      "🆘 Protocolo de Emergência - Técnicas para alívio imediato já na primeira noite",
-      "💊 Método natural que substitui dependência de medicamentos",
-      "🔄 Reset completo do sistema nervoso através de técnicas milenares",
-      "🛡️ Blindagem mental contra pensamentos ansiosos na hora de dormir",
-      "🌅 Reconstrução completa da relação com o sono em 7 noites"
+      "⏰ Ajuste fino nos horários de dormir e acordar",
+      "🍵 Evite cafeína 6 horas antes de dormir",
+      "📖 Desenvolva um ritual relaxante antes de dormir",
+      "🌡️ Mantenha o quarto fresco e escuro",
+      "📱 Limite o uso de telas 1 hora antes de dormir"
+    ]
+  },
+  balanced: {
+    title: "🔵 Perfil de Sono Equilibrado",
+    subtitle: "Padrão misto que requer abordagem personalizada",
+    description: "Suas respostas mostram uma combinação de fatores que influenciam seu sono. Você tem alguns aspectos funcionando bem e outros que precisam de atenção específica.",
+    color: "from-blue-400 to-cyan-500",
+    urgency: "ABORDAGEM PERSONALIZADA RECOMENDADA",
+    transformation: "Melhoria gradual com foco em pontos específicos",
+    recommendations: [
+      "🔍 Identifique os gatilhos específicos que afetam seu sono",
+      "📊 Mantenha um diário do sono por 2 semanas",
+      "🎯 Foque nas técnicas que mais se adequam ao seu estilo de vida",
+      "🔄 Experimente diferentes abordagens até encontrar o que funciona",
+      "💡 Combine múltiplas estratégias para resultados otimizados"
     ]
   }
 };
@@ -250,17 +250,40 @@ export function SleepPlanningSection() {
   const analyzeProfile = async () => {
     setIsAnalyzing(true);
     
-    // Calcular score
-    const totalAnswers = Object.values(profileData.answers);
-    const totalScore = totalAnswers.reduce((sum, answer) => sum + answer.value, 0);
-    const averageScore = totalScore / totalAnswers.length;
+    // Analyze specific answer patterns for more differentiated profiles
+    const answers = profileData.answers;
     
-    // Determinar perfil
+    // Count pain indicators
+    const painLevel = answers.sleep_pain?.category === "pain" ? answers.sleep_pain.value : 0;
+    const impactLevel = answers.sleep_impact?.category === "impact" ? answers.sleep_impact.value : 0;
+    const durationLevel = answers.desperation_level?.category === "duration" ? answers.desperation_level.value : 0;
+    const attemptsLevel = answers.failed_attempts?.category === "attempts" ? answers.failed_attempts.value : 0;
+    const urgencyLevel = answers.urgency_level?.category === "urgency" ? answers.urgency_level.value : 0;
+    const dreamLevel = answers.dream_scenario?.category === "dream" ? answers.dream_scenario.value : 0;
+    
+    // Calculate weighted score based on different factors
+    const totalScore = painLevel + impactLevel + durationLevel + attemptsLevel + urgencyLevel + dreamLevel;
+    const averageScore = totalScore / 6;
+    
+    // Determine profile based on specific answer combinations
     let profile = "";
-    if (averageScore >= 4.5) profile = "excellent";
-    else if (averageScore >= 3.5) profile = "good";
-    else if (averageScore >= 2.5) profile = "moderate";
-    else profile = "poor";
+    
+    // High urgency + long duration + many failed attempts = critical
+    if (urgencyLevel <= 2 && durationLevel <= 2 && attemptsLevel <= 2) {
+      profile = "critical";
+    }
+    // Moderate urgency + some duration + few attempts = moderate
+    else if (urgencyLevel <= 3 && durationLevel <= 3 && attemptsLevel <= 3) {
+      profile = "moderate";
+    }
+    // Low urgency + short duration + few attempts = mild
+    else if (urgencyLevel >= 4 && durationLevel >= 3 && attemptsLevel >= 3) {
+      profile = "mild";
+    }
+    // Mixed responses = balanced
+    else {
+      profile = "balanced";
+    }
     
     // Simular análise da IA - tempo mais realista
     await new Promise(resolve => setTimeout(resolve, 6000));
@@ -304,6 +327,11 @@ export function SleepPlanningSection() {
   const isCurrentAnswered = currentQuestion && profileData.answers[currentQuestion.id];
   const progress = ((currentStep + 1) / quizQuestions.length) * 100;
 
+  // Safety check to prevent undefined currentQuestion
+  if (!currentQuestion) {
+    return null;
+  }
+
   // Render Results
   if (showResults && profileData.profile) {
     const profile = sleepProfiles[profileData.profile as keyof typeof sleepProfiles];
@@ -332,9 +360,9 @@ export function SleepPlanningSection() {
             <CardContent className="p-8">
               <div className="text-center">
                 {/* Status Badge */}
-                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/40 px-6 py-3 rounded-full mb-6 animate-pulse">
-                  <div className="w-3 h-3 bg-green-400 rounded-full animate-ping"></div>
-                  <span className="text-green-400 font-bold text-sm tracking-wide">{profile.urgency}</span>
+                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-slate-600/20 to-slate-500/20 border border-slate-500/40 px-6 py-3 rounded-full mb-6">
+                  <div className="w-3 h-3 bg-slate-400 rounded-full"></div>
+                  <span className="text-slate-400 font-bold text-sm tracking-wide">{profile.urgency}</span>
                 </div>
 
                 {/* Main Title */}
@@ -364,9 +392,9 @@ export function SleepPlanningSection() {
                   <div className="flex items-center justify-center gap-3 mb-6">
                     <Brain className="h-6 w-6 text-[var(--accent-blue)]" />
                     <h4 className="text-xl sm:text-2xl font-bold text-[var(--text-primary)]">
-                      Protocolo Personalizado Sono Zen AI
+                      Recomendações Personalizadas
                     </h4>
-                    <Sparkles className="h-6 w-6 text-[var(--warm-accent)]" />
+                    <Target className="h-6 w-6 text-[var(--warm-accent)]" />
                   </div>
                   
                   <div className="grid gap-4">
@@ -380,14 +408,13 @@ export function SleepPlanningSection() {
                     ))}
                   </div>
                   
-                  <div className="mt-8 p-6 bg-gradient-to-r from-[var(--warm-accent)]/10 to-[var(--accent-blue)]/10 rounded-xl border border-[var(--warm-accent)]/20">
+                  <div className="mt-8 p-6 bg-gradient-to-r from-slate-700/10 to-slate-600/10 rounded-xl border border-slate-600/20">
                     <div className="flex items-center justify-center gap-2 mb-3">
-                      <CheckCircle className="h-5 w-5 text-green-400" />
-                      <span className="font-bold text-[var(--text-primary)]">Garantia de Transformação</span>
+                      <Lightbulb className="h-5 w-5 text-slate-400" />
+                      <span className="font-bold text-[var(--text-primary)]">Recomendação Importante</span>
                     </div>
                     <p className="text-sm text-[var(--text-secondary)] text-center">
-                      Se você não sentir diferença nas primeiras 7 noites, devolvemos 100% do seu investimento. 
-                      <strong> Sem perguntas, sem burocracia.</strong>
+                      Estas são recomendações baseadas em sua análise. Para melhores resultados, implemente as sugestões gradualmente e monitore seu progresso.
                     </p>
                   </div>
                 </div>
@@ -396,11 +423,10 @@ export function SleepPlanningSection() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
                 <Button
                   onClick={scrollToPreview}
-                  className="bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] text-white px-8 py-5 rounded-xl text-lg font-bold hover:shadow-2xl hover:shadow-[var(--warm-accent)]/25 transition-all duration-300 transform hover:scale-105 group relative overflow-hidden"
+                  className="bg-gradient-to-r from-slate-700 to-slate-600 text-white px-8 py-5 rounded-xl text-lg font-bold hover:shadow-lg transition-all duration-300 transform hover:scale-105 group"
                 >
-                  <span className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent animate-pulse"></span>
-                  <CheckCircle className="mr-2 h-6 w-6 group-hover:animate-pulse" />
-                  QUERO TRANSFORMAR MEU SONO AGORA
+                  <ArrowRight className="mr-2 h-6 w-6" />
+                  Ver Conteúdo Completo
                 </Button>
                 <Button
                   onClick={resetQuiz}
