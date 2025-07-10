@@ -199,7 +199,8 @@ export function PricingSection() {
   const handlePurchaseClick = () => {
     // Enviar evento de InitiateCheckout quando inicia o processo
     trackInitiateCheckout();
-    setShowLoadingModal(true);
+    // Ir direto para o pagamento sem modal de carregamento
+    setShowPaymentModal(true);
   };
 
   const handleLoadingComplete = () => {
