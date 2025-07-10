@@ -271,31 +271,23 @@ html {
   }
   
   .animate-float-cloud {
-    animation: float-cloud 35s linear infinite;
+    animation: float-cloud 60s linear infinite;
   }
   
   .animate-sparkle {
-    animation: sparkle 8s ease-in-out infinite;
+    animation: sparkle 12s ease-in-out infinite;
   }
   
   .animate-slow-drift {
-    animation: slow-drift 12s ease-in-out infinite;
+    animation: slow-drift 20s ease-in-out infinite;
   }
   
   .animate-gentle-glow {
-    animation: gentle-glow 8s ease-in-out infinite;
-  }
-  
-  .animate-golden-glow-pulse {
-    animation: golden-glow-pulse 3s ease-in-out infinite;
-  }
-  
-  .animate-blue-glow-pulse {
-    animation: blue-glow-pulse 3s ease-in-out infinite;
+    animation: gentle-glow 15s ease-in-out infinite;
   }
   
   .animate-enhanced-float {
-    animation: enhanced-float 6s ease-in-out infinite;
+    animation: enhanced-float 10s ease-in-out infinite;
   }
   
   /* New micro-animations for enhanced engagement */

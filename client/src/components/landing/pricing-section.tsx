@@ -10,7 +10,7 @@ import { useToast } from "@/hooks/use-toast";
 import { insertPurchaseSchema } from "@shared/schema";
 import { apiRequest } from "@/lib/queryClient";
 import { trackInitiateCheckout, trackPurchase } from "@/lib/conversion-tracking";
-import { Shield, Lock, Star, Cloud, CheckCircle, Download, Clock, Users, Gift, Moon, Sparkles, Heart } from "lucide-react";
+import { Shield, Lock, Star, CheckCircle, Download, Clock, Moon, Gift, Sparkles } from "lucide-react";
 import { FloatingClouds } from "@/components/ui/floating-clouds";
 import { z } from "zod";
 
@@ -37,9 +37,9 @@ function LoadingModal({ onComplete }: LoadingModalProps) {
           setTimeout(onComplete, 300);
           return 100;
         }
-        return prev + 2; // Incrementa 2% a cada 50ms (2.5 segundos total)
+        return prev + 4; // Incrementa 4% a cada 100ms (2.5 segundos total)
       });
-    }, 50);
+    }, 100);
 
     return () => clearInterval(timer);
   }, [onComplete]);

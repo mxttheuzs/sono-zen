@@ -7,6 +7,7 @@ import { SleepPlanningSection } from "@/components/landing/sleep-planning-sectio
 import { VideoPreviewSection } from "@/components/landing/video-preview-section";
 import { EbookContentSection } from "@/components/landing/ebook-content-section";
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
+import { LazySection } from "@/components/ui/lazy-section";
 import { SleepComfortQuiz } from "@/components/quiz/sleep-comfort-quiz";
 import { ObjectionsSection } from "@/components/landing/objections-section";
 import { PricingSection } from "@/components/landing/pricing-section";
@@ -51,8 +52,12 @@ export default function Home() {
         <VideoPreviewSection />
         <EbookContentSection />
         <TestimonialsSection />
-        <SleepComfortQuiz />
-        <ObjectionsSection />
+        <LazySection>
+          <SleepComfortQuiz />
+        </LazySection>
+        <LazySection>
+          <ObjectionsSection />
+        </LazySection>
         <PricingSection />
         <AuthorSection />
         <FAQSection />
