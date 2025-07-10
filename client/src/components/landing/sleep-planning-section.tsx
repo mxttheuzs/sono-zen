@@ -49,148 +49,87 @@ interface ProfileData {
 
 const quizQuestions: QuizQuestion[] = [
   {
-    id: "sleep_quality",
-    title: "Como você avalia a qualidade do seu sono atualmente?",
-    description: "Seja honesto sobre como você se sente em relação ao seu sono nos últimos 30 dias",
+    id: "sleep_pain",
+    title: "Qual é a sua maior dor relacionada ao sono?",
+    description: "Seja honesto sobre o que mais te incomoda na hora de dormir",
     type: "single",
     icon: <Moon className="h-6 w-6" />,
     answers: [
-      { id: "excellent", text: "Excelente - Durmo bem e acordo descansado", value: 5, category: "quality" },
-      { id: "good", text: "Bom - Geralmente durmo bem, mas poderia melhorar", value: 4, category: "quality" },
-      { id: "fair", text: "Regular - Alguns dias bons, outros nem tanto", value: 3, category: "quality" },
-      { id: "poor", text: "Ruim - Frequentemente tenho problemas para dormir", value: 2, category: "quality" },
-      { id: "terrible", text: "Terrível - Raramente consigo ter uma boa noite de sono", value: 1, category: "quality" }
+      { id: "cant_fall_asleep", text: "Fico horas acordado tentando dormir", value: 1, category: "pain" },
+      { id: "wake_up_tired", text: "Acordo mais cansado do que quando fui dormir", value: 1, category: "pain" },
+      { id: "wake_up_night", text: "Acordo várias vezes durante a noite", value: 1, category: "pain" },
+      { id: "anxious_bedtime", text: "Fico ansioso só de pensar em ir para a cama", value: 1, category: "pain" },
+      { id: "mind_racing", text: "Minha mente não para quando deito", value: 1, category: "pain" }
     ]
   },
   {
-    id: "sleep_time",
-    title: "Quanto tempo você leva para adormecer após deitar?",
-    description: "Considere o tempo médio desde quando você se deita até realmente adormecer",
+    id: "sleep_impact",
+    title: "Como a falta de sono está afetando sua vida?",
+    description: "Qual o impacto mais doloroso que você sente no dia a dia",
     type: "single",
-    icon: <Timer className="h-6 w-6" />,
+    icon: <Brain className="h-6 w-6" />,
     answers: [
-      { id: "fast", text: "Menos de 10 minutos - Adormeço rapidamente", value: 5, category: "onset" },
-      { id: "normal", text: "10-20 minutos - Tempo normal", value: 4, category: "onset" },
-      { id: "moderate", text: "20-30 minutos - Um pouco demorado", value: 3, category: "onset" },
-      { id: "slow", text: "30-60 minutos - Demoro bastante", value: 2, category: "onset" },
-      { id: "very_slow", text: "Mais de 1 hora - Muito difícil adormecer", value: 1, category: "onset" }
+      { id: "work_performance", text: "Não consigo render no trabalho", value: 1, category: "impact" },
+      { id: "relationships", text: "Estou irritado com as pessoas que amo", value: 1, category: "impact" },
+      { id: "health_issues", text: "Sinto que minha saúde está piorando", value: 1, category: "impact" },
+      { id: "no_energy", text: "Não tenho energia para nada", value: 1, category: "impact" },
+      { id: "depression", text: "Me sinto triste e sem esperança", value: 1, category: "impact" }
     ]
   },
   {
-    id: "night_awakenings",
-    title: "Com que frequência você acorda durante a noite?",
-    description: "Pense em quantas vezes você desperta completamente durante uma noite típica",
+    id: "desperation_level",
+    title: "Há quanto tempo você sofre com o sono?",
+    description: "O tempo que você carrega esse peso",
     type: "single",
-    icon: <Activity className="h-6 w-6" />,
+    icon: <Clock className="h-6 w-6" />,
     answers: [
-      { id: "never", text: "Nunca - Durmo a noite toda", value: 5, category: "continuity" },
-      { id: "rarely", text: "Raramente - 1 vez por semana ou menos", value: 4, category: "continuity" },
-      { id: "sometimes", text: "Às vezes - 2-3 vezes por semana", value: 3, category: "continuity" },
-      { id: "often", text: "Frequentemente - 4-5 vezes por semana", value: 2, category: "continuity" },
-      { id: "always", text: "Sempre - Toda noite acordo várias vezes", value: 1, category: "continuity" }
+      { id: "few_weeks", text: "Algumas semanas", value: 3, category: "duration" },
+      { id: "few_months", text: "Alguns meses", value: 2, category: "duration" },
+      { id: "one_year", text: "Mais de um ano", value: 1, category: "duration" },
+      { id: "years", text: "Vários anos... estou desesperado", value: 1, category: "duration" },
+      { id: "always", text: "Sempre foi assim, não lembro de dormir bem", value: 1, category: "duration" }
     ]
   },
   {
-    id: "stress_level",
-    title: "Qual seu nível de estresse/ansiedade na hora de dormir?",
-    description: "Como você se sente mentalmente quando vai para a cama",
-    type: "scale",
+    id: "failed_attempts",
+    title: "O que você já tentou para melhorar seu sono?",
+    description: "Quantas coisas você já testou sem sucesso",
+    type: "single",
     icon: <Zap className="h-6 w-6" />,
     answers: [
-      { id: "1", text: "1 - Muito calmo", value: 1, category: "stress" },
-      { id: "2", text: "2", value: 2, category: "stress" },
-      { id: "3", text: "3", value: 3, category: "stress" },
-      { id: "4", text: "4", value: 4, category: "stress" },
-      { id: "5", text: "5", value: 5, category: "stress" },
-      { id: "6", text: "6", value: 6, category: "stress" },
-      { id: "7", text: "7", value: 7, category: "stress" },
-      { id: "8", text: "8", value: 8, category: "stress" },
-      { id: "9", text: "9", value: 9, category: "stress" },
-      { id: "10", text: "10 - Muito ansioso", value: 10, category: "stress" }
+      { id: "nothing", text: "Nada ainda, preciso de ajuda urgente", value: 1, category: "attempts" },
+      { id: "few_things", text: "Algumas coisas, mas nada funciona", value: 1, category: "attempts" },
+      { id: "many_things", text: "Muitas coisas, gastei muito dinheiro", value: 1, category: "attempts" },
+      { id: "everything", text: "Já tentei de tudo, estou sem esperança", value: 1, category: "attempts" },
+      { id: "medications", text: "Até remédios, mas não quero depender deles", value: 1, category: "attempts" }
     ]
   },
   {
-    id: "morning_feeling",
-    title: "Como você se sente ao acordar pela manhã?",
-    description: "Sua sensação típica nos primeiros 30 minutos após acordar",
+    id: "urgency_level",
+    title: "Quão urgente é resolver isso para você?",
+    description: "O nível de desespero que você sente",
+    type: "single",
+    icon: <Heart className="h-6 w-6" />,
+    answers: [
+      { id: "very_urgent", text: "Extremamente urgente - não aguento mais", value: 1, category: "urgency" },
+      { id: "urgent", text: "Urgente - preciso resolver logo", value: 2, category: "urgency" },
+      { id: "important", text: "Importante - mas posso esperar um pouco", value: 3, category: "urgency" },
+      { id: "moderate", text: "Moderado - gostaria de melhorar", value: 4, category: "urgency" },
+      { id: "curious", text: "Curioso - só quero saber mais", value: 5, category: "urgency" }
+    ]
+  },
+  {
+    id: "dream_scenario",
+    title: "Como seria sua vida se você dormisse perfeitamente?",
+    description: "O que mudaria se você acordasse renovado todos os dias",
     type: "single",
     icon: <Sun className="h-6 w-6" />,
     answers: [
-      { id: "energized", text: "Energizado e revigorado - Pronto para o dia", value: 5, category: "recovery" },
-      { id: "refreshed", text: "Descansado - Me sinto bem", value: 4, category: "recovery" },
-      { id: "okay", text: "Normal - Nem bem nem mal", value: 3, category: "recovery" },
-      { id: "tired", text: "Cansado - Preciso de mais sono", value: 2, category: "recovery" },
-      { id: "exhausted", text: "Exausto - Como se não tivesse dormido", value: 1, category: "recovery" }
-    ]
-  },
-  {
-    id: "bedtime_routine",
-    title: "Você tem uma rotina estabelecida antes de dormir?",
-    description: "Atividades consistentes que você faz todas as noites antes de deitar",
-    type: "single",
-    icon: <Bed className="h-6 w-6" />,
-    answers: [
-      { id: "consistent", text: "Sim, tenho uma rotina bem definida e sigo sempre", value: 5, category: "habits" },
-      { id: "mostly", text: "Sim, mas nem sempre consigo seguir", value: 4, category: "habits" },
-      { id: "basic", text: "Tenho algumas coisas que faço, mas não é estruturado", value: 3, category: "habits" },
-      { id: "minimal", text: "Raramente - só escovo os dentes e vou dormir", value: 2, category: "habits" },
-      { id: "none", text: "Não, vario muito o que faço antes de dormir", value: 1, category: "habits" }
-    ]
-  },
-  {
-    id: "screen_time",
-    title: "Quanto tempo antes de dormir você para de usar telas?",
-    description: "Celular, TV, computador, tablet - qualquer dispositivo com tela",
-    type: "single",
-    icon: <Smartphone className="h-6 w-6" />,
-    answers: [
-      { id: "early", text: "2+ horas antes - Evito telas à noite", value: 5, category: "habits" },
-      { id: "good", text: "1-2 horas antes - Tenho disciplina com isso", value: 4, category: "habits" },
-      { id: "moderate", text: "30-60 minutos antes - Às vezes esqueço", value: 3, category: "habits" },
-      { id: "late", text: "15-30 minutos antes - Difícil parar de usar", value: 2, category: "habits" },
-      { id: "never", text: "Uso até a hora de dormir - Durmo com o celular", value: 1, category: "habits" }
-    ]
-  },
-  {
-    id: "caffeine_intake",
-    title: "Quando você costuma tomar sua última dose de cafeína?",
-    description: "Café, chá, refrigerante, energético - qualquer bebida com cafeína",
-    type: "single",
-    icon: <Coffee className="h-6 w-6" />,
-    answers: [
-      { id: "morning", text: "Só pela manhã - Até 12h", value: 5, category: "lifestyle" },
-      { id: "afternoon", text: "Tarde - Até 15h", value: 4, category: "lifestyle" },
-      { id: "late_afternoon", text: "Final da tarde - Até 17h", value: 3, category: "lifestyle" },
-      { id: "evening", text: "Início da noite - Até 19h", value: 2, category: "lifestyle" },
-      { id: "night", text: "À noite - Depois das 19h", value: 1, category: "lifestyle" }
-    ]
-  },
-  {
-    id: "sleep_environment",
-    title: "Como você avalia seu ambiente de sono?",
-    description: "Temperatura, ruído, luminosidade, conforto da cama",
-    type: "single",
-    icon: <Home className="h-6 w-6" />,
-    answers: [
-      { id: "perfect", text: "Perfeito - Escuro, silencioso e temperatura ideal", value: 5, category: "environment" },
-      { id: "good", text: "Bom - Apenas pequenos ajustes necessários", value: 4, category: "environment" },
-      { id: "okay", text: "Razoável - Alguns problemas ocasionais", value: 3, category: "environment" },
-      { id: "poor", text: "Ruim - Vários fatores atrapalham", value: 2, category: "environment" },
-      { id: "terrible", text: "Terrível - Ambiente totalmente inadequado", value: 1, category: "environment" }
-    ]
-  },
-  {
-    id: "sleep_goals",
-    title: "Qual é seu principal objetivo com o sono?",
-    description: "O que você mais gostaria de alcançar melhorando seu sono",
-    type: "single",
-    icon: <Target className="h-6 w-6" />,
-    answers: [
-      { id: "fall_asleep", text: "Adormecer mais rapidamente", value: 1, category: "goals" },
-      { id: "stay_asleep", text: "Dormir a noite toda sem acordar", value: 2, category: "goals" },
-      { id: "wake_refreshed", text: "Acordar mais descansado e energizado", value: 3, category: "goals" },
-      { id: "reduce_stress", text: "Reduzir ansiedade e estresse noturno", value: 4, category: "goals" },
-      { id: "establish_routine", text: "Criar uma rotina saudável de sono", value: 5, category: "goals" }
+      { id: "energy_life", text: "Teria energia para viver plenamente", value: 3, category: "dream" },
+      { id: "better_relationships", text: "Seria mais paciente com quem amo", value: 3, category: "dream" },
+      { id: "career_success", text: "Seria mais produtivo e bem-sucedido", value: 3, category: "dream" },
+      { id: "health_wellness", text: "Me sentiria saudável e em forma", value: 3, category: "dream" },
+      { id: "happiness", text: "Seria genuinamente feliz novamente", value: 3, category: "dream" }
     ]
   }
 ];
@@ -493,7 +432,7 @@ export function SleepPlanningSection() {
           </h2>
           
           <p className="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed max-w-3xl mx-auto mb-6">
-            Nossa <strong>Inteligência Artificial especializada</strong> irá analisar 10 aspectos científicos do seu sono para criar um protocolo personalizado exclusivo para sua transformação
+            Nossa <strong>Inteligência Artificial especializada</strong> irá analisar suas principais dificuldades com o sono para criar um protocolo personalizado exclusivo para sua transformação
           </p>
 
           <div className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)]/80 bg-[var(--card-bg)]/30 px-4 py-2 rounded-full border border-[var(--border-subtle)]">
@@ -502,19 +441,7 @@ export function SleepPlanningSection() {
           </div>
         </div>
 
-        {/* Progress Bar */}
-        <div className="mb-8">
-          <div className="flex items-center justify-between text-sm text-[var(--text-secondary)] mb-2">
-            <span>Pergunta {currentStep + 1} de {quizQuestions.length}</span>
-            <span>{Math.round(progress)}% completo</span>
-          </div>
-          <div className="w-full bg-[var(--card-bg)]/30 rounded-full h-2 overflow-hidden">
-            <div 
-              className="h-full bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] transition-all duration-500 ease-out"
-              style={{ width: `${progress}%` }}
-            ></div>
-          </div>
-        </div>
+
 
         {/* Quiz Question */}
         <Card 
@@ -578,21 +505,7 @@ export function SleepPlanningSection() {
               )}
             </div>
 
-            {/* Progress Indicators */}
-            <div className="flex justify-center items-center mt-8">
-              <div className="flex space-x-2">
-                {quizQuestions.map((_, index) => (
-                  <div
-                    key={index}
-                    className={`w-3 h-3 rounded-full transition-all duration-500 ${
-                      index <= currentStep 
-                        ? 'bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] scale-110' 
-                        : 'bg-[var(--card-hover)]'
-                    }`}
-                  />
-                ))}
-              </div>
-            </div>
+
 
             {/* AI Instruction */}
             <div className="text-center mt-6">
