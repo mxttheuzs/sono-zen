@@ -88,10 +88,56 @@ interface PaymentModalProps {
 
 function PaymentModal({ onClose }: PaymentModalProps) {
   const [isLoading, setIsLoading] = useState(true);
+  const [showRedirectButton, setShowRedirectButton] = useState(false);
 
   const handleIframeLoad = () => {
     setIsLoading(false);
+    
+    // Show redirect button after 2 minutes as fallback
+    setTimeout(() => {
+      setShowRedirectButton(true);
+    }, 120000); // 2 minutes
   };
+
+  const handleManualRedirect = () => {
+    // Track purchase completion
+    trackPurchase({
+      conversion_value: 27.90,
+      currency: 'BRL',
+      content_name: 'Sono Zen - Método Completo',
+      content_category: 'E-book'
+    });
+    
+    onClose();
+    window.open('https://cakto.com.br/area-do-cliente', '_blank');
+  };
+
+  // Listen for payment completion messages from Cakto iframe
+  useEffect(() => {
+    const handleMessage = (event: MessageEvent) => {
+      // Check if message is from Cakto domain
+      if (event.origin !== 'https://pay.cakto.com.br') return;
+      
+      // Handle different types of messages from Cakto
+      if (event.data && typeof event.data === 'object') {
+        // Payment completed successfully
+        if (event.data.type === 'payment_success' || event.data.status === 'success') {
+          handleManualRedirect();
+        }
+        
+        // Handle redirect URL if provided by Cakto
+        if (event.data.redirect_url) {
+          onClose();
+          setTimeout(() => {
+            window.open(event.data.redirect_url, '_blank');
+          }, 1000);
+        }
+      }
+    };
+
+    window.addEventListener('message', handleMessage);
+    return () => window.removeEventListener('message', handleMessage);
+  }, [onClose]);
 
   return (
     <div className="fixed inset-0 bg-black/90 backdrop-blur-lg z-50 flex items-center justify-center p-4">
@@ -109,12 +155,25 @@ function PaymentModal({ onClose }: PaymentModalProps) {
             </div>
           </div>
           
-          <button
-            onClick={onClose}
-            className="w-8 h-8 bg-slate-700 rounded-lg flex items-center justify-center hover:bg-slate-600 transition-colors"
-          >
-            <span className="text-slate-300 text-xl">×</span>
-          </button>
+          <div className="flex items-center gap-3">
+            {/* Redirect Button - appears after payment likely completed */}
+            {showRedirectButton && (
+              <button
+                onClick={handleManualRedirect}
+                className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2"
+              >
+                <Download className="h-4 w-4" />
+                Acessar Área do Cliente
+              </button>
+            )}
+            
+            <button
+              onClick={onClose}
+              className="w-8 h-8 bg-slate-700 rounded-lg flex items-center justify-center hover:bg-slate-600 transition-colors"
+            >
+              <span className="text-slate-300 text-xl">×</span>
+            </button>
+          </div>
         </div>
 
         {/* Loading */}
@@ -135,6 +194,39 @@ function PaymentModal({ onClose }: PaymentModalProps) {
           title="Pagamento Seguro - Cakto"
           allow="payment"
           sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-top-navigation"
+          ref={(iframe) => {
+            if (iframe) {
+              // Alternative approach: Monitor iframe URL changes
+              const checkUrlChange = () => {
+                try {
+                  // Check if iframe URL changed to success page
+                  const iframeUrl = iframe.contentWindow?.location.href;
+                  if (iframeUrl && (iframeUrl.includes('success') || iframeUrl.includes('obrigado') || iframeUrl.includes('complete'))) {
+                    // Payment completed, redirect to member area
+                    trackPurchase({
+                      conversion_value: 27.90,
+                      currency: 'BRL',
+                      content_name: 'Sono Zen - Método Completo',
+                      content_category: 'E-book'
+                    });
+                    
+                    onClose();
+                    setTimeout(() => {
+                      window.open('https://cakto.com.br/area-do-cliente', '_blank');
+                    }, 1000);
+                  }
+                } catch (error) {
+                  // Cross-origin error is expected, ignore
+                }
+              };
+
+              // Check URL every 2 seconds
+              const urlChecker = setInterval(checkUrlChange, 2000);
+              
+              // Cleanup
+              return () => clearInterval(urlChecker);
+            }
+          }}
         />
       </div>
     </div>
@@ -204,8 +296,7 @@ export function PricingSection() {
 
   const handleLoadingComplete = () => {
     setShowLoadingModal(false);
-    // Redirect directly to Cakto's member area instead of showing modal
-    window.open('https://pay.cakto.com.br/j6iqgss_456470', '_blank');
+    setShowPaymentModal(true);
   };
 
   const handleClosePayment = () => {
