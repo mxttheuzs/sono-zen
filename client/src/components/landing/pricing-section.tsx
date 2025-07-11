@@ -468,25 +468,29 @@ export function PricingSection() {
 
                 </div>
                 
-                {/* Custom Futuristic Purchase Button */}
+                {/* Elegant Premium Purchase Button */}
                 <div className="space-y-6">
-                  {/* Custom Futuristic Purchase Button */}
+                  {/* Clean Premium Purchase Button */}
                   <div className="relative group">
-                    <button 
+                    {/* Subtle glow effect */}
+                    <div className="absolute -inset-0.5 rounded-2xl blur opacity-20 group-hover:opacity-30 transition-all duration-500" 
+                         style={{ background: 'linear-gradient(135deg, hsl(220, 25%, 65%) 0%, hsl(220, 30%, 70%) 100%)' }}></div>
+                    
+                    <Button 
                       onClick={handlePurchaseClick}
-                      className="custom-futuristic-button w-full py-6 sm:py-7 px-8 sm:px-10 text-lg sm:text-xl font-bold cursor-pointer"
-                      style={{
-                        position: 'relative',
-                        height: '3.5em',
-                        border: '3px ridge #149CEA',
-                        outline: 'none',
-                        backgroundColor: 'transparent',
-                        color: 'white',
-                        transition: '1s',
-                        borderRadius: '0.3em',
-                        fontSize: '16px',
-                        fontWeight: 'bold',
-                        cursor: 'pointer'
+                      className="relative w-full py-6 sm:py-7 px-8 sm:px-10 rounded-2xl text-lg sm:text-xl font-semibold transition-all duration-300 transform hover:scale-[1.01] shadow-lg hover:shadow-xl border border-white/10 backdrop-blur-sm text-white"
+                      style={{ 
+                        background: 'linear-gradient(135deg, hsl(220, 25%, 55%) 0%, hsl(220, 30%, 60%) 50%, hsl(220, 25%, 55%) 100%)',
+                        boxShadow: '0 4px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.1)',
+                        textShadow: '0 1px 2px rgba(0,0,0,0.3)'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.background = 'linear-gradient(135deg, hsl(220, 25%, 60%) 0%, hsl(220, 30%, 65%) 50%, hsl(220, 25%, 60%) 100%)';
+                        e.currentTarget.style.boxShadow = '0 6px 25px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.15)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.background = 'linear-gradient(135deg, hsl(220, 25%, 55%) 0%, hsl(220, 30%, 60%) 50%, hsl(220, 25%, 55%) 100%)';
+                        e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.1)';
                       }}
                     >
                       <div className="flex items-center justify-center gap-3">
@@ -496,7 +500,7 @@ export function PricingSection() {
                         </span>
                         <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 text-white/70" />
                       </div>
-                    </button>
+                    </Button>
                   </div>
                   
                   {/* Enhanced Security & Trust Badges */}
