@@ -45,19 +45,7 @@ export function AuthorSection() {
           {/* Professional Profile Card */}
           <div className="lg:col-span-1">
             <div className="card-modern p-8 text-center">
-              {/* Professional Symbol */}
-              <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-[var(--warm-accent)] to-[var(--accent-blue)] p-1 flex items-center justify-center">
-                <div className="w-full h-full rounded-full bg-black flex items-center justify-center">
-                  <div className="relative">
-                    <Moon className="h-12 w-12 text-[var(--warm-accent)]" />
-                    <div className="absolute -top-2 -right-2">
-                      <Stethoscope className="h-8 w-8 text-[var(--accent-blue)]" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <h3 className="font-heading text-2xl font-bold text-[var(--text-primary)] mb-8">
+              <h3 className="font-heading text-3xl font-bold text-[var(--text-primary)] mb-8">
                 Dra. Deborah Genaro
               </h3>
 
