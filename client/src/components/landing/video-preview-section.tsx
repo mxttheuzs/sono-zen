@@ -105,19 +105,7 @@ export function VideoPreviewSection() {
             </div>
           </div>
 
-          {/* CTA */}
-          <div className="text-center mt-12 px-4">
-            <div className="bg-gradient-to-r from-[var(--warm-accent)]/10 to-[var(--accent-blue)]/10 border border-[var(--warm-accent)]/30 rounded-2xl p-4 sm:p-6 md:p-8 max-w-2xl mx-auto">
-              <p className="text-[var(--text-secondary)] mb-4 text-sm sm:text-base leading-relaxed">
-                Este vídeo mostra <strong>apenas uma pequena amostra</strong> do webapp interativo que você vai receber. O conteúdo completo possui muito mais módulos, técnicas e recursos do que você vê aqui.
-              </p>
-              <p className="text-[var(--text-primary)] font-semibold mb-6 text-sm sm:text-base leading-relaxed">
-                Após a compra, você terá acesso ao <strong>método completo</strong> sem blur e com todos os módulos especializados desbloqueados!
-              </p>
-              
-              
-            </div>
-          </div>
+
         </div>
       </div>
     </section>

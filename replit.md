@@ -197,6 +197,8 @@ Changelog:
 - July 10, 2025. YouTube 4K integration: Replaced local video with YouTube embed (https://youtu.be/UOoYxO1CyTU) configured for maximum 4K quality playback. Added autoplay, mute, loop, and quality parameters (vq=hd2160) for optimal viewing experience with professional video hosting.
 - July 14, 2025. Professional VSL implementation: Added ConvertAI Video Sales Letter section with optimized preload scripts for better video performance. Created elegant VSL section with professional design, trust indicators, and seamless integration. Replaced method section with VSL presentation positioned strategically after problem section. Updated navigation to include "Apresentação" link for VSL access.
 - July 14, 2025. Dual VSL system: Implemented two ConvertAI VSL players - main presentation VSL (68746e5feeeef9dc21f33836) in new VSL section and preview VSL (68743cb75670de6a67b138cf) in video preview section. Both videos integrated with proper preload scripts and dangerouslySetInnerHTML for reliable playback. Removed "AO VIVO" indicator from main VSL as content is recorded, not live.
+- July 14, 2025. VSL content alignment: Updated VSL section texts to match video content focusing on "silêncio interno" concept, emotional sleep struggles, and oriental wisdom. Changed title to "Você Já Viveu Aquela Noite em que Deitou Querendo Desligar do Mundo?" and aligned all supporting texts with the deep, emotional tone of the actual video content.
+- July 14, 2025. Video preview section cleanup: Removed explanatory text section about method completeness and webapp access from video preview section per user request, keeping only the three informational cards.
 
 ## User Preferences
 
