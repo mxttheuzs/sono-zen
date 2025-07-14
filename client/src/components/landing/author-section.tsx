@@ -1,8 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { FloatingClouds } from "@/components/ui/floating-clouds";
 import { Badge } from "@/components/ui/badge";
-import { GraduationCap, Star, Users, Globe, Heart, User } from "lucide-react";
-import doctorImage from "@assets/image_1751130848304.png";
+import { GraduationCap, Star, Users, Globe, Heart, User, Award, Stethoscope, Moon } from "lucide-react";
 
 export function AuthorSection() {
   const credentials = [
@@ -43,17 +42,18 @@ export function AuthorSection() {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
-          {/* Author Photo & Main Info */}
+          {/* Professional Profile Card */}
           <div className="lg:col-span-1">
-            <div className="card-modern p-6 text-center">
-              {/* Professional Photo */}
-              <div className="w-48 h-48 mx-auto mb-6 rounded-full bg-gradient-to-br from-[var(--warm-accent)] to-[var(--accent-blue)] p-1">
-                <div className="w-full h-full rounded-full overflow-hidden bg-white">
-                  <img 
-                    src={doctorImage} 
-                    alt="Dra. Deborah Genaro - Especialista em Medicina do Sono"
-                    className="w-full h-full object-cover object-center"
-                  />
+            <div className="card-modern p-8 text-center">
+              {/* Professional Symbol */}
+              <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-[var(--warm-accent)] to-[var(--accent-blue)] p-1 flex items-center justify-center">
+                <div className="w-full h-full rounded-full bg-black flex items-center justify-center">
+                  <div className="relative">
+                    <Moon className="h-12 w-12 text-[var(--warm-accent)]" />
+                    <div className="absolute -top-2 -right-2">
+                      <Stethoscope className="h-8 w-8 text-[var(--accent-blue)]" />
+                    </div>
+                  </div>
                 </div>
               </div>
               
@@ -66,6 +66,18 @@ export function AuthorSection() {
                   Especialista em Medicina do Sono<br/>
                   Mestre em Técnicas Orientais
                 </p>
+              </div>
+
+              {/* Professional Badges */}
+              <div className="flex justify-center gap-2 mb-6">
+                <Badge variant="secondary" className="text-xs bg-[var(--warm-accent)]/20 text-[var(--warm-accent)] border-[var(--warm-accent)]/30">
+                  <Award className="h-3 w-3 mr-1" />
+                  Certificada
+                </Badge>
+                <Badge variant="secondary" className="text-xs bg-[var(--accent-blue)]/20 text-[var(--accent-blue)] border-[var(--accent-blue)]/30">
+                  <GraduationCap className="h-3 w-3 mr-1" />
+                  PhD
+                </Badge>
               </div>
 
               {/* Key Stats */}
@@ -103,23 +115,25 @@ export function AuthorSection() {
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-6">
             {/* Credentials */}
-            <div className="card-modern p-6">
+            <div className="card-modern p-8 bg-gradient-to-br from-[var(--card-bg)] to-[var(--card-bg)]/80 border border-[var(--border-subtle)]/50">
               <h4 className="font-heading text-xl font-bold text-[var(--text-primary)] mb-6 flex items-center">
-                <User className="mr-3 h-6 w-6 text-[var(--warm-accent)]" />
+                <div className="p-2 rounded-full bg-[var(--warm-accent)]/20 mr-3">
+                  <User className="h-6 w-6 text-[var(--warm-accent)]" />
+                </div>
                 Credenciais e Especialização
               </h4>
               
               <div className="grid md:grid-cols-2 gap-4">
                 {credentials.map((credential, index) => (
-                  <div key={index} className="flex items-start gap-3 p-3 rounded-lg bg-[var(--card-hover)] border border-[var(--border-subtle)]">
-                    <div className="text-[var(--warm-accent)] mt-1">
+                  <div key={index} className="flex items-start gap-4 p-4 rounded-xl bg-[var(--card-hover)] border border-[var(--border-subtle)] hover:border-[var(--warm-accent)]/30 transition-colors">
+                    <div className="p-2 rounded-full bg-[var(--warm-accent)]/20 text-[var(--warm-accent)] mt-1">
                       {credential.icon}
                     </div>
-                    <div>
+                    <div className="flex-1">
                       <h5 className="font-semibold text-[var(--text-primary)] text-sm mb-1">
                         {credential.title}
                       </h5>
-                      <p className="text-xs text-[var(--text-muted)]">
+                      <p className="text-xs text-[var(--text-muted)] leading-relaxed">
                         {credential.description}
                       </p>
                     </div>
@@ -129,22 +143,24 @@ export function AuthorSection() {
             </div>
 
             {/* Story */}
-            <div className="card-modern p-6">
+            <div className="card-modern p-8 bg-gradient-to-br from-[var(--card-bg)] to-[var(--card-bg)]/80 border border-[var(--border-subtle)]/50">
               <h4 className="font-heading text-xl font-bold text-[var(--text-primary)] mb-6 flex items-center">
-                <Heart className="mr-3 h-6 w-6 text-[var(--warm-accent)]" />
+                <div className="p-2 rounded-full bg-[var(--warm-accent)]/20 mr-3">
+                  <Heart className="h-6 w-6 text-[var(--warm-accent)]" />
+                </div>
                 Minha Jornada e Missão
               </h4>
               
-              <div className="space-y-4 text-[var(--text-secondary)]">
-                <p className="leading-relaxed">
+              <div className="space-y-6 text-[var(--text-secondary)]">
+                <p className="leading-relaxed text-base">
                   <strong className="text-[var(--text-primary)]">Obrigada por ter chegado até aqui.</strong> Meu nome é Deborah Genaro, e nos últimos 15 anos me dediquei completamente a transformar a vida de pessoas que sofrem com insônia e noites mal dormidas.
                 </p>
                 
-                <p className="leading-relaxed">
+                <p className="leading-relaxed text-base">
                   Durante anos atendendo em minha clínica, percebi que a medicina tradicional sozinha não era suficiente. Foi então que embarquei em uma jornada pelos países orientais - China, Japão e Índia - onde descobri técnicas milenares que mudaram tudo.
                 </p>
                 
-                <p className="leading-relaxed">
+                <p className="leading-relaxed text-base">
                   O <strong className="text-[var(--warm-accent)]">Método Sono Zen</strong> é o resultado dessa fusão entre conhecimento científico e sabedoria ancestral. Mais de 14.847 pessoas já transformaram suas noites com essas técnicas, e agora chegou a sua vez de ter o sono que sempre sonhou.
                 </p>
               </div>
@@ -153,13 +169,20 @@ export function AuthorSection() {
 
 
             {/* Personal Message */}
-            <div className="card-dreamy p-6 border border-[var(--warm-accent)]/30">
-              <div className="text-center">
-                <p className="text-[var(--text-secondary)] leading-relaxed mb-4 italic">
-                  "Criei este método pensando em cada pessoa que já passou noites em claro, olhando para o teto. Se você chegou até aqui, é porque merece dormir como nunca dormiu antes. Este é meu presente para você."
-                </p>
-                <div className="text-[var(--warm-accent)] font-semibold">
-                  - Dra. Deborah Genaro
+            <div className="card-dreamy p-8 bg-gradient-to-br from-[var(--warm-accent)]/10 to-[var(--accent-blue)]/10 border border-[var(--warm-accent)]/30">
+              <div className="text-center relative">
+                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  <div className="p-3 rounded-full bg-[var(--warm-accent)]/20 backdrop-blur-sm">
+                    <Heart className="h-6 w-6 text-[var(--warm-accent)]" />
+                  </div>
+                </div>
+                <div className="pt-8">
+                  <p className="text-[var(--text-secondary)] leading-relaxed mb-6 italic text-lg">
+                    "Criei este método pensando em cada pessoa que já passou noites em claro, olhando para o teto. Se você chegou até aqui, é porque merece dormir como nunca dormiu antes. Este é meu presente para você."
+                  </p>
+                  <div className="text-[var(--warm-accent)] font-semibold text-lg">
+                    - Dra. Deborah Genaro
+                  </div>
                 </div>
               </div>
             </div>
