@@ -4,11 +4,11 @@ import { Play, Shield, Clock, Award } from 'lucide-react';
 export function VSLSection() {
 
   return (
-    <section id="vsl" className="py-20 bg-black relative overflow-hidden">
+    <section id="vsl" className="py-20 bg-black relative overflow-hidden pt-[0px] pb-[0px]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mt-[16px] mb-[16px]">
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[var(--warm-accent)]/20 to-[var(--accent-blue)]/20 border border-[var(--warm-accent)]/30 rounded-full px-4 py-2 mb-6">
             <Play className="w-4 h-4 text-[var(--warm-accent)]" />
             <span className="text-sm font-medium text-[var(--warm-accent)]">Apresentação Especial</span>
