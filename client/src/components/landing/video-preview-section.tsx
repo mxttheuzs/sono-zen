@@ -5,7 +5,7 @@ import React from "react";
 export function VideoPreviewSection() {
 
   const scrollToCheckout = () => {
-    const element = document.getElementById('checkout');
+    const element = document.getElementById('preco');
     if (element) {
       // Calcular offset para compensar a navegação fixa
       const navHeight = 80;

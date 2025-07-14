@@ -19,7 +19,7 @@ export function ExitIntentPopup() {
   }, [hasShown]);
 
   const scrollToCheckout = () => {
-    const checkoutSection = document.getElementById('checkout');
+    const checkoutSection = document.getElementById('preco');
     if (checkoutSection) {
       checkoutSection.scrollIntoView({ 
         behavior: 'smooth',
