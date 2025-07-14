@@ -1,23 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Play, Shield, Clock, Award } from 'lucide-react';
 
 export function VSLSection() {
-  useEffect(() => {
-    // Load ConvertAI SDK
-    const script = document.createElement('script');
-    script.src = 'https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js';
-    script.async = true;
-    document.head.appendChild(script);
-
-    return () => {
-      // Cleanup if needed
-      try {
-        document.head.removeChild(script);
-      } catch (e) {
-        // Script might have already been removed
-      }
-    };
-  }, []);
 
   return (
     <section id="vsl" className="py-20 bg-black relative overflow-hidden">
@@ -59,28 +43,23 @@ export function VSLSection() {
 
             {/* ConvertAI Video Player */}
             <div className="relative rounded-xl overflow-hidden bg-black/50 border border-[var(--accent-blue)]/30">
-              <div id="ifr_68746e5feeeef9dc21f33836_wrapper" style={{ margin: '0 auto', width: '100%' }}>
-                <div 
-                  style={{ padding: '52.760136785539814% 0 0 0', position: 'relative' }} 
-                  id="ifr_68746e5feeeef9dc21f33836_aspect"
-                >
-                  <iframe 
-                    frameBorder="0" 
-                    allowFullScreen 
-                    src="about:blank" 
-                    id="ifr_68746e5feeeef9dc21f33836" 
-                    style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-                    referrerPolicy="origin" 
-                    onLoad={(e) => {
-                      const iframe = e.target as HTMLIFrameElement;
-                      iframe.onload = null;
-                      iframe.src = 'https://scripts.converteai.net/565bfa0e-d0fd-494c-b04a-2fc27a3af576/players/68746e5feeeef9dc21f33836/v4/embed.html' + 
-                                  (location.search || '?') + 
-                                  '&vl=' + encodeURIComponent(location.href);
-                    }}
-                  />
-                </div>
-              </div>
+              <div 
+                dangerouslySetInnerHTML={{
+                  __html: `
+                    <script type="text/javascript"> 
+                      var s=document.createElement("script"); 
+                      s.src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js", 
+                      s.async=!0,
+                      document.head.appendChild(s); 
+                    </script> 
+                    <div id="ifr_68746e5feeeef9dc21f33836_wrapper" style="margin: 0 auto; width: 100%;"> 
+                      <div style="padding: 52.760136785539814% 0 0 0; position: relative;" id="ifr_68746e5feeeef9dc21f33836_aspect"> 
+                        <iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_68746e5feeeef9dc21f33836" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" referrerpolicy="origin" onload="this.onload=null, this.src='https://scripts.converteai.net/565bfa0e-d0fd-494c-b04a-2fc27a3af576/players/68746e5feeeef9dc21f33836/v4/embed.html' +(location.search||'?') +'&vl=' +encodeURIComponent(location.href)"></iframe> 
+                      </div> 
+                    </div>
+                  `
+                }}
+              />
             </div>
 
             {/* Video Description */}
