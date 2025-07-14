@@ -35,7 +35,7 @@ export function ObjectionsSection() {
     {
       icon: DollarSign,
       question: "Tô meio apertada... vale mesmo a pena?",
-      answer: "Te entendo perfeitamente. 💝 Pensa assim: uma consulta comigo custa R$ 450. Remédio pra dormir sai R$ 180 por mês. O Sono Zen custa menos que duas noites de delivery que você pede quando tá cansada demais pra cozinhar.",
+      answer: "Te entendo perfeitamente. 💝 Pensa assim: uma consulta por aí sai R$ 450. Remédio pra dormir sai R$ 180 por mês. O Sono Zen custa menos que duas noites de delivery que você pede quando tá cansada demais pra cozinhar.",
       color: "from-yellow-500 to-amber-500"
     }
   ];

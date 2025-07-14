@@ -200,6 +200,7 @@ Changelog:
 - July 14, 2025. VSL content alignment: Updated VSL section texts to match video content focusing on "silêncio interno" concept, emotional sleep struggles, and oriental wisdom. Changed title to "Você Já Viveu Aquela Noite em que Deitou Querendo Desligar do Mundo?" and aligned all supporting texts with the deep, emotional tone of the actual video content.
 - July 14, 2025. Video preview section cleanup: Removed explanatory text section about method completeness and webapp access from video preview section per user request, keeping only the three informational cards.
 - July 14, 2025. Hero section banner removal: Removed the promotional "LANÇAMENTO ESPECIAL - Preço mais baixo do ano!" banner from hero section per user request, keeping only the credibility indicators.
+- July 14, 2025. Objections section text adjustment: Changed "uma consulta comigo custa R$ 450" to "uma consulta por aí sai R$ 450" in the pricing objection response to make it more impersonal and generic.
 
 ## User Preferences
 
