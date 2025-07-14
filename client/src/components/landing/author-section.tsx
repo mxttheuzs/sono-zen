@@ -57,28 +57,9 @@ export function AuthorSection() {
                 </div>
               </div>
               
-              <h3 className="font-heading text-2xl font-bold text-[var(--text-primary)] mb-2">
+              <h3 className="font-heading text-2xl font-bold text-[var(--text-primary)] mb-8">
                 Dra. Deborah Genaro
               </h3>
-              
-              <div className="space-y-2 mb-6">
-                <p className="text-[var(--text-secondary)] text-sm">
-                  Especialista em Medicina do Sono<br/>
-                  Mestre em Técnicas Orientais
-                </p>
-              </div>
-
-              {/* Professional Badges */}
-              <div className="flex justify-center gap-2 mb-6">
-                <Badge variant="secondary" className="text-xs bg-[var(--warm-accent)]/20 text-[var(--warm-accent)] border-[var(--warm-accent)]/30">
-                  <Award className="h-3 w-3 mr-1" />
-                  Certificada
-                </Badge>
-                <Badge variant="secondary" className="text-xs bg-[var(--accent-blue)]/20 text-[var(--accent-blue)] border-[var(--accent-blue)]/30">
-                  <GraduationCap className="h-3 w-3 mr-1" />
-                  PhD
-                </Badge>
-              </div>
 
               {/* Key Stats */}
               <div className="grid grid-cols-2 gap-4 mb-6">

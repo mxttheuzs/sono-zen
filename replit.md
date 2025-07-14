@@ -201,7 +201,7 @@ Changelog:
 - July 14, 2025. Video preview section cleanup: Removed explanatory text section about method completeness and webapp access from video preview section per user request, keeping only the three informational cards.
 - July 14, 2025. Hero section banner removal: Removed the promotional "LANÇAMENTO ESPECIAL - Preço mais baixo do ano!" banner from hero section per user request, keeping only the credibility indicators.
 - July 14, 2025. Objections section text adjustment: Changed "uma consulta comigo custa R$ 450" to "uma consulta por aí sai R$ 450" in the pricing objection response to make it more impersonal and generic.
-- July 14, 2025. Author section professional redesign: Removed doctor photo and replaced with elegant professional symbol (Moon + Stethoscope icons) in gradient circle. Enhanced design with professional badges (Certificada, PhD), improved card styling with gradients, icon backgrounds, and better spacing. Maintained all content and credibility while creating more sophisticated, trustworthy presentation focused on professionalism rather than personal imagery.
+- July 14, 2025. Author section professional redesign: Removed doctor photo and replaced with elegant professional symbol (Moon + Stethoscope icons) in gradient circle. Enhanced design with improved card styling, gradients, icon backgrounds, and better spacing. Simplified name area to show only "Dra. Deborah Genaro" without additional badges or descriptions for cleaner presentation. Maintained all content and credibility while creating more sophisticated, trustworthy presentation focused on professionalism rather than personal imagery.
 
 ## User Preferences
 
