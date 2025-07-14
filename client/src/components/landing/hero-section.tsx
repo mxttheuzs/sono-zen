@@ -105,46 +105,7 @@ export function HeroSection() {
               </div>
             </div>
 
-            {/* Compact Launch Banner */}
-            <div className="relative max-w-xl">
-              {/* Subtle outer glow */}
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-[var(--warm-accent)]/20 to-[var(--accent-blue)]/20 rounded-2xl blur"></div>
-              
-              {/* Main compact banner */}
-              <div className="relative bg-gradient-to-r from-[var(--warm-accent)]/15 via-[var(--accent-blue)]/10 to-[var(--warm-accent)]/15 border-2 border-[var(--warm-accent)]/40 rounded-2xl p-4 backdrop-blur-sm shadow-lg">
-                {/* Top launch stripe */}
-                <div className="bg-gradient-to-r from-orange-500/80 to-red-500/80 rounded-xl p-3 mb-4 text-center border border-orange-400/50">
-                  <div className="flex items-center justify-center gap-2">
-                    <span className="text-lg">🚀</span>
-                    <p className="text-white font-bold text-sm sm:text-base" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}>
-                      LANÇAMENTO ESPECIAL - Preço mais baixo do ano!
-                    </p>
-                    <span className="text-lg">🚀</span>
-                  </div>
-                </div>
-                
-                {/* Content area */}
-                <div className="text-center">
-                  <p className="text-[var(--text-primary)] font-semibold text-lg mb-2" style={{ textShadow: '0 0 8px rgba(255,255,255,0.2)' }}>
-                    14.847 vidas transformadas
-                  </p>
-                  
-                  {/* Status indicators - compact */}
-                  <div className="flex justify-center gap-4 mb-3">
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 bg-[var(--success-green)] rounded-full animate-pulse"></div>
-                      <span className="text-[var(--success-green)] text-sm font-semibold">Método Comprovado</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 bg-[var(--accent-blue)] rounded-full"></div>
-                      <span className="text-[var(--accent-blue)] text-sm font-semibold">Acesso Imediato</span>
-                    </div>
-                  </div>
-                  
 
-                </div>
-              </div>
-            </div>
           </div>
         </div>
         

@@ -199,6 +199,7 @@ Changelog:
 - July 14, 2025. Dual VSL system: Implemented two ConvertAI VSL players - main presentation VSL (68746e5feeeef9dc21f33836) in new VSL section and preview VSL (68743cb75670de6a67b138cf) in video preview section. Both videos integrated with proper preload scripts and dangerouslySetInnerHTML for reliable playback. Removed "AO VIVO" indicator from main VSL as content is recorded, not live.
 - July 14, 2025. VSL content alignment: Updated VSL section texts to match video content focusing on "silêncio interno" concept, emotional sleep struggles, and oriental wisdom. Changed title to "Você Já Viveu Aquela Noite em que Deitou Querendo Desligar do Mundo?" and aligned all supporting texts with the deep, emotional tone of the actual video content.
 - July 14, 2025. Video preview section cleanup: Removed explanatory text section about method completeness and webapp access from video preview section per user request, keeping only the three informational cards.
+- July 14, 2025. Hero section banner removal: Removed the promotional "LANÇAMENTO ESPECIAL - Preço mais baixo do ano!" banner from hero section per user request, keeping only the credibility indicators.
 
 ## User Preferences
 
