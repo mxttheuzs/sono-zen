@@ -77,8 +77,8 @@ export function Navigation() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8">
-          <button onClick={() => scrollToSection("metodo")} className="text-white/90 hover:text-[var(--warm-accent)] transition-colors font-semibold text-base animate-text-focus">
-            O Método
+          <button onClick={() => scrollToSection("vsl")} className="text-white/90 hover:text-[var(--warm-accent)] transition-colors font-semibold text-base animate-text-focus">
+            Apresentação
           </button>
           <button onClick={() => scrollToSection("planejamento-sono")} className="text-white/90 hover:text-[var(--warm-accent)] transition-colors font-semibold text-base animate-text-focus">
             Planejamento
@@ -123,10 +123,10 @@ export function Navigation() {
         <div className="md:hidden bg-[var(--card-bg)]/95 backdrop-blur-md border-t border-[var(--border-subtle)]">
           <div className="px-6 py-6 space-y-6">
             <button 
-              onClick={() => scrollToSection("metodo")} 
+              onClick={() => scrollToSection("vsl")} 
               className="block w-full text-left text-[var(--text-secondary)] hover:text-[var(--accent-blue)] transition-colors font-medium py-4 px-3 rounded-lg hover:bg-[var(--card-hover)] text-base"
             >
-              O Método
+              Apresentação
             </button>
             <button 
               onClick={() => scrollToSection("planejamento-sono")} 

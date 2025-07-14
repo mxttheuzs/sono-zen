@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Navigation } from "@/components/landing/navigation";
 import { HeroSection } from "@/components/landing/hero-section";
 import { ProblemSection } from "@/components/landing/problem-section";
-import { MethodSection } from "@/components/landing/method-section";
+import { VSLSection } from "@/components/landing/vsl-section";
 import { SleepPlanningSection } from "@/components/landing/sleep-planning-section";
 import { VideoPreviewSection } from "@/components/landing/video-preview-section";
 import { EbookContentSection } from "@/components/landing/ebook-content-section";
@@ -47,7 +47,7 @@ export default function Home() {
         <Navigation />
         <HeroSection />
         <ProblemSection />
-        <MethodSection />
+        <VSLSection />
         <SleepPlanningSection />
         <VideoPreviewSection />
         <EbookContentSection />
