@@ -32,6 +32,7 @@ function LoadingModal({ onComplete }: LoadingModalProps) {
 
   const stages = [
     "Verificando segurança...",
+    "Validando certificados SSL...",
     "Integrando pagamento seguro...",
     "Conectando com Cakto...",
     "Finalizando conexão..."
@@ -42,17 +43,17 @@ function LoadingModal({ onComplete }: LoadingModalProps) {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(timer);
-          setTimeout(onComplete, 200);
+          setTimeout(onComplete, 300);
           return 100;
         }
-        return prev + 2.5; // 100ms * 40 = 4 segundos total
+        return prev + 3.33; // 30ms * 30 = 1 segundo total para carregamento mais rápido
       });
-    }, 100);
+    }, 33);
 
     // Change stage text during progress
     const stageTimer = setInterval(() => {
       setStage((prev) => (prev + 1) % stages.length);
-    }, 500);
+    }, 200);
 
     return () => {
       clearInterval(timer);
@@ -62,51 +63,96 @@ function LoadingModal({ onComplete }: LoadingModalProps) {
 
   return (
     <div className="fixed inset-0 bg-gradient-to-br from-black via-slate-900 to-black z-[9999] flex items-center justify-center p-4">
-      <div className="bg-gradient-to-br from-white to-slate-50 rounded-3xl p-10 max-w-md w-full shadow-2xl border border-slate-200 relative overflow-hidden">
+      <div className="bg-gradient-to-br from-white to-slate-50 rounded-3xl p-10 max-w-lg w-full shadow-2xl border border-slate-200 relative overflow-hidden">
         
         {/* Animated background */}
         <div className="absolute inset-0 bg-gradient-to-r from-blue-400/10 via-purple-400/10 to-blue-400/10 animate-pulse"></div>
         
         <div className="text-center relative z-10">
-          {/* Security Icon with animation */}
-          <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center shadow-lg relative">
-            <Shield className="h-10 w-10 text-white animate-pulse" />
-            <div className="absolute inset-0 rounded-full bg-blue-400/30 animate-ping"></div>
+          {/* Enhanced Security Icon with multiple animations */}
+          <div className="relative mb-8">
+            <div className="w-24 h-24 mx-auto bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center shadow-lg relative">
+              <Shield className="h-12 w-12 text-white" />
+              
+              {/* Animated Rings */}
+              <div className="absolute inset-0 rounded-full border-4 border-blue-300/30 animate-spin"></div>
+              <div className="absolute inset-[-8px] rounded-full border-2 border-blue-400/20 animate-pulse"></div>
+            </div>
+            
+            {/* Floating Security Badges */}
+            <div className="absolute -top-2 -right-2 w-10 h-10 bg-green-500 rounded-full flex items-center justify-center shadow-lg">
+              <CheckCircle className="h-6 w-6 text-white" />
+            </div>
+            <div className="absolute -bottom-2 -left-2 w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center shadow-lg">
+              <Lock className="h-6 w-6 text-white" />
+            </div>
           </div>
           
-          {/* Title */}
-          <h3 className="text-2xl font-bold bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent mb-3">
+          {/* Enhanced Title */}
+          <h3 className="text-3xl font-bold bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent mb-4">
             Integrando Pagamento Seguro
           </h3>
           
-          {/* Dynamic subtitle */}
-          <p className="text-slate-600 mb-8 font-medium">
+          {/* Dynamic subtitle with better spacing */}
+          <p className="text-slate-600 mb-8 font-medium text-lg min-h-[28px] transition-all duration-300">
             {stages[stage]}
           </p>
           
-          {/* Modern Progress Bar */}
-          <div className="w-full bg-slate-200 rounded-full h-3 mb-6 relative overflow-hidden">
+          {/* Professional Progress Bar */}
+          <div className="w-full bg-slate-200 rounded-full h-4 mb-6 relative overflow-hidden border border-slate-300/50 shadow-inner">
             <div 
-              className="bg-gradient-to-r from-blue-500 to-blue-600 h-3 rounded-full transition-all duration-100 ease-out relative"
+              className="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-500 h-4 rounded-full transition-all duration-75 ease-out relative"
               style={{ width: `${progress}%` }}
             >
-              <div className="absolute inset-0 bg-white/30 rounded-full animate-pulse"></div>
+              {/* Animated Shine Effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent rounded-full animate-pulse"></div>
+              
+              {/* Moving Highlight */}
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/60 to-transparent rounded-full"></div>
             </div>
           </div>
           
-          {/* Percentage with security indicators */}
-          <div className="flex items-center justify-between text-sm">
-            <div className="flex items-center gap-2 text-slate-500">
-              <Lock className="h-4 w-4" />
-              <span>SSL Seguro</span>
+          {/* Progress Percentage Display */}
+          <div className="flex items-center justify-center mb-8">
+            <div className="bg-slate-800/10 rounded-full px-8 py-3 border border-slate-300/50 shadow-sm">
+              <span className="text-slate-700 font-bold text-2xl">
+                {Math.round(progress)}%
+              </span>
             </div>
-            <span className="text-slate-700 font-semibold">
-              {progress}%
-            </span>
-            <div className="flex items-center gap-2 text-slate-500">
-              <CheckCircle className="h-4 w-4" />
-              <span>Criptografado</span>
+          </div>
+          
+          {/* Enhanced Security Indicators */}
+          <div className="grid grid-cols-3 gap-4 text-sm">
+            <div className="flex flex-col items-center p-4 bg-green-50 rounded-xl border border-green-200/50 shadow-sm">
+              <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mb-2">
+                <Shield className="h-5 w-5 text-white" />
+              </div>
+              <span className="text-green-700 font-semibold">SSL</span>
+              <span className="text-green-600 text-xs">Seguro</span>
             </div>
+            
+            <div className="flex flex-col items-center p-4 bg-blue-50 rounded-xl border border-blue-200/50 shadow-sm">
+              <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mb-2">
+                <Lock className="h-5 w-5 text-white" />
+              </div>
+              <span className="text-blue-700 font-semibold">256-bits</span>
+              <span className="text-blue-600 text-xs">Criptografia</span>
+            </div>
+            
+            <div className="flex flex-col items-center p-4 bg-purple-50 rounded-xl border border-purple-200/50 shadow-sm">
+              <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center mb-2">
+                <CheckCircle className="h-5 w-5 text-white" />
+              </div>
+              <span className="text-purple-700 font-semibold">Cakto</span>
+              <span className="text-purple-600 text-xs">Verificado</span>
+            </div>
+          </div>
+          
+          {/* Loading Dots Animation */}
+          <div className="flex items-center justify-center gap-2 mt-8">
+            <div className="w-3 h-3 bg-blue-500 rounded-full animate-bounce"></div>
+            <div className="w-3 h-3 bg-blue-500 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+            <div className="w-3 h-3 bg-blue-500 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
           </div>
         </div>
       </div>
