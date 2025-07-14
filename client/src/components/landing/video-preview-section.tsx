@@ -1,19 +1,8 @@
 import { Play, Eye, Smartphone } from "lucide-react";
 import { FloatingClouds } from "@/components/ui/floating-clouds";
-import { useState, useEffect } from "react";
+import React from "react";
 
 export function VideoPreviewSection() {
-  const [videoLoaded, setVideoLoaded] = useState(false);
-  const [showPlayButton, setShowPlayButton] = useState(true);
-
-  useEffect(() => {
-    // Hide loading after 2 seconds
-    const loadingTimer = setTimeout(() => {
-      setVideoLoaded(true);
-    }, 2000);
-
-    return () => clearTimeout(loadingTimer);
-  }, []);
 
   const scrollToCheckout = () => {
     const element = document.getElementById('checkout');
@@ -59,40 +48,25 @@ export function VideoPreviewSection() {
           {/* Video wrapper with blur overlay */}
           <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-[var(--card-bg)] to-[var(--card-bg)]/80 border border-[var(--border-subtle)]">
             
-            {/* Video with optimized HTML5 video */}
-            <div className="relative aspect-video bg-black rounded-xl overflow-hidden">
-              {/* Loading state */}
-              {!videoLoaded && (
-                <div className="absolute inset-0 flex items-center justify-center bg-black/90 z-10">
-                  <div className="text-center">
-                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[var(--accent-blue)] mx-auto mb-4"></div>
-                    <p className="text-white text-sm">Carregando preview...</p>
-                  </div>
-                </div>
-              )}
-              
-              {/* YouTube Video Embed with 4K quality */}
-              <iframe
-                className="w-full h-full border-0 rounded-xl"
-                src="https://www.youtube.com/embed/UOoYxO1CyTU?autoplay=1&mute=1&loop=1&playlist=UOoYxO1CyTU&controls=1&modestbranding=1&rel=0&showinfo=0&vq=hd2160"
-                title="Sono Zen - Preview do Método"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                onLoad={() => setVideoLoaded(true)}
+            {/* ConvertAI VSL Player */}
+            <div className="relative bg-black rounded-xl overflow-hidden">
+              <div 
+                dangerouslySetInnerHTML={{
+                  __html: `
+                    <script type="text/javascript"> 
+                      var s=document.createElement("script"); 
+                      s.src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js", 
+                      s.async=!0,
+                      document.head.appendChild(s); 
+                    </script> 
+                    <div id="ifr_68743cb75670de6a67b138cf_wrapper" style="margin: 0 auto; width: 100%;"> 
+                      <div style="padding: 56.25% 0 0 0; position: relative;" id="ifr_68743cb75670de6a67b138cf_aspect"> 
+                        <iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_68743cb75670de6a67b138cf" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" referrerpolicy="origin" onload="this.onload=null, this.src='https://scripts.converteai.net/565bfa0e-d0fd-494c-b04a-2fc27a3af576/players/68743cb75670de6a67b138cf/v4/embed.html' +(location.search||'?') +'&vl=' +encodeURIComponent(location.href)"></iframe> 
+                      </div> 
+                    </div>
+                  `
+                }}
               />
-              
-              {/* Custom play button overlay */}
-              {showPlayButton && videoLoaded && (
-                <div 
-                  className="absolute inset-0 flex flex-col items-center justify-center bg-black/30 backdrop-blur-sm z-20 cursor-pointer"
-                  onClick={() => setShowPlayButton(false)}
-                >
-                  <div className="bg-[var(--accent-blue)] hover:bg-[var(--accent-blue)]/80 rounded-full p-6 transition-all duration-300 hover:scale-110 mb-4">
-                    <Play className="h-12 w-12 text-white fill-white" />
-                  </div>
-                  <p className="text-white text-sm font-medium">Clique para assistir o preview</p>
-                </div>
-              )}
               
               {/* Small preview indicator */}
               <div className="absolute top-2 left-2 sm:top-4 sm:left-4 z-30">

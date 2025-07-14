@@ -35,9 +35,9 @@ export function VSLSection() {
             
             {/* Video Badge */}
             <div className="flex items-center justify-center mb-6">
-              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[var(--success-green)]/20 to-[var(--mint-green)]/20 border border-[var(--success-green)]/30 rounded-full px-4 py-2">
-                <div className="w-2 h-2 bg-[var(--success-green)] rounded-full animate-pulse"></div>
-                <span className="text-sm font-medium text-[var(--success-green)]">AO VIVO - Método Completo</span>
+              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[var(--accent-blue)]/20 to-[var(--celestial-blue)]/20 border border-[var(--accent-blue)]/30 rounded-full px-4 py-2">
+                <Play className="w-3 h-3 text-[var(--accent-blue)]" />
+                <span className="text-sm font-medium text-[var(--accent-blue)]">Método Completo</span>
               </div>
             </div>
 

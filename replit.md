@@ -195,6 +195,8 @@ Changelog:
 - July 10, 2025. Video preview fix: Reverted video preview from HTML5 video back to Google Drive iframe due to video display issues. Updated iframe source to display preview correctly across all devices.
 - July 10, 2025. Video format optimization: Fixed HTML5 video implementation with proper H.264 codec (.mp4 format), added correct video attributes (autoplay, muted, loop, playsInline), and uploaded new optimized video file (0710(1)_1752133461122.mp4) to client/public directory for better browser compatibility.
 - July 10, 2025. YouTube 4K integration: Replaced local video with YouTube embed (https://youtu.be/UOoYxO1CyTU) configured for maximum 4K quality playback. Added autoplay, mute, loop, and quality parameters (vq=hd2160) for optimal viewing experience with professional video hosting.
+- July 14, 2025. Professional VSL implementation: Added ConvertAI Video Sales Letter section with optimized preload scripts for better video performance. Created elegant VSL section with professional design, trust indicators, and seamless integration. Replaced method section with VSL presentation positioned strategically after problem section. Updated navigation to include "Apresentação" link for VSL access.
+- July 14, 2025. Dual VSL system: Implemented two ConvertAI VSL players - main presentation VSL (68746e5feeeef9dc21f33836) in new VSL section and preview VSL (68743cb75670de6a67b138cf) in video preview section. Both videos integrated with proper preload scripts and dangerouslySetInnerHTML for reliable playback. Removed "AO VIVO" indicator from main VSL as content is recorded, not live.
 
 ## User Preferences
 
