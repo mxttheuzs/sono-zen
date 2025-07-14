@@ -15,17 +15,16 @@ export function VSLSection() {
           </div>
           
           <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--text-primary)] mb-6 leading-tight">
+            Você Já Viveu Aquela Noite em que{' '}
             <span className="bg-gradient-to-r from-[var(--warm-accent)] via-[var(--accent-blue)] to-[var(--celestial-blue)] bg-clip-text text-transparent">
-              Transforme Sua Noite
+              Deitou Querendo Desligar
             </span>{' '}
-            em um{' '}
-            <span className="bg-gradient-to-r from-[var(--celestial-blue)] via-[var(--accent-blue)] to-[var(--warm-accent)] bg-clip-text text-transparent">
-              Momento Sagrado
-            </span>
+            do Mundo?
           </h2>
           
           <p className="text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
-            Descubra como milhares de pessoas estão conquistando o sono dos sonhos com o método que está revolucionando a forma como dormimos
+            Mas sua cabeça parecia ligada no volume máximo? Descubra o segredo oriental que transforma sua mente agitada em 
+            <strong className="text-[var(--warm-accent)]"> silêncio interno</strong> natural
           </p>
         </div>
 
@@ -65,8 +64,9 @@ export function VSLSection() {
             {/* Video Description */}
             <div className="mt-6 text-center">
               <p className="text-[var(--text-secondary)] leading-relaxed">
-                🎥 <strong className="text-[var(--warm-accent)]">Atenção:</strong> Este vídeo revela os segredos que os especialistas em sono não querem que você saiba. 
-                Assista até o final para descobrir como transformar suas noites em apenas 7 dias.
+                🌙 <strong className="text-[var(--warm-accent)]">Importante:</strong> Este vídeo revela como os mestres orientais descobriram que 
+                <strong className="text-[var(--accent-blue)]"> dormir não acontece à força — ele acontece com preparo</strong>. 
+                Descubra como ensinar seu corpo e mente a voltar para o natural.
               </p>
             </div>
           </div>
@@ -78,16 +78,16 @@ export function VSLSection() {
             <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-[var(--success-green)]/20 to-[var(--mint-green)]/20 rounded-full flex items-center justify-center">
               <Shield className="w-8 h-8 text-[var(--success-green)]" />
             </div>
-            <h3 className="font-semibold text-[var(--text-primary)] mb-2">100% Seguro</h3>
-            <p className="text-sm text-[var(--text-muted)]">Método testado e aprovado por milhares de pessoas</p>
+            <h3 className="font-semibold text-[var(--text-primary)] mb-2">Sabedoria Oriental</h3>
+            <p className="text-sm text-[var(--text-muted)]">Técnicas milenares adaptadas para você</p>
           </div>
           
           <div className="text-center">
             <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-[var(--accent-blue)]/20 to-[var(--celestial-blue)]/20 rounded-full flex items-center justify-center">
               <Clock className="w-8 h-8 text-[var(--accent-blue)]" />
             </div>
-            <h3 className="font-semibold text-[var(--text-primary)] mb-2">Resultados Rápidos</h3>
-            <p className="text-sm text-[var(--text-muted)]">Primeiros resultados já na primeira noite</p>
+            <h3 className="font-semibold text-[var(--text-primary)] mb-2">Silêncio Interno</h3>
+            <p className="text-sm text-[var(--text-muted)]">Aprenda a desligar a mente naturalmente</p>
           </div>
           
           <div className="text-center">
@@ -103,8 +103,10 @@ export function VSLSection() {
         <div className="text-center mt-12">
           <div className="max-w-3xl mx-auto bg-gradient-to-r from-[var(--warm-accent)]/10 to-[var(--accent-blue)]/10 border border-[var(--warm-accent)]/30 rounded-xl p-6">
             <p className="text-[var(--text-secondary)] leading-relaxed">
-              💡 <strong className="text-[var(--warm-accent)]">Dica Importante:</strong> Assista o vídeo completo para entender por que você não consegue dormir 
-              e como o método oriental vai resolver isso de forma definitiva. Milhares de pessoas já transformaram suas noites com estas técnicas simples.
+              🧠 <strong className="text-[var(--warm-accent)]">Talvez seu problema não seja falta de sono</strong> — 
+              mas sim <strong className="text-[var(--accent-blue)]">falta de silêncio interno</strong>. 
+              Descubra no vídeo como os orientais ensinam o corpo e a mente a desligar naturalmente, 
+              transformando sua noite em um momento de verdadeiro descanso.
             </p>
           </div>
         </div>
