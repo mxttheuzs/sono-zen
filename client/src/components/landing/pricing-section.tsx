@@ -46,14 +46,14 @@ function LoadingModal({ onComplete }: LoadingModalProps) {
           setTimeout(onComplete, 300);
           return 100;
         }
-        return prev + 3.33; // 30ms * 30 = 1 segundo total para carregamento mais rápido
+        return prev + 1.11; // 30ms * 90 = 3 segundos total para carregamento mais suave
       });
     }, 33);
 
     // Change stage text during progress
     const stageTimer = setInterval(() => {
       setStage((prev) => (prev + 1) % stages.length);
-    }, 200);
+    }, 600);
 
     return () => {
       clearInterval(timer);
