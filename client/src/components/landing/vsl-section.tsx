@@ -4,7 +4,7 @@ import { Play, Shield, Clock, Award } from 'lucide-react';
 export function VSLSection() {
 
   return (
-    <section id="vsl" className="py-20 bg-black relative overflow-hidden pt-[0px] pb-[0px]">
+    <section id="vsl" className="py-20 bg-black relative overflow-hidden pt-[0px] pb-[0px] mt-[40px] mb-[40px]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         
         {/* Header */}
