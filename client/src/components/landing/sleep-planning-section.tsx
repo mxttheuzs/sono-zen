@@ -214,11 +214,41 @@ export function SleepPlanningSection() {
     setAnimationKey(prev => prev + 1);
   }, [currentStep]);
 
+  // Função para criar um efeito sonoro suave
+  const playClickSound = () => {
+    try {
+      const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+      const oscillator = audioContext.createOscillator();
+      const gainNode = audioContext.createGain();
+      
+      // Configurar o som - uma nota suave e zen
+      oscillator.frequency.setValueAtTime(800, audioContext.currentTime); // Nota mais alta e suave
+      oscillator.frequency.exponentialRampToValueAtTime(600, audioContext.currentTime + 0.1); // Desce suavemente
+      
+      // Volume suave
+      gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+      gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.15);
+      
+      // Conectar e tocar
+      oscillator.connect(gainNode);
+      gainNode.connect(audioContext.destination);
+      
+      oscillator.start(audioContext.currentTime);
+      oscillator.stop(audioContext.currentTime + 0.15);
+    } catch (error) {
+      // Silenciosamente ignora se o áudio não estiver disponível
+      console.log('Audio não disponível');
+    }
+  };
+
   const handleAnswerSelect = (questionId: string, answerId: string) => {
     const question = quizQuestions.find(q => q.id === questionId);
     const answer = question?.answers.find(a => a.id === answerId);
     
     if (answer) {
+      // Tocar som de clique suave
+      playClickSound();
+      
       setProfileData(prev => ({
         ...prev,
         answers: {
