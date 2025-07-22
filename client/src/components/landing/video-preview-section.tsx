@@ -196,7 +196,7 @@ export function VideoPreviewSection() {
               Este é apenas o começo...
             </h3>
             <p className="text-[var(--text-secondary)] mb-6 leading-relaxed">
-              O ebook completo contém <strong>7 capítulos detalhados</strong> com técnicas práticas, exercícios guiados e um plano completo de 21 dias para transformar seu sono.
+              O ebook completo contém <strong>16 capítulos detalhados</strong> com técnicas práticas, exercícios guiados e um plano completo de 7 dias para transformar seu sono.
             </p>
             <button 
               onClick={scrollToCheckout}
