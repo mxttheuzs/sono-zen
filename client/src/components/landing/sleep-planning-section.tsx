@@ -515,9 +515,7 @@ export function SleepPlanningSection() {
             <span className="bg-gradient-to-r from-[var(--warm-accent)] via-[var(--accent-blue)] to-[var(--celestial-blue)] bg-clip-text text-transparent"> Seu Perfil de Sono</span>
           </h2>
           
-          <p className="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed max-w-3xl mx-auto mb-6">
-            Nossa <strong>Inteligência Artificial especializada</strong> irá analisar suas principais dificuldades com o sono para criar um protocolo personalizado exclusivo para sua transformação
-          </p>
+
 
           <div className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)]/80 bg-[var(--card-bg)]/30 px-4 py-2 rounded-full border border-[var(--border-subtle)]">
             <Sparkles className="h-4 w-4 text-[var(--warm-accent)]" />
