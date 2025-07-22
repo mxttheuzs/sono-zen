@@ -75,12 +75,7 @@ export function TestimonialsSection() {
     <section id="depoimentos" className="py-20 bg-black relative overflow-hidden mt-[0px] mb-[0px] pt-[27px] pb-[27px]">
       <FloatingClouds />
       <div className="max-w-6xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[var(--warm-accent)]/10 to-[var(--accent-blue)]/10 border border-[var(--warm-accent)]/30 px-6 py-3 rounded-full mb-8">
-            <Quote className="h-5 w-5 text-[var(--warm-accent)]" />
-            <span className="text-[var(--warm-accent)] font-semibold">Transformações Reais</span>
-          </div>
-          
+        <div className="text-center mb-16">
           <h2 className="font-heading text-5xl md:text-6xl font-bold text-[var(--cloud-white)] mb-8 leading-tight">
             <span className="bg-gradient-to-r from-[var(--warm-accent)] via-[var(--accent-blue)] to-[var(--celestial-blue)] bg-clip-text text-transparent">
               14.847 Pessoas
@@ -89,25 +84,6 @@ export function TestimonialsSection() {
               Já Transformaram Suas Noites
             </span>
           </h2>
-          
-          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-12 text-sm text-[var(--text-muted)] mb-6">
-            <div className="flex items-center bg-[var(--card-bg)]/30 px-4 py-2 rounded-full border border-[var(--border-subtle)]">
-              <div className="flex mr-2">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <Star key={star} className="h-4 w-4 text-[var(--warm-accent)] fill-current" />
-                ))}
-              </div>
-              <span className="font-semibold">4.9/5.0</span>
-            </div>
-            <div className="flex items-center bg-[var(--card-bg)]/30 px-4 py-2 rounded-full border border-[var(--border-subtle)]">
-              <CheckCircle className="h-4 w-4 text-green-400 mr-2" />
-              <span>94% de sucesso</span>
-            </div>
-            <div className="flex items-center bg-[var(--card-bg)]/30 px-4 py-2 rounded-full border border-[var(--border-subtle)]">
-              <Clock className="h-4 w-4 text-[var(--accent-blue)] mr-2" />
-              <span>Resultados em 7 noites</span>
-            </div>
-          </div>
           
           <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto leading-relaxed">
             Pessoas que estavam na mesma situação que você e conseguiram transformar completamente seu sono
