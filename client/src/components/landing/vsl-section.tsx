@@ -72,32 +72,7 @@ export function VSLSection() {
           </div>
         </div>
 
-        {/* Trust Indicators */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          <div className="text-center">
-            <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-[var(--success-green)]/20 to-[var(--mint-green)]/20 rounded-full flex items-center justify-center">
-              <Shield className="w-8 h-8 text-[var(--success-green)]" />
-            </div>
-            <h3 className="font-semibold text-[var(--text-primary)] mb-2">Sabedoria Oriental</h3>
-            <p className="text-sm text-[var(--text-muted)]">Técnicas milenares adaptadas para você</p>
-          </div>
-          
-          <div className="text-center">
-            <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-[var(--accent-blue)]/20 to-[var(--celestial-blue)]/20 rounded-full flex items-center justify-center">
-              <Clock className="w-8 h-8 text-[var(--accent-blue)]" />
-            </div>
-            <h3 className="font-semibold text-[var(--text-primary)] mb-2">Silêncio Interno</h3>
-            <p className="text-sm text-[var(--text-muted)]">Aprenda a desligar a mente naturalmente</p>
-          </div>
-          
-          <div className="text-center">
-            <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-[var(--warm-accent)]/20 to-[var(--accent-blue)]/20 rounded-full flex items-center justify-center">
-              <Award className="w-8 h-8 text-[var(--warm-accent)]" />
-            </div>
-            <h3 className="font-semibold text-[var(--text-primary)] mb-2">Garantia Total</h3>
-            <p className="text-sm text-[var(--text-muted)]">7 dias de garantia ou seu dinheiro de volta</p>
-          </div>
-        </div>
+
 
         {/* Bottom Message */}
         <div className="text-center mt-12">
