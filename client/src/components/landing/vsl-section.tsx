@@ -9,10 +9,7 @@ export function VSLSection() {
         
         {/* Header */}
         <div className="text-center mt-[16px] mb-[16px]">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[var(--warm-accent)]/20 to-[var(--accent-blue)]/20 border border-[var(--warm-accent)]/30 rounded-full px-4 py-2 mb-6">
-            <Play className="w-4 h-4 text-[var(--warm-accent)]" />
-            <span className="text-sm font-medium text-[var(--warm-accent)]">Apresentação Especial</span>
-          </div>
+
           
           <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--text-primary)] mb-6 leading-tight">
             Você Já Viveu Aquela Noite em que{' '}
