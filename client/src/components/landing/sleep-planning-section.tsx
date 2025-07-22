@@ -214,27 +214,50 @@ export function SleepPlanningSection() {
     setAnimationKey(prev => prev + 1);
   }, [currentStep]);
 
-  // Função para criar um efeito sonoro suave
+  // Função para criar um efeito sonoro suave e melódico
   const playClickSound = () => {
     try {
       const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
-      const oscillator = audioContext.createOscillator();
+      
+      // Criar dois osciladores para um som mais rico
+      const osc1 = audioContext.createOscillator();
+      const osc2 = audioContext.createOscillator();
       const gainNode = audioContext.createGain();
+      const gainNode2 = audioContext.createGain();
+      const masterGain = audioContext.createGain();
       
-      // Configurar o som - uma nota suave e zen
-      oscillator.frequency.setValueAtTime(800, audioContext.currentTime); // Nota mais alta e suave
-      oscillator.frequency.exponentialRampToValueAtTime(600, audioContext.currentTime + 0.1); // Desce suavemente
+      // Som principal - nota C (523.25 Hz)
+      osc1.frequency.setValueAtTime(523.25, audioContext.currentTime);
+      osc1.type = 'sine';
       
-      // Volume suave
-      gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
-      gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.15);
+      // Som harmonioso - quinta perfeita (783.99 Hz)
+      osc2.frequency.setValueAtTime(783.99, audioContext.currentTime);
+      osc2.type = 'sine';
       
-      // Conectar e tocar
-      oscillator.connect(gainNode);
-      gainNode.connect(audioContext.destination);
+      // Volume mais suave para cada oscilador
+      gainNode.gain.setValueAtTime(0.03, audioContext.currentTime);
+      gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.4);
       
-      oscillator.start(audioContext.currentTime);
-      oscillator.stop(audioContext.currentTime + 0.15);
+      gainNode2.gain.setValueAtTime(0.02, audioContext.currentTime);
+      gainNode2.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.3);
+      
+      // Volume master
+      masterGain.gain.setValueAtTime(0.8, audioContext.currentTime);
+      
+      // Conectar tudo
+      osc1.connect(gainNode);
+      osc2.connect(gainNode2);
+      gainNode.connect(masterGain);
+      gainNode2.connect(masterGain);
+      masterGain.connect(audioContext.destination);
+      
+      // Tocar
+      osc1.start(audioContext.currentTime);
+      osc2.start(audioContext.currentTime + 0.05); // Pequeno delay para criar um efeito mais interessante
+      
+      osc1.stop(audioContext.currentTime + 0.4);
+      osc2.stop(audioContext.currentTime + 0.35);
+      
     } catch (error) {
       // Silenciosamente ignora se o áudio não estiver disponível
       console.log('Audio não disponível');
