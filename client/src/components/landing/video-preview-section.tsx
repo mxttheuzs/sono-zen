@@ -38,9 +38,7 @@ export function VideoPreviewSection() {
             </span>
           </h2>
           
-          <p className="text-base sm:text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed max-w-3xl mx-auto px-4">
-            Veja o <strong>ebook interativo em ação</strong> - este vídeo mostra <strong>apenas uma pequena parte</strong> de todo o conteúdo da plataforma que vai guiar você em cada passo da sua transformação do sono
-          </p>
+
         </div>
 
         {/* Video Container */}
