@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
+import { Star, Quote, ChevronLeft, ChevronRight, CheckCircle, Clock } from "lucide-react";
 import { FloatingClouds } from "@/components/ui/floating-clouds";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useState } from "react";
@@ -75,28 +75,43 @@ export function TestimonialsSection() {
     <section id="depoimentos" className="py-20 bg-black relative overflow-hidden mt-[0px] mb-[0px] pt-[27px] pb-[27px]">
       <FloatingClouds />
       <div className="max-w-6xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="font-heading text-4xl md:text-5xl font-bold text-[var(--cloud-white)] mb-6">
-            Olha Só o Que Eles Falam! 💙
-            <span className="block bg-gradient-to-r from-[var(--celestial-blue)] to-[var(--sky-blue)] bg-clip-text text-transparent">
-              Pessoas Reais, Transformações Reais
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[var(--warm-accent)]/10 to-[var(--accent-blue)]/10 border border-[var(--warm-accent)]/30 px-6 py-3 rounded-full mb-8">
+            <Quote className="h-5 w-5 text-[var(--warm-accent)]" />
+            <span className="text-[var(--warm-accent)] font-semibold">Transformações Reais</span>
+          </div>
+          
+          <h2 className="font-heading text-5xl md:text-6xl font-bold text-[var(--cloud-white)] mb-8 leading-tight">
+            <span className="bg-gradient-to-r from-[var(--warm-accent)] via-[var(--accent-blue)] to-[var(--celestial-blue)] bg-clip-text text-transparent">
+              14.847 Pessoas
+            </span>
+            <span className="block text-3xl md:text-4xl text-[var(--text-secondary)] mt-2">
+              Já Transformaram Suas Noites
             </span>
           </h2>
-          <p className="text-lg text-[var(--text-secondary)] mb-4">
-            Histórias de quem estava exatamente como você... e conseguiu! 🌙
-          </p>
-          <div className="flex justify-center items-center space-x-8 text-sm text-[var(--text-muted)]">
-            <div className="flex items-center">
-              <Star className="h-4 w-4 text-[var(--celestial-blue)] fill-current mr-1" />
-              <span>Nota 4.9/5.0</span>
+          
+          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-12 text-sm text-[var(--text-muted)] mb-6">
+            <div className="flex items-center bg-[var(--card-bg)]/30 px-4 py-2 rounded-full border border-[var(--border-subtle)]">
+              <div className="flex mr-2">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <Star key={star} className="h-4 w-4 text-[var(--warm-accent)] fill-current" />
+                ))}
+              </div>
+              <span className="font-semibold">4.9/5.0</span>
             </div>
-            <div>
-              <span>+3,452 vidas transformadas</span>
+            <div className="flex items-center bg-[var(--card-bg)]/30 px-4 py-2 rounded-full border border-[var(--border-subtle)]">
+              <CheckCircle className="h-4 w-4 text-green-400 mr-2" />
+              <span>94% de sucesso</span>
             </div>
-            <div>
+            <div className="flex items-center bg-[var(--card-bg)]/30 px-4 py-2 rounded-full border border-[var(--border-subtle)]">
+              <Clock className="h-4 w-4 text-[var(--accent-blue)] mr-2" />
               <span>Resultados em 7 noites</span>
             </div>
           </div>
+          
+          <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto leading-relaxed">
+            Pessoas que estavam na mesma situação que você e conseguiram transformar completamente seu sono
+          </p>
         </div>
         
         <div className="relative max-w-5xl mx-auto">
@@ -112,44 +127,37 @@ export function TestimonialsSection() {
           <CarouselContent>
             {testimonials.map((testimonial, index) => (
               <CarouselItem key={index} className="basis-full px-4">
-                <div className="card-modern p-6 md:p-10 relative group animate-slide-up h-full animate-magnetic-hover mx-auto max-w-xl text-center" 
+                <div className="bg-gradient-to-br from-[var(--card-bg)]/95 to-[var(--card-bg)]/80 backdrop-blur-xl border-2 border-[var(--border-subtle)] rounded-3xl p-8 md:p-12 relative group hover:border-[var(--accent-blue)]/50 transition-all duration-500 hover:scale-[1.02] shadow-2xl mx-auto max-w-2xl" 
                      style={{animationDelay: `${index * 0.1}s`}}>
-                  <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-40 transition-opacity">
-                    <Quote className="h-6 w-6 md:h-8 md:w-8 text-[var(--accent-blue)] animate-breathe-slow" />
+                  {/* Quote Icon */}
+                  <div className="absolute top-6 left-6 w-12 h-12 bg-gradient-to-r from-[var(--accent-blue)]/20 to-[var(--warm-accent)]/20 rounded-full flex items-center justify-center border border-[var(--accent-blue)]/30">
+                    <Quote className="h-6 w-6 text-[var(--accent-blue)]" />
                   </div>
                   
-                  <div className="flex items-center mb-4 md:mb-6">
-                    <div className={`w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br ${testimonial.gradient} rounded-full flex items-center justify-center mr-3 md:mr-4 shadow-lg animate-gentle-float`} style={{animationDelay: `${index * 0.3 + 0.5}s`}}>
-                      <span className="text-white font-bold text-sm md:text-lg">{testimonial.initial}</span>
+                  <div className="pt-8 text-center">
+                    {/* Rating Stars */}
+                    <div className="flex justify-center mb-6">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <Star key={star} className="h-5 w-5 text-[var(--warm-accent)] fill-current mx-1" />
+                      ))}
                     </div>
-                    <div>
-                      <h4 className="font-semibold text-[var(--text-primary)] text-sm md:text-lg">{testimonial.name}</h4>
-                      <p className="text-xs text-[var(--text-muted)] leading-tight">{testimonial.role}</p>
-                      <p className="text-xs text-[var(--warm-accent)] mt-1">{testimonial.location}</p>
+                    
+                    {/* Testimonial Text */}
+                    <blockquote className="text-[var(--text-secondary)] leading-relaxed mb-8 text-lg font-medium italic">
+                      "{testimonial.text}"
+                    </blockquote>
+                    
+                    {/* Author Info */}
+                    <div className="flex items-center justify-center">
+                      <div className={`w-16 h-16 bg-gradient-to-br ${testimonial.gradient} rounded-full flex items-center justify-center mr-4 shadow-xl border-2 border-white/10`}>
+                        <span className="text-white font-bold text-xl">{testimonial.initial}</span>
+                      </div>
+                      <div className="text-left">
+                        <h4 className="font-bold text-[var(--text-primary)] text-lg">{testimonial.name}</h4>
+                        <p className="text-sm text-[var(--text-muted)]">{testimonial.role}</p>
+                        <p className="text-sm text-[var(--warm-accent)] font-semibold">{testimonial.location}</p>
+                      </div>
                     </div>
-                  </div>
-                  
-                  <p className="text-[var(--text-secondary)] leading-relaxed mb-4 md:mb-6 italic text-sm">
-                    "{testimonial.text}"
-                  </p>
-                  
-                  <div className="flex text-[var(--warm-accent)]">
-                    {[1, 2, 3, 4, 5].map((star) => {
-                      if (testimonial.rating >= star) {
-                        return <Star key={star} className="h-3 w-3 md:h-4 md:w-4 fill-current" />;
-                      } else if (testimonial.rating >= star - 0.5) {
-                        return (
-                          <div key={star} className="relative h-3 w-3 md:h-4 md:w-4">
-                            <Star className="h-3 w-3 md:h-4 md:w-4 fill-current opacity-30" />
-                            <div className="absolute top-0 left-0 w-1/2 overflow-hidden">
-                              <Star className="h-3 w-3 md:h-4 md:w-4 fill-current" />
-                            </div>
-                          </div>
-                        );
-                      } else {
-                        return <Star key={star} className="h-3 w-3 md:h-4 md:w-4 fill-current opacity-30" />;
-                      }
-                    })}
                   </div>
                 </div>
               </CarouselItem>
