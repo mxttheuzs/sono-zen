@@ -400,9 +400,7 @@ export function PricingSection() {
                 Começa Hoje
               </span>
             </h2>
-            <p className="text-xl text-[var(--text-secondary)] max-w-3xl mx-auto leading-relaxed">
-              Muitas pessoas dormem melhor já na primeira noite! Outras sentem a diferença na terceira noite. O que todos relatam: em 7 dias, você não vai reconhecer seu sono.
-            </p>
+
           </div>
           
           {/* Main Product Card */}
