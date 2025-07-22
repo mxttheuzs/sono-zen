@@ -74,17 +74,7 @@ export function VSLSection() {
 
 
 
-        {/* Bottom Message */}
-        <div className="text-center mt-12">
-          <div className="max-w-3xl mx-auto bg-gradient-to-r from-[var(--warm-accent)]/10 to-[var(--accent-blue)]/10 border border-[var(--warm-accent)]/30 rounded-xl p-6">
-            <p className="text-[var(--text-secondary)] leading-relaxed">
-              🧠 <strong className="text-[var(--warm-accent)]">Talvez seu problema não seja falta de sono</strong> — 
-              mas sim <strong className="text-[var(--accent-blue)]">falta de silêncio interno</strong>. 
-              Descubra no vídeo como os orientais ensinam o corpo e a mente a desligar naturalmente, 
-              transformando sua noite em um momento de verdadeiro descanso.
-            </p>
-          </div>
-        </div>
+
       </div>
     </section>
   );
