@@ -101,17 +101,17 @@ export function TestimonialsSection() {
         
         <div className="relative">
           <Carousel 
-            className="w-full max-w-5xl mx-auto"
+            className="w-full max-w-4xl mx-auto"
             opts={{
-              align: "start",
+              align: "center",
               loop: true,
               dragFree: false,
               containScroll: "trimSnaps"
             }}
           >
-          <CarouselContent className="-ml-1 md:-ml-4">
+          <CarouselContent className="-ml-4">
             {testimonials.map((testimonial, index) => (
-              <CarouselItem key={index} className="pl-1 md:pl-4 basis-[85%] sm:basis-1/2 lg:basis-1/3">
+              <CarouselItem key={index} className="pl-4 basis-full">
                 <div className="card-modern p-4 md:p-8 relative group animate-slide-up h-full animate-magnetic-hover" 
                      style={{animationDelay: `${index * 0.1}s`}}>
                   <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-40 transition-opacity">
@@ -156,9 +156,9 @@ export function TestimonialsSection() {
             ))}
           </CarouselContent>
           
-          {/* Custom Navigation Arrows */}
-          <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 w-12 h-12 bg-[var(--accent-blue)]/80 hover:bg-[var(--accent-blue)] border-2 border-[var(--accent-blue)]/30 hover:border-[var(--accent-blue)] text-white shadow-xl backdrop-blur-sm transition-all duration-300 hover:scale-110 hidden lg:flex" />
-          <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 w-12 h-12 bg-[var(--accent-blue)]/80 hover:bg-[var(--accent-blue)] border-2 border-[var(--accent-blue)]/30 hover:border-[var(--accent-blue)] text-white shadow-xl backdrop-blur-sm transition-all duration-300 hover:scale-110 hidden lg:flex" />
+          {/* Navigation Arrows - More Visible */}
+          <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 w-14 h-14 bg-[var(--accent-blue)] hover:bg-[var(--warm-accent)] border-2 border-white/20 text-white shadow-2xl transition-all duration-300 hover:scale-110 flex items-center justify-center rounded-full z-20" />
+          <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 w-14 h-14 bg-[var(--accent-blue)] hover:bg-[var(--warm-accent)] border-2 border-white/20 text-white shadow-2xl transition-all duration-300 hover:scale-110 flex items-center justify-center rounded-full z-20" />
 
         </Carousel>
         </div>
