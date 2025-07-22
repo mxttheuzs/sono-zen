@@ -5,32 +5,7 @@ export function ProblemSection() {
     <section id="problema" className="py-1 bg-black relative overflow-hidden">
       <FloatingClouds />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-        <div className="text-center mb-16">
-          <div className="max-w-4xl mx-auto space-y-8">
-            <div className="space-y-6">
-              <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--text-primary)] leading-tight">
-                Eu Sei Como Você Se Sente...
-              </h2>
-              <div className="bg-gradient-to-br from-[var(--warm-accent)]/10 to-[var(--accent-blue)]/10 border border-[var(--warm-accent)]/30 rounded-2xl p-6 sm:p-8">
-                <p className="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed mb-4">
-                  É 2 da manhã e você está ali, deitado na cama, olhando para o teto... 
-                </p>
-                <p className="text-lg text-[var(--text-secondary)] leading-relaxed mb-4">
-                  Seu corpo está cansado, mas sua mente não para. Você fica pensando: <em className="text-[var(--warm-accent)]">"Por que eu não consigo simplesmente... dormir?"</em>
-                </p>
-                <p className="text-base text-[var(--text-muted)] leading-relaxed">
-                  Não é culpa sua. Você não "esqueceu" como dormir. O mundo moderno meio que roubou isso de nós.
-                </p>
-              </div>
-            </div>
-            
-            <div className="bg-gradient-to-r from-[var(--success-green)]/10 to-[var(--accent-blue)]/10 border border-[var(--success-green)]/30 rounded-xl p-6">
-              <p className="text-[var(--text-secondary)] leading-relaxed">
-                💙 Se você chegou até aqui, é porque está cansado de passar as noites em claro. E eu quero te ajudar a resolver isso de uma vez por todas.
-              </p>
-            </div>
-          </div>
-        </div>
+
         
         <div className="text-center mb-12">
           <h3 className="font-heading text-3xl md:text-4xl font-bold mb-4">
