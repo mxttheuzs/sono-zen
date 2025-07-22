@@ -20,7 +20,7 @@ export function VideoPreviewSection() {
   };
 
   return (
-    <section id="preview-video" className="py-20 bg-black relative overflow-hidden">
+    <section id="preview-video" className="py-20 bg-black relative overflow-hidden pt-[68px] pb-[68px]">
       <FloatingClouds />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         
