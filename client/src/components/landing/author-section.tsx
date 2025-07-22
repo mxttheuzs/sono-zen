@@ -26,7 +26,7 @@ export function AuthorSection() {
 
 
   return (
-    <section id="deborah-genaro" className="py-20 bg-black relative overflow-hidden">
+    <section id="deborah-genaro" className="py-20 bg-black relative overflow-hidden pt-[0px] pb-[0px]">
       <FloatingClouds />
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
