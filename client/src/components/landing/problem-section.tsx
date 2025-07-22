@@ -102,23 +102,7 @@ export function ProblemSection() {
           </div>
         </div>
         
-        {/* Mensagem de esperança */}
-        <div className="text-center mt-16 mb-20">
-          <div className="max-w-3xl mx-auto bg-gradient-to-r from-[var(--success-green)]/10 to-[var(--accent-blue)]/10 border border-[var(--success-green)]/30 rounded-2xl p-6 sm:p-8">
-            <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-[var(--text-primary)]">
-              Se você se reconheceu em alguma dessas{" "}
-              <span className="bg-gradient-to-r from-[var(--warm-accent)] via-[var(--accent-blue)] to-[var(--celestial-blue)] bg-clip-text text-transparent">
-                situações
-              </span>...
-            </h3>
-            <p className="text-[var(--text-secondary)] leading-relaxed mb-4">
-              Saiba que não há nada de errado com você. Esses são problemas do mundo moderno, não defeitos seus.
-            </p>
-            <p className="text-[var(--accent-blue)] font-medium">
-              E o mais importante: tudo isso tem solução. É só você aprender a "reprogramar" seu sono com as técnicas certas.
-            </p>
-          </div>
-        </div>
+
       </div>
     </section>
   );
