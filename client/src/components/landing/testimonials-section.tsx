@@ -99,15 +99,16 @@ export function TestimonialsSection() {
           </div>
         </div>
         
-        <Carousel 
-          className="w-full max-w-5xl mx-auto"
-          opts={{
-            align: "start",
-            loop: true,
-            dragFree: true,
-            containScroll: "trimSnaps"
-          }}
-        >
+        <div className="relative">
+          <Carousel 
+            className="w-full max-w-5xl mx-auto"
+            opts={{
+              align: "start",
+              loop: true,
+              dragFree: false,
+              containScroll: "trimSnaps"
+            }}
+          >
           <CarouselContent className="-ml-1 md:-ml-4">
             {testimonials.map((testimonial, index) => (
               <CarouselItem key={index} className="pl-1 md:pl-4 basis-[85%] sm:basis-1/2 lg:basis-1/3">
@@ -154,8 +155,13 @@ export function TestimonialsSection() {
               </CarouselItem>
             ))}
           </CarouselContent>
+          
+          {/* Custom Navigation Arrows */}
+          <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 w-12 h-12 bg-[var(--accent-blue)]/80 hover:bg-[var(--accent-blue)] border-2 border-[var(--accent-blue)]/30 hover:border-[var(--accent-blue)] text-white shadow-xl backdrop-blur-sm transition-all duration-300 hover:scale-110 hidden lg:flex" />
+          <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 w-12 h-12 bg-[var(--accent-blue)]/80 hover:bg-[var(--accent-blue)] border-2 border-[var(--accent-blue)]/30 hover:border-[var(--accent-blue)] text-white shadow-xl backdrop-blur-sm transition-all duration-300 hover:scale-110 hidden lg:flex" />
 
         </Carousel>
+        </div>
       </div>
     </section>
   );
