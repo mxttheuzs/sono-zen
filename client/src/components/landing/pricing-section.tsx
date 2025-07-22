@@ -421,11 +421,11 @@ export function PricingSection() {
                 </div>
                 
                 {/* Enhanced title with better gradient consistency */}
-                <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 sm:mb-6 tracking-tight leading-tight px-2 relative z-10">
+                <h3 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 sm:mb-6 tracking-tight leading-tight px-2 relative z-10">
                   <span className="bg-gradient-to-r from-[var(--warm-accent)] via-[var(--accent-blue)] to-[var(--celestial-blue)] bg-clip-text text-transparent">
                     Sono Zen
                   </span>
-                  <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-[var(--text-primary)] mt-2" style={{ textShadow: '0 0 12px rgba(255,255,255,0.25)' }}>
+                  <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-[var(--text-primary)] mt-2" style={{ textShadow: '0 0 12px rgba(255,255,255,0.25)' }}>
                     Método Completo
                   </span>
                 </h3>
