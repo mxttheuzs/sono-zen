@@ -58,14 +58,7 @@ export function VSLSection() {
               />
             </div>
 
-            {/* Video Description */}
-            <div className="mt-6 text-center">
-              <p className="text-[var(--text-secondary)] leading-relaxed">
-                🌙 <strong className="text-[var(--warm-accent)]">Importante:</strong> Este vídeo revela como os mestres orientais descobriram que 
-                <strong className="text-[var(--accent-blue)]"> dormir não acontece à força — ele acontece com preparo</strong>. 
-                Descubra como ensinar seu corpo e mente a voltar para o natural.
-              </p>
-            </div>
+
           </div>
         </div>
 
