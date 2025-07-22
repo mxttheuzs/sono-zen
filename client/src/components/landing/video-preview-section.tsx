@@ -1,6 +1,9 @@
-import { Play, Eye, Smartphone } from "lucide-react";
+import { BookOpen, Eye, Moon, Target, Brain, Heart } from "lucide-react";
 import { FloatingClouds } from "@/components/ui/floating-clouds";
 import React from "react";
+import ebookImage1 from "@assets/image_1753223301901.png";
+import ebookImage2 from "@assets/image_1753223306678.png";
+import ebookImage3 from "@assets/image_1753223315393.png";
 
 export function VideoPreviewSection() {
 
@@ -20,15 +23,15 @@ export function VideoPreviewSection() {
   };
 
   return (
-    <section id="preview-video" className="py-20 bg-black relative overflow-hidden">
+    <section id="preview-ebook" className="py-20 bg-black relative overflow-hidden">
       <FloatingClouds />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-[var(--accent-blue)]/10 border border-[var(--accent-blue)]/30 px-4 py-2 rounded-full mb-6">
-            <Eye className="h-5 w-5 text-[var(--accent-blue)]" />
-            <span className="text-[var(--accent-blue)] font-semibold">Preview Exclusivo</span>
+            <BookOpen className="h-5 w-5 text-[var(--accent-blue)]" />
+            <span className="text-[var(--accent-blue)] font-semibold">Ebook Interativo</span>
           </div>
           
           <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight mb-6 px-2">
@@ -39,74 +42,171 @@ export function VideoPreviewSection() {
           </h2>
           
           <p className="text-base sm:text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed max-w-3xl mx-auto px-4">
-            Veja o <strong>ebook interativo em ação</strong> - este vídeo mostra <strong>apenas uma pequena parte</strong> de todo o conteúdo da plataforma que vai guiar você em cada passo da sua transformação do sono
+            Um <strong>guia completo e prático</strong> que vai transformar sua relação com o sono através de técnicas comprovadas e um método único baseado na sabedoria oriental
           </p>
         </div>
 
-        {/* Video Container */}
-        <div className="relative max-w-4xl mx-auto">
-          {/* Video wrapper with blur overlay */}
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-[var(--card-bg)] to-[var(--card-bg)]/80 border border-[var(--border-subtle)]">
-            
-            {/* ConvertAI VSL Player */}
-            <div className="relative bg-black rounded-xl overflow-hidden">
-              <div 
-                dangerouslySetInnerHTML={{
-                  __html: `
-                    <script type="text/javascript"> 
-                      var s=document.createElement("script"); 
-                      s.src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js", 
-                      s.async=!0,
-                      document.head.appendChild(s); 
-                    </script> 
-                    <div id="ifr_68743cb75670de6a67b138cf_wrapper" style="margin: 0 auto; width: 100%;"> 
-                      <div style="padding: 56.25% 0 0 0; position: relative;" id="ifr_68743cb75670de6a67b138cf_aspect"> 
-                        <iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_68743cb75670de6a67b138cf" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" referrerpolicy="origin" onload="this.onload=null, this.src='https://scripts.converteai.net/565bfa0e-d0fd-494c-b04a-2fc27a3af576/players/68743cb75670de6a67b138cf/v4/embed.html' +(location.search||'?') +'&vl=' +encodeURIComponent(location.href)"></iframe> 
-                      </div> 
-                    </div>
-                  `
-                }}
-              />
-              
-              {/* Small preview indicator */}
-              <div className="absolute top-2 left-2 sm:top-4 sm:left-4 z-30">
-                <div className="bg-black/70 backdrop-blur-sm rounded-lg p-1.5 sm:p-2 flex items-center gap-1 sm:gap-2">
-                  <Eye className="h-3 w-3 sm:h-4 sm:w-4 text-[var(--accent-blue)]" />
-                  <span className="text-white text-xs sm:text-sm font-medium">Preview do Web App</span>
+        {/* Ebook Images Grid */}
+        <div className="space-y-16">
+          
+          {/* Image 1 - Desperte o Poder do Seu Sono */}
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="order-2 lg:order-1 space-y-6">
+              <div className="inline-flex items-center gap-2 bg-[var(--warm-accent)]/10 border border-[var(--warm-accent)]/30 px-3 py-1 rounded-full">
+                <Moon className="h-4 w-4 text-[var(--warm-accent)]" />
+                <span className="text-[var(--warm-accent)] text-sm font-medium">Capítulo 1</span>
+              </div>
+              <h3 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-[var(--text-primary)] leading-tight">
+                Desperte o Poder do{" "}
+                <span className="bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] bg-clip-text text-transparent">
+                  Seu Sono
+                </span>
+              </h3>
+              <p className="text-[var(--text-secondary)] text-lg leading-relaxed">
+                Descubra por que você não consegue dormir e como um método simples, natural e realista pode transformar suas noites para sempre.
+              </p>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-[var(--accent-blue)] rounded-full"></div>
+                  <span className="text-[var(--text-secondary)]">Entenda as verdadeiras causas da insônia</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-[var(--accent-blue)] rounded-full"></div>
+                  <span className="text-[var(--text-secondary)]">Aprenda técnicas orientais milenares adaptadas</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-[var(--accent-blue)] rounded-full"></div>
+                  <span className="text-[var(--text-secondary)]">Crie um novo relacionamento com o sono</span>
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Info cards */}
-          <div className="grid md:grid-cols-3 gap-6 mt-12">
-            <div className="bg-[var(--card-bg)]/50 backdrop-blur-sm border border-[var(--border-subtle)] rounded-xl p-6 text-center">
-              <div className="w-12 h-12 bg-[var(--accent-blue)]/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Smartphone className="h-6 w-6 text-[var(--accent-blue)]" />
+            <div className="order-1 lg:order-2">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <img 
+                  src={ebookImage1} 
+                  alt="Desperte o Poder do Seu Sono - Primeira página do ebook Sono Zen"
+                  className="w-full h-auto"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
               </div>
-              <h3 className="font-semibold text-[var(--text-primary)] mb-2">Web App Interativo</h3>
-              <p className="text-[var(--text-secondary)] text-sm">Acesse de qualquer dispositivo, a qualquer hora</p>
-            </div>
-
-            <div className="bg-[var(--card-bg)]/50 backdrop-blur-sm border border-[var(--border-subtle)] rounded-xl p-6 text-center">
-              <div className="w-12 h-12 bg-[var(--warm-accent)]/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Play className="h-6 w-6 text-[var(--warm-accent)]" />
-              </div>
-              <h3 className="font-semibold text-[var(--text-primary)] mb-2">Áudios Integrados</h3>
-              <p className="text-[var(--text-secondary)] text-sm">Sons relaxantes e meditações guiadas incluídas</p>
-            </div>
-
-            <div className="bg-[var(--card-bg)]/50 backdrop-blur-sm border border-[var(--border-subtle)] rounded-xl p-6 text-center">
-              <div className="w-12 h-12 bg-[var(--celestial-blue)]/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Eye className="h-6 w-6 text-[var(--celestial-blue)]" />
-              </div>
-              <h3 className="font-semibold text-[var(--text-primary)] mb-2">Interface Intuitiva</h3>
-              <p className="text-[var(--text-secondary)] text-sm">Fácil de usar, mesmo sem experiência técnica</p>
             </div>
           </div>
 
+          {/* Image 2 - Por Que Você Não Consegue Dormir? */}
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <div className="inline-flex items-center gap-2 bg-[var(--celestial-blue)]/10 border border-[var(--celestial-blue)]/30 px-3 py-1 rounded-full">
+                <Brain className="h-4 w-4 text-[var(--celestial-blue)]" />
+                <span className="text-[var(--celestial-blue)] text-sm font-medium">Diagnóstico</span>
+              </div>
+              <h3 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-[var(--text-primary)] leading-tight">
+                Por Que Você{" "}
+                <span className="bg-gradient-to-r from-[var(--celestial-blue)] to-[var(--warm-accent)] bg-clip-text text-transparent">
+                  Não Consegue Dormir?
+                </span>
+              </h3>
+              <p className="text-[var(--text-secondary)] text-lg leading-relaxed">
+                Identifique os verdadeiros bloqueios que estão sabotando seu sono e descubra soluções práticas para cada um deles.
+              </p>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="bg-[var(--card-bg)]/30 border border-[var(--border-subtle)] rounded-xl p-4">
+                  <div className="w-8 h-8 bg-pink-500/20 rounded-lg flex items-center justify-center mb-3">
+                    <Brain className="h-4 w-4 text-pink-400" />
+                  </div>
+                  <h4 className="font-semibold text-[var(--text-primary)] mb-1">Mente Acelerada</h4>
+                  <p className="text-[var(--text-secondary)] text-sm">Trabalho, redes sociais, tarefas...</p>
+                </div>
+                <div className="bg-[var(--card-bg)]/30 border border-[var(--border-subtle)] rounded-xl p-4">
+                  <div className="w-8 h-8 bg-blue-500/20 rounded-lg flex items-center justify-center mb-3">
+                    <Target className="h-4 w-4 text-blue-400" />
+                  </div>
+                  <h4 className="font-semibold text-[var(--text-primary)] mb-1">Celular Atrapalha</h4>
+                  <p className="text-[var(--text-secondary)] text-sm">Luz azul engana o cérebro</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <img 
+                  src={ebookImage2} 
+                  alt="Por Que Você Não Consegue Dormir - Análise dos problemas do sono"
+                  className="w-full h-auto"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Image 3 - O Método Sono Zen */}
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="order-2 lg:order-1 space-y-6">
+              <div className="inline-flex items-center gap-2 bg-[var(--accent-blue)]/10 border border-[var(--accent-blue)]/30 px-3 py-1 rounded-full">
+                <Heart className="h-4 w-4 text-[var(--accent-blue)]" />
+                <span className="text-[var(--accent-blue)] text-sm font-medium">Método Exclusivo</span>
+              </div>
+              <h3 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-[var(--text-primary)] leading-tight">
+                O Método{" "}
+                <span className="bg-gradient-to-r from-[var(--accent-blue)] via-[var(--celestial-blue)] to-[var(--warm-accent)] bg-clip-text text-transparent">
+                  Sono Zen
+                </span>
+              </h3>
+              <p className="text-[var(--text-secondary)] text-lg leading-relaxed">
+                Dormir é um ritual, não uma obrigação. Um método leve, natural e inspirado em práticas orientais milenares que funciona com seu corpo, não contra ele.
+              </p>
+              <div className="bg-gradient-to-br from-[var(--card-bg)]/50 to-[var(--card-bg)]/30 border border-[var(--border-subtle)] rounded-xl p-6">
+                <h4 className="font-semibold text-[var(--text-primary)] mb-4 flex items-center gap-2">
+                  <Moon className="h-5 w-5 text-[var(--accent-blue)]" />
+                  O que você vai aprender:
+                </h4>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-3">
+                    <div className="w-1.5 h-1.5 bg-[var(--accent-blue)] rounded-full"></div>
+                    <span className="text-[var(--text-secondary)] text-sm">Rotinas simples que ajudam seu corpo a entender que chegou a hora</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-1.5 h-1.5 bg-[var(--accent-blue)] rounded-full"></div>
+                    <span className="text-[var(--text-secondary)] text-sm">Técnicas de respiração e relaxamento orientais</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-1.5 h-1.5 bg-[var(--accent-blue)] rounded-full"></div>
+                    <span className="text-[var(--text-secondary)] text-sm">Como desacelerar a mente naturalmente</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="order-1 lg:order-2">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <img 
+                  src={ebookImage3} 
+                  alt="O Método Sono Zen - Dormir é Um Ritual"
+                  className="w-full h-auto"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+              </div>
+            </div>
+          </div>
 
         </div>
+
+        {/* Call to Action */}
+        <div className="text-center mt-16">
+          <div className="bg-gradient-to-br from-[var(--card-bg)]/50 to-[var(--card-bg)]/30 border border-[var(--border-subtle)] rounded-2xl p-8 max-w-2xl mx-auto">
+            <BookOpen className="h-12 w-12 text-[var(--accent-blue)] mx-auto mb-4" />
+            <h3 className="font-heading text-2xl font-bold text-[var(--text-primary)] mb-4">
+              Este é apenas o começo...
+            </h3>
+            <p className="text-[var(--text-secondary)] mb-6 leading-relaxed">
+              O ebook completo contém <strong>7 capítulos detalhados</strong> com técnicas práticas, exercícios guiados e um plano completo de 21 dias para transformar seu sono.
+            </p>
+            <button 
+              onClick={scrollToCheckout}
+              className="bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] hover:from-[var(--warm-accent)]/90 hover:to-[var(--accent-blue)]/90 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+            >
+              Quero Ter Acesso Completo
+            </button>
+          </div>
+        </div>
+
       </div>
     </section>
   );
