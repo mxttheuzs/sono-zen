@@ -578,6 +578,59 @@ input, textarea, select {
   animation: float-3 5s ease-in-out infinite;
 }
 
+/* Video Quality Enhancement Styles */
+iframe[id*="ifr_"] {
+  /* Optimize video rendering */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  
+  /* Hardware acceleration */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: transform;
+  
+  /* Smooth scaling */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  
+  /* Anti-aliasing */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* Remove any blur effects */
+  filter: none;
+  -webkit-filter: none;
+}
+
+/* Video Quality Container */
+.video-quality-container {
+  /* Optimize container for video display */
+  contain: layout style paint;
+  isolation: isolate;
+}
+
+.video-quality-container iframe {
+  /* Enhanced video quality settings */
+  object-fit: contain;
+  object-position: center;
+  
+  /* Better scaling algorithm */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  
+  /* Prevent compression artifacts */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  
+  /* Optimize rendering pipeline */
+  will-change: contents;
+  contain: strict;
+}
+
 @keyframes gentle-glow {
   0%, 100% { 
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); 
