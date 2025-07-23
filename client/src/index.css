@@ -520,6 +520,64 @@ input, textarea, select {
   100% { transform: translateY(0px) translateX(0px); }
 }
 
+/* Video Loading Animations */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in-delay {
+  0% { opacity: 0; transform: translateY(15px); }
+  50% { opacity: 0; transform: translateY(15px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes float-1 {
+  0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.3; }
+  50% { transform: translateY(-15px) translateX(5px); opacity: 0.8; }
+}
+
+@keyframes float-2 {
+  0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.4; }
+  33% { transform: translateY(-10px) translateX(-8px); opacity: 0.9; }
+  66% { transform: translateY(8px) translateX(3px); opacity: 0.6; }
+}
+
+@keyframes float-3 {
+  0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.2; }
+  25% { transform: translateY(-12px) translateX(6px); opacity: 0.7; }
+  75% { transform: translateY(6px) translateX(-4px); opacity: 0.5; }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out;
+}
+
+.animate-fade-in-delay {
+  animation: fade-in-delay 1.5s ease-out;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
+.animate-float-1 {
+  animation: float-1 3s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: float-2 4s ease-in-out infinite;
+}
+
+.animate-float-3 {
+  animation: float-3 5s ease-in-out infinite;
+}
+
 @keyframes gentle-glow {
   0%, 100% { 
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); 
