@@ -95,6 +95,9 @@ export function Navigation() {
           <button onClick={() => scrollToSection("depoimentos")} className="text-white/90 hover:text-[var(--warm-accent)] transition-colors font-semibold text-base animate-text-focus">
             Depoimentos
           </button>
+          <button onClick={() => scrollToSection("mood-tracker")} className="text-white/90 hover:text-[var(--warm-accent)] transition-colors font-semibold text-base animate-text-focus">
+            Relaxamento
+          </button>
           <button onClick={() => scrollToSection("preco")} className="text-white/90 hover:text-[var(--warm-accent)] transition-colors font-semibold text-base animate-text-focus">
             Oferta
           </button>
@@ -157,6 +160,12 @@ export function Navigation() {
               className="block w-full text-left text-[var(--text-secondary)] hover:text-[var(--accent-blue)] transition-colors font-medium py-4 px-3 rounded-lg hover:bg-[var(--card-hover)] text-base"
             >
               Depoimentos
+            </button>
+            <button 
+              onClick={() => scrollToSection("mood-tracker")} 
+              className="block w-full text-left text-[var(--text-secondary)] hover:text-[var(--accent-blue)] transition-colors font-medium py-4 px-3 rounded-lg hover:bg-[var(--card-hover)] text-base"
+            >
+              Relaxamento
             </button>
             <button 
               onClick={() => scrollToSection("preco")} 

@@ -19,6 +19,7 @@ import { FloatingStars } from "@/components/ui/floating-stars";
 import { Button } from "@/components/ui/button";
 import { Heart, Sparkles } from "lucide-react";
 import { trackViewContent } from "@/lib/conversion-tracking";
+import { MoodTracker } from "@/components/mood/mood-tracker";
 
 
 
@@ -52,6 +53,7 @@ export default function Home() {
         <VideoPreviewSection />
         <EbookContentSection />
         <TestimonialsSection />
+        <MoodTracker />
 
         <LazySection>
           <ObjectionsSection />
