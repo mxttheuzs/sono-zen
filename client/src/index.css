@@ -631,6 +631,223 @@ iframe[id*="ifr_"] {
   contain: strict;
 }
 
+/* 3D Elements Animations */
+.floating-3d-element {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  animation: float3D infinite ease-in-out;
+}
+
+.floating-3d-container {
+  transform-style: preserve-3d;
+  animation: rotate3D infinite linear;
+  animation-duration: 20s;
+}
+
+.floating-3d-icon {
+  transform-style: preserve-3d;
+  filter: drop-shadow(0 0 10px currentColor);
+}
+
+@keyframes float3D {
+  0%, 100% {
+    transform: translateY(0px) translateZ(0px) rotateX(0deg);
+  }
+  25% {
+    transform: translateY(-20px) translateZ(10px) rotateX(5deg);
+  }
+  50% {
+    transform: translateY(0px) translateZ(20px) rotateX(0deg);
+  }
+  75% {
+    transform: translateY(20px) translateZ(10px) rotateX(-5deg);
+  }
+}
+
+@keyframes rotate3D {
+  0% {
+    transform: rotateY(0deg) rotateX(0deg);
+  }
+  25% {
+    transform: rotateY(90deg) rotateX(10deg);
+  }
+  50% {
+    transform: rotateY(180deg) rotateX(0deg);
+  }
+  75% {
+    transform: rotateY(270deg) rotateX(-10deg);
+  }
+  100% {
+    transform: rotateY(360deg) rotateX(0deg);
+  }
+}
+
+/* 3D Cubes */
+.floating-3d-cube {
+  perspective: 1000px;
+  animation: floatCube3D infinite ease-in-out;
+}
+
+.cube-3d {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: rotateCube3D infinite linear;
+  animation-duration: 15s;
+}
+
+.cube-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, 
+    rgba(59, 130, 246, 0.1) 0%,
+    rgba(147, 197, 253, 0.05) 50%,
+    rgba(59, 130, 246, 0.02) 100%
+  );
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  backdrop-filter: blur(2px);
+}
+
+.cube-front {
+  transform: rotateY(0deg) translateZ(calc(50% + 1px));
+}
+
+.cube-back {
+  transform: rotateY(180deg) translateZ(calc(50% + 1px));
+}
+
+.cube-right {
+  transform: rotateY(90deg) translateZ(calc(50% + 1px));
+}
+
+.cube-left {
+  transform: rotateY(-90deg) translateZ(calc(50% + 1px));
+}
+
+.cube-top {
+  transform: rotateX(90deg) translateZ(calc(50% + 1px));
+}
+
+.cube-bottom {
+  transform: rotateX(-90deg) translateZ(calc(50% + 1px));
+}
+
+@keyframes floatCube3D {
+  0%, 100% {
+    transform: translateY(0px) translateZ(0px);
+  }
+  50% {
+    transform: translateY(-30px) translateZ(20px);
+  }
+}
+
+@keyframes rotateCube3D {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  33% {
+    transform: rotateX(120deg) rotateY(120deg) rotateZ(0deg);
+  }
+  66% {
+    transform: rotateX(240deg) rotateY(240deg) rotateZ(120deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+/* 3D Spheres */
+.floating-3d-sphere {
+  perspective: 1000px;
+  animation: floatSphere3D infinite ease-in-out;
+}
+
+.sphere-3d {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(147, 197, 253, 0.3) 0%,
+    rgba(59, 130, 246, 0.1) 50%,
+    rgba(29, 78, 216, 0.05) 100%
+  );
+  box-shadow: 
+    inset 0 0 20px rgba(59, 130, 246, 0.2),
+    0 0 30px rgba(59, 130, 246, 0.1);
+  transform-style: preserve-3d;
+  animation: rotateSphere3D infinite linear;
+  animation-duration: 25s;
+}
+
+@keyframes floatSphere3D {
+  0%, 100% {
+    transform: translateY(0px) translateZ(0px) rotateX(0deg);
+  }
+  33% {
+    transform: translateY(-15px) translateZ(15px) rotateX(10deg);
+  }
+  66% {
+    transform: translateY(15px) translateZ(5px) rotateX(-10deg);
+  }
+}
+
+@keyframes rotateSphere3D {
+  0% {
+    transform: rotateY(0deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateY(360deg) rotateZ(180deg);
+  }
+}
+
+/* 3D Card Effect */
+.card-3d {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.card-3d-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card-3d:hover .card-3d-inner {
+  transform: rotateY(5deg) rotateX(5deg) translateZ(10px);
+}
+
+.card-3d-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* 3D Button Effect */
+.button-3d {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: all 0.3s ease;
+}
+
+.button-3d:hover {
+  transform: translateY(-2px) rotateX(10deg) rotateY(5deg);
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.2),
+    0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+.button-3d:active {
+  transform: translateY(0px) rotateX(0deg) rotateY(0deg);
+}
+
 
 
 @keyframes gentle-glow {
