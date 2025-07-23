@@ -1,71 +1,40 @@
-import { FloatingClouds } from "@/components/ui/floating-clouds";
-import relaxationImage from "@assets/image_1751507711872.png";
-
 export function MethodSection() {
   return (
-    <section id="metodo" className="py-1 bg-black relative overflow-hidden">
-      {/* Floating clouds for peaceful atmosphere */}
-      <FloatingClouds className="opacity-30" />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left content */}
-          <div className="space-y-16 pt-[0px] pb-[0px] mt-[-37px] mb-[-37px]">
-
-
-            <div className="space-y-6">
-              <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-[var(--text-primary)] leading-tight mt-[28px] mb-[28px]">
-                Transforme Sua Noite em um
-                <span className="block bg-gradient-to-r from-[var(--warm-accent)] via-[var(--accent-blue)] to-[var(--celestial-blue)] bg-clip-text text-transparent">
-                  Momento Sagrado
-                </span>
-              </h2>
-              
-              <div className="space-y-4">
-                <p className="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed">
-                  🤔 <strong>Sabe por que você não consegue dormir?</strong> Porque você trata o sono como algo que "tem que acontecer", em vez de criar as condições certas para ele acontecer naturalmente.
-                </p>
-                <p className="text-base text-[var(--text-muted)]">
-                  💡 Os mestres orientais descobriram isso há milênios: dormir bem não é sorte, é preparação.
-                </p>
-              </div>
+    <section id="metodo" className="py-20 bg-slate-800/50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center space-y-8">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white">
+            O Método
+            <span className="block bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+              Sono Zen
+            </span>
+          </h2>
+          
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Um método simples e natural baseado em técnicas orientais milenares 
+            que prepara seu corpo e mente para um sono profundo e reparador.
+          </p>
+          
+          <div className="grid md:grid-cols-3 gap-8 mt-16">
+            <div className="bg-slate-700/50 rounded-lg p-6 text-center">
+              <div className="text-4xl mb-4">🧘‍♀️</div>
+              <h3 className="text-xl font-semibold text-white mb-2">Relaxamento</h3>
+              <p className="text-gray-400">Técnicas de respiração e relaxamento muscular</p>
             </div>
             
-            <div className="space-y-10 mt-[33px] mb-[33px]">
-              <div className="bg-[var(--celestial-blue)]/10 border-l-4 border-[var(--celestial-blue)] rounded-r-xl p-4">
-                <p className="text-[var(--text-secondary)] text-base leading-relaxed">
-                  <strong className="text-[var(--celestial-blue)]">Imagine:</strong> Em vez de rolar na cama por horas, você faz uma sequência simples de 15 minutos que prepara seu corpo e mente. Quando você deita, seu cérebro já sabe: "agora é hora de descansar".
-                </p>
-              </div>
-              
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div className="bg-[var(--sky-blue)]/10 border border-[var(--sky-blue)]/30 rounded-xl p-4">
-                  <p className="text-[var(--sky-blue)] font-semibold text-base mb-2">❌ Como a maioria faz:</p>
-                  <p className="text-[var(--text-muted)] text-sm">
-                    Deita na cama, fica no celular, pensa nos problemas, espera o sono "aparecer"
-                  </p>
-                </div>
-                <div className="bg-[var(--mint-green)]/10 border border-[var(--mint-green)]/30 rounded-xl p-4">
-                  <p className="text-[var(--mint-green)] font-semibold text-base mb-2">✅ Como você vai fazer:</p>
-                  <p className="text-[var(--text-muted)] text-sm">
-                    Ritual de 15 min → corpo relaxa → mente acalma → sono natural em minutos
-                  </p>
-                </div>
-              </div>
+            <div className="bg-slate-700/50 rounded-lg p-6 text-center">
+              <div className="text-4xl mb-4">🎵</div>
+              <h3 className="text-xl font-semibold text-white mb-2">Sons Terapêuticos</h3>
+              <p className="text-gray-400">Frequências especiais para induzir o sono</p>
             </div>
-          </div>
-          
-          {/* Right image - Relaxation Image */}
-          <div className="relative">
-            <div className="card-modern p-0 animate-slide-up overflow-hidden">
-              <img 
-                src={relaxationImage} 
-                alt="Mulher meditando em posição zen com roupas brancas em céu azul com nuvens" 
-                className="w-full h-auto rounded-2xl object-cover"
-              />
+            
+            <div className="bg-slate-700/50 rounded-lg p-6 text-center">
+              <div className="text-4xl mb-4">🌙</div>
+              <h3 className="text-xl font-semibold text-white mb-2">Rituais Noturnos</h3>
+              <p className="text-gray-400">Rotinas que preparam o corpo para dormir</p>
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );
