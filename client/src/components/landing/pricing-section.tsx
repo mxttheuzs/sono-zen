@@ -12,7 +12,6 @@ import { apiRequest } from "@/lib/queryClient";
 import { trackInitiateCheckout, trackPurchase } from "@/lib/conversion-tracking";
 import { Shield, Lock, Star, CheckCircle, Download, Clock, Moon, Gift, Sparkles } from "lucide-react";
 import { FloatingClouds } from "@/components/ui/floating-clouds";
-import { Card3D, Button3D } from "@/components/ui/card-3d";
 import { z } from "zod";
 
 const purchaseFormSchema = insertPurchaseSchema.extend({
@@ -451,9 +450,8 @@ export function PricingSection() {
 
 
 
-                {/* Pricing - Enhanced with 3D effects */}
-                <Card3D depth="medium" className="mb-8">
-                  <div className="bg-gradient-to-br from-[var(--accent-blue)]/15 via-[var(--warm-accent)]/8 to-[var(--accent-blue)]/10 rounded-3xl p-6 sm:p-8 md:p-10 border-2 border-[var(--warm-accent)]/50 backdrop-blur-lg relative overflow-hidden shadow-2xl">
+                {/* Pricing - Enhanced with better visual hierarchy */}
+                <div className="bg-gradient-to-br from-[var(--accent-blue)]/15 via-[var(--warm-accent)]/8 to-[var(--accent-blue)]/10 rounded-3xl p-6 sm:p-8 md:p-10 mb-8 border-2 border-[var(--warm-accent)]/50 backdrop-blur-lg relative overflow-hidden shadow-2xl">
                   {/* Decorative background elements */}
                   <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[var(--warm-accent)]/20 to-transparent rounded-full blur-3xl"></div>
                   <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-br from-[var(--accent-blue)]/20 to-transparent rounded-full blur-2xl"></div>
@@ -488,8 +486,7 @@ export function PricingSection() {
                       <p className="text-green-200 text-sm mt-1">Maior desconto do ano!</p>
                     </div>
                   </div>
-                  </div>
-                </Card3D>
+                </div>
 
                 {/* Bonuses */}
                 <div className="bg-[var(--accent-blue)]/5 rounded-2xl p-4 sm:p-6 mb-6 sm:mb-8 border-2 border-[var(--accent-blue)]/35 backdrop-blur-sm relative">
@@ -520,10 +517,9 @@ export function PricingSection() {
                     <div className="absolute -inset-0.5 rounded-2xl blur opacity-20 group-hover:opacity-30 transition-all duration-500" 
                          style={{ background: 'linear-gradient(135deg, hsl(220, 25%, 65%) 0%, hsl(220, 30%, 70%) 100%)' }}></div>
                     
-                    <Button3D 
+                    <Button 
                       onClick={handlePurchaseClick}
-                      variant="zen"
-                      className="w-full py-6 sm:py-7 px-8 sm:px-10 text-lg sm:text-xl"
+                      className="relative w-full py-6 sm:py-7 px-8 sm:px-10 rounded-2xl text-lg sm:text-xl font-semibold transition-all duration-300 transform hover:scale-[1.01] shadow-lg hover:shadow-xl border border-white/10 backdrop-blur-sm text-white"
                       style={{ 
                         background: 'linear-gradient(135deg, hsl(220, 25%, 55%) 0%, hsl(220, 30%, 60%) 50%, hsl(220, 25%, 55%) 100%)',
                         boxShadow: '0 4px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.1)',
@@ -545,7 +541,7 @@ export function PricingSection() {
                         </span>
                         <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 text-white/70" />
                       </div>
-                    </Button3D>
+                    </Button>
                   </div>
                   
                   {/* Enhanced Security & Trust Badges */}

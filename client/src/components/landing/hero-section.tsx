@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { Moon, Shield, Sparkles, Heart, Star, CheckCircle } from "lucide-react";
-import { Card3D, Button3D } from "@/components/ui/card-3d";
 import { FloatingClouds } from "@/components/ui/floating-clouds";
 import { StarryBackground } from "@/components/ui/starry-background";
 import { FloatingParticles } from "@/components/ui/floating-particles";
@@ -84,15 +83,14 @@ export function HeroSection() {
             {/* CTA Principal */}
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
-              <Button3D 
+              <Button 
                 onClick={scrollToProblema}
-                variant="zen"
-                className="px-6 sm:px-10 py-4 sm:py-6 text-base sm:text-xl font-bold w-full sm:w-auto"
+                className="relative bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] text-white px-6 sm:px-10 py-4 sm:py-6 rounded-2xl text-base sm:text-xl font-bold hover:shadow-2xl hover:shadow-[var(--warm-accent)]/25 transition-all duration-300 transform hover:scale-105 w-full sm:w-auto"
               >
                 <Heart className="mr-2 sm:mr-3 h-5 sm:h-6 w-5 sm:w-6" />
                 <span>SAIBA MAIS</span>
                 <Sparkles className="ml-2 sm:ml-3 h-5 sm:h-6 w-5 sm:w-6" />
-              </Button3D>
+              </Button>
             </div>
 
             {/* Indicadores de credibilidade */}
@@ -113,15 +111,13 @@ export function HeroSection() {
         
         {/* Right image */}
         <div className="relative">
-          <Card3D depth="deep" className="p-0 overflow-hidden">
-            <div className="card-modern p-0 overflow-hidden">
-              <img 
-                src={sleepingWomanImage} 
-                alt="Mulher segurando lua luminosa em ambiente celestial com nuvens azuis"
-                className="w-full h-full aspect-square rounded-lg object-cover"
-              />
-            </div>
-          </Card3D>
+          <div className="card-modern p-0 overflow-hidden">
+            <img 
+              src={sleepingWomanImage} 
+              alt="Mulher segurando lua luminosa em ambiente celestial com nuvens azuis"
+              className="w-full h-full aspect-square rounded-lg object-cover"
+            />
+          </div>
           
 
         </div>
