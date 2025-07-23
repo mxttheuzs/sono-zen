@@ -42,17 +42,7 @@ export function VSLSection() {
               <div 
                 dangerouslySetInnerHTML={{
                   __html: `
-                    <script type="text/javascript"> 
-                      var s=document.createElement("script"); 
-                      s.src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js", 
-                      s.async=!0,
-                      document.head.appendChild(s); 
-                    </script> 
-                    <div id="ifr_6880cd2e24f49ba385264481_wrapper" style="margin: 0 auto; width: 100%;"> 
-                      <div style="padding: 52.760136785539814% 0 0 0; position: relative;" id="ifr_6880cd2e24f49ba385264481_aspect"> 
-                        <iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_6880cd2e24f49ba385264481" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" referrerpolicy="origin" onload="this.onload=null, this.src='https://scripts.converteai.net/565bfa0e-d0fd-494c-b04a-2fc27a3af576/players/6880cd2e24f49ba385264481/v4/embed.html' +(location.search||'?') +'&vl=' +encodeURIComponent(location.href)"></iframe> 
-                      </div> 
-                    </div>
+                    <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js", s.async=!0,document.head.appendChild(s); </script> <div id="ifr_6880cd2e24f49ba385264481_wrapper" style="margin: 0 auto; width: 100%; "> <div style="padding: 52.760136785539814% 0 0 0; position: relative;" id="ifr_6880cd2e24f49ba385264481_aspect"> <iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_6880cd2e24f49ba385264481" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" referrerpolicy="origin" onload=" this.onload=null, this.src='https://scripts.converteai.net/565bfa0e-d0fd-494c-b04a-2fc27a3af576/players/6880cd2e24f49ba385264481/v4/embed.html' +(location.search||'?') +'&vl=' +encodeURIComponent(location.href)"></iframe> </div> </div>
                   `
                 }}
               />
