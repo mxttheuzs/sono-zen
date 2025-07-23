@@ -54,6 +54,93 @@ body {
   box-sizing: border-box;
 }
 
+/* Classes 3D customizadas para efeitos realistas */
+.perspective-1000 {
+  perspective: 1000px;
+  perspective-origin: center center;
+}
+
+.perspective-1500 {
+  perspective: 1500px;
+  perspective-origin: center center;
+}
+
+.transform-gpu {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  will-change: transform;
+}
+
+.rotate-x-2 {
+  transform: rotateX(2deg);
+}
+
+.rotate-y-1 {
+  transform: rotateY(1deg);
+}
+
+.translate-z-8 {
+  transform: translateZ(8px);
+}
+
+.translate-z-12 {
+  transform: translateZ(12px);
+}
+
+.translate-z-16 {
+  transform: translateZ(16px);
+}
+
+.shadow-4xl {
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.7), 0 18px 36px -18px rgba(0, 0, 0, 0.4);
+}
+
+.shadow-5xl {
+  box-shadow: 0 40px 80px -16px rgba(0, 0, 0, 0.8), 0 24px 48px -24px rgba(0, 0, 0, 0.5);
+}
+
+/* Efeitos de hover 3D avançados */
+.hover-3d-lift:hover {
+  transform: translateY(-12px) translateZ(20px) rotateX(2deg) rotateY(1deg);
+  box-shadow: 0 35px 70px -12px rgba(0, 0, 0, 0.6), 0 15px 30px -8px rgba(218, 165, 32, 0.3);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hover-3d-tilt:hover {
+  transform: rotateX(5deg) rotateY(5deg) translateZ(15px);
+  transition: all 0.3s ease-out;
+}
+
+/* Animações flutuantes */
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px) translateZ(0px); }
+  50% { transform: translateY(-6px) translateZ(4px); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotateX(0deg); }
+  50% { transform: translateY(-10px) rotateX(1deg); }
+}
+
+.animate-float-gentle {
+  animation: float-gentle 4s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+/* Efeitos de reflexo e profundidade */
+.glass-morphism {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
 /* Melhorar transições para elementos interativos */
 button, .button, [role="button"] {
   transition: all 0.2s ease;

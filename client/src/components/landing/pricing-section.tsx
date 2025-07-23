@@ -403,9 +403,14 @@ export function PricingSection() {
 
           </div>
           
-          {/* Main Product Card */}
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-[var(--accent-blue)]/5 backdrop-blur-xl border-2 border-[var(--accent-blue)]/40 rounded-3xl overflow-hidden shadow-2xl relative">
+          {/* Main Product Card - 3D Enhanced */}
+          <div className="max-w-4xl mx-auto perspective-1000">
+            <div className="bg-[var(--accent-blue)]/5 backdrop-blur-xl border-2 border-[var(--accent-blue)]/40 rounded-3xl overflow-hidden shadow-2xl relative group transform-gpu transition-all duration-700 hover:scale-[1.02] hover:rotate-x-2 hover:rotate-y-1 hover:shadow-4xl"
+                 style={{
+                   transformStyle: 'preserve-3d',
+                   boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+                   background: 'linear-gradient(135deg, rgba(109, 191, 255, 0.08) 0%, rgba(218, 165, 32, 0.05) 50%, rgba(109, 191, 255, 0.08) 100%)',
+                 }}>
               
               {/* Product Header - Enhanced harmony */}
               <div className="relative bg-gradient-to-br from-[var(--accent-blue)]/12 via-[var(--warm-accent)]/8 to-[var(--celestial-blue)]/10 border-b-2 border-[var(--warm-accent)]/40 p-6 sm:p-8 md:p-12 text-center overflow-hidden">
@@ -450,8 +455,13 @@ export function PricingSection() {
 
 
 
-                {/* Pricing - Enhanced with better visual hierarchy */}
-                <div className="bg-gradient-to-br from-[var(--accent-blue)]/15 via-[var(--warm-accent)]/8 to-[var(--accent-blue)]/10 rounded-3xl p-6 sm:p-8 md:p-10 mb-8 border-2 border-[var(--warm-accent)]/50 backdrop-blur-lg relative overflow-hidden shadow-2xl">
+                {/* Pricing - 3D Enhanced Card */}
+                <div className="bg-gradient-to-br from-[var(--accent-blue)]/15 via-[var(--warm-accent)]/8 to-[var(--accent-blue)]/10 rounded-3xl p-6 sm:p-8 md:p-10 mb-8 border-2 border-[var(--warm-accent)]/50 backdrop-blur-lg relative overflow-hidden shadow-2xl transform-gpu transition-all duration-500 hover:scale-[1.02] hover:translate-z-8 group/pricing"
+                     style={{
+                       transformStyle: 'preserve-3d',
+                       boxShadow: '0 20px 40px -8px rgba(0, 0, 0, 0.4), 0 8px 16px -4px rgba(218, 165, 32, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+                       background: 'linear-gradient(135deg, rgba(109, 191, 255, 0.15) 0%, rgba(218, 165, 32, 0.08) 35%, rgba(109, 191, 255, 0.1) 70%, rgba(218, 165, 32, 0.05) 100%)',
+                     }}>
                   {/* Decorative background elements */}
                   <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[var(--warm-accent)]/20 to-transparent rounded-full blur-3xl"></div>
                   <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-br from-[var(--accent-blue)]/20 to-transparent rounded-full blur-2xl"></div>
@@ -465,10 +475,15 @@ export function PricingSection() {
                       
                       <p className="text-lg sm:text-xl text-[var(--accent-blue)] font-semibold mb-3" style={{ textShadow: '0 0 8px rgba(255,255,255,0.2)' }}>Por apenas:</p>
                       
-                      {/* Main price with enhanced visual impact */}
-                      <div className="relative">
-                        <div className="absolute inset-0 bg-gradient-to-r from-[var(--warm-accent)]/30 to-[var(--accent-blue)]/30 rounded-2xl blur-xl"></div>
-                        <div className="relative bg-gradient-to-r from-[var(--warm-accent)]/20 to-[var(--accent-blue)]/20 rounded-2xl p-6 border-2 border-[var(--warm-accent)]/40">
+                      {/* Main price with 3D enhanced visual impact */}
+                      <div className="relative perspective-1000 group/price">
+                        <div className="absolute inset-0 bg-gradient-to-r from-[var(--warm-accent)]/30 to-[var(--accent-blue)]/30 rounded-2xl blur-xl animate-float-gentle"></div>
+                        <div className="relative bg-gradient-to-r from-[var(--warm-accent)]/20 to-[var(--accent-blue)]/20 rounded-2xl p-6 border-2 border-[var(--warm-accent)]/40 transform-gpu transition-all duration-500 hover:scale-105 hover:translate-z-12 hover-3d-tilt"
+                             style={{
+                               transformStyle: 'preserve-3d',
+                               boxShadow: '0 15px 30px -8px rgba(0, 0, 0, 0.3), 0 5px 15px -5px rgba(218, 165, 32, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15)',
+                               background: 'linear-gradient(135deg, rgba(218, 165, 32, 0.25) 0%, rgba(109, 191, 255, 0.15) 50%, rgba(218, 165, 32, 0.2) 100%)',
+                             }}>
                           <p className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black bg-gradient-to-r from-[var(--warm-accent)] via-white to-[var(--accent-blue)] bg-clip-text text-transparent tracking-tight mb-4" style={{ textShadow: '0 0 20px rgba(255,255,255,0.6)' }}>
                             R$ 27,90
                           </p>
@@ -509,43 +524,61 @@ export function PricingSection() {
 
                 </div>
                 
-                {/* Elegant Premium Purchase Button */}
+                {/* 3D Premium Purchase Button */}
                 <div className="space-y-6">
-                  {/* Clean Premium Purchase Button */}
-                  <div className="relative group">
-                    {/* Subtle glow effect */}
-                    <div className="absolute -inset-0.5 rounded-2xl blur opacity-20 group-hover:opacity-30 transition-all duration-500" 
-                         style={{ background: 'linear-gradient(135deg, hsl(220, 25%, 65%) 0%, hsl(220, 30%, 70%) 100%)' }}></div>
+                  {/* Ultra-realistic 3D Purchase Button */}
+                  <div className="relative perspective-1500 group">
+                    {/* Multiple layered glow effects for depth */}
+                    <div className="absolute -inset-2 rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition-all duration-700 animate-float-slow" 
+                         style={{ background: 'linear-gradient(135deg, rgba(218, 165, 32, 0.6) 0%, rgba(109, 191, 255, 0.4) 50%, rgba(218, 165, 32, 0.6) 100%)' }}></div>
+                    <div className="absolute -inset-1 rounded-3xl blur-lg opacity-20 group-hover:opacity-40 transition-all duration-500" 
+                         style={{ background: 'linear-gradient(135deg, rgba(255, 215, 0, 0.8) 0%, rgba(0, 191, 255, 0.6) 100%)' }}></div>
                     
                     <Button 
                       onClick={handlePurchaseClick}
-                      className="relative w-full py-6 sm:py-7 px-8 sm:px-10 rounded-2xl text-lg sm:text-xl font-semibold transition-all duration-300 transform hover:scale-[1.01] shadow-lg hover:shadow-xl border border-white/10 backdrop-blur-sm text-white"
+                      className="relative w-full py-7 sm:py-8 px-10 sm:px-12 rounded-3xl text-xl sm:text-2xl font-bold transition-all duration-500 transform-gpu hover:scale-[1.03] hover:translate-z-16 hover-3d-lift shadow-5xl border-2 text-white overflow-hidden"
                       style={{ 
-                        background: 'linear-gradient(135deg, hsl(220, 25%, 55%) 0%, hsl(220, 30%, 60%) 50%, hsl(220, 25%, 55%) 100%)',
-                        boxShadow: '0 4px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.1)',
-                        textShadow: '0 1px 2px rgba(0,0,0,0.3)'
+                        transformStyle: 'preserve-3d',
+                        background: 'linear-gradient(135deg, rgba(218, 165, 32, 0.9) 0%, rgba(255, 215, 0, 0.8) 25%, rgba(109, 191, 255, 0.7) 50%, rgba(255, 215, 0, 0.8) 75%, rgba(218, 165, 32, 0.9) 100%)',
+                        boxShadow: '0 20px 40px rgba(0,0,0,0.4), 0 8px 20px rgba(218, 165, 32, 0.3), inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0,0,0,0.1)',
+                        textShadow: '0 2px 4px rgba(0,0,0,0.4), 0 0 10px rgba(255,255,255,0.3)',
+                        borderColor: 'rgba(255, 215, 0, 0.5)',
+                        backdropFilter: 'blur(10px)'
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.background = 'linear-gradient(135deg, hsl(220, 25%, 60%) 0%, hsl(220, 30%, 65%) 50%, hsl(220, 25%, 60%) 100%)';
-                        e.currentTarget.style.boxShadow = '0 6px 25px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.15)';
+                        e.currentTarget.style.background = 'linear-gradient(135deg, rgba(255, 215, 0, 1) 0%, rgba(218, 165, 32, 0.9) 25%, rgba(0, 191, 255, 0.8) 50%, rgba(218, 165, 32, 0.9) 75%, rgba(255, 215, 0, 1) 100%)';
+                        e.currentTarget.style.boxShadow = '0 25px 50px rgba(0,0,0,0.5), 0 12px 25px rgba(218, 165, 32, 0.4), inset 0 2px 0 rgba(255,255,255,0.3), inset 0 -2px 0 rgba(0,0,0,0.1)';
+                        e.currentTarget.style.transform = 'translateY(-8px) translateZ(20px) scale(1.03)';
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.background = 'linear-gradient(135deg, hsl(220, 25%, 55%) 0%, hsl(220, 30%, 60%) 50%, hsl(220, 25%, 55%) 100%)';
-                        e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.1)';
+                        e.currentTarget.style.background = 'linear-gradient(135deg, rgba(218, 165, 32, 0.9) 0%, rgba(255, 215, 0, 0.8) 25%, rgba(109, 191, 255, 0.7) 50%, rgba(255, 215, 0, 0.8) 75%, rgba(218, 165, 32, 0.9) 100%)';
+                        e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.4), 0 8px 20px rgba(218, 165, 32, 0.3), inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0,0,0,0.1)';
+                        e.currentTarget.style.transform = 'translateY(0px) translateZ(0px) scale(1)';
                       }}
                     >
-                      <div className="flex items-center justify-center gap-3">
-                        <Moon className="h-5 w-5 sm:h-6 sm:w-6 text-white/80" />
-                        <span className="text-white font-semibold">
-                          Transformar Meu Sono Agora
-                        </span>
-                        <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 text-white/70" />
+                      {/* 3D Layered button content */}
+                      <div className="relative transform-gpu">
+                        <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent rounded-2xl blur-sm"></div>
+                        <div className="flex items-center justify-center gap-4 relative z-10">
+                          <Moon className="h-6 w-6 sm:h-7 sm:w-7 text-white drop-shadow-lg transform group-hover:scale-110 transition-transform duration-300" 
+                                style={{ filter: 'drop-shadow(0 0 8px rgba(255,215,0,0.8))' }} />
+                          <span className="text-white font-bold tracking-wide relative">
+                            <span className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent blur-sm"></span>
+                            <span className="relative">Transformar Meu Sono Agora</span>
+                          </span>
+                          <Sparkles className="h-5 w-5 sm:h-6 sm:w-6 text-white/90 drop-shadow-lg transform group-hover:rotate-12 group-hover:scale-110 transition-all duration-300" 
+                                   style={{ filter: 'drop-shadow(0 0 6px rgba(109,191,255,0.8))' }} />
+                        </div>
                       </div>
                     </Button>
                   </div>
                   
-                  {/* Enhanced Security & Trust Badges */}
-                  <div className="bg-gradient-to-br from-[var(--accent-blue)]/10 via-[var(--warm-accent)]/5 to-[var(--accent-blue)]/8 rounded-3xl p-6 sm:p-8 border-2 border-[var(--warm-accent)]/40 backdrop-blur-lg relative overflow-hidden shadow-xl">
+                  {/* 3D Enhanced Security & Trust Badges */}
+                  <div className="bg-gradient-to-br from-[var(--accent-blue)]/10 via-[var(--warm-accent)]/5 to-[var(--accent-blue)]/8 rounded-3xl p-6 sm:p-8 border-2 border-[var(--warm-accent)]/40 backdrop-blur-lg relative overflow-hidden shadow-xl perspective-1000 transform-gpu transition-all duration-500 hover:scale-[1.01] hover:translate-z-8"
+                       style={{
+                         transformStyle: 'preserve-3d',
+                         boxShadow: '0 20px 40px -12px rgba(0, 0, 0, 0.4), 0 8px 16px -6px rgba(218, 165, 32, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+                       }}>
                     {/* Decorative elements */}
                     <div className="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-[var(--warm-accent)]/15 to-transparent rounded-full blur-2xl"></div>
                     <div className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-br from-[var(--accent-blue)]/15 to-transparent rounded-full blur-xl"></div>
@@ -563,25 +596,43 @@ export function PricingSection() {
                     </div>
                     
                     <div className="grid sm:grid-cols-3 gap-4 sm:gap-6 relative z-10">
-                      <div className="flex flex-col items-center text-center p-5 bg-gradient-to-br from-green-500/15 to-emerald-500/10 border-2 border-green-400/30 rounded-2xl backdrop-blur-sm hover:scale-105 transition-all duration-300 group">
-                        <div className="w-12 h-12 bg-gradient-to-br from-green-400/20 to-emerald-400/20 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                          <Shield className="h-6 w-6 text-green-300" />
+                      {/* 3D Garantia Badge */}
+                      <div className="flex flex-col items-center text-center p-5 bg-gradient-to-br from-green-500/15 to-emerald-500/10 border-2 border-green-400/30 rounded-2xl backdrop-blur-sm hover:scale-110 hover:translate-z-12 hover-3d-tilt transition-all duration-400 group transform-gpu perspective-1000"
+                           style={{
+                             transformStyle: 'preserve-3d',
+                             boxShadow: '0 10px 20px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(34, 197, 94, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+                           }}>
+                        <div className="w-14 h-14 bg-gradient-to-br from-green-400/25 to-emerald-400/25 rounded-full flex items-center justify-center mb-3 group-hover:scale-125 group-hover:rotate-12 transition-all duration-400 shadow-lg animate-float-gentle"
+                             style={{ transformStyle: 'preserve-3d' }}>
+                          <Shield className="h-7 w-7 text-green-300 drop-shadow-lg" style={{ filter: 'drop-shadow(0 0 8px rgba(34,197,94,0.6))' }} />
                         </div>
                         <h5 className="font-bold text-green-200 text-sm sm:text-base mb-1">Garantia de 7 Dias</h5>
                         <p className="text-green-100/80 text-xs sm:text-sm">Não funcionou? Devolvemos seu dinheiro</p>
                       </div>
                       
-                      <div className="flex flex-col items-center text-center p-5 bg-gradient-to-br from-blue-500/15 to-cyan-500/10 border-2 border-blue-400/30 rounded-2xl backdrop-blur-sm hover:scale-105 transition-all duration-300 group">
-                        <div className="w-12 h-12 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                          <Lock className="h-6 w-6 text-blue-300" />
+                      {/* 3D Segurança Badge */}
+                      <div className="flex flex-col items-center text-center p-5 bg-gradient-to-br from-blue-500/15 to-cyan-500/10 border-2 border-blue-400/30 rounded-2xl backdrop-blur-sm hover:scale-110 hover:translate-z-12 hover-3d-tilt transition-all duration-400 group transform-gpu perspective-1000"
+                           style={{
+                             transformStyle: 'preserve-3d',
+                             boxShadow: '0 10px 20px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(59, 130, 246, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+                           }}>
+                        <div className="w-14 h-14 bg-gradient-to-br from-blue-400/25 to-cyan-400/25 rounded-full flex items-center justify-center mb-3 group-hover:scale-125 group-hover:-rotate-12 transition-all duration-400 shadow-lg animate-float-gentle"
+                             style={{ transformStyle: 'preserve-3d', animationDelay: '1s' }}>
+                          <Lock className="h-7 w-7 text-blue-300 drop-shadow-lg" style={{ filter: 'drop-shadow(0 0 8px rgba(59,130,246,0.6))' }} />
                         </div>
                         <h5 className="font-bold text-blue-200 text-sm sm:text-base mb-1">Pagamento Seguro</h5>
                         <p className="text-blue-100/80 text-xs sm:text-sm">Criptografia SSL 256-bits</p>
                       </div>
                       
-                      <div className="flex flex-col items-center text-center p-5 bg-gradient-to-br from-[var(--warm-accent)]/15 to-orange-500/10 border-2 border-[var(--warm-accent)]/30 rounded-2xl backdrop-blur-sm hover:scale-105 transition-all duration-300 group">
-                        <div className="w-12 h-12 bg-gradient-to-br from-[var(--warm-accent)]/20 to-orange-400/20 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                          <Download className="h-6 w-6 text-[var(--warm-accent)]" />
+                      {/* 3D Acesso Badge */}
+                      <div className="flex flex-col items-center text-center p-5 bg-gradient-to-br from-[var(--warm-accent)]/15 to-orange-500/10 border-2 border-[var(--warm-accent)]/30 rounded-2xl backdrop-blur-sm hover:scale-110 hover:translate-z-12 hover-3d-tilt transition-all duration-400 group transform-gpu perspective-1000"
+                           style={{
+                             transformStyle: 'preserve-3d',
+                             boxShadow: '0 10px 20px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(218, 165, 32, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+                           }}>
+                        <div className="w-14 h-14 bg-gradient-to-br from-[var(--warm-accent)]/25 to-orange-400/25 rounded-full flex items-center justify-center mb-3 group-hover:scale-125 group-hover:rotate-12 transition-all duration-400 shadow-lg animate-float-gentle"
+                             style={{ transformStyle: 'preserve-3d', animationDelay: '2s' }}>
+                          <Download className="h-7 w-7 text-[var(--warm-accent)] drop-shadow-lg" style={{ filter: 'drop-shadow(0 0 8px rgba(218,165,32,0.6))' }} />
                         </div>
                         <h5 className="font-bold text-[var(--warm-accent)] text-sm sm:text-base mb-1">Acesso Instantâneo</h5>
                         <p className="text-orange-100/80 text-xs sm:text-sm">Receba em até 2 minutos</p>
