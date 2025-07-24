@@ -22,7 +22,10 @@ export function HeroSection() {
   };
 
   return (
-    <section className="bg-black relative overflow-hidden min-h-screen flex items-center pt-24 pb-8 md:pt-0 md:pb-0">
+    <section className="relative overflow-hidden min-h-screen flex items-center pt-24 pb-8 md:pt-0 md:pb-0" 
+             style={{
+               background: `linear-gradient(135deg, var(--sono-deep-blue) 0%, #0a1a2e 50%, var(--sono-deep-blue) 100%)`
+             }}>
       {/* Background subtle pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -44,17 +47,17 @@ export function HeroSection() {
           <div className="space-y-6">
             <h1 className="font-heading sm:text-5xl md:text-7xl font-bold text-[var(--text-primary)] text-[40px]">
               Durma Como um Bebê
-              <span className="block bg-gradient-to-r from-[var(--warm-accent)] via-[var(--accent-blue)] to-[var(--warm-accent)] bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-[var(--sono-golden)] via-[var(--sono-sky-blue)] to-[var(--sono-golden)] bg-clip-text text-transparent">
                 em Apenas 7 Noites
               </span>
             </h1>
             
             <div className="space-y-4">
               <p className="text-lg sm:text-xl md:text-2xl text-[var(--text-secondary)] max-w-2xl leading-relaxed font-medium">
-                🌙 Pare de ficar <span className="text-[var(--warm-accent)] font-bold">3h rolando na cama</span> sem conseguir dormir
+                🌙 Pare de ficar <span className="text-[var(--sono-golden)] font-bold">3h rolando na cama</span> sem conseguir dormir
               </p>
               <p className="text-base sm:text-lg md:text-xl text-[var(--text-muted)] max-w-2xl leading-relaxed">
-                ✨ Descubra o método oriental que faz você adormecer em <span className="text-[var(--accent-blue)] font-semibold">15 minutos</span> e acordar descansado
+                ✨ Descubra o método oriental que faz você adormecer em <span className="text-[var(--sono-sky-blue)] font-semibold">15 minutos</span> e acordar descansado
               </p>
             </div>
 
@@ -82,10 +85,10 @@ export function HeroSection() {
           <div className="flex flex-col gap-6 items-start">
             {/* CTA Principal */}
             <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-[var(--sono-golden)] to-[var(--sono-sky-blue)] rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
               <Button 
                 onClick={scrollToProblema}
-                className="relative bg-gradient-to-r from-[var(--warm-accent)] to-[var(--accent-blue)] text-white px-6 sm:px-10 py-4 sm:py-6 rounded-2xl text-base sm:text-xl font-bold hover:shadow-2xl hover:shadow-[var(--warm-accent)]/25 transition-all duration-300 transform hover:scale-105 w-full sm:w-auto"
+                className="relative bg-gradient-to-r from-[var(--sono-golden)] to-[var(--sono-sky-blue)] text-white px-6 sm:px-10 py-4 sm:py-6 rounded-2xl text-base sm:text-xl font-bold hover:shadow-2xl hover:shadow-[var(--sono-golden)]/25 transition-all duration-300 transform hover:scale-105 w-full sm:w-auto"
               >
                 <Heart className="mr-2 sm:mr-3 h-5 sm:h-6 w-5 sm:w-6" />
                 <span>SAIBA MAIS</span>
@@ -99,9 +102,9 @@ export function HeroSection() {
                 <Shield className="h-5 w-5 text-[var(--success-green)]" />
                 <span className="text-sm font-semibold text-[var(--success-green)]">Garantia Total 7 Dias</span>
               </div>
-              <div className="flex items-center gap-2 bg-[var(--warm-accent)]/10 border border-[var(--warm-accent)]/30 px-4 py-2 rounded-full">
-                <Star className="h-5 w-5 text-[var(--warm-accent)] fill-current" />
-                <span className="text-sm font-semibold text-[var(--warm-accent)]">14.847 Vidas Transformadas</span>
+              <div className="flex items-center gap-2 bg-[var(--sono-golden)]/10 border border-[var(--sono-golden)]/30 px-4 py-2 rounded-full">
+                <Star className="h-5 w-5 text-[var(--sono-golden)] fill-current" />
+                <span className="text-sm font-semibold text-[var(--sono-golden)]">14.847 Vidas Transformadas</span>
               </div>
             </div>
 

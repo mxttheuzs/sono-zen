@@ -367,13 +367,13 @@ export function PricingSection() {
 
   const bonuses = [
     {
-      icon: <Gift className="h-5 w-5 text-[var(--warm-accent)]" />,
+      icon: <Gift className="h-5 w-5 text-[var(--sono-golden)]" />,
       title: "Bônus #1: Meditações Guiadas",
       description: "3 áudios para relaxamento profundo",
       value: "R$ 9,90"
     },
     {
-      icon: <Clock className="h-5 w-5 text-[var(--accent-blue)]" />,
+      icon: <Clock className="h-5 w-5 text-[var(--sono-sky-blue)]" />,
       title: "Bônus #2: Checklist Sono Perfeito",
       description: "Guia prático para otimizar seu ambiente",
       value: "R$ 9,90"
@@ -393,7 +393,7 @@ export function PricingSection() {
             
             <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-[var(--text-primary)] mb-6 leading-tight">
               Sua{" "}
-              <span className="bg-gradient-to-r from-[var(--warm-accent)] via-[var(--accent-blue)] to-[var(--celestial-blue)] bg-clip-text text-transparent font-black tracking-tight">
+              <span className="bg-gradient-to-r from-[var(--sono-golden)] via-[var(--sono-sky-blue)] to-[var(--sono-lavender)] bg-clip-text text-transparent font-black tracking-tight">
                 Transformação
               </span>
               <span className="block text-3xl sm:text-4xl md:text-5xl mt-2 text-[var(--text-secondary)]">
@@ -420,12 +420,12 @@ export function PricingSection() {
                 {/* Enhanced icon with better harmony */}
                 <div className="w-14 h-14 sm:w-18 sm:h-18 mx-auto mb-6 bg-gradient-to-br from-[var(--warm-accent)]/25 via-[var(--accent-blue)]/15 to-[var(--celestial-blue)]/20 border-2 border-[var(--warm-accent)]/40 rounded-3xl flex items-center justify-center backdrop-blur-lg shadow-xl relative group">
                   <div className="absolute inset-0 bg-gradient-to-br from-[var(--warm-accent)]/10 to-[var(--accent-blue)]/10 rounded-3xl blur opacity-50 group-hover:opacity-70 transition-opacity duration-300"></div>
-                  <Moon className="h-7 w-7 sm:h-9 sm:w-9 text-[var(--warm-accent)] relative z-10" style={{ filter: 'drop-shadow(0 0 10px rgba(218, 165, 32, 0.6))' }} />
+                  <Moon className="h-7 w-7 sm:h-9 sm:w-9 text-[var(--sono-golden)] relative z-10" style={{ filter: 'drop-shadow(0 0 10px rgba(242, 211, 135, 0.6))' }} />
                 </div>
                 
                 {/* Enhanced title with better gradient consistency */}
                 <h3 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 sm:mb-6 tracking-tight leading-tight px-2 relative z-10">
-                  <span className="bg-gradient-to-r from-[var(--warm-accent)] via-[var(--accent-blue)] to-[var(--celestial-blue)] bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-[var(--sono-golden)] via-[var(--sono-sky-blue)] to-[var(--sono-lavender)] bg-clip-text text-transparent">
                     Sono Zen
                   </span>
                   <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-[var(--text-primary)] mt-2" style={{ textShadow: '0 0 12px rgba(255,255,255,0.25)' }}>
@@ -524,13 +524,13 @@ export function PricingSection() {
                   <div className="relative perspective-1500 group">
                     {/* Subtle glow effect */}
                     <div className="absolute -inset-0.5 rounded-2xl blur opacity-20 group-hover:opacity-30 transition-all duration-500" 
-                         style={{ background: 'linear-gradient(135deg, hsl(220, 25%, 65%) 0%, hsl(220, 30%, 70%) 100%)' }}></div>
+                         style={{ background: 'linear-gradient(135deg, var(--sono-golden) 0%, var(--sono-sky-blue) 100%)' }}></div>
                     
                     <Button 
                       onClick={handlePurchaseClick}
                       className="relative w-full py-6 sm:py-7 px-8 sm:px-10 rounded-2xl text-lg sm:text-xl font-semibold border border-white/10 backdrop-blur-sm text-white button-3d"
                       style={{ 
-                        background: 'linear-gradient(135deg, hsl(220, 25%, 55%) 0%, hsl(220, 30%, 60%) 50%, hsl(220, 25%, 55%) 100%)',
+                        background: 'linear-gradient(135deg, var(--sono-golden) 0%, var(--sono-sky-blue) 50%, var(--sono-golden) 100%)',
                         boxShadow: '0 4px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.1)',
                         textShadow: '0 1px 2px rgba(0,0,0,0.3)'
                       }}

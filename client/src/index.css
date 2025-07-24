@@ -265,16 +265,23 @@ input, textarea, select {
   --text-secondary: hsl(220, 20%, 80%);
   --text-muted: hsl(220, 15%, 65%);
   
+  /* PALETA SONO ZEN - Identidade Visual Oficial */
+  --sono-deep-blue: #0D2842;
+  --sono-golden: #F2D387;
+  --sono-lavender: #8278BC;
+  --sono-sage: #AAB14C;
+  --sono-sky-blue: #5A9BD4;
+  
   /* Paleta Azul Celestial Principal */
-  --accent-blue: hsl(210, 75%, 75%);
-  --accent-blue-muted: hsl(210, 60%, 65%);
-  --accent-blue-soft: hsl(210, 40%, 55%);
-  --celestial-blue: hsl(200, 80%, 70%);
-  --sky-blue: hsl(195, 70%, 75%);
+  --accent-blue: #5A9BD4;
+  --accent-blue-muted: #0D2842;
+  --accent-blue-soft: #0D2842;
+  --celestial-blue: #8278BC;
+  --sky-blue: #5A9BD4;
   
   /* Cores Complementares Harmoniosas */
-  --warm-accent: hsl(45, 65%, 75%);
-  --soft-gold: hsl(50, 70%, 80%);
+  --warm-accent: #F2D387;
+  --soft-gold: #F2D387;
   --moonlight-silver: hsl(220, 20%, 85%);
   
   /* Verde Suave Conectado */
@@ -334,11 +341,19 @@ input, textarea, select {
   }
   
   .blue-gradient {
-    background: linear-gradient(135deg, var(--accent-blue-muted) 0%, var(--accent-blue) 100%);
+    background: linear-gradient(135deg, var(--sono-deep-blue) 0%, var(--sono-sky-blue) 100%);
   }
   
   .warm-gradient {
-    background: linear-gradient(135deg, var(--warm-accent) 0%, hsl(35, 70%, 50%) 100%);
+    background: linear-gradient(135deg, var(--sono-golden) 0%, var(--sono-lavender) 100%);
+  }
+  
+  .sono-zen-gradient {
+    background: linear-gradient(135deg, var(--sono-deep-blue) 0%, var(--sono-lavender) 50%, var(--sono-golden) 100%);
+  }
+  
+  .zen-brand-gradient {
+    background: linear-gradient(45deg, var(--sono-deep-blue) 0%, var(--sono-sky-blue) 30%, var(--sono-lavender) 60%, var(--sono-golden) 100%);
   }
   
   .dreamy-gradient {
