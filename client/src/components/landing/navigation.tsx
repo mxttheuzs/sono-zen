@@ -38,7 +38,7 @@ export function Navigation() {
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? "bg-[var(--dark-bg)]/95 backdrop-blur-md shadow-xl shadow-black/10 border-b border-[var(--border-subtle)]" : "bg-[var(--dark-bg)]/80 backdrop-blur-sm"
+      isScrolled ? "bg-[var(--sono-deep-blue)]/95 backdrop-blur-md shadow-xl shadow-black/20 border-b border-[var(--sono-sky-blue)]/20" : "bg-[var(--sono-deep-blue)]/90 backdrop-blur-sm"
     }`}>
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <SonoZenLogo size="md" className="cursor-pointer transition-all duration-300 hover:scale-105" />
@@ -71,10 +71,10 @@ export function Navigation() {
         {/* Desktop CTA */}
         <Button 
           onClick={handlePurchaseClick}
-          className="hidden md:flex group relative overflow-hidden bg-[var(--accent-blue)]/20 backdrop-blur-sm border border-[var(--accent-blue)]/30 hover:border-[var(--accent-blue)]/50 text-[var(--accent-blue)] hover:text-white px-6 py-3 rounded-xl font-semibold shadow-md hover:shadow-[var(--accent-blue)]/25 transition-all duration-300 transform hover:scale-105 animate-magnetic-hover"
+          className="hidden md:flex group relative overflow-hidden bg-[var(--sono-golden)]/10 backdrop-blur-sm border border-[var(--sono-golden)]/40 hover:border-[var(--sono-golden)]/60 text-[var(--sono-golden)] hover:text-[var(--sono-deep-blue)] px-6 py-3 rounded-xl font-semibold shadow-md hover:shadow-[var(--sono-golden)]/25 transition-all duration-300 transform hover:scale-105"
         >
-          <div className="absolute inset-0 bg-[var(--accent-blue)] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <span className="relative animate-shimmer">Transformar Sono</span>
+          <div className="absolute inset-0 bg-[var(--sono-golden)] opacity-0 group-hover:opacity-90 transition-opacity duration-300"></div>
+          <span className="relative font-bold">Transformar Sono</span>
         </Button>
 
         {/* Mobile Menu Button */}

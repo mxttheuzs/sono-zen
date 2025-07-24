@@ -85,10 +85,10 @@ export function HeroSection() {
           <div className="flex flex-col gap-6 items-start">
             {/* CTA Principal */}
             <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-[var(--sono-golden)] to-[var(--sono-sky-blue)] rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-[var(--sono-golden)] to-[var(--sono-sky-blue)] rounded-xl blur opacity-20 group-hover:opacity-30 transition duration-500"></div>
               <Button 
                 onClick={scrollToProblema}
-                className="relative bg-gradient-to-r from-[var(--sono-golden)] to-[var(--sono-sky-blue)] text-white px-6 sm:px-10 py-4 sm:py-6 rounded-2xl text-base sm:text-xl font-bold hover:shadow-2xl hover:shadow-[var(--sono-golden)]/25 transition-all duration-300 transform hover:scale-105 w-full sm:w-auto"
+                className="relative bg-gradient-to-r from-[var(--sono-golden)] to-[var(--sono-sky-blue)] text-white px-8 sm:px-12 py-4 sm:py-5 rounded-xl text-lg sm:text-xl font-semibold hover:shadow-xl hover:shadow-[var(--sono-golden)]/20 transition-all duration-300 transform hover:scale-[1.02] w-full sm:w-auto border border-white/10"
               >
                 <Heart className="mr-2 sm:mr-3 h-5 sm:h-6 w-5 sm:w-6" />
                 <span>SAIBA MAIS</span>

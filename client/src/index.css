@@ -265,12 +265,12 @@ input, textarea, select {
   --text-secondary: hsl(220, 20%, 80%);
   --text-muted: hsl(220, 15%, 65%);
   
-  /* PALETA SONO ZEN - Identidade Visual Oficial */
+  /* PALETA SONO ZEN - Identidade Visual Profissional */
   --sono-deep-blue: #0D2842;
-  --sono-golden: #F2D387;
-  --sono-lavender: #8278BC;
-  --sono-sage: #AAB14C;
-  --sono-sky-blue: #5A9BD4;
+  --sono-golden: #B8860B;      /* Tom dourado mais refinado */
+  --sono-lavender: #6A5ACD;    /* Tom lilás mais sofisticado */
+  --sono-sage: #708238;        /* Tom sálvia mais profissional */
+  --sono-sky-blue: #4682B4;    /* Tom azul céu mais elegante */
   
   /* Paleta Azul Celestial Principal */
   --accent-blue: #5A9BD4;
