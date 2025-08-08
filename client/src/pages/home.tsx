@@ -37,10 +37,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen relative overflow-x-hidden" 
-         style={{
-           background: `linear-gradient(180deg, var(--sono-deep-blue) 0%, #1a2a42 20%, #0f1a2e 40%, #0a1428 60%, var(--sono-deep-blue) 100%)`
-         }}>
+    <div className="min-h-screen bg-black relative overflow-x-hidden">
       {/* Animated background elements */}
       <FloatingStars className="fixed inset-0 z-0" density="medium" />
       <FloatingClouds className="fixed inset-0 z-0" />

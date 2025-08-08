@@ -367,13 +367,13 @@ export function PricingSection() {
 
   const bonuses = [
     {
-      icon: <Gift className="h-5 w-5 text-[var(--sono-golden)]" />,
+      icon: <Gift className="h-5 w-5 text-[var(--warm-accent)]" />,
       title: "Bônus #1: Meditações Guiadas",
       description: "3 áudios para relaxamento profundo",
       value: "R$ 9,90"
     },
     {
-      icon: <Clock className="h-5 w-5 text-[var(--sono-sky-blue)]" />,
+      icon: <Clock className="h-5 w-5 text-[var(--accent-blue)]" />,
       title: "Bônus #2: Checklist Sono Perfeito",
       description: "Guia prático para otimizar seu ambiente",
       value: "R$ 9,90"
@@ -393,7 +393,7 @@ export function PricingSection() {
             
             <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-[var(--text-primary)] mb-6 leading-tight">
               Sua{" "}
-              <span className="bg-gradient-to-r from-[var(--sono-golden)] via-[var(--sono-sky-blue)] to-[var(--sono-lavender)] bg-clip-text text-transparent font-black tracking-tight">
+              <span className="bg-gradient-to-r from-[var(--warm-accent)] via-[var(--accent-blue)] to-[var(--celestial-blue)] bg-clip-text text-transparent font-black tracking-tight">
                 Transformação
               </span>
               <span className="block text-3xl sm:text-4xl md:text-5xl mt-2 text-[var(--text-secondary)]">
@@ -403,12 +403,9 @@ export function PricingSection() {
 
           </div>
           
-          {/* Main Product Card - Professional Design */}
+          {/* Main Product Card */}
           <div className="max-w-4xl mx-auto">
-            <div className="bg-[var(--sono-deep-blue)]/30 backdrop-blur-xl border border-[var(--sono-sky-blue)]/30 rounded-2xl overflow-hidden shadow-xl relative"
-                 style={{
-                   boxShadow: '0 10px 40px -8px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.05)',
-                 }}>
+            <div className="bg-[var(--accent-blue)]/5 backdrop-blur-xl border-2 border-[var(--accent-blue)]/40 rounded-3xl overflow-hidden shadow-2xl relative">
               
               {/* Product Header - Enhanced harmony */}
               <div className="relative bg-gradient-to-br from-[var(--accent-blue)]/12 via-[var(--warm-accent)]/8 to-[var(--celestial-blue)]/10 border-b-2 border-[var(--warm-accent)]/40 p-6 sm:p-8 md:p-12 text-center overflow-hidden">
@@ -420,12 +417,12 @@ export function PricingSection() {
                 {/* Enhanced icon with better harmony */}
                 <div className="w-14 h-14 sm:w-18 sm:h-18 mx-auto mb-6 bg-gradient-to-br from-[var(--warm-accent)]/25 via-[var(--accent-blue)]/15 to-[var(--celestial-blue)]/20 border-2 border-[var(--warm-accent)]/40 rounded-3xl flex items-center justify-center backdrop-blur-lg shadow-xl relative group">
                   <div className="absolute inset-0 bg-gradient-to-br from-[var(--warm-accent)]/10 to-[var(--accent-blue)]/10 rounded-3xl blur opacity-50 group-hover:opacity-70 transition-opacity duration-300"></div>
-                  <Moon className="h-7 w-7 sm:h-9 sm:w-9 text-[var(--sono-golden)] relative z-10" style={{ filter: 'drop-shadow(0 0 10px rgba(242, 211, 135, 0.6))' }} />
+                  <Moon className="h-7 w-7 sm:h-9 sm:w-9 text-[var(--warm-accent)] relative z-10" style={{ filter: 'drop-shadow(0 0 10px rgba(218, 165, 32, 0.6))' }} />
                 </div>
                 
                 {/* Enhanced title with better gradient consistency */}
                 <h3 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 sm:mb-6 tracking-tight leading-tight px-2 relative z-10">
-                  <span className="bg-gradient-to-r from-[var(--sono-golden)] via-[var(--sono-sky-blue)] to-[var(--sono-lavender)] bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-[var(--warm-accent)] via-[var(--accent-blue)] to-[var(--celestial-blue)] bg-clip-text text-transparent">
                     Sono Zen
                   </span>
                   <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-[var(--text-primary)] mt-2" style={{ textShadow: '0 0 12px rgba(255,255,255,0.25)' }}>
@@ -453,11 +450,8 @@ export function PricingSection() {
 
 
 
-                {/* Pricing - 3D Enhanced Card */}
-                <div className="bg-gradient-to-br from-[var(--accent-blue)]/15 via-[var(--warm-accent)]/8 to-[var(--accent-blue)]/10 rounded-3xl p-6 sm:p-8 md:p-10 mb-8 border-2 border-[var(--warm-accent)]/50 backdrop-blur-lg relative overflow-hidden shadow-2xl card-3d"
-                     style={{
-                       boxShadow: '0 20px 40px -8px rgba(0, 0, 0, 0.4), 0 8px 16px -4px rgba(218, 165, 32, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
-                     }}>
+                {/* Pricing - Enhanced with better visual hierarchy */}
+                <div className="bg-gradient-to-br from-[var(--accent-blue)]/15 via-[var(--warm-accent)]/8 to-[var(--accent-blue)]/10 rounded-3xl p-6 sm:p-8 md:p-10 mb-8 border-2 border-[var(--warm-accent)]/50 backdrop-blur-lg relative overflow-hidden shadow-2xl">
                   {/* Decorative background elements */}
                   <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[var(--warm-accent)]/20 to-transparent rounded-full blur-3xl"></div>
                   <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-br from-[var(--accent-blue)]/20 to-transparent rounded-full blur-2xl"></div>
@@ -471,13 +465,10 @@ export function PricingSection() {
                       
                       <p className="text-lg sm:text-xl text-[var(--accent-blue)] font-semibold mb-3" style={{ textShadow: '0 0 8px rgba(255,255,255,0.2)' }}>Por apenas:</p>
                       
-                      {/* Main price with 3D enhanced visual impact */}
-                      <div className="relative perspective-1000">
+                      {/* Main price with enhanced visual impact */}
+                      <div className="relative">
                         <div className="absolute inset-0 bg-gradient-to-r from-[var(--warm-accent)]/30 to-[var(--accent-blue)]/30 rounded-2xl blur-xl"></div>
-                        <div className="relative bg-gradient-to-r from-[var(--warm-accent)]/20 to-[var(--accent-blue)]/20 rounded-2xl p-6 border-2 border-[var(--warm-accent)]/40 card-3d"
-                             style={{
-                               boxShadow: '0 15px 30px -8px rgba(0, 0, 0, 0.3), 0 5px 15px -5px rgba(218, 165, 32, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15)',
-                             }}>
+                        <div className="relative bg-gradient-to-r from-[var(--warm-accent)]/20 to-[var(--accent-blue)]/20 rounded-2xl p-6 border-2 border-[var(--warm-accent)]/40">
                           <p className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black bg-gradient-to-r from-[var(--warm-accent)] via-white to-[var(--accent-blue)] bg-clip-text text-transparent tracking-tight mb-4" style={{ textShadow: '0 0 20px rgba(255,255,255,0.6)' }}>
                             R$ 27,90
                           </p>
@@ -518,17 +509,29 @@ export function PricingSection() {
 
                 </div>
                 
-                {/* 3D Premium Purchase Button */}
+                {/* Elegant Premium Purchase Button */}
                 <div className="space-y-6">
-                  {/* Professional Purchase Button */}
+                  {/* Clean Premium Purchase Button */}
                   <div className="relative group">
+                    {/* Subtle glow effect */}
+                    <div className="absolute -inset-0.5 rounded-2xl blur opacity-20 group-hover:opacity-30 transition-all duration-500" 
+                         style={{ background: 'linear-gradient(135deg, hsl(220, 25%, 65%) 0%, hsl(220, 30%, 70%) 100%)' }}></div>
+                    
                     <Button 
                       onClick={handlePurchaseClick}
-                      className="relative w-full py-6 sm:py-7 px-8 sm:px-10 rounded-xl text-lg sm:text-xl font-semibold border border-[var(--sono-golden)]/30 backdrop-blur-sm text-white hover:border-[var(--sono-golden)]/50 transition-all duration-300 hover:scale-[1.02]"
+                      className="relative w-full py-6 sm:py-7 px-8 sm:px-10 rounded-2xl text-lg sm:text-xl font-semibold transition-all duration-300 transform hover:scale-[1.01] shadow-lg hover:shadow-xl border border-white/10 backdrop-blur-sm text-white"
                       style={{ 
-                        background: 'linear-gradient(135deg, var(--sono-golden) 0%, var(--sono-sky-blue) 100%)',
-                        boxShadow: '0 4px 20px rgba(0,0,0,0.10)',
-                        textShadow: '0 1px 2px rgba(0,0,0,0.2)'
+                        background: 'linear-gradient(135deg, hsl(220, 25%, 55%) 0%, hsl(220, 30%, 60%) 50%, hsl(220, 25%, 55%) 100%)',
+                        boxShadow: '0 4px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.1)',
+                        textShadow: '0 1px 2px rgba(0,0,0,0.3)'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.background = 'linear-gradient(135deg, hsl(220, 25%, 60%) 0%, hsl(220, 30%, 65%) 50%, hsl(220, 25%, 60%) 100%)';
+                        e.currentTarget.style.boxShadow = '0 6px 25px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.15)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.background = 'linear-gradient(135deg, hsl(220, 25%, 55%) 0%, hsl(220, 30%, 60%) 50%, hsl(220, 25%, 55%) 100%)';
+                        e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.1)';
                       }}
                     >
                       <div className="flex items-center justify-center gap-3">
@@ -541,45 +544,42 @@ export function PricingSection() {
                     </Button>
                   </div>
                   
-                  {/* Professional Security & Trust Badges */}
-                  <div className="bg-[var(--sono-deep-blue)]/20 rounded-xl p-6 sm:p-8 border border-[var(--sono-golden)]/20 backdrop-blur-lg relative"
-                       style={{
-                         boxShadow: '0 8px 25px rgba(0, 0, 0, 0.15)',
-                       }}>
+                  {/* Enhanced Security & Trust Badges */}
+                  <div className="bg-gradient-to-br from-[var(--accent-blue)]/10 via-[var(--warm-accent)]/5 to-[var(--accent-blue)]/8 rounded-3xl p-6 sm:p-8 border-2 border-[var(--warm-accent)]/40 backdrop-blur-lg relative overflow-hidden shadow-xl">
                     {/* Decorative elements */}
                     <div className="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-[var(--warm-accent)]/15 to-transparent rounded-full blur-2xl"></div>
                     <div className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-br from-[var(--accent-blue)]/15 to-transparent rounded-full blur-xl"></div>
                     
-                    <div className="text-center mb-6">
-                      <h4 className="text-lg sm:text-xl font-semibold text-[var(--text-primary)] mb-2">
-                        Compra{" "}
-                        <span className="bg-gradient-to-r from-[var(--sono-golden)] to-[var(--sono-sky-blue)] bg-clip-text text-transparent">
-                          100% Segura
-                        </span>
+                    <div className="text-center mb-6 relative z-10">
+                      <h4 className="text-lg sm:text-xl font-bold text-[var(--text-primary)] mb-2">
+                        🛡️ Sua Compra está{" "}
+                        <span className="bg-gradient-to-r from-[var(--warm-accent)] via-[var(--accent-blue)] to-[var(--celestial-blue)] bg-clip-text text-transparent">
+                          Protegida
+                        </span>.
                       </h4>
                       <p className="text-sm text-[var(--text-secondary)]">
-                        Milhares de clientes confiam em nossa plataforma
+                        Milhares de clientes satisfeitos confiam em nossa plataforma
                       </p>
                     </div>
                     
-                    <div className="grid sm:grid-cols-3 gap-4 sm:gap-6">
-                      <div className="flex flex-col items-center text-center p-4 bg-[var(--sono-deep-blue)]/20 border border-[var(--sono-golden)]/20 rounded-lg transition-all duration-300">
-                        <div className="w-10 h-10 bg-[var(--sono-golden)]/20 rounded-full flex items-center justify-center mb-3">
-                          <Shield className="h-5 w-5 text-[var(--sono-golden)]" />
+                    <div className="grid sm:grid-cols-3 gap-4 sm:gap-6 relative z-10">
+                      <div className="flex flex-col items-center text-center p-5 bg-gradient-to-br from-green-500/15 to-emerald-500/10 border-2 border-green-400/30 rounded-2xl backdrop-blur-sm hover:scale-105 transition-all duration-300 group">
+                        <div className="w-12 h-12 bg-gradient-to-br from-green-400/20 to-emerald-400/20 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
+                          <Shield className="h-6 w-6 text-green-300" />
                         </div>
-                        <h5 className="font-semibold text-[var(--text-primary)] text-sm mb-1">Garantia 7 Dias</h5>
-                        <p className="text-[var(--text-secondary)] text-xs">Dinheiro de volta garantido</p>
+                        <h5 className="font-bold text-green-200 text-sm sm:text-base mb-1">Garantia de 7 Dias</h5>
+                        <p className="text-green-100/80 text-xs sm:text-sm">Não funcionou? Devolvemos seu dinheiro</p>
                       </div>
                       
-                      <div className="flex flex-col items-center text-center p-4 bg-[var(--sono-deep-blue)]/20 border border-[var(--sono-sky-blue)]/20 rounded-lg transition-all duration-300">
-                        <div className="w-10 h-10 bg-[var(--sono-sky-blue)]/20 rounded-full flex items-center justify-center mb-3">
-                          <Lock className="h-5 w-5 text-[var(--sono-sky-blue)]" />
+                      <div className="flex flex-col items-center text-center p-5 bg-gradient-to-br from-blue-500/15 to-cyan-500/10 border-2 border-blue-400/30 rounded-2xl backdrop-blur-sm hover:scale-105 transition-all duration-300 group">
+                        <div className="w-12 h-12 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
+                          <Lock className="h-6 w-6 text-blue-300" />
                         </div>
-                        <h5 className="font-semibold text-[var(--text-primary)] text-sm mb-1">Pagamento Seguro</h5>
-                        <p className="text-[var(--text-secondary)] text-xs">SSL 256-bits</p>
+                        <h5 className="font-bold text-blue-200 text-sm sm:text-base mb-1">Pagamento Seguro</h5>
+                        <p className="text-blue-100/80 text-xs sm:text-sm">Criptografia SSL 256-bits</p>
                       </div>
                       
-                      <div className="flex flex-col items-center text-center p-5 bg-gradient-to-br from-[var(--warm-accent)]/15 to-orange-500/10 border-2 border-[var(--warm-accent)]/30 rounded-2xl backdrop-blur-sm hover-3d-tilt transition-all duration-300 group">
+                      <div className="flex flex-col items-center text-center p-5 bg-gradient-to-br from-[var(--warm-accent)]/15 to-orange-500/10 border-2 border-[var(--warm-accent)]/30 rounded-2xl backdrop-blur-sm hover:scale-105 transition-all duration-300 group">
                         <div className="w-12 h-12 bg-gradient-to-br from-[var(--warm-accent)]/20 to-orange-400/20 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
                           <Download className="h-6 w-6 text-[var(--warm-accent)]" />
                         </div>

@@ -1,5 +1,4 @@
 import { Moon, Star, Cloud } from "lucide-react";
-import { SonoZenLogo } from "@/components/ui/sono-zen-logo";
 
 const footerLinks = {
   useful: [
@@ -44,7 +43,40 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="grid md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
-            <SonoZenLogo size="md" className="mb-6" />
+            <div className="font-heading font-bold text-2xl mb-6 flex items-center text-white group cursor-pointer">
+              <div className="relative w-12 h-12 rounded-3xl bg-gradient-to-br from-slate-800/40 to-slate-900/60 border-2 border-slate-600/40 flex items-center justify-center mr-4 backdrop-blur-md transition-all duration-500 group-hover:border-blue-400/60 group-hover:bg-gradient-to-br group-hover:from-slate-700/50 group-hover:to-slate-800/70">
+                {/* Estrelas flutuantes ao redor do logo */}
+                <Star className="absolute -top-1.5 -right-1.5 w-3 h-3 text-white/80 animate-twinkle fill-current" 
+                     style={{animationDelay: '0s'}} />
+                <Star className="absolute -bottom-1.5 -left-1.5 w-2.5 h-2.5 text-white/70 animate-twinkle fill-current" 
+                     style={{animationDelay: '1.5s'}} />
+                <Star className="absolute top-1 -left-2.5 w-2 h-2 text-white/60 animate-twinkle fill-current" 
+                     style={{animationDelay: '3s'}} />
+                
+                {/* Nuvenzinhas flutuantes */}
+                <Cloud className="absolute -top-2.5 left-1.5 w-4 h-4 text-white/50 animate-float-slow" 
+                     style={{animationDelay: '2s'}} />
+                <Cloud className="absolute -bottom-2.5 right-1.5 w-3.5 h-3.5 text-white/40 animate-float-slow" 
+                     style={{animationDelay: '4s'}} />
+                
+                {/* Container da lua com brilho focado */}
+                <div className="relative">
+                  {/* Brilho suave atrás da lua */}
+                  <div className="absolute inset-0 bg-blue-300/20 rounded-full blur-md animate-pulse-gentle"></div>
+                  
+                  {/* Brilho intenso no hover apenas na lua */}
+                  <div className="absolute inset-0 bg-gradient-radial from-white/30 to-transparent rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-all duration-500 scale-150"></div>
+                  
+                  {/* Anel de luz no hover */}
+                  <div className="absolute inset-0 bg-blue-200/40 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 scale-125 blur-sm"></div>
+                  
+                  <Moon className="h-7 w-7 text-white relative z-10 animate-breathe group-hover:text-blue-50 group-hover:drop-shadow-lg transition-all duration-500" />
+                </div>
+              </div>
+              <span className="bg-gradient-to-r from-white via-blue-50 to-slate-100 bg-clip-text text-transparent group-hover:from-blue-100 group-hover:via-white group-hover:to-blue-50 transition-all duration-500 drop-shadow-sm">
+                Sono Zen
+              </span>
+            </div>
             <p className="text-base text-slate-300 leading-relaxed max-w-md mb-6">
               Transformando vidas através do poder do sono reparador. Métodos orientais comprovados para uma noite de sono perfeita.
             </p>

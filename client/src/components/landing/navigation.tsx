@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Moon, Menu, X, Star, Cloud } from "lucide-react";
-import { SonoZenLogo } from "@/components/ui/sono-zen-logo";
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -38,23 +37,56 @@ export function Navigation() {
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? "bg-[var(--sono-deep-blue)]/95 backdrop-blur-md shadow-xl shadow-black/20 border-b border-[var(--sono-sky-blue)]/20" : "bg-[var(--sono-deep-blue)]/90 backdrop-blur-sm"
+      isScrolled ? "bg-[var(--dark-bg)]/95 backdrop-blur-md shadow-xl shadow-black/10 border-b border-[var(--border-subtle)]" : "bg-[var(--dark-bg)]/80 backdrop-blur-sm"
     }`}>
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <SonoZenLogo size="md" className="cursor-pointer transition-all duration-300 hover:scale-105" />
+        <div className="font-heading font-bold text-2xl text-[var(--text-primary)] flex items-center group cursor-pointer">
+          <div className="relative w-12 h-12 rounded-3xl bg-gradient-to-br from-slate-800/40 to-slate-900/60 border-2 border-slate-600/40 flex items-center justify-center mr-4 backdrop-blur-md transition-all duration-500 group-hover:border-blue-400/60 group-hover:bg-gradient-to-br group-hover:from-slate-700/50 group-hover:to-slate-800/70">
+            {/* Estrelas flutuantes ao redor do logo */}
+            <Star className="absolute -top-1.5 -right-1.5 w-3 h-3 text-white/80 animate-twinkle fill-current" 
+                 style={{animationDelay: '0s'}} />
+            <Star className="absolute -bottom-1.5 -left-1.5 w-2.5 h-2.5 text-white/70 animate-twinkle fill-current" 
+                 style={{animationDelay: '1.5s'}} />
+            <Star className="absolute top-1 -left-2.5 w-2 h-2 text-white/60 animate-twinkle fill-current" 
+                 style={{animationDelay: '3s'}} />
+            
+            {/* Nuvenzinhas flutuantes */}
+            <Cloud className="absolute -top-2.5 left-1.5 w-4 h-4 text-white/50 animate-float-slow" 
+                 style={{animationDelay: '2s'}} />
+            <Cloud className="absolute -bottom-2.5 right-1.5 w-3.5 h-3.5 text-white/40 animate-float-slow" 
+                 style={{animationDelay: '4s'}} />
+            
+            {/* Container da lua com brilho focado */}
+            <div className="relative">
+              {/* Brilho suave atrás da lua */}
+              <div className="absolute inset-0 bg-blue-300/20 rounded-full blur-md animate-pulse-gentle"></div>
+              
+              {/* Brilho intenso no hover apenas na lua */}
+              <div className="absolute inset-0 bg-gradient-radial from-white/30 to-transparent rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-all duration-500 scale-150"></div>
+              
+              {/* Anel de luz no hover */}
+              <div className="absolute inset-0 bg-blue-200/40 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 scale-125 blur-sm"></div>
+              
+              <Moon className="h-7 w-7 text-white relative z-10 animate-breathe group-hover:text-blue-50 group-hover:drop-shadow-lg transition-all duration-500" />
+            </div>
+          </div>
+          <span className="bg-gradient-to-r from-white via-blue-50 to-slate-100 bg-clip-text text-transparent group-hover:from-blue-100 group-hover:via-white group-hover:to-blue-50 transition-all duration-500 drop-shadow-sm">
+            Sono Zen
+          </span>
+        </div>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8">
-          <button onClick={() => scrollToSection("vsl")} className="text-white/90 hover:text-[var(--sono-golden)] transition-colors font-semibold text-base animate-text-focus">
+          <button onClick={() => scrollToSection("vsl")} className="text-white/90 hover:text-[var(--warm-accent)] transition-colors font-semibold text-base animate-text-focus">
             Apresentação
           </button>
-          <button onClick={() => scrollToSection("planejamento-sono")} className="text-white/90 hover:text-[var(--sono-golden)] transition-colors font-semibold text-base animate-text-focus">
+          <button onClick={() => scrollToSection("planejamento-sono")} className="text-white/90 hover:text-[var(--warm-accent)] transition-colors font-semibold text-base animate-text-focus">
             Planejamento
           </button>
-          <button onClick={() => scrollToSection("preview-video")} className="text-white/90 hover:text-[var(--sono-golden)] transition-colors font-semibold text-base animate-text-focus">
+          <button onClick={() => scrollToSection("preview-video")} className="text-white/90 hover:text-[var(--warm-accent)] transition-colors font-semibold text-base animate-text-focus">
             Preview
           </button>
-          <button onClick={() => scrollToSection("problema")} className="text-white/90 hover:text-[var(--sono-golden)] transition-colors font-semibold text-base animate-text-focus">
+          <button onClick={() => scrollToSection("problema")} className="text-white/90 hover:text-[var(--warm-accent)] transition-colors font-semibold text-base animate-text-focus">
             Benefícios
           </button>
           <button onClick={() => scrollToSection("deborah-genaro")} className="text-white/90 hover:text-[var(--warm-accent)] transition-colors font-semibold text-base animate-text-focus">
@@ -71,10 +103,10 @@ export function Navigation() {
         {/* Desktop CTA */}
         <Button 
           onClick={handlePurchaseClick}
-          className="hidden md:flex group relative overflow-hidden bg-[var(--sono-golden)]/10 backdrop-blur-sm border border-[var(--sono-golden)]/40 hover:border-[var(--sono-golden)]/60 text-[var(--sono-golden)] hover:text-[var(--sono-deep-blue)] px-6 py-3 rounded-xl font-semibold shadow-md hover:shadow-[var(--sono-golden)]/25 transition-all duration-300 transform hover:scale-105"
+          className="hidden md:flex group relative overflow-hidden bg-[var(--accent-blue)]/20 backdrop-blur-sm border border-[var(--accent-blue)]/30 hover:border-[var(--accent-blue)]/50 text-[var(--accent-blue)] hover:text-white px-6 py-3 rounded-xl font-semibold shadow-md hover:shadow-[var(--accent-blue)]/25 transition-all duration-300 transform hover:scale-105 animate-magnetic-hover"
         >
-          <div className="absolute inset-0 bg-[var(--sono-golden)] opacity-0 group-hover:opacity-90 transition-opacity duration-300"></div>
-          <span className="relative font-bold">Transformar Sono</span>
+          <div className="absolute inset-0 bg-[var(--accent-blue)] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <span className="relative animate-shimmer">Transformar Sono</span>
         </Button>
 
         {/* Mobile Menu Button */}
