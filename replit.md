@@ -51,3 +51,13 @@ Sono Zen is a full-stack web application employing a modern monorepo structure.
 - **UTMify**: UTM parameter tracking.
 - **Facebook Pixel / Conversions API**: Ad tracking and conversion measurement.
 - **ConvertAI**: Video Sales Letter (VSL) hosting and integration.
+
+## Recent Changes
+
+### 12/08/2025 - Programa Completo de 4 Fases Implementado
+- Substituídas todas as imagens do programa pelas novas versões das 4 fases fornecidas pelo usuário
+- Criado arquivo `shared/program-data.ts` com conteúdo detalhado de todas as 30 atividades
+- Implementada nova página `/programa` com interface expansível para visualizar programa completo
+- Adicionado link "Programa Completo" na navegação (desktop e mobile)
+- Atualizadas referências de imagens em `program-content-section.tsx`
+- Status: Projeto funcionando, arquivos prontos para push ao GitHub
