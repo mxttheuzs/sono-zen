@@ -6,6 +6,7 @@ import { VSLSection } from "@/components/landing/vsl-section";
 import { SleepPlanningSection } from "@/components/landing/sleep-planning-section";
 import { VideoPreviewSection } from "@/components/landing/video-preview-section";
 import { EbookContentSection } from "@/components/landing/ebook-content-section";
+import { ProgramContentSection } from "@/components/landing/program-content-section";
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
 import { LazySection } from "@/components/ui/lazy-section";
 
@@ -50,6 +51,7 @@ export default function Home() {
         <VSLSection />
         <SleepPlanningSection />
         <VideoPreviewSection />
+        <ProgramContentSection />
         <EbookContentSection />
         <TestimonialsSection />
 
