@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { Navigation } from "@/components/landing/navigation";
 import { HeroSection } from "@/components/landing/hero-section";
 import { ProblemSection } from "@/components/landing/problem-section";
-import { VSLSection } from "@/components/landing/vsl-section";
 import { SleepPlanningSection } from "@/components/landing/sleep-planning-section";
 import { EbookContentSection } from "@/components/landing/ebook-content-section";
 import { ProgramContentSection } from "@/components/landing/program-content-section";
@@ -47,7 +46,6 @@ export default function Home() {
         <Navigation />
         <HeroSection />
         <ProblemSection />
-        <VSLSection />
         <SleepPlanningSection />
         <ProgramContentSection />
         <EbookContentSection />
