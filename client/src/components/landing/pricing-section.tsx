@@ -594,173 +594,51 @@ export function PricingSection() {
                   </div>
                 </div>
 
-                {/* Tabela de Comparação - Professional Design */}
-                <div className="bg-gradient-to-br from-slate-900/95 via-slate-800/90 to-slate-900/95 rounded-3xl border border-slate-700/50 backdrop-blur-xl mb-8 overflow-hidden shadow-2xl">
-                  {/* Header Section */}
-                  <div className="bg-gradient-to-r from-[var(--accent-blue)]/20 via-[var(--celestial-blue)]/15 to-[var(--accent-blue)]/20 p-6 sm:p-8 border-b border-slate-700/30">
-                    <div className="text-center">
-                      <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[var(--accent-blue)]/30 to-[var(--celestial-blue)]/30 rounded-2xl mb-4 backdrop-blur-sm border border-[var(--accent-blue)]/20">
-                        <svg className="w-8 h-8 text-[var(--accent-blue)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                        </svg>
-                      </div>
-                      <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">
-                        Comparação Detalhada
-                      </h3>
-                      <p className="text-slate-300 text-lg">
-                        Entenda as diferenças entre os programas
-                      </p>
-                    </div>
+                {/* Tabela de Comparação */}
+                <div className="bg-gradient-to-br from-[var(--accent-blue)]/10 via-[var(--warm-accent)]/5 to-[var(--accent-blue)]/8 rounded-3xl p-6 sm:p-8 border-2 border-[var(--accent-blue)]/30 backdrop-blur-lg mb-8">
+                  <div className="text-center mb-6">
+                    <h3 className="text-xl sm:text-2xl font-bold text-[var(--text-primary)] mb-2 flex items-center justify-center gap-2">
+                      🔍 Diferença entre o Sono Zen 7 Dias e o Sono Zen 30 Dias
+                    </h3>
                   </div>
 
-                  {/* Comparison Grid */}
-                  <div className="p-6 sm:p-8">
-                    {/* Header Row */}
-                    <div className="grid grid-cols-3 gap-4 mb-6">
-                      <div className="text-center">
-                        <div className="text-lg font-semibold text-slate-400 mb-2">Aspectos</div>
-                      </div>
-                      <div className="bg-gradient-to-br from-[var(--accent-blue)]/10 to-[var(--celestial-blue)]/5 rounded-2xl p-4 border border-[var(--accent-blue)]/20 backdrop-blur-sm">
-                        <div className="text-center">
-                          <div className="w-10 h-10 bg-gradient-to-br from-[var(--accent-blue)]/30 to-[var(--celestial-blue)]/30 rounded-full flex items-center justify-center mx-auto mb-2">
-                            <span className="text-[var(--accent-blue)] font-bold text-sm">7D</span>
-                          </div>
-                          <h4 className="text-lg font-bold text-white">Sono Zen 7 Dias</h4>
-                          <p className="text-xs text-slate-400 mt-1">Resultados Rápidos</p>
-                        </div>
-                      </div>
-                      <div className="bg-gradient-to-br from-emerald-500/10 to-green-500/5 rounded-2xl p-4 border border-emerald-500/20 backdrop-blur-sm">
-                        <div className="text-center">
-                          <div className="w-10 h-10 bg-gradient-to-br from-emerald-500/30 to-green-500/30 rounded-full flex items-center justify-center mx-auto mb-2">
-                            <span className="text-emerald-400 font-bold text-sm">30D</span>
-                          </div>
-                          <h4 className="text-lg font-bold text-white">Sono Zen 30 Dias</h4>
-                          <p className="text-xs text-slate-400 mt-1">Transformação Completa</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Comparison Rows */}
-                    <div className="space-y-4">
-                      {/* Objetivo */}
-                      <div className="grid grid-cols-3 gap-4 p-4 rounded-2xl bg-slate-800/30 border border-slate-700/20 hover:bg-slate-800/50 transition-all duration-300">
-                        <div className="flex items-center">
-                          <div className="w-8 h-8 bg-gradient-to-br from-[var(--warm-accent)]/30 to-orange-500/30 rounded-lg flex items-center justify-center mr-3">
-                            <svg className="w-4 h-4 text-[var(--warm-accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                          </div>
-                          <span className="font-semibold text-white">Objetivo</span>
-                        </div>
-                        <div className="text-sm text-slate-300 leading-relaxed">
-                          Primeiros resultados rápidos, aliviar a mente e melhorar a qualidade do sono em 1 semana.
-                        </div>
-                        <div className="text-sm text-slate-300 leading-relaxed">
-                          Transformação completa dos hábitos, criando um ritual sólido e duradouro para dormir profundamente todas as noites.
-                        </div>
-                      </div>
-
-                      {/* Conteúdo */}
-                      <div className="grid grid-cols-3 gap-4 p-4 rounded-2xl bg-slate-800/30 border border-slate-700/20 hover:bg-slate-800/50 transition-all duration-300">
-                        <div className="flex items-center">
-                          <div className="w-8 h-8 bg-gradient-to-br from-[var(--accent-blue)]/30 to-[var(--celestial-blue)]/30 rounded-lg flex items-center justify-center mr-3">
-                            <svg className="w-4 h-4 text-[var(--accent-blue)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                            </svg>
-                          </div>
-                          <span className="font-semibold text-white">Conteúdo</span>
-                        </div>
-                        <div className="text-sm text-slate-300 leading-relaxed">
-                          7 áudios guiados + protocolos básicos para relaxar antes de dormir.
-                        </div>
-                        <div className="text-sm text-slate-300 leading-relaxed">
-                          30 dias estruturados em 4 fases (Rotina, Sinais Físicos, Respiração e Mindfulness, Consolidação e Ambiente Ideal).
-                        </div>
-                      </div>
-
-                      {/* Método */}
-                      <div className="grid grid-cols-3 gap-4 p-4 rounded-2xl bg-slate-800/30 border border-slate-700/20 hover:bg-slate-800/50 transition-all duration-300">
-                        <div className="flex items-center">
-                          <div className="w-8 h-8 bg-gradient-to-br from-purple-500/30 to-violet-500/30 rounded-lg flex items-center justify-center mr-3">
-                            <svg className="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                            </svg>
-                          </div>
-                          <span className="font-semibold text-white">Método</span>
-                        </div>
-                        <div className="text-sm text-slate-300 leading-relaxed">
-                          Técnicas essenciais para reduzir ansiedade e preparar o corpo para dormir.
-                        </div>
-                        <div className="text-sm text-slate-300 leading-relaxed">
-                          Combinação avançada de técnicas orientais, respiração, aromaterapia, alongamentos, rituais sensoriais e ajustes ambientais.
-                        </div>
-                      </div>
-
-                      {/* Resultados Esperados */}
-                      <div className="grid grid-cols-3 gap-4 p-4 rounded-2xl bg-slate-800/30 border border-slate-700/20 hover:bg-slate-800/50 transition-all duration-300">
-                        <div className="flex items-center">
-                          <div className="w-8 h-8 bg-gradient-to-br from-emerald-500/30 to-green-500/30 rounded-lg flex items-center justify-center mr-3">
-                            <svg className="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                            </svg>
-                          </div>
-                          <span className="font-semibold text-white">Resultados Esperados</span>
-                        </div>
-                        <div className="text-sm text-slate-300 leading-relaxed">
-                          Dormir melhor já nos primeiros dias.
-                        </div>
-                        <div className="text-sm text-slate-300 leading-relaxed">
-                          Sono profundo e contínuo, com mais energia e disposição durante o dia.
-                        </div>
-                      </div>
-
-                      {/* Indicação */}
-                      <div className="grid grid-cols-3 gap-4 p-4 rounded-2xl bg-slate-800/30 border border-slate-700/20 hover:bg-slate-800/50 transition-all duration-300">
-                        <div className="flex items-center">
-                          <div className="w-8 h-8 bg-gradient-to-br from-pink-500/30 to-rose-500/30 rounded-lg flex items-center justify-center mr-3">
-                            <svg className="w-4 h-4 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                            </svg>
-                          </div>
-                          <span className="font-semibold text-white">Indicação</span>
-                        </div>
-                        <div className="text-sm text-slate-300 leading-relaxed">
-                          Quem quer experimentar o método de forma rápida e sentir os primeiros efeitos.
-                        </div>
-                        <div className="text-sm text-slate-300 leading-relaxed">
-                          Quem quer mudar o sono a longo prazo e manter resultados duradouros.
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Bottom CTA Section */}
-                    <div className="mt-8 pt-6 border-t border-slate-700/30">
-                      <div className="text-center">
-                        <p className="text-slate-400 text-sm mb-4">
-                          Escolha o programa que melhor se adapta aos seus objetivos
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-                          <div className="flex items-center gap-2 text-xs text-slate-500">
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            Garantia de 7 dias
-                          </div>
-                          <div className="flex items-center gap-2 text-xs text-slate-500">
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                            </svg>
-                            Pagamento seguro
-                          </div>
-                          <div className="flex items-center gap-2 text-xs text-slate-500">
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
-                            </svg>
-                            Acesso instantâneo
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                  <div className="overflow-x-auto">
+                    <table className="w-full">
+                      <thead>
+                        <tr className="border-b border-[var(--accent-blue)]/20">
+                          <th className="text-left py-4 px-2 text-[var(--text-primary)] font-semibold"></th>
+                          <th className="text-center py-4 px-4 text-[var(--text-primary)] font-bold">Sono Zen 7 Dias</th>
+                          <th className="text-center py-4 px-4 text-[var(--text-primary)] font-bold">Sono Zen 30 Dias</th>
+                        </tr>
+                      </thead>
+                      <tbody className="space-y-2">
+                        <tr className="border-b border-[var(--accent-blue)]/10">
+                          <td className="py-4 px-2 font-semibold text-[var(--text-primary)]">Objetivo</td>
+                          <td className="py-4 px-4 text-sm text-[var(--text-secondary)]">Primeiros resultados rápidos, aliviar a mente e melhorar a qualidade do sono em 1 semana.</td>
+                          <td className="py-4 px-4 text-sm text-[var(--text-secondary)]">Transformação completa dos hábitos, criando um ritual sólido e duradouro para dormir profundamente todas as noites.</td>
+                        </tr>
+                        <tr className="border-b border-[var(--accent-blue)]/10">
+                          <td className="py-4 px-2 font-semibold text-[var(--text-primary)]">Conteúdo</td>
+                          <td className="py-4 px-4 text-sm text-[var(--text-secondary)]">7 áudios guiados + protocolos básicos para relaxar antes de dormir.</td>
+                          <td className="py-4 px-4 text-sm text-[var(--text-secondary)]">30 dias estruturados em 4 fases (Rotina, Sinais Físicos, Respiração e Mindfulness, Consolidação e Ambiente Ideal).</td>
+                        </tr>
+                        <tr className="border-b border-[var(--accent-blue)]/10">
+                          <td className="py-4 px-2 font-semibold text-[var(--text-primary)]">Método</td>
+                          <td className="py-4 px-4 text-sm text-[var(--text-secondary)]">Técnicas essenciais para reduzir ansiedade e preparar o corpo para dormir.</td>
+                          <td className="py-4 px-4 text-sm text-[var(--text-secondary)]">Combinação avançada de técnicas orientais, respiração, aromaterapia, alongamentos, rituais sensoriais e ajustes ambientais.</td>
+                        </tr>
+                        <tr className="border-b border-[var(--accent-blue)]/10">
+                          <td className="py-4 px-2 font-semibold text-[var(--text-primary)]">Resultados Esperados</td>
+                          <td className="py-4 px-4 text-sm text-[var(--text-secondary)]">Dormir melhor já nos primeiros dias.</td>
+                          <td className="py-4 px-4 text-sm text-[var(--text-secondary)]">Sono profundo e contínuo, com mais energia e disposição durante o dia.</td>
+                        </tr>
+                        <tr>
+                          <td className="py-4 px-2 font-semibold text-[var(--text-primary)]">Indicação</td>
+                          <td className="py-4 px-4 text-sm text-[var(--text-secondary)]">Quem quer experimentar o método de forma rápida e sentir os primeiros efeitos.</td>
+                          <td className="py-4 px-4 text-sm text-[var(--text-secondary)]">Quem quer mudar o sono a longo prazo e manter resultados duradouros.</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
 
