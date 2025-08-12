@@ -569,7 +569,7 @@ export function PricingSection() {
                       
                       <div>
                         <h4 className="font-semibold text-[var(--text-primary)] mb-2">📱 Conteúdo:</h4>
-                        <p className="text-sm text-[var(--text-secondary)]">Programa completo em 4 módulos: Rotina de Sono, Técnicas de Respiração, Mindfulness e Ambiente Ideal</p>
+                        <p className="text-sm text-[var(--text-secondary)]">TUDO DA INTRODUÇÃO + Programa completo em 4 módulos: Rotina de Sono, Técnicas de Respiração, Mindfulness e Ambiente Ideal</p>
                       </div>
                       
                       <div>
