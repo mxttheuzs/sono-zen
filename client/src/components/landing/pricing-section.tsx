@@ -506,22 +506,22 @@ export function PricingSection() {
                     <div className="space-y-4 mb-6 flex-grow">
                       <div>
                         <h4 className="font-semibold text-[var(--text-primary)] mb-2">🎯 Objetivo:</h4>
-                        <p className="text-sm text-[var(--text-secondary)]">Estabelecer fundamentos sólidos para melhoria imediata da qualidade do sono</p>
+                        <p className="text-sm text-[var(--text-secondary)]">Estabelecer fundamentos sólidos para melhoria imediata da qualidade do sono em apenas uma semana</p>
                       </div>
                       
                       <div>
                         <h4 className="font-semibold text-[var(--text-primary)] mb-2">📱 Conteúdo:</h4>
-                        <p className="text-sm text-[var(--text-secondary)]">7 sessões de áudio profissionalmente desenvolvidas + protocolos de relaxamento cientificamente validados</p>
+                        <p className="text-sm text-[var(--text-secondary)]">7 áudios guiados + protocolos práticos de relaxamento validados cientificamente</p>
                       </div>
                       
                       <div>
                         <h4 className="font-semibold text-[var(--text-primary)] mb-2">⚡ Resultados:</h4>
-                        <p className="text-sm text-[var(--text-secondary)]">Redução significativa da ansiedade noturna em 3-5 dias</p>
+                        <p className="text-sm text-[var(--text-secondary)]">Redução significativa da ansiedade noturna em 3-5 dias + noites mais tranquilas</p>
                       </div>
                       
                       <div>
                         <h4 className="font-semibold text-[var(--text-primary)] mb-2">👤 Recomendado para:</h4>
-                        <p className="text-sm text-[var(--text-secondary)]">Profissionais que buscam uma solução rápida e eficaz para problemas pontuais de sono</p>
+                        <p className="text-sm text-[var(--text-secondary)]">Pessoas que querem uma solução rápida e eficaz para problemas pontuais de sono</p>
                       </div>
                     </div>
 
@@ -564,22 +564,22 @@ export function PricingSection() {
                     <div className="space-y-4 mb-6 flex-grow">
                       <div>
                         <h4 className="font-semibold text-[var(--text-primary)] mb-2">🎯 Objetivo:</h4>
-                        <p className="text-sm text-[var(--text-secondary)]">Reestruturação completa dos padrões de sono com técnicas neurocientíficas avançadas</p>
+                        <p className="text-sm text-[var(--text-secondary)]">Transformação completa dos padrões de sono, criando hábitos duradouros para noites regeneradoras</p>
                       </div>
                       
                       <div>
                         <h4 className="font-semibold text-[var(--text-primary)] mb-2">📱 Conteúdo:</h4>
-                        <p className="text-sm text-[var(--text-secondary)]">Programa estruturado em 4 módulos progressivos: Fundamentos Neurológicos, Regulação Circadiana, Técnicas de Mindfulness Avançado e Consolidação Permanente</p>
+                        <p className="text-sm text-[var(--text-secondary)]">Programa completo em 4 módulos: Rotina de Sono, Técnicas de Respiração, Mindfulness e Ambiente Ideal</p>
                       </div>
                       
                       <div>
                         <h4 className="font-semibold text-[var(--text-primary)] mb-2">⚡ Resultados:</h4>
-                        <p className="text-sm text-[var(--text-secondary)]">Aumento de 85% na qualidade do sono REM + energia sustentada durante todo o dia</p>
+                        <p className="text-sm text-[var(--text-secondary)]">Sono profundo e reparador + aumento significativo da energia e disposição diária</p>
                       </div>
                       
                       <div>
                         <h4 className="font-semibold text-[var(--text-primary)] mb-2">👤 Recomendado para:</h4>
-                        <p className="text-sm text-[var(--text-secondary)]">Executivos e profissionais que exigem performance máxima e transformação definitiva do sono</p>
+                        <p className="text-sm text-[var(--text-secondary)]">Pessoas que buscam uma transformação duradoura e completa do seu sono</p>
                       </div>
                     </div>
 
@@ -589,7 +589,7 @@ export function PricingSection() {
                         setSelectedPlan('30days');
                         handlePurchaseClick();
                       }}
-                      className="w-full py-4 rounded-xl text-lg font-semibold bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-black transition-all duration-300 transform hover:scale-[1.02] shadow-lg border border-yellow-400/50"
+                      className="w-full py-4 rounded-xl text-lg font-semibold bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white transition-all duration-300 transform hover:scale-[1.02] shadow-lg border border-green-400/50"
                     >Garantir Transformação - R$ 17,00</Button>
                   </div>
                 </div>
@@ -642,8 +642,6 @@ export function PricingSection() {
                   </div>
                 </div>
 
-                
-                  
                 {/* Enhanced Security & Trust Badges */}
                 <div className="bg-gradient-to-br from-[var(--accent-blue)]/10 via-[var(--warm-accent)]/5 to-[var(--accent-blue)]/8 rounded-3xl p-6 sm:p-8 border-2 border-[var(--warm-accent)]/40 backdrop-blur-lg relative overflow-hidden shadow-xl">
                   {/* Decorative elements */}
