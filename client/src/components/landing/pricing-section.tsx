@@ -511,7 +511,7 @@ export function PricingSection() {
                       
                       <div>
                         <h4 className="font-semibold text-[var(--text-primary)] mb-2">📱 Conteúdo:</h4>
-                        <p className="text-sm text-[var(--text-secondary)]">7 áudios guiados + protocolos práticos de relaxamento validados cientificamente</p>
+                        <p className="text-sm text-[var(--text-secondary)]">1 vídeo + 3 áudios guiados e protocolos práticos de relaxamento validados cientificamente</p>
                       </div>
                       
                       <div>
