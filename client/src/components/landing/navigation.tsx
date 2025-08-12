@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Moon, Menu, X, Star, Cloud } from "lucide-react";
+import { Link } from "wouter";
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -86,6 +87,9 @@ export function Navigation() {
           <button onClick={() => scrollToSection("program-content")} className="text-white/90 hover:text-[var(--warm-accent)] transition-colors font-semibold text-base animate-text-focus">
             Preview
           </button>
+          <Link href="/programa" className="text-white/90 hover:text-[var(--warm-accent)] transition-colors font-semibold text-base animate-text-focus">
+            Programa Completo
+          </Link>
           <button onClick={() => scrollToSection("problema")} className="text-white/90 hover:text-[var(--warm-accent)] transition-colors font-semibold text-base animate-text-focus">
             Benefícios
           </button>
@@ -140,6 +144,12 @@ export function Navigation() {
             >
               Preview
             </button>
+            <Link 
+              href="/programa"
+              className="block w-full text-left text-[var(--text-secondary)] hover:text-[var(--accent-blue)] transition-colors font-medium py-4 px-3 rounded-lg hover:bg-[var(--card-hover)] text-base"
+            >
+              Programa Completo
+            </Link>
             <button 
               onClick={() => scrollToSection("problema")} 
               className="block w-full text-left text-[var(--text-secondary)] hover:text-[var(--accent-blue)] transition-colors font-medium py-4 px-3 rounded-lg hover:bg-[var(--card-hover)] text-base"

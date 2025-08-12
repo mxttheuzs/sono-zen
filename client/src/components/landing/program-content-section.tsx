@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, Moon } from "lucide-react";
-import phase1Image from "@assets/image_1754967645558.png";
-import phase2Image from "@assets/image_1754967650028.png";
-import phase3Image from "@assets/image_1754967654458.png";
-import phase4Image from "@assets/image_1754967659500.png";
+import phase1Image from "@assets/fase1-preparacao-quebra-habitos.png";
+import phase2Image from "@assets/fase2-ritualizacao-tecnicas-corporais.png";
+import phase3Image from "@assets/fase3-respiracao-mindfulness.png";
+import phase4Image from "@assets/fase4-consolidacao-ambiente-ideal.png";
 
 const programPhases = [
   {
