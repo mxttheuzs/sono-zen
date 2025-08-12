@@ -1,7 +1,7 @@
 # Configuração Push GitHub - Sono Zen
 
 ## Token fornecido pelo usuário
-`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`
+`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`
 
 ## Passos para configurar o push no Replit:
 
@@ -9,7 +9,7 @@
 1. Clique em "Secrets" no painel lateral do Replit
 2. Adicione uma nova secret:
    - Key: `GITHUB_TOKEN`
-   - Value: `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`
+   - Value: `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`
 3. Reinicie o ambiente
 4. Use a interface Git do Replit (Ctrl+Shift+G)
 
@@ -21,7 +21,7 @@
 
 ### Método 3: Terminal com autenticação manual
 ```bash
-git push https://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@github.com/mxttheuzs/sono-zen.git main
+git push https://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@github.com/mxttheuzs/sono-zen.git main
 ```
 
 ## Status atual:
