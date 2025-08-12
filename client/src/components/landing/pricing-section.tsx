@@ -531,7 +531,7 @@ export function PricingSection() {
                         setSelectedPlan('7days');
                         handlePurchaseClick();
                       }}
-                      className="w-full py-4 rounded-xl text-lg font-semibold bg-gradient-to-r from-[var(--accent-blue)] to-[var(--celestial-blue)] hover:from-[var(--accent-blue)]/90 hover:to-[var(--celestial-blue)]/90 text-white transition-all duration-300 transform hover:scale-[1.02] shadow-lg"
+                      className="w-full py-4 rounded-xl text-lg font-semibold bg-gradient-to-r from-[var(--accent-blue)] to-[var(--celestial-blue)] hover:from-[var(--accent-blue)]/90 hover:to-[var(--celestial-blue)]/90 text-white transition-all duration-300 transform hover:scale-[1.02] shadow-lg pt-[16px] pb-[16px] pl-[16px] pr-[16px] ml-[0px] mr-[0px] mt-[18px] mb-[18px]"
                     >
                       Começar Agora - R$ 10,00
                     </Button>
