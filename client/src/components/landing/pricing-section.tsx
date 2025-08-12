@@ -342,7 +342,7 @@ export function PricingSection() {
 
   const plans = {
     '7days': {
-      title: 'Sono Zen - 7 Dias',
+      title: 'Plano Básico',
       originalPrice: 27.90,
       price: 10.00,
       savings: 17.90,
@@ -353,7 +353,7 @@ export function PricingSection() {
       amount: 1000 // em centavos
     },
     '30days': {
-      title: 'Sono Zen - 30 Dias',
+      title: 'Plano Premium',
       originalPrice: 47.90,
       price: 17.00,
       savings: 30.90,
