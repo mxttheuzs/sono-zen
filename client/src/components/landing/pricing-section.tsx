@@ -484,7 +484,7 @@ export function PricingSection() {
                     {/* Badge */}
                     <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                       <div className="bg-gradient-to-r from-[var(--accent-blue)] to-[var(--celestial-blue)] text-white text-xs px-4 py-2 rounded-full font-bold shadow-lg">
-                        TESTE PROFISSIONAL
+                        INTRODUÇÃO RÁPIDA
                       </div>
                     </div>
                     
@@ -533,15 +533,15 @@ export function PricingSection() {
                       }}
                       className="w-full py-4 rounded-xl text-lg font-semibold bg-gradient-to-r from-[var(--accent-blue)] to-[var(--celestial-blue)] hover:from-[var(--accent-blue)]/90 hover:to-[var(--celestial-blue)]/90 text-white transition-all duration-300 transform hover:scale-[1.02] shadow-lg"
                     >
-                      Iniciar Teste Profissional - R$ 10,00
+                      Começar Agora - R$ 10,00
                     </Button>
                   </div>
 
                   {/* Plano 30 Dias */}
-                  <div className="relative bg-gradient-to-br from-[var(--accent-blue)]/15 via-[var(--warm-accent)]/8 to-[var(--accent-blue)]/10 rounded-3xl p-6 border-2 border-yellow-500/60 backdrop-blur-lg shadow-xl hover:shadow-2xl transition-all duration-300 group transform hover:scale-[1.02] ring-2 ring-yellow-400/30 flex flex-col h-full">
+                  <div className="relative bg-gradient-to-br from-[var(--accent-blue)]/15 via-[var(--warm-accent)]/8 to-[var(--accent-blue)]/10 rounded-3xl p-6 border-2 border-[var(--accent-blue)]/40 backdrop-blur-lg shadow-xl hover:shadow-2xl transition-all duration-300 group transform hover:scale-[1.02] flex flex-col h-full">
                     {/* Badge Popular com Fogo */}
-                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                      <div className="bg-gradient-to-r from-red-500 to-orange-500 text-white text-xs px-4 py-2 rounded-full font-bold shadow-lg animate-pulse flex items-center gap-1">
+                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                      <div className="bg-gradient-to-r from-red-500 to-orange-500 text-white text-sm px-6 py-3 rounded-full font-bold shadow-lg flex items-center gap-2">
                         🔥 POPULAR
                       </div>
                     </div>
