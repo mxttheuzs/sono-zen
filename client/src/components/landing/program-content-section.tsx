@@ -103,25 +103,7 @@ export function ProgramContentSection() {
                 </button>
               </div>
 
-              {/* Phase Info Overlay */}
-              <div className="absolute bottom-6 left-6 right-6 bg-black/80 backdrop-blur-xl rounded-2xl p-6 border border-white/20">
-                <div className="flex items-center gap-4 mb-3">
-                  <div className="w-8 h-8 bg-gradient-to-br from-[var(--accent-blue)]/40 to-[var(--celestial-blue)]/40 rounded-lg flex items-center justify-center text-sm font-bold text-[var(--accent-blue)] border border-[var(--accent-blue)]/30">
-                    {currentSlide + 1}
-                  </div>
-                  <div>
-                    <h3 className="text-lg sm:text-xl font-bold text-white">
-                      {programPhases[currentSlide].title}
-                    </h3>
-                    <p className="text-sm text-[var(--accent-blue)] font-medium">
-                      {programPhases[currentSlide].period}
-                    </p>
-                  </div>
-                </div>
-                <p className="text-[var(--text-secondary)] text-sm sm:text-base">
-                  {programPhases[currentSlide].description}
-                </p>
-              </div>
+
             </div>
           </div>
 
@@ -181,32 +163,7 @@ export function ProgramContentSection() {
           </div>
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <div className="bg-gradient-to-br from-[var(--accent-blue)]/10 via-[var(--warm-accent)]/5 to-[var(--accent-blue)]/8 rounded-3xl p-8 border border-[var(--accent-blue)]/30 backdrop-blur-lg">
-            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
-              Pronto para Transformar seu Sono?
-            </h3>
-            <p className="text-[var(--text-secondary)] text-lg mb-6 max-w-2xl mx-auto">
-              Mais de 30 técnicas comprovadas, organizadas em um sistema passo a passo 
-              para você dormir melhor a partir da primeira noite.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <div className="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
-                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                30 dias de conteúdo estruturado
-              </div>
-              <div className="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
-                <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                Técnicas baseadas em ciência
-              </div>
-              <div className="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
-                <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
-                Resultados desde a primeira noite
-              </div>
-            </div>
-          </div>
-        </div>
+
       </div>
     </section>
   );
