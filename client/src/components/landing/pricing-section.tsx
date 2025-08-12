@@ -360,7 +360,7 @@ export function PricingSection() {
       discount: 65,
       duration: '30 dias de acompanhamento completo',
       description: 'Transformação profunda com suporte estendido',
-      paymentUrl: 'https://pay.cakto.com.br/novo_link_30_dias', // será atualizado depois
+      paymentUrl: 'https://pay.cakto.com.br/3472ycn_522717',
       amount: 1700 // em centavos
     }
   };
