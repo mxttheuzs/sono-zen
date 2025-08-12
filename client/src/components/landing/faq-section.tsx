@@ -22,7 +22,7 @@ const faqCategories = [
       },
       {
         question: "O método tem base científica?",
-        answer: "Absolutamente. Cada técnica foi desenvolvida pela Dra. Deborah Genaro, especialista com 15 anos de experiência em medicina do sono, e validada em estudos clínicos. O método é reconhecido pela Sociedade Brasileira do Sono e usado em clínicas especializadas.",
+        answer: "Absolutamente. Cada técnica foi desenvolvida por especialistas com mais de 15 anos de experiência em medicina do sono e validada em estudos clínicos. O método é reconhecido pela Sociedade Brasileira do Sono e usado em clínicas especializadas.",
         highlight: "Validação científica"
       }
     ]

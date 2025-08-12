@@ -4,8 +4,8 @@ export function ObjectionsSection() {
   const objections = [
     {
       icon: AlertCircle,
-      question: "Ai, Dra... será que consigo seguir? Sou muito desorganizada...",
-      answer: "Relaxa! 😊 Eu criei pensando exatamente em pessoas como você. São só 3 minutinhos antes de dormir, bem simples. Até quem trabalha em 3 turnos conseguiu. Você também vai conseguir, confia em mim.",
+      question: "Será que consigo seguir? Sou muito desorganizada...",
+      answer: "Relaxa! 😊 O método foi criado pensando exatamente em pessoas como você. São só 3 minutinhos antes de dormir, bem simples. Até quem trabalha em 3 turnos conseguiu. Você também vai conseguir!",
       color: "from-blue-500 to-cyan-500"
     },
     {
@@ -92,25 +92,24 @@ export function ObjectionsSection() {
             <div className="w-16 h-16 bg-gradient-to-br from-[var(--warm-accent)] to-orange-500 rounded-full flex items-center justify-center">
               <Heart className="h-8 w-8 text-white" />
             </div>
-            <h3 className="text-2xl font-bold text-white">Quer bater um papo comigo? 💙</h3>
+            <h3 className="text-2xl font-bold text-white">Dúvidas Frequentes</h3>
             <p className="text-slate-300 max-w-md leading-relaxed">
-              Se ainda ficou alguma dúvida no seu coração, me chama no WhatsApp! 
-              Adoro conversar com quem realmente quer transformar suas noites. 
-              Estou aqui para te acompanhar nessa jornada para o sono perfeito.
+              Se ainda ficou alguma dúvida, nosso suporte está disponível no WhatsApp! 
+              Estamos aqui para esclarecer qualquer questão sobre o método e te ajudar a escolher o melhor plano.
             </p>
             <a 
               href="#"
               onClick={(e) => {
                 e.preventDefault();
                 const whatsappNumber = "5513996116102";
-                const message = "Oi Dra. Deborah! Vi seu método Sono Zen e fiquei interessada. Pode me ajudar com algumas dúvidas? 😊";
+                const message = "Olá! Vi o método Sono Zen e fiquei interessado(a). Podem me ajudar com algumas dúvidas? 😊";
                 const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
                 window.open(url, '_blank');
               }}
               className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-xl font-semibold transition-colors duration-300 hover:scale-105 transform"
             >
               <Heart className="h-5 w-5" />
-              Chamar a Dra. Deborah 💬
+              Suporte no WhatsApp 💬
             </a>
           </div>
         </div>
