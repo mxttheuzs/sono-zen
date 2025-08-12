@@ -480,7 +480,7 @@ export function PricingSection() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
                   
                   {/* Plano 7 Dias */}
-                  <div className="relative bg-gradient-to-br from-[var(--accent-blue)]/15 via-[var(--warm-accent)]/8 to-[var(--accent-blue)]/10 rounded-3xl p-6 border-2 border-[var(--accent-blue)]/40 backdrop-blur-lg shadow-xl hover:shadow-2xl transition-all duration-300 group">
+                  <div className="relative bg-gradient-to-br from-[var(--accent-blue)]/15 via-[var(--warm-accent)]/8 to-[var(--accent-blue)]/10 rounded-3xl p-6 border-2 border-[var(--accent-blue)]/40 backdrop-blur-lg shadow-xl hover:shadow-2xl transition-all duration-300 group flex flex-col h-full">
                     {/* Badge */}
                     <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                       <div className="bg-gradient-to-r from-[var(--accent-blue)] to-[var(--celestial-blue)] text-white text-xs px-4 py-2 rounded-full font-bold shadow-lg">
@@ -503,7 +503,7 @@ export function PricingSection() {
                     </div>
 
                     {/* Características */}
-                    <div className="space-y-4 mb-6">
+                    <div className="space-y-4 mb-6 flex-grow">
                       <div>
                         <h4 className="font-semibold text-[var(--text-primary)] mb-2">🎯 Objetivo:</h4>
                         <p className="text-sm text-[var(--text-secondary)]">Estabelecer fundamentos sólidos para melhoria imediata da qualidade do sono</p>
@@ -538,7 +538,7 @@ export function PricingSection() {
                   </div>
 
                   {/* Plano 30 Dias */}
-                  <div className="relative bg-gradient-to-br from-red-500/20 via-orange-500/15 to-[var(--warm-accent)]/15 rounded-3xl p-6 border-2 border-red-500/60 backdrop-blur-lg shadow-xl hover:shadow-2xl transition-all duration-300 group transform hover:scale-[1.02] ring-2 ring-red-400/30">
+                  <div className="relative bg-gradient-to-br from-[var(--accent-blue)]/15 via-[var(--warm-accent)]/8 to-[var(--accent-blue)]/10 rounded-3xl p-6 border-2 border-yellow-500/60 backdrop-blur-lg shadow-xl hover:shadow-2xl transition-all duration-300 group transform hover:scale-[1.02] ring-2 ring-yellow-400/30 flex flex-col h-full">
                     {/* Badge Popular com Fogo */}
                     <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                       <div className="bg-gradient-to-r from-red-500 to-orange-500 text-white text-xs px-4 py-2 rounded-full font-bold shadow-lg animate-pulse flex items-center gap-1">
@@ -561,7 +561,7 @@ export function PricingSection() {
                     </div>
 
                     {/* Características */}
-                    <div className="space-y-4 mb-6">
+                    <div className="space-y-4 mb-6 flex-grow">
                       <div>
                         <h4 className="font-semibold text-[var(--text-primary)] mb-2">🎯 Objetivo:</h4>
                         <p className="text-sm text-[var(--text-secondary)]">Reestruturação completa dos padrões de sono com técnicas neurocientíficas avançadas</p>
@@ -589,10 +589,8 @@ export function PricingSection() {
                         setSelectedPlan('30days');
                         handlePurchaseClick();
                       }}
-                      className="w-full py-4 rounded-xl text-lg font-semibold bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white transition-all duration-300 transform hover:scale-[1.05] shadow-lg border border-red-400/50 animate-pulse"
-                    >
-                      🔥 Garantir Transformação - R$ 17,00
-                    </Button>
+                      className="w-full py-4 rounded-xl text-lg font-semibold bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-black transition-all duration-300 transform hover:scale-[1.02] shadow-lg border border-yellow-400/50"
+                    >Garantir Transformação - R$ 17,00</Button>
                   </div>
                 </div>
 
@@ -667,7 +665,6 @@ export function PricingSection() {
           </div>
         </div>
       </section>
-
       {/* Purchase Form Modal */}
       {showForm && (
         <div className="fixed inset-0 bg-black/90 backdrop-blur-lg z-50 flex items-center justify-center p-3 sm:p-4">
@@ -767,12 +764,10 @@ export function PricingSection() {
           </div>
         </div>
       )}
-
       {/* Loading Modal */}
       {showLoadingModal && (
         <LoadingModal onComplete={handleLoadingComplete} />
       )}
-
       {/* Payment Modal with Cakto iframe */}
       {showPaymentModal && (
         <PaymentModal onClose={handleClosePayment} paymentUrl={currentPlan.paymentUrl} />
