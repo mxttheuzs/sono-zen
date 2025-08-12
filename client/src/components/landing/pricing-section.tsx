@@ -476,185 +476,192 @@ export function PricingSection() {
               {/* Content */}
               <div className="p-4 sm:p-6 md:p-8">
 
-                {/* Plan Selector */}
-                <div className="mb-8">
-                  <div className="grid grid-cols-2 gap-3 mb-6">
-                    {Object.entries(plans).map(([planKey, plan]) => (
-                      <button
-                        key={planKey}
-                        onClick={() => setSelectedPlan(planKey as '7days' | '30days')}
-                        className={`relative p-4 rounded-2xl border-2 transition-all duration-300 text-left ${
-                          selectedPlan === planKey
-                            ? 'border-[var(--warm-accent)] bg-gradient-to-br from-[var(--warm-accent)]/20 to-[var(--accent-blue)]/10 shadow-lg'
-                            : 'border-[var(--accent-blue)]/30 bg-[var(--accent-blue)]/5 hover:border-[var(--warm-accent)]/50'
-                        }`}
-                      >
-                        {selectedPlan === planKey && (
-                          <div className="absolute -top-2 -right-2 bg-[var(--warm-accent)] text-white text-xs px-2 py-1 rounded-full font-bold">
-                            SELECIONADO
-                          </div>
-                        )}
-                        <div className="text-sm font-bold text-[var(--text-primary)] mb-1">{plan.title}</div>
-                        <div className="text-xs text-[var(--text-secondary)] mb-2">{plan.duration}</div>
-                        <div className="flex items-center gap-2">
-                          <span className="text-lg font-black text-[var(--warm-accent)]">R$ {plan.price.toFixed(2)}</span>
-                          <span className="text-xs text-[var(--text-muted)] line-through">R$ {plan.originalPrice.toFixed(2)}</span>
-                        </div>
-                        <div className="text-xs text-green-400 font-semibold mt-1">
-                          {plan.discount}% OFF
-                        </div>
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Current Plan Pricing Display */}
-                <div className="bg-gradient-to-br from-[var(--accent-blue)]/15 via-[var(--warm-accent)]/8 to-[var(--accent-blue)]/10 rounded-3xl p-6 sm:p-8 md:p-10 mb-8 border-2 border-[var(--warm-accent)]/50 backdrop-blur-lg relative overflow-hidden shadow-2xl">
-                  {/* Decorative background elements */}
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[var(--warm-accent)]/20 to-transparent rounded-full blur-3xl"></div>
-                  <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-br from-[var(--accent-blue)]/20 to-transparent rounded-full blur-2xl"></div>
+                {/* Two Plan Cards */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
                   
-                  <div className="text-center relative z-10">
-                    
-                    {/* Plan Info */}
-                    <div className="mb-6">
-                      <h4 className="text-xl font-bold text-[var(--text-primary)] mb-2">{currentPlan.title}</h4>
-                      <p className="text-[var(--text-secondary)] mb-4">{currentPlan.description}</p>
-                      
-                      <p className="text-[var(--text-muted)] mb-2 text-base" style={{ textShadow: '0 0 6px rgba(255,255,255,0.15)' }}>De:</p>
-                      <p className="text-2xl sm:text-3xl text-[var(--text-muted)] line-through mb-4 opacity-70" style={{ textShadow: '0 0 6px rgba(255,255,255,0.15)' }}>R$ {currentPlan.originalPrice.toFixed(2)}</p>
-                      
-                      <p className="text-lg sm:text-xl text-[var(--accent-blue)] font-semibold mb-3" style={{ textShadow: '0 0 8px rgba(255,255,255,0.2)' }}>Por apenas:</p>
-                      
-                      {/* Main price with enhanced visual impact */}
-                      <div className="relative">
-                        <div className="absolute inset-0 bg-gradient-to-r from-[var(--warm-accent)]/30 to-[var(--accent-blue)]/30 rounded-2xl blur-xl"></div>
-                        <div className="relative bg-gradient-to-r from-[var(--warm-accent)]/20 to-[var(--accent-blue)]/20 rounded-2xl p-6 border-2 border-[var(--warm-accent)]/40">
-                          <p className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black bg-gradient-to-r from-[var(--warm-accent)] via-white to-[var(--accent-blue)] bg-clip-text text-transparent tracking-tight mb-4" style={{ textShadow: '0 0 20px rgba(255,255,255,0.6)' }}>
-                            R$ {currentPlan.price.toFixed(2)}
-                          </p>
-                        </div>
+                  {/* Plano 7 Dias */}
+                  <div className="relative bg-gradient-to-br from-[var(--accent-blue)]/15 via-[var(--warm-accent)]/8 to-[var(--accent-blue)]/10 rounded-3xl p-6 border-2 border-[var(--accent-blue)]/40 backdrop-blur-lg shadow-xl hover:shadow-2xl transition-all duration-300 group">
+                    {/* Badge */}
+                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                      <div className="bg-gradient-to-r from-[var(--accent-blue)] to-[var(--celestial-blue)] text-white text-xs px-4 py-2 rounded-full font-bold shadow-lg">
+                        PARA EXPERIMENTAR
                       </div>
                     </div>
                     
-                    {/* Savings highlight */}
-                    <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-xl p-4 border border-green-400/30 backdrop-blur-sm">
-                      <p className="text-green-300 font-bold text-lg sm:text-xl" style={{ textShadow: '0 0 8px rgba(255,255,255,0.2)' }}>
-                        💚 Você economiza R$ {currentPlan.savings.toFixed(2)} ({currentPlan.discount}% OFF)
-                      </p>
-                      <p className="text-green-200 text-sm mt-1">Oferta especial!</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Bonuses */}
-                <div className="bg-[var(--accent-blue)]/5 rounded-2xl p-4 sm:p-6 mb-6 sm:mb-8 border-2 border-[var(--accent-blue)]/35 backdrop-blur-sm relative">
-                  <h4 className="text-lg sm:text-xl font-bold text-[var(--text-primary)] mb-3 sm:mb-4 text-center" style={{ textShadow: '0 0 10px rgba(255,255,255,0.25)' }}>🎁 Bônus Exclusivos (R$ 19,80)</h4>
-                  <div className="space-y-3 sm:space-y-4">
-                    {bonuses.map((bonus, index) => (
-                      <div key={index} className="flex items-start gap-3">
-                        <div className="text-[var(--success-green)] flex-shrink-0 mt-1">{bonus.icon}</div>
-                        <div className="flex-1 min-w-0">
-                          <h5 className="font-semibold text-[var(--text-primary)] text-sm sm:text-base" style={{ textShadow: '0 0 6px rgba(255,255,255,0.2)' }}>{bonus.title}</h5>
-                          <p className="text-xs sm:text-sm text-[var(--text-muted)] mt-1" style={{ textShadow: '0 0 5px rgba(255,255,255,0.15)' }}>{bonus.description}</p>
-                        </div>
-                        <div className="text-right flex-shrink-0">
-                          <span className="text-xs text-[var(--text-muted)] line-through block" style={{ textShadow: '0 0 5px rgba(255,255,255,0.15)' }}>{bonus.value}</span>
-                          <div className="text-xs sm:text-sm font-bold text-[var(--success-green)]" style={{ textShadow: '0 0 6px rgba(255,255,255,0.2)' }}>GRÁTIS</div>
+                    <div className="text-center pt-4 mb-6">
+                      <h3 className="text-2xl font-bold text-[var(--text-primary)] mb-2">Sono Zen 7 Dias</h3>
+                      <p className="text-sm text-[var(--text-secondary)] mb-4">Primeiros resultados rápidos</p>
+                      
+                      {/* Preço */}
+                      <div className="mb-4">
+                        <p className="text-lg text-[var(--text-muted)] line-through">R$ 27,90</p>
+                        <p className="text-4xl font-black text-[var(--warm-accent)] mb-2">R$ 10,00</p>
+                        <div className="bg-green-500/20 rounded-lg px-3 py-1 inline-block">
+                          <span className="text-green-300 text-sm font-semibold">64% OFF</span>
                         </div>
                       </div>
-                    ))}
-                  </div>
+                    </div>
 
-                </div>
-                
-                {/* Elegant Premium Purchase Button */}
-                <div className="space-y-6">
-                  {/* Clean Premium Purchase Button */}
-                  <div className="relative group">
-                    {/* Subtle glow effect */}
-                    <div className="absolute -inset-0.5 rounded-2xl blur opacity-20 group-hover:opacity-30 transition-all duration-500" 
-                         style={{ background: 'linear-gradient(135deg, hsl(220, 25%, 65%) 0%, hsl(220, 30%, 70%) 100%)' }}></div>
-                    
+                    {/* Características */}
+                    <div className="space-y-4 mb-6">
+                      <div>
+                        <h4 className="font-semibold text-[var(--text-primary)] mb-2">🎯 Objetivo:</h4>
+                        <p className="text-sm text-[var(--text-secondary)]">Aliviar a mente e melhorar a qualidade do sono em 1 semana</p>
+                      </div>
+                      
+                      <div>
+                        <h4 className="font-semibold text-[var(--text-primary)] mb-2">📱 Conteúdo:</h4>
+                        <p className="text-sm text-[var(--text-secondary)]">7 áudios guiados + protocolos básicos para relaxar antes de dormir</p>
+                      </div>
+                      
+                      <div>
+                        <h4 className="font-semibold text-[var(--text-primary)] mb-2">⚡ Resultados:</h4>
+                        <p className="text-sm text-[var(--text-secondary)]">Dormir melhor já nos primeiros dias</p>
+                      </div>
+                      
+                      <div>
+                        <h4 className="font-semibold text-[var(--text-primary)] mb-2">👤 Indicação:</h4>
+                        <p className="text-sm text-[var(--text-secondary)]">Quem quer experimentar o método de forma rápida</p>
+                      </div>
+                    </div>
+
+                    {/* Botão */}
                     <Button 
-                      onClick={handlePurchaseClick}
-                      className="relative w-full py-6 sm:py-7 px-8 sm:px-10 rounded-2xl text-lg sm:text-xl font-semibold transition-all duration-300 transform hover:scale-[1.01] shadow-lg hover:shadow-xl border border-white/10 backdrop-blur-sm text-white"
-                      style={{ 
-                        background: 'linear-gradient(135deg, hsl(220, 25%, 55%) 0%, hsl(220, 30%, 60%) 50%, hsl(220, 25%, 55%) 100%)',
-                        boxShadow: '0 4px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.1)',
-                        textShadow: '0 1px 2px rgba(0,0,0,0.3)'
+                      onClick={() => {
+                        setSelectedPlan('7days');
+                        handlePurchaseClick();
                       }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.background = 'linear-gradient(135deg, hsl(220, 25%, 60%) 0%, hsl(220, 30%, 65%) 50%, hsl(220, 25%, 60%) 100%)';
-                        e.currentTarget.style.boxShadow = '0 6px 25px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.15)';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.background = 'linear-gradient(135deg, hsl(220, 25%, 55%) 0%, hsl(220, 30%, 60%) 50%, hsl(220, 25%, 55%) 100%)';
-                        e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.1)';
-                      }}
+                      className="w-full py-4 rounded-xl text-lg font-semibold bg-gradient-to-r from-[var(--accent-blue)] to-[var(--celestial-blue)] hover:from-[var(--accent-blue)]/90 hover:to-[var(--celestial-blue)]/90 text-white transition-all duration-300 transform hover:scale-[1.02] shadow-lg"
                     >
-                      <div className="flex items-center justify-center gap-3">
-                        <Moon className="h-5 w-5 sm:h-6 sm:w-6 text-white/80" />
-                        <span className="text-white font-semibold">
-                          Transformar Meu Sono Agora
-                        </span>
-                        <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 text-white/70" />
-                      </div>
+                      Começar Agora - R$ 10,00
                     </Button>
                   </div>
-                  
-                  {/* Enhanced Security & Trust Badges */}
-                  <div className="bg-gradient-to-br from-[var(--accent-blue)]/10 via-[var(--warm-accent)]/5 to-[var(--accent-blue)]/8 rounded-3xl p-6 sm:p-8 border-2 border-[var(--warm-accent)]/40 backdrop-blur-lg relative overflow-hidden shadow-xl">
-                    {/* Decorative elements */}
-                    <div className="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-[var(--warm-accent)]/15 to-transparent rounded-full blur-2xl"></div>
-                    <div className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-br from-[var(--accent-blue)]/15 to-transparent rounded-full blur-xl"></div>
-                    
-                    <div className="text-center mb-6 relative z-10">
-                      <h4 className="text-lg sm:text-xl font-bold text-[var(--text-primary)] mb-2">
-                        🛡️ Sua Compra está{" "}
-                        <span className="bg-gradient-to-r from-[var(--warm-accent)] via-[var(--accent-blue)] to-[var(--celestial-blue)] bg-clip-text text-transparent">
-                          Protegida
-                        </span>.
-                      </h4>
-                      <p className="text-sm text-[var(--text-secondary)]">
-                        Milhares de clientes satisfeitos confiam em nossa plataforma
-                      </p>
+
+                  {/* Plano 30 Dias */}
+                  <div className="relative bg-gradient-to-br from-[var(--warm-accent)]/15 via-[var(--accent-blue)]/8 to-[var(--warm-accent)]/10 rounded-3xl p-6 border-2 border-[var(--warm-accent)]/50 backdrop-blur-lg shadow-xl hover:shadow-2xl transition-all duration-300 group transform hover:scale-[1.02]">
+                    {/* Badge Recomendado */}
+                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                      <div className="bg-gradient-to-r from-[var(--warm-accent)] to-yellow-500 text-white text-xs px-4 py-2 rounded-full font-bold shadow-lg animate-pulse">
+                        ⭐ MAIS ESCOLHIDO
+                      </div>
                     </div>
                     
-                    <div className="grid sm:grid-cols-3 gap-4 sm:gap-6 relative z-10">
-                      <div className="flex flex-col items-center text-center p-5 bg-gradient-to-br from-green-500/15 to-emerald-500/10 border-2 border-green-400/30 rounded-2xl backdrop-blur-sm hover:scale-105 transition-all duration-300 group">
-                        <div className="w-12 h-12 bg-gradient-to-br from-green-400/20 to-emerald-400/20 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                          <Shield className="h-6 w-6 text-green-300" />
+                    <div className="text-center pt-4 mb-6">
+                      <h3 className="text-2xl font-bold text-[var(--text-primary)] mb-2">Sono Zen 30 Dias</h3>
+                      <p className="text-sm text-[var(--text-secondary)] mb-4">Transformação completa dos hábitos</p>
+                      
+                      {/* Preço */}
+                      <div className="mb-4">
+                        <p className="text-lg text-[var(--text-muted)] line-through">R$ 47,90</p>
+                        <p className="text-4xl font-black text-[var(--warm-accent)] mb-2">R$ 17,00</p>
+                        <div className="bg-green-500/20 rounded-lg px-3 py-1 inline-block">
+                          <span className="text-green-300 text-sm font-semibold">65% OFF</span>
                         </div>
-                        <h5 className="font-bold text-green-200 text-sm sm:text-base mb-1">Garantia de 7 Dias</h5>
-                        <p className="text-green-100/80 text-xs sm:text-sm">Não funcionou? Devolvemos seu dinheiro</p>
+                      </div>
+                    </div>
+
+                    {/* Características */}
+                    <div className="space-y-4 mb-6">
+                      <div>
+                        <h4 className="font-semibold text-[var(--text-primary)] mb-2">🎯 Objetivo:</h4>
+                        <p className="text-sm text-[var(--text-secondary)]">Criar um ritual sólido para dormir profundamente todas as noites</p>
                       </div>
                       
-                      <div className="flex flex-col items-center text-center p-5 bg-gradient-to-br from-blue-500/15 to-cyan-500/10 border-2 border-blue-400/30 rounded-2xl backdrop-blur-sm hover:scale-105 transition-all duration-300 group">
-                        <div className="w-12 h-12 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                          <Lock className="h-6 w-6 text-blue-300" />
-                        </div>
-                        <h5 className="font-bold text-blue-200 text-sm sm:text-base mb-1">Pagamento Seguro</h5>
-                        <p className="text-blue-100/80 text-xs sm:text-sm">Criptografia SSL 256-bits</p>
+                      <div>
+                        <h4 className="font-semibold text-[var(--text-primary)] mb-2">📱 Conteúdo:</h4>
+                        <p className="text-sm text-[var(--text-secondary)]">30 dias estruturados em 4 fases: Rotina, Sinais Físicos, Respiração e Mindfulness, Consolidação</p>
                       </div>
                       
-                      <div className="flex flex-col items-center text-center p-5 bg-gradient-to-br from-[var(--warm-accent)]/15 to-orange-500/10 border-2 border-[var(--warm-accent)]/30 rounded-2xl backdrop-blur-sm hover:scale-105 transition-all duration-300 group">
-                        <div className="w-12 h-12 bg-gradient-to-br from-[var(--warm-accent)]/20 to-orange-400/20 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                          <Download className="h-6 w-6 text-[var(--warm-accent)]" />
-                        </div>
-                        <h5 className="font-bold text-[var(--warm-accent)] text-sm sm:text-base mb-1">Acesso Instantâneo</h5>
-                        <p className="text-orange-100/80 text-xs sm:text-sm">Receba em até 2 minutos</p>
+                      <div>
+                        <h4 className="font-semibold text-[var(--text-primary)] mb-2">⚡ Resultados:</h4>
+                        <p className="text-sm text-[var(--text-secondary)]">Sono profundo e contínuo, com mais energia durante o dia</p>
+                      </div>
+                      
+                      <div>
+                        <h4 className="font-semibold text-[var(--text-primary)] mb-2">👤 Indicação:</h4>
+                        <p className="text-sm text-[var(--text-secondary)]">Quem quer mudar o sono a longo prazo com resultados duradouros</p>
                       </div>
                     </div>
-                    
-                    {/* Social proof footer */}
-                    <div className="text-center mt-6 pt-4 border-t border-[var(--warm-accent)]/20 relative z-10">
-                      <p className="text-sm text-[var(--text-secondary)]">
-                        ⭐ 4.9/5 estrelas • 14.847+ transformações • 98% de satisfação
-                      </p>
-                    </div>
+
+                    {/* Botão */}
+                    <Button 
+                      onClick={() => {
+                        setSelectedPlan('30days');
+                        handlePurchaseClick();
+                      }}
+                      className="w-full py-4 rounded-xl text-lg font-semibold bg-gradient-to-r from-[var(--warm-accent)] to-yellow-500 hover:from-[var(--warm-accent)]/90 hover:to-yellow-500/90 text-white transition-all duration-300 transform hover:scale-[1.02] shadow-lg"
+                    >
+                      Transformar Meu Sono - R$ 17,00
+                    </Button>
                   </div>
                 </div>
+
+                {/* Seção de Garantia */}
+                <div className="text-center bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-2xl p-6 border border-green-400/30 backdrop-blur-sm">
+                  <h4 className="text-xl font-bold text-[var(--text-primary)] mb-3">
+                    🛡️ Garantia de 7 Dias
+                  </h4>
+                  <p className="text-[var(--text-secondary)] mb-3">
+                    Se você não dormir melhor em 7 dias, devolvemos 100% do seu dinheiro. Sem perguntas, sem complicações.
+                  </p>
+                  <div className="flex items-center justify-center gap-2 text-green-300 font-semibold">
+                    <CheckCircle className="h-5 w-5" />
+                    <span>Risco Zero para Você</span>
+                  </div>
+                </div>
+                  
+                {/* Enhanced Security & Trust Badges */}
+                <div className="bg-gradient-to-br from-[var(--accent-blue)]/10 via-[var(--warm-accent)]/5 to-[var(--accent-blue)]/8 rounded-3xl p-6 sm:p-8 border-2 border-[var(--warm-accent)]/40 backdrop-blur-lg relative overflow-hidden shadow-xl">
+                  {/* Decorative elements */}
+                  <div className="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-[var(--warm-accent)]/15 to-transparent rounded-full blur-2xl"></div>
+                  <div className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-br from-[var(--accent-blue)]/15 to-transparent rounded-full blur-xl"></div>
+                  
+                  <div className="text-center mb-6 relative z-10">
+                    <h4 className="text-lg sm:text-xl font-bold text-[var(--text-primary)] mb-2">
+                      🛡️ Sua Compra está{" "}
+                      <span className="bg-gradient-to-r from-[var(--warm-accent)] via-[var(--accent-blue)] to-[var(--celestial-blue)] bg-clip-text text-transparent">
+                        Protegida
+                      </span>.
+                    </h4>
+                    <p className="text-sm text-[var(--text-secondary)]">
+                      Milhares de clientes satisfeitos confiam em nossa plataforma
+                    </p>
+                  </div>
+                  
+                  <div className="grid sm:grid-cols-3 gap-4 sm:gap-6 relative z-10">
+                    <div className="flex flex-col items-center text-center p-5 bg-gradient-to-br from-green-500/15 to-emerald-500/10 border-2 border-green-400/30 rounded-2xl backdrop-blur-sm hover:scale-105 transition-all duration-300 group">
+                      <div className="w-12 h-12 bg-gradient-to-br from-green-400/20 to-emerald-400/20 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
+                        <Shield className="h-6 w-6 text-green-300" />
+                      </div>
+                      <h5 className="font-bold text-green-200 text-sm sm:text-base mb-1">Garantia de 7 Dias</h5>
+                      <p className="text-green-100/80 text-xs sm:text-sm">Não funcionou? Devolvemos seu dinheiro</p>
+                    </div>
+                    
+                    <div className="flex flex-col items-center text-center p-5 bg-gradient-to-br from-blue-500/15 to-cyan-500/10 border-2 border-blue-400/30 rounded-2xl backdrop-blur-sm hover:scale-105 transition-all duration-300 group">
+                      <div className="w-12 h-12 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
+                        <Lock className="h-6 w-6 text-blue-300" />
+                      </div>
+                      <h5 className="font-bold text-blue-200 text-sm sm:text-base mb-1">Pagamento Seguro</h5>
+                      <p className="text-blue-100/80 text-xs sm:text-sm">Criptografia SSL 256-bits</p>
+                    </div>
+                    
+                    <div className="flex flex-col items-center text-center p-5 bg-gradient-to-br from-[var(--warm-accent)]/15 to-orange-500/10 border-2 border-[var(--warm-accent)]/30 rounded-2xl backdrop-blur-sm hover:scale-105 transition-all duration-300 group">
+                      <div className="w-12 h-12 bg-gradient-to-br from-[var(--warm-accent)]/20 to-orange-400/20 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
+                        <Download className="h-6 w-6 text-[var(--warm-accent)]" />
+                      </div>
+                      <h5 className="font-bold text-[var(--warm-accent)] text-sm sm:text-base mb-1">Acesso Instantâneo</h5>
+                      <p className="text-orange-100/80 text-xs sm:text-sm">Receba em até 2 minutos</p>
+                    </div>
+                  </div>
+                  
+                  {/* Social proof footer */}
+                  <div className="text-center mt-6 pt-4 border-t border-[var(--warm-accent)]/20 relative z-10">
+                    <p className="text-sm text-[var(--text-secondary)]">
+                      ⭐ 4.9/5 estrelas • 14.847+ transformações • 98% de satisfação
+                    </p>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
