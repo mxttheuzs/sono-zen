@@ -642,19 +642,7 @@ export function PricingSection() {
                   </div>
                 </div>
 
-                {/* Seção de Garantia */}
-                <div className="text-center bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-2xl p-6 border border-green-400/30 backdrop-blur-sm">
-                  <h4 className="text-xl font-bold text-[var(--text-primary)] mb-3">
-                    🛡️ Garantia de 7 Dias
-                  </h4>
-                  <p className="text-[var(--text-secondary)] mb-3">
-                    Se você não dormir melhor em 7 dias, devolvemos 100% do seu dinheiro. Sem perguntas, sem complicações.
-                  </p>
-                  <div className="flex items-center justify-center gap-2 text-green-300 font-semibold">
-                    <CheckCircle className="h-5 w-5" />
-                    <span>Risco Zero para Você</span>
-                  </div>
-                </div>
+                
                   
                 {/* Enhanced Security & Trust Badges */}
                 <div className="bg-gradient-to-br from-[var(--accent-blue)]/10 via-[var(--warm-accent)]/5 to-[var(--accent-blue)]/8 rounded-3xl p-6 sm:p-8 border-2 border-[var(--warm-accent)]/40 backdrop-blur-lg relative overflow-hidden shadow-xl">
