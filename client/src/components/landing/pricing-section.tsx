@@ -594,6 +594,54 @@ export function PricingSection() {
                   </div>
                 </div>
 
+                {/* Tabela de Comparação */}
+                <div className="bg-gradient-to-br from-[var(--accent-blue)]/10 via-[var(--warm-accent)]/5 to-[var(--accent-blue)]/8 rounded-3xl p-6 sm:p-8 border-2 border-[var(--accent-blue)]/30 backdrop-blur-lg mb-8">
+                  <div className="text-center mb-6">
+                    <h3 className="text-xl sm:text-2xl font-bold text-[var(--text-primary)] mb-2 flex items-center justify-center gap-2">
+                      🔍 Diferença entre o Sono Zen 7 Dias e o Sono Zen 30 Dias
+                    </h3>
+                  </div>
+
+                  <div className="overflow-x-auto">
+                    <table className="w-full">
+                      <thead>
+                        <tr className="border-b border-[var(--accent-blue)]/20">
+                          <th className="text-left py-4 px-2 text-[var(--text-primary)] font-semibold"></th>
+                          <th className="text-center py-4 px-4 text-[var(--text-primary)] font-bold">Sono Zen 7 Dias</th>
+                          <th className="text-center py-4 px-4 text-[var(--text-primary)] font-bold">Sono Zen 30 Dias</th>
+                        </tr>
+                      </thead>
+                      <tbody className="space-y-2">
+                        <tr className="border-b border-[var(--accent-blue)]/10">
+                          <td className="py-4 px-2 font-semibold text-[var(--text-primary)]">Objetivo</td>
+                          <td className="py-4 px-4 text-sm text-[var(--text-secondary)]">Primeiros resultados rápidos, aliviar a mente e melhorar a qualidade do sono em 1 semana.</td>
+                          <td className="py-4 px-4 text-sm text-[var(--text-secondary)]">Transformação completa dos hábitos, criando um ritual sólido e duradouro para dormir profundamente todas as noites.</td>
+                        </tr>
+                        <tr className="border-b border-[var(--accent-blue)]/10">
+                          <td className="py-4 px-2 font-semibold text-[var(--text-primary)]">Conteúdo</td>
+                          <td className="py-4 px-4 text-sm text-[var(--text-secondary)]">7 áudios guiados + protocolos básicos para relaxar antes de dormir.</td>
+                          <td className="py-4 px-4 text-sm text-[var(--text-secondary)]">30 dias estruturados em 4 fases (Rotina, Sinais Físicos, Respiração e Mindfulness, Consolidação e Ambiente Ideal).</td>
+                        </tr>
+                        <tr className="border-b border-[var(--accent-blue)]/10">
+                          <td className="py-4 px-2 font-semibold text-[var(--text-primary)]">Método</td>
+                          <td className="py-4 px-4 text-sm text-[var(--text-secondary)]">Técnicas essenciais para reduzir ansiedade e preparar o corpo para dormir.</td>
+                          <td className="py-4 px-4 text-sm text-[var(--text-secondary)]">Combinação avançada de técnicas orientais, respiração, aromaterapia, alongamentos, rituais sensoriais e ajustes ambientais.</td>
+                        </tr>
+                        <tr className="border-b border-[var(--accent-blue)]/10">
+                          <td className="py-4 px-2 font-semibold text-[var(--text-primary)]">Resultados Esperados</td>
+                          <td className="py-4 px-4 text-sm text-[var(--text-secondary)]">Dormir melhor já nos primeiros dias.</td>
+                          <td className="py-4 px-4 text-sm text-[var(--text-secondary)]">Sono profundo e contínuo, com mais energia e disposição durante o dia.</td>
+                        </tr>
+                        <tr>
+                          <td className="py-4 px-2 font-semibold text-[var(--text-primary)]">Indicação</td>
+                          <td className="py-4 px-4 text-sm text-[var(--text-secondary)]">Quem quer experimentar o método de forma rápida e sentir os primeiros efeitos.</td>
+                          <td className="py-4 px-4 text-sm text-[var(--text-secondary)]">Quem quer mudar o sono a longo prazo e manter resultados duradouros.</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
                 {/* Seção de Garantia */}
                 <div className="text-center bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-2xl p-6 border border-green-400/30 backdrop-blur-sm">
                   <h4 className="text-xl font-bold text-[var(--text-primary)] mb-3">
