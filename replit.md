@@ -54,6 +54,13 @@ Sono Zen is a full-stack web application employing a modern monorepo structure.
 
 ## Recent Changes
 
+### 12/08/2025 - UTMify Pixel Implementado
+- Adicionado UTMify Pixel com ID: 689acb039da0aae12d5a0f44
+- Script carregado dinamicamente via JavaScript no head
+- Sistema de tracking duplo funcionando (Facebook + UTMify)
+- Logs confirmam funcionamento correto dos pixels
+- Push realizado com sucesso para GitHub
+
 ### 12/08/2025 - Programa Completo de 4 Fases Implementado
 - Substituídas todas as imagens do programa pelas novas versões das 4 fases fornecidas pelo usuário
 - Criado arquivo `shared/program-data.ts` com conteúdo detalhado de todas as 30 atividades
