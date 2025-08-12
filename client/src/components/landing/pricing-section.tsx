@@ -163,9 +163,10 @@ function LoadingModal({ onComplete }: LoadingModalProps) {
 // Componente PaymentModal com iframe da Cakto
 interface PaymentModalProps {
   onClose: () => void;
+  paymentUrl: string;
 }
 
-function PaymentModal({ onClose }: PaymentModalProps) {
+function PaymentModal({ onClose, paymentUrl }: PaymentModalProps) {
   const [isLoading, setIsLoading] = useState(true);
 
   const handleIframeLoad = () => {
@@ -251,7 +252,7 @@ function PaymentModal({ onClose }: PaymentModalProps) {
 
         {/* Iframe */}
         <iframe
-          src="https://pay.cakto.com.br/j6iqgss_456470"
+          src={paymentUrl}
           className="w-full border-0"
           style={{ 
             height: 'calc(100vh - 60px)',
@@ -271,6 +272,7 @@ export function PricingSection() {
   const [showForm, setShowForm] = useState(false);
   const [showLoadingModal, setShowLoadingModal] = useState(false);
   const [showPaymentModal, setShowPaymentModal] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState<'7days' | '30days'>('7days');
   const { toast } = useToast();
   
   const form = useForm<PurchaseFormData>({
@@ -290,9 +292,9 @@ export function PricingSection() {
     onSuccess: (data) => {
       // Tracking de compra realizada com todos os parâmetros UTM
       trackPurchase({
-        conversion_value: 27.90,
+        conversion_value: currentPlan.price,
         currency: 'BRL',
-        content_name: 'Sono Zen - Método Completo',
+        content_name: currentPlan.title,
         content_category: 'E-book'
       });
       
@@ -313,10 +315,10 @@ export function PricingSection() {
   });
 
   const onSubmit = (data: PurchaseFormData) => {
-    // Add the amount in cents (R$ 27,90 = 2790 cents)
+    // Add the amount in cents based on selected plan
     const purchaseData = {
       ...data,
-      amount: 2790,
+      amount: currentPlan.amount,
       status: "pending"
     };
     purchaseMutation.mutate(purchaseData);
@@ -337,6 +339,33 @@ export function PricingSection() {
   const handleClosePayment = () => {
     setShowPaymentModal(false);
   };
+
+  const plans = {
+    '7days': {
+      title: 'Sono Zen - 7 Dias',
+      originalPrice: 27.90,
+      price: 10.00,
+      savings: 17.90,
+      discount: 64,
+      duration: '7 noites de transformação',
+      description: 'Método completo para transformar seu sono em uma semana',
+      paymentUrl: 'https://pay.cakto.com.br/j6iqgss_456470',
+      amount: 1000 // em centavos
+    },
+    '30days': {
+      title: 'Sono Zen - 30 Dias',
+      originalPrice: 47.90,
+      price: 17.00,
+      savings: 30.90,
+      discount: 65,
+      duration: '30 dias de acompanhamento completo',
+      description: 'Transformação profunda com suporte estendido',
+      paymentUrl: 'https://pay.cakto.com.br/novo_link_30_dias', // será atualizado depois
+      amount: 1700 // em centavos
+    }
+  };
+
+  const currentPlan = plans[selectedPlan];
 
   const features = [
     {
@@ -447,10 +476,39 @@ export function PricingSection() {
               {/* Content */}
               <div className="p-4 sm:p-6 md:p-8">
 
+                {/* Plan Selector */}
+                <div className="mb-8">
+                  <div className="grid grid-cols-2 gap-3 mb-6">
+                    {Object.entries(plans).map(([planKey, plan]) => (
+                      <button
+                        key={planKey}
+                        onClick={() => setSelectedPlan(planKey as '7days' | '30days')}
+                        className={`relative p-4 rounded-2xl border-2 transition-all duration-300 text-left ${
+                          selectedPlan === planKey
+                            ? 'border-[var(--warm-accent)] bg-gradient-to-br from-[var(--warm-accent)]/20 to-[var(--accent-blue)]/10 shadow-lg'
+                            : 'border-[var(--accent-blue)]/30 bg-[var(--accent-blue)]/5 hover:border-[var(--warm-accent)]/50'
+                        }`}
+                      >
+                        {selectedPlan === planKey && (
+                          <div className="absolute -top-2 -right-2 bg-[var(--warm-accent)] text-white text-xs px-2 py-1 rounded-full font-bold">
+                            SELECIONADO
+                          </div>
+                        )}
+                        <div className="text-sm font-bold text-[var(--text-primary)] mb-1">{plan.title}</div>
+                        <div className="text-xs text-[var(--text-secondary)] mb-2">{plan.duration}</div>
+                        <div className="flex items-center gap-2">
+                          <span className="text-lg font-black text-[var(--warm-accent)]">R$ {plan.price.toFixed(2)}</span>
+                          <span className="text-xs text-[var(--text-muted)] line-through">R$ {plan.originalPrice.toFixed(2)}</span>
+                        </div>
+                        <div className="text-xs text-green-400 font-semibold mt-1">
+                          {plan.discount}% OFF
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                </div>
 
-
-
-                {/* Pricing - Enhanced with better visual hierarchy */}
+                {/* Current Plan Pricing Display */}
                 <div className="bg-gradient-to-br from-[var(--accent-blue)]/15 via-[var(--warm-accent)]/8 to-[var(--accent-blue)]/10 rounded-3xl p-6 sm:p-8 md:p-10 mb-8 border-2 border-[var(--warm-accent)]/50 backdrop-blur-lg relative overflow-hidden shadow-2xl">
                   {/* Decorative background elements */}
                   <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[var(--warm-accent)]/20 to-transparent rounded-full blur-3xl"></div>
@@ -458,10 +516,13 @@ export function PricingSection() {
                   
                   <div className="text-center relative z-10">
                     
-                    {/* Price comparison */}
+                    {/* Plan Info */}
                     <div className="mb-6">
+                      <h4 className="text-xl font-bold text-[var(--text-primary)] mb-2">{currentPlan.title}</h4>
+                      <p className="text-[var(--text-secondary)] mb-4">{currentPlan.description}</p>
+                      
                       <p className="text-[var(--text-muted)] mb-2 text-base" style={{ textShadow: '0 0 6px rgba(255,255,255,0.15)' }}>De:</p>
-                      <p className="text-2xl sm:text-3xl text-[var(--text-muted)] line-through mb-4 opacity-70" style={{ textShadow: '0 0 6px rgba(255,255,255,0.15)' }}>R$ 47,90</p>
+                      <p className="text-2xl sm:text-3xl text-[var(--text-muted)] line-through mb-4 opacity-70" style={{ textShadow: '0 0 6px rgba(255,255,255,0.15)' }}>R$ {currentPlan.originalPrice.toFixed(2)}</p>
                       
                       <p className="text-lg sm:text-xl text-[var(--accent-blue)] font-semibold mb-3" style={{ textShadow: '0 0 8px rgba(255,255,255,0.2)' }}>Por apenas:</p>
                       
@@ -470,10 +531,8 @@ export function PricingSection() {
                         <div className="absolute inset-0 bg-gradient-to-r from-[var(--warm-accent)]/30 to-[var(--accent-blue)]/30 rounded-2xl blur-xl"></div>
                         <div className="relative bg-gradient-to-r from-[var(--warm-accent)]/20 to-[var(--accent-blue)]/20 rounded-2xl p-6 border-2 border-[var(--warm-accent)]/40">
                           <p className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black bg-gradient-to-r from-[var(--warm-accent)] via-white to-[var(--accent-blue)] bg-clip-text text-transparent tracking-tight mb-4" style={{ textShadow: '0 0 20px rgba(255,255,255,0.6)' }}>
-                            R$ 27,90
+                            R$ {currentPlan.price.toFixed(2)}
                           </p>
-                          
-
                         </div>
                       </div>
                     </div>
@@ -481,9 +540,9 @@ export function PricingSection() {
                     {/* Savings highlight */}
                     <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-xl p-4 border border-green-400/30 backdrop-blur-sm">
                       <p className="text-green-300 font-bold text-lg sm:text-xl" style={{ textShadow: '0 0 8px rgba(255,255,255,0.2)' }}>
-                        💚 Você economiza R$ 20,00 (42% OFF)
+                        💚 Você economiza R$ {currentPlan.savings.toFixed(2)} ({currentPlan.discount}% OFF)
                       </p>
-                      <p className="text-green-200 text-sm mt-1">Maior desconto do ano!</p>
+                      <p className="text-green-200 text-sm mt-1">Oferta especial!</p>
                     </div>
                   </div>
                 </div>
@@ -608,8 +667,8 @@ export function PricingSection() {
           <div className="bg-gradient-to-br from-[var(--accent-blue)]/10 to-[var(--warm-accent)]/5 backdrop-blur-xl border border-[var(--accent-blue)]/30 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 max-w-sm sm:max-w-md w-full max-h-[95vh] sm:max-h-[90vh] overflow-y-auto shadow-2xl">
             <div className="text-center mb-4 sm:mb-6">
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-2" style={{ textShadow: '0 0 10px rgba(255,255,255,0.3)' }}>Finalizar Compra</h3>
-              <p className="text-sm sm:text-base text-[var(--text-secondary)]" style={{ textShadow: '0 0 6px rgba(255,255,255,0.15)' }}>Sono Zen - Método Completo</p>
-              <p className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-[var(--accent-blue)] to-[var(--warm-accent)] bg-clip-text text-transparent mt-2" style={{ textShadow: '0 0 12px rgba(255,255,255,0.25)' }}>R$ 27,90</p>
+              <p className="text-sm sm:text-base text-[var(--text-secondary)]" style={{ textShadow: '0 0 6px rgba(255,255,255,0.15)' }}>{currentPlan.title}</p>
+              <p className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-[var(--accent-blue)] to-[var(--warm-accent)] bg-clip-text text-transparent mt-2" style={{ textShadow: '0 0 12px rgba(255,255,255,0.25)' }}>R$ {currentPlan.price.toFixed(2)}</p>
             </div>
 
             <Form {...form}>
@@ -709,7 +768,7 @@ export function PricingSection() {
 
       {/* Payment Modal with Cakto iframe */}
       {showPaymentModal && (
-        <PaymentModal onClose={handleClosePayment} />
+        <PaymentModal onClose={handleClosePayment} paymentUrl={currentPlan.paymentUrl} />
       )}
     </>
   );
