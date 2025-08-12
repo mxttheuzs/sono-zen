@@ -342,18 +342,18 @@ export function PricingSection() {
 
   const plans = {
     '7days': {
-      title: 'Plano Básico',
+      title: 'Sono Zen - Básico',
       originalPrice: 27.90,
       price: 10.00,
       savings: 17.90,
       discount: 64,
-      duration: '7 noites de transformação',
+      duration: '7 dias de transformação',
       description: 'Método completo para transformar seu sono em uma semana',
       paymentUrl: 'https://pay.cakto.com.br/j6iqgss_456470',
       amount: 1000 // em centavos
     },
     '30days': {
-      title: 'Plano Premium',
+      title: 'Sono Zen - Premium',
       originalPrice: 47.90,
       price: 17.00,
       savings: 30.90,
