@@ -52,7 +52,7 @@ export function ProgramContentSection() {
   };
 
   return (
-    <section className="py-16 sm:py-24 relative overflow-hidden">
+    <section id="program-content" className="py-16 sm:py-24 relative overflow-hidden">
       {/* Background gradients */}
       <div className="absolute inset-0 bg-gradient-to-br from-[var(--dark-bg)] via-[var(--card-bg)] to-[var(--dark-bg)]"></div>
       

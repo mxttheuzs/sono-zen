@@ -83,7 +83,7 @@ export function Navigation() {
           <button onClick={() => scrollToSection("planejamento-sono")} className="text-white/90 hover:text-[var(--warm-accent)] transition-colors font-semibold text-base animate-text-focus">
             Planejamento
           </button>
-          <button onClick={() => scrollToSection("preview-video")} className="text-white/90 hover:text-[var(--warm-accent)] transition-colors font-semibold text-base animate-text-focus">
+          <button onClick={() => scrollToSection("program-content")} className="text-white/90 hover:text-[var(--warm-accent)] transition-colors font-semibold text-base animate-text-focus">
             Preview
           </button>
           <button onClick={() => scrollToSection("problema")} className="text-white/90 hover:text-[var(--warm-accent)] transition-colors font-semibold text-base animate-text-focus">
@@ -135,7 +135,7 @@ export function Navigation() {
               Planejamento
             </button>
             <button 
-              onClick={() => scrollToSection("preview-video")} 
+              onClick={() => scrollToSection("program-content")} 
               className="block w-full text-left text-[var(--text-secondary)] hover:text-[var(--accent-blue)] transition-colors font-medium py-4 px-3 rounded-lg hover:bg-[var(--card-hover)] text-base"
             >
               Preview
